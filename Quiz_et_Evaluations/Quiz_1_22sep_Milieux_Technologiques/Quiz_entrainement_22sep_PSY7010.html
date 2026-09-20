@@ -4956,6 +4956,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
       if (checkQuizExpiration()) return;
+      setInterval(checkQuizExpiration, 30000);
       initSplitDivider();
       updateDynamicLayout();
       initKeyboardShortcuts();
