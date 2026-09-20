@@ -248,17 +248,16 @@
       border-right: 1px solid var(--border-color);
     }
     .workstation-container.layout-vertical .quiz-pane {
-      flex: 1 1 50%;
-      height: 50%;
+      flex: 0 0 auto;
       width: 100%;
-      min-height: 220px;
+      height: auto;
+      max-height: none;
       border-bottom: 1px solid var(--border-color);
     }
     .workstation-container.layout-vertical .reader-pane {
-      flex: 1 1 50%;
-      height: 50%;
+      flex: 1 1 0;
       width: 100%;
-      min-height: 220px;
+      min-height: 160px;
     }
 
     /* SÉPARATEUR INTERACTIF DÉPLAÇABLE */
@@ -5654,6 +5653,15 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const nav = document.querySelector('.header-nav');
       if (nav) {
         nav.classList.toggle('nav-vertical-mode', isVertLayout);
+      }
+
+      const qp = document.getElementById('quizPane');
+      if (qp && !isDraggingDivider) {
+        qp.style.flex = '';
+        qp.style.width = '';
+        qp.style.height = '';
+        qp.style.maxHeight = '';
+        qp.style.maxWidth = '';
       }
 
       if (layoutSetting === 'auto') {
