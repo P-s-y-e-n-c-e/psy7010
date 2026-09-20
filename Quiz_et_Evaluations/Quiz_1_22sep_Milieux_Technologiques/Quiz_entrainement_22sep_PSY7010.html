@@ -4927,8 +4927,35 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       return s.difficultyScore;
     }
 
+    // DATE D'EXPIRATION AUTOMATIQUE DU QUIZ (APRÈS LE COURS DU 22 SEPTEMBRE À 23H59 EDT)
+    // Note : Ne s'active que si la page est hébergée sur le Web (HTTP/HTTPS).
+    // En local (file://), l'accès reste illimité et permanent pour Michel !
+    const QUIZ_EXPIRATION_DATE = new Date('2026-09-22T23:59:59-04:00');
+
+    function checkQuizExpiration() {
+      if (window.location.protocol === 'file:') return false;
+      const now = new Date();
+      if (now > QUIZ_EXPIRATION_DATE) {
+        document.body.innerHTML = `
+          <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0f172a; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 16px;">🔒</div>
+            <h1 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; color: #60a5fa;">Session d'entraînement terminée</h1>
+            <p style="font-size: 1rem; color: #94a3b8; max-width: 520px; line-height: 1.5; margin-bottom: 20px;">
+              Le quiz d'entraînement en ligne pour la séance du <strong>22 septembre</strong> (Milieux Technologiques &amp; Facteurs Humains) est désormais clos suite à la tenue du cours.
+            </p>
+            <div style="padding: 12px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; font-size: 0.88rem; color: #cbd5e1; max-width: 480px;">
+              💬 Si tu as besoin d'accéder aux questions ou fiches de révision en format autonome hors-ligne, contacte directement <strong>Michel</strong>.
+            </div>
+          </div>
+        `;
+        return true;
+      }
+      return false;
+    }
+
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
+      if (checkQuizExpiration()) return;
       initSplitDivider();
       updateDynamicLayout();
       initKeyboardShortcuts();
