@@ -1,0 +1,9 @@
+# Audio files (large recordings)
+*.m4a
+*.mp3
+*.wav
+
+# OS / Temporary
+Thumbs.db
+.DS_Store
+*.tmp
