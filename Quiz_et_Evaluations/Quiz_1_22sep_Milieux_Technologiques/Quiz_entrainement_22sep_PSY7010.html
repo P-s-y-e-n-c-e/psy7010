@@ -94,16 +94,17 @@
 
     /* HEADER ÉLÉGANT & AÉRÉ */
     .app-header {
-      min-height: 64px;
+      min-height: 60px;
       background: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 24px;
-      gap: 16px;
+      padding: 10px 20px;
+      gap: 12px;
       z-index: 100;
       flex-shrink: 0;
+      flex-wrap: wrap;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     }
     .header-brand {
@@ -137,8 +138,8 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 10px;
-      flex-wrap: nowrap;
+      gap: 8px;
+      flex-wrap: wrap;
       flex-shrink: 0;
     }
     .header-nav-group {
@@ -223,9 +224,8 @@
     /* WORKSTATION CONTAINER DYNAMIQUE */
     .workstation-container {
       display: flex;
-      width: 100vw;
+      width: 100%;
       flex: 1 1 0;
-      height: calc(100vh - 68px);
       min-height: 0;
       overflow: hidden;
       position: relative;
@@ -249,16 +249,17 @@
       border-right: 1px solid var(--border-color);
     }
     .workstation-container.layout-vertical .quiz-pane {
-      flex: 0 0 auto;
+      flex: 1 1 54%;
       width: 100%;
-      height: auto;
-      max-height: none;
+      min-height: 200px;
       border-bottom: 1px solid var(--border-color);
+      overflow-y: auto;
     }
     .workstation-container.layout-vertical .reader-pane {
-      flex: 1 1 0;
+      flex: 1 1 46%;
       width: 100%;
-      min-height: 160px;
+      min-height: 180px;
+      overflow-y: auto;
     }
 
     /* SÉPARATEUR INTERACTIF DÉPLAÇABLE */
@@ -709,12 +710,12 @@
 
     /* READER PANE HEADER & TABS */
     .reader-header-bar {
-      height: 40px;
+      min-height: 40px;
       background: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
-      padding: 0 10px;
+      padding: 4px 10px;
       gap: 6px;
       flex-wrap: wrap;
       flex-shrink: 0;
