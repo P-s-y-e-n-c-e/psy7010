@@ -1717,10 +1717,11 @@
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
               <audio id="localPodcastAudio" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
-                <!-- 1. Fichier local (sur ton poste UQAM) -->
+                <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a" type="audio/mp4">
                 <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
                 <source src="L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
-                <!-- 2. Streaming direct Google Drive (pour n'importe quel autre utilisateur connecté) -->
                 <source src="https://drive.google.com/uc?export=download&id=191YDdbGHyRy2noj4CdndxsGnX75qKPeZ" type="audio/mp4">
               </audio>
 
@@ -5851,8 +5852,11 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
           if (avatarIcon) avatarIcon.textContent = '⏸️';
           document.getElementById('podcastBanner')?.classList.add('playing');
         }).catch(err => {
-          console.warn("Lecture audio bloquée ou source inaccessible:", err);
-          window.open('https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing', '_blank');
+          console.warn("Lecture audio bloquée ou attente du tampon:", err);
+          if (playBtnText) playBtnText.textContent = 'Écouter';
+          if (playBtnIcon) playBtnIcon.textContent = '▶️';
+          if (avatarIcon) avatarIcon.textContent = '▶️';
+          document.getElementById('podcastBanner')?.classList.remove('playing');
         });
       } else {
         audio.pause();

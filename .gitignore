@@ -2,6 +2,7 @@
 *.m4a
 *.mp3
 *.wav
+!03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a
 
 # OS / Temporary
 Thumbs.db
