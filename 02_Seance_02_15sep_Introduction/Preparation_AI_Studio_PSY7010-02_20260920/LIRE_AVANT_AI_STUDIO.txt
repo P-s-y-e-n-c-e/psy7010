@@ -1,0 +1,25 @@
+PSY7010 — Séance 2 du 15 septembre 2026 (Introduction & Démarche de terrain APP)
+
+Dans AI Studio :
+1. Joindre le fichier audio (ou l'extraction de transcription) :
+   - Fichier principal : PSY7010 - 15 septembre [S24].m4a (10801.47 s / 03:00:01)
+   - OU fichier backup : PSY7010 - 15 septembre [SD24D].m4a (10859.91 s / 03:00:59)
+2. Joindre PSY7010-02_Transitions_raw.md (inclus dans ce dossier).
+3. Joindre Cours 15sep (1diapo).pdf (inclus dans ce dossier).
+4. Copier le texte de PSY7010-02_PROMPT_AI_STUDIO_TRIANGULATION.txt dans la zone de prompt.
+
+Repères clés de la séance 2 :
+- Ancrage universel (T0) : 09:30:00 EDT (heure locale de Montréal).
+- Démarrage des deux enregistreurs : 09:30:00 EDT pile (offset initial = 00:00:00).
+- Diapo 0 (hors PDF) : 09:30:00 à 09:44:56 EDT (page de présentation générale projetée en classe mais absente du PDF).
+- Bascule sur Diapo 1 du PDF (« Évaluer et résoudre des problèmes de la vie réelle ») : 09:44:56 EDT (offset 00:14:56 / 896.00 s).
+- Pause de mi-séance (~17 min 31 s) : de 10:44:06 à 11:01:37 EDT (offset 01:14:06 à 01:31:37 / 4446.00 s à 5497.00 s).
+- Reprise après pause (Diapo 13) : 11:01:37 EDT (offset 01:31:37 / 5497.00 s).
+- Diapo 15 (BIT - Behavioural Insight Team) : 11:15:29 EDT (offset 01:45:29 / 6329.00 s) — Les 4 phases ont été présentées oralement en profondeur sur cette même roue.
+- Échéances clés de l'APP (Diapo 28) : 11:52:29 EDT (offset 02:22:29 / 8549.00 s).
+- Fin officielle du cours (cours levé) : 12:09:09 EDT (offset 02:39:09 / 9549.00 s).
+- Post-cours (capté sur l'audio) : 
+  * Formation des équipes APP avec Louis (~12:10 EDT / 02:40:00).
+  * Échange avec le Pr Marc-André Bédard sur les facteurs humains et BIXI (~12:15 EDT / 02:45:00).
+- Fin d'enregistrement S24 : 12:30:01 EDT (offset 03:00:01 / 10801.47 s).
+- Fin d'enregistrement SD24D : 12:30:59 EDT (offset 03:00:59 / 10859.91 s).

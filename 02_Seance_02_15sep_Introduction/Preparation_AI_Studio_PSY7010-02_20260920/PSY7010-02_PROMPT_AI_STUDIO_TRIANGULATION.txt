@@ -1,0 +1,15 @@
+Voici le fichier PSY7010-02_Transitions_raw.md contenant les horodatages des moments de transition de diapositives de la séance 2 du cours PSY7010 (15 septembre 2026).
+
+Voici également le fichier audio du cours : PSY7010 - 15 septembre [S24].m4a (ou sa transcription brute).
+
+Voici enfin le support visuel employé durant cette session :
+- Cours 15sep (1diapo).pdf (31 diapositives)
+
+Instructions :
+1. Les enregistreurs audio ont été démarrés à 09:30:00 EDT (T0 = 00:00:00).
+2. De 09:30:00 à 09:44:56 EDT, le professeur projetait une diapositive de présentation générale qui n'était pas incluse dans le PDF officiel. La bascule sur la Diapo 1 du PDF a lieu précisément à 09:44:56 EDT (offset 00:14:56 / 896.00 s).
+3. Une pause de mi-séance a eu lieu de 10:44:06 à 11:01:37 EDT (offset audio 01:14:06 à 01:31:37 / 4446.00 s à 5497.00 s).
+4. Sur la Diapo 15 (Roue du Behavioural Insight Team), le professeur est resté de 11:15:29 à ~11:49:11 en décrivant oralement les 4 étapes itératives.
+5. Le cours se termine officiellement à 12:09:09 EDT (offset 02:39:09 / 9549.00 s). Le segment suivant (12:09 à 12:30 EDT) contient les discussions d'équipes et l'échange avec le professeur Bédard sur les facteurs humains et BIXI.
+6. Sers-toi de l'écoute audio / de la transcription pour affiner la synchronisation du fichier PSY7010-02_Transitions_raw.md et valider les transitions à la seconde près.
+7. Génère la version finale de PSY7010-02_Transitions.md dans un bloc Markdown complet et directement copiable.

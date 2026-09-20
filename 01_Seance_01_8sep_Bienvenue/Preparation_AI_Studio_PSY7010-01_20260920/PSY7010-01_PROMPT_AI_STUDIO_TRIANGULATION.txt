@@ -1,0 +1,15 @@
+Voici le fichier PSY7010-01_Transitions_raw.md avec les horodatages des moments de transitions de diapositive de la séance 1 du cours PSY7010 (8 septembre 2026).
+
+Voici également le fichier audio du cours : PSY7010 - 8 septembre [S24D].m4a (ou sa transcription brute).
+
+Voici enfin le support visuel employé durant cette session :
+- Cours 8sep (PPTX-1diapo).pdf (29 diapositives)
+
+Instructions :
+1. Le cours a été précédé d'un segment initial d'attente/vide de 59 minutes (de 09h01 à 10h00 EDT). Le cours commence effectivement vers 10h00:00 (offset audio ~00:59:00) sur la Diapo 1.
+2. Deux ancrages réels stricts ont été chronométrés en direct :
+   - À 10:17:10 EDT (audio 01:16:10 / 4570s) : Diapo 13 (Présentation AGEPSY-CS, appel aux 5 étudiants pour s'impliquer).
+   - À 10:24:13 EDT (audio 01:23:13 / 4993s) : Diapo 16 (Le prof Marc-André Bédard commence à détailler la structure du programme).
+3. Le professeur était un peu éparpillé et nerveux lors de cette première séance, sautant parfois d'une diapositive à une autre avant de revenir, et a esquissé/oublié un exercice d'introduction vers la fin.
+4. Sers-toi de l'écoute audio / transcription pour affiner la précision du fichier PSY7010-01_Transitions_raw.md et génère le tableau corrigé à la seconde près.
+5. Génère la version finale de PSY7010-01_Transitions.md dans un bloc Markdown copiable.

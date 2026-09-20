@@ -1,0 +1,18 @@
+PSY7010 — séance 1 du 8 septembre 2026
+
+Dans AI Studio :
+1. Joindre le fichier audio (ou l'extraction WhisperX lorsqu'elle sera prête) : PSY7010 - 8 septembre [S24D].m4a.
+2. Joindre PSY7010-01_Transitions_raw.md.
+3. Joindre Cours 8sep (PPTX-1diapo).pdf.
+4. Copier le texte de PSY7010-01_PROMPT_AI_STUDIO_TRIANGULATION.txt dans le prompt.
+
+Repères clés de la séance 1 :
+- Audio de référence : PSY7010 - 8 septembre [S24D].m4a (Durée : 03:16:37.064 / 11797.064 s).
+- Ancrage universel (T0) : 09:01:00 EDT.
+- Début effectif du cours : ~10:00:00 EDT (audio ~00:59:00, décalage initial vide de 59 minutes).
+- Intervenants : Pr Marc-André Bédard (PhD) et Mario Passalacqua (PhD).
+- Support visuel : Cours 8sep (PPTX-1diapo).pdf (29 diapositives, issues de 10 diapositives maîtresses avec animations d'apparition).
+- Ancrage 1 validé en direct : 10:17:10 EDT (audio 01:16:10 / 4570.00 s) -> Diapo 13 (CE SOIR ! TU AIMERAIS T'IMPLIQUER?!), recherche de 5 étudiants pour comités/représentation étudiante.
+- Ancrage 2 validé en direct : 10:24:13 EDT (audio 01:23:13 / 4993.00 s) -> Diapo 16 (Sciences psychologiques appliquées — Le programme), le prof reprend la parole pour détailler le cheminement du programme.
+- Fin du cours : ~12:12:00 EDT (audio ~03:11:00).
+- Fin de l'audio : 12:17:37 EDT (audio 03:16:37.064).
