@@ -309,16 +309,17 @@
 
     /* QUIZ CONTENT WRAPPER */
     .quiz-content-wrap {
-      padding: 16px 20px 24px 20px;
+      padding: 20px;
       width: 100%;
       max-width: 100%;
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      box-sizing: border-box;
     }
     /* MODE HORIZONTAL : LE QUESTIONNAIRE PREND TOUT L'ESPACE JUSQU'AUX RESSOURCES OPTIONNELLES */
     .workstation-container.layout-horizontal .quiz-content-wrap {
-      padding: 20px 28px 28px 28px;
+      padding: 24px;
     }
     .workstation-container.layout-horizontal .q-card {
       padding: 26px 30px;
@@ -964,9 +965,154 @@
       padding: 6px 12px;
       font-size: 0.8rem;
     }
-    @media (max-width: 520px) {
-      .nav-btn-label { display: none; }
-      .pagination-num-btn { width: 26px; height: 26px; font-size: 0.72rem; }
+    @media (max-width: 768px) {
+      /* SCROLLING NATUREL ET GESTION ERGONOMIQUE MOBILE */
+      html, body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+      }
+      .app-header {
+        padding: 10px 14px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        min-height: auto !important;
+      }
+      .header-nav {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
+      }
+      .header-nav-group {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+      .header-nav-pipe {
+        display: none !important;
+      }
+      .mode-badge-btn, .tool-btn, .mastery-counter {
+        padding: 6px 10px !important;
+        font-size: 0.78rem !important;
+      }
+      
+      /* WORKSTATION MOBILE : FLUX NATUREL VERTICAL SANS SCROLLBARS INTERNES PIÉGÉES */
+      .workstation-container {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .quiz-pane {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        border-right: none !important;
+        border-bottom: 2px solid var(--border-color) !important;
+        flex: none !important;
+      }
+      .quiz-content-wrap {
+        padding: 14px 12px !important;
+      }
+      
+      /* CARTE DE QUESTION ERGONOMIQUE MOBILE */
+      .q-card {
+        padding: 16px 14px !important;
+        border-radius: 12px !important;
+      }
+      .q-title {
+        font-size: 1.08rem !important;
+        line-height: 1.45 !important;
+      }
+      .option-btn {
+        padding: 12px 14px !important;
+        font-size: 0.94rem !important;
+        gap: 10px !important;
+      }
+      .opt-letter {
+        min-width: 26px !important;
+        padding: 3px 6px !important;
+        font-size: 0.8rem !important;
+      }
+      .google-pagination {
+        gap: 3px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+      }
+      .pagination-num-btn {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.75rem !important;
+      }
+      .nav-btn-label {
+        display: none !important;
+      }
+      
+      /* FLASHCARDS ET PODCAST SUR MOBILE */
+      .flashcards-opt-card, .podcast-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 14px !important;
+      }
+      .podcast-banner-center {
+        width: 100% !important;
+      }
+      .podcast-banner-right {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+      }
+      .podcast-banner-right .podcast-play-btn,
+      .podcast-banner-right .podcast-edit-link-btn,
+      .flashcards-opt-card .fc-launch-btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+      .custom-audio-controls {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+      .audio-timeline-wrap {
+        order: 3 !important;
+        width: 100% !important;
+      }
+      
+      /* SÉPARATEUR EN MOBILE */
+      .split-divider {
+        height: 12px !important;
+        cursor: default !important;
+      }
+      .split-divider-handle {
+        width: 40px !important;
+        height: 4px !important;
+      }
+      
+      /* PANNEAU DE LECTURE DOCUMENTAIRE */
+      .reader-pane {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 450px !important;
+        overflow: visible !important;
+        flex: none !important;
+      }
+      .reader-tabs-bar {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 8px 10px !important;
+      }
+      .reader-body {
+        height: 70vh !important;
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
     }
 
         /* CARTE FLASHCARDS OPTIONNELLE (RESSOURCE OPTIONNELLE EN BAS) */
@@ -975,7 +1121,7 @@
       align-items: center;
       gap: 14px;
       padding: 13px 16px;
-      margin-top: 4px;
+      margin-top: 0;
       margin-bottom: 12px;
       border-radius: 14px;
       border: 1.5px solid #a855f7;
@@ -1060,12 +1206,15 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 24px 0 10px 0;
+      margin: 20px 0 14px 0;
       color: #b45309;
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+    }
+    .workstation-container.layout-horizontal .podcast-section-divider {
+      margin: 24px 0 16px 0;
     }
     .podcast-section-divider::before, .podcast-section-divider::after {
       content: '';
@@ -1086,8 +1235,8 @@
       align-items: center;
       gap: 14px;
       padding: 13px 16px;
-      margin-top: 4px;
-      margin-bottom: 16px;
+      margin-top: 0;
+      margin-bottom: 0;
       border-radius: 14px;
       border: 1.5px solid #f59e0b;
       border-left: 5px solid #d97706;
