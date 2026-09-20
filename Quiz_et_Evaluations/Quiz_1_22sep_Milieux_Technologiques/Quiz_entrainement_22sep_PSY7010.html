@@ -1604,7 +1604,7 @@
         <!-- ACTIVE QUESTION CARD (STUDY & SIMULATION MODES) -->
         <div class="q-card" id="qCard">
           <div class="q-meta-top">
-            <span class="q-badge mandatory" id="qDocBadge">🔴 Cañas et al. (2011) [Lecture obligatoire]</span>
+            <span class="q-badge mandatory" id="qDocBadge" onclick="switchTab(getCurrentActiveQuestion()?.doc_id || 'doc_canas', true)" style="cursor: pointer;" title="Ouvrir et afficher ce document dans le lecteur">🔴 Cañas et al. (2011) [Lecture obligatoire]</span>
             <span class="q-counter-text" id="qProgressText">Question 1 sur 44 • 1 point</span>
           </div>
 
@@ -1785,7 +1785,7 @@
       </div>
 
       <!-- STATUS BANNER -->
-      <div class="doc-status-banner mandatory" id="docStatusBanner">
+      <div class="doc-status-banner mandatory" id="docStatusBanner" onclick="if (!sourceTextVisible) showDocumentPostAnswer();" style="cursor: pointer;" title="Cliquer pour afficher le texte source">
         🔴 LECTURE OBLIGATOIRE DU COURS (QUIZ EN LIGNE 5 %) — Chapitre 13 complet (pp. 316–336)
       </div>
 
@@ -4934,7 +4934,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       
       // 1. Initialiser la langue par défaut (Anglais original)
       updateLanguageUI();
-      switchTab('doc_canas');
+      switchTab('doc_canas', false);
       
       // 2. Initialiser et afficher immédiatement le Mode Étude (Question 1)
       setMode('study');
@@ -5266,11 +5266,17 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       }
     }
 
-    function switchTab(docId) {
+    function switchTab(docId, autoUnmask = true) {
       activeDocId = docId;
       document.querySelectorAll('.reader-tab').forEach(b => b.classList.remove('active'));
       const activeTab = document.getElementById('tab_' + docId);
       if (activeTab) activeTab.classList.add('active');
+
+      // Si l'utilisateur clique sur un onglet de document (ou sur un document),
+      // le réflexe humain intuitif est de lever le masquage automatiquement pour le lire !
+      if (autoUnmask && !sourceTextVisible) {
+        showDocumentPostAnswer();
+      }
 
       // Masquer tous les viewports
       document.querySelectorAll('.reader-viewport').forEach(vp => vp.style.display = 'none');
