@@ -2730,7 +2730,7 @@
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
-              <audio id="localPodcastAudio" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+              <audio id="localPodcastAudio" src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
                 <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
                 <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
                 <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a" type="audio/mp4">
@@ -8983,6 +8983,10 @@ let previousIsCompact = isCompactUI();
     }
 
     function scrollToPodcastOrOpen() {
+      if (isCompactUI()) {
+        openMobilePodcast();
+        return;
+      }
       const banner = document.getElementById('podcastBanner');
       if (banner) {
         banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -8991,6 +8995,15 @@ let previousIsCompact = isCompactUI();
       } else {
         openPodcastModal();
       }
+    }
+
+    function openMobilePodcast() {
+      setMobileView('podcast');
+      const banner = document.getElementById('podcastBanner');
+      if (banner) {
+        banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      updateMascot("🎙️ Podcast audio actif. Écoute l'épisode de révision (17 min) !", "thinking");
     }
 
         // --- GESTION DU LECTEUR AUDIO INTÉGRÉ (STREAMING LOCAL / NOTEBOOKLM) ---
@@ -9457,6 +9470,10 @@ let previousIsCompact = isCompactUI();
 
         <button class="tool-btn" onclick="setMobileView('source'); closeOptionsModal();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
           <span>📖 Consulter les textes officiels</span> <span>➔</span>
+        </button>
+
+        <button class="tool-btn" onclick="closeOptionsModal(); openMobilePodcast();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
+          <span>🎙️ Écouter le podcast de révision</span> <span>➔</span>
         </button>
 
         <button class="tool-btn" onclick="cycleLayout(); closeOptionsModal();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
