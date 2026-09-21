@@ -1634,6 +1634,35 @@
     }
     body.dark-mode .celebration-quote-card { background: #422006; color: #fef08a; }
   
+    
+    /* BOUTONS SÉLECTEUR DE PÉRIMÈTRE */
+    .scope-btn {
+      flex: 1;
+      min-width: 170px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface-1);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .scope-btn:hover {
+      background: var(--surface-2);
+      color: var(--text-main);
+      border-color: var(--border-hover);
+    }
+    .scope-btn.active {
+      background: var(--primary);
+      color: #ffffff !important;
+      border-color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
     /* --- FLASHCARD BRISTOL CARD FOVÉALE & CENTRÉE --- */
     .flashcard-container {
       display: flex;
@@ -2374,6 +2403,23 @@
 
 <!-- CATEGORIES FILTER -->
         <div id="filterSection">
+          <!-- SÉLECTEUR DE PÉRIMÈTRE D'ÉTUDE (AUDIT CAÑAS 2011) -->
+          <div class="study-scope-container" style="margin-bottom: 12px; padding: 10px 12px; background: var(--surface-card); border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+                📚 Périmètre d'étude :
+              </span>
+              <span id="scopeActiveCountBadge" class="scope-count-badge" style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; background: var(--surface-2); color: var(--primary); border: 1px solid var(--border);">44 items</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" id="scopeBtnAll" class="scope-btn active" onclick="setStudyScope('all')">
+                🌐 Ensemble des lectures (44 questions)
+              </button>
+              <button type="button" id="scopeBtnCanas" class="scope-btn" onclick="setStudyScope('canas')">
+                🔴 Cañas (24 questions)
+              </button>
+            </div>
+          </div>
           <div class="filter-header-bar">
             <span class="filter-header-title">🎯 Filtrer la banque par section :</span>
           </div>
@@ -3248,11 +3294,11 @@ Human Factors & Ergonomics
  problems — or  “ ironies ” — of automation were first noted by Lisanne Bainbridge in
  a seminal paper (Bainbridge,  1983 ). With a high degree of automation, the human
  operator is out of loop of controlling processes. As a result, operators are less well
- practiced in their abilities to take over the process when an automatic unit fails. This
+ practiced in their abilities to take over the process when an automatic unit fails. <mark id="anchor_q31" class="source-anchor-target" data-qid="31" title="Extrait officiel pour la Question 31">This
  deterioration results from the fact that the manual and cognitive skills decline due
  to the absence of active participation in the process. Furthermore, it becomes more
  difficult with progressing automation to gain access to knowledge about system
- behavior. Many authors see the solution to such problems in adaptive automation,
+ behavior.</mark> Many authors see the solution to such problems in adaptive automation,
  which could take the current state of knowledge of human operator into account
  and, in this way, support a better division of labor between humans and machines.
  However, the solution presupposes reliable and timely feedback information about
@@ -4685,26 +4731,26 @@ Comments are closed.
 
       <!-- READER VIEWPORTS EN FRANÇAIS -->
       <div id="viewport_doc_canas_fr" class="reader-viewport" style="display: none;">
-        <div class="academic-disclaimer" style="margin: 8px 0 14px 0; padding: 10px 14px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">ℹ️ <strong>Note documentaire :</strong> Notes de synthèse non validées — ne constituent pas une traduction fidèle ni une preuve du corrigé. Consulter le texte original pour vérifier une réponse. Extrait fourni : pages 316–336 (IAAP Handbook of Applied Psychology, Blackwell, 2011).</div>
+        <div class="academic-disclaimer" id="doc_canas_banner_fr" style="margin: 8px 0 14px 0; padding: 10px 14px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">⚠️ <strong>Synthèse française partielle — ne remplace pas l’extrait original fourni, pages 316–336.</strong> Consulter le texte original pour vérifier une réponse. Extrait fourni : pages 316–336 (IAAP Handbook of Applied Psychology, Blackwell, 2011).</div>
 
         <div class="doc-page-marker" id="page_316_fr"><span class="page-badge">📄 Page 316</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <p class="doc-para"><strong>Chapitre 13 — Facteurs Humains et Ergonomie (*Human Factors and Ergonomics*)</strong><br>
         José J. Cañas, Boris B. Velichkovsky, et Boris M. Velichkovsky</p>
         <h3 class="doc-subheading">Définition</h3>
         <p class="doc-para">
-        Dans son rapport triennal, l'<mark id="anchor_q1_fr" class="source-anchor-target" data-qid="1" title="Extrait traduit pour la Question 1">International Ergonomics Association (IEA, 2000)</mark> a défini l'ergonomie comme la <mark id="anchor_q4_fr" class="source-anchor-target" data-qid="4" title="Extrait traduit pour la Question 4">discipline scientifique consacrée à la compréhension des interactions</mark> entre les êtres humains et les autres composantes d'un système sociotechnique. Dans cette définition, l'ergonomie est la profession qui applique des théories, principes, données et méthodes de conception afin d'optimiser conjointement le bien-être humain et la performance globale du système. Elle est en particulier responsable de la conception et de l'évaluation des tâches, des postes de travail, des produits, des environnements et des systèmes pour les rendre compatibles avec les capacités, les besoins et les limites des personnes.
+        Dans son rapport triennal, l'<mark id="anchor_q1_fr" class="source-anchor-target" data-qid="1" title="Repère dans les notes de synthèse — à confronter à l’original.">International Ergonomics Association (IEA, 2000)</mark> a défini l'ergonomie comme la <mark id="anchor_q4_fr" class="source-anchor-target" data-qid="4" title="Repère dans les notes de synthèse — à confronter à l’original.">discipline scientifique consacrée à la compréhension des interactions</mark> entre les êtres humains et les autres composantes d'un système sociotechnique. Dans cette définition, l'ergonomie est la profession qui applique des théories, principes, données et méthodes de conception afin d'optimiser conjointement le bien-être humain et la performance globale du système. Elle est en particulier responsable de la conception et de l'évaluation des tâches, des postes de travail, des produits, des environnements et des systèmes pour les rendre compatibles avec les capacités, les besoins et les limites des personnes.
         </p>
         <p class="doc-para">
-        <mark id="anchor_q5_fr" class="source-anchor-target" data-qid="5" title="Extrait traduit pour la Question 5">Le mot « ergonomie » vient du grec <em>ergon</em>, signifiant travail, et <em>nomos</em>, signifiant loi</mark>. Le chapitre le présente donc, étymologiquement, comme la science du travail. Ce terme a été employé historiquement dans la tradition européenne. Dans la tradition américaine, le terme « <em>human factor engineering</em> » est utilisé pour désigner les mêmes questions, les deux expressions étant aujourd'hui considérées comme synonymes et interchangeables. Le chapitre mentionne également l'expression « psychologie de l'ingénierie » (<em>engineering psychology</em> ; Wickens & Hollands, 2000) dans ce même contexte historique.
+        <mark id="anchor_q5_fr" class="source-anchor-target" data-qid="5" title="Repère dans les notes de synthèse — à confronter à l’original.">Le mot « ergonomie » vient du grec <em>ergon</em>, signifiant travail, et <em>nomos</em>, signifiant loi</mark>. Le chapitre le présente donc, étymologiquement, comme la science du travail. Ce terme a été employé historiquement dans la tradition européenne. Dans la tradition américaine, le terme « <em>human factor engineering</em> » est utilisé pour désigner les mêmes questions, les deux expressions étant aujourd'hui considérées comme synonymes et interchangeables. Le chapitre mentionne également l'expression « psychologie de l'ingénierie » (<em>engineering psychology</em> ; Wickens & Hollands, 2000) dans ce même contexte historique.
         </p>
 
         <div class="doc-page-marker" id="page_317_fr"><span class="page-badge">📄 Page 317</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <p class="doc-para">
-        <mark id="anchor_q2_fr" class="source-anchor-target" data-qid="2" title="Extrait traduit pour la Question 2">Les difficultés d’utilisation des machines ont conduit à développer des tests de sélection et d’affectation</mark>. La Seconde Guerre mondiale, par l’ampleur des besoins et l’introduction de nouveaux artefacts comme le radar, a renforcé la nécessité de concevoir les dispositifs en tenant compte des personnes qui les utiliseraient. Dans ce contexte, adapter la machine à l'humain s'est imposé comme un impératif d'ingénierie.
+        <mark id="anchor_q2_fr" class="source-anchor-target" data-qid="2" title="Repère dans les notes de synthèse — à confronter à l’original.">Les difficultés d’utilisation des machines ont conduit à développer des tests de sélection et d’affectation</mark>. La Seconde Guerre mondiale, par l’ampleur des besoins et l’introduction de nouveaux artefacts comme le radar, a renforcé la nécessité de concevoir les dispositifs en tenant compte des personnes qui les utiliseraient. Dans ce contexte, adapter la machine à l'humain s'est imposé comme un impératif d'ingénierie.
         </p>
         <h3 class="doc-subheading">Domaines d'expertise de l'ergonomie</h3>
         <p class="doc-para">
-        L'IEA et le présent chapitre définissent <mark id="anchor_q3_fr" class="source-anchor-target" data-qid="3" title="Extrait traduit pour la Question 3">quatre domaines de spécialisation au sein de la discipline :</mark> l'ergonomie physique, l'ergonomie cognitive, la neuroergonomie et l'ergonomie sociale ou organisationnelle.
+        <mark id="anchor_q3_fr" class="source-anchor-target" data-qid="3" title="Repère dans les notes de synthèse — à confronter à l’original.">Cañas et ses coauteurs distinguent ici quatre domaines d’expertise :</mark> l’ergonomie physique, l’ergonomie cognitive, la neuroergonomie et l’ergonomie sociale ou organisationnelle.
         </p>
 
         <div class="doc-page-marker" id="page_318_fr"><span class="page-badge">📄 Page 318</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
@@ -4729,7 +4775,7 @@ Comments are closed.
         <div class="doc-page-marker" id="page_320_fr"><span class="page-badge">📄 Page 320</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Intervention ergonomique et conception</h3>
         <p class="doc-para">
-        <mark id="anchor_q41_fr" class="source-anchor-target" data-qid="41" title="Extrait traduit pour la Question 41">Dans les premiers temps décrits par le chapitre, les ergonomes étaient sollicités pour expliquer pourquoi une conception n’avait pas fonctionné (démarche réactive). Leur intervention s’est ensuite déplacée vers la participation au processus de conception. Une contribution proactive apporte des idées et des données empiriques pour orienter les futurs artefacts</mark>, réduisant le coût des corrections ultérieures.
+        <mark id="anchor_q41_fr" class="source-anchor-target" data-qid="41" title="Repère dans les notes de synthèse — à confronter à l’original.">Le chapitre décrit le passage d’un rôle d’explication des défauts de conception à une participation directe au processus de conception.</mark> Une contribution proactive consiste à apporter des idées et des données empiriques pour orienter les artefacts futurs, la performance humaine et l’acceptation des nouvelles technologies.
         </p>
         <h3 class="doc-subheading">Sécurité et fiabilité humaine</h3>
         <p class="doc-para">
@@ -4741,7 +4787,7 @@ Comments are closed.
         L’approche cognitive cherche à expliquer l’erreur par les caractéristiques du traitement de l’information dans un système de travail donné.
         </p>
         <p class="doc-para">
-        Dans le cadre SRK de Rasmussen, <mark id="anchor_q12_fr" class="source-anchor-target" data-qid="12" title="Extrait traduit pour la Question 12">lorsque les habiletés et règles apprises aident peu à résoudre une situation nouvelle, il faut élaborer une nouvelle séquence d’actions. Cette activité cognitive de niveau supérieur (fondée sur les connaissances) demande beaucoup de contrôle conscient. Si les actions sont mal planifiées, une erreur fondée sur les connaissances peut se produire.</mark>
+        Dans le cadre SRK de Rasmussen, <mark id="anchor_q12_fr" class="source-anchor-target" data-qid="12" title="Repère dans les notes de synthèse — à confronter à l’original.">lorsque les habiletés et règles apprises aident peu à résoudre une situation nouvelle, il faut élaborer une nouvelle séquence d’actions. Cette activité cognitive de niveau supérieur (fondée sur les connaissances) demande beaucoup de contrôle conscient. Si les actions sont mal planifiées, une erreur fondée sur les connaissances peut se produire.</mark>
         </p>
         <div class="doc-complement-box" style="margin: 10px 0; padding: 8px 12px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--accent); font-size: 0.8rem; color: var(--text-muted);">
           📌 <strong>Complément documentaire :</strong> la typologie détaillée des défaillances humaines (slips, lapses, mistakes, violations) et le modèle du fromage suisse relèvent des lectures complémentaires (HSE, Reason, Articles A et E) et ne sont pas développés dans le présent extrait de Cañas et al.
@@ -4752,7 +4798,7 @@ Comments are closed.
         Le chapitre présente une troisième approche combinant la fiabilité des ingénieurs et la modélisation cognitive, en tenant compte de la technologie, de l'individu, du groupe, de la gestion organisationnelle et de la culture.
         </p>
         <p class="doc-para">
-        Selon cette approche, <mark id="anchor_q10_fr" class="source-anchor-target" data-qid="10" title="Extrait traduit pour la Question 10">la personne et son environnement de travail sont analysés comme un système cognitif conjoint hautement interactif</mark> (Hollnagel & Woods, 2007). L’activité doit être étudiée dans ses interactions avec l’environnement et avec les autres composantes du système.
+        Selon cette approche, <mark id="anchor_q10_fr" class="source-anchor-target" data-qid="10" title="Repère dans les notes de synthèse — à confronter à l’original.">la personne et son environnement de travail sont analysés comme un système cognitif conjoint hautement interactif</mark> (Hollnagel & Woods, 2007). L’activité doit être étudiée dans ses interactions avec l’environnement et avec les autres composantes du système.
         </p>
 
         <div class="doc-page-marker" id="page_323_fr"><span class="page-badge">📄 Page 323</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
@@ -4764,13 +4810,13 @@ Comments are closed.
         <div class="doc-page-marker" id="page_324_fr"><span class="page-badge">📄 Page 324</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Développements théoriques contemporains</h3>
         <p class="doc-para">
-        Le concept d'<mark id="anchor_q7_fr" class="source-anchor-target" data-qid="7" title="Extrait traduit pour la Question 7">affordance (Gibson, 1979) désigne une propriété relationnelle</mark> entre les caractéristiques de l'environnement physique et les capacités d'action de l'organisme.
+        Le concept d'<mark id="anchor_q7_fr" class="source-anchor-target" data-qid="7" title="Repère dans les notes de synthèse — à confronter à l’original.">affordance (Gibson, 1979) désigne une propriété relationnelle</mark> entre les caractéristiques de l'environnement physique et les capacités d'action de l'organisme.
         </p>
         <p class="doc-para">
-        La <mark id="anchor_q8_fr" class="source-anchor-target" data-qid="8" title="Extrait traduit pour la Question 8">théorie de l'activité (Vygotski, Leontiev) situe la cognition dans son contexte historique et socioculturel</mark>, soulignant l'intériorisation des outils et artefacts dans l'activité humaine.
+        <mark id="anchor_q8_fr" class="source-anchor-target" data-qid="8" title="Repère dans les notes de synthèse — à confronter à l’original.">La théorie de l’activité met l’accent sur les origines socioculturelles de la pensée et de l’action.</mark> Dans le passage, les pensées sans actions extérieures sont considérées comme des actions sociales intériorisées. Le contexte pertinent comprend les communications, le développement des personnes et l’histoire des artefacts, des actions et des individus.
         </p>
         <p class="doc-para">
-        La <mark id="anchor_q9_fr" class="source-anchor-target" data-qid="9" title="Extrait traduit pour la Question 9">cognition distribuée (Hollan, Hutchins & Kirsh, 2000) analyse les représentations</mark> et transformations d'information partagées entre individus et artefacts au sein du système.
+        <mark id="anchor_q9_fr" class="source-anchor-target" data-qid="9" title="Repère dans les notes de synthèse — à confronter à l’original.">Dans la présentation de la cognition distribuée, Cañas et al. citent Hutchins (1995).</mark> Les personnes et les artefacts sont considérés conjointement comme des agents ; l’analyse porte sur les transferts et le traitement de l’information au sein des agents et entre eux. La cognition est envisagée à l’échelle du fonctionnement du système entier.
         </p>
 
         <div class="doc-page-marker" id="page_325_fr"><span class="page-badge">📄 Page 325</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
@@ -4779,62 +4825,61 @@ Comments are closed.
         Dans les environnements complexes, l'opérateur doit traiter de grands volumes d'information dynamique. Le modèle d'Endsley (1995) définit la conscience de la situation (<em>Situation Awareness</em>) comme la perception des éléments de l'environnement dans un volume d'espace et de temps, la compréhension de leur signification et la projection de leur état dans un futur proche.
         </p>
         <p class="doc-para">
-        <mark id="anchor_q23_fr" class="source-anchor-target" data-qid="23" title="Extrait traduit pour la Question 23">Elle comprend donc trois niveaux de traitement de l'information : (1) la perception des éléments de l'environnement ; (2) la compréhension de la situation actuelle ; et (3) la prédiction (projection) de l'évolution future de la situation.</mark>
-        <mark id="anchor_q24_fr" class="source-anchor-target" data-qid="24" title="Extrait traduit pour la Question 24">(1) perception des éléments de l'environnement</mark> ; 
-        <mark id="anchor_q25_fr" class="source-anchor-target" data-qid="25" title="Extrait traduit pour la Question 25">(2) compréhension de la situation actuelle</mark>.
+        <mark id="anchor_q23_fr" class="source-anchor-target" data-qid="23" title="Repère dans les notes de synthèse — à confronter à l’original.">Elle comprend donc trois niveaux de traitement de l'information : (1) la perception des éléments de l'environnement ; (2) la compréhension de la situation actuelle ; et (3) la prédiction (projection) de l'évolution future de la situation.</mark>
+        <mark id="anchor_q24_fr" class="source-anchor-target" data-qid="24" title="Repère dans les notes de synthèse — à confronter à l’original.">(1) perception des éléments de l'environnement</mark> ; 
+        <mark id="anchor_q25_fr" class="source-anchor-target" data-qid="25" title="Repère dans les notes de synthèse — à confronter à l’original.">(2) compréhension de la situation actuelle</mark>.
         </p>
         <p class="doc-para">
-        L'intérêt pour la conscience de la situation s'explique notamment par l'instabilité de la performance humaine liée à l'automatisation. Les « ironies de l'automatisation » ont été mises en évidence par Lisanne Bainbridge (1983). Avec un haut degré d'automatisation, l'opérateur se trouve hors de la boucle de contrôle. <mark id="anchor_q31_fr" class="source-anchor-target" data-qid="31" title="Extrait traduit pour la Question 31">Cette détérioration résulte du fait que les compétences manuelles et cognitives déclinent en raison de l'absence de participation active au processus. De plus, avec la progression de l'automatisation, il devient plus difficile d'accéder à la connaissance du comportement du système.</mark>
+        L'intérêt pour la conscience de la situation s'explique notamment par l'instabilité de la performance humaine liée à l'automatisation. Les « ironies de l'automatisation » ont été mises en évidence par Lisanne Bainbridge (1983). Avec un haut degré d'automatisation, l'opérateur se trouve hors de la boucle de contrôle. <mark id="anchor_q31_fr" class="source-anchor-target" data-qid="31" title="Repère dans les notes de synthèse — à confronter à l’original.">Cette détérioration résulte du fait que les compétences manuelles et cognitives déclinent en raison de l'absence de participation active au processus. De plus, avec la progression de l'automatisation, il devient plus difficile d'accéder à la connaissance du comportement du système.</mark>
         </p>
 
         <div class="doc-page-marker" id="page_326_fr"><span class="page-badge">📄 Page 326</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Modèles mentaux</h3>
         <p class="doc-para">
-        Cañas et al. définissent le <mark id="anchor_q11_fr" class="source-anchor-target" data-qid="11" title="Extrait traduit pour la Question 11">modèle mental comme une représentation subjective, à petite échelle, de la structure et du fonctionnement du système</mark> (Johnson-Laird, 1983 ; Cañas et al., 2001). Les opérateurs l'utilisent notamment pour diagnostiquer et compenser les pannes.
+        Cañas et al. définissent le <mark id="anchor_q11_fr" class="source-anchor-target" data-qid="11" title="Repère dans les notes de synthèse — à confronter à l’original.">modèle mental comme une représentation subjective, à petite échelle, de la structure et du fonctionnement du système</mark> (Johnson-Laird, 1983 ; Cañas et al., 2001). Les opérateurs l'utilisent notamment pour diagnostiquer et compenser les pannes.
         </p>
         <h3 class="doc-subheading">Réseaux attentionnels</h3>
         <p class="doc-para">
-        <mark id="anchor_q40_fr" class="source-anchor-target" data-qid="40" title="Extrait traduit pour la Question 40">Le chapitre mentionne trois réseaux attentionnels (Posner & Petersen, 1990) et indique que des changements de leur équilibre peuvent expliquer des fluctuations de performance au cours du temps.</mark> Il ne détaille pas ici les fonctions isolées de chaque réseau et ne fournit pas de diagnostic neural direct.
+        <mark id="anchor_q40_fr" class="source-anchor-target" data-qid="40" title="Repère dans les notes de synthèse — à confronter à l’original.">Cañas et al. citent Posner, Rueda et Kanske (2007) au sujet de trois réseaux attentionnels.</mark> Ils indiquent que des changements de l’équilibre de ces réseaux peuvent expliquer des fluctuations de performance au cours du temps. Ce passage ne fournit ni la description détaillée de chaque réseau ni un diagnostic neural d’un incident particulier.
         </p>
         <h3 class="doc-subheading">Exemple chirurgical</h3>
         <p class="doc-para">
-        <mark id="anchor_q27_fr" class="source-anchor-target" data-qid="27" title="Extrait traduit pour la Question 27">À la page 326, Cañas et al. citent Haynes et al. (2009) pour illustrer l’intérêt d'une liste de vérification avant une intervention chirurgicale. Le chapitre rapporte une réduction de la mortalité postopératoire de près de 40 %.</mark> Ce passage ne détaille pas les taux de complications ni l'ensemble du protocole.
+        <mark id="anchor_q27_fr" class="source-anchor-target" data-qid="27" title="Repère dans les notes de synthèse — à confronter à l’original.">À la page 326, Cañas et al. citent Haynes et al. (2009) pour illustrer l’intérêt d'une liste de vérification avant une intervention chirurgicale. Le chapitre rapporte une réduction de la mortalité postopératoire de près de 40 %.</mark> Ce passage ne détaille pas les taux de complications ni l'ensemble du protocole.
         </p>
 
-        <div class="doc-page-marker" id="page_327_fr"><span class="page-badge">📄 Page 327</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
+        <div class="doc-page-marker" id="page_327_fr"><span class="page-badge">📄 Page 327–328</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Apprentissage avec et sur les artefacts</h3>
         <p class="doc-para">
-        Norman (1986) décrit trois formes d'apprentissage : l'accrétion (accumulation de nouvelles connaissances factuelles dans les schémas existants), l'ajustement (adaptation progressive des paramètres de l'action), et <mark id="anchor_q38_fr" class="source-anchor-target" data-qid="38" title="Extrait traduit pour la Question 38">la restructuration (<em>restructuring</em>), définie comme un apprentissage de niveau supérieur par découverte de nouvelles relations conceptuelles</mark> et formation de nouveaux schémas.
+        Norman (1986) décrit trois formes d'apprentissage : l'accrétion (accumulation de nouvelles connaissances factuelles dans les schémas existants), l'ajustement (adaptation progressive des paramètres de l'action), et <mark id="anchor_q38_fr" class="source-anchor-target" data-qid="38" title="Repère dans les notes de synthèse — à confronter à l’original.">la restructuration (<em>restructuring</em>), définie comme un apprentissage de niveau supérieur par découverte de nouvelles relations conceptuelles</mark> et formation de nouveaux schémas.
         </p>
         <h3 class="doc-subheading">Prise de décision naturaliste (NDM)</h3>
         <p class="doc-para">
-        <mark id="anchor_q39_fr" class="source-anchor-target" data-qid="39" title="Extrait traduit pour la Question 39">Le chapitre met en question la généralisation de tâches décontextualisées aux situations où des professionnels doivent produire de nouvelles possibilités d’action sous pression temporelle et avec peu d’information.</mark> Dans ces conditions, une comparaison exhaustive d'options peut être inadaptée.
+        <mark id="anchor_q39_fr" class="source-anchor-target" data-qid="39" title="Repère dans les notes de synthèse — à confronter à l’original.">Le chapitre met en question la généralisation de tâches décontextualisées aux situations où des professionnels doivent produire de nouvelles possibilités d’action sous pression temporelle et avec peu d’information.</mark> Dans ces conditions, une comparaison exhaustive d'options peut être inadaptée.
         </p>
 
-        <div class="doc-page-marker" id="page_328_fr"><span class="page-badge">📄 Page 328</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
-        <h3 class="doc-subheading">Mémoire de travail et gestion des connaissances</h3>
+        <div class="doc-page-marker" id="page_328_fr"><span class="page-badge">📄 Page 328–329</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
+        <h3 class="doc-subheading">Processus organisationnels et gestion des connaissances</h3>
         <p class="doc-para">
-        La gestion des connaissances opérationnelles mobilise activement les capacités de stockage et de traitement de la mémoire de travail dans la résolution de problèmes.
+        La gestion des connaissances désigne ici la génération, le stockage et la récupération de connaissances au sein d’un système sociotechnique. Le chapitre distingue les activités qui produisent explicitement des connaissances, les connaissances précieuses acquises implicitement dans l’activité, et les situations où plusieurs personnes doivent partager leurs connaissances. L’expérience acquise au travail peut être perdue lorsqu’une personne quitte son poste ; le partage, la communication et la coordination sont également essentiels dans certaines activités collectives.
         </p>
 
         <div class="doc-page-marker" id="page_329_fr"><span class="page-badge">📄 Page 329</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Charge mentale de travail (Mental Workload)</h3>
         <p class="doc-para">
-        L'évaluation de la charge mentale vise à s'assurer que les exigences de la tâche n'excèdent pas les capacités de l'opérateur et lui laissent une capacité résiduelle.
-        <mark id="anchor_q6_fr" class="source-anchor-target" data-qid="6" title="Extrait traduit pour la Question 6">La charge mentale sollicite directement les capacités limitées de la mémoire de travail</mark>.
+        <mark id="anchor_q6_fr" class="source-anchor-target" data-qid="6" title="Repère dans les notes de synthèse — à confronter à l’original.">La mémoire de travail est mobilisée lorsqu’une tâche exige de maintenir et de traiter activement de l’information.</mark> Dans le passage, cette notion associe une quantité limitée de ressources cognitives à des opérations actives sur ces ressources. Les auteurs relient certaines erreurs d’interaction avec l’ordinateur à une sollicitation excessive de la mémoire de travail.
         </p>
         <p class="doc-para">
-        <mark id="anchor_q19_fr" class="source-anchor-target" data-qid="19" title="Extrait traduit pour la Question 19">Cañas et al. soulignent que la nomenclature exacte et la nature des ressources cognitives demeurent incertaines dans les modèles de ressources</mark>, et qu'il est difficile de distinguer empiriquement les limites de ressources des contraintes structurelles ou opérationnelles du système.
+        <mark id="anchor_q19_fr" class="source-anchor-target" data-qid="19" title="Repère dans les notes de synthèse — à confronter à l’original.">Cañas et al. soulignent le caractère mentaliste de la notion de charge mentale.</mark> La nature des ressources cognitives et leurs relations avec les contraintes structurelles et opérationnelles du traitement restent à clarifier. Ils ajoutent que la nomenclature exacte des ressources demeure incertaine.
         </p>
 
         <div class="doc-page-marker" id="page_330_fr"><span class="page-badge">📄 Page 330</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Modèle des ressources multiples</h3>
         <p class="doc-para">
-        <mark id="anchor_q20_fr" class="source-anchor-target" data-qid="20" title="Extrait traduit pour la Question 20">Selon le modèle des ressources multiples (Wickens, 2008), deux tâches réalisées simultanément interfèrent si elles sollicitent les mêmes réservoirs de ressources cognitives</mark> ; si elles sollicitent des réservoirs entièrement distincts, le modèle prévoit une absence d'interférence liée à ces ressources.
+        <mark id="anchor_q20_fr" class="source-anchor-target" data-qid="20" title="Repère dans les notes de synthèse — à confronter à l’original.">Cañas et al. présentent le modèle des ressources multiples de Wickens (1984).</mark> Lorsque des tâches réalisées simultanément partagent les mêmes ressources, accroître la difficulté de l’une dégrade la performance. Lorsque chaque tâche sollicite des réservoirs distincts, le modèle présenté prévoit que modifier la difficulté de l’une n’affecte pas la performance de l’autre. Les auteurs précisent toutefois que la nomenclature exacte des ressources reste incertaine.
         </p>
         <h3 class="doc-subheading">Méthodologies ergonomiques et études de terrain</h3>
         <p class="doc-para">
-        <mark id="anchor_q21_fr" class="source-anchor-target" data-qid="21" title="Extrait traduit pour la Question 21">Le chapitre souligne les difficultés des entretiens et questionnaires pour rendre explicites certaines connaissances liées aux routines et aux adaptations intuitives. Il critique aussi l’idée d’une observation sans aucun présupposé. Il présente les études de terrain comme une démarche où les hypothèses guidant l’observation sont explicitées dès le départ.</mark>
+        <mark id="anchor_q21_fr" class="source-anchor-target" data-qid="21" title="Repère dans les notes de synthèse — à confronter à l’original.">Le chapitre souligne les difficultés des entretiens et questionnaires pour rendre explicites certaines connaissances liées aux routines et aux adaptations intuitives. Il critique aussi l’idée d’une observation sans aucun présupposé. Il présente les études de terrain comme une démarche où les hypothèses guidant l’observation sont explicitées dès le départ.</mark>
         </p>
 
         <div class="doc-page-marker" id="page_331_fr"><span class="page-badge">📄 Page 331</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
@@ -4850,7 +4895,7 @@ Comments are closed.
         <div class="doc-page-marker" id="page_333_fr"><span class="page-badge">📄 Page 333</span> <span class="page-meta">Notes de synthèse pédagogique — Chapitre 13</span></div>
         <h3 class="doc-subheading">Simulation et modélisation cognitive</h3>
         <p class="doc-para">
-        <mark id="anchor_q22_fr" class="source-anchor-target" data-qid="22" title="Extrait traduit pour la Question 22">Parmi les limites écologiques des simulateurs, Cañas et al. soulignent qu'il peut être difficile de reproduire le stress émotionnel des situations réelles</mark>, où la sécurité physique ou de réels enjeux sont engagés.
+        <mark id="anchor_q22_fr" class="source-anchor-target" data-qid="22" title="Repère dans les notes de synthèse — à confronter à l’original.">Parmi les limites écologiques des simulateurs, Cañas et al. soulignent qu'il peut être difficile de reproduire le stress émotionnel des situations réelles</mark>, où la sécurité physique ou de réels enjeux sont engagés.
         </p>
         <p class="doc-para">
         Le chapitre présente les simulateurs expérimentaux, les mannequins virtuels humains, la psychosemantique et l'ingénierie des connaissances, ainsi que les architectures cognitives (ACT-R, SOAR, CCT, EPIC) pour simuler et prédire le comportement humain face à de futurs artefacts.
@@ -4869,7 +4914,7 @@ Comments are closed.
         Endsley, M. R. (1995). Toward a theory of situation awareness in dynamic systems. <em>Human Factors</em>, 37, 32–64.<br>
         Gibson, J. J. (1979). <em>The ecological approach to visual perception</em>. Boston: Houghton Mifflin.<br>
         Haynes, A. B., Weiser, T. G., Berry, W. R., et al. (2009). A surgical safety checklist to reduce morbidity and mortality in a global population. <em>New England Journal of Medicine</em>, 360, 491–499.<br>
-        Hollan, J., Hutchins, E., & Kirsh, D. (2000). Distributed cognition: Toward a new foundation for human-computer interaction research. <em>ACM Transactions on Computer-Human Interaction</em>, 7, 174–196.<br>
+        Hutchins, E. (1995). <em>Cognition in the wild</em>. Cambridge, MA : MIT Press.<br>
         Hollnagel, E., & Woods, D. D. (2007). <em>Joint cognitive systems: Foundations of cognitive systems engineering</em>. Boca Raton, FL: CRC Press.
         </p>
 
@@ -4880,7 +4925,7 @@ Comments are closed.
         Parasuraman, R., & Wilson, G. F. (2008). Putting the brain to work: Neuroergonomics past, present, and future. <em>Human Factors</em>, 50, 468–474.<br>
         Posner, M. I., & Petersen, S. E. (1990). The attention system of the human brain. <em>Annual Review of Neuroscience</em>, 13, 25–42.<br>
         Rasmussen, J. (1983). Skills, rules, and knowledge; signals, signs, and symbols, and other distinctions in human performance models. <em>IEEE Transactions on Systems, Man, and Cybernetics</em>, SMC-13, 257–266.<br>
-        Wickens, C. D. (2008). Multiple resources and mental workload. <em>Human Factors</em>, 50, 449–455.
+        Wickens, C. D. (1984), cité par Cañas et al. (2011), p. 330.
         </p>
       </div>
       
@@ -4902,7 +4947,7 @@ Ces manifestations font tout autant partie intégrante de la vie humaine que le 
 <p class="doc-para">
 De toute évidence, nous ne pouvons pas modifier la nature humaine fondamentale ; en revanche, nous pouvons concevoir les activités, les installations industrielles, les processus et les procédures de manière à prendre en compte ces imperfections et caractéristiques humaines.
 </p>
-<blockquote class="doc-quote-box">« <mark id="anchor_q33_fr" class="source-anchor-target" data-qid="33" title="Extrait traduit pour la Question 33">Tout le monde est susceptible de commettre des erreurs</mark>, quel que soit son niveau de formation ou de motivation. Il arrive parfois que le système lui-même nous conduise à l'échec (*set up to fail*). Le défi consiste à concevoir des systèmes tolérants aux erreurs (*error-tolerant systems*) et à empêcher ces erreurs de survenir. »</blockquote>
+<blockquote class="doc-quote-box">« <mark id="anchor_q33_fr" class="source-anchor-target" data-qid="33" title="Repère dans les notes de synthèse — à confronter à l’original.">Tout le monde est susceptible de commettre des erreurs</mark>, quel que soit son niveau de formation ou de motivation. Il arrive parfois que le système lui-même nous conduise à l'échec (*set up to fail*). Le défi consiste à concevoir des systèmes tolérants aux erreurs (*error-tolerant systems*) et à empêcher ces erreurs de survenir. »</blockquote>
 <blockquote class="doc-quote-box">— *Reducing Error and Influencing Behaviour*, HSG48, Health and Safety Executive (HSE), 1999, p. 18.</blockquote>
 <p class="doc-para">
 L'approche des facteurs humains s'articule autour de ce qu'on demande aux individus d'accomplir (le <strong>Travail</strong> [<em>The Work</em>] et ses caractéristiques), de l'identité de ceux qui l'accomplissent (les <strong>Individus</strong> [<em>The People</em>] et leurs compétences) et de l'environnement au sein duquel ils opèrent (l'<strong>Organisation</strong> et ses attributs).
@@ -4917,7 +4962,7 @@ Les tâches doivent être conçues conformément aux principes des facteurs huma
 <li>**L'adéquation mentale ou cognitive (*mental match*) :** implique les exigences relatives au traitement de l'information et à la prise de décision par l'opérateur, ainsi que sa perception de la tâche et des risques.</li>
 </ul>
 <p class="doc-para">
-Tout décalage ou inadéquation (<em>mismatch</em>) entre les exigences du travail prescrit et les capacités réelles des individus décuple la probabilité d'erreur humaine (<em>human error</em>).
+Une inadéquation entre les exigences du travail et les capacités des personnes augmente le risque d’erreur humaine.
 </p>
 <hr class="doc-divider">
 <h3 class="doc-art-h2">Les Individus (*The People*)</h3>
@@ -5002,7 +5047,7 @@ L'analyse des facteurs humains permet d'élucider des problématiques fondamenta
 S'agit-il d'événements purement aléatoires, ou pouvons-nous isoler des conditions qui en favorisent l'émergence ? Les barrières de prévention dépendront directement de la nature exacte de l'erreur cognitive ou motrice en jeu.
 </p>
 <ul class="doc-list">
-<li><mark id="anchor_q15_fr" class="source-anchor-target" data-qid="15" title="Extrait traduit pour la Question 15">**Pourquoi les règles sont-elles transgressées (*violations*) ?**</mark></li>
+<li><mark id="anchor_q15_fr" class="source-anchor-target" data-qid="15" title="Repère dans les notes de synthèse — à confronter à l’original.">**Pourquoi les règles sont-elles transgressées (*violations*) ?**</mark></li>
 </ul>
 <p class="doc-para">
 L'infraction était-elle intentionnelle, ou découle-t-elle d'une méconnaissance de la règle ? La consigne était-elle tout simplement inapplicable sur le terrain face aux réalités opérationnelles (<em>work-as-done vs work-as-imagined</em>), ou l'opérateur était-il soumis à des injonctions contradictoires de temps et de production ?
@@ -5137,7 +5182,7 @@ Ces capacités et limitations évoluent au fil de l'âge et du parcours de vie. 
 Il est fondamental de reconnaître que tout être humain possède des limites physiques et cognitives incompressibles, <strong>qu'aucune volonté farouche ne saurait abolir</strong>. Exhorter les opérateurs à « faire plus d'efforts », à « être plus prudents » ou à « travailler en toute sécurité » ne compensera jamais ces contraintes anthropologiques et cognitives.
 </p>
 <hr class="doc-divider">
-<h4 class="doc-art-h3"><mark id="anchor_q42_fr" class="source-anchor-target" data-qid="42" title="Extrait traduit pour la Question 42">Principe 2 : Les personnes interprètent les situations différemment</mark> et agissent selon ce qui fait sens pour elles</h4>
+<h4 class="doc-art-h3"><mark id="anchor_q42_fr" class="source-anchor-target" data-qid="42" title="Repère dans les notes de synthèse — à confronter à l’original.">Principe 2 : Les personnes interprètent les situations différemment</mark> et agissent selon ce qui fait sens pour elles</h4>
 <p class="doc-para">
 En raison de la pluralité des parcours professionnels, des formations et des vécus expérientiels, chaque individu élabore une représentation singulière de l'information qui lui est présentée. C'est sur la base de cette représentation et de cette compréhension subjective que l'opérateur oriente son action. Par conséquent, les individus adoptent généralement le comportement qui <strong>fait sens pour eux</strong> au moment où ils agissent (<strong>principe de rationalité locale</strong> / <em>local rationality</em>). Dans l'immense majorité des cas, les travailleurs cherchent sincèrement à produire un résultat de qualité pour eux-mêmes, pour leur collectif de travail et pour l'organisation qui les emploie. Nous devons donc poser comme postulat que la grande majorité des personnes agissent avec des intentions professionnelles positives.
 </p>
@@ -5149,9 +5194,9 @@ Pour interpréter une situation dynamique, les opérateurs convoquent leurs conn
 <hr class="doc-divider">
 <h4 class="doc-art-h3">Principe 3 : Les personnes s'adaptent pour répondre aux exigences d'environnements de travail complexes et dynamiques</h4>
 <p class="doc-para">
-Le travail et les contextes opérationnels sont intrinsèquement <strong>dynamiques</strong>, ce qui signifie que les paramètres, les aléas et les exigences fluctuent continuellement : variations météorologiques, recomposition imprévue des équipes, indisponibilité soudaine d'équipements, instabilité des délais temporels. Les règles formelles et les procédures standardisées ne peuvent anticiper toutes les configurations réelles, voire s'avèrent totalement muettes ou inapplicables face à des situations inédites (<em>work-as-imagined vs work-as-done</em>). Les ingénieurs concepteurs ne peuvent conceptualiser l'intégralité des contextes d'usage de leurs technologies. De surcroît, les multiples services ou sous-traitants participant à une même opération peuvent poursuivre des <mark id="anchor_q36_fr" class="source-anchor-target" data-qid="36" title="Extrait traduit pour la Question 36">objectifs contradictoires</mark> ou partager des cultures de sécurité disparates. Dans la réalité du terrain, tout ne se déroule pas comme modélisé sur le papier.
+Le travail et les contextes opérationnels sont intrinsèquement <strong>dynamiques</strong>, ce qui signifie que les paramètres, les aléas et les exigences fluctuent continuellement : variations météorologiques, recomposition imprévue des équipes, indisponibilité soudaine d'équipements, instabilité des délais temporels. Les règles formelles et les procédures standardisées ne peuvent anticiper toutes les configurations réelles, voire s'avèrent totalement muettes ou inapplicables face à des situations inédites (<em>work-as-imagined vs work-as-done</em>). Les ingénieurs concepteurs ne peuvent conceptualiser l'intégralité des contextes d'usage de leurs technologies. De surcroît, les multiples services ou sous-traitants participant à une même opération peuvent poursuivre des <mark id="anchor_q36_fr" class="source-anchor-target" data-qid="36" title="Repère dans les notes de synthèse — à confronter à l’original.">objectifs contradictoires</mark> ou partager des cultures de sécurité disparates. Dans la réalité du terrain, tout ne se déroule pas comme modélisé sur le papier.
 </p>
-<blockquote class="doc-quote-box">*Les <mark id="anchor_q35_fr" class="source-anchor-target" data-qid="35" title="Extrait traduit pour la Question 35">règles et les procédures sont statiques</mark>, mais le travail réel est dynamique.*</blockquote>
+<blockquote class="doc-quote-box">*Les <mark id="anchor_q35_fr" class="source-anchor-target" data-qid="35" title="Repère dans les notes de synthèse — à confronter à l’original.">règles et les procédures sont statiques</mark>, mais le travail réel est dynamique.*</blockquote>
 <p class="doc-para">
 Pourtant, dans les faits, les opérateurs parviennent la plupart du temps à mener leurs missions à bien en dépit de systèmes imparfaits, de processus lacunaires et d'équipements dégradés. L'être humain est plastique, ingénieux, adaptatif et créatif. Placé dans un contexte inédit, il sait ajuster ses modes opératoires et improviser des solutions viables.
 </p>
@@ -5182,7 +5227,7 @@ Ce dilemme d'arbitrage s'observe aisément lors d'une tâche simple où l'on dem
 <hr class="doc-divider">
 <h4 class="doc-art-h3">Principe 5 : La performance des personnes est influencée par leurs interactions avec autrui, la technologie et l'environnement global au sein duquel elles évoluent</h4>
 <p class="doc-para">
-Les êtres humains <mark id="anchor_q37_fr" class="source-anchor-target" data-qid="37" title="Extrait traduit pour la Question 37">n'opèrent jamais dans un vide stérile</mark> : ils font partie intégrante d'un système sociotechnique complexe (<strong>Système cognitif conjoint</strong> / <em>Joint Cognitive System</em>). La manière dont les individus appréhendent leur environnement et y réagissent est profondément modulée par les autres composantes de ce macrosystème. Ces interactions peuvent stimuler la performance ou, au contraire, la détériorer. Ainsi, l'insertion dans un collectif de travail peut enrichir la prise de décision par la confrontation des perspectives, tout comme elle peut conduire aux dérives de la pensée de groupe (<em>groupthink</em>) où la recherche d'un consensus superficiel étouffe l'esprit critique et induit des choix catastrophiques.
+Les êtres humains <mark id="anchor_q37_fr" class="source-anchor-target" data-qid="37" title="Repère dans les notes de synthèse — à confronter à l’original.">n'opèrent jamais dans un vide stérile</mark> : ils font partie intégrante d'un système sociotechnique complexe (<strong>Système cognitif conjoint</strong> / <em>Joint Cognitive System</em>). La manière dont les individus appréhendent leur environnement et y réagissent est profondément modulée par les autres composantes de ce macrosystème. Ces interactions peuvent stimuler la performance ou, au contraire, la détériorer. Ainsi, l'insertion dans un collectif de travail peut enrichir la prise de décision par la confrontation des perspectives, tout comme elle peut conduire aux dérives de la pensée de groupe (<em>groupthink</em>) où la recherche d'un consensus superficiel étouffe l'esprit critique et induit des choix catastrophiques.
 </p>
 <p class="doc-para">
 Travailler en équipe constitue une force indéniable, car la complémentarité d'un collectif diversifié permet de compenser les limites physiques ou cognitives individuelles. La culture de l'entreprise et les normes de l'équipe régulent intimement les comportements. La culture de sécurité détermine la manière dont les pratiques prudentes sont réellement valorisées et récompensées, pesant de tout son poids sur la performance des travailleurs. Si l'encadrement ferme les yeux sur des raccourcis non sécuritaires pour tenir la cadence de production, les comportements de sécurité s'étioleront rapidement. Inversement, si le port des protecteurs auditifs est délaissé par la majorité des pairs dans un atelier bruyant, la pression sociale dissuadera le nouvel arrivant d'adopter la protection adéquate.
@@ -5228,7 +5273,7 @@ Penser prospectivement aux contraintes ergonomiques dès la phase de planificati
 </p>
 <blockquote class="doc-quote-box">*S'en remettre uniquement au comportement vertueux de l'humain représente le niveau de contrôle le plus vulnérable et ne saurait légitimer des équipements ou des environnements mal conçus.*</blockquote>
 <p class="doc-para">
-Dans les démarches de sûreté de fonctionnement et de fiabilité humaine, les limites de l'opérateur constituent des <strong>Facteurs influençant la performance</strong> (<em>Performance Influencing Factors - PIF</em>) qui, conjugués à d'autres contraintes contextuelles, décuplent le risque de défaillance.
+Dans les démarches de sûreté de fonctionnement et de fiabilité humaine, les limites de l'opérateur constituent des <strong>Facteurs influençant la performance</strong> (<em>Performance Influencing Factors - PIF</em>) qui, conjugués à d'autres contraintes contextuelles, augmentent le risque de défaillance.
 </p>
 <p class="doc-para">
 Les cinq principes permettent d'ancrer les analyses de risques dans la réalité vive des conditions de travail et des défis opérationnels, et non dans une vision idéalisée du métier. Plus les travailleurs sont préparés et étayés ergonomiquement, plus ils seront en mesure d'agir avec sécurité et maestria. Avant le coup d'envoi d'une manœuvre, la consultation directe des professionnels de première ligne lors des réunions préalables (<em>toolbox talks</em> ou causeries sécurité) permet de détecter en amont toute friction entre le travail prescrit et les exigences réelles du terrain.
@@ -5239,7 +5284,7 @@ Les cinq principes permettent d'ancrer les analyses de risques dans la réalité
 Au regard des principes établis, nous devons admettre sans équivoque que l'être humain n'est pas infaillible. Sous l'influence des limitations cognitives, des régulations locales, des contournements adaptatifs et des pressions du système, les opérateurs agissent parfois de manière divergente par rapport aux prescriptions.
 </p>
 <p class="doc-para">
-Lorsque nous analysons rétrospectivement un accident, confortablement installés après les faits avec une vue globale du déroulement du drame (<strong><mark id="anchor_q34_fr" class="source-anchor-target" data-qid="34" title="Extrait traduit pour la Question 34">biais rétrospectif</mark></strong> / <em>hindsight bias</em>), il est tentant de fustiger les décisions des acteurs ou de pointer du doigt leurs erreurs. Pourtant, au moment précis de l'action, dans le feu de l'événement et sous la pression temporelle, ces décisions et ces gestes semblaient pleinement pertinents et rationnels aux yeux des protagonistes. <strong>Cela faisait totalement sens pour eux sur le moment (<em>local rationality</em>)</strong>. Sans cela, ils auraient agi autrement !
+Lorsque nous analysons rétrospectivement un accident, confortablement installés après les faits avec une vue globale du déroulement du drame (<strong><mark id="anchor_q34_fr" class="source-anchor-target" data-qid="34" title="Repère dans les notes de synthèse — à confronter à l’original.">biais rétrospectif</mark></strong> / <em>hindsight bias</em>), il est tentant de fustiger les décisions des acteurs ou de pointer du doigt leurs erreurs. Pourtant, au moment précis de l'action, dans le feu de l'événement et sous la pression temporelle, ces décisions et ces gestes semblaient pleinement pertinents et rationnels aux yeux des protagonistes. <strong>Cela faisait totalement sens pour eux sur le moment (<em>local rationality</em>)</strong>. Sans cela, ils auraient agi autrement !
 </p>
 <p class="doc-para">
 C'est pourquoi il est crucial, lors d'une investigation, de reconstituer minutieusement quelles données étaient concrètement perceptibles à l'instant <em>t</em>, et de comprendre comment elles ont été interprétées par les personnes présentes. Dans le calme d'une salle d'enquête, avec un recul temporel illimité et la connaissance préalable de l'issue finale, il est aisé de décréter ce qu'il « aurait fallu faire ».
@@ -5267,7 +5312,7 @@ L'ingénierie des facteurs humains (<em>Human Factors Engineering - HFE</em>) es
 <h3 class="doc-art-h2">La conscience de la situation : Donner du sens au monde (*Making sense of the world*)</h3>
 <h4 class="doc-art-h3">Ce n'est pas ce que vous croyez...</h4>
 <p class="doc-para">
-Dans plusieurs rapports d'enquête d'accidents récents, j'ai vu figurer l'expression « conscience de la situation » (<em>Situation Awareness - SA</em>) parmi les causes premières ; plus précisément sous l'énoncé d'une « <strong><mark id="anchor_q44_fr" class="source-anchor-target" data-qid="44" title="Extrait traduit pour la Question 44">perte de conscience de la situation</mark></strong> » (<em>loss of situation awareness</em>) de la part d'un pilote, d'un contrôleur aérien, d'un médecin ou d'un opérateur de salle de commande. Ce concept est devenu galvaudé et employé à mauvais escient : il sert trop souvent d'échappatoire simpliste pour affirmer qu'une personne n'a pas été assez attentive ou a fait preuve de négligence.
+Dans plusieurs rapports d'enquête d'accidents récents, j'ai vu figurer l'expression « conscience de la situation » (<em>Situation Awareness - SA</em>) parmi les causes premières ; plus précisément sous l'énoncé d'une « <strong><mark id="anchor_q44_fr" class="source-anchor-target" data-qid="44" title="Repère dans les notes de synthèse — à confronter à l’original.">perte de conscience de la situation</mark></strong> » (<em>loss of situation awareness</em>) de la part d'un pilote, d'un contrôleur aérien, d'un médecin ou d'un opérateur de salle de commande. Ce concept est devenu galvaudé et employé à mauvais escient : il sert trop souvent d'échappatoire simpliste pour affirmer qu'une personne n'a pas été assez attentive ou a fait preuve de négligence.
 </p>
 <p class="doc-para">
 Dans certains cas, ce raccourci a malheureusement abouti à des désignations de coupables et à des sanctions disciplinaires injustifiées, au détriment d'un véritable apprentissage organisationnel. L'expression « perte de conscience de la situation » est presque devenue une manière savante de dire « erreur humaine ». Comme le soulignait avec justesse le regretté Trevor Kletz : <strong>conclure qu'un accident est dû à une erreur humaine est à peu près aussi utile que d'affirmer qu'une chute est causée par la gravité</strong>. La même critique s'applique mot pour mot à la notion de conscience de la situation lorsqu'elle est utilisée sans rigueur d'analyse.
@@ -5327,7 +5372,7 @@ Lorsqu'il est impossible d'accéder à l'information pertinente (ou que le temps
 Une ambiguïté théorique subsiste quant à savoir si l'expression « conscience de la situation » renvoie :
 </p>
 <div class="doc-bullet"><strong>1.</strong> Aux processus cognitifs mobilisés par l'opérateur pour recueillir les données et interpréter son environnement ;</div>
-<div class="doc-bullet"><strong>2.</strong> Ou à l'<mark id="anchor_q43_fr" class="source-anchor-target" data-qid="43" title="Extrait traduit pour la Question 43">état de connaissance</mark> final résultant de ces opérations cognitives.</div>
+<div class="doc-bullet"><strong>2.</strong> Ou à l'<mark id="anchor_q43_fr" class="source-anchor-target" data-qid="43" title="Repère dans les notes de synthèse — à confronter à l’original.">état de connaissance</mark> final résultant de ces opérations cognitives.</div>
 <p class="doc-para">
 Mica R. Endsley, référence incontournable de ce domaine, clarifie magistralement cette distinction :
 </p>
@@ -5450,7 +5495,7 @@ L'ingénierie des facteurs humains (<em>Human Factors Engineering - HFE</em>) re
 </p>
       </div>
       <div class="reader-viewport" id="viewport_doc_art_e_fr" style="display: none;">
-        <h2 class="doc-art-title">Les <mark id="anchor_q28_fr" class="source-anchor-target" data-qid="28" title="Extrait traduit pour la Question 28">paradoxes de l'automatisation</mark> (*The Ironies of Automation*)</h2>
+        <h2 class="doc-art-title">Les <mark id="anchor_q28_fr" class="source-anchor-target" data-qid="28" title="Repère dans les notes de synthèse — à confronter à l’original.">paradoxes de l'automatisation</mark> (*The Ironies of Automation*)</h2>
 <ul class="doc-list">
 <li>**Source officielle Moodle :** [https://humanfactors101.com/2020/05/24/the-ironies-of-automation/](https://humanfactors101.com/2020/05/24/the-ironies-of-automation/)</li>
 <li>**Auteur :** Martin Anderson / Human Factors 101</li>
@@ -5465,7 +5510,7 @@ L'expression « paradoxes de l'automatisation » (<em>ironies of automation</em>
 Lorsque j'exerçais comme consultant en facteurs humains sur l'intégration de la performance humaine dans les systèmes ferroviaires européens à la fin des années 1990, j'ai découvert l'article scientifique fondateur intitulé <em>Ironies of Automation</em>, publié en 1983 par la psychologue cogniticienne <strong>Lisanne Bainbridge</strong> (bien que celle-ci eût déjà initié des publications sur ce thème auparavant).
 </p>
 <p class="doc-para">
-Les réflexions pionnières de Bainbridge sur l'automatisation formulées il y a près de quarante ans conservent aujourd'hui toute leur acuité, si ce n'est davantage encore. Au-delà des domaines classiques de l'aviation et de la conduite de procédés industriels continus, ces constats s'appliquent avec une force redoublée aux véhicules contemporains dotés de systèmes d'aide à la conduite, tels que l'<mark id="anchor_q32_fr" class="source-anchor-target" data-qid="32" title="Extrait traduit pour la Question 32">Autopilot de Tesla</mark>.
+Les réflexions pionnières de Bainbridge sur l'automatisation formulées il y a près de quarante ans conservent aujourd'hui toute leur acuité, si ce n'est davantage encore. Au-delà des domaines classiques de l'aviation et de la conduite de procédés industriels continus, ces constats s'appliquent avec une force redoublée aux véhicules contemporains dotés de systèmes d'aide à la conduite, tels que l'<mark id="anchor_q32_fr" class="source-anchor-target" data-qid="32" title="Repère dans les notes de synthèse — à confronter à l’original.">Autopilot de Tesla</mark>.
 </p>
 <p class="doc-para">
 Pour prévenir les défaillances de la performance humaine, il est infiniment plus efficient d'<strong>éradiquer le potentiel d'erreur dès la phase de conception technique en amont (<em>design out</em>)</strong>, plutôt que de chercher à colmater les brèches a posteriori au moyen de barrières organisationnelles « molles » telles que la formation ou l'imposition de procédures contraignantes. La discipline de l'<strong>Ingénierie des facteurs humains</strong> (<em>Human Factors Engineering - HFE</em>) met à disposition un ensemble d'outils méthodologiques et de repères normatifs visant à aligner la conception des technologies sur les capacités et les limites cognitives et physiques de l'être humain. On assiste ces dernières années à un essor considérable de l'ingénierie des facteurs humains au sein de nombreuses industries à hauts risques — singulièrement le nucléaire, le ferroviaire, l'aéronautique, la santé et la pétrochimie. Cet engouement pour la « conception centrée sur l'humain » émane en grande partie du retour d'expérience d'accidents majeurs ayant mis en lumière des architectures techniques défaillantes qui avaient littéralement <strong>programmé les opérateurs à l'échec (<em>set people up to fail</em>)</strong>.
@@ -5475,7 +5520,7 @@ Dans l'industrie aéronautique, les systèmes de vol automatisés sont exploité
 </p>
 <blockquote class="doc-quote-box">*À mesure que l'automatisation s'intensifie dans le cockpit, la nature même du rôle dévolu au pilote subit une mutation radicale.*</blockquote>
 <p class="doc-para">
-Les statistiques d'accidents révèlent avec constance que, dans la quasi-totalité des secteurs industriels, les actes et décisions des opérateurs demeurent déterminants. Dans l'espoir d'<mark id="anchor_q29_fr" class="source-anchor-target" data-qid="29" title="Extrait traduit pour la Question 29">éliminer les défaillances humaines</mark> lors de l'exploitation d'installations complexes (comme le réseau de signalisation ferroviaire, le réseau de distribution d'électricité ou les unités de raffinage chimique), certains ingénieurs nourrissent l'ambition d'exclure l'humain du système autant que faire se peut. L'automatisation est alors parée de toutes les vertus pour résoudre le « problème humain » : remplacer la planification, les gestes et les arbitrages humains par des automates programmables, des régulations logicielles ou des algorithmes d'intelligence artificielle.
+Les statistiques d'accidents révèlent avec constance que, dans la quasi-totalité des secteurs industriels, les actes et décisions des opérateurs demeurent déterminants. Dans l'espoir d'<mark id="anchor_q29_fr" class="source-anchor-target" data-qid="29" title="Repère dans les notes de synthèse — à confronter à l’original.">éliminer les défaillances humaines</mark> lors de l'exploitation d'installations complexes (comme le réseau de signalisation ferroviaire, le réseau de distribution d'électricité ou les unités de raffinage chimique), certains ingénieurs nourrissent l'ambition d'exclure l'humain du système autant que faire se peut. L'automatisation est alors parée de toutes les vertus pour résoudre le « problème humain » : remplacer la planification, les gestes et les arbitrages humains par des automates programmables, des régulations logicielles ou des algorithmes d'intelligence artificielle.
 </p>
 <blockquote class="doc-quote-box">« Ironie : combinaison de circonstances dont le résultat est l'opposé direct de ce à quoi l'on pouvait légitimement s'attendre. »</blockquote>
 <blockquote class="doc-quote-box">— Lisanne Bainbridge, 1983.</blockquote>
@@ -5487,12 +5532,12 @@ Quels sont donc ces « paradoxes de l'automatisation » identifiés par Bainbrid
 <p class="doc-para">
 Le premier paradoxe réside dans le fait qu'en cherchant à éliminer l'opérateur humain du système de contrôle, les défaillances d'exploitation finissent par émerger des <strong>erreurs commises par les concepteurs eux-mêmes</strong>. C'est ce que l'ergonomie nomme les <strong>erreurs induites par la conception</strong> (<em>design-induced errors</em>), souvent causées par une absence de spécialistes des facteurs humains au sein des équipes d'ingénierie. Ces erreurs de conception constituent des <strong>défaillances latentes</strong> (<em>latent failures</em>) qui sommeillent au cœur du système durant des années — véritables « pièges et erreurs en sursis » (<em>mistakes waiting to happen</em>) :
 </p>
-<blockquote class="doc-quote-box"><mark id="anchor_q17_fr" class="source-anchor-target" data-qid="17" title="Extrait traduit pour la Question 17">« Loin d'être les principaux instigateurs d'un accident, les opérateurs de première ligne ont plutôt tendance à hériter des défauts du système engendrés par une conception déficiente, une installation incorrecte, une maintenance défaillante et de mauvaises décisions managériales. Leur rôle se résume le plus souvent à ajouter la touche finale à un breuvage létal dont les ingrédients mijotaient depuis bien longtemps. »</mark></blockquote>
+<blockquote class="doc-quote-box"><mark id="anchor_q17_fr" class="source-anchor-target" data-qid="17" title="Repère dans les notes de synthèse — à confronter à l’original.">« Loin d'être les principaux instigateurs d'un accident, les opérateurs de première ligne ont plutôt tendance à hériter des défauts du système engendrés par une conception déficiente, une installation incorrecte, une maintenance défaillante et de mauvaises décisions managériales. Leur rôle se résume le plus souvent à ajouter la touche finale à un breuvage létal dont les ingrédients mijotaient depuis bien longtemps. »</mark></blockquote>
 <blockquote class="doc-quote-box">— James Reason, *Human Error*, 1990.</blockquote>
 <hr class="doc-divider">
 <h3 class="doc-art-h2">Paradoxe 2 : Les tâches résiduelles non automatisées reposent sur l'humain</h3>
 <p class="doc-para">
-Dès lors que la démarche d'ingénierie s'efforce d'automatiser tout ce qui est techniquement possible, l'opérateur humain se retrouve dépositaire d'un <strong><mark id="anchor_q30_fr" class="source-anchor-target" data-qid="30" title="Extrait traduit pour la Question 30">assemblage arbitraire de tâches résiduelles</mark> disparates</strong> que l'ingénieur n'a pas réussi à automatiser à un coût acceptable. Ce reliquat d'activités ne constitue que rarement une fonction cohérente, gratifiante ou signifiante pour le travailleur. Les choix d'ingénierie se cantonnent trop souvent à une logique binaire d'assignation de la tâche — soit à l'humain, soit à la machine — alors qu'une <strong>allocation dynamique et adaptative des fonctions</strong> (<em>dynamic allocation of function</em> selon l'évolution du contexte opérationnel) s'avérerait infiniment plus pertinente.
+Dès lors que la démarche d'ingénierie s'efforce d'automatiser tout ce qui est techniquement possible, l'opérateur humain se retrouve dépositaire d'un <strong><mark id="anchor_q30_fr" class="source-anchor-target" data-qid="30" title="Repère dans les notes de synthèse — à confronter à l’original.">assemblage arbitraire de tâches résiduelles</mark> disparates</strong> que l'ingénieur n'a pas réussi à automatiser à un coût acceptable. Ce reliquat d'activités ne constitue que rarement une fonction cohérente, gratifiante ou signifiante pour le travailleur. Les choix d'ingénierie se cantonnent trop souvent à une logique binaire d'assignation de la tâche — soit à l'humain, soit à la machine — alors qu'une <strong>allocation dynamique et adaptative des fonctions</strong> (<em>dynamic allocation of function</em> selon l'évolution du contexte opérationnel) s'avérerait infiniment plus pertinente.
 </p>
 <blockquote class="doc-quote-box">« En retirant les aspects simples de la tâche, l'automatisation peut rendre les aspects complexes de la tâche de l'opérateur humain encore plus ardus à gérer. »</blockquote>
 <blockquote class="doc-quote-box">— Lisanne Bainbridge, 1983.</blockquote>
@@ -5772,17 +5817,17 @@ const allQuestions = [
     "context": "En ergonomie moderne, l'unité fondamentale d'analyse n'est plus l'humain isolé ni la machine seule, mais le 'système sociotechnique' (Cañas et al., p. 316, 318, 323).",
     "question": "Quelle orientation d’analyse correspond à la définition sociotechnique de l’ergonomie présentée dans le chapitre ?",
     "options": [
-      "Que la technologie détermine à 100 % le comportement humain, rendant toute considération psychologique inutile.",
-      "Que les défaillances des machines n'ont aucun impact sur les structures relationnelles et la charge de travail des équipes.",
-      "Que les facteurs sociaux doivent être ignorés pour se concentrer exclusivement sur la conformité technique des logiciels.",
-      "Étudier les interactions entre les personnes, les artefacts et l’organisation du travail, plutôt que considérer séparément l’humain ou la technique."
+      "Considérer la variabilité humaine comme un défaut à éliminer par des sanctions ou des procédures rigides.",
+      "Postuler que les artefacts technologiques déterminent entièrement et passivement les conduites des opérateurs.",
+      "Faire dépendre la performance globale du système de la sélection exclusive d'une élite d'opérateurs.",
+      "Optimiser conjointement le bien-être humain (santé, sécurité, satisfaction) et la performance globale du système sociotechnique."
     ],
     "correctIndex": 3,
     "feedbacks": [
-      "Faux. C'est l'erreur du déterminisme technologique aveugle.",
-      "Une défaillance technique peut modifier les communications, les responsabilités et la charge de travail. Affirmer qu’elle n’a aucun effet possible exclut précisément les interactions à analyser.",
-      "Ignorer les facteurs sociaux contredit l’analyse des interactions entre les composantes techniques et organisationnelles.",
-      "La définition porte sur les interactions. L’ergonomie sociale ou organisationnelle considère aussi les structures, les politiques et les processus de travail."
+      "La variabilité humaine et la flexibilité face aux imprévus sont au cœur de la résilience, et non des défauts à éliminer.",
+      "Les artefacts ne déterminent pas unilatéralement l'activité ; l'interaction est bidirectionnelle et médiatisée.",
+      "L'ergonomie conçoit les systèmes pour la variabilité normale des opérateurs, et non pour une élite sélectionnée.",
+      "Exact : l'approche sociotechnique vise l'optimisation conjointe du bien-être humain et de la performance du système global."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 318 — Social or organizational ergonomics",
@@ -5810,13 +5855,13 @@ const allQuestions = [
     "correctIndex": 3,
     "feedbacks": [
       "Eros et gnosis ne sont pas les racines du mot ergonomie données dans le chapitre.",
-      "Mélange latin erroné.",
+      "Ces mots latins ne sont pas les racines grecques données par le chapitre.",
       "Dans la source, ergon signifie « travail », et non « outil » ; la seconde racine du mot ergonomie est nomos, et non metron.",
       "Le chapitre traduit ergon par « travail » et nomos par « loi », puis présente l’ergonomie comme la science du travail. Il n’ajoute pas le qualificatif « naturelles »."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 316 (Section 'Definition')",
-    "doc_quote": "« The word “ergonomics” comes from the Greek “ergon” meaning work and “nomos,” which means law. Therefore, etymologically, this is the science of work. The term has been used historically in the European tradition. In the American tradition the term “human factor engineering” is used to refer to the same issues... »",
+    "doc_quote": "« The word “ergonomics” comes from the Greek “ergon” meaning work and “nomos,” which means law. Therefore, etymologically, this is the science of work. »",
     "doc_explanation": "L’étymologie renvoie au travail et à son étude. La définition scientifique contemporaine ajoute l’analyse des interactions entre les humains et les autres composantes des systèmes.",
     "exam_tip": "Ergon = travail ; nomos = loi ; formulation du chapitre : science du travail.",
     "anchor_phrase": "The word  “ ergonomics ” comes from the Greek  “ ergon ” meaning work and  “ nomos, ” which means law",
@@ -5847,7 +5892,7 @@ const allQuestions = [
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 329 — Mental workload and stress",
-    "doc_quote": "« The last notion is used because it combines the idea of a fixed amount of cognitive resources with active operations on them. »",
+    "doc_quote": "« One finds references to mental load in the research areas that have traditionally been identified as “dual task performance,” “task execution time-sharing,” “task switching,” and “working memory.” The last notion is used because it combines the idea of a fixed amount of cognitive resources with active operations on them. »",
     "doc_explanation": "La difficulté ciblée ici est le maintien et la manipulation d’informations temporaires. Cela n’implique pas que la mémoire de travail soit l’unique limite de toute activité complexe.",
     "exam_tip": "Identifier d’abord les exigences de la tâche : percevoir, maintenir, manipuler, récupérer ou agir. Ne pas postuler un goulot unique dans toutes les situations.",
     "study_scope": "canas",
@@ -5984,17 +6029,17 @@ const allQuestions = [
     "context": "L'ergonomie cognitive accorde une place centrale aux 'modèles mentaux' des opérateurs en supervision de procédés (Cañas et al., p. 326).",
     "question": "Quelle représentation Cañas et al. appellent-ils un modèle mental du système ?",
     "options": [
-      "Une représentation subjective, à petite échelle, de sa structure et de son fonctionnement.",
-      "Mémoriser par cœur le numéro de téléphone de tous les techniciens de maintenance de l'usine.",
-      "Suivre aveuglément les procédures écrites sans jamais chercher à comprendre ce qui se passe dans les tuyaux ou les circuits.",
-      "Remplacer les interfaces physiques par des commandes vocales informatisées."
+      "Une représentation subjective de la structure et du fonctionnement du système, construite et mobilisée par l’opérateur pour orienter ses actions et anticiper les états futurs.",
+      "Un répertoire externe des coordonnées des techniciens de maintenance.",
+      "Une procédure écrite externe, sans représentation de la structure et du fonctionnement du système chez l’opérateur.",
+      "Une interface vocale matérielle ou logicielle servant à transmettre des commandes."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "Le chapitre définit ainsi le modèle mental. Il étudie notamment son rôle dans la détection, le diagnostic et la compensation des défaillances ; il ne le réduit pas à une simulation mentale explicite de chaque alarme.",
-      "Mémoriser des coordonnées peut être utile, mais ne décrit pas une représentation de la structure et du fonctionnement du système.",
-      "L’application d’une procédure ne remplace pas la compréhension du système. En situation non couverte ou mal reconnue, un modèle mental inadéquat peut compromettre le diagnostic.",
-      "C'est une technologie d'interface, pas une structure de connaissance cognitive."
+      "Exact : Cañas et al. définissent le modèle mental comme la représentation subjective de la structure et du fonctionnement du système qui guide les actions et prédictions de l’opérateur.",
+      "Un répertoire externe peut être utile, mais ce n’est pas la représentation subjective de la structure et du fonctionnement visée par le passage.",
+      "Une procédure écrite est un artefact externe ; elle ne constitue pas, à elle seule, le modèle mental de l’opérateur.",
+      "Une interface vocale est un dispositif d’interaction, non la représentation subjective du système définie ici."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 326 (Section 'Mental models')",
@@ -6135,7 +6180,7 @@ const allQuestions = [
     "category": "cañas_erreurs",
     "doc_id": "",
     "anchor_id": "",
-    "tag": "James Reason (1990, 1997) • Le Modèle du Fromage Suisse",
+    "tag": "James Reason (2000) • Modèle des Défaillances Systémiques (Fromage Suisse)",
     "points": "1 point",
     "context": "Complément extérieur aux cinq lectures : modèle du fromage suisse présenté par James Reason dans Human error: models and management (2000).",
     "question": "Dans ce modèle, que représentent les tranches et leurs ouvertures, et dans quelles conditions un danger peut-il produire un dommage ?",
@@ -6152,7 +6197,7 @@ const allQuestions = [
       "Faux : les barrières ne sont pas seulement hiérarchiques ; elles incluent des automatismes techniques, des alarmes physiques et des procédures opérationnelles.",
       "Faux : c'est une réduction biologique erronée."
     ],
-    "doc_title": "Reason, J. (2000) — Human error: models and management — complément extérieur aux cinq lectures",
+    "doc_title": "Reason, J. (2000) — Human error: models and management — complément extérieur",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/1-CANAS2011(CHAP-13-humanFactor).pdf",
     "doc_page": "Page 769 — The Swiss cheese model of system accidents",
     "doc_quote": "Synthèse, non citation textuelle : les faiblesses de plusieurs défenses peuvent se combiner et ouvrir une trajectoire par laquelle un danger atteint des victimes.",
@@ -6354,9 +6399,9 @@ const allQuestions = [
     "category": "endsley_sa",
     "doc_id": "doc_canas",
     "anchor_id": "anchor_q23",
-    "tag": "Mica Endsley (1995) • Modèle Triadique de la Conscience de la Situation",
+    "tag": "Cañas et al. (2011) — Les trois niveaux de conscience de la situation selon Endsley",
     "points": "1 point",
-    "context": "Le modèle de la conscience de la situation (Situation Awareness - SA) de Mica Endsley (1995), analysé dans l'Article D de Human Factors 101 et par Cañas et al. (p. 325).",
+    "context": "À la page 325, Cañas et al. présentent les trois niveaux de conscience de la situation du modèle d’Endsley (1995).",
     "question": "Quels sont les trois niveaux de conscience de la situation présentés par Cañas et al. à partir du modèle d’Endsley ?",
     "options": [
       "Sensation vestibulaire (Niveau 1) → Réflexe médullaire (Niveau 2) → Décision corticale tardive (Niveau 3).",
@@ -6371,56 +6416,55 @@ const allQuestions = [
       "Le chapitre distingue la perception des éléments de l’environnement, la compréhension de la situation courante et la projection de son évolution future.",
       "Les modèles mentaux et les échanges peuvent contribuer à l’évaluation de la situation, mais cette liste n’est pas celle des trois niveaux de connaissance."
     ],
-    "doc_title": "Human Factors 101 — Article D : Situation Awareness",
+    "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/D_Conscience_de_la_situation.md",
     "doc_page": "Page 325 — Situation awareness and attention",
-    "doc_quote": "it includes three levels of information processing: (1) perception of the elements of the environment; (2) understanding the current situation; and (3) predicting (projecting) the situation ’ s future development.",
+    "doc_quote": "it includes three levels of information processing: (1) perception of the elements of the environment; (2) understanding the current situation; and (3) predicting (projecting) the situation's future development.",
     "doc_explanation": "Percevoir un élément, comprendre sa signification et projeter l’évolution de la situation sont trois contenus distingués dans la présentation du modèle.",
     "exam_tip": "Perception, compréhension, projection : distinguer les niveaux sans imposer une chaîne temporelle à sens unique.",
-    "anchor_phrase": "progress through the three stages (Perception, Understanding and Prediction)",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13"
   },
   {
     "id": 24,
     "category": "endsley_sa",
     "doc_id": "doc_canas",
     "anchor_id": "anchor_q24",
-    "tag": "Application du modèle de conscience de la situation",
+    "tag": "Cañas et al. (2011) — Application fictive : perception de l’information pertinente",
     "points": "1 point",
-    "context": "Situation fictive d’application : un anesthésiste en salle d’opération n’entend pas une alarme sonore critique parce que le volume a été baissé et que le bruit ambiant masque le signal.",
+    "context": "Les situations suivantes sont des exemples fictifs distincts destinés à appliquer les trois niveaux décrits par Cañas et al., page 325. Il s’agit d’identifier le niveau de défaillance décrit, sans ajouter de cause qui ne serait pas précisée.",
     "question": "Laquelle des situations suivantes illustre rigoureusement une défaillance de conscience de la situation de Niveau 1 (Perception) ?",
     "options": [
       "Un pilote voit parfaitement le voyant d'alarme orange allumé, mais interprète faussement qu'il s'agit d'un problème hydraulique mineur alors qu'il s'agit d'une fuite d'huile moteur.",
-      "Un contrôleur perçoit et comprend que deux aéronefs convergent vers le même point au même moment et au même niveau, mais n’anticipe pas le risque de collision si leurs trajectoires se maintiennent.",
-      "Un anesthésiste, accaparé par une intubation difficile, ne perçoit pas l’alarme visuelle et sonore d’un moniteur physiologique signalant une chute brutale de pression artérielle.",
+      "Un contrôleur lit correctement les positions, caps, vitesses et altitudes actuels de deux aéronefs et comprend ces informations, mais n’anticipe pas que le maintien de leurs trajectoires conduira à un conflit.",
+      "Un anesthésiste ne perçoit pas une alarme pertinente, présentée visuellement et sonorément sur un moniteur.",
       "Un automobiliste freine délibérément pour tester l'adhérence de ses pneus sur une chaussée glacée."
     ],
     "correctIndex": 2,
     "feedbacks": [
       "Dans cet exemple, le signal pertinent a été perçu mais interprété de manière inadéquate : l’erreur décrite concerne le niveau 2. Cela ne démontre pas que toute la perception de la situation était parfaite.",
-      "L’exemple précise que les données de convergence ont été perçues et comprises, mais que leur conséquence future n’a pas été anticipée : la défaillance visée concerne le niveau 3.",
-      "L’information pertinente n’a pas été perçue. Cela caractérise une défaillance de niveau 1 ; la cause précise — présentation, attention, charge ou autre facteur — doit encore être étudiée.",
+      "Les informations sur la situation actuelle sont perçues et comprises, mais l’évolution future pertinente n’est pas anticipée : le niveau visé est celui de la projection. Le scénario ne doit pas supposer que l’opérateur a déjà anticipé la convergence future avant de déclarer cette anticipation absente.",
+      "L’information pertinente n’a pas été perçue : l’échec décrit se situe au niveau 1. Ce constat identifie le niveau concerné, mais ne démontre pas à lui seul la cause de la non-perception.",
       "Cette proposition décrit une action exploratoire ; elle n’établit pas qu’une information pertinente a été manquée. Elle ne suffit donc pas à illustrer la défaillance N1 demandée."
     ],
-    "doc_title": "Human Factors 101 — Article D : Situation Awareness",
+    "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/D_Conscience_de_la_situation.md",
     "doc_page": "Page 325 — Situation awareness and attention",
     "doc_quote": "(1) perception of the elements of the environment",
     "doc_explanation": "Une défaillance de niveau 1 peut porter sur un seul indice pertinent. Elle ne signifie pas que l’opérateur ne perçoit rien ni qu’il ne peut mobiliser aucune connaissance antérieure.",
     "exam_tip": "Niveau 1 : une information pertinente manque dans ce qui a été perçu ou retenu. Niveau 2 : l’information est interprétée de manière inadéquate.",
-    "anchor_phrase": "Gathering information : data was not observed, or data was not visible",
     "study_scope": "canas",
-    "flashcard_question": "Un anesthésiste ne perçoit pas une alarme visuelle et sonore pertinente. À quel niveau de la conscience de la situation l’échec décrit se situe-t-il ?",
-    "flashcard_answer": "Au niveau 1, la perception de l’information pertinente. Cet exemple ne démontre ni la perte de toute perception ni une cause unique de la défaillance.",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "flashcard_question": "Un anesthésiste ne perçoit pas une alarme pertinente présentée par un moniteur. À quel niveau de la conscience de la situation l’échec décrit se situe-t-il ?",
+    "flashcard_answer": "Au niveau 1 : perception de l’information pertinente. Cette classification ne détermine pas à elle seule la cause de la non-perception.",
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13",
+    "flashcard_context": "Exemple fictif d’application du modèle présenté par Cañas et al., page 325."
   },
   {
     "id": 25,
     "category": "endsley_sa",
     "doc_id": "doc_canas",
     "anchor_id": "anchor_q25",
-    "tag": "Human Factors 101 (Art. D) • Défaillances de SA au Niveau 2",
+    "tag": "Cañas et al. (2011) — Application fictive : compréhension de la situation",
     "points": "1 point",
     "context": "Situation fictive : un opérateur perçoit les indications pertinentes, mais leur attribue une signification erronée en utilisant une représentation inadéquate du fonctionnement du système.",
     "question": "Quel mécanisme correspond à la défaillance de compréhension décrite dans cette situation ?",
@@ -6437,21 +6481,20 @@ const allQuestions = [
       "C'est une panne matérielle physique, pas un échec de compréhension cognitive.",
       "Cette proposition décrit une compréhension adéquate, et non une défaillance de niveau 2."
     ],
-    "doc_title": "Human Factors 101 — Article D : Situation Awareness",
+    "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/D_Conscience_de_la_situation.md",
-    "doc_page": "Page 325–326",
+    "doc_page": "Page 325–326 (SA Niveau 2 et Modèles mentaux)",
     "doc_quote": "(2) understanding the current situation",
     "doc_explanation": "L’information est perçue, mais son interprétation est inadéquate. Le modèle de conscience de la situation distingue perception et compréhension ; le chapitre définit aussi le modèle mental comme une représentation subjective de la structure et du fonctionnement du système.",
-    "exam_tip": "Niveau 2 défaillant = Données correctement perçues, mais intégrées dans un modèle mental inadéquat (mauvais sens attribué).",
-    "anchor_phrase": "Understanding information",
+    "exam_tip": "Niveau 2 : compréhension de la signification des informations. Un modèle mental inadéquat peut contribuer à un échec de compréhension ; il ne constitue pas l’unique mécanisme possible.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13"
   },
   {
     "id": 26,
     "category": "endsley_sa",
-    "doc_id": "doc_art_d",
-    "anchor_id": "anchor_q26",
+    "doc_id": "",
+    "anchor_id": "",
     "tag": "Jones et Endsley (1996) — Répartition des erreurs de conscience de la situation dans des rapports ASRS",
     "points": "1 point",
     "context": "Complément externe : Jones et Endsley (1996) ont classé des erreurs de conscience de la situation à partir de rapports de l’Aviation Safety Reporting System (ASRS).",
@@ -6469,17 +6512,16 @@ const allQuestions = [
       "Les erreurs de niveau 2 représentaient 20,3 % des erreurs identifiées.",
       "La classification utilisait trois niveaux de conscience de la situation ; la violation n’y constitue pas un quatrième niveau."
     ],
-    "doc_title": "Jones, D. G., et Endsley, M. R. (1996) — Sources of situation awareness errors in aviation — complément extérieur aux cinq lectures",
+    "doc_title": "Jones, D. G., & Endsley, M. R. (1996) — Sources of situation awareness errors in aviation — référence extérieure non intégrée",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/D_Conscience_de_la_situation.md",
     "doc_page": "Aviation, Space, and Environmental Medicine, 67(6), 507–512 — résumé de l’étude",
     "doc_quote": "Synthèse, non citation textuelle : les erreurs identifiées dans les rapports ASRS étudiés se répartissaient entre le niveau 1 (76,3 %), le niveau 2 (20,3 %) et le niveau 3 (3,4 %).",
     "doc_explanation": "Ces proportions décrivent les erreurs identifiées dans les rapports étudiés. Elles ne sont pas un taux universel de tous les accidents ou de toutes les erreurs de conscience de la situation.",
     "exam_tip": "Toujours associer les pourcentages à leur étude, à leur population et à leur dénominateur ; ne pas confondre toutes les erreurs N1 avec la non-observation de données disponibles.",
-    "anchor_phrase": "degree to which every team member possess the situation awareness needed for his or her job",
     "study_scope": "complement",
     "flashcard_question": "Dans l’étude de Jones et Endsley (1996) fondée sur des rapports ASRS, quel niveau de conscience de la situation regroupait 76,3 % des erreurs identifiées ?",
     "flashcard_answer": "Le niveau 1. Ce résultat concerne les erreurs identifiées dans les rapports étudiés ; ce n’est ni un taux universel ni la proportion de tous les accidents d’aviation.",
-    "scope_badge": "Complément documentaire"
+    "scope_badge": "Complément extérieur non intégré"
   },
   {
     "id": 27,
@@ -6511,7 +6553,7 @@ const allQuestions = [
     "exam_tip": "Distinguer ce qu’écrit Cañas, les taux rapportés par Haynes et l’interprétation d’un plan avant–après. Ne pas substituer silencieusement un pourcentage à l’autre.",
     "anchor_phrase": "answered questions from a simple checklist of situation aware- ness:  “ Are we at the right place here? ”",
     "study_scope": "complement",
-    "scope_badge": "Complément documentaire"
+    "scope_badge": "Complément extérieur (Haynes / Cañas p. 326)"
   },
   {
     "id": 28,
@@ -6612,7 +6654,7 @@ const allQuestions = [
     "category": "bainbridge_automation",
     "doc_id": "doc_canas",
     "anchor_id": "anchor_q31",
-    "tag": "Bainbridge & HF101 (Art. E) • L'Opérateur 'Out-of-the-loop' (OOTL)",
+    "tag": "Cañas et al. (2011) — Automatisation, pratique et reprise de contrôle",
     "points": "1 point",
     "context": "À la page 325, Cañas et al. examinent les conséquences d’une participation réduite au contrôle d’un procédé fortement automatisé.",
     "question": "Quel mécanisme décrit dans ce passage relie cette participation réduite à une difficulté de reprise de contrôle ?",
@@ -6629,14 +6671,14 @@ const allQuestions = [
       "Le passage n’établit aucune interdiction universelle d’intervention ; il décrit les effets de la participation réduite sur la pratique et la connaissance du système.",
       "Cañas relie la diminution de participation à l’entretien des compétences manuelles et cognitives et à la connaissance du comportement du procédé."
     ],
-    "doc_title": "Human Factors 101 — Article E : The Ironies of Automation",
+    "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/E_Paradoxes_de_l_automatisation.md",
     "doc_page": "Page 325 — Situation awareness and attention",
     "doc_quote": "« This deterioration results from the fact that the manual and cognitive skills decline due to the absence of active participation in the process. Furthermore, it becomes more difficult with progressing automation to gain access to knowledge about system behavior. »",
     "doc_explanation": "La reprise peut être fragilisée par la réduction de pratique et de connaissance du système. Le chapitre ne décrit pas une conscience nécessairement nulle ni une disparition de toutes les compétences.",
     "exam_tip": "Sortie de boucle : examiner l’information disponible, la pratique et le temps nécessaire à la réorientation. La difficulté de reprise dépend de la situation.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13"
   },
   {
     "id": 32,
@@ -6865,17 +6907,17 @@ const allQuestions = [
     "context": "À la page 328, Cañas et al. interrogent la généralisation de résultats obtenus avec des tâches de choix décontextualisées à la décision dans des situations réelles.",
     "question": "Pourquoi Cañas et al. mettent-ils en garde contre la généralisation de certaines tâches de décision décontextualisées à la gestion d’incidents critiques ?",
     "options": [
-      "Les professionnels doivent souvent interpréter une situation changeante, construire des possibilités d’action et décider avec peu de temps et d’information ; une comparaison exhaustive d’options prédéfinies peut alors être inadaptée.",
-      "Parce que les opérateurs de terrain sont dépourvus des capacités intellectuelles nécessaires pour comprendre un arbre de décision logique.",
-      "Parce que les décisions logiques formelles ne s'appliquent qu'aux systèmes informatisés sans présence humaine.",
-      "Parce que le stress physiologique annule totalement la perception sensorielle de l'opérateur, rendant toute décision purement aléatoire."
+      "Les situations réelles de terrain présentent des contraintes dynamiques, des incertitudes et des pressions temporelles qui rendent impraticable la comparaison exhaustive d'options formalisée en laboratoire.",
+      "Les experts de terrain refuseraient par principe d'appliquer toute forme de raisonnement analytique ou de méthode formalisée.",
+      "Les modèles classiques de décision ont été développés exclusivement pour des tâches de divertissement sans enjeu de sécurité.",
+      "Les environnements réels de travail sont strictement déterministes et éliminent toute incertitude lors de la prise de décision."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "La critique concerne les hypothèses et conditions d’application. Elle n’implique ni que tous les modèles formels sont inutiles ni que toutes les décisions expertes sont immédiates.",
-      "La critique du passage porte sur les conditions d’application des modèles, non sur une incapacité intellectuelle des opérateurs.",
-      "Les outils formels peuvent être utilisés par des personnes. Leur pertinence dépend des hypothèses, de la tâche et du contexte ; ils ne sont pas réservés aux systèmes sans humains.",
-      "La source ne permet pas de conclure que les choix deviennent systématiquement aléatoires sous stress. Elle souligne la pression temporelle, les enjeux et la charge affective des situations."
+      "Exact : Klein (1993) montre qu'en milieu naturel critique (urgences, cockpit, feu), les experts reconnaissent des configurations typiques et simulent mentalement une première option satisfaisante au lieu de comparer laborieusement toutes les alternatives.",
+      "Les experts ne refusent pas la rationalité ; ils appliquent une heuristique de reconnaissance rapide adaptée aux contraintes écologiques.",
+      "Les modèles classiques de décision rationnelle sont issus de l'économie normative et de la théorie des probabilités, pas des jeux.",
+      "Les milieux réels critiques sont au contraire caractérisés par un dynamisme fort et une incertitude élevée."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 328 (Section 'Decision making')",
@@ -7015,17 +7057,17 @@ const allQuestions = [
     "context": "Dans l'analyse des accidents industriels et aéronautiques, l'utilisation du concept de 'perte de conscience de la situation' fait l'objet d'une mise en garde épistémologique sévère (Dekker, 2013, cité dans l'Article D).",
     "question": "Quelle limite de l’explication d’un accident par la seule étiquette « perte de conscience de la situation » la critique de Dekker, citée dans l’Article D, met-elle en évidence ?",
     "options": [
-      "À elle seule, cette étiquette peut n’être qu’un constat rétrospectif d’une connaissance insuffisante ; elle n’explique pas pourquoi les informations ont manqué ou ont été mal interprétées.",
-      "Parce que la conscience de la situation ne peut jamais être mesurée ni observée dans un travail d'équipe.",
-      "Parce que les enquêteurs d'accidents ne possèdent pas les diplômes requis en psychologie cognitive pour utiliser ce mot.",
-      "Toute analyse de la perception, de la compréhension et de l’anticipation serait inutile, quelle que soit la méthode utilisée."
+      "L'étiquette de « perte de conscience de la situation » est un jugement a posteriori (biais rétrospectif) qui nomme le résultat de l'échec sans expliquer pourquoi la situation faisait sens pour l'opérateur à ce moment-là.",
+      "La conscience de la situation serait impossible à mesurer ou à observer dans tout travail d’équipe.",
+      "L’emploi de ce concept dépendrait exclusivement d'un cadre aéronautique militaire et ne pourrait être transposé à aucun autre milieu.",
+      "Le concept supposerait une absence totale de mécanismes cognitifs chez les opérateurs confrontés à des technologies automatisées."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "Il faut expliquer les conditions et les mécanismes de la connaissance inadéquate. Cette critique vise une étiquette utilisée comme explication autosuffisante, pas l’exclusion de toute analyse de la conscience de la situation.",
-      "La critique citée porte sur l’usage explicatif d’une étiquette dans l’enquête, non sur une démonstration d’impossibilité de toute mesure de la conscience de la situation en équipe.",
-      "La critique porte sur ce que l’étiquette explique ou n’explique pas, et non sur une condition de diplôme des personnes qui l’emploient.",
-      "L’Article D propose au contraire d’examiner l’accès à l’information, son interprétation et la projection. Il critique l’usage d’une étiquette sans analyse, pas l’ensemble de ces investigations."
+      "Exact : Dekker (2013) souligne que qualifier un incident de 'perte de SA' n'est qu'un constat rétrospectif commode qui masque les véritables causes systémiques sous-jacentes sans expliquer la rationalité locale de l'opérateur.",
+      "La conscience de la situation en équipe (Team SA) fait l'objet de méthodologies d'évaluation documentées.",
+      "Le concept de conscience de la situation s'applique largement au-delà du domaine militaire (médical, nucléaire, conduite, contrôle de trafic).",
+      "Dekker ne nie pas les processus cognitifs des opérateurs, mais conteste l'usage de cette étiquette comme substitut simpliste d'analyse causale en enquête d'accident."
     ],
     "doc_title": "Human Factors 101 — Article D, commentaire suivant la citation de Dekker (2013)",
     "doc_page": "Article D (Section 'Incident investigations: A health warning')",
@@ -7047,7 +7089,7 @@ const allQuestions = [
     let currentQuestionIndex = 0;
     let userAnswers = {};
     let activeDocId = 'doc_canas';
-    let docLanguage = 'en'; // Par défaut en français comme demandé par Michel !
+    let docLanguage = 'en'; // Par défaut en anglais (texte original de référence)
     let sourceTextVisible = true;
     let readerCollapsed = false;
     let layoutSetting = localStorage.getItem('psy7010_layout_setting') || 'auto';
@@ -7065,9 +7107,20 @@ const allQuestions = [
       return [...allQuestions];
     }
 
+    function getEligibleStudyQuestions() {
+      return getAdmissibleQuestions().filter(q =>
+        currentCategoryFilter === 'all' || q.category === currentCategoryFilter
+      );
+    }
+
+    window.getFilteredQuestions = function() {
+      return filteredQuestions;
+    };
+
     // ÉTAT FLASHCARDS (RÉPÉTITION ADAPTATIVE SRS)
     let flashcardDeckMode = 'all'; // 'all' ou 'hard'
     let flashcardList = getAdmissibleQuestions();
+    let currentCardRatedForThisFlip = false;
 
     function setStudyScope(scope) {
       currentStudyScope = scope;
@@ -7082,10 +7135,8 @@ const allQuestions = [
       if (countBadge) countBadge.textContent = admissible.length + ' items';
 
       filterCategory(currentCategoryFilter);
-      if (currentMode === 'flashcards') {
-        initFlashcardDeck();
-        renderFlashcard(0);
-      }
+      initFlashcardDeck();
+      updateMasteryBadge();
       updateMascot("Périmètre actif : " + (scope === 'canas' ? "Cañas et al. (2011) seul (24 questions)" : "Ensemble des lectures (44 questions)"), "happy");
     }
 
@@ -7107,7 +7158,18 @@ const allQuestions = [
 
     let currentFlashcardIdx = 0;
     let isCurrentCardFlipped = false;
-    let cardStats = safeGetStorage('psy7010_card_stats', {});
+    const CURRENT_CONTENT_REVISION = "2026.09.21_v2";
+    let storedStatsPayload = safeGetStorage('psy7010_card_stats_v2', null);
+    if (!storedStatsPayload || storedStatsPayload.revision !== CURRENT_CONTENT_REVISION) {
+      // Migration défensive depuis v1 ou initialisation propre sans écraser les réglages
+      const legacyStats = safeGetStorage('psy7010_card_stats', {});
+      storedStatsPayload = {
+        revision: CURRENT_CONTENT_REVISION,
+        stats: legacyStats || {}
+      };
+      safeSetStorage('psy7010_card_stats_v2', storedStatsPayload);
+    }
+    let cardStats = storedStatsPayload.stats || {};
 
     // ÉTAT SIMULATION
     let isSimulationActive = false;
@@ -7135,7 +7197,10 @@ const allQuestions = [
     }
 
     function saveCardStats() {
-      safeSetStorage('psy7010_card_stats', cardStats);
+      safeSetStorage('psy7010_card_stats_v2', {
+        revision: CURRENT_CONTENT_REVISION,
+        stats: cardStats
+      });
       updateFlashcardStatsUI();
       initSavedPodcastUrl();
     }
@@ -7234,8 +7299,12 @@ const allQuestions = [
         if (simResults) simResults.style.display = 'none';
         if (filterSec) filterSec.style.display = 'block';
         
-        filterCategory(currentCategoryFilter);
+        const savedQIndex = currentQuestionIndex;
+        filteredQuestions = getEligibleStudyQuestions();
+        window.filteredQuestions = filteredQuestions;
+        currentQuestionIndex = (savedQIndex < filteredQuestions.length) ? savedQIndex : 0;
         renderQuestion(currentQuestionIndex, false);
+        renderGooglePagination();
         updateMascot("Mode Étude actif. Les questions et le texte officiel sont ouverts.", "happy");
       } else if (mode === 'flashcards') {
         if (isSimulationActive && simTimerInterval) {
@@ -7356,20 +7425,20 @@ const allQuestions = [
 
     // --- MODE FLASHCARDS LOGIQUE INTERACTIVE ---
     function initFlashcardDeck() {
+      const eligible = getEligibleStudyQuestions();
       if (flashcardDeckMode === 'hard') {
-        flashcardList = getAdmissibleQuestions().filter(q => isCardHard(q.id));
+        flashcardList = eligible.filter(q => isCardHard(q.id));
         flashcardList.sort((a, b) => calculateDifficultyScore(b.id) - calculateDifficultyScore(a.id));
         if (flashcardList.length === 0) {
-          flashcardList = getAdmissibleQuestions();
+          flashcardList = [...eligible];
           flashcardDeckMode = 'all';
-          document.getElementById('fcDeckAllBtn').classList.add('active');
-          document.getElementById('fcDeckHardBtn').classList.remove('active');
+          const btnAll = document.getElementById('fcDeckAllBtn');
+          const btnHard = document.getElementById('fcDeckHardBtn');
+          if (btnAll) btnAll.classList.add('active');
+          if (btnHard) btnHard.classList.remove('active');
         }
       } else {
-        flashcardList = allQuestions.filter(q => {
-          if (currentCategoryFilter === 'all') return true;
-          return q.category === currentCategoryFilter;
-        });
+        flashcardList = [...eligible];
       }
       currentFlashcardIdx = 0;
     }
@@ -7383,51 +7452,84 @@ const allQuestions = [
     }
 
     function renderFlashcard(idx) {
-      if (flashcardList.length === 0) return;
+      currentCardRatedForThisFlip = false;
+      const cardEl = document.getElementById('fcCardElement');
+      const fcActions = document.getElementById('fcActions');
+      const counterEl = document.getElementById('fcCounterText');
+      const badgeEl = document.getElementById('fcDocBadge');
+      const contextEl = document.getElementById('fcContextText');
+      const qTextEl = document.getElementById('fcQuestionText');
+      const ansEl = document.getElementById('fcCorrectAnswer');
+      const expEl = document.getElementById('fcExplanationText');
+      const refEl = document.getElementById('fcSourceRefText');
+      const quoteEl = document.getElementById('fcSourceQuoteText');
+      const tipEl = document.getElementById('fcExamTipText');
+
+      let emptyNotice = document.getElementById('fcEmptyNotice');
+
+      if (!flashcardList || flashcardList.length === 0) {
+        if (cardEl) cardEl.style.display = 'none';
+        if (fcActions) fcActions.style.display = 'none';
+        if (counterEl) counterEl.textContent = '0 carte disponible';
+        if (badgeEl) badgeEl.textContent = '📭 Aucun item';
+        
+        if (!emptyNotice) {
+          emptyNotice = document.createElement('div');
+          emptyNotice.id = 'fcEmptyNotice';
+          emptyNotice.className = 'empty-filter-state';
+          emptyNotice.style.cssText = 'padding: 48px 16px; text-align: center; color: var(--text-muted); width: 100%;';
+          emptyNotice.innerHTML = `
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">📭</div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Aucune question ne correspond à ce périmètre et à cette section. Modifiez l’un des filtres.</h3>
+          `;
+          const container = document.getElementById('flashcardContainer');
+          if (container) container.appendChild(emptyNotice);
+        } else {
+          emptyNotice.style.display = 'block';
+        }
+        return;
+      }
+
+      if (emptyNotice) emptyNotice.style.display = 'none';
+      if (cardEl) {
+        cardEl.style.display = 'block';
+        cardEl.classList.remove('flipped');
+      }
+      if (fcActions) fcActions.style.display = 'flex';
+      isCurrentCardFlipped = false;
+
       if (idx < 0) idx = flashcardList.length - 1;
       if (idx >= flashcardList.length) idx = 0;
       currentFlashcardIdx = idx;
 
       const q = flashcardList[idx];
-      const cardEl = document.getElementById('fcCardElement');
-      if (cardEl) cardEl.classList.remove('flipped');
-      isCurrentCardFlipped = false;
 
       // Badge & Meta
-      const isExternal = q.study_scope === 'complement_externe';
-      const isCanas = q.doc_id === 'doc_canas' && !isExternal;
-      const badgeEl = document.getElementById('fcDocBadge');
+      const isCanas = (q.study_scope === 'canas');
       if (badgeEl) {
-        if (isExternal) {
-          badgeEl.textContent = '📘 ' + (q.doc_title || 'Complément extérieur');
-          badgeEl.className = 'fc-badge optional';
-        } else if (isCanas) {
+        if (isCanas) {
           badgeEl.textContent = '🔴 Cañas et al. (2011) [Lecture obligatoire]';
           badgeEl.className = 'fc-badge mandatory';
         } else {
-          badgeEl.textContent = '🟢 ' + q.doc_title;
+          badgeEl.textContent = '📘 ' + (q.doc_title || 'Complément extérieur');
           badgeEl.className = 'fc-badge optional';
         }
       }
-      document.getElementById('fcCounterText').textContent = 'Carte ' + (idx + 1) + ' sur ' + flashcardList.length;
+      if (counterEl) counterEl.textContent = 'Carte ' + (idx + 1) + ' sur ' + flashcardList.length;
 
-      // Recto autonome
-      document.getElementById('fcContextText').textContent = q.context || '';
-      document.getElementById('fcQuestionText').textContent = q.flashcard_question || q.question;
+      // Recto autonome (R06)
+      if (contextEl) contextEl.textContent = q.flashcard_context || q.context || '';
+      if (qTextEl) qTextEl.textContent = q.flashcard_question || q.question;
 
       // Verso autonome
-      document.getElementById('fcCorrectAnswer').textContent = q.flashcard_answer || q.options[q.correctIndex];
-      document.getElementById('fcExplanationText').innerHTML = '<strong>Synthèse :</strong> ' + (q.doc_explanation || '');
-      const refEl = document.getElementById('fcSourceRefText');
+      if (ansEl) ansEl.textContent = q.flashcard_answer || q.options[q.correctIndex];
+      if (expEl) expEl.innerHTML = '<strong>Synthèse :</strong> ' + (q.doc_explanation || '');
       if (refEl) {
-        const authorTitle = (q.study_scope === 'complement_externe' || q.doc_id !== 'doc_canas') ? q.doc_title : 'Cañas et al. (2011)';
+        const authorTitle = isCanas ? 'Cañas et al. (2011)' : (q.doc_title || 'Complément');
         refEl.textContent = authorTitle + (q.doc_page ? ' • ' + q.doc_page : '');
       }
-      const quoteEl = document.getElementById('fcSourceQuoteText');
       if (quoteEl) quoteEl.textContent = (q.doc_quote || '') + (q.doc_page ? ' (' + q.doc_page + ')' : '');
-      document.getElementById('fcExamTipText').innerHTML = '<strong>💡 Astuce examen :</strong> ' + (q.exam_tip || 'Identifier le mot-clé théorique.');
-
-      // S4 : Ne pas surligner prématurément avant le retournement de la carte
+      if (tipEl) tipEl.innerHTML = '<strong>💡 Astuce examen :</strong> ' + (q.exam_tip || 'Identifier le mot-clé théorique.');
     }
 
     function flipCurrentCard() {
@@ -7437,6 +7539,7 @@ const allQuestions = [
       cardEl.classList.toggle('flipped', isCurrentCardFlipped);
 
       if (isCurrentCardFlipped) {
+        currentCardRatedForThisFlip = false; // Réinitialiser le verrou pour cette nouvelle révélation (R08)
         showDocumentPostAnswer();
         const q = getCurrentActiveQuestion();
         if (q) {
@@ -7462,12 +7565,37 @@ const allQuestions = [
       updateMascot("Le paquet de flashcards a été mélangé aléatoirement !", "happy");
     }
 
+    function canRateCurrentFlashcard() {
+      if (currentMode !== 'flashcards') return false;
+      if (mobileView !== 'activity') return false;
+      if (!flashcardList || flashcardList.length === 0) return false;
+      if (!isCurrentCardFlipped) return false;
+
+      // Modales ouvertes bloquantes (R08)
+      const resetModal = document.getElementById('resetModal');
+      const celebrationModal = document.getElementById('celebrationModal');
+      const optionsModal = document.getElementById('optionsModal');
+      if ((resetModal && resetModal.style.display === 'flex') ||
+          (celebrationModal && celebrationModal.style.display === 'flex') ||
+          (optionsModal && optionsModal.style.display === 'flex')) {
+        return false;
+      }
+
+      if (currentCardRatedForThisFlip) return false;
+      return true;
+    }
+
     function rateFlashcard(rating) {
-      if (flashcardList.length === 0) return;
-      if (!isCurrentCardFlipped) {
-        showToast("⚠️ Retourne d'abord la carte (verso) avant d'enregistrer une autoévaluation !");
+      if (!canRateCurrentFlashcard()) {
+        if (!isCurrentCardFlipped) {
+          showToast("⚠️ Retourne d'abord la carte (verso) avant d'enregistrer une autoévaluation !");
+        }
         return;
       }
+
+      // Verrouiller immédiatement avant toute mutation de statistiques ou modale (R08)
+      currentCardRatedForThisFlip = true;
+
       const q = flashcardList[currentFlashcardIdx];
       const stat = getCardStat(q.id);
       const prevDifficulty = stat.difficultyScore;
@@ -7585,6 +7713,12 @@ const allQuestions = [
       
       const q = getCurrentActiveQuestion();
       if (q) highlightAndScrollSource(q.id, true, false);
+    }
+
+    function setDocLanguage(lang) {
+      if (docLanguage !== lang) {
+        toggleDocLanguage();
+      }
     }
 
     function updateLanguageUI() {
@@ -7721,9 +7855,8 @@ const allQuestions = [
         }
       });
 
-      const admissible = getAdmissibleQuestions();
-      if (cat === 'all') filteredQuestions = [...admissible];
-      else filteredQuestions = admissible.filter(q => q.category === cat);
+      filteredQuestions = getEligibleStudyQuestions();
+      window.filteredQuestions = filteredQuestions;
 
       currentQuestionIndex = 0;
       if (currentMode === 'flashcards') {
@@ -7833,6 +7966,10 @@ const allQuestions = [
     function renderQuestion(idx) {
       let q;
       let totalCount = 0;
+      const qCard = document.getElementById('qCard');
+      const fbCard = document.getElementById('feedbackCard');
+      let emptyNotice = document.getElementById('qEmptyNotice');
+
       if (isSimulationActive) {
         if (simQuestions.length === 0) return;
         if (idx < 0) idx = 0;
@@ -7841,7 +7978,28 @@ const allQuestions = [
         q = simQuestions[simCurrentIdx];
         totalCount = simQuestions.length;
       } else {
-        if (filteredQuestions.length === 0) return;
+        if (filteredQuestions.length === 0) {
+          if (!emptyNotice && qCard) {
+            emptyNotice = document.createElement('div');
+            emptyNotice.id = 'qEmptyNotice';
+            emptyNotice.className = 'empty-filter-state';
+            emptyNotice.style.cssText = 'padding: 48px 16px; text-align: center; color: var(--text-muted); width: 100%;';
+            emptyNotice.innerHTML = `
+              <div style="font-size: 2.5rem; margin-bottom: 12px;">📭</div>
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Aucune question ne correspond à ce périmètre et à cette section. Modifiez l’un des filtres.</h3>
+            `;
+            qCard.parentElement.insertBefore(emptyNotice, qCard);
+          }
+          if (emptyNotice) emptyNotice.style.display = 'block';
+          if (qCard) qCard.style.display = 'none';
+          if (fbCard) fbCard.style.display = 'none';
+          renderGooglePagination();
+          return;
+        }
+
+        if (emptyNotice) emptyNotice.style.display = 'none';
+        if (qCard) qCard.style.display = 'block';
+
         if (idx < 0) idx = 0;
         if (idx >= filteredQuestions.length) idx = filteredQuestions.length - 1;
         currentQuestionIndex = idx;
@@ -7925,8 +8083,7 @@ const allQuestions = [
         });
       }
 
-      // Feedback
-      const fbCard = document.getElementById('feedbackCard');
+      // Feedback (fbCard already declared above)
       if (fbCard) {
         if (isSimulationActive) {
           fbCard.style.display = 'none'; // Pas de feedback direct durant la simulation
@@ -7971,14 +8128,17 @@ const allQuestions = [
       if (!q) return;
 
       const isCorrect = (optIdx === q.correctIndex);
+      const wasAnswered = (userAnswers[q.id] !== undefined);
       userAnswers[q.id] = { selected: optIdx, isCorrect: isCorrect };
 
-      // Mise à jour des stats de difficulté
-      const stat = getCardStat(q.id);
-      stat.quizAttempts = (stat.quizAttempts || 0) + 1;
-      if (!isCorrect) stat.quizErrors = (stat.quizErrors || 0) + 1;
-      calculateDifficultyScore(q.id);
-      saveCardStats();
+      // Seule la première réponse autonome compte comme essai officiel (R09)
+      if (!wasAnswered) {
+        const stat = getCardStat(q.id);
+        stat.quizAttempts = (stat.quizAttempts || 0) + 1;
+        if (!isCorrect) stat.quizErrors = (stat.quizErrors || 0) + 1;
+        calculateDifficultyScore(q.id);
+        saveCardStats();
+      }
 
       // Rendu visuel
       renderQuestion(currentQuestionIndex);
@@ -7986,9 +8146,9 @@ const allQuestions = [
       renderGooglePagination();
 
       if (isCorrect) {
-        updateMascot("Excellente réponse ! Consulte le passage officiel surligné dans le document source.", "happy");
+        updateMascot("Consulte la rétroaction et la référence associée à cette question.", "happy");
       } else {
-        updateMascot("Ce n'est pas la bonne option. Lis l'explication et observe l'extrait officiel surligné à droite.", "sad");
+        updateMascot("Consulte la rétroaction et la référence associée à cette question.", "sad");
       }
     }
 
@@ -7997,6 +8157,8 @@ const allQuestions = [
       if (!q) return;
       delete userAnswers[q.id];
       renderQuestion(currentQuestionIndex);
+      updateMasteryBadge();
+      renderGooglePagination();
       updateMascot("Tu peux maintenant sélectionner un autre choix pour cette question.", "neutral");
     }
 
@@ -8013,7 +8175,6 @@ const allQuestions = [
       document.getElementById('fbDocTitle').textContent = q.doc_title;
       document.getElementById('fbDocPage').textContent = q.doc_page;
       document.getElementById('fbDocQuote').textContent = q.doc_quote || '';
-      document.getElementById('fbDocQuote').textContent = q.doc_quote || '';
       document.getElementById('fbExplanation').innerHTML = '<strong>Explication théorique :</strong> ' + (q.doc_explanation || '');
       document.getElementById('fbExamTipText').textContent = q.exam_tip || 'Relier le concept au modèle général.';
 
@@ -8026,22 +8187,24 @@ const allQuestions = [
 
       // Question sans passage intégré ou à source externe non intégrée dans le lecteur
       if (!q.doc_id || !q.anchor_id) {
-        const msg = q.doc_title ? ("Source extérieure : " + q.doc_title) : "Référence extérieure non intégrée. Aucun passage de Cañas ne justifie à lui seul cette question.";
+        const msg = "Cette question repose sur une référence extérieure non intégrée. Aucun passage du chapitre de Cañas ne permet à lui seul de vérifier cette réponse.";
         updateMascot(msg, "study");
         showToast(msg);
         return;
       }
 
-      if (activeDocId !== q.doc_id) switchTab(q.doc_id);
+      const targetDocId = q.doc_id;
+      const targetLang = docLanguage;
+      if (activeDocId !== targetDocId) switchTab(targetDocId);
 
       setTimeout(() => {
-        const vpId = 'viewport_' + activeDocId + '_' + docLanguage;
+        const vpId = 'viewport_' + targetDocId + '_' + targetLang;
         const activeVp = document.getElementById(vpId);
         if (!activeVp) return;
 
-        const anchorSuffix = (docLanguage === 'fr') ? '_fr' : '';
+        const anchorSuffix = (targetLang === 'fr') ? '_fr' : '';
         const targetAnchor = activeVp.querySelector('#anchor_q' + qid + anchorSuffix) || 
-          (docLanguage === 'en' ? activeVp.querySelector('#anchor_q' + qid) : null);
+          (targetLang === 'en' ? activeVp.querySelector('#anchor_q' + qid) : null);
 
         document.querySelectorAll('.source-anchor-target').forEach(el => el.classList.remove('active-highlight'));
         if (targetAnchor) {
@@ -8049,30 +8212,49 @@ const allQuestions = [
           if (!isCompactUI() || forceOpen) {
             targetAnchor.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
           }
+        } else {
+          // Gestion des cibles absentes (R03 / R05)
+          if (targetLang === 'fr') {
+            showToast("La traduction française de ce passage n’est pas vérifiée. Le passage original est affiché pour contrôler la réponse.");
+            setDocLanguage('en');
+          } else {
+            showToast("Passage de référence non localisé dans le document.");
+          }
         }
       }, 50);
     }
 
     function jumpToCurrentAnchor() {
       const q = getCurrentActiveQuestion();
-      if (q) {
-        if (isCompactUI()) {
-          setMobileView('source');
-        }
-        showDocumentPostAnswer();
-        highlightAndScrollSource(q.id, true, true);
+      if (!q) return;
+      if (!q.doc_id || !q.anchor_id) {
+        const msg = "Cette question repose sur une référence extérieure non intégrée. Aucun passage du chapitre de Cañas ne permet à lui seul de vérifier cette réponse.";
+        updateMascot(msg, "study");
+        showToast(msg);
+        return;
       }
-    }
-
-    function openDocumentFromBadge() {
-      const q = getCurrentActiveQuestion();
-      const docId = q?.doc_id || 'doc_canas';
       if (isCompactUI()) {
         setMobileView('source');
       }
       showDocumentPostAnswer();
-      switchTab(docId, true);
-      if (q) highlightAndScrollSource(q.id, true, true);
+      highlightAndScrollSource(q.id, true, true);
+    }
+
+    function openDocumentFromBadge() {
+      const q = getCurrentActiveQuestion();
+      if (!q) return;
+      if (!q.doc_id || !q.anchor_id) {
+        const msg = "Cette question repose sur une référence extérieure non intégrée. Aucun passage du chapitre de Cañas ne permet à lui seul de vérifier cette réponse.";
+        updateMascot(msg, "study");
+        showToast(msg);
+        return;
+      }
+      if (isCompactUI()) {
+        setMobileView('source');
+      }
+      showDocumentPostAnswer();
+      switchTab(q.doc_id, true);
+      highlightAndScrollSource(q.id, true, true);
     }
 
     function nextQuestion() {
@@ -8101,11 +8283,17 @@ const allQuestions = [
 
     function updateMasteryBadge() {
       let correct = 0;
-      allQuestions.forEach(q => {
+      const admissible = getAdmissibleQuestions();
+      admissible.forEach(q => {
         if (userAnswers[q.id] && userAnswers[q.id].isCorrect) correct++;
       });
-      const pct = Math.round((correct / allQuestions.length) * 100);
-      document.getElementById('masteryBadge').textContent = '🏆 ' + correct + ' / ' + allQuestions.length + ' (' + pct + '%)';
+      const total = admissible.length;
+      const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+      const badgeText = '🏆 ' + correct + ' / ' + total + ' (' + pct + '%)';
+      const deskBadge = document.getElementById('masteryBadge');
+      const mobBadge = document.getElementById('mobMasteryBadge');
+      if (deskBadge) deskBadge.textContent = badgeText;
+      if (mobBadge) mobBadge.textContent = '🏆 ' + correct + '/' + total;
     }
 
     // --- RECHERCHE DANS LE TEXTE ---
@@ -8131,19 +8319,20 @@ const allQuestions = [
 
       const escaped = escapeRegExp(term);
       const regex = new RegExp(escaped, 'i');
-      const walker = document.createTreeWalker(vp, NodeFilter.SHOW_TEXT);
-      let node;
+
+      // Recherche par blocs textuels continus pour traverser les balises inline (mark, em, span...) (R10)
+      const blocks = vp.querySelectorAll('.doc-para, .doc-subheading, .doc-heading, .doc-art-h2, .doc-art-h3, p, h1, h2, h3, h4, li, blockquote');
       searchResults = [];
-      const matchedParents = new Set();
-      while (node = walker.nextNode()) {
-        if (regex.test(node.textContent)) {
-          const parent = node.parentElement;
-          if (parent && !matchedParents.has(parent)) {
-            matchedParents.add(parent);
-            searchResults.push(parent);
+      const seen = new Set();
+      blocks.forEach(block => {
+        if (regex.test(block.textContent)) {
+          if (!seen.has(block)) {
+            seen.add(block);
+            searchResults.push(block);
           }
         }
-      }
+      });
+
       if (countEl) {
         countEl.textContent = searchResults.length + ' résultat' + (searchResults.length > 1 ? 's' : '');
       }
