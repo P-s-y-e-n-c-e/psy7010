@@ -320,12 +320,12 @@
     }
     /* MODE HORIZONTAL : LE QUESTIONNAIRE PREND TOUT L'ESPACE JUSQU'AUX RESSOURCES OPTIONNELLES */
     .workstation-container.layout-horizontal .quiz-content-wrap {
-      padding: 24px;
+      padding: 16px 24px;
     }
     .workstation-container.layout-horizontal .q-card {
-      padding: 26px 30px;
+      padding: 22px 28px;
       border-radius: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
     .workstation-container.layout-horizontal .q-title {
       font-size: 1.25rem;
@@ -369,9 +369,24 @@
       width: 30px;
       height: 34px;
     }
-    .workstation-container.layout-horizontal #optionalResourcesSection {
-      margin-top: 18px;
-      padding-top: 10px;
+    .workstation-container.layout-horizontal #optionalResourcesSection,
+    .workstation-container.layout-horizontal .podcast-section-divider {
+      margin: 10px 0 8px 0;
+      padding-top: 0;
+    }
+    .workstation-container.layout-horizontal .flashcards-opt-card {
+      margin-bottom: 8px;
+      padding: 11px 16px;
+    }
+    .workstation-container.layout-horizontal .podcast-banner {
+      padding: 11px 16px;
+    }
+    .workstation-container.layout-horizontal .mascot-bubble {
+      margin-bottom: 8px;
+      padding: 8px 14px;
+    }
+    .workstation-container.layout-horizontal .categories-bar {
+      margin-bottom: 8px;
     }
 
     /* MASCOTTE TOADETTE / TOAD */
@@ -1292,9 +1307,6 @@
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-    }
-    .workstation-container.layout-horizontal .podcast-section-divider {
-      margin: 24px 0 16px 0;
     }
     .podcast-section-divider::before, .podcast-section-divider::after {
       content: '';
