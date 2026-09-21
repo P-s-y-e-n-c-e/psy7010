@@ -1609,7 +1609,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      max-width: 540px;
+      max-width: 880px;
       margin: 0 auto;
       align-items: center;
     }
@@ -1625,14 +1625,16 @@
     .fc-scene {
       perspective: 1200px;
       width: 100%;
-      max-width: 720px;
-      min-height: 350px;
+      max-width: 880px;
+      aspect-ratio: 16 / 9;
+      min-height: 395px;
       cursor: pointer;
       margin: 0 auto 14px auto;
     }
     .fc-card {
       width: 100%;
-      min-height: 350px;
+      height: 100%;
+      min-height: 395px;
       position: relative;
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
@@ -1641,14 +1643,15 @@
     .fc-face {
       position: absolute;
       width: 100%;
+      height: 100%;
       min-height: 100%;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      border-radius: 16px;
+      border-radius: 18px;
       border: 2px solid var(--border-color);
       background: var(--bg-card);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
-      padding: 24px 28px;
+      padding: 18px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1678,37 +1681,37 @@
       line-height: 1.4;
     }
     .fc-question-text {
-      font-size: 1.22rem;
+      font-size: 1.25rem;
       font-weight: 800;
       line-height: 1.5;
       color: var(--text-main);
       text-align: center;
-      max-width: 660px;
+      max-width: 780px;
       margin: 0 auto;
     }
     .fc-back-body {
       overflow-y: auto;
       max-height: 480px;
-      margin: 10px 0 14px 0;
+      margin: 6px 0 10px 0;
       text-align: left;
     }
     .fc-correct-card {
       background: var(--success-light);
       border: 1px solid var(--success-border);
       color: var(--success-dark);
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 0.95rem;
+      padding: 8px 12px;
+      border-radius: 9px;
+      font-size: 0.92rem;
       font-weight: 800;
-      line-height: 1.4;
-      margin-bottom: 10px;
+      line-height: 1.35;
+      margin-bottom: 8px;
       text-align: center;
     }
     .fc-explanation {
-      font-size: 0.92rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      line-height: 1.45;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .fc-source-pill {
       display: flex;
@@ -1719,9 +1722,9 @@
       border: 1px solid var(--border-color);
       border-left: 3px solid var(--primary);
       border-radius: 8px;
-      padding: 7px 12px;
-      margin-bottom: 10px;
-      font-size: 0.82rem;
+      padding: 6px 12px;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s;
@@ -1741,25 +1744,38 @@
       display: none;
     }
     .fc-exam-tip {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       background: var(--warning-light);
       border: 1px solid var(--warning-border);
-      padding: 8px 12px;
+      padding: 7px 10px;
       border-radius: 8px;
       color: #78350f;
+      line-height: 1.35;
     }
     body.dark-mode .fc-exam-tip { color: #fde68a; }
     .chip-reset {
+      display: none !important;
       cursor: pointer;
       color: var(--text-muted);
       border: 1px dashed var(--border-color);
       background: var(--bg-card);
       transition: all 0.2s;
+      padding: 3px 8px;
+      font-size: 0.85rem;
+      line-height: 1;
+      border-radius: 6px;
     }
     .chip-reset:hover {
       background: var(--danger-light);
       border-color: var(--danger-border);
       color: var(--danger);
+    }
+    @media (max-width: 768px) {
+      .chip-reset {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     /* --- GÉOMÉTRIE BUREAU VERTICALE IDÉALE AUTOMATIQUE --- */
@@ -1951,12 +1967,14 @@
       .fc-scene {
         perspective: none !important;
         min-height: auto !important;
+        aspect-ratio: auto !important;
       }
       .fc-card {
         transform-style: flat !important;
         transform: none !important;
         min-height: auto !important;
         height: auto !important;
+        aspect-ratio: auto !important;
       }
       .fc-card.flipped {
         transform: none !important;
@@ -2358,7 +2376,7 @@
               <span class="fc-stat-chip chip-mastered" title="Cartes maîtrisées">🟢 <span id="fcCountMastered">0</span></span>
               <span class="fc-stat-chip chip-review" title="Cartes en cours d'apprentissage">🟡 <span id="fcCountReview">0</span></span>
               <span class="fc-stat-chip chip-hard" title="Cartes prioritaires avec difficultés">🔴 <span id="fcCountHard">0</span></span>
-              <button class="fc-stat-chip chip-reset" onclick="openResetModal()" title="Réinitialiser l'apprentissage [Maj + R]">🔄 Réinit.</button>
+              <button class="fc-stat-chip chip-reset mobile-only" onclick="openResetModal()" title="Voulez-vous réinitialiser ?" aria-label="Réinitialiser">🔄</button>
             </div>
           </div>
 
@@ -5678,7 +5696,7 @@ Concluons par cet aphorisme prémonitoire de Peter F. Drucker, père du manageme
   <div class="modal-backdrop" id="resetModal" style="display: none;" onclick="handleResetBackdropClick(event)">
     <div class="reset-modal-box" onclick="event.stopPropagation()">
       <div class="reset-modal-icon-badge">⚠️</div>
-      <h3 class="reset-modal-title">Êtes-vous certain ?</h3>
+      <h3 class="reset-modal-title">Voulez-vous réinitialiser ?</h3>
       <p class="reset-modal-desc">
         Cette action va réinitialiser l'ensemble de vos <strong>réponses enregistrées</strong>, votre progression d'étude, vos cartes mémoires et votre score de simulation pour repartir à zéro.
       </p>
