@@ -788,7 +788,19 @@
     }
     .search-input:focus { outline: none; border-color: var(--primary); }
     .search-count { font-size: 0.74rem; color: var(--text-muted); font-family: var(--font-mono); }
-    .search-btn { padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); cursor: pointer; font-size: 0.74rem; }
+    .search-btn { padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); cursor: pointer; font-size: 0.74rem; }
+    .search-btn:hover { background: var(--bg-card-alt); border-color: var(--primary); }
+    .font-size-btn {
+      font-weight: 800;
+      font-size: 0.95rem;
+      min-width: 26px;
+      height: 26px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
 
     .toggle-text-btn {
       padding: 5px 10px;
@@ -840,8 +852,8 @@
       flex: 1 1 0;
       overflow-y: auto;
       padding: 16px 20px;
-      font-size: 0.88rem;
-      line-height: 1.6;
+      font-size: calc(0.92rem * var(--reader-font-scale, 1));
+      line-height: 1.65;
       color: var(--text-main);
     }
     .doc-page-marker {
@@ -857,14 +869,15 @@
     .page-badge { font-weight: 800; font-size: 0.76rem; color: var(--primary); font-family: var(--font-mono); }
     .page-meta { font-size: 0.72rem; color: var(--text-muted); }
     
-    .doc-subheading { font-size: 1rem; font-weight: 800; margin: 14px 0 8px 0; color: var(--text-main); }
-    .doc-art-title { font-size: 1.2rem; font-weight: 800; margin: 10px 0 14px 0; }
-    .doc-art-h2 { font-size: 1rem; font-weight: 800; margin: 14px 0 8px 0; }
-    .doc-art-h3 { font-size: 0.92rem; font-weight: 700; margin: 10px 0 6px 0; }
-    .doc-para { margin-bottom: 10px; }
-    .doc-bullet { margin-left: 14px; margin-bottom: 6px; }
-    .doc-list { margin-left: 20px; margin-bottom: 10px; }
+    .doc-subheading { font-size: calc(1rem * var(--reader-font-scale, 1)); font-weight: 800; margin: 14px 0 8px 0; color: var(--text-main); }
+    .doc-art-title { font-size: calc(1.2rem * var(--reader-font-scale, 1)); font-weight: 800; margin: 10px 0 14px 0; }
+    .doc-art-h2 { font-size: calc(1rem * var(--reader-font-scale, 1)); font-weight: 800; margin: 14px 0 8px 0; }
+    .doc-art-h3 { font-size: calc(0.92rem * var(--reader-font-scale, 1)); font-weight: 700; margin: 10px 0 6px 0; }
+    .doc-para { font-size: calc(0.92rem * var(--reader-font-scale, 1)); line-height: 1.65; margin-bottom: 10px; }
+    .doc-bullet { font-size: calc(0.92rem * var(--reader-font-scale, 1)); line-height: 1.65; margin-left: 14px; margin-bottom: 6px; }
+    .doc-list { font-size: calc(0.92rem * var(--reader-font-scale, 1)); line-height: 1.65; margin-left: 20px; margin-bottom: 10px; }
     .doc-quote-box {
+      font-size: calc(0.90rem * var(--reader-font-scale, 1));
       border-left: 3px solid var(--primary);
       padding: 8px 12px;
       background: var(--bg-card-alt);
@@ -1173,11 +1186,11 @@
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         padding: 16px 14px !important;
-        font-size: 1.05rem !important;
+        font-size: calc(1.05rem * var(--reader-font-scale, 1)) !important;
         line-height: 1.7 !important;
       }
       .doc-para, .reader-pane p {
-        font-size: 1.05rem !important;
+        font-size: calc(1.05rem * var(--reader-font-scale, 1)) !important;
         line-height: 1.7 !important;
       }
     }
@@ -2719,6 +2732,12 @@
         <button id="toggleTextVisibilityBtn" class="toggle-text-btn" onclick="toggleSourceTextVisibility()" title="Masquer / afficher le texte source">
           <span id="toggleTextIcon">🔒</span> <span id="toggleTextLabel">Masquer le texte</span>
         </button>
+
+        <!-- BOUTONS DE TAILLE DU TEXTE DU LECTEUR (À DROITE COMPLÈTEMENT) -->
+        <div class="reader-zoom-group" style="margin-left: auto; display: inline-flex; align-items: center; gap: 4px;">
+          <button class="search-btn font-size-btn" id="btnReaderZoomOut" onclick="adjustReaderFontSize(-1)" title="Diminuer la taille du texte" aria-label="Diminuer la taille du texte">−</button>
+          <button class="search-btn font-size-btn" id="btnReaderZoomIn" onclick="adjustReaderFontSize(1)" title="Augmenter la taille du texte" aria-label="Augmenter la taille du texte">+</button>
+        </div>
       </div>
 
       <!-- ANTI-SPOILER PLACEHOLDER -->
@@ -5885,6 +5904,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       updateFlashcardStatsUI();
       initSavedPodcastUrl();
       initTheme();
+      applyReaderFontScale();
       if (isCompactUI()) {
         document.body.classList.add('is-mobile-compact');
         setMobileView('activity');
@@ -6326,6 +6346,42 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
     function toggleSourceTextVisibility() {
       if (sourceTextVisible) hideDocumentPreAnswer();
       else showDocumentPostAnswer();
+    }
+
+    // --- CONTRÔLE DE LA TAILLE DU TEXTE DU LECTEUR ---
+    let readerFontScale = 1.0;
+    try {
+      const savedScale = localStorage.getItem('psy7010_reader_font_scale');
+      if (savedScale) {
+        const val = parseFloat(savedScale);
+        if (!isNaN(val) && val >= 0.75 && val <= 2.0) {
+          readerFontScale = val;
+        }
+      }
+    } catch (e) {}
+
+    function applyReaderFontScale() {
+      const pane = document.getElementById('readerPane');
+      if (pane) {
+        pane.style.setProperty('--reader-font-scale', readerFontScale);
+      }
+      document.documentElement.style.setProperty('--reader-font-scale', readerFontScale);
+      const pct = Math.round(readerFontScale * 100) + '%';
+      const btnOut = document.getElementById('btnReaderZoomOut');
+      const btnIn = document.getElementById('btnReaderZoomIn');
+      if (btnOut) btnOut.title = `Diminuer la taille du texte (${pct})`;
+      if (btnIn) btnIn.title = `Augmenter la taille du texte (${pct})`;
+    }
+
+    function adjustReaderFontSize(delta) {
+      let newScale = Math.round((readerFontScale + delta * 0.1) * 10) / 10;
+      if (newScale < 0.8) newScale = 0.8;
+      if (newScale > 1.8) newScale = 1.8;
+      readerFontScale = newScale;
+      try {
+        localStorage.setItem('psy7010_reader_font_scale', readerFontScale.toFixed(2));
+      } catch (e) {}
+      applyReaderFontScale();
     }
 
     // --- QUESTIONS & CORRECTION ---
