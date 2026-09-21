@@ -1949,6 +1949,212 @@
       }
     }
 
+
+    /* --- CSS CONSOLIDÉ V2 : MODAL, TEST FORM, MOBILITÉ & VOLUME --- */
+    :root {
+      --error: #ef4444;
+      --error-dark: #b91c1c;
+      --error-light: #fef2f2;
+      --error-border: #fca5a5;
+    }
+
+    /* Formulaire Mode Test (C02.2 Espacements stricts) */
+    #simSetupCard {
+      padding: 1.25rem !important;
+      border: 1px solid var(--border-color);
+      border-radius: 0.875rem;
+      background: var(--bg-card);
+    }
+    #simSetupCard .sim-title {
+      margin: 0 0 0.75rem !important;
+      font-size: 1.2rem !important;
+      line-height: 1.35 !important;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    #simSetupCard .sim-desc {
+      margin: 0 0 1.5rem !important;
+      font-size: 0.96rem !important;
+      line-height: 1.5 !important;
+      color: var(--text-muted);
+    }
+    #simSetupCard .sim-form-group {
+      margin: 0 !important;
+    }
+    #simSetupCard .sim-form-group + .sim-form-group {
+      margin-top: 1.25rem !important;
+    }
+    #simSetupCard .sim-label {
+      display: block !important;
+      margin-bottom: 0.625rem !important;
+      line-height: 1.45 !important;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+    #simSetupCard .sim-select {
+      display: block !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      min-height: 44px !important;
+      padding: 0.75rem !important;
+      font: inherit !important;
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+      color: var(--text-main);
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+    }
+    #simStartBtn {
+      margin-top: 1.5rem !important;
+      min-height: 44px !important;
+      width: 100% !important;
+      justify-content: center !important;
+      white-space: normal;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* Option bouton sélectionné neutre en Mode Test (pas de vert/rouge prématuré) */
+    .option-btn.sim-selected {
+      border-color: var(--primary) !important;
+      background: var(--primary-light) !important;
+      color: var(--primary-dark) !important;
+      font-weight: 700 !important;
+      box-shadow: 0 0 0 2px var(--primary) !important;
+    }
+
+    /* Navigation Mobile (C07.3) */
+    .mobile-pagination {
+      display: none;
+    }
+
+    /* Contrôle du volume bureau */
+    .audio-volume-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+    }
+
+    /* Responsive Compact Unifié (C07.1) */
+    @media (max-width: 48rem), (max-height: 32rem) and (pointer: coarse) {
+      .audio-volume-wrap {
+        display: none !important;
+      }
+
+      /* En-tête sur 2 rangées : titre complet rangée 1, date et outils rangée 2 (C07.2) */
+      .header-brand-row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        grid-template-areas: "title title" "date tools" !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 0.35rem 0.75rem !important;
+        min-width: 0 !important;
+      }
+      .header-brand-row > .header-brand {
+        display: contents !important;
+      }
+      .header-brand-row .quiz-main-title {
+        grid-area: title !important;
+        min-width: 0 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        line-height: 1.25 !important;
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+      }
+      .header-brand-row .quiz-sub-date {
+        display: block !important;
+        grid-area: date !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+        font-size: 0.85rem !important;
+        color: var(--text-muted) !important;
+      }
+      .header-brand-row .mobile-header-tools {
+        display: flex !important;
+        grid-area: tools !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 0.5rem !important;
+      }
+
+      /* Pagination compacte 3 colonnes (C07.3) */
+      .google-pagination {
+        display: none !important;
+      }
+      .mobile-pagination {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(5.5rem, auto) minmax(0, 1fr);
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+        margin-top: 14px;
+      }
+      .mobile-pagination .nav-btn {
+        min-height: 44px !important;
+        padding: 8px 6px !important;
+        font-size: 0.85rem !important;
+        font-weight: 700;
+      }
+      .mobile-question-select {
+        min-height: 44px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        background: var(--bg-card);
+        color: var(--text-main);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      /* Flashcards mobile : aide clavier masquée (C11) & barre 3 colonnes */
+      .fc-keyboard-helper {
+        display: none !important;
+      }
+      .fc-nav-bar {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        min-height: 44px !important;
+      }
+      .fc-nav-btn {
+        min-height: 44px !important;
+        padding: 8px 4px !important;
+        font-size: 0.84rem !important;
+      }
+
+      /* Podcast mobile : masquer le rond Play redondant (C12.1) et espacer les liens de 24px */
+      #podcastAvatarCircle {
+        display: none !important;
+      }
+      .podcast-banner {
+        padding: 20px 16px !important;
+      }
+      .podcast-banner-center {
+        margin-bottom: 24px !important;
+      }
+      .podcast-banner-right {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+      .podcast-banner-right .podcast-play-btn,
+      .podcast-banner-right .podcast-edit-link-btn {
+        margin: 0 !important;
+        width: 100% !important;
+        min-height: 44px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -2166,7 +2372,7 @@
           <p class="sim-desc">Simule le Quiz en ligne Moodle (5 %) du cours PSY7010 dans les conditions réelles de classe (3 à 5 questions dans les 15 premières minutes).</p>
           
           <div class="sim-form-group">
-            <label class="sim-label">Nombre de questions dans la simulation :</label>
+            <label class="sim-label" for="simCountSelect">Nombre de questions dans la simulation :</label>
             <select id="simCountSelect" class="sim-select">
               <option value="5" selected>5 questions (Format officiel Moodle • 15 min)</option>
               <option value="8">8 questions (Simulation standard)</option>
@@ -2177,7 +2383,7 @@
           </div>
 
           <div class="sim-form-group">
-            <label class="sim-label">Gestion du temps :</label>
+            <label class="sim-label" for="simTimerSelect">Gestion du temps :</label>
             <select id="simTimerSelect" class="sim-select">
               <option value="900" selected>15 minutes (Format officiel en classe)</option>
               <option value="600">10 minutes (Cadence rapide)</option>
@@ -2186,7 +2392,7 @@
             </select>
           </div>
 
-          <button class="primary-btn" onclick="startSimulation()">
+          <button class="primary-btn" id="simStartBtn" type="button" onclick="startSimulation()">
             🚀 Démarrer la simulation
           </button>
         </div>
@@ -2247,6 +2453,11 @@
               ◀ <span class="nav-btn-label">Précédente</span>
             </button>
             <div class="google-pagination" id="googlePagination"></div>
+            <div class="mobile-pagination mobile-only" id="mobilePagination">
+              <button class="nav-btn prev-btn" id="mobPrevBtn" onclick="prevQuestion()" aria-label="Question précédente">◀ Précédente</button>
+              <select id="mobileQuestionSelect" class="mobile-question-select" aria-label="Choisir une question" onchange="jumpToQuestionIndex(parseInt(this.value, 10))"></select>
+              <button class="nav-btn next-btn" id="mobNextBtn" onclick="nextQuestion()" aria-label="Question suivante">Suivante ▶</button>
+            </div>
             <button class="primary-btn nav-btn" id="nextBtn" onclick="nextQuestion()" title="Question suivante">
               <span class="nav-btn-label">Suivante</span> ▶
             </button>
@@ -2270,7 +2481,7 @@
 
         <!-- CARTE FLASHCARDS OPTIONNELLE -->
         <div class="flashcards-opt-card" id="flashcardsOptBanner">
-          <div class="fc-avatar-circle">🗂️</div>
+          <div class="fc-avatar-circle" onclick="setMode('flashcards')" style="cursor: pointer;" title="Lancer le mode Flashcards">🗂️</div>
           <div class="podcast-banner-center">
             <div class="podcast-banner-tag-row">
               <span class="fc-tag-badge">Entraînement Mémoire (SRS)</span>
@@ -2315,6 +2526,10 @@
               </audio>
 
               <div class="custom-audio-controls">
+              <div class="audio-volume-wrap desktop-only" title="Contrôle du volume">
+                <span style="font-size: 0.85rem;">🔊</span>
+                <input type="range" id="audioVolumeSlider" min="0" max="1" step="0.05" value="1" oninput="setAudioVolume(this.value)" style="width: 75px; accent-color: var(--primary); cursor: pointer;" aria-label="Volume">
+              </div>
                 <button class="audio-ctrl-btn play-pause-btn" id="audioPlayPauseBtn" onclick="togglePlayPodcast()" title="Lecture / Pause">
                   <span id="audioPlayPauseIcon">▶️</span> <span id="audioPlayPauseText">Écouter</span>
                 </button>
@@ -4327,6 +4542,7 @@ Comments are closed.
 
       <!-- READER VIEWPORTS EN FRANÇAIS -->
       <div class="reader-viewport" id="viewport_doc_canas_fr" style="display: none;">
+        <div class="academic-disclaimer" style="margin: 8px 0 14px 0; padding: 10px 14px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">ℹ️ <strong>Note documentaire :</strong> Notes de révision en français générées par IA — adaptation enrichie, non traduction intégrale vérifiée. Pour les citations et les attributions, consulter l’original anglais et les références explicitement indiquées.</div>
         <div class="doc-page-marker" id="page_316_fr"><span class="page-badge">📄 Page 316</span> <span class="page-meta">Traduction académique — Chapitre 13</span></div>
 <p class="doc-para">
 Chapitre 13
@@ -4671,7 +4887,7 @@ Références bibliographiques officielles (Partie 2)
         <h2 class="doc-art-title">Qu'est-ce que les facteurs humains ? (Introduction et définitions)</h2>
 <ul class="doc-list">
 <li>**Source officielle Moodle :** [https://humanfactors101.com/about/what-is-human-factors/](https://humanfactors101.com/about/what-is-human-factors/)</li>
-<li>**Auteur :** Mark Sujan / Human Factors 101</li>
+<li>**Auteur :** Martin Anderson / Human Factors 101</li>
 <li>**Traduction académique française (PSY7010 - Ergonomie cognitive et facteurs humains)**</li>
 </ul>
 <hr class="doc-divider">
@@ -4785,7 +5001,7 @@ L'analyse des facteurs humains permet d'élucider des problématiques fondamenta
 S'agit-il d'événements purement aléatoires, ou pouvons-nous isoler des conditions qui en favorisent l'émergence ? Les barrières de prévention dépendront directement de la nature exacte de l'erreur cognitive ou motrice en jeu.
 </p>
 <ul class="doc-list">
-<li>**Pourquoi les règles sont-elles transgressées (*violations*) ?**</li>
+<li><mark id="anchor_q15" class="source-anchor-target" data-qid="15" title="Extrait officiel pour la Question 15">**Pourquoi les règles sont-elles transgressées (*violations*) ?**</mark></li>
 </ul>
 <p class="doc-para">
 L'infraction était-elle intentionnelle, ou découle-t-elle d'une méconnaissance de la règle ? La consigne était-elle tout simplement inapplicable sur le terrain face aux réalités opérationnelles (<em>work-as-done vs work-as-imagined</em>), ou l'opérateur était-il soumis à des injonctions contradictoires de temps et de production ?
@@ -4856,7 +5072,7 @@ Les facteurs humains s'appuient sur la compréhension scientifique de l'être hu
         <h2 class="doc-art-title">Principes de la performance humaine (*Principles of Human Performance*)</h2>
 <ul class="doc-list">
 <li>**Source officielle Moodle :** [https://humanfactors101.com/topics/principles-of-human-performance/](https://humanfactors101.com/topics/principles-of-human-performance/)</li>
-<li>**Auteur :** Mark Sujan / Human Factors 101</li>
+<li>**Auteur :** Martin Anderson / Human Factors 101</li>
 <li>**Traduction académique française (PSY7010 - Ergonomie cognitive et facteurs humains)**</li>
 </ul>
 <hr class="doc-divider">
@@ -5043,7 +5259,7 @@ L'ingénierie des facteurs humains (<em>Human Factors Engineering - HFE</em>) es
         <h2 class="doc-art-title">La conscience de la situation (*Situation Awareness*)</h2>
 <ul class="doc-list">
 <li>**Source officielle Moodle :** [https://humanfactors101.com/topics/situation-awareness/](https://humanfactors101.com/topics/situation-awareness/)</li>
-<li>**Auteur :** Mark Sujan / Human Factors 101</li>
+<li>**Auteur :** Martin Anderson / Human Factors 101</li>
 <li>**Traduction académique française (PSY7010 - Ergonomie cognitive et facteurs humains)**</li>
 </ul>
 <hr class="doc-divider">
@@ -5236,7 +5452,7 @@ L'ingénierie des facteurs humains (<em>Human Factors Engineering - HFE</em>) re
         <h2 class="doc-art-title">Les <mark id="anchor_q28_fr" class="source-anchor-target" data-qid="28" title="Extrait traduit pour la Question 28">paradoxes de l'automatisation</mark> (*The Ironies of Automation*)</h2>
 <ul class="doc-list">
 <li>**Source officielle Moodle :** [https://humanfactors101.com/2020/05/24/the-ironies-of-automation/](https://humanfactors101.com/2020/05/24/the-ironies-of-automation/)</li>
-<li>**Auteur :** Mark Sujan / Human Factors 101</li>
+<li>**Auteur :** Martin Anderson / Human Factors 101</li>
 <li>**Traduction académique française (PSY7010 - Ergonomie cognitive et facteurs humains)**</li>
 </ul>
 <hr class="doc-divider">
@@ -5270,7 +5486,7 @@ Quels sont donc ces « paradoxes de l'automatisation » identifiés par Bainbrid
 <p class="doc-para">
 Le premier paradoxe réside dans le fait qu'en cherchant à éliminer l'opérateur humain du système de contrôle, les défaillances d'exploitation finissent par émerger des <strong>erreurs commises par les concepteurs eux-mêmes</strong>. C'est ce que l'ergonomie nomme les <strong>erreurs induites par la conception</strong> (<em>design-induced errors</em>), souvent causées par une absence de spécialistes des facteurs humains au sein des équipes d'ingénierie. Ces erreurs de conception constituent des <strong>défaillances latentes</strong> (<em>latent failures</em>) qui sommeillent au cœur du système durant des années — véritables « pièges et erreurs en sursis » (<em>mistakes waiting to happen</em>) :
 </p>
-<blockquote class="doc-quote-box">« Loin d'être les principaux instigateurs d'un accident, les opérateurs de première ligne ont plutôt tendance à hériter des défauts du système engendrés par une conception déficiente, une installation incorrecte, une maintenance défaillante et de mauvaises décisions managériales. Leur rôle se résume le plus souvent à ajouter la touche finale à un breuvage létal dont les ingrédients mijotaient depuis bien longtemps. »</blockquote>
+<blockquote class="doc-quote-box"><mark id="anchor_q17" class="source-anchor-target" data-qid="17" title="Extrait officiel pour la Question 17">« Loin d'être les principaux instigateurs d'un accident, les opérateurs de première ligne ont plutôt tendance à hériter des défauts du système engendrés par une conception déficiente, une installation incorrecte, une maintenance défaillante et de mauvaises décisions managériales. Leur rôle se résume le plus souvent à ajouter la touche finale à un breuvage létal dont les ingrédients mijotaient depuis bien longtemps. »</blockquote>
 <blockquote class="doc-quote-box">— James Reason, *Human Error*, 1990.</blockquote>
 <hr class="doc-divider">
 <h3 class="doc-art-h2">Paradoxe 2 : Les tâches résiduelles non automatisées reposent sur l'humain</h3>
@@ -5588,6 +5804,13 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const filterSec = document.getElementById('filterSection');
 
       if (mode === 'study') {
+        if (isSimulationActive && simTimerInterval) {
+          clearInterval(simTimerInterval);
+          simTimerInterval = null;
+        }
+        isSimulationActive = false;
+        simState = 'setup';
+
         if (qCard) qCard.style.display = 'block';
         if (fcContainer) fcContainer.style.display = 'none';
         if (simSetup) simSetup.style.display = 'none';
@@ -5595,9 +5818,16 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (filterSec) filterSec.style.display = 'block';
         
         filterCategory(currentCategoryFilter);
-        renderQuestion(currentQuestionIndex, false); // false = ne pas forcer le scroll/surlignage au chargement
+        renderQuestion(currentQuestionIndex, false);
         updateMascot("Mode Étude actif. Les questions et le texte officiel sont ouverts.", "happy");
       } else if (mode === 'flashcards') {
+        if (isSimulationActive && simTimerInterval) {
+          clearInterval(simTimerInterval);
+          simTimerInterval = null;
+        }
+        isSimulationActive = false;
+        simState = 'setup';
+
         if (qCard) qCard.style.display = 'none';
         if (fcContainer) fcContainer.style.display = 'flex';
         if (simSetup) simSetup.style.display = 'none';
@@ -5606,19 +5836,31 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         
         initFlashcardDeck();
         renderFlashcard(0);
-        updateMascot("Mode Flashcards actif. Clique sur la carte ou appuie sur [Espace] pour révéler la réponse.", "happy");
+        updateMascot("Mode Flashcards actif. Clique sur la carte pour révéler la réponse.", "happy");
       } else if (mode === 'simulation') {
-        if (qCard) qCard.style.display = 'none';
-        if (fcContainer) fcContainer.style.display = 'none';
-        if (simSetup) simSetup.style.display = 'block';
-        if (simResults) simResults.style.display = 'none';
         if (filterSec) filterSec.style.display = 'none';
-        
-        updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
+        if (fcContainer) fcContainer.style.display = 'none';
+
+        if (isSimulationActive && simState === 'running') {
+          if (qCard) qCard.style.display = 'block';
+          if (simSetup) simSetup.style.display = 'none';
+          if (simResults) simResults.style.display = 'none';
+          renderQuestion(simCurrentIdx);
+        } else if (simState === 'results') {
+          if (qCard) qCard.style.display = 'none';
+          if (simSetup) simSetup.style.display = 'none';
+          if (simResults) simResults.style.display = 'block';
+        } else {
+          // setup
+          if (qCard) qCard.style.display = 'none';
+          if (simSetup) simSetup.style.display = 'block';
+          if (simResults) simResults.style.display = 'none';
+          updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
+        }
       }
+      setMobileView(mobileView);
     }
 
-    // --- MASCOTTE DYNAMIQUE ---
     function updateMascot(message, emotion = 'neutral') {
       const textEl = document.getElementById('mascotText');
       if (textEl) textEl.textContent = message;
@@ -5991,19 +6233,48 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         // --- PAGINATION STYLE GOOGLE (UNE SEULE LIGNE SANS RETOUR) ---
     function renderGooglePagination() {
       const container = document.getElementById('googlePagination');
+      const mobSelect = document.getElementById('mobileQuestionSelect');
+      const mobPrevBtn = document.getElementById('mobPrevBtn');
+      const mobNextBtn = document.getElementById('mobNextBtn');
+
+      const activeIdx = isSimulationActive ? simCurrentIdx : currentQuestionIndex;
+      const activeList = isSimulationActive ? simQuestions : filteredQuestions;
+      const total = activeList.length;
+
+      // Mise à jour du sélecteur compact mobile
+      if (mobSelect) {
+        let selHtml = '';
+        for (let i = 0; i < total; i++) {
+          selHtml += '<option value="' + i + '"' + (i === activeIdx ? ' selected' : '') + '>' + (i + 1) + ' / ' + total + '</option>';
+        }
+        mobSelect.innerHTML = selHtml;
+      }
+      if (mobPrevBtn) {
+        mobPrevBtn.disabled = (activeIdx === 0);
+      }
+      if (mobNextBtn) {
+        if (isSimulationActive) {
+          const isLast = (activeIdx === total - 1);
+          mobNextBtn.disabled = false;
+          mobNextBtn.innerHTML = isLast ? '🏁 Terminer' : 'Suivante ▶';
+          mobNextBtn.onclick = isLast ? () => finishSimulation(false) : nextQuestion;
+        } else {
+          mobNextBtn.disabled = (activeIdx === total - 1);
+          mobNextBtn.innerHTML = 'Suivante ▶';
+          mobNextBtn.onclick = nextQuestion;
+        }
+      }
+
       if (!container) return;
       container.innerHTML = '';
-
-      const total = filteredQuestions.length;
       if (total <= 1) {
         container.style.display = 'none';
         return;
       }
       container.style.display = 'flex';
 
-      const current = currentQuestionIndex + 1; // 1-indexé
+      const current = activeIdx + 1; // 1-indexé
 
-      // Fenêtre glissante style Google (7 éléments maximum)
       let pages = [];
       if (total <= 7) {
         for (let i = 1; i <= total; i++) pages.push(i);
@@ -6024,31 +6295,55 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
           dots.innerHTML = '<svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block; vertical-align:middle;"><circle cx="4" cy="10" r="2.2"/><circle cx="10" cy="10" r="2.2"/><circle cx="16" cy="10" r="2.2"/></svg>';
           container.appendChild(dots);
         } else {
-          const idx = p - 1; // 0-indexé
-          const q = filteredQuestions[idx];
+          const pageIdx = p - 1;
+          const q = activeList[pageIdx];
           const btn = document.createElement('button');
           btn.className = 'pagination-num-btn';
           btn.textContent = p;
-          if (idx === currentQuestionIndex) {
+          if (pageIdx === activeIdx) {
             btn.classList.add('active');
           }
-          const ans = userAnswers[q ? q.id : ''];
-          if (ans !== undefined) {
-            btn.classList.add(ans.isCorrect ? 'has-correct' : 'has-wrong');
+          if (isSimulationActive) {
+            if (simAnswers[pageIdx] !== undefined) {
+              btn.classList.add('has-answered');
+            }
+          } else {
+            const ans = userAnswers[q ? q.id : ''];
+            if (ans !== undefined) {
+              btn.classList.add(ans.isCorrect ? 'has-correct' : 'has-wrong');
+            }
           }
-          btn.onclick = () => renderQuestion(idx);
+          btn.onclick = () => {
+            if (isSimulationActive) {
+              simCurrentIdx = pageIdx;
+            } else {
+              currentQuestionIndex = pageIdx;
+            }
+            renderQuestion(pageIdx);
+          };
           container.appendChild(btn);
         }
       });
     }
 
     function renderQuestion(idx) {
-      if (filteredQuestions.length === 0) return;
-      if (idx < 0) idx = 0;
-      if (idx >= filteredQuestions.length) idx = filteredQuestions.length - 1;
-      currentQuestionIndex = idx;
-
-      const q = filteredQuestions[idx];
+      let q;
+      let totalCount = 0;
+      if (isSimulationActive) {
+        if (simQuestions.length === 0) return;
+        if (idx < 0) idx = 0;
+        if (idx >= simQuestions.length) idx = simQuestions.length - 1;
+        simCurrentIdx = idx;
+        q = simQuestions[simCurrentIdx];
+        totalCount = simQuestions.length;
+      } else {
+        if (filteredQuestions.length === 0) return;
+        if (idx < 0) idx = 0;
+        if (idx >= filteredQuestions.length) idx = filteredQuestions.length - 1;
+        currentQuestionIndex = idx;
+        q = filteredQuestions[currentQuestionIndex];
+        totalCount = filteredQuestions.length;
+      }
       if (!q) return;
       const isCanas = q.doc_id === 'doc_canas';
 
@@ -6060,7 +6355,13 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       }
 
       const prog = document.getElementById('qProgressText');
-      if (prog) prog.textContent = 'Question ' + (idx + 1) + ' sur ' + filteredQuestions.length + ' • 1 point';
+      if (prog) {
+        if (isSimulationActive) {
+          updateSimTimerDisplay();
+        } else {
+          prog.textContent = 'Question ' + (idx + 1) + ' sur ' + totalCount + ' • 1 point';
+        }
+      }
 
       const ctx = document.getElementById('qContextText');
       if (ctx) {
@@ -6081,14 +6382,19 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       if (grid) {
         grid.innerHTML = '';
         const letters = ['A', 'B', 'C', 'D'];
-        const savedAns = userAnswers[q.id];
+        const savedAns = isSimulationActive ? undefined : userAnswers[q.id];
+        const simChoice = isSimulationActive ? simAnswers[simCurrentIdx] : undefined;
 
         q.options.forEach((optText, optIdx) => {
           const btn = document.createElement('button');
           btn.className = 'option-btn';
           btn.innerHTML = '<span class="opt-letter">' + letters[optIdx] + '</span> <span>' + optText + '</span>';
           
-          if (savedAns !== undefined) {
+          if (isSimulationActive) {
+            if (simChoice === optIdx) {
+              btn.classList.add('sim-selected');
+            }
+          } else if (savedAns !== undefined) {
             if (optIdx === savedAns.selected) {
               btn.classList.add(savedAns.isCorrect ? 'correct' : 'wrong');
             }
@@ -6104,14 +6410,17 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
 
       // Feedback
       const fbCard = document.getElementById('feedbackCard');
-      const savedAns = userAnswers[q.id];
       if (fbCard) {
-        if (savedAns !== undefined) {
-          showFeedback(q, savedAns.selected);
-          highlightAndScrollSource(q.id, true, false);
+        if (isSimulationActive) {
+          fbCard.style.display = 'none'; // Pas de feedback direct durant la simulation
         } else {
-          fbCard.style.display = 'none';
-          // Le texte source reste ouvert et visible par défaut sans spoiler l'ancre
+          const savedAns = userAnswers[q.id];
+          if (savedAns !== undefined) {
+            showFeedback(q, savedAns.selected);
+            highlightAndScrollSource(q.id, true, false);
+          } else {
+            fbCard.style.display = 'none';
+          }
         }
       }
 
@@ -6119,13 +6428,28 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const prevBtn = document.getElementById('prevBtn');
       if (prevBtn) prevBtn.disabled = (idx === 0);
       const nextBtn = document.getElementById('nextBtn');
-      if (nextBtn) nextBtn.disabled = (idx === filteredQuestions.length - 1);
+      if (nextBtn) {
+        if (isSimulationActive) {
+          const isLast = (idx === simQuestions.length - 1);
+          nextBtn.disabled = false;
+          nextBtn.innerHTML = isLast ? '🏁 <span class="nav-btn-label">Terminer</span>' : '<span class="nav-btn-label">Suivante</span> ▶';
+          nextBtn.onclick = isLast ? () => finishSimulation(false) : nextQuestion;
+        } else {
+          nextBtn.disabled = (idx === filteredQuestions.length - 1);
+          nextBtn.innerHTML = '<span class="nav-btn-label">Suivante</span> ▶';
+          nextBtn.onclick = nextQuestion;
+        }
+      }
 
-      // Pagination style Google
+      // Pagination style Google & sélecteur mobile
       renderGooglePagination();
     }
 
     function selectOption(optIdx) {
+      if (isSimulationActive) {
+        selectSimOption(optIdx);
+        return;
+      }
       const q = getCurrentActiveQuestion();
       if (!q) return;
 
@@ -6145,7 +6469,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       renderGooglePagination();
 
       if (isCorrect) {
-        updateMascot("Excellente réponse ! Regarde à droite pour consulter le passage officiel surligné.", "happy");
+        updateMascot("Excellente réponse ! Consulte le passage officiel surligné dans le document source.", "happy");
       } else {
         updateMascot("Ce n'est pas la bonne option. Lis l'explication et observe l'extrait officiel surligné à droite.", "sad");
       }
@@ -6210,18 +6534,28 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
     }
 
     function nextQuestion() {
+      if (isSimulationActive) {
+        if (simCurrentIdx < simQuestions.length - 1) {
+          renderQuestion(simCurrentIdx + 1);
+        }
+        return;
+      }
       if (currentQuestionIndex < filteredQuestions.length - 1) {
         renderQuestion(currentQuestionIndex + 1);
       }
     }
 
     function prevQuestion() {
+      if (isSimulationActive) {
+        if (simCurrentIdx > 0) {
+          renderQuestion(simCurrentIdx - 1);
+        }
+        return;
+      }
       if (currentQuestionIndex > 0) {
         renderQuestion(currentQuestionIndex - 1);
       }
     }
-
-
 
     function updateMasteryBadge() {
       let correct = 0;
@@ -6250,7 +6584,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const vp = document.getElementById(targetVpId);
       if (!vp) return;
 
-      const regex = new RegExp(term, 'gi');
+      const escaped = escapeRegExp(term); const regex = new RegExp(escaped, 'gi');
       const walker = document.createTreeWalker(vp, NodeFilter.SHOW_TEXT);
       let node;
       searchResults = [];
@@ -6280,6 +6614,8 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
     }
 
     // --- DISPOSITION GÉOMÉTRIQUE & SÉPARATEUR ---
+    let isDraggingDivider = false;
+    let userHasDraggedSplit = false;
     function updateDynamicLayout() {
       const container = document.getElementById('workstationContainer');
       const icon = document.getElementById('layoutIcon');
@@ -6295,7 +6631,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       }
 
       const qp = document.getElementById('quizPane');
-      if (qp && !isDraggingDivider) {
+      if (qp && !isDraggingDivider && !userHasDraggedSplit) {
         qp.style.flex = '';
         qp.style.width = '';
         qp.style.height = '';
@@ -6344,10 +6680,9 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       return compactMedia.matches;
     }
 
-    let userHasDraggedSplit = false;
     let mobileView = 'activity'; // 'activity' | 'source' | 'podcast'
 
-            function setMobileView(view) {
+function setMobileView(view) {
       mobileView = view;
       const qPane = document.getElementById('quizPane');
       const rPane = document.getElementById('readerPane');
@@ -6367,16 +6702,36 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (fcOptBanner) fcOptBanner.style.display = '';
         if (podcastBanner) podcastBanner.style.display = '';
         if (filterSec) filterSec.style.display = (currentMode === 'simulation') ? 'none' : 'block';
-        if (qCard) qCard.style.display = (currentMode === 'study') ? 'block' : 'none';
-        if (fcContainer) fcContainer.style.display = (currentMode === 'flashcards') ? 'flex' : 'none';
+        if (currentMode === 'study') {
+          if (qCard) qCard.style.display = 'block';
+          if (fcContainer) fcContainer.style.display = 'none';
+          if (simSetup) simSetup.style.display = 'none';
+          if (simResults) simResults.style.display = 'none';
+        } else if (currentMode === 'flashcards') {
+          if (qCard) qCard.style.display = 'none';
+          if (fcContainer) fcContainer.style.display = 'flex';
+          if (simSetup) simSetup.style.display = 'none';
+          if (simResults) simResults.style.display = 'none';
+        } else if (currentMode === 'simulation') {
+          if (fcContainer) fcContainer.style.display = 'none';
+          if (isSimulationActive && simState === 'running') {
+            if (qCard) qCard.style.display = 'block';
+            if (simSetup) simSetup.style.display = 'none';
+            if (simResults) simResults.style.display = 'none';
+          } else if (simState === 'results') {
+            if (qCard) qCard.style.display = 'none';
+            if (simSetup) simSetup.style.display = 'none';
+            if (simResults) simResults.style.display = 'block';
+          } else {
+            if (qCard) qCard.style.display = 'none';
+            if (simSetup) simSetup.style.display = 'block';
+            if (simResults) simResults.style.display = 'none';
+          }
+        }
         return;
       }
 
-      // Mode compact / Mobile : une seule tâche active à la fois
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-      if (qPane) qPane.scrollTop = 0;
-
+      // Mode compact / Mobile : affichage selon la vue demandée SANS forcer scrollTop = 0
       if (view === 'activity') {
         if (qPane) qPane.style.display = 'block';
         if (rPane) rPane.style.display = 'none';
@@ -6391,11 +6746,21 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
           if (simSetup) simSetup.style.display = 'none';
           if (simResults) simResults.style.display = 'none';
         } else if (currentMode === 'simulation') {
-          if (qCard) qCard.style.display = 'none';
-          if (fcContainer) fcContainer.style.display = 'none';
           if (filterSec) filterSec.style.display = 'none';
-          if (simSetup) simSetup.style.display = isSimulationActive ? 'none' : 'block';
-          if (simResults) simResults.style.display = 'none';
+          if (fcContainer) fcContainer.style.display = 'none';
+          if (isSimulationActive && simState === 'running') {
+            if (qCard) qCard.style.display = 'block';
+            if (simSetup) simSetup.style.display = 'none';
+            if (simResults) simResults.style.display = 'none';
+          } else if (simState === 'results') {
+            if (qCard) qCard.style.display = 'none';
+            if (simSetup) simSetup.style.display = 'none';
+            if (simResults) simResults.style.display = 'block';
+          } else {
+            if (qCard) qCard.style.display = 'none';
+            if (simSetup) simSetup.style.display = 'block';
+            if (simResults) simResults.style.display = 'none';
+          }
         } else { // study
           if (qCard) qCard.style.display = 'block';
           if (fcContainer) fcContainer.style.display = 'none';
@@ -6423,13 +6788,12 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (fcOptBanner) fcOptBanner.style.display = 'none';
         if (podcastBanner) {
           podcastBanner.style.display = 'block';
-          podcastBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         updateMobileModebarActive('podcast');
       }
     }
 
-        function openMobilePodcast() {
+    function openMobilePodcast() {
       if (isCompactUI()) {
         setMobileView('podcast');
       } else {
@@ -6452,23 +6816,22 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       else if (active === 'podcast') document.getElementById('mobBtnPodcast')?.classList.add('active');
     }
 
+let previousIsCompact = isCompactUI();
     window.addEventListener('resize', () => {
       updateDynamicLayout();
-      if (isCompactUI()) {
-        document.body.classList.add('is-mobile-compact');
-        setMobileView(mobileView);
-      } else {
-        document.body.classList.remove('is-mobile-compact');
-        const qp = document.getElementById('quizPane');
-        const rp = document.getElementById('readerPane');
-        const opt = document.getElementById('optionalResourcesSection');
-        if (qp) qp.style.display = '';
-        if (rp) rp.style.display = '';
-        if (opt) opt.style.display = '';
+      const currentIsCompact = isCompactUI();
+      if (currentIsCompact !== previousIsCompact) {
+        previousIsCompact = currentIsCompact;
+        if (currentIsCompact) {
+          document.body.classList.add('is-mobile-compact');
+          setMobileView(mobileView);
+        } else {
+          document.body.classList.remove('is-mobile-compact');
+          setMobileView(mobileView);
+        }
       }
     });
 
-    let isDraggingDivider = false;
     function initSplitDivider() {
       const divider = document.getElementById('splitDivider');
       const container = document.getElementById('workstationContainer');
@@ -6631,7 +6994,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const speed = audioSpeeds[currentSpeedIdx];
       audio.playbackRate = speed;
       const speedBtn = document.getElementById('audioSpeedBtn');
-      if (speedBtn) speedBtn.textContent = speed.toFixed(1) + 'x';
+      if (speedBtn) speedBtn.textContent = speed + '×';
     }
 
     function onAudioEnded() {
@@ -6705,13 +7068,233 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       localStorage.setItem('psy7010_dark_mode', isDark ? '1' : '0');
       updateThemeUI();
     }
+  
+    /* =========================================================================
+       FONCTIONS CONSOLIDÉES V2 : OPTIONS MODAL, SIMULATION, RECHERCHE & AUDIO
+       ========================================================================= */
+
+    let optionsTriggerElement = null;
+
+    function openOptionsModal() {
+      const modal = document.getElementById('optionsModal');
+      if (!modal) return;
+      optionsTriggerElement = document.activeElement;
+      modal.style.display = 'flex';
+      updateOptionsModalThemeText();
+      const closeBtn = modal.querySelector('.modal-close-btn') || modal.querySelector('button');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeOptionsModal() {
+      const modal = document.getElementById('optionsModal');
+      if (!modal) return;
+      modal.style.display = 'none';
+      if (optionsTriggerElement && typeof optionsTriggerElement.focus === 'function') {
+        optionsTriggerElement.focus();
+      }
+    }
+
+    function updateOptionsModalThemeText() {
+      const isDark = document.body.classList.contains('dark-mode');
+      const text = document.getElementById('modalThemeText');
+      const icon = document.getElementById('modalThemeIcon');
+      if (text) text.textContent = isDark ? 'Mode clair' : 'Mode sombre';
+      if (icon) icon.textContent = isDark ? '☀️' : '🌓';
+    }
+
+    // Fermeture avec touche Échap
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const optModal = document.getElementById('optionsModal');
+        if (optModal && optModal.style.display === 'flex') {
+          closeOptionsModal();
+          return;
+        }
+        const resetModal = document.getElementById('resetModal');
+        if (resetModal && resetModal.style.display === 'flex') {
+          closeResetModal();
+          return;
+        }
+      }
+    });
+
+    /* --- MOTEUR DE SIMULATION MOODLE COMPLET (C02) --- */
+    let simState = 'setup'; // 'setup' | 'running' | 'results'
+    let simAnswers = {};    // { [simQuestionIndex]: selectedOptionIndex }
+    let simDeadline = 0;
+
+    function startSimulation() {
+      const countSel = document.getElementById('simCountSelect');
+      const timerSel = document.getElementById('simTimerSelect');
+      const count = parseInt(countSel ? countSel.value : '5', 10);
+      const durationSec = parseInt(timerSel ? timerSel.value : '900', 10);
+
+      const pool = [...allQuestions];
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      simQuestions = pool.slice(0, Math.min(count, pool.length));
+      simAnswers = {};
+      simCurrentIdx = 0;
+      isSimulationActive = true;
+      simState = 'running';
+
+      if (simTimerInterval) {
+        clearInterval(simTimerInterval);
+        simTimerInterval = null;
+      }
+      if (durationSec > 0) {
+        simDeadline = Date.now() + (durationSec * 1000);
+        updateSimTimerDisplay();
+        simTimerInterval = setInterval(() => {
+          const now = Date.now();
+          const rem = Math.max(0, Math.ceil((simDeadline - now) / 1000));
+          updateSimTimerDisplay(rem);
+          if (rem <= 0) {
+            clearInterval(simTimerInterval);
+            simTimerInterval = null;
+            finishSimulation(true);
+          }
+        }, 1000);
+      } else {
+        simDeadline = 0;
+        updateSimTimerDisplay(null);
+      }
+
+      setMode('simulation');
+      renderQuestion(0);
+      updateMascot("Simulation en cours (" + simQuestions.length + " questions). Réponds à ton rythme.", "study");
+    }
+
+    function updateSimTimerDisplay(secondsLeft) {
+      const progText = document.getElementById('qProgressText');
+      if (!progText) return;
+      if (secondsLeft === null || secondsLeft === undefined) {
+        if (simDeadline > 0) {
+          secondsLeft = Math.max(0, Math.ceil((simDeadline - Date.now()) / 1000));
+        } else {
+          progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + " • Sans chronomètre";
+          return;
+        }
+      }
+      const m = Math.floor(secondsLeft / 60);
+      const s = secondsLeft % 60;
+      const timeStr = String(m).padStart(2, '0') + ":" + String(s).padStart(2, '0');
+      progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + " • ⏱️ " + timeStr;
+    }
+
+    function selectSimOption(optIdx) {
+      if (!isSimulationActive) return;
+      simAnswers[simCurrentIdx] = optIdx;
+      
+      const optBtns = document.querySelectorAll('#optionsGrid .option-btn');
+      optBtns.forEach((btn, idx) => {
+        btn.classList.toggle('sim-selected', idx === optIdx);
+      });
+      renderGooglePagination();
+    }
+
+    function finishSimulation(isExpired = false) {
+      if (simTimerInterval) {
+        clearInterval(simTimerInterval);
+        simTimerInterval = null;
+      }
+      isSimulationActive = false;
+      simState = 'results';
+
+      let score = 0;
+      simQuestions.forEach((q, idx) => {
+        if (simAnswers[idx] === q.correctIndex) {
+          score++;
+        }
+      });
+      const total = simQuestions.length;
+      const pct = Math.round((score / total) * 100);
+
+      const summaryEl = document.getElementById('simScoreSummary');
+      if (summaryEl) {
+        summaryEl.textContent = "Résultat officiel : " + score + " / " + total + " (" + pct + " %)" + (isExpired ? " • ⚠️ Temps écoulé !" : "");
+      }
+
+      const analysisEl = document.getElementById('simFeedbackAnalysis');
+      if (analysisEl) {
+        let html = '<div style="display: flex; flex-direction: column; gap: 14px;">';
+        simQuestions.forEach((q, idx) => {
+          const userChoice = simAnswers[idx];
+          const isCorrect = (userChoice === q.correctIndex);
+          const userChoiceText = (userChoice !== undefined) ? q.options[userChoice] : '<em>Aucune réponse fournie</em>';
+          const correctText = q.options[q.correctIndex];
+          
+          html += '<div style="padding: 12px; border-radius: 8px; border: 1px solid ' + (isCorrect ? 'var(--success-border)' : 'var(--error-border)') + '; background: ' + (isCorrect ? 'var(--success-light)' : 'var(--error-light)') + ';">';
+          html += '<div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; color: ' + (isCorrect ? 'var(--success-dark)' : 'var(--error-dark)') + ';">';
+          html += '<span>Question ' + (idx + 1) + ' : ' + (isCorrect ? '✅ Bonne réponse' : '❌ Erreur') + '</span>';
+          html += '<span>' + (q.doc_page || '') + '</span>';
+          html += '</div>';
+          html += '<p style="font-weight: 700; font-size: 0.92rem; margin-bottom: 8px; color: var(--text-main);">' + q.question + '</p>';
+          html += '<div style="font-size: 0.85rem; margin-bottom: 6px; color: var(--text-main);"><strong>Ton choix :</strong> ' + userChoiceText + '</div>';
+          if (!isCorrect) {
+            html += '<div style="font-size: 0.85rem; margin-bottom: 6px; color: var(--success-dark);"><strong>Bonne réponse :</strong> ' + correctText + '</div>';
+          }
+          html += '<div style="font-size: 0.82rem; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(0,0,0,0.1); color: var(--text-muted);"><strong>Explication :</strong> ' + (q.doc_explanation || '') + '</div>';
+          html += '</div>';
+        });
+        html += '</div>';
+        analysisEl.innerHTML = html;
+      }
+
+      setMode('simulation');
+      updateMascot("Simulation terminée ! Ton score : " + score + "/" + total + " (" + pct + "%).", pct >= 60 ? "happy" : "sad");
+    }
+
+    function restartSimulationMode() {
+      if (simTimerInterval) {
+        clearInterval(simTimerInterval);
+        simTimerInterval = null;
+      }
+      isSimulationActive = false;
+      simState = 'setup';
+      simQuestions = [];
+      simAnswers = {};
+      setMode('simulation');
+      updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
+    }
+
+    /* --- GESTION DU VOLUME DU PODCAST SUR BUREAU (DEMANDE MICHEL) --- */
+    function setAudioVolume(val) {
+      const audio = getAudioEl();
+      if (audio) {
+        audio.volume = Math.max(0, Math.min(1, parseFloat(val)));
+      }
+    }
+
+    /* --- SAUT DIRECT DE QUESTION SUR MOBILE (C07.3) --- */
+    function jumpToQuestionIndex(idx) {
+      if (isSimulationActive) {
+        if (idx >= 0 && idx < simQuestions.length) {
+          simCurrentIdx = idx;
+          renderQuestion(idx);
+        }
+      } else {
+        if (idx >= 0 && idx < filteredQuestions.length) {
+          currentQuestionIndex = idx;
+          renderQuestion(idx);
+        }
+      }
+    }
+
+    /* --- ÉCHAPPEMENT SÉCURISÉ RECHERCHE TEXTUELLE (C08) --- */
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
   </script>
   <!-- MODAL OPTIONS ET PREFERENCES MOBILE / BUREAU -->
-  <div id="optionsModal" class="modal-backdrop" style="display: none;" onclick="if(event.target === this) closeOptionsModal();">
+  <div id="optionsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="optionsModalTitle" style="display: none;" onclick="if(event.target === this) closeOptionsModal();">
     <div class="reset-modal-box" style="text-align: left; max-width: 440px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: var(--text-main);">⚙️ Options & Préférences</h3>
-        <button onclick="closeOptionsModal()" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+        <h3 id="optionsModalTitle" style="font-size: 1.15rem; font-weight: 800; margin: 0; color: var(--text-main);">⚙️ Options & Préférences</h3>
+        <button class="modal-close-btn" onclick="closeOptionsModal()" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-muted);" aria-label="Fermer la boîte d'options">&times;</button>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
