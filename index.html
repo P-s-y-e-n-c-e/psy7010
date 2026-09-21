@@ -2039,8 +2039,31 @@
     .audio-volume-wrap {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-left: 8px;
+      gap: 5px;
+      margin: 0 4px;
+    }
+    .audio-mute-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 3px 5px;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      line-height: 1;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .audio-mute-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      transform: scale(1.12);
+    }
+    .audio-mute-btn:active {
+      transform: scale(0.95);
+    }
+    body.dark-mode .audio-mute-btn:hover {
+      background: rgba(245, 158, 11, 0.3);
     }
 
     /* Responsive Compact Unifié (C07.1) */
@@ -2541,18 +2564,21 @@
               </audio>
 
               <div class="custom-audio-controls">
-              <div class="audio-volume-wrap desktop-only" title="Contrôle du volume">
-                <span style="font-size: 0.85rem;">🔊</span>
-                <input type="range" id="audioVolumeSlider" min="0" max="1" step="0.05" value="1" oninput="setAudioVolume(this.value)" style="width: 75px; accent-color: var(--primary); cursor: pointer;" aria-label="Volume">
-              </div>
                 <button class="audio-ctrl-btn play-pause-btn" id="audioPlayPauseBtn" onclick="togglePlayPodcast()" title="Lecture / Pause">
                   <span id="audioPlayPauseIcon">▶️</span> <span id="audioPlayPauseText">Écouter</span>
                 </button>
 
+                <div class="audio-volume-wrap desktop-only" title="Contrôle du volume">
+                  <button type="button" class="audio-mute-btn" id="audioMuteBtn" onclick="toggleAudioMute()" title="Couper le son" aria-label="Couper le son">
+                    <span id="audioVolumeIcon">🔊</span>
+                  </button>
+                  <input type="range" id="audioVolumeSlider" min="0" max="1" step="0.05" value="1" oninput="setAudioVolume(this.value)" style="width: 75px; accent-color: #d97706; cursor: pointer;" aria-label="Volume">
+                </div>
+
                 <div class="audio-timeline-wrap">
                   <span class="audio-time-label" id="audioCurrentTime">00:00</span>
                   <input type="range" class="audio-seek-slider" id="audioSeekSlider" value="0" min="0" max="100" step="0.1" oninput="seekAudio(this.value)">
-                  <span class="audio-time-label" id="audioDuration">--:--</span>
+                  <span class="audio-time-label" id="audioDuration" title="Temps restant">--:--</span>
                 </div>
 
                 <div class="audio-speed-wrap">
@@ -2645,11 +2671,11 @@
       <!-- READER VIEWPORTS EN ANGLAIS -->
       <div class="reader-viewport" id="viewport_doc_canas_en" style="display: none;">
         <div class="doc-page-marker" id="page_316"><span class="page-badge">📄 Page 316</span> <span class="page-meta">Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13</span></div>
-<p class="doc-para">
-13
- Human Factors and Ergonomics
- Jos é J.  Ca ñ as ,  Boris B.  Velichkovsky ,
- and  Boris M.  Velichkovsky
+<p class="doc-para" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 2px;">
+13. Human Factors and Ergonomics
+</p>
+<p class="doc-para" style="font-size: 0.95rem; font-weight: 600; color: var(--text-muted); margin-bottom: 12px;">
+José J. Cañas, Boris B. Velichkovsky, and Boris M. Velichkovsky
 </p>
 <h3 class="doc-subheading">Definition</h3>
 <p class="doc-para">
@@ -2672,7 +2698,7 @@ In its triennial report, the <mark id="anchor_q1" class="source-anchor-target" d
  psychology ” (Wickens  & Hollands,  2000 ).
  The early precursors of the new discipline could be set around the time of
  World War I. They had their background in the pioneering studies of Frederic Bartlett
- (1886 – 1969), Hugo M ü nsterberg (1863 – 1916) and Frederick Winslow Taylor
+ (1886 – 1969), Hugo Münsterberg (1863 – 1916) and Frederick Winslow Taylor
  (1856 – 1915) on applied psychology and industrial management. The design of new
  machines (e.g. the first cars or tanks) revealed the importance of taking into account
  the characteristics of the people who should operate them. It was found that many
@@ -3158,7 +3184,7 @@ Human Factors & Ergonomics
  1983 ). Taking into account the peculiarities of users ’ mental models in the design
  of artifacts is considered to be crucial for an efficient interaction. Therefore, the
  investigation of mental models is one of the central themes in cognitive ergonomics
- (Ca ñ as, Antol í ,  & Quesada,  2001 ; Ken ’ ichi et al.,  1997 ).
+ (Cañas, Antolí, & Quesada, 2001; Ken’ichi et al., 1997).
  Mental models have been studied in applied psychology and ergonomics from
  several different perspectives. First of all, it is normally expected that having a rela-
  tively exact mental model facilitates the acquisition of manual skills for dealing with
@@ -3172,8 +3198,8 @@ Human Factors & Ergonomics
  and operation. Interestingly, this acquisition may be less efficient with relatively easy -
  to - use graphical user interfaces than with old - fashioned command line interfaces.
  Other research has shown that the acquisition of an adequate mental model of the
- computer facilitates learning a programming language (Ca ñ as, Bajo,  & Gonzalvo,
- 1994 ; Kieras  & Bovair,  1984 ; Navarro  & Ca ñ as,  2001 ).
+ computer facilitates learning a programming language (Cañas, Bajo, & Gonzalvo,
+ 1994; Kieras & Bovair, 1984; Navarro & Cañas, 2001).
  Learning with and  a bout  a rtifacts.  The topic of learning is so important in ergo-
  nomics that it cannot be ignored in any attempt to establish a conceptual framework
  for this discipline. However, one has to distinguish between several related subtopics
@@ -3560,7 +3586,7 @@ Human Factors & Ergonomics
  hoped that their professional efforts will lead to a better fulfilment of human needs
  and values in the years to come.
  Acknowledgment
- We would like to thank Jos é Maria Prieto for his expert commentary and editing of
+ We would like to thank José Maria Prieto for his expert commentary and editing of
  this chapter. Our work was facilitated by grants from the European Commission
  (Network of Excellence COGAIN 511598 and NEST - Pathfinder PERCEPT
  043261), the European Social Foundation (Junior Research Group CogITo), the
@@ -3576,7 +3602,7 @@ Human Factors & Ergonomics
  Akoumianakis ,  D. ,  &  Stephanidis ,  C. ( 2003 ).  Blending scenarios of use and informal argu-
  mentation to facilitate universal access .  Behavior and Information Technology ,  22 ,
  227 – 244 .
- Amalberti ,  R. ( 2001 ).  La conduite de syst è mes  à risques .  Paris :  Presses Universitaires de France .
+ Amalberti, R. (2001). La conduite de systèmes à risques. Paris: Presses Universitaires de France.
  Anderson ,  J. R. ,  Bothell ,  D. ,  Byrne ,  M. D. ,  Douglass ,  S. ,  Lebiere ,  C. ,  &  Qin ,  Y. ( 2004 ).  An
  integrated theory of the mind .  Psychological Review ,  111 ( 4 ),  1036 – 1060 .
  Artman ,  H. ( 1998 ).  Co - operation and situation awareness within and between time - scales in
@@ -3591,10 +3617,10 @@ Human Factors & Ergonomics
  Brehmer ,  B. ( 1992 ).  Dynamic decision making: Human control of complex systems .  Acta
  Psychologica ,  81 ,  211 – 241 .
  Cacciabue ,  P. C. ( 2004 ).  Guide to applying human factors methods .  London :  Springer - Verlag .
- Ca ñ as ,  J. J. ,  Antol í ,  A. ,  &  Quesada ,  J. F. ( 2001 ).  The role of working memory in measuring
- mental models of physical systems .  Psicologica ,  22 ,  25 – 42 .
- Ca ñ as ,  J. J. ,  Bajo ,  M. T. ,  &  Gonzalvo ,  P. ( 1994 ).  Mental models and computer programming .
- International Journal of Human - Computer Studies ,  40 ,  795 – 811 .
+ Cañas, J. J., Antolí, A., & Quesada, J. F. (2001). The role of working memory in measuring
+ mental models of physical systems. Psicologica, 22, 25–42.
+ Cañas, J. J., Bajo, M. T., & Gonzalvo, P. (1994). Mental models and computer programming.
+ International Journal of Human-Computer Studies, 40, 795–811.
  Carroll ,  J. M. ( 1991 ).  Designing interactions .  New York :  Cambridge University Press .
  Charlton ,  S. G. ,  &  O ’ Brien ,  T. (Eds.). ( 2002 ).  Handbook of human factors testing and evalu-
  ation ( 2nd ed. ).  Mahwah, NJ :  Lawrence Erlbaum Associates .
@@ -3651,18 +3677,18 @@ Human Factors & Ergonomics
  IEEE Intelligent Systems ,  18 ,  81 – 85 .
  Kohler ,  P. ,  Pannasch ,  S. ,  &  Velichkovsky ,  B. M. ( 2008 ).  Enhancing mutual awareness, pro-
  ductivity and feeling: Cognitive science approach to design of groupware systems . In
- P.  Saariluoma  &  H.  Isom ä ki (Eds.),  Future interaction design (Vol.  2 , pp.  31 – 54 ).
- London :  Springer - Verlag .
- Leonova  A. B. ( 1998 ).  Basic issues in occupational stress research . In  J. G.  Adair ,  D. B.
- Belanger ,  &  K. L.  Dion (Eds.),  Advances in psychological sciences . (Vol.  1 , pp.  307 – 332 ).
- Hove, UK :  Psychology Press .
- Leontiev ,  A. N. ( 1978 ).  Activity, consciousness, personality .  Englewood Cliffs, NJ :  Prentice Hall .
- Meyer ,  D. ,  &  Kieras ,  D. ( 1997 ).  A computational theory of executive cognitive processes and
- multiple - task performance .  Psychological Review ,  104 ,  3 – 65 .
- Nardi ,  B. ( 1996 ).  Context and consciousness: Activity theory and human – computer interaction .
- Cambridge, MA :  MIT Press .
- Navarro ,  R. ,  &  Ca ñ as ,  J. J. ( 2001 ).  Are visual programming languages better? The role of
- imagery in program comprehension .  International Journal of Human - Computer Studies ,
+  P. Saariluoma & H. Isomäki (Eds.), Future interaction design (Vol. 2, pp. 31–54).
+  London :  Springer - Verlag .
+  Leonova  A. B. ( 1998 ).  Basic issues in occupational stress research . In  J. G.  Adair ,  D. B.
+  Belanger ,  &  K. L.  Dion (Eds.),  Advances in psychological sciences . (Vol.  1 , pp.  307 – 332 ).
+  Hove, UK :  Psychology Press .
+  Leontiev ,  A. N. ( 1978 ).  Activity, consciousness, personality .  Englewood Cliffs, NJ :  Prentice Hall .
+  Meyer ,  D. ,  &  Kieras ,  D. ( 1997 ).  A computational theory of executive cognitive processes and
+  multiple - task performance .  Psychological Review ,  104 ,  3 – 65 .
+  Nardi ,  B. ( 1996 ).  Context and consciousness: Activity theory and human – computer interaction .
+  Cambridge, MA :  MIT Press .
+  Navarro, R., & Cañas, J. J. (2001). Are visual programming languages better? The role of
+  imagery in program comprehension .  International Journal of Human - Computer Studies ,
  54 ,  799 – 829 .
  NBIC - Report: Converging technologies for improving human performance . ( 2006 ). Washington,
  DC: NSF and U.S. Department of Commerce.
@@ -5674,7 +5700,7 @@ Concluons par cet aphorisme prémonitoire de Peter F. Drucker, père du manageme
       </div>
       <h3 class="celebration-title">🎉 VICTOIRE CONCEPTUELLE !</h3>
       <p class="celebration-desc" id="celebrationDesc">
-        Bravo Michel ! Tu avais eu de la difficulté avec ce concept lors d'essais précédents, mais tu viens de le maîtriser avec brio !
+        Bravo ! Tu avais eu de la difficulté avec ce concept lors d'essais précédents, mais tu viens de le maîtriser avec brio !
       </p>
       <div class="celebration-quote-card" id="celebrationQuote"></div>
       <button class="primary-btn" onclick="closeCelebrationModal()" style="margin: 0 auto; width: 100%; justify-content: center;">
@@ -5766,7 +5792,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
               Le quiz d'entraînement en ligne pour la séance du <strong>22 septembre</strong> (Milieux Technologiques &amp; Facteurs Humains) est désormais clos suite à la tenue du cours.
             </p>
             <div style="padding: 12px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; font-size: 0.88rem; color: #cbd5e1; max-width: 480px;">
-              💬 Si tu as besoin d'accéder aux questions ou fiches de révision en format autonome hors-ligne, contacte directement <strong>Michel</strong>.
+              💬 Les questions et fiches d'entraînement restent archivées pour consultation pédagogique.
             </div>
           </div>
         `;
@@ -6068,7 +6094,7 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       const quote = document.getElementById('celebrationQuote');
       if (!modal) return;
 
-      if (desc) desc.textContent = 'Michel, tu avais rencontré des difficultés avec cette question lors de tes entraînements passés. En la maîtrisant maintenant, tu viens de consolider ton réseau mnésique !';
+      if (desc) desc.textContent = 'Tu avais rencontré des difficultés avec cette question lors de tes entraînements passés. En la maîtrisant maintenant, tu viens de consolider ton réseau mnésique !';
       if (quote) quote.textContent = q.question;
       modal.style.display = 'flex';
     }
@@ -6990,6 +7016,18 @@ let previousIsCompact = isCompactUI();
       }
     }
 
+    function formatAudioSeconds(sec) {
+      if (isNaN(sec) || sec < 0) return '00:00';
+      const totalSec = Math.floor(sec);
+      const h = Math.floor(totalSec / 3600);
+      const m = Math.floor((totalSec % 3600) / 60);
+      const s = totalSec % 60;
+      if (h > 0) {
+        return h + ':' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      }
+      return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
     function updateAudioProgress() {
       const audio = getAudioEl();
       if (!audio) return;
@@ -6998,13 +7036,12 @@ let previousIsCompact = isCompactUI();
       const slider = document.getElementById('audioSeekSlider');
 
       if (audio.duration && !isNaN(audio.duration)) {
-        const curM = Math.floor(audio.currentTime / 60);
-        const curS = Math.floor(audio.currentTime % 60);
-        const durM = Math.floor(audio.duration / 60);
-        const durS = Math.floor(audio.duration % 60);
-
-        if (curTime) curTime.textContent = (curM < 10 ? '0' : '') + curM + ':' + (curS < 10 ? '0' : '') + curS;
-        if (durationLabel) durationLabel.textContent = (durM < 10 ? '0' : '') + durM + ':' + (durS < 10 ? '0' : '') + durS;
+        if (curTime) curTime.textContent = formatAudioSeconds(audio.currentTime);
+        const remaining = Math.max(0, audio.duration - audio.currentTime);
+        if (durationLabel) {
+          durationLabel.textContent = formatAudioSeconds(remaining);
+          durationLabel.title = "Temps restant : " + formatAudioSeconds(remaining);
+        }
         if (slider) slider.value = (audio.currentTime / audio.duration) * 100;
       }
     }
@@ -7013,6 +7050,7 @@ let previousIsCompact = isCompactUI();
       const audio = getAudioEl();
       if (!audio || !audio.duration) return;
       audio.currentTime = (percent / 100) * audio.duration;
+      updateAudioProgress();
     }
 
     function cycleAudioSpeed() {
@@ -7029,9 +7067,13 @@ let previousIsCompact = isCompactUI();
       const playBtnText = document.getElementById('audioPlayPauseText');
       const playBtnIcon = document.getElementById('audioPlayPauseIcon');
       const avatarIcon = document.getElementById('podcastPlayIcon');
+      const durationLabel = document.getElementById('audioDuration');
+      const slider = document.getElementById('audioSeekSlider');
       if (playBtnText) playBtnText.textContent = 'Écouter';
       if (playBtnIcon) playBtnIcon.textContent = '▶️';
       if (avatarIcon) avatarIcon.textContent = '▶️';
+      if (durationLabel) durationLabel.textContent = '00:00';
+      if (slider) slider.value = 100;
       document.getElementById('podcastBanner')?.classList.remove('playing');
     }
 
@@ -7071,6 +7113,14 @@ let previousIsCompact = isCompactUI();
       if (driveBtn) driveBtn.href = savedUrl;
       const modalOpenBtn = document.getElementById('podcastModalOpenBtn');
       if (modalOpenBtn) modalOpenBtn.href = savedUrl;
+
+      const audioEl = getAudioEl();
+      if (audioEl) {
+        audioEl.addEventListener('loadedmetadata', updateAudioProgress);
+        if (audioEl.readyState >= 1) {
+          updateAudioProgress();
+        }
+      }
     }
 
     function updateThemeUI() {
@@ -7288,11 +7338,63 @@ let previousIsCompact = isCompactUI();
       updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
     }
 
-    /* --- GESTION DU VOLUME DU PODCAST SUR BUREAU (DEMANDE MICHEL) --- */
+    /* --- GESTION DU VOLUME ET DU MODE MUET DU PODCAST (DEMANDE MICHEL) --- */
+    let lastAudioVolume = 1.0;
+
+    function updateVolumeUI(volume, isMuted) {
+      const volIcon = document.getElementById('audioVolumeIcon');
+      const muteBtn = document.getElementById('audioMuteBtn');
+      const slider = document.getElementById('audioVolumeSlider');
+
+      if (slider) {
+        slider.value = isMuted ? 0 : volume;
+      }
+
+      if (isMuted || volume === 0) {
+        if (volIcon) volIcon.textContent = '🔇';
+        if (muteBtn) {
+          muteBtn.title = "Activer le son";
+          muteBtn.setAttribute('aria-label', "Activer le son");
+        }
+      } else {
+        if (volIcon) volIcon.textContent = volume < 0.5 ? '🔉' : '🔊';
+        if (muteBtn) {
+          muteBtn.title = "Couper le son";
+          muteBtn.setAttribute('aria-label', "Couper le son");
+        }
+      }
+    }
+
     function setAudioVolume(val) {
       const audio = getAudioEl();
+      const num = Math.max(0, Math.min(1, parseFloat(val) || 0));
+      if (num > 0) {
+        lastAudioVolume = num;
+      }
       if (audio) {
-        audio.volume = Math.max(0, Math.min(1, parseFloat(val)));
+        audio.volume = num;
+        audio.muted = (num === 0);
+      }
+      updateVolumeUI(num, num === 0);
+    }
+
+    function toggleAudioMute() {
+      const audio = getAudioEl();
+      if (!audio) return;
+
+      if (audio.muted || audio.volume === 0) {
+        // Rétablir le volume
+        const restoreVol = (lastAudioVolume > 0) ? lastAudioVolume : 1.0;
+        audio.muted = false;
+        audio.volume = restoreVol;
+        updateVolumeUI(restoreVol, false);
+      } else {
+        // Mettre en sourdine
+        if (audio.volume > 0) {
+          lastAudioVolume = audio.volume;
+        }
+        audio.muted = true;
+        updateVolumeUI(audio.volume, true);
       }
     }
 
