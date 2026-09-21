@@ -400,10 +400,14 @@
       height: 48px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-      transition: transform 0.2s;
+      filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.18));
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
     }
-    .mascot-bubble:hover .mascot-img { transform: scale(1.08); }
+    .mascot-bubble:hover .mascot-img,
+    .mascot-img:hover {
+      transform: scale(1.2) rotate(-10deg);
+    }
     .mascot-text { line-height: 1.35; color: var(--text-main); font-weight: 500; }
 
     /* SECTION FILTER FLEX-WRAP */
@@ -2088,19 +2092,27 @@
       .google-pagination {
         display: none !important;
       }
+      .q-controls-bottom > #prevBtn,
+      .q-controls-bottom > #nextBtn {
+        display: none !important;
+      }
       .mobile-pagination {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(5.5rem, auto) minmax(0, 1fr);
-        gap: 8px;
+        grid-template-columns: 52px 1fr auto;
+        gap: 10px;
         align-items: center;
         width: 100%;
-        margin-top: 14px;
+        margin-top: 6px;
       }
       .mobile-pagination .nav-btn {
         min-height: 44px !important;
-        padding: 8px 6px !important;
-        font-size: 0.85rem !important;
+        min-width: 48px;
+        padding: 8px 10px !important;
+        font-size: 1.15rem !important;
         font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .mobile-question-select {
         min-height: 44px;
@@ -2109,7 +2121,7 @@
         border: 1px solid var(--border-color);
         background: var(--bg-card);
         color: var(--text-main);
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         font-weight: 800;
         text-align: center;
         cursor: pointer;
@@ -2122,14 +2134,17 @@
       }
       .fc-nav-bar {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-template-columns: 52px 1fr 52px !important;
         gap: 8px !important;
         min-height: 44px !important;
       }
       .fc-nav-btn {
         min-height: 44px !important;
         padding: 8px 4px !important;
-        font-size: 0.84rem !important;
+        font-size: 1.15rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Podcast mobile : masquer le rond Play redondant (C12.1) et espacer les liens de 24px */
@@ -2351,14 +2366,14 @@
 
           <!-- NAVIGATION FLASHCARD -->
           <div class="fc-nav-bar">
-            <button class="fc-nav-btn" onclick="prevFlashcard()" title="Précédent [←]">
-              ◀ Précédente
+            <button class="fc-nav-btn" onclick="prevFlashcard()" title="Précédente [←]" aria-label="Fiche précédente">
+              ◀
             </button>
             <button class="fc-nav-btn" onclick="shuffleFlashcards()" title="Mélanger le paquet">
               🔀 Mélanger
             </button>
-            <button class="fc-nav-btn" onclick="nextFlashcard()" title="Suivante [→]">
-              Suivante ▶
+            <button class="fc-nav-btn" onclick="nextFlashcard()" title="Suivante [→]" aria-label="Fiche suivante">
+              ▶
             </button>
           </div>
           <div class="fc-keyboard-helper">
@@ -2400,7 +2415,7 @@
         <!-- ACTIVE QUESTION CARD (STUDY & SIMULATION MODES) -->
         <div class="q-card" id="qCard">
           <div class="q-meta-top">
-            <span class="q-badge mandatory" id="qDocBadge" onclick="switchTab(getCurrentActiveQuestion()?.doc_id || 'doc_canas', true)" style="cursor: pointer;" title="Ouvrir et afficher ce document dans le lecteur">🔴 Cañas et al. (2011) [Lecture obligatoire]</span>
+            <span class="q-badge mandatory" id="qDocBadge" onclick="openDocumentFromBadge()" style="cursor: pointer;" title="Ouvrir et afficher ce document officiel">🔴 Cañas et al. (2011) [Lecture obligatoire] 📖</span>
             <span class="q-counter-text" id="qProgressText">Question 1 sur 44 • 1 point</span>
           </div>
 
@@ -2449,17 +2464,17 @@
 
           <!-- NAVIGATION CONTROLS -->
           <div class="q-controls-bottom">
-            <button class="secondary-btn nav-btn" id="prevBtn" onclick="prevQuestion()" title="Question précédente">
-              ◀ <span class="nav-btn-label">Précédente</span>
+            <button class="secondary-btn nav-btn" id="prevBtn" onclick="prevQuestion()" title="Question précédente" aria-label="Question précédente">
+              ◀
             </button>
             <div class="google-pagination" id="googlePagination"></div>
             <div class="mobile-pagination mobile-only" id="mobilePagination">
-              <button class="nav-btn prev-btn" id="mobPrevBtn" onclick="prevQuestion()" aria-label="Question précédente">◀ Précédente</button>
+              <button class="secondary-btn nav-btn prev-btn" id="mobPrevBtn" onclick="prevQuestion()" aria-label="Question précédente" title="Question précédente">◀</button>
               <select id="mobileQuestionSelect" class="mobile-question-select" aria-label="Choisir une question" onchange="jumpToQuestionIndex(parseInt(this.value, 10))"></select>
-              <button class="nav-btn next-btn" id="mobNextBtn" onclick="nextQuestion()" aria-label="Question suivante">Suivante ▶</button>
+              <button class="primary-btn nav-btn next-btn" id="mobNextBtn" onclick="nextQuestion()" aria-label="Question suivante" title="Question suivante">▶</button>
             </div>
-            <button class="primary-btn nav-btn" id="nextBtn" onclick="nextQuestion()" title="Question suivante">
-              <span class="nav-btn-label">Suivante</span> ▶
+            <button class="primary-btn nav-btn" id="nextBtn" onclick="nextQuestion()" title="Question suivante" aria-label="Question suivante">
+              ▶
             </button>
           </div>
         </div>
@@ -6256,11 +6271,11 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (isSimulationActive) {
           const isLast = (activeIdx === total - 1);
           mobNextBtn.disabled = false;
-          mobNextBtn.innerHTML = isLast ? '🏁 Terminer' : 'Suivante ▶';
+          mobNextBtn.innerHTML = isLast ? '🏁 Terminer' : '▶';
           mobNextBtn.onclick = isLast ? () => finishSimulation(false) : nextQuestion;
         } else {
           mobNextBtn.disabled = (activeIdx === total - 1);
-          mobNextBtn.innerHTML = 'Suivante ▶';
+          mobNextBtn.innerHTML = '▶';
           mobNextBtn.onclick = nextQuestion;
         }
       }
@@ -6350,8 +6365,10 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       // Badge doc
       const badge = document.getElementById('qDocBadge');
       if (badge) {
-        badge.textContent = isCanas ? '🔴 Cañas et al. (2011) [Lecture obligatoire]' : '🟢 ' + q.doc_title;
+        badge.textContent = isCanas ? '🔴 Cañas et al. (2011) [Lecture obligatoire] 📖' : '🟢 ' + q.doc_title + ' 📖';
         badge.className = 'q-badge ' + (isCanas ? 'mandatory' : 'optional');
+        badge.title = 'Cliquer pour ouvrir et lire ce document';
+        badge.onclick = openDocumentFromBadge;
       }
 
       const prog = document.getElementById('qProgressText');
@@ -6432,11 +6449,11 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (isSimulationActive) {
           const isLast = (idx === simQuestions.length - 1);
           nextBtn.disabled = false;
-          nextBtn.innerHTML = isLast ? '🏁 <span class="nav-btn-label">Terminer</span>' : '<span class="nav-btn-label">Suivante</span> ▶';
+          nextBtn.innerHTML = isLast ? '🏁 <span class="nav-btn-label">Terminer</span>' : '▶';
           nextBtn.onclick = isLast ? () => finishSimulation(false) : nextQuestion;
         } else {
           nextBtn.disabled = (idx === filteredQuestions.length - 1);
-          nextBtn.innerHTML = '<span class="nav-btn-label">Suivante</span> ▶';
+          nextBtn.innerHTML = '▶';
           nextBtn.onclick = nextQuestion;
         }
       }
@@ -6531,6 +6548,17 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         showDocumentPostAnswer();
         highlightAndScrollSource(q.id, true, true);
       }
+    }
+
+    function openDocumentFromBadge() {
+      const q = getCurrentActiveQuestion();
+      const docId = q?.doc_id || 'doc_canas';
+      if (isCompactUI()) {
+        setMobileView('source');
+      }
+      showDocumentPostAnswer();
+      switchTab(docId, true);
+      if (q) highlightAndScrollSource(q.id, true, true);
     }
 
     function nextQuestion() {
@@ -7300,6 +7328,10 @@ let previousIsCompact = isCompactUI();
       <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
         <button class="tool-btn" onclick="toggleDarkMode(); updateOptionsModalThemeText();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
           <span id="modalThemeText">Mode sombre</span> <span id="modalThemeIcon">🌓</span>
+        </button>
+
+        <button class="tool-btn" onclick="setMobileView('source'); closeOptionsModal();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
+          <span>📖 Consulter les textes officiels</span> <span>➔</span>
         </button>
 
         <button class="tool-btn" onclick="cycleLayout(); closeOptionsModal();" style="width: 100%; justify-content: space-between; padding: 10px 14px; font-size: 0.9rem;">
