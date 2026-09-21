@@ -1625,7 +1625,7 @@
     .fc-scene {
       perspective: 1200px;
       width: 100%;
-      max-width: 520px;
+      max-width: 720px;
       min-height: 350px;
       cursor: pointer;
       margin: 0 auto 14px auto;
@@ -1683,13 +1683,13 @@
       line-height: 1.5;
       color: var(--text-main);
       text-align: center;
-      max-width: 440px;
+      max-width: 660px;
       margin: 0 auto;
     }
     .fc-back-body {
       overflow-y: auto;
-      max-height: 230px;
-      margin: 10px 0;
+      max-height: 480px;
+      margin: 10px 0 14px 0;
       text-align: left;
     }
     .fc-correct-card {
@@ -1708,15 +1708,37 @@
       font-size: 0.92rem;
       line-height: 1.5;
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .fc-source-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--primary);
+      border-radius: 8px;
+      padding: 7px 12px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .fc-source-pill:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-border);
+      color: var(--primary);
+    }
+    .fc-pill-action {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
     }
     .fc-source-quote {
-      font-size: 0.84rem;
-      font-style: italic;
-      color: var(--text-muted);
-      border-left: 3px solid var(--primary);
-      padding-left: 10px;
-      margin-bottom: 8px;
+      display: none;
     }
     .fc-exam-tip {
       font-size: 0.82rem;
@@ -1727,6 +1749,18 @@
       color: #78350f;
     }
     body.dark-mode .fc-exam-tip { color: #fde68a; }
+    .chip-reset {
+      cursor: pointer;
+      color: var(--text-muted);
+      border: 1px dashed var(--border-color);
+      background: var(--bg-card);
+      transition: all 0.2s;
+    }
+    .chip-reset:hover {
+      background: var(--danger-light);
+      border-color: var(--danger-border);
+      color: var(--danger);
+    }
 
     /* --- GÉOMÉTRIE BUREAU VERTICALE IDÉALE AUTOMATIQUE --- */
     .workstation-container.layout-vertical .quiz-pane {
@@ -2324,6 +2358,7 @@
               <span class="fc-stat-chip chip-mastered" title="Cartes maîtrisées">🟢 <span id="fcCountMastered">0</span></span>
               <span class="fc-stat-chip chip-review" title="Cartes en cours d'apprentissage">🟡 <span id="fcCountReview">0</span></span>
               <span class="fc-stat-chip chip-hard" title="Cartes prioritaires avec difficultés">🔴 <span id="fcCountHard">0</span></span>
+              <button class="fc-stat-chip chip-reset" onclick="openResetModal()" title="Réinitialiser l'apprentissage [Maj + R]">🔄 Réinit.</button>
             </div>
           </div>
 
@@ -2366,7 +2401,11 @@
                 <div class="fc-back-body">
                   <div class="fc-correct-card" id="fcCorrectAnswer"></div>
                   <div class="fc-explanation" id="fcExplanationText"></div>
-                  <div class="fc-source-quote" id="fcSourceQuoteText"></div>
+                  <div class="fc-source-pill" id="fcSourcePill" onclick="event.stopPropagation(); jumpToCurrentAnchor();" title="Cliquer pour localiser ce passage dans le texte source">
+                    <span>📖 <strong id="fcSourceRefText"></strong></span>
+                    <span class="fc-pill-action">📍 Surligné à droite ↗</span>
+                  </div>
+                  <div class="fc-source-quote" id="fcSourceQuoteText" style="display: none;"></div>
                   <div class="fc-exam-tip" id="fcExamTipText"></div>
                 </div>
                 <div class="fc-back-footer" onclick="event.stopPropagation()">
@@ -2390,17 +2429,17 @@
           <!-- NAVIGATION FLASHCARD -->
           <div class="fc-nav-bar">
             <button class="fc-nav-btn" onclick="prevFlashcard()" title="Précédente [←]" aria-label="Fiche précédente">
-              ◀
+              ◀ Précédente
             </button>
             <button class="fc-nav-btn" onclick="shuffleFlashcards()" title="Mélanger le paquet">
               🔀 Mélanger
             </button>
             <button class="fc-nav-btn" onclick="nextFlashcard()" title="Suivante [→]" aria-label="Fiche suivante">
-              ▶
+              Suivante ▶
             </button>
           </div>
           <div class="fc-keyboard-helper">
-            ⌨️ Raccourcis : <code>[Espace]</code> Retourner • <code>[1]</code> Difficile • <code>[2]</code> Moyen • <code>[3]</code> Facile • <code>[← / →]</code> Naviguer
+            ⌨️ Raccourcis : <code>[Espace]</code> Retourner • <code>[1]</code> Difficile • <code>[2]</code> Moyen • <code>[3]</code> Facile • <code>[← / →]</code> Naviguer • <code>[Maj+R]</code> Réinitialiser
           </div>
         </div>
 
@@ -5962,6 +6001,9 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
         if (simTimerInterval) clearInterval(simTimerInterval);
         isSimulationActive = false;
         setMode('study');
+      } else if (currentMode === 'flashcards') {
+        initFlashcardDeck();
+        renderFlashcard(0);
       } else {
         renderQuestion(currentQuestionIndex);
       }
@@ -6029,7 +6071,12 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       // Verso
       document.getElementById('fcCorrectAnswer').textContent = q.options[q.correctIndex];
       document.getElementById('fcExplanationText').innerHTML = '<strong>Synthèse :</strong> ' + (q.doc_explanation || '');
-      document.getElementById('fcSourceQuoteText').textContent = (q.doc_quote || '') + (q.doc_page ? ' (' + q.doc_page + ')' : '');
+      const refEl = document.getElementById('fcSourceRefText');
+      if (refEl) {
+        refEl.textContent = (isCanas ? 'Cañas et al. (2011)' : q.doc_title) + (q.doc_page ? ' • ' + q.doc_page : '');
+      }
+      const quoteEl = document.getElementById('fcSourceQuoteText');
+      if (quoteEl) quoteEl.textContent = (q.doc_quote || '') + (q.doc_page ? ' (' + q.doc_page + ')' : '');
       document.getElementById('fcExamTipText').innerHTML = '<strong>💡 Astuce examen :</strong> ' + (q.exam_tip || 'Identifier le mot-clé théorique.');
 
       highlightAndScrollSource(q.id, true, false);
@@ -6040,6 +6087,14 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
       if (!cardEl) return;
       isCurrentCardFlipped = !isCurrentCardFlipped;
       cardEl.classList.toggle('flipped', isCurrentCardFlipped);
+
+      if (isCurrentCardFlipped) {
+        showDocumentPostAnswer();
+        const q = getCurrentActiveQuestion();
+        if (q) {
+          highlightAndScrollSource(q.id, true, false);
+        }
+      }
     }
 
     function nextFlashcard() {
@@ -6128,6 +6183,13 @@ const allQuestions = [{"id": 1, "category": "cañas_fondements", "doc_id": "doc_
     function initKeyboardShortcuts() {
       window.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+        // Raccourci universel de réinitialisation sécuritaire : Shift + R
+        if (e.shiftKey && (e.key === 'R' || e.key === 'r')) {
+          e.preventDefault();
+          openResetModal();
+          return;
+        }
 
         if (currentMode === 'flashcards') {
           if (e.code === 'Space') {

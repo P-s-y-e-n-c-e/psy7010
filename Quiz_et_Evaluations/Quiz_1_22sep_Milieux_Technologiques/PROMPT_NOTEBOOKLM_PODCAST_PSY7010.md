@@ -2,7 +2,7 @@
 **Cours :** PSY7010 — Ergonomie cognitive, facteurs humains et milieux technologiques (UQAM)  
 **Texte source à téléverser dans NotebookLM :** `canas_2011_fr.txt` (ou le PDF original du Chapitre 13 de Cañas et al., 2011)  
 **Destination :** Boîte « Customize » / Instructions personnalisées de l'Aperçu Audio (*Audio Overview*) dans Google NotebookLM  
-**Taille du prompt ci-dessous :** ~4 180 caractères (respecte strictement la limite maximale de 5 000 caractères de NotebookLM avec une marge de sécurité de plus de 800 caractères).
+**Taille du prompt ci-dessous :** ~4 270 caractères (respecte strictement la limite maximale de 5 000 caractères de NotebookLM avec une marge de sécurité de plus de 700 caractères).
 
 ---
 
@@ -48,5 +48,5 @@ Votre mission : transformer le chapitre 13 de Cañas et al. (2011) en une discus
 
 6. CONCLUSION & ARRIVÉE EN CLASSE (14 min - 15 min) :
 - Synthèse : L'ergonomie vise des systèmes tolérants à l'erreur et résilients.
-- Encouragement pour la descente à la station Berri-UQAM : Vous avez toutes les clés en main pour réussir l'évaluation du cours !
+- Arrivée & conclusion : Encouragement pour la sortie à la station Place-des-Arts (Complexe des sciences Pierre-Dansereau / pavillon Adrien-Pinard) : Vous avez toutes les clés en main pour réussir l'évaluation du cours !
 ```
