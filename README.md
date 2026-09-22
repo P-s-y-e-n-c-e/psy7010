@@ -7,17 +7,20 @@
 
 ---
 
-## 📢 Avis importants & Actualités Moodle (Mis à jour le 20 septembre 2026)
+## 📢 Avis importants & Actualités Moodle (Mis à jour le 21 septembre 2026)
 
 > [!IMPORTANT]
-> **1. Formation des équipes pour l'APP (Travail de session) :**  
-> L'activité de choix de groupe est maintenant ouverte sur Moodle. Vous devez vous inscrire dans une équipe (maximum 5 personnes, avec **au moins 1 personne de chaque concentration** : 2194 Facteurs humains, 2195 Santé, 2196 Consommation). N'oubliez pas de coordonner avec vos collègues avant d'enregistrer votre choix.
+> **1. Formation des équipes pour l'APP :**  
+> ✅ **Confirmé sur Moodle :** Vous êtes officiellement inscrit dans le **Groupe 3** avec votre équipe. Le Groupe 3 est désormais complet (5/5 membres).
 > 
 > **2. Évaluation à venir — Quiz 1 (Pondération : 5 %) :**  
-> Un quiz de 4 questions portant sur la matière de la séance 3 (Ingénierie & facteurs humains).  
-> * **Durée :** 15 minutes (20 minutes pour les étudiants du BIRÉ).  
-> * **Modalité :** À livre ouvert (notes de cours, recueils de textes et références autorisés).  
+> Le premier quiz officiel aura lieu au début de la séance 3 (Ingénierie & facteurs humains) :
+> * **Fenêtre d'ouverture sur Moodle :** Mardi 22 septembre 2026, de **09h30 à 10h15 EDT**.  
+> * **Durée :** **15 minutes** chrono dès le lancement (20 minutes pour les personnes inscrites au BIRÉ).  
+> * **Format :** **5 questions** (valant 1 point chacune pour un total de 5,00 points).  
+> * **Modalité :** À livre ouvert (*open-book* : notes, recueils de textes et fiches de synthèse autorisés).  
 > * **Seuil de passage :** 2,50 / 5,00.
+> * **Session d'entraînement dédiée :** 👉 [PSY7010 - Préparation et pratique des Quiz](conversation://d6fea03c-228d-438c-bb4e-541e2d0eaeac)
 
 ---
 

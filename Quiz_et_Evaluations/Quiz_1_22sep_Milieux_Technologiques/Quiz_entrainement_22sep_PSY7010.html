@@ -2439,14 +2439,20 @@
               <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
                 📚 Périmètre d'étude :
               </span>
-              <span id="scopeActiveCountBadge" class="scope-count-badge" style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; background: var(--surface-2); color: var(--primary); border: 1px solid var(--border);">44 items</span>
+              <span id="scopeActiveCountBadge" class="scope-count-badge" style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; background: var(--surface-2); color: var(--primary); border: 1px solid var(--border);">24 items</span>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button type="button" id="scopeBtnAll" class="scope-btn active" onclick="setStudyScope('all')">
-                🌐 Ensemble des lectures (44 questions)
+              <button type="button" id="scopeBtnCore" class="scope-btn" onclick="setStudyScope('core')">
+                🌱 Premier tour — 12
               </button>
-              <button type="button" id="scopeBtnCanas" class="scope-btn" onclick="setStudyScope('canas')">
-                🔴 Cañas (24 questions)
+              <button type="button" id="scopeBtnCanas" class="scope-btn active" onclick="setStudyScope('canas')">
+                🔴 Cañas — 24
+              </button>
+              <button type="button" id="scopeBtnReadings" class="scope-btn" onclick="setStudyScope('readings')">
+                📖 Cinq textes — 36
+              </button>
+              <button type="button" id="scopeBtnAll" class="scope-btn" onclick="setStudyScope('extended')">
+                🌐 Avec approfondissements — 44
               </button>
             </div>
           </div>
@@ -2455,25 +2461,25 @@
           </div>
                   <div class="mobile-categories-select-wrap mobile-only" style="margin-bottom: 12px;">
           <select id="mobileSectionSelect" class="mobile-section-dropdown" onchange="filterCategory(this.value)">
-            <option value="all">🌟 Toutes les sections (44 questions)</option>
-            <option value="cañas_fondements">🔴 Cañas : Fondements (6Q)</option>
-            <option value="cañas_cognition">🔴 Cañas : Cognition & Apprentissage (7Q)</option>
-            <option value="cañas_erreurs">🔴 Cañas : Erreurs & Fiabilité (6Q)</option>
-            <option value="cañas_charge_methodes">🔴 Cañas : Charge, Décision & Méthodes (6Q)</option>
-            <option value="endsley_sa">🟢 Endsley : Situation Awareness (8Q)</option>
-            <option value="bainbridge_automation">🟢 Bainbridge : Automatisation (5Q)</option>
-            <option value="hf101_performance">🟢 OACI / HSG48 : Performance (6Q)</option>
+            <option value="all">🌟 Toutes les sections (24 questions)</option>
+            <option value="cañas_fondements">Fondements (6Q)</option>
+            <option value="cañas_cognition">Cognition et apprentissage (7Q)</option>
+            <option value="cañas_erreurs">Erreurs et fiabilité (1Q)</option>
+            <option value="cañas_charge_methodes">Charge, décision et méthodes (5Q)</option>
+            <option value="endsley_sa">Conscience de la situation (4Q)</option>
+            <option value="bainbridge_automation">Automatisation (1Q)</option>
+            <option value="hf101_performance" disabled>Performance humaine (0Q)</option>
           </select>
         </div>
         <div class="categories-bar desktop-cat-pills" id="catBar">
-            <button class="cat-pill active" data-category="all" onclick="filterCategory('all', this)">🌟 Toutes (44)</button>
-            <button class="cat-pill" data-category="cañas_fondements" onclick="filterCategory('cañas_fondements', this)">🔴 Cañas : Fondements (6Q)</button>
-            <button class="cat-pill" data-category="cañas_cognition" onclick="filterCategory('cañas_cognition', this)">🔴 Cañas : Cognition & Apprentissage (7Q)</button>
-            <button class="cat-pill" data-category="cañas_erreurs" onclick="filterCategory('cañas_erreurs', this)">🔴 Cañas : Erreurs & Fiabilité (6Q)</button>
-            <button class="cat-pill" data-category="cañas_charge_methodes" onclick="filterCategory('cañas_charge_methodes', this)">🔴 Cañas : Charge, Décision & Méthodes (6Q)</button>
-            <button class="cat-pill" data-category="endsley_sa" onclick="filterCategory('endsley_sa', this)">🟢 Endsley : Situation Awareness (8Q)</button>
-            <button class="cat-pill" data-category="bainbridge_automation" onclick="filterCategory('bainbridge_automation', this)">🟢 Bainbridge : Automatisation (5Q)</button>
-            <button class="cat-pill" data-category="hf101_performance" onclick="filterCategory('hf101_performance', this)">🟢 OACI / HSG48 : Performance (6Q)</button>
+            <button class="cat-pill active" data-category="all" onclick="filterCategory('all', this)">🌟 Toutes (24)</button>
+            <button class="cat-pill" data-category="cañas_fondements" onclick="filterCategory('cañas_fondements', this)">Fondements (6Q)</button>
+            <button class="cat-pill" data-category="cañas_cognition" onclick="filterCategory('cañas_cognition', this)">Cognition et apprentissage (7Q)</button>
+            <button class="cat-pill" data-category="cañas_erreurs" onclick="filterCategory('cañas_erreurs', this)">Erreurs et fiabilité (1Q)</button>
+            <button class="cat-pill" data-category="cañas_charge_methodes" onclick="filterCategory('cañas_charge_methodes', this)">Charge, décision et méthodes (5Q)</button>
+            <button class="cat-pill" data-category="endsley_sa" onclick="filterCategory('endsley_sa', this)">Conscience de la situation (4Q)</button>
+            <button class="cat-pill" data-category="bainbridge_automation" onclick="filterCategory('bainbridge_automation', this)">Automatisation (1Q)</button>
+            <button class="cat-pill" data-category="hf101_performance" onclick="filterCategory('hf101_performance', this)">Performance humaine (0Q)</button>
           </div>
         </div>
 
@@ -2579,31 +2585,84 @@
         <!-- SIMULATION SETUP CARD -->
         <div class="sim-setup-card" id="simSetupCard" style="display: none;">
           <h2 class="sim-title">⚙️ Paramètres de cet entraînement (Mode Test)</h2>
-          <p class="sim-desc">Entraînement chronométré pour le cours PSY7010 selon les paramètres choisis (3 à 5 questions recommandées pour se tester).</p>
-          
+          <p class="sim-desc">Entraînement autonome pour le cours PSY7010 selon les paramètres choisis. Sélectionnez explicitement vos lectures et votre section.</p>
+
+          <!-- 1. simProfileSelect -->
           <div class="sim-form-group">
-            <label class="sim-label" for="simCountSelect">Nombre de questions dans la simulation :</label>
-            <select id="simCountSelect" class="sim-select">
-              <option value="5" selected>5 questions (Format officiel Moodle • 15 min)</option>
-              <option value="8">8 questions (Simulation standard)</option>
-              <option value="12">12 questions (Format intermédiaire)</option>
-              <option value="20">20 questions (Grand test de révision)</option>
-              <option value="44">44 questions (Banque intégrale)</option>
+            <label class="sim-label" for="simProfileSelect">Contenu à réviser :</label>
+            <select id="simProfileSelect" class="sim-select" onchange="updateSimSetupUI()">
+              <option value="core" selected>Premier tour — Cañas (12 questions)</option>
+              <option value="canas">Cañas — toutes les questions de la banque (24 questions)</option>
+              <option value="readings">Cinq textes fournis (36 questions)</option>
+              <option value="extended">Avec les approfondissements extérieurs (44 questions)</option>
+            </select>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; line-height: 1.35;">
+              Le premier tour est une sélection pédagogique pour commencer. Les profils suivent les textes disponibles, pas une prédiction des questions d’examen. La banque ne remplace pas les lectures ni les indications du cours.
+            </div>
+          </div>
+
+          <!-- 2. simCategorySelect -->
+          <div class="sim-form-group">
+            <label class="sim-label" for="simCategorySelect">Section :</label>
+            <select id="simCategorySelect" class="sim-select" onchange="updateSimSetupUI()">
+              <option value="all" selected>Toutes les sections</option>
+              <option value="cañas_fondements">Fondements</option>
+              <option value="cañas_cognition">Cognition et apprentissage</option>
+              <option value="cañas_erreurs">Erreurs et fiabilité</option>
+              <option value="cañas_charge_methodes">Charge, décision et méthodes</option>
+              <option value="endsley_sa">Conscience de la situation</option>
+              <option value="bainbridge_automation">Automatisation</option>
+              <option value="hf101_performance">Performance humaine</option>
+            </select>
+          </div>
+
+          <!-- 3. simOnlyHardCheckbox -->
+          <div class="sim-form-group" style="display: flex; align-items: center; gap: 8px; padding: 4px 0;">
+            <input type="checkbox" id="simOnlyHardCheckbox" onchange="updateSimSetupUI()" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+            <label class="sim-label" for="simOnlyHardCheckbox" style="margin-bottom: 0 !important; cursor: pointer; font-size: 0.9rem;">
+              Seulement mes difficultés dans cette sélection
+            </label>
+          </div>
+
+          <!-- 4. simPoolSummary -->
+          <div class="sim-form-group">
+            <div id="simPoolSummary" aria-live="polite" style="padding: 10px 14px; border-radius: 0.5rem; background: var(--bg-base); font-size: 0.88rem; color: var(--text-main); border: 1px solid var(--border-color); line-height: 1.45;">
+            </div>
+          </div>
+
+          <!-- Action copier sélection d'Étude -->
+          <div style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+            <button type="button" id="simCopyStudyBtn" class="secondary-btn" onclick="copyStudySelectionToSimDraft()" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 0.5rem; background: var(--bg-card); cursor: pointer; font-weight: 600;">
+              📋 Utiliser ma sélection d’Étude
+            </button>
+          </div>
+
+          <!-- 5. simCountSelect & simTimerSelect -->
+          <div class="sim-form-group">
+            <label class="sim-label" for="simCountSelect">Nombre de questions tirées :</label>
+            <select id="simCountSelect" class="sim-select" onchange="updateSimSetupUI()">
+              <option value="3">3 questions</option>
+              <option value="5" selected>5 questions</option>
+              <option value="8">8 questions</option>
+              <option value="12">12 questions</option>
+              <option value="20">20 questions</option>
+              <option value="all">Toutes dans cette sélection</option>
             </select>
           </div>
 
           <div class="sim-form-group">
             <label class="sim-label" for="simTimerSelect">Gestion du temps :</label>
-            <select id="simTimerSelect" class="sim-select">
-              <option value="900" selected>15 minutes (Format officiel en classe)</option>
-              <option value="600">10 minutes (Cadence rapide)</option>
-              <option value="300">5 minutes (Sprint express)</option>
+            <select id="simTimerSelect" class="sim-select" onchange="updateSimSetupUI()">
+              <option value="900" selected>15 minutes</option>
+              <option value="600">10 minutes</option>
+              <option value="300">5 minutes</option>
               <option value="0">Aucun chronomètre (Sans pression temporelle)</option>
             </select>
           </div>
 
+          <!-- 6. simStartBtn -->
           <button class="primary-btn" id="simStartBtn" type="button" onclick="startSimulation()">
-            🚀 Démarrer la simulation
+            🚀 Démarrer 5 questions
           </button>
         </div>
 
@@ -5753,28 +5812,31 @@ const allQuestions = [
     "anchor_id": "anchor_q1",
     "tag": "Cañas et al. (2011) • Définition IEA",
     "points": "1 point",
-    "context": "Selon la définition officielle de l'International Ergonomics Association (IEA, 2000) citée en ouverture par Cañas et al. (p. 316).",
-    "question": "Quel est le double objectif fondamental et indissociable qui définit la discipline et la profession des Facteurs Humains et de l'Ergonomie (HFE) ?",
+    "context": "La question porte sur la définition de l’ergonomie citée par Cañas et al., et non sur un moyen particulier d’intervention.",
+    "question": "Quel couple d’objectifs correspond à cette définition ?",
     "options": [
-      "Adapter les comportements des employés aux exigences strictes de la direction et maximiser le rendement financier.",
-      "Automatiser systématiquement toutes les opérations de production afin d'éliminer totalement l'intervention faillible de l'humain.",
-      "Optimiser conjointement le bien-être humain (santé, sécurité, satisfaction) et la performance globale du système sociotechnique.",
-      "Sélectionner et former une élite d'opérateurs capables de compenser les défauts de conception des machines complexes."
+      "La vitesse d’exécution des tâches et le rendement économique du poste.",
+      "La fiabilité des équipements et la conformité des comportements aux procédures.",
+      "Le bien-être des personnes et la performance globale du système.",
+      "Les compétences individuelles des opérateurs et la précision de leurs gestes."
     ],
     "correctIndex": 2,
     "feedbacks": [
-      "Cette proposition privilégie le rendement et l’adaptation des salariés aux exigences de l’organisation ; elle ne formule pas l’optimisation conjointe du bien-être humain et de la performance du système.",
-      "L’automatisation peut être une solution de conception, mais l’ergonomie ne consiste pas à tout automatiser et ne garantit pas l’élimination de toute erreur humaine. Cette option ne formule pas le double objectif demandé.",
-      "La définition associe deux objectifs : le bien-être humain et la performance globale du système. L’un ne remplace pas l’autre.",
-      "La sélection et la formation peuvent contribuer à la sécurité, mais elles ne définissent pas le double objectif de l’ergonomie et ne dispensent pas de concevoir des systèmes adaptés aux utilisateurs."
+      "La vitesse et le rendement peuvent être examinés, mais ce couple ne restitue pas l’objectif de bien-être humain associé à la performance globale.",
+      "La fiabilité et la conformité sont des aspects possibles du fonctionnement. Ce couple ne correspond pas aux deux objectifs de la définition.",
+      "La définition associe le bien-être humain et la performance globale du système : ni une performance locale ni une mesure individuelle ne remplace ce couple.",
+      "Les compétences et la précision peuvent contribuer à la performance, mais elles ne constituent pas le double objectif de la discipline."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 316 (Section 'Definition')",
     "doc_quote": "« In its triennial report, the International Ergonomics Association (IEA, 2000) defined ergonomics as the scientific discipline that deals with understanding the interaction between humans and other elements of a sociotechnical system. In this definition, ergonomics is the profession that applies theory, principles, data, and design methods to optimize human well-being and the overall performance of a system. »",
-    "doc_explanation": "L’ergonomie vise conjointement le bien-être humain et la performance globale du système. Ces objectifs orientent la conception et l’évaluation ; ils ne constituent pas une garantie d’absence d’erreur ou d’accident.",
-    "exam_tip": "Retenir les deux objectifs de la définition : bien-être humain et performance globale du système. Une proposition qui ne formule qu’un seul de ces objectifs ne répond pas entièrement à cette question.",
+    "doc_explanation": "La définition organise l’analyse autour du bien-être des personnes et de la performance du système. Les moyens employés et les indicateurs locaux ne doivent pas être confondus avec ces objectifs.",
+    "exam_tip": "Distinguer les objectifs de la discipline de ses moyens et de ses indicateurs locaux.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), p. 316, Definition.",
+    "flashcard_question": "Quels sont les deux objectifs associés dans la définition de l’ergonomie citée par Cañas ?",
+    "flashcard_answer": "Optimiser conjointement le bien-être humain et la performance globale du système."
   },
   {
     "id": 2,
@@ -5907,28 +5969,31 @@ const allQuestions = [
     "anchor_id": "anchor_q6",
     "tag": "Cañas et al. (2011) • Mémoire de travail : maintien et manipulation",
     "points": "1 point",
-    "context": "Un opérateur doit retenir plusieurs valeurs récemment affichées, les comparer et les actualiser mentalement, sans possibilité de les consulter à nouveau.",
-    "question": "Quel système cognitif est directement sollicité par ce maintien temporaire et cette manipulation simultanée de l’information ?",
+    "context": "Situation fictive : après avoir lu trois valeurs qui ne sont plus affichées, un opérateur doit comparer leurs écarts et les actualiser à partir d’une nouvelle mesure.",
+    "question": "Quelle fonction rend directement compte de cette activité sur les valeurs déjà lues ?",
     "options": [
-      "L’acuité visuelle périphérique, une fois les valeurs correctement lues.",
-      "La mémoire de travail.",
-      "La conduction motrice périphérique nécessaire pour appuyer sur une touche.",
-      "Le stockage durable des connaissances en mémoire à long terme, indépendamment de leur maintien actif."
+      "La détection perceptive de nouveaux signaux présentés sur l’écran.",
+      "Le maintien et la manipulation d’informations en mémoire de travail.",
+      "La récupération de connaissances durables acquises avant cet épisode.",
+      "L’exécution d’une séquence de gestes devenue largement automatique."
     ],
     "correctIndex": 1,
     "feedbacks": [
-      "L’acuité participe à la perception des valeurs, mais ne désigne pas leur maintien actif après leur disparition.",
-      "La mémoire de travail permet de maintenir temporairement des informations tout en les manipulant ; une tâche qui sollicite excessivement ces fonctions peut favoriser les erreurs.",
-      "La conduction motrice concerne l’exécution du mouvement, non le maintien et la comparaison des valeurs.",
-      "La mémoire à long terme conserve des connaissances durables ; elle ne suffit pas à décrire le maintien actif des valeurs de ce scénario."
+      "La détection concerne la prise d’information nouvelle. Elle ne décrit pas ce que l’opérateur fait avec les valeurs déjà lues et retirées de l’écran.",
+      "L’opérateur conserve temporairement des informations tout en les comparant et en les actualisant. C’est la fonction de mémoire de travail visée ici.",
+      "Des connaissances antérieures peuvent contribuer à l’activité, mais elles ne décrivent pas le maintien actif des valeurs particulières de cet épisode.",
+      "Une séquence gestuelle automatisée concerne une autre composante de l’activité ; elle ne décrit pas le traitement des valeurs momentanément conservées."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 329 — Mental workload and stress",
     "doc_quote": "« One finds references to mental load in the research areas that have traditionally been identified as “dual task performance,” “task execution time-sharing,” “task switching,” and “working memory.” The last notion is used because it combines the idea of a fixed amount of cognitive resources with active operations on them. »",
-    "doc_explanation": "La difficulté ciblée ici est le maintien et la manipulation d’informations temporaires. Cela n’implique pas que la mémoire de travail soit l’unique limite de toute activité complexe.",
-    "exam_tip": "Identifier d’abord les exigences de la tâche : percevoir, maintenir, manipuler, récupérer ou agir. Ne pas postuler un goulot unique dans toutes les situations.",
+    "doc_explanation": "Le chapitre associe la mémoire de travail à des ressources limitées et à des opérations actives sur les informations. Le scénario illustre cette combinaison, sans prétendre que les autres fonctions cessent d’intervenir.",
+    "exam_tip": "Identifier ce que la tâche exige de conserver et de transformer momentanément.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), p. 329, Mental workload and stress.",
+    "flashcard_question": "Pourquoi comparer des valeurs qui viennent de disparaître d’un écran sollicite-t-il la mémoire de travail ?",
+    "flashcard_answer": "Il faut les maintenir temporairement disponibles et opérer sur elles ; il ne suffit pas de percevoir les valeurs au moment de leur affichage."
   },
   {
     "id": 7,
@@ -6028,28 +6093,31 @@ const allQuestions = [
     "anchor_id": "anchor_q10",
     "tag": "Cañas et al. (2011) • Ingénierie des Systèmes Cognitifs (Hollnagel & Woods)",
     "points": "1 point",
-    "context": "Dans le cadre de l'ingénierie des systèmes cognitifs (Cognitive Systems Engineering - CSE) de Hollnagel et Woods présenté par Cañas et al. (p. 322, 323-324).",
-    "question": "Dans le contexte de la conduite de procédés décrit ici, que désigne un système cognitif conjoint ?",
+    "context": "Situation fictive : une équipe de conception veut comprendre comment un opérateur conduit un procédé à l’aide d’affichages et de commandes.",
+    "question": "Quelle unité d’analyse correspond au système cognitif conjoint décrit dans le chapitre ?",
     "options": [
-      "La personne et son environnement de travail considérés comme un système hautement interactif, dont l’activité dépend des relations entre ses composantes.",
-      "Deux ordinateurs fonctionnant en miroir pour assurer la redondance matérielle des bases de données.",
-      "Un comité syndical composé d'employés et d'employeurs négociant les conventions collectives de travail.",
-      "Un test psychométrique mesurant le quotient intellectuel combiné de deux opérateurs travaillant ensemble."
+      "La personne et son environnement de travail, considérés à travers leurs interactions dans l’activité.",
+      "Les capacités de la personne et celles des dispositifs, évaluées séparément puis additionnées.",
+      "Les flux entre les composants techniques, en prenant l’opérateur comme une entrée déjà définie.",
+      "Les étapes de la procédure prescrite, en assimilant leur enchaînement à l’activité effectivement réalisée."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "L’analyse porte sur la manière dont personnes et dispositifs coordonnent leurs activités pour atteindre leurs objectifs et maintenir le contrôle. Étudier séparément leurs capacités ne suffit pas à expliquer le fonctionnement conjoint.",
-      "Confusion avec la redondance informatique matérielle.",
-      "Un comité peut être étudié comme collectif de travail, mais sa composition syndicale ne définit pas le système cognitif conjoint décrit dans cette question.",
-      "Un score de quotient intellectuel ne décrit ni les interactions avec les artefacts ni la coordination de l’activité."
+      "Le chapitre propose d’étudier la personne et son environnement comme un système hautement interactif. Les relations entre les composantes font partie de l’explication.",
+      "Additionner des capacités évaluées séparément ne décrit pas les interactions par lesquelles l’activité conjointe est réalisée.",
+      "Cette délimitation peut servir une analyse technique, mais elle retire de l’analyse les interactions de l’opérateur que le cadre conjoint place au premier plan.",
+      "Une procédure est une ressource possible de l’activité. Son enchaînement prescrit ne suffit pas à définir le système interactif en fonctionnement."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 322 & Pages 323–324 (Sections 'Safety and accident investigation' & 'Conceptual developments')",
     "doc_quote": "« According to this new approach, the person and her or his working environment should be considered as a highly interactive joint cognitive system (Hollnagel and Woods, 2007). The interaction between the two components is of a crucial importance for any ergonomic analysis. [...] for a solution of cognitive design problems human behavior must be modelled as activity, in its interaction with the environment and with the other cognitive systems — both human and artificial — that there are in the environment. »",
-    "doc_explanation": "L’analyse d’un système cognitif conjoint examine comment personnes et dispositifs réalisent ensemble une activité dans son contexte, plutôt que de déduire son fonctionnement de la simple addition de capacités individuelles.",
-    "exam_tip": "Système cognitif conjoint : personne, environnement de travail et interactions ; ne pas réduire l’analyse à des capacités individuelles isolées.",
+    "doc_explanation": "Le changement porte sur l’unité d’analyse : comprendre l’activité des composantes en interaction et en contexte, plutôt que déduire le fonctionnement de leurs propriétés isolées.",
+    "exam_tip": "Système conjoint : expliquer les interactions, pas seulement juxtaposer des capacités.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), pp. 322 et 324, Joint cognitive systems.",
+    "flashcard_question": "Que change l’adoption du système cognitif conjoint comme unité d’analyse ?",
+    "flashcard_answer": "On étudie la personne et son environnement dans leurs interactions au cours de l’activité, plutôt que leurs capacités prises séparément."
   },
   {
     "id": 11,
@@ -6058,29 +6126,32 @@ const allQuestions = [
     "anchor_id": "anchor_q11",
     "tag": "Cañas et al. (2011) • Modèles Mentaux (Johnson-Laird)",
     "points": "1 point",
-    "context": "L'ergonomie cognitive accorde une place centrale aux 'modèles mentaux' des opérateurs en supervision de procédés (Cañas et al., p. 326).",
-    "question": "Quelle représentation Cañas et al. appellent-ils un modèle mental du système ?",
+    "context": "La question porte sur le modèle mental tel qu’il est défini dans le chapitre, et non sur tous les outils utiles à un opérateur.",
+    "question": "Quelle description correspond à un modèle mental du système ?",
     "options": [
-      "Une représentation subjective de la structure et du fonctionnement du système, construite et mobilisée par l’opérateur pour orienter ses actions et anticiper les états futurs.",
-      "Un répertoire externe des coordonnées des techniciens de maintenance.",
-      "Une procédure écrite externe, sans représentation de la structure et du fonctionnement du système chez l’opérateur.",
-      "Une interface vocale matérielle ou logicielle servant à transmettre des commandes."
+      "Une représentation subjective de la structure et du fonctionnement du système.",
+      "Une description de l’effort cognitif mobilisé par l’opérateur pendant la tâche.",
+      "Un ensemble d’instructions écrites définissant la conduite prescrite du système.",
+      "Un relevé matériel de la disposition des composants effectué par le concepteur."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "Exact : Cañas et al. définissent le modèle mental comme la représentation subjective de la structure et du fonctionnement du système qui guide les actions et prédictions de l’opérateur.",
-      "Un répertoire externe peut être utile, mais ce n’est pas la représentation subjective de la structure et du fonctionnement visée par le passage.",
-      "Une procédure écrite est un artefact externe ; elle ne constitue pas, à elle seule, le modèle mental de l’opérateur.",
-      "Une interface vocale est un dispositif d’interaction, non la représentation subjective du système définie ici."
+      "C’est la représentation subjective de la structure et du fonctionnement définie par le chapitre. Sa justesse doit être examinée ; elle n’est pas garantie.",
+      "L’effort mobilisé caractérise une autre dimension de la situation de travail ; il ne décrit pas la représentation que l’opérateur se fait du système.",
+      "Les instructions écrites sont un artefact externe. Elles peuvent contribuer à la formation d’un modèle mental, sans se confondre avec lui.",
+      "Le relevé décrit le système matériel. Il ne constitue pas, par sa seule existence, la représentation subjective qu’en possède l’opérateur."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 326 (Section 'Mental models')",
     "doc_quote": "« When interacting with a system, people normally have some knowledge of its structure and functioning. This small-scale subjective representation of system’s structure and functioning is called a mental model (see Johnson-Laird, 1983). Taking into account the peculiarities of users’ mental models in the design of artifacts is considered to be crucial for an efficient interaction. »",
-    "doc_explanation": "Un modèle mental est une représentation subjective de la structure et du fonctionnement du système. Une représentation incomplète ou erronée peut conduire à des diagnostics et prévisions inadéquats, sans rendre nécessairement toutes les décisions incorrectes.",
-    "exam_tip": "Modèle mental : représentation subjective de la structure et du fonctionnement du système.",
+    "doc_explanation": "Un modèle mental concerne ce que la personne se représente de la structure et du fonctionnement du système. Les documents et interfaces peuvent soutenir cette représentation, qui peut rester partielle ou erronée.",
+    "exam_tip": "Ne pas confondre le système, ses documents et la représentation qu’une personne s’en construit.",
     "anchor_phrase": "This small - scale subjective representation of  system ’ s structure and functioning is called a mental model",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), p. 326, Mental models.",
+    "flashcard_question": "Un schéma technique posé devant l’opérateur est-il, à lui seul, son modèle mental ?",
+    "flashcard_answer": "Non. Le modèle mental est la représentation subjective de la structure et du fonctionnement du système. Le schéma peut aider à la construire ou à la réviser."
   },
   {
     "id": 12,
@@ -6089,28 +6160,31 @@ const allQuestions = [
     "anchor_id": "anchor_q12",
     "tag": "Cañas et al. (2011) • Modèle SRK de Rasmussen",
     "points": "1 point",
-    "context": "Dans l'approche cognitive de l'erreur humaine (p. 321), Cañas et al. synthétisent la taxonomie classique de Jens Rasmussen (1983) articulée autour du degré de contrôle cognitif et de la familiarité avec le système.",
-    "question": "Quel niveau de contrôle cognitif est principalement mobilisé lorsqu’un opérateur doit élaborer un plan nouveau parce que ses routines et ses règles apprises ne suffisent pas à résoudre la situation ?",
+    "context": "Les situations suivantes sont fictives et indépendantes. On classe le contrôle cognitif décrit, pas la compétence globale des personnes.",
+    "question": "Quelle situation illustre principalement le niveau fondé sur les connaissances dans la présentation de Rasmussen ?",
     "options": [
-      "Le niveau fondé sur les habiletés : exécution d’une séquence familière et largement automatisée.",
-      "Le niveau fondé sur les règles : sélection et application d’une règle apprise de type SI–ALORS.",
-      "Le niveau fondé sur les connaissances : élaboration consciente d’un plan nouveau lorsque les routines et règles disponibles aident peu.",
-      "Un quatrième niveau appelé « heuristique », distinct des trois niveaux du cadre SRK."
+      "Un opérateur exécute une séquence familière dont les gestes ont été longuement pratiqués.",
+      "Un opérateur reconnaît une condition connue et applique la règle correspondante de son répertoire.",
+      "Un opérateur confronte des explications d’une anomalie nouvelle et construit une intervention que ses règles connues ne fournissent pas.",
+      "Un opérateur identifie un cas prévu dans une procédure et suit les étapes qui y sont indiquées."
     ],
     "correctIndex": 2,
     "feedbacks": [
-      "Le niveau fondé sur les habiletés correspond à des séquences largement automatisées et familières. Il ne suffit pas, dans la situation décrite, à construire le plan nouveau requis ; cela ne signifie pas qu’aucune surveillance consciente ne soit jamais possible.",
-      "La sélection d’une règle apprise caractérise le niveau fondé sur les règles. Une sélection inappropriée peut produire une erreur à ce niveau, mais ne définit pas tout recours aux règles. Dans l’énoncé, elles ne suffisent pas à résoudre la situation.",
-      "Le niveau fondé sur les connaissances implique ici l’élaboration et l’évaluation conscientes d’un plan nouveau. Mobiliser ce niveau n’implique pas qu’une erreur soit nécessairement commise.",
-      "Faux : Rasmussen ne formule pas de niveau 'heuristic-based' dans son triptyque originel SRK (1983)."
+      "La description met l’accent sur une séquence familière et largement automatisée : elle illustre le niveau fondé sur les habiletés.",
+      "La reconnaissance d’une condition et la sélection d’une règle apprise correspondent au niveau fondé sur les règles.",
+      "Les routines et règles disponibles aident peu : l’opérateur doit élaborer un plan. Cette activité exige un contrôle conscient important, sans impliquer nécessairement une erreur.",
+      "L’opérateur dispose ici d’un cas et d’une conduite déjà prévus ; cela ne décrit pas la construction d’un plan pour une situation nouvelle."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 321 (Section 'Safety and accident investigation')",
     "doc_quote": "« Errors based on knowledge: When we encounter a new problem situation, so that existing skills and learned rules are of little help, it is necessary to plan a novel action sequence to its resolution. This is a higher-order cognitive activity demanding a lot of conscious control. If the actions are not planned correctly, a knowledge-based error will occur. »",
-    "doc_explanation": "Face à un problème nouveau pour lequel les routines et règles disponibles ne suffisent pas, l’opérateur doit construire et évaluer un plan. Cette activité sollicite fortement les ressources cognitives et peut accroître le risque d’erreur, sans entraîner nécessairement leur saturation.",
-    "exam_tip": "SRK : habiletés = conduites largement automatisées ; règles = sélection de règles apprises ; connaissances = résolution d’un problème nouveau nécessitant un contrôle conscient important.",
+    "doc_explanation": "Le cadre distingue des modes de contrôle associés notamment à la familiarité avec la situation. Plusieurs modes peuvent intervenir dans le travail d’une même personne ; les exemples isolent leur caractéristique dominante.",
+    "exam_tip": "Habiletés : séquence familière ; règles : cas et règle appris ; connaissances : élaboration d’un plan lorsque ces ressources aident peu.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), p. 321, Errors based on skills/rules/knowledge.",
+    "flashcard_question": "Un opérateur doit élaborer une intervention pour une anomalie que ses routines et ses règles apprises ne permettent pas de résoudre. Quel niveau SRK est principalement illustré ?",
+    "flashcard_answer": "Le niveau fondé sur les connaissances. Il faut construire et évaluer un plan ; le recours à ce niveau ne signifie pas, à lui seul, qu’une erreur se produit."
   },
   {
     "id": 13,
@@ -6375,29 +6449,32 @@ const allQuestions = [
     "anchor_id": "anchor_q21",
     "tag": "Cañas et al. (2011) • Méthode Ethnographique & Connaissances Implicites",
     "points": "1 point",
-    "context": "Dans la section consacrée aux méthodologies ergonomiques (p. 330-331), Cañas et al. comparent les méthodes ethnographiques aux entrevues et questionnaires.",
-    "question": "Quel intérêt de l’observation de terrain Cañas et al. soulignent-ils pour l’étude des connaissances liées à l’activité ?",
+    "context": "Situation fictive : des questionnaires décrivent mal les ajustements que les opérateurs réalisent pendant leur travail. Une observation en situation est envisagée.",
+    "question": "Quel apport de cette observation correspond à l’argument développé par Cañas et al. ?",
     "options": [
-      "Elle garantit une objectivité absolue car l'ethnographe parvient toujours à observer la situation sans aucun biais ni hypothèse préalable.",
-      "Elle permet d'éliminer totalement le besoin d'outils informatiques ou de capteurs de mesure dans les analyses ergonomiques.",
-      "Elle permet d’examiner des routines et ajustements dont les acteurs rendent difficilement compte dans un questionnaire seul.",
-      "Elle accélère considérablement l'analyse de données par rapport à un sondage électronique automatisé."
+      "Mesurer l’effet d’une variable manipulée en comparant des conditions expérimentales contrôlées.",
+      "Comparer les caractéristiques d’une interface à des critères consignés dans une norme.",
+      "Décrire des routines, interactions et ajustements que les personnes explicitent difficilement dans leurs réponses.",
+      "Recueillir les opinions déclarées d’un grand nombre de personnes au moyen de questions identiques."
     ],
     "correctIndex": 2,
     "feedbacks": [
-      "Faux : Cañas et al. réfutent précisément l'idée d'un observateur neutre sans biais (citant Shapiro, 1994) et préfèrent les études de terrain guidées par des hypothèses explicites.",
-      "Faux : l'ethnographie peut utiliser la vidéo, l'audio et des enregistrements informatiques complémentaires.",
-      "L’observation donne accès à l’activité située et à certains ajustements peu explicités. Elle peut être combinée à des entretiens et à l’analyse de traces pour comprendre leur signification.",
-      "Le choix de l’observation se justifie ici par l’accès à l’activité en contexte, non par une durée supposée toujours plus courte ou toujours plus longue que celle des autres méthodes."
+      "Il s’agit d’un objectif d’expérimentation contrôlée ; il ne décrit pas l’apport de l’observation recherché dans ce scénario.",
+      "La comparaison à des critères normatifs est une autre démarche d’évaluation. Elle ne révèle pas à elle seule les ajustements effectivement réalisés.",
+      "Le chapitre attire l’attention sur les connaissances implicites liées aux routines et aux adaptations, que les déclarations peuvent mal restituer.",
+      "Cette proposition décrit une enquête déclarative. Elle ne répond pas à la difficulté qui motive ici l’observation de l’activité."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/1-CANAS2011(CHAP-13-humanFactor).pdf",
     "doc_page": "Pages 330–331 (Section 'Methodologies - Ethnographic method and field studies')",
     "doc_quote": "« This approach emerged to replace methods based on structural interviews and questionnaires. It is argued that interviews and questionnaires lose an important aspect of the task, which is the implicit knowledge closely tied to the routines, trials, and intuitive personal adaptations. Since this knowledge is unconscious and is behind rapid responses in real tasks, people are simply too overloaded to make it explicit when answering questionnaires and interviews. »",
-    "doc_explanation": "Le chapitre souligne les limites des déclarations rétrospectives pour certaines connaissances liées aux routines. Il ne présente pas l’observateur comme exempt de présupposés : dans les études de terrain, les hypothèses guidant l’observation sont explicitées.",
-    "exam_tip": "Observation de terrain : étudier les routines, ajustements et interactions que le questionnaire seul peut laisser dans l’ombre. Une observation n’est pas dépourvue de présupposés.",
+    "doc_explanation": "Observer l’activité donne accès à des routines et adaptations difficiles à expliciter. Cela n’abolit pas les présupposés du chercheur : le chapitre discute justement leur rôle et l’intérêt de les rendre explicites.",
+    "exam_tip": "Distinguer observation de l’activité, expérimentation, vérification normative et recueil déclaratif.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Cañas et al. (2011), pp. 330–331, Ethnographic method and field studies.",
+    "flashcard_question": "Pourquoi observer l’activité lorsque les questionnaires ne suffisent pas à comprendre les ajustements des opérateurs ?",
+    "flashcard_answer": "L’observation permet d’examiner des routines et adaptations que les personnes explicitent difficilement. Elle n’est pas pour autant exempte de présupposés."
   },
   {
     "id": 22,
@@ -6437,29 +6514,32 @@ const allQuestions = [
     "anchor_id": "anchor_q23",
     "tag": "Cañas et al. (2011) — Les trois niveaux de conscience de la situation selon Endsley",
     "points": "1 point",
-    "context": "À la page 325, Cañas et al. présentent les trois niveaux de conscience de la situation du modèle d’Endsley (1995).",
-    "question": "Quels sont les trois niveaux de conscience de la situation présentés par Cañas et al. à partir du modèle d’Endsley ?",
+    "context": "La question demande l’association entre les numéros et le contenu des niveaux du modèle d’Endsley présenté dans le chapitre.",
+    "question": "Quelle association correspond aux niveaux 1, 2 et 3 de conscience de la situation ?",
     "options": [
-      "Sensation vestibulaire (Niveau 1) → Réflexe médullaire (Niveau 2) → Décision corticale tardive (Niveau 3).",
-      "Action motrice immédiate (Niveau 1) → Analyse rétrospective (Niveau 2) → Rédaction du rapport d'accident (Niveau 3).",
-      "Niveau 1 : perception des éléments pertinents ; niveau 2 : compréhension de leur signification ; niveau 3 : projection de leur évolution future.",
-      "Élaboration du modèle mental (Niveau 1) → Consultation des collègues (Niveau 2) → Déconnexion du pilote automatique (Niveau 3)."
+      "Niveau 1 : compréhension ; niveau 2 : perception ; niveau 3 : projection.",
+      "Niveau 1 : perception ; niveau 2 : projection ; niveau 3 : compréhension.",
+      "Niveau 1 : perception ; niveau 2 : compréhension ; niveau 3 : projection.",
+      "Niveau 1 : projection ; niveau 2 : compréhension ; niveau 3 : perception."
     ],
     "correctIndex": 2,
     "feedbacks": [
-      "Cette liste mélange des mécanismes neurophysiologiques et une décision ; ce n’est pas la définition des trois niveaux.",
-      "Cette liste décrit des activités hétérogènes et ne correspond pas aux niveaux perception, compréhension et projection.",
-      "Le chapitre distingue la perception des éléments de l’environnement, la compréhension de la situation courante et la projection de son évolution future.",
-      "Les modèles mentaux et les échanges peuvent contribuer à l’évaluation de la situation, mais cette liste n’est pas celle des trois niveaux de connaissance."
+      "Cette association inverse les niveaux 1 et 2 : le premier concerne la perception, le deuxième la compréhension.",
+      "Cette association inverse les niveaux 2 et 3 : la compréhension précède la projection dans la numérotation du modèle.",
+      "C’est l’association présentée : perception des éléments pertinents, compréhension de leur signification et projection de leur évolution future.",
+      "Cette association inverse les contenus des niveaux 1 et 3. La projection relève du niveau 3."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/1-CANAS2011(CHAP-13-humanFactor).pdf",
     "doc_page": "Page 325 — Situation awareness and attention",
     "doc_quote": "it includes three levels of information processing: (1) perception of the elements of the environment; (2) understanding the current situation; and (3) predicting (projecting) the situation's future development.",
-    "doc_explanation": "Percevoir un élément, comprendre sa signification et projeter l’évolution de la situation sont trois contenus distingués dans la présentation du modèle.",
-    "exam_tip": "Perception, compréhension, projection : distinguer les niveaux sans imposer une chaîne temporelle à sens unique.",
+    "doc_explanation": "Ces niveaux distinguent les contenus perçus, compris et projetés. Leur numérotation ne suffit pas à démontrer une succession temporelle rigide dans toute activité.",
+    "exam_tip": "Apprendre les contenus des niveaux, pas seulement une suite de mots.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) — Chapitre 13"
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13",
+    "flashcard_context": "Cañas et al. (2011), p. 325, Situation awareness and attention.",
+    "flashcard_question": "Quels contenus distinguent les trois niveaux de conscience de la situation ?",
+    "flashcard_answer": "Niveau 1 : percevoir les éléments pertinents ; niveau 2 : comprendre leur signification ; niveau 3 : projeter leur évolution future."
   },
   {
     "id": 24,
@@ -6502,32 +6582,32 @@ const allQuestions = [
     "anchor_id": "anchor_q25",
     "tag": "Cañas et al. (2011) — Application fictive : compréhension de la situation",
     "points": "1 point",
-    "context": "Situation fictive : un opérateur perçoit les indications pertinentes, mais leur attribue une signification erronée en utilisant une représentation inadéquate du fonctionnement du système.",
-    "question": "Quel mécanisme correspond à la défaillance de compréhension décrite dans cette situation ?",
+    "context": "Les quatre scénarios sont fictifs et indépendants. On cherche le niveau principalement concerné par l’échec décrit.",
+    "question": "Dans quel scénario l’échec porte-t-il principalement sur la compréhension de la situation, au niveau 2 ?",
     "options": [
-      "La perte totale de transmission des signaux auditifs par le nerf cochléaire vers le cortex auditif primaire.",
-      "L’interprétation inadéquate des indications perçues à partir d’une représentation erronée du fonctionnement du système.",
-      "La rupture mécanique des actionneurs hydrauliques empêchant l’exécution physique du braquage des commandes.",
-      "L’intégration correcte des informations pertinentes dans une compréhension adéquate de la situation actuelle."
+      "L’opérateur ne remarque pas l’indicateur signalant une température anormale, bien qu’il soit affiché sur le moniteur.",
+      "L’opérateur lit correctement les indications pertinentes, mais interprète une surchauffe comme une phase normale du procédé.",
+      "L’opérateur reconnaît la surchauffe actuelle, mais n’anticipe pas le dépassement prochain d’un seuil critique.",
+      "L’opérateur comprend la surchauffe et son évolution attendue, mais appuie involontairement sur une commande voisine de celle qu’il voulait utiliser."
     ],
     "correctIndex": 1,
     "feedbacks": [
-      "Cette proposition concerne l’accès auditif à l’information, pas l’interprétation des indications que le contexte déclare perçues.",
-      "Les indications pertinentes sont perçues, mais leur signification est mal comprise. Le contexte précise qu’un modèle mental inadéquat contribue à cette interprétation ; il ne démontre pas un biais particulier ni une défaillance réelle de capteur.",
-      "Cette proposition décrit une défaillance mécanique, pas l’erreur de compréhension humaine annoncée dans le contexte.",
-      "Cette proposition décrit une compréhension adéquate, et non la défaillance de niveau 2 demandée."
+      "L’indice pertinent n’est pas perçu. L’échec décrit se situe donc au niveau 1, sans que sa cause soit déterminée par ce seul constat.",
+      "L’information est perçue, mais sa signification est mal comprise : c’est l’échec de niveau 2 demandé.",
+      "La situation actuelle est comprise, mais son évolution n’est pas anticipée : le scénario cible le niveau 3.",
+      "Le scénario situe l’écart dans l’exécution de la commande, alors que la compréhension et la projection sont déclarées adéquates. Il n’établit pas l’échec de niveau 2 demandé."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/1-CANAS2011(CHAP-13-humanFactor).pdf",
     "doc_page": "Page 325–326 (SA Niveau 2 et Modèles mentaux)",
     "doc_quote": "(2) understanding the current situation",
-    "doc_explanation": "L’information est perçue, mais son interprétation est inadéquate. Le modèle de conscience de la situation distingue perception et compréhension ; le chapitre définit aussi le modèle mental comme une représentation subjective de la structure et du fonctionnement du système.",
-    "exam_tip": "Niveau 2 : compréhension de la signification des informations. Un modèle mental inadéquat peut contribuer à un échec de compréhension ; il ne constitue pas l’unique mécanisme possible.",
+    "doc_explanation": "Il faut distinguer le niveau de l’échec et sa cause. Un modèle mental inadapté peut contribuer à une mauvaise interprétation, mais la définition du niveau 2 ne se réduit pas à ce mécanisme.",
+    "exam_tip": "Indice non perçu : niveau 1 ; signification mal comprise : niveau 2 ; évolution mal anticipée : niveau 3.",
     "study_scope": "canas",
     "scope_badge": "Cañas et al. (2011) — Chapitre 13",
-    "flashcard_context": "Modèle présenté par Cañas et al. (2011), pp. 325–326.",
-    "flashcard_question": "Que caractérise une défaillance de compréhension de niveau 2 ?",
-    "flashcard_answer": "Les informations pertinentes sont perçues, mais leur signification pour la situation est mal comprise. Un modèle mental inadéquat peut y contribuer ; ce n’est pas l’unique mécanisme possible."
+    "flashcard_context": "Application fictive des distinctions présentées par Cañas et al., pp. 325–326.",
+    "flashcard_question": "Un opérateur lit les indications pertinentes, mais prend une surchauffe pour un fonctionnement normal. Quel niveau de conscience de la situation est principalement en défaut ?",
+    "flashcard_answer": "Le niveau 2 : la compréhension de la signification des informations perçues. La cause précise de cette interprétation reste à examiner."
   },
   {
     "id": 26,
@@ -6697,29 +6777,32 @@ const allQuestions = [
     "anchor_id": "anchor_q31",
     "tag": "Cañas et al. (2011) — Automatisation, pratique et reprise de contrôle",
     "points": "1 point",
-    "context": "À la page 325, Cañas et al. examinent les conséquences d’une participation réduite au contrôle d’un procédé fortement automatisé.",
-    "question": "Quel mécanisme décrit dans ce passage relie cette participation réduite à une difficulté de reprise de contrôle ?",
+    "context": "Cañas et al. examinent ce qui peut se passer lorsque l’opérateur participe moins directement au contrôle d’un procédé automatisé.",
+    "question": "Quel lien entre cette participation réduite et les difficultés de reprise est décrit dans le chapitre ?",
     "options": [
-      "La charge de travail cognitive intrinsèque (workload) en surveillance passive s'avère systématiquement supérieure à celle du pilotage manuel direct.",
-      "La surveillance prolongée provoque une atrophie neuromusculaire périphérique qui empêche physiquement l'exécution des gestes d'urgence sur les commandes.",
-      "Une règle interdit nécessairement à tout opérateur d’intervenir manuellement dès qu’un système comporte une fonction automatisée.",
-      "La moindre participation réduit la pratique des compétences nécessaires à la reprise et rend plus difficile l’accès à la connaissance du comportement du système."
+      "La supervision passive entretient les gestes manuels, mais ralentit l’identification des alarmes.",
+      "La moindre activité manuelle réduit la connaissance des procédures, mais améliore la connaissance du procédé.",
+      "La connaissance du procédé se maintient grâce à l’automatisation, tandis que le besoin de pratique manuelle diminue.",
+      "La réduction de participation fragilise la pratique des compétences et l’accès à la connaissance du procédé."
     ],
     "correctIndex": 3,
     "feedbacks": [
-      "La surveillance automatisée n’est pas toujours plus chargée, ni toujours moins chargée. La difficulté dépend notamment des exigences de supervision et du passage à la reprise de contrôle.",
-      "L’énoncé n’établit pas une atrophie musculaire. La difficulté visée concerne notamment l’actualisation de la représentation du système et l’entretien des compétences ; elle n’implique pas la disparition de tout modèle mental.",
-      "Le passage n’établit aucune interdiction universelle d’intervention ; il décrit les effets de la participation réduite sur la pratique et la connaissance du système.",
-      "Cañas relie la diminution de participation à l’entretien des compétences manuelles et cognitives et à la connaissance du comportement du procédé."
+      "Le chapitre ne présente pas la supervision passive comme un entretien suffisant des gestes manuels. Il décrit au contraire les conséquences d’une moindre participation active.",
+      "Le passage souligne un accès plus difficile à la connaissance du comportement du système ; il ne lui attribue pas l’amélioration annoncée ici.",
+      "La nécessité de pouvoir reprendre le contrôle reste importante. Le passage relie justement la diminution de pratique à une difficulté de reprise.",
+      "Le chapitre relie le retrait de l’activité à la moindre pratique des compétences manuelles et cognitives, ainsi qu’à un accès plus difficile aux connaissances sur le système."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/1-CANAS2011(CHAP-13-humanFactor).pdf",
     "doc_page": "Page 325 — Situation awareness and attention",
     "doc_quote": "« This deterioration results from the fact that the manual and cognitive skills decline due to the absence of active participation in the process. Furthermore, it becomes more difficult with progressing automation to gain access to knowledge about system behavior. »",
-    "doc_explanation": "La reprise peut être fragilisée par la réduction de pratique et de connaissance du système. Le chapitre ne décrit pas une conscience nécessairement nulle ni une disparition de toutes les compétences.",
-    "exam_tip": "Sortie de boucle : examiner l’information disponible, la pratique et le temps nécessaire à la réorientation. La difficulté de reprise dépend de la situation.",
+    "doc_explanation": "Le mécanisme concerne les possibilités de pratique et la connaissance du procédé. Il ne fixe pas un délai universel de reprise et ne signifie pas que tout opérateur automatisé perd toute compétence.",
+    "exam_tip": "Examiner ce que la participation permet d’entretenir : compétences de contrôle et connaissance du procédé.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) — Chapitre 13"
+    "scope_badge": "Cañas et al. (2011) — Chapitre 13",
+    "flashcard_context": "Cañas et al. (2011), p. 325, Situation awareness and attention.",
+    "flashcard_question": "Pourquoi une participation réduite au contrôle d’un procédé automatisé peut-elle fragiliser la reprise ?",
+    "flashcard_answer": "Elle réduit les occasions d’entretenir les compétences manuelles et cognitives, et peut rendre plus difficile l’accès à la connaissance du comportement du système."
   },
   {
     "id": 32,
@@ -6885,30 +6968,33 @@ const allQuestions = [
     "anchor_id": "anchor_q37",
     "tag": "HF101 (Art. C) & OACI • Influence de l'Organisation et de la Culture",
     "points": "1 point",
-    "context": "Le Principe 5 de l'OACI et de HF101 stipule que 'La performance humaine est influencée par le travail avec d'autres personnes, la technologie et l'environnement'.",
-    "question": "Selon l'Article C de Human Factors 101, comment la culture de sécurité et les comportements des superviseurs modèlent-ils directement les actions des travailleurs de première ligne ?",
+    "context": "Situation fictive : la direction affiche une priorité de sécurité, mais le superviseur tolère des écarts risqués pour atteindre les objectifs de production.",
+    "question": "Quelle interprétation de cette situation est soutenue par le principe 5 de l’Article C ?",
     "options": [
-      "Les comportements observés des superviseurs influencent les priorités : tolérer des pratiques dangereuses pour atteindre les objectifs de production peut rendre les comportements sûrs moins probables.",
-      "La culture de sécurité formelle écrite dans les politiques de l'entreprise détermine à elle seule 100 % des comportements réels, indépendamment des attitudes des collègues.",
-      "L'appartenance à un groupe de travail diversifié élimine automatiquement tous les biais de jugement et protège intégralement contre le phénomène de pensée de groupe (groupthink).",
-      "L'environnement physique de travail (bruit, éclairage, température) n'exerce aucune influence mesurable sur la fiabilité des décisions cognitives d'équipe."
+      "La tolérance du superviseur constitue un signal de priorité qui peut rendre les comportements sûrs moins probables.",
+      "Les priorités effectives du groupe se déduisent des procédures affichées plutôt que des comportements du superviseur.",
+      "L’absence d’accident montre que les écarts tolérés restent compatibles avec un niveau de risque acceptable.",
+      "Ces écarts indiquent un défaut d’attention des opérateurs plutôt qu’une influence du contexte managérial."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "La source décrit une influence sur la probabilité des comportements. Les actes des superviseurs comptent, mais ils ne déterminent pas à eux seuls tous les choix des membres de l’équipe.",
-      "Une politique écrite ne détermine pas à elle seule tous les comportements. Les pratiques des superviseurs, des collègues et les conditions de travail influencent aussi les priorités.",
-      "Le travail collectif peut aider à décider, mais la recherche de consensus peut aussi contribuer à la pensée de groupe. La diversité d’une équipe n’abolit donc pas automatiquement les biais.",
-      "L’Article C indique que les conditions physiques peuvent influencer la performance. Il ne faut pas assimiler cette influence à une transformation directe et uniforme des capacités cognitives de toutes les personnes."
+      "L’article décrit l’influence des superviseurs, du collectif et du contexte sur les comportements, avec une portée probabiliste et non une détermination automatique.",
+      "Les pratiques observées peuvent influencer les priorités. Une règle affichée ne suffit pas à décrire les signaux reçus dans le travail réel.",
+      "L’absence d’accident ne valide pas à elle seule le niveau de risque. Ce n’est pas la conclusion étayée par le principe demandé.",
+      "Le contexte donné met explicitement en jeu les pratiques de supervision. Il ne suffit pas à établir un défaut d’attention individuel."
     ],
     "doc_title": "Human Factors 101 — Article C : Principles of Human Performance",
     "doc_file": "../../03_Seance_03_22sep_Milieux_Technologiques/Lectures_et_Articles/C_Principes_de_la_performance_humaine.md",
     "doc_page": "Section 'Principle 5: People’s performance is influenced by working with other people, technology, and the environment'",
     "doc_quote": "« For example, if supervisors appear to condone unsafe behaviour in order to achieve production goals, then safe behaviour will be less likely. »",
-    "doc_explanation": "La culture et les pratiques managériales contribuent au contexte de décision avec les collègues, la technologie et l’environnement. Elles ne constituent pas une cause unique et déterministe.",
-    "exam_tip": "Respecter la portée probabiliste : influence et probabilité accrue ou réduite, non comportement inévitable de tous les membres.",
+    "doc_explanation": "L’Article C décrit comment le collectif, la technologie et l’environnement influencent les performances. Les pratiques managériales peuvent contribuer aux priorités perçues, sans constituer une cause unique de tous les comportements.",
+    "exam_tip": "Distinguer les règles affichées, les pratiques observées et les conclusions effectivement étayées.",
     "anchor_phrase": "People do not work in a vacuum",
     "study_scope": "complement",
-    "scope_badge": "Complément documentaire"
+    "scope_badge": "Complément documentaire",
+    "flashcard_context": "Human Factors 101, Article C, principe 5 ; ce passage n’est pas attribué à Cañas.",
+    "flashcard_question": "Quel effet possible l’Article C associe-t-il à la tolérance de pratiques dangereuses par les superviseurs pour atteindre les objectifs de production ?",
+    "flashcard_answer": "Les comportements sûrs peuvent devenir moins probables. Il s’agit d’une influence du contexte, pas d’une garantie que chaque personne adoptera le même comportement."
   },
   {
     "id": 38,
@@ -6917,28 +7003,31 @@ const allQuestions = [
     "anchor_id": "anchor_q38",
     "tag": "Cañas et al. (2011) • Formes d'Apprentissage (Norman 1986)",
     "points": "1 point",
-    "context": "Cañas et al. présentent trois formes d’apprentissage décrites par Norman : accrétion, ajustement et restructuration.",
-    "question": "Quelle forme d’apprentissage décrite par Norman (1986), selon Cañas et al., correspond à la découverte de nouvelles relations conceptuelles ?",
+    "context": "Les quatre situations sont fictives. Elles illustrent des changements d’apprentissage à comparer avec les formes décrites par Norman dans le chapitre.",
+    "question": "Quelle situation illustre le mieux la restructuration, plutôt que l’accrétion de faits ou l’ajustement des paramètres de l’action ?",
     "options": [
-      "L'accrétion (accretion), qui consiste en l'accumulation graduelle de connaissances factuelles.",
-      "L’ajustement (tuning), qui modifie progressivement les paramètres d’une manière d’agir déjà acquise.",
-      "La répétition d’une séquence connue sans modification de ses relations conceptuelles.",
-      "La restructuration (restructuring), définie ici comme un apprentissage de niveau supérieur par découverte de nouvelles relations conceptuelles."
+      "L’opérateur apprend la signification de nouveaux symboles qu’il ajoute à son répertoire de connaissances.",
+      "L’opérateur affine progressivement le dosage d’une commande déjà connue grâce à la pratique.",
+      "L’opérateur répète une procédure connue et en restitue les étapes avec davantage de fluidité.",
+      "L’opérateur relie des indicateurs jusque-là compris séparément et révise son explication du fonctionnement du procédé."
     ],
     "correctIndex": 3,
     "feedbacks": [
-      "L’accrétion correspond ici à l’accumulation de faits. Elle ne désigne pas la découverte des relations conceptuelles nouvelles visée par la question.",
-      "L’ajustement modifie les paramètres de l’action ; il ne se définit pas par la découverte de nouvelles relations conceptuelles et n’est pas limité aux gestes moteurs.",
-      "La répétition d’une séquence connue ne suffit pas à définir une réorganisation conceptuelle.",
-      "La restructuration correspond à l’apprentissage de nouvelles relations conceptuelles. Elle peut être nécessaire lorsqu’un système ne peut pas être compris avec l’organisation antérieure des connaissances."
+      "L’ajout de significations à un répertoire illustre principalement une accumulation de faits, donc l’accrétion.",
+      "L’affinement des paramètres d’une manière d’agir déjà connue correspond à l’ajustement, ou tuning.",
+      "Une restitution plus fluide d’étapes connues ne démontre pas, à elle seule, la découverte de relations conceptuelles nouvelles.",
+      "Le scénario décrit un changement des relations par lesquelles l’opérateur comprend le système : il illustre la restructuration présentée dans le chapitre."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 327 (Section 'Conceptual topics')",
     "doc_quote": "« Norman (1986) describes three forms of learning in the following terms: (1) accretion, that is, an accumulation of factual knowledge such as usually takes place during classical academic education; (2) tuning, a gradual adaptation in the parameters of our actions, leading to a steady — albeit not necessarily monotonic — improvement in performance; and (3) restructuring, which is a form of higher-order learning by discovery of new conceptual relationships. It should be noted that the last form of learning is directly related to the issue of conceptual change that is of paramount importance both in science education and in learning to work with new technological tools. »",
-    "doc_explanation": "Une nouvelle technologie peut demander de nouveaux faits, un ajustement des façons d’agir ou une restructuration conceptuelle. La forme d’apprentissage requise dépend du changement à comprendre.",
-    "exam_tip": "Dans la présentation de Norman citée par Cañas : accrétion = faits ; ajustement = paramètres de l’action ; restructuration = nouvelles relations conceptuelles.",
+    "doc_explanation": "Norman distingue l’accumulation de connaissances factuelles, l’adaptation graduelle des paramètres des actions et la découverte de nouvelles relations conceptuelles. Les exemples sont pédagogiques ; ils ne sont pas des cas rapportés dans le chapitre.",
+    "exam_tip": "Identifier ce qui change : les faits disponibles, les paramètres de l’action ou les relations conceptuelles.",
     "study_scope": "canas",
-    "scope_badge": "Cañas et al. (2011) [Chapitre 13]"
+    "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
+    "flashcard_context": "Application fictive de la distinction de Norman citée par Cañas et al., p. 327.",
+    "flashcard_question": "Un opérateur découvre un lien entre des indicateurs qu’il comprenait auparavant séparément et révise son explication du procédé. Quelle forme d’apprentissage est illustrée ?",
+    "flashcard_answer": "La restructuration : la compréhension change par découverte de relations conceptuelles, et non seulement par ajout de faits ou affinement des paramètres d’une action."
   },
   {
     "id": 39,
@@ -6947,31 +7036,31 @@ const allQuestions = [
     "anchor_id": "anchor_q39",
     "tag": "Cañas et al. (2011) • Prise de Décision Naturaliste (NDM)",
     "points": "1 point",
-    "context": "À la page 328, Cañas et al. interrogent la généralisation de résultats obtenus avec des tâches de choix décontextualisées à la décision dans des situations réelles.",
-    "question": "Pourquoi Cañas et al. mettent-ils en garde contre la généralisation de certaines tâches de décision décontextualisées à la gestion d’incidents critiques ?",
+    "context": "Situation fictive : on veut appliquer à la gestion d’incidents critiques les résultats d’une étude où des novices choisissaient entre deux options déjà fournies. Sur le terrain, des professionnels doivent parfois construire les options avec peu d’informations et peu de temps.",
+    "question": "Quelle vérification répond directement à la réserve de Cañas et al. sur cette généralisation ?",
     "options": [
-      "Les tâches étudiées en laboratoire peuvent fournir les alternatives à des participants inexpérimentés, alors que les professionnels doivent parfois produire leurs propres alternatives dans une situation changeante, sous pression temporelle.",
-      "Les experts de terrain refuseraient par principe d’appliquer toute forme de raisonnement analytique ou de méthode formalisée.",
-      "Les modèles classiques de décision ont été développés exclusivement pour des tâches de divertissement sans enjeu de sécurité.",
-      "Les environnements réels de travail sont strictement déterministes et éliminent toute incertitude lors de la prise de décision."
+      "Comparer l’expertise, la disponibilité des options et les contraintes temporelles entre l’étude et la situation de travail.",
+      "Traiter l’expertise comme secondaire afin de concentrer la comparaison sur la rapidité de sélection d’une option.",
+      "Définir la meilleure décision par le respect de l’algorithme, même lorsque les options à comparer ne sont pas données.",
+      "Traiter la pression temporelle comme un bruit de mesure à retirer pour retrouver les conditions du laboratoire."
     ],
     "correctIndex": 0,
     "feedbacks": [
-      "Le chapitre met en question le transfert de résultats entre des conditions qui diffèrent par l’expertise des participants, la disponibilité des alternatives et les contraintes de la situation. Une comparaison exhaustive peut être inadaptée lorsque le temps manque ; cela ne signifie pas que toute analyse est impossible dans tout travail réel.",
-      "La critique porte sur l’adéquation des tâches et des modèles aux conditions de travail. Elle ne démontre pas que les experts refusent tout raisonnement analytique.",
-      "Le passage ne formule pas cette restriction au divertissement. Il examine les limites de la généralisation de tâches et de critères décontextualisés.",
-      "Les incidents critiques décrits impliquent au contraire des situations changeantes, peu d’information et une pression temporelle."
+      "Le chapitre met en question le transfert entre des situations qui diffèrent par l’expertise, les alternatives disponibles et les contraintes. Il faut examiner ces différences.",
+      "L’expertise fait précisément partie des différences discutées ; la rapidité de sélection ne suffit pas à représenter la décision en situation.",
+      "La réserve porte notamment sur la pertinence de critères décontextualisés et sur la nécessité de produire les options. Le respect d’un algorithme ne résout pas cette différence.",
+      "La pression temporelle fait partie de la situation à comprendre. La retirer sans examiner ses effets ne justifie pas la généralisation au travail réel."
     ],
     "doc_title": "Cañas, Velichkovsky & Velichkovsky (2011) — Chapitre 13 : Human Factors and Ergonomics",
     "doc_page": "Page 328 (Section 'Decision making')",
     "doc_quote": "« In natural situations, people are highly experienced and have to generate new alternatives under time pressure. »",
-    "doc_explanation": "Cañas et al. soulignent les différences entre choisir dans un ensemble d’alternatives déjà donné et élaborer des possibilités d’action dans une situation réelle. Il faut examiner l’expertise, l’information, les enjeux et le temps disponible avant de généraliser un résultat ou de choisir une aide à la décision.",
-    "exam_tip": "Décision : distinguer alternatives données et alternatives à produire ; participants inexpérimentés et professionnels ; tâche décontextualisée et situation changeante. Ne pas en déduire une opposition absolue entre intuition et analyse.",
+    "doc_explanation": "Une tâche de laboratoire peut isoler un aspect de la décision sans reproduire toute l’activité de gestion d’un incident. Examiner cette limite ne revient ni à rejeter toute expérimentation ni à déclarer que les experts ne raisonnent jamais analytiquement.",
+    "exam_tip": "Avant de généraliser, comparer les personnes, les possibilités d’action et les conditions de décision.",
     "study_scope": "canas",
     "scope_badge": "Cañas et al. (2011) [Chapitre 13]",
-    "flashcard_context": "Cañas et al. (2011), Decision making, p. 328.",
-    "flashcard_question": "Pourquoi faut-il examiner les conditions d’une étude avant de généraliser ses résultats à la gestion d’incidents critiques ?",
-    "flashcard_answer": "Certaines tâches fournissent déjà les alternatives à des participants inexpérimentés, alors que des professionnels peuvent devoir construire des possibilités d’action dans une situation changeante et sous pression temporelle. L’expertise, l’information et le temps disponible doivent être comparés."
+    "flashcard_context": "Cañas et al. (2011), p. 328, Decision making.",
+    "flashcard_question": "Pourquoi une étude de choix entre options fournies peut-elle mal représenter la gestion d’un incident critique ?",
+    "flashcard_answer": "Parce que les professionnels peuvent devoir construire les possibilités d’action avec une expertise, une information et des contraintes temporelles différentes. Le transfert doit être examiné, pas présumé."
   },
   {
     "id": 40,
@@ -7182,21 +7271,164 @@ const allQuestions = [
     let searchResults = [];
     let currentSearchIdx = -1;
 
-    // --- GESTION DU PÉRIMÈTRE D'ÉTUDE (AUDIT CAÑAS 2011) ---
-    let currentStudyScope = 'all'; // 'all' (44) ou 'canas' (24)
-    const canasQuestionIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 19, 20, 21, 22, 23, 24, 25, 31, 38, 39, 40, 41];
+    /* =========================================================================
+       MOTEUR DE SÉLECTION & 4 PALIERS DE PRATIQUE (ANNEXE A / AUDIT ÉTUDIANTS)
+       ========================================================================= */
+    const PRACTICE = Object.freeze({
+      coreIds: Object.freeze([1,3,6,10,11,12,20,21,23,25,31,38]),
+      canasIds: Object.freeze([1,2,3,4,5,6,7,8,9,10,11,12,19,20,21,22,23,24,25,31,38,39,40,41]),
+      articleIds: Object.freeze([15,17,28,29,30,32,33,34,37,42,43,44]),
+      externalIds: Object.freeze([13,14,16,18,26,27,35,36]),
+      domains: Object.freeze({
+        foundations: Object.freeze([1,2,3,4,5,41]),
+        cognition: Object.freeze([6,7,8,9,10,11,38]),
+        errors_performance: Object.freeze([12,13,14,15,16,17,33,34,35,36,37,42]),
+        situation_automation: Object.freeze([23,24,25,26,27,28,29,30,31,32,40,43,44]),
+        workload_methods: Object.freeze([18,19,20,21,22,39])
+      })
+    });
+    window.PRACTICE = PRACTICE;
+
+    function validatePracticeBank(bank) {
+      if (!Array.isArray(bank)) throw new TypeError('La banque doit être un tableau.');
+      const ids = bank.map(q => q.id);
+      const expected = [...PRACTICE.canasIds,...PRACTICE.articleIds,...PRACTICE.externalIds];
+      if (new Set(expected).size !== 44 || new Set(ids).size !== 44 || ids.length !== 44 ||
+          expected.some(id => !ids.includes(id)) || ids.some(id => !expected.includes(id))) {
+        throw new Error('Le catalogue doit être mis à jour explicitement : 44 identifiants uniques attendus.');
+      }
+      const domainIds = Object.values(PRACTICE.domains).flat();
+      if (domainIds.length !== 44 || new Set(domainIds).size !== 44 ||
+          domainIds.some(id => !ids.includes(id))) throw new Error('Partition des thèmes invalide.');
+      if (PRACTICE.coreIds.some(id => !PRACTICE.canasIds.includes(id))) {
+        throw new Error('Le premier tour doit être inclus dans Cañas.');
+      }
+    }
+
+    function buildPracticePool(bank, filters, isHard = () => false) {
+      const {profile, category = 'all', onlyHard = false} = filters || {};
+      const normalizedProfile = (profile === 'all' ? 'extended' : profile);
+      if (!['core','canas','readings','extended'].includes(normalizedProfile)) {
+        throw new Error('Choisissez un périmètre reconnu.');
+      }
+      if (typeof onlyHard !== 'boolean') throw new TypeError('onlyHard doit être booléen.');
+      if (typeof isHard !== 'function') throw new TypeError('isHard doit être une fonction.');
+      const allowed = new Set(normalizedProfile === 'core' ? PRACTICE.coreIds :
+        normalizedProfile === 'canas' ? PRACTICE.canasIds :
+        normalizedProfile === 'readings' ? [...PRACTICE.canasIds,...PRACTICE.articleIds] :
+        [...PRACTICE.canasIds,...PRACTICE.articleIds,...PRACTICE.externalIds]);
+      return bank.filter(q => allowed.has(q.id))
+        .filter(q => category === 'all' || q.category === category)
+        .filter(q => !onlyHard || isHard(q.id));
+    }
+    window.buildPracticePool = buildPracticePool;
+
+    function shuffledCopy(items, rng = Math.random) {
+      const copy = [...items];
+      for (let i=copy.length-1; i>0; i--) {
+        const value = rng();
+        if (!Number.isFinite(value) || value < 0 || value >= 1) {
+          throw new Error('Le générateur aléatoire doit produire une valeur dans [0,1[.');
+        }
+        const j = Math.floor(value * (i+1));
+        [copy[i],copy[j]] = [copy[j],copy[i]];
+      }
+      return copy;
+    }
+
+    function selectPracticeItems(pool, count, rng = Math.random) {
+      if (!Array.isArray(pool) || pool.length === 0) throw new Error('Sélection vide.');
+      const wanted = count === 'all' ? pool.length : Number(count);
+      if (!Number.isInteger(wanted) || wanted <= 0) throw new Error('Nombre de questions invalide.');
+      const actual = Math.min(wanted,pool.length);
+      const groups = Object.values(PRACTICE.domains)
+        .map(ids => shuffledCopy(pool.filter(q => ids.includes(q.id)),rng))
+        .filter(group => group.length);
+      if (groups.flat().length !== pool.length || new Set(pool.map(q=>q.id)).size !== pool.length) {
+        throw new Error('Question non classée ou doublon dans la sélection.');
+      }
+      const selected=[];
+      while(selected.length<actual) {
+        const available = shuffledCopy(groups.filter(group=>group.length),rng);
+        for(const group of available) {
+          selected.push(group.pop());
+          if(selected.length===actual) break;
+        }
+      }
+      return { items: shuffledCopy(selected,rng), requestedCount: wanted,
+        actualCount: actual, poolSize: pool.length, countWasReduced: actual !== wanted };
+    }
+    window.selectPracticeItems = selectPracticeItems;
+
+    function deepFreezePlain(value) {
+      if (value && typeof value === 'object' && !Object.isFrozen(value)) {
+        Object.values(value).forEach(deepFreezePlain);
+        Object.freeze(value);
+      }
+      return value;
+    }
+
+    function planPracticeTest(bank, draft, isHard = () => false, rng = Math.random) {
+      validatePracticeBank(bank);
+      const durationSec = Number(draft.durationSec);
+      if (!Number.isInteger(durationSec) || durationSec < 0 || ![0,300,600,900].includes(durationSec)) {
+        throw new Error('Durée invalide ; utiliser une valeur proposée par l’interface.');
+      }
+      const filters={profile:draft.profile,category:draft.category || 'all',onlyHard:draft.onlyHard ?? false};
+      const pool = buildPracticePool(bank,filters,isHard);
+      const selection=selectPracticeItems(pool,draft.count,rng);
+      const questions=JSON.parse(JSON.stringify(selection.items));
+      return deepFreezePlain({
+        questions,
+        config:{...filters,count:selection.actualCount,durationSec},
+        questionIds:questions.map(q=>q.id),
+        poolSize:selection.poolSize,requestedCount:selection.requestedCount,
+        countWasReduced:selection.countWasReduced
+      });
+    }
+    window.planPracticeTest = planPracticeTest;
+
+    function getQuestionBadgeInfo(q) {
+      if (PRACTICE.canasIds.includes(q.id)) {
+        return {
+          text: '🔴 Cañas et al. (2011) [Chapitre 13] 📖',
+          className: 'mandatory',
+          title: 'Lecture obligatoire du cours : Cañas et al. (2011), Chapitre 13'
+        };
+      } else if (PRACTICE.articleIds.includes(q.id)) {
+        if (q.id === 30) {
+          return {
+            text: '🟢 Article E — Présentation de Bainbridge 📖',
+            className: 'secondary',
+            title: 'Concept présenté dans l’Article E (Human Factors 101) d’après Bainbridge (1983)'
+          };
+        }
+        return {
+          text: '🟢 ' + (q.doc_title || 'Article — texte fourni') + ' 📖',
+          className: 'secondary',
+          title: 'Texte fourni du cours : ' + (q.doc_title || '')
+        };
+      } else {
+        return {
+          text: '📘 ' + (q.doc_title || 'Approfondissement — référence extérieure') + ' 📖',
+          className: 'optional',
+          title: 'Approfondissement : référence extérieure complémentaire'
+        };
+      }
+    }
+
+    // --- GESTION DU PÉRIMÈTRE D'ÉTUDE ---
+    let currentStudyScope = 'canas'; // 'core' (12), 'canas' (24), 'readings' (36), 'extended' (44)
+    const canasQuestionIds = PRACTICE.canasIds;
 
     function getAdmissibleQuestions() {
-      if (currentStudyScope === 'canas') {
-        return allQuestions.filter(q => canasQuestionIds.includes(q.id));
-      }
-      return [...allQuestions];
+      const p = (currentStudyScope === 'all') ? 'extended' : currentStudyScope;
+      return buildPracticePool(allQuestions, { profile: p, category: 'all', onlyHard: false });
     }
 
     function getEligibleStudyQuestions() {
-      return getAdmissibleQuestions().filter(q =>
-        currentCategoryFilter === 'all' || q.category === currentCategoryFilter
-      );
+      const p = (currentStudyScope === 'all') ? 'extended' : currentStudyScope;
+      return buildPracticePool(allQuestions, { profile: p, category: currentCategoryFilter, onlyHard: false });
     }
 
     window.getFilteredQuestions = function() {
@@ -7209,13 +7441,17 @@ const allQuestions = [
     let currentCardRatedForThisFlip = false;
 
     function setStudyScope(scope) {
-      currentStudyScope = scope;
-      const btnAll = document.getElementById('scopeBtnAll');
+      currentStudyScope = (scope === 'all') ? 'extended' : scope;
+      const btnCore = document.getElementById('scopeBtnCore');
       const btnCanas = document.getElementById('scopeBtnCanas');
+      const btnReadings = document.getElementById('scopeBtnReadings');
+      const btnAll = document.getElementById('scopeBtnAll');
       const countBadge = document.getElementById('scopeActiveCountBadge');
       
-      if (btnAll) btnAll.classList.toggle('active', scope === 'all');
-      if (btnCanas) btnCanas.classList.toggle('active', scope === 'canas');
+      if (btnCore) btnCore.classList.toggle('active', currentStudyScope === 'core');
+      if (btnCanas) btnCanas.classList.toggle('active', currentStudyScope === 'canas');
+      if (btnReadings) btnReadings.classList.toggle('active', currentStudyScope === 'readings');
+      if (btnAll) btnAll.classList.toggle('active', currentStudyScope === 'extended');
       
       const admissible = getAdmissibleQuestions();
       if (countBadge) countBadge.textContent = admissible.length + ' items';
@@ -7224,18 +7460,26 @@ const allQuestions = [
       filterCategory(currentCategoryFilter);
       initFlashcardDeck();
       updateMasteryBadge();
-      updateMascot("Périmètre actif : " + (scope === 'canas' ? "Cañas et al. (2011) seul (24 questions)" : "Ensemble des lectures (44 questions)"), "happy");
+
+      const labels = {
+        core: "Premier tour Cañas (12 questions)",
+        canas: "Cañas et al. (2011) seul (24 questions)",
+        readings: "Cinq textes fournis (36 questions)",
+        extended: "Avec approfondissements extérieurs (44 questions)"
+      };
+      updateMascot("Périmètre d’étude actif : " + (labels[currentStudyScope] || currentStudyScope), "happy");
     }
 
     // Storage helpers initialisés en amont
 
     let currentFlashcardIdx = 0;
     let isCurrentCardFlipped = false;
-    const CURRENT_STORAGE_KEY = 'psy7010_card_stats_v3';
+    const CURRENT_STORAGE_KEY = 'psy7010_card_stats_v4';
+    const PREV_STORAGE_KEY_V3 = 'psy7010_card_stats_v3';
     const PREV_STORAGE_KEY_V2 = 'psy7010_card_stats_v2';
     const LEGACY_STORAGE_KEY = 'psy7010_card_stats';
-    const CURRENT_CONTENT_REVISION = "2026.09.21_v3";
-    const RESET_MODIFIED_QIDS_V3 = [4, 25, 39, 44];
+    const CURRENT_CONTENT_REVISION = "2026.09.21_v4";
+    const RESET_MODIFIED_QIDS_V4 = [1, 6, 10, 11, 12, 21, 23, 25, 31, 37, 38, 39];
 
     function calculateDifficultyScoreForStat(s) {
       if (!s) return 0;
@@ -7270,25 +7514,40 @@ const allQuestions = [
 
     function loadInitialCardStats() {
       try {
-        const payloadV3 = safeGetStorage(CURRENT_STORAGE_KEY, null);
-        if (payloadV3 && typeof payloadV3 === 'object' && !Array.isArray(payloadV3) &&
-            payloadV3.revision === CURRENT_CONTENT_REVISION && payloadV3.stats && typeof payloadV3.stats === 'object' && !Array.isArray(payloadV3.stats)) {
+        const payloadV4 = safeGetStorage(CURRENT_STORAGE_KEY, null);
+        if (payloadV4 && typeof payloadV4 === 'object' && !Array.isArray(payloadV4) &&
+            payloadV4.revision === CURRENT_CONTENT_REVISION && payloadV4.stats && typeof payloadV4.stats === 'object' && !Array.isArray(payloadV4.stats)) {
           const cleanStats = {};
-          for (const [k, v] of Object.entries(payloadV3.stats)) {
+          for (const [k, v] of Object.entries(payloadV4.stats)) {
             const sanitized = sanitizeCardStat(v);
             if (sanitized) cleanStats[k] = sanitized;
           }
           return cleanStats;
         }
 
-        // Migration contrôlée depuis v2 : conserver les statistiques des questions inchangées
+        // Migration contrôlée depuis v3 : conserver les statistiques des 32 questions inchangées
+        const payloadV3 = safeGetStorage(PREV_STORAGE_KEY_V3, null);
+        if (payloadV3 && typeof payloadV3 === 'object' && !Array.isArray(payloadV3) &&
+            payloadV3.revision === '2026.09.21_v3' && payloadV3.stats && typeof payloadV3.stats === 'object' && !Array.isArray(payloadV3.stats)) {
+          const cleanStats = {};
+          for (const [k, v] of Object.entries(payloadV3.stats)) {
+            const numId = parseInt(k, 10);
+            if (RESET_MODIFIED_QIDS_V4.includes(numId)) continue; // Remis à valider
+            const sanitized = sanitizeCardStat(v);
+            if (sanitized) cleanStats[k] = sanitized;
+          }
+          safeSetStorage(CURRENT_STORAGE_KEY, { revision: CURRENT_CONTENT_REVISION, stats: cleanStats });
+          return cleanStats;
+        }
+
+        // Migration de secours depuis v2
         const payloadV2 = safeGetStorage(PREV_STORAGE_KEY_V2, null);
         if (payloadV2 && typeof payloadV2 === 'object' && !Array.isArray(payloadV2) &&
-            payloadV2.revision === '2026.09.21_v2' && payloadV2.stats && typeof payloadV2.stats === 'object' && !Array.isArray(payloadV2.stats)) {
+            payloadV2.stats && typeof payloadV2.stats === 'object' && !Array.isArray(payloadV2.stats)) {
           const cleanStats = {};
           for (const [k, v] of Object.entries(payloadV2.stats)) {
             const numId = parseInt(k, 10);
-            if (RESET_MODIFIED_QIDS_V3.includes(numId)) continue; // Réinitialiser pour revalidation
+            if (RESET_MODIFIED_QIDS_V4.includes(numId)) continue;
             const sanitized = sanitizeCardStat(v);
             if (sanitized) cleanStats[k] = sanitized;
           }
@@ -7299,10 +7558,8 @@ const allQuestions = [
         console.warn("Storage load error:", e);
       }
 
-      // Rejet des données inconnues ou corrompues
       const emptyPayload = { revision: CURRENT_CONTENT_REVISION, stats: {} };
       safeSetStorage(CURRENT_STORAGE_KEY, emptyPayload);
-      try { localStorage.removeItem(LEGACY_STORAGE_KEY); } catch (e) {}
       return {};
     }
     let cardStats = loadInitialCardStats();
@@ -7469,6 +7726,7 @@ const allQuestions = [
           if (qCard) qCard.style.display = 'none';
           if (simSetup) simSetup.style.display = 'block';
           if (simResults) simResults.style.display = 'none';
+          updateSimSetupUI();
           updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
         }
       }
@@ -7593,12 +7851,16 @@ const allQuestions = [
 
     // --- MODE FLASHCARDS LOGIQUE INTERACTIVE ---
     function initFlashcardDeck() {
-      const eligible = getEligibleStudyQuestions();
+      const p = (currentStudyScope === 'all') ? 'extended' : currentStudyScope;
+      const pool = buildPracticePool(allQuestions, {
+        profile: p,
+        category: currentCategoryFilter,
+        onlyHard: (flashcardDeckMode === 'hard')
+      }, isCardHard);
       if (flashcardDeckMode === 'hard') {
-        flashcardList = eligible.filter(q => isCardHard(q.id));
-        flashcardList.sort((a, b) => calculateDifficultyScore(b.id) - calculateDifficultyScore(a.id));
+        flashcardList = [...pool].sort((a, b) => calculateDifficultyScore(b.id) - calculateDifficultyScore(a.id));
       } else {
-        flashcardList = [...eligible];
+        flashcardList = [...pool];
       }
       currentFlashcardIdx = 0;
     }
@@ -7674,19 +7936,17 @@ const allQuestions = [
       currentFlashcardIdx = idx;
 
       const q = flashcardList[idx];
+      const isCanas = PRACTICE.canasIds.includes(q.id);
 
       // Badge & Meta
-      const isCanas = (q.study_scope === 'canas');
       if (badgeEl) {
-        if (isCanas) {
-          badgeEl.textContent = '🔴 Cañas et al. (2011) [Lecture obligatoire]';
-          badgeEl.className = 'fc-badge mandatory';
-        } else {
-          badgeEl.textContent = '📘 ' + (q.doc_title || 'Complément extérieur');
-          badgeEl.className = 'fc-badge optional';
-        }
+        const info = getQuestionBadgeInfo(q);
+        badgeEl.textContent = info.text.replace(' 📖', '');
+        badgeEl.className = 'fc-badge ' + info.className;
+        badgeEl.title = info.title;
       }
-      if (counterEl) counterEl.textContent = 'Carte ' + (idx + 1) + ' sur ' + flashcardList.length;
+      const qCode = 'Q' + String(q.id).padStart(2, '0');
+      if (counterEl) counterEl.textContent = 'Carte ' + (idx + 1) + ' sur ' + flashcardList.length + ' · ' + qCode;
 
       // Recto autonome (R04 / R06)
       const contextText = (q.flashcard_context !== undefined) ? q.flashcard_context : (q.context || '');
@@ -7830,6 +8090,17 @@ const allQuestions = [
       admissible.forEach(q => {
         counts[q.category] = (counts[q.category] || 0) + 1;
       });
+
+      const catLabels = {
+        'all': '🌟 Toutes',
+        'cañas_fondements': 'Fondements',
+        'cañas_cognition': 'Cognition et apprentissage',
+        'cañas_erreurs': 'Erreurs et fiabilité',
+        'cañas_charge_methodes': 'Charge, décision et méthodes',
+        'endsley_sa': 'Conscience de la situation',
+        'bainbridge_automation': 'Automatisation',
+        'hf101_performance': 'Performance humaine'
+      };
       
       // Pastilles Desktop (.cat-pill)
       document.querySelectorAll('.cat-pill').forEach(btn => {
@@ -7837,17 +8108,15 @@ const allQuestions = [
                     (btn.getAttribute('onclick') ? btn.getAttribute('onclick').match(/filterCategory\('([^']+)'/)?.[1] : null);
         if (cat) {
           btn.setAttribute('data-category', cat);
-          if (!btn.hasAttribute('data-base-label')) {
-            const raw = btn.textContent.replace(/\s*\([\d\w\s]+\)/, '').trim();
-            btn.setAttribute('data-base-label', raw);
-          }
-          const base = btn.getAttribute('data-base-label');
+          const base = catLabels[cat] || btn.textContent.replace(/\s*\([\d\w\s]+\)/, '').trim();
           const c = counts[cat] || 0;
           if (cat === 'all') {
             btn.textContent = `${base} (${c})`;
           } else {
             btn.textContent = `${base} (${c}Q)`;
           }
+          btn.disabled = (c === 0);
+          btn.style.opacity = (c === 0) ? '0.45' : '1';
         }
       });
 
@@ -7856,17 +8125,14 @@ const allQuestions = [
       if (mobSel) {
         Array.from(mobSel.options).forEach(opt => {
           const cat = opt.value;
-          if (!opt.hasAttribute('data-base-label')) {
-            const raw = opt.textContent.replace(/\s*\([\d\w\s]+\)/, '').trim();
-            opt.setAttribute('data-base-label', raw);
-          }
-          const base = opt.getAttribute('data-base-label');
+          const base = catLabels[cat] || opt.textContent.replace(/\s*\([\d\w\s]+\)/, '').trim();
           const c = counts[cat] || 0;
           if (cat === 'all') {
             opt.textContent = `${base} (${c} questions)`;
           } else {
             opt.textContent = `${base} (${c}Q)`;
           }
+          opt.disabled = (c === 0);
         });
       }
 
@@ -8295,26 +8561,13 @@ const allQuestions = [
       const isCanas = (q.study_scope === 'canas');
       const isExternal = !isCanas;
 
-      // Badge doc
+      // Badge doc unifié
       const badge = document.getElementById('qDocBadge');
       if (badge) {
-        if (isCanas) {
-          badge.textContent = '🔴 Cañas et al. (2011) [Lecture obligatoire] 📖';
-          badge.className = 'q-badge mandatory';
-          badge.title = 'Lecture obligatoire du cours : Cañas et al. (2011), Chapitre 13';
-        } else if (q.id === 27) {
-          badge.textContent = '📘 Complément — Haynes et al. (2009) ; exemple cité par Cañas, p. 326 📖';
-          badge.className = 'q-badge optional';
-          badge.title = 'Complément : Haynes et al. (2009) & Cañas p. 326';
-        } else if (isExternal) {
-          badge.textContent = '📘 ' + (q.doc_title || 'Complément extérieur') + ' 📖';
-          badge.className = 'q-badge optional';
-          badge.title = 'Référence externe complémentaire : ' + (q.doc_title || '');
-        } else {
-          badge.textContent = '🟢 ' + q.doc_title + ' 📖';
-          badge.className = 'q-badge secondary';
-          badge.title = 'Cliquer pour ouvrir et lire ce document';
-        }
+        const info = getQuestionBadgeInfo(q);
+        badge.textContent = info.text;
+        badge.className = 'q-badge ' + info.className;
+        badge.title = info.title;
         badge.onclick = openDocumentFromBadge;
       }
 
@@ -8323,7 +8576,8 @@ const allQuestions = [
         if (isTestScreen()) {
           updateSimTimerDisplay();
         } else {
-          prog.textContent = 'Question ' + (idx + 1) + ' sur ' + totalCount + ' • 1 point';
+          const qCode = 'Q' + String(q.id).padStart(2, '0');
+          prog.textContent = 'Question ' + (idx + 1) + ' sur ' + totalCount + ' · ' + qCode + ' · 1 point';
         }
       }
 
@@ -8568,6 +8822,9 @@ const allQuestions = [
     function openDocumentFromBadge() {
       const q = getCurrentActiveQuestion();
       if (!q) return;
+      if (isTestScreen()) {
+        simSourceOpened = true;
+      }
       if (!q.doc_id || !q.anchor_id) {
         const msg = "Cette question repose sur une référence extérieure non intégrée. Aucun passage du chapitre de Cañas ne permet à lui seul de vérifier cette réponse.";
         updateMascot(msg, "study");
@@ -9209,27 +9466,162 @@ let previousIsCompact = isCompactUI();
 
 // Fermeture globale par Échap unifiée dans initKeyboardShortcuts (R06)
 
-    /* --- MOTEUR DE SIMULATION MOODLE COMPLET (C02) --- */
+    /* --- MOTEUR DE SIMULATION MOODLE COMPLET (ANNEXE A & C02) --- */
     let simState = 'setup'; // 'setup' | 'running' | 'results'
     let simAnswers = {};    // { [simQuestionIndex]: selectedOptionIndex }
     let simDeadline = 0;
+    let simConfig = null;
+    let simPoolSize = 0;
+    let simRequestedCount = 5;
+    let simCountWasReduced = false;
+    let simSourceOpened = false;
 
-    function startSimulation() {
+    function updateSimSetupUI() {
+      const profileSel = document.getElementById('simProfileSelect');
+      const catSel = document.getElementById('simCategorySelect');
+      const onlyHardCb = document.getElementById('simOnlyHardCheckbox');
       const countSel = document.getElementById('simCountSelect');
       const timerSel = document.getElementById('simTimerSelect');
-      const count = parseInt(countSel ? countSel.value : '5', 10);
+      const summaryEl = document.getElementById('simPoolSummary');
+      const startBtn = document.getElementById('simStartBtn');
+      if (!profileSel || !catSel || !summaryEl || !startBtn) return;
+
+      const profile = profileSel.value || 'core';
+      const category = catSel.value || 'all';
+      const onlyHard = onlyHardCb ? onlyHardCb.checked : false;
       const durationSec = parseInt(timerSel ? timerSel.value : '900', 10);
 
-      const pool = getAdmissibleQuestions();
-      for (let i = pool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]];
+      const categoryLabels = {
+        'all': 'Toutes les sections',
+        'cañas_fondements': 'Fondements',
+        'cañas_cognition': 'Cognition et apprentissage',
+        'cañas_erreurs': 'Erreurs et fiabilité',
+        'cañas_charge_methodes': 'Charge, décision et méthodes',
+        'endsley_sa': 'Conscience de la situation',
+        'bainbridge_automation': 'Automatisation',
+        'hf101_performance': 'Performance humaine'
+      };
+
+      // 1. Recalculer les effectifs des catégories pour ce profil
+      const profilePool = buildPracticePool(allQuestions, {profile, category: 'all', onlyHard: false});
+      const catCounts = { all: profilePool.length };
+      profilePool.forEach(q => { catCounts[q.category] = (catCounts[q.category] || 0) + 1; });
+
+      Array.from(catSel.options).forEach(opt => {
+        const c = catCounts[opt.value] || 0;
+        const base = categoryLabels[opt.value] || opt.value;
+        opt.textContent = (opt.value === 'all') ? `${base} (${c} questions)` : `${base} (${c}Q)`;
+        opt.disabled = (c === 0);
+      });
+
+      // 2. Calculer le pool avec filtres
+      let pool = [];
+      try {
+        pool = buildPracticePool(allQuestions, {profile, category, onlyHard}, isCardHard);
+      } catch(e) {
+        pool = [];
       }
-      simQuestions = pool.slice(0, Math.min(count, pool.length));
+      const poolSize = pool.length;
+
+      // 3. Mettre à jour l'option "Toutes"
+      if (countSel) {
+        Array.from(countSel.options).forEach(opt => {
+          if (opt.value === 'all') {
+            opt.textContent = `Toutes dans cette sélection (${poolSize})`;
+          }
+        });
+      }
+
+      const requestedVal = countSel ? countSel.value : '5';
+      const wantedCount = (requestedVal === 'all') ? poolSize : parseInt(requestedVal, 10);
+      const actualCount = Math.min(wantedCount, poolSize);
+
+      // 4. Mettre à jour le résumé et le bouton
+      const profileNames = {
+        core: 'Premier tour Cañas',
+        canas: 'Cañas (24 questions)',
+        readings: 'Cinq textes fournis',
+        extended: 'Avec approfondissements extérieurs'
+      };
+      const catName = categoryLabels[category] || category;
+      const extNotice = (profile === 'extended') ? 'Avec approfondissements extérieurs' : 'Aucun approfondissement extérieur';
+      const timerNotice = (durationSec === 0) ? 'Sans chronomètre' : `${Math.round(durationSec / 60)} minutes`;
+
+      if (poolSize === 0) {
+        summaryEl.textContent = "Aucune question dans cette sélection. Modifiez la section ou désactivez le filtre des difficultés.";
+        startBtn.disabled = true;
+        startBtn.style.opacity = '0.5';
+        startBtn.style.cursor = 'not-allowed';
+        startBtn.textContent = "⚠️ Aucune question disponible";
+      } else {
+        startBtn.disabled = false;
+        startBtn.style.opacity = '1';
+        startBtn.style.cursor = 'pointer';
+        startBtn.textContent = `🚀 Démarrer ${actualCount} question${actualCount > 1 ? 's' : ''}`;
+
+        let countDetail = `${poolSize} question${poolSize > 1 ? 's' : ''} disponible${poolSize > 1 ? 's' : ''} · ${actualCount} question${actualCount > 1 ? 's' : ''} tirée${actualCount > 1 ? 's' : ''}`;
+        if (actualCount < wantedCount && requestedVal !== 'all') {
+          countDetail = `${poolSize} disponible${poolSize > 1 ? 's' : ''} — les ${poolSize} seront utilisée${poolSize > 1 ? 's' : ''}`;
+        }
+        summaryEl.textContent = `${profileNames[profile] || profile} · ${catName} · ${countDetail} · ${timerNotice} · ${extNotice}.`;
+      }
+    }
+    window.updateSimSetupUI = updateSimSetupUI;
+
+    function copyStudySelectionToSimDraft() {
+      const profileSel = document.getElementById('simProfileSelect');
+      const catSel = document.getElementById('simCategorySelect');
+      if (profileSel) {
+        const p = (currentStudyScope === 'all') ? 'extended' : currentStudyScope;
+        profileSel.value = p;
+      }
+      if (catSel) {
+        catSel.value = currentCategoryFilter;
+      }
+      updateSimSetupUI();
+      showToast("📋 Sélection d'Étude copiée dans le brouillon Test.");
+    }
+    window.copyStudySelectionToSimDraft = copyStudySelectionToSimDraft;
+
+    function startSimulation() {
+      const profileSel = document.getElementById('simProfileSelect');
+      const catSel = document.getElementById('simCategorySelect');
+      const onlyHardCb = document.getElementById('simOnlyHardCheckbox');
+      const countSel = document.getElementById('simCountSelect');
+      const timerSel = document.getElementById('simTimerSelect');
+
+      const profile = profileSel ? profileSel.value : 'core';
+      const category = catSel ? catSel.value : 'all';
+      const onlyHard = onlyHardCb ? onlyHardCb.checked : false;
+      const count = countSel ? countSel.value : '5';
+      const durationSec = parseInt(timerSel ? timerSel.value : '900', 10);
+
+      let plan;
+      try {
+        plan = planPracticeTest(allQuestions, {
+          profile,
+          category,
+          onlyHard,
+          count,
+          durationSec
+        }, isCardHard);
+      } catch(err) {
+        showToast("⚠️ " + err.message);
+        return;
+      }
+
+      simConfig = plan.config;
+      simQuestions = JSON.parse(JSON.stringify(plan.questions));
+      simPoolSize = plan.poolSize;
+      simRequestedCount = plan.requestedCount;
+      simCountWasReduced = plan.countWasReduced;
       simAnswers = {};
       simCurrentIdx = 0;
       isSimulationActive = true;
       simState = 'running';
+      simSourceOpened = false;
+
+      hideDocumentPreAnswer();
 
       if (simTimerInterval) {
         clearInterval(simTimerInterval);
@@ -9262,23 +9654,25 @@ let previousIsCompact = isCompactUI();
       if (!isTestScreen()) return;
       const progText = document.getElementById('qProgressText');
       if (!progText) return;
+      const q = simQuestions[simCurrentIdx];
+      const qCode = q ? ' · Q' + String(q.id).padStart(2, '0') : '';
       if (secondsLeft === null || secondsLeft === undefined) {
         if (simDeadline > 0) {
           secondsLeft = Math.max(0, Math.ceil((simDeadline - Date.now()) / 1000));
         } else {
-          progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + " • Sans chronomètre";
+          progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + qCode + " · Sans chronomètre";
           return;
         }
       }
       const m = Math.floor(secondsLeft / 60);
       const s = secondsLeft % 60;
       const timeStr = String(m).padStart(2, '0') + ":" + String(s).padStart(2, '0');
-      progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + " • ⏱️ " + timeStr;
+      progText.textContent = "Question " + (simCurrentIdx + 1) + " sur " + simQuestions.length + qCode + " · " + timeStr + " restantes";
     }
 
     function selectSimOption(optIdx) {
       if (!isSimulationActive) return;
-      if (simDeadline && Date.now() >= simDeadline) {
+      if (simDeadline > 0 && Date.now() >= simDeadline) {
         finishSimulation(true);
         showToast("⏱️ Le temps alloué est écoulé. Les réponses ne sont plus enregistrées.");
         return;
@@ -9300,18 +9694,50 @@ let previousIsCompact = isCompactUI();
       isSimulationActive = false;
       simState = 'results';
 
-      let score = 0;
+      let correctCount = 0;
+      let incorrectCount = 0;
+      let unansweredCount = 0;
       simQuestions.forEach((q, idx) => {
-        if (simAnswers[idx] === q.correctIndex) {
-          score++;
-        }
+        if (simAnswers[idx] === undefined) unansweredCount++;
+        else if (simAnswers[idx] === q.correctIndex) correctCount++;
+        else incorrectCount++;
       });
       const total = simQuestions.length;
-      const pct = Math.round((score / total) * 100);
+      const pct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      const profileNames = {
+        core: 'Premier tour Cañas',
+        canas: 'Cañas (24 questions)',
+        readings: 'Cinq textes fournis',
+        extended: 'Avec approfondissements extérieurs'
+      };
+      const catLabels = {
+        'all': 'Toutes les sections',
+        'cañas_fondements': 'Fondements',
+        'cañas_cognition': 'Cognition et apprentissage',
+        'cañas_erreurs': 'Erreurs et fiabilité',
+        'cañas_charge_methodes': 'Charge, décision et méthodes',
+        'endsley_sa': 'Conscience de la situation',
+        'bainbridge_automation': 'Automatisation',
+        'hf101_performance': 'Performance humaine'
+      };
+      const profName = (simConfig && profileNames[simConfig.profile]) || 'Entraînement';
+      const secName = (simConfig && catLabels[simConfig.category]) || 'Toutes les sections';
+      const durText = (simConfig && simConfig.durationSec === 0) ? 'Sans chronomètre' : `${Math.round((simConfig?.durationSec || 900)/60)} min`;
+      const poolText = simPoolSize ? `${simPoolSize} questions dans le réservoir` : '';
 
       const summaryEl = document.getElementById('simScoreSummary');
       if (summaryEl) {
-        summaryEl.textContent = "Résultat de cet entraînement : " + score + " / " + total + " (" + pct + " %)" + (isExpired ? " • ⚠️ Temps écoulé !" : "");
+        let summaryHtml = `<strong>Bilan de cet entraînement : ${correctCount} / ${total} (${pct} %)</strong>`;
+        if (isExpired) summaryHtml += ` • <span style="color: var(--danger);">⏱️ Temps écoulé !</span>`;
+        summaryHtml += `<div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; line-height: 1.45;">`;
+        summaryHtml += `${profName} · ${secName} · ${total} questions présentées (${poolText}) · ${durText}`;
+        summaryHtml += `<br>✅ Correctes : <strong>${correctCount}</strong> | ❌ Erreurs : <strong>${incorrectCount}</strong> | ⚪ Non répondues : <strong>${unansweredCount}</strong>`;
+        if (simSourceOpened) {
+          summaryHtml += `<br><span style="font-style: italic; color: var(--primary-dark);">📖 Source ouverte dans le lecteur pendant cet entraînement.</span>`;
+        }
+        summaryHtml += `</div>`;
+        summaryEl.innerHTML = summaryHtml;
       }
 
       const analysisEl = document.getElementById('simFeedbackAnalysis');
@@ -9322,16 +9748,21 @@ let previousIsCompact = isCompactUI();
           const isCorrect = (userChoice === q.correctIndex);
           const userChoiceText = (userChoice !== undefined) ? q.options[userChoice] : '<em>Aucune réponse fournie</em>';
           const correctText = q.options[q.correctIndex];
-          const qNumberFormatted = 'Question ' + (idx + 1) + ' / ' + total + ' • Q' + String(q.id).padStart(2, '0');
+          const qNumberFormatted = 'Question ' + (idx + 1) + ' sur ' + total + ' · Q' + String(q.id).padStart(2, '0');
           
-          html += '<div style="padding: 14px; border-radius: 8px; border: 1px solid ' + (isCorrect ? 'var(--success-border)' : 'var(--danger)') + '; background: ' + (isCorrect ? 'var(--success-light)' : 'rgba(239, 68, 68, 0.12)') + ';">';
-          html += '<div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.88rem; margin-bottom: 8px; color: ' + (isCorrect ? 'var(--success-dark)' : 'var(--danger)') + ';">';
-          html += '<span>' + qNumberFormatted + ' : ' + (isCorrect ? '✅ Bonne réponse' : '❌ Erreur') + '</span>';
+          let statusText = isCorrect ? '✅ Bonne réponse' : (userChoice !== undefined ? '❌ Erreur' : '⚪ Sans réponse');
+          let boxBorder = isCorrect ? 'var(--success-border)' : (userChoice !== undefined ? 'var(--danger)' : 'var(--border-color)');
+          let boxBg = isCorrect ? 'var(--success-light)' : (userChoice !== undefined ? 'rgba(239, 68, 68, 0.12)' : 'var(--bg-base)');
+          let headerColor = isCorrect ? 'var(--success-dark)' : (userChoice !== undefined ? 'var(--danger)' : 'var(--text-muted)');
+
+          html += '<div style="padding: 14px; border-radius: 8px; border: 1px solid ' + boxBorder + '; background: ' + boxBg + ';">';
+          html += '<div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.88rem; margin-bottom: 8px; color: ' + headerColor + ';">';
+          html += '<span>' + qNumberFormatted + ' : ' + statusText + '</span>';
           html += '<span>' + (q.doc_page || (q.study_scope === 'canas' ? 'Cañas et al. (2011)' : 'Complément')) + '</span>';
           html += '</div>';
 
           if (q.context) {
-            html += '<div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px; padding: 6px 10px; background: rgba(0,0,0,0.06); border-radius: 4px;"><strong>Contexte de l’étude :</strong> ' + q.context + '</div>';
+            html += '<div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px; padding: 6px 10px; background: rgba(0,0,0,0.06); border-radius: 4px;"><strong>Contexte :</strong> ' + q.context + '</div>';
           }
 
           html += '<p style="font-weight: 700; font-size: 0.92rem; margin-bottom: 8px; color: var(--text-main);">' + q.question + '</p>';
@@ -9355,13 +9786,18 @@ let previousIsCompact = isCompactUI();
 
       if (currentMode === 'simulation') {
         setMode('simulation');
-        updateMascot("Simulation terminée ! Ton score : " + score + "/" + total + " (" + pct + "%).", pct >= 60 ? "happy" : "sad");
+        updateMascot("Simulation terminée ! Ton score : " + correctCount + "/" + total + " (" + pct + "%).", pct >= 60 ? "happy" : "sad");
       } else {
         showToast("⏱️ Le temps alloué pour le test est écoulé. Les résultats sont enregistrés dans l'onglet Test.");
       }
     }
 
     function restartSimulationMode() {
+      if (isSimulationActive && simState === 'running') {
+        if (!confirm("Une simulation est en cours. Abandonner ce test pour préparer un nouveau test ?")) {
+          return;
+        }
+      }
       if (simTimerInterval) {
         clearInterval(simTimerInterval);
         simTimerInterval = null;
@@ -9370,7 +9806,10 @@ let previousIsCompact = isCompactUI();
       simState = 'setup';
       simQuestions = [];
       simAnswers = {};
+      const onlyHardCb = document.getElementById('simOnlyHardCheckbox');
+      if (onlyHardCb) onlyHardCb.checked = false;
       setMode('simulation');
+      updateSimSetupUI();
       updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
     }
 
