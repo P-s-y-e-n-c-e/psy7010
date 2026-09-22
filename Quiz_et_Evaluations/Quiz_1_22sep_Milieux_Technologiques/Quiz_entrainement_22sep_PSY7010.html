@@ -2620,8 +2620,11 @@
           <div class="sim-form-group" style="display: flex; align-items: center; gap: 8px; padding: 4px 0;">
             <input type="checkbox" id="simOnlyHardCheckbox" onchange="updateSimSetupUI()" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
             <label class="sim-label" for="simOnlyHardCheckbox" style="margin-bottom: 0 !important; cursor: pointer; font-size: 0.9rem;">
-              Seulement mes difficultés dans cette sélection
+              Seulement mes difficultés repérées en Étude et dans les Cartes
             </label>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; line-height: 1.3; padding-left: 26px;">
+              Les erreurs du mode Test ne sont pas encore ajoutées à ce filtre. Aucune difficulté enregistrée ne signifie pas nécessairement que toutes les notions sont acquises.
+            </div>
           </div>
 
           <!-- 4. simPoolSummary -->
@@ -2789,10 +2792,10 @@
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
-              <audio id="localPodcastAudio" src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
                 <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
-                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
-                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a" type="audio/mp4">
                 <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
                 <source src="L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
                 <source src="https://drive.google.com/uc?export=download&id=191YDdbGHyRy2noj4CdndxsGnX75qKPeZ" type="audio/mp4">
@@ -7222,7 +7225,7 @@ const allQuestions = [
     let mobileView = 'activity'; // 'activity' | 'source' | 'podcast' // 'study', 'flashcards', 'simulation'
     let currentCategoryFilter = 'all';
     window.allQuestions = allQuestions;
-    let filteredQuestions = [...allQuestions];
+    let filteredQuestions = [];
     window.filteredQuestions = filteredQuestions;
     let currentQuestionIndex = 0;
     let userAnswers = {};
@@ -7458,7 +7461,6 @@ const allQuestions = [
 
       updateCategoryFilterBadges();
       filterCategory(currentCategoryFilter);
-      initFlashcardDeck();
       updateMasteryBadge();
 
       const labels = {
@@ -7640,7 +7642,8 @@ const allQuestions = [
       updateLanguageUI();
       switchTab('doc_canas', false);
       
-      // 2. Initialiser et afficher immédiatement le Mode Étude (Question 1)
+      // 2. Synchroniser le périmètre d'étude AVANT le premier rendu
+      setStudyScope(currentStudyScope);
       setMode('study');
       updateMasteryBadge();
       updateFlashcardStatsUI();
@@ -8407,10 +8410,13 @@ const allQuestions = [
       window.filteredQuestions = filteredQuestions;
 
       currentQuestionIndex = 0;
+
+      // Un changement explicite de sélection invalide aussi le paquet précédent.
+      initFlashcardDeck();
+
       if (currentMode === 'flashcards') {
-        initFlashcardDeck();
         renderFlashcard(0);
-      } else {
+      } else if (currentMode === 'study') {
         renderQuestion(0);
       }
       updateCategoryFilterBadges();
