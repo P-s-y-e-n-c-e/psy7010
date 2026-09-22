@@ -12,12 +12,12 @@ Ce document propose une **simulation papier du Quiz 1** (format Moodle de 4 ques
 
 ## 🎯 PARTIE 1 : SIMULATION EN CONDITIONS RÉELLES D'EXAMEN (Format Moodle)
 * **Durée :** 15 minutes (20 min BIRÉ)
-* **Note totale :** 5,00 points (4 questions valant 1,25 point chacune)
+* **Note totale :** 5,00 points (5 questions valant 1,00 point chacune)
 * **Note de passage :** 2,50 / 5,00
 
 ---
 
-### Question 1 (1,25 point)
+### Question 1 (1,00 point)
 Selon l’International Ergonomics Association (IEA, citée par Cañas et al., 2011), quel est le double objectif fondamental de l’ergonomie et des facteurs humains ?
 
 - [ ] A) Réduire les coûts opérationnels de l'entreprise et automatiser un maximum de tâches humaines.
@@ -27,7 +27,7 @@ Selon l’International Ergonomics Association (IEA, citée par Cañas et al., 2
 
 ---
 
-### Question 2 (1,25 point)
+### Question 2 (1,00 point)
 Dans le modèle triadique de la conscience de la situation proposé par Mica Endsley (1995) et repris sur le site Human Factors 101, un pilote de ligne qui aperçoit un voyant d'alarme moteur (Niveau 1) et en déduit qu'une fuite d'huile est en cours (Niveau 2), puis anticipe que le moteur va s'arrêter dans moins de deux minutes s'il ne réduit pas la poussée, illustre quel niveau de conscience de la situation ?
 
 - [ ] A) Le Niveau 1 : La perception brute des signaux physiques.
@@ -37,7 +37,7 @@ Dans le modèle triadique de la conscience de la situation proposé par Mica End
 
 ---
 
-### Question 3 (1,25 point)
+### Question 3 (1,00 point)
 D'après l'article de Lisanne Bainbridge (1983) sur les « Paradoxes de l'automatisation » (*Ironies of Automation*), quelle est l'une des conséquences perverses majeures de l'automatisation avancée pour l'opérateur humain ?
 
 - [ ] A) L'opérateur devient multitâche et voit sa vigilance augmenter continuellement au cours du quart de travail.
@@ -47,7 +47,7 @@ D'après l'article de Lisanne Bainbridge (1983) sur les « Paradoxes de l'automa
 
 ---
 
-### Question 4 (1,25 point)
+### Question 4 (1,00 point)
 Selon le modèle SRK de Rasmussen et la classification des erreurs de James Reason (présentés dans Cañas et al., 2011), comment qualifie-t-on l'erreur d'un utilisateur régulier qui, distrait par une conversation, oublie de reprendre sa carte bancaire dans la fente du guichet après avoir récupéré son argent liquide ?
 
 - [ ] A) Une erreur de type *Knowledge-based mistake* (modèle mental déficient).
@@ -57,21 +57,34 @@ Selon le modèle SRK de Rasmussen et la classification des erreurs de James Reas
 
 ---
 
+### Question 5 (1,00 point)
+Selon l'article « Principes de la performance humaine » (Human Factors 101), lequel des énoncés suivants traduit fidèlement la position des facteurs humains face à l'erreur humaine dans un milieu de travail complexe ?
+
+- [ ] A) Une formation adéquate et une discipline rigoureuse permettent d'éradiquer complètement l'erreur humaine.
+- [ ] B) L'erreur humaine est normale et prévisible ; sanctionner ou blâmer l'individu ne résout rien et masque les défaillances systémiques.
+- [ ] C) L'erreur humaine est toujours la cause première et irréductible des accidents industriels majeurs.
+- [ ] D) Les erreurs ne surviennent que lorsque les travailleurs enfreignent délibérément les règles établies.
+
+---
+
 ---
 
 ## 💡 CORRIGÉ DÉTAILLÉ DE LA SIMULATION
 
-### Réponse Question 1 : **B**
+### Réponse Question 1 : **B** (1,00 pt)
 * **Justification :** La définition officielle de l'IEA (Cañas p. 316) stipule explicitement que l'ergonomie vise à la fois **le bien-être humain** (*human well-being*) et **la performance globale du système** (*overall system performance*). Les options A, C et D représentent des contre-vérités historiques ou managériales rejetées par les facteurs humains.
 
-### Réponse Question 2 : **C**
+### Réponse Question 2 : **C** (1,00 pt)
 * **Justification :** Le modèle Endsley (HF101, Art. D) comprend 3 niveaux : 1. Perception des données ; 2. Compréhension de la signification ; 3. Projection dans le futur proche. Le fait de prévoir l'arrêt du moteur dans 2 minutes relève directement de la **Projection (Niveau 3)**.
 
-### Réponse Question 3 : **B**
+### Réponse Question 3 : **B** (1,00 pt)
 * **Justification :** Le coeur du paradoxe de Bainbridge (HF101, Art. E) est que l'automatisation érode les habiletés manuelles (*deskilling*). Lorsque le système échoue face à un imprévu, l'opérateur "hors de la boucle" (*out-of-the-loop*) doit reprendre le contrôle manuel dans l'urgence avec des compétences amoindries.
 
-### Réponse Question 4 : **C**
+### Réponse Question 4 : **C** (1,00 pt)
 * **Justification :** Il s'agit d'une routine familière hautement automatisée (*Skill-based*). L'oubli de la carte est un **lapse** (omission liée à la mémoire de travail / erreur de post-complétion), et non une erreur de jugement ou de planification (*mistake*).
+
+### Réponse Question 5 : **B** (1,00 pt)
+* **Justification :** Selon les Principes 1 et 4 de Human Factors 101 (Art. C), l'erreur humaine fait partie intégrante de la condition humaine. Chercher un coupable et le blâmer n'améliore en rien la sécurité du système car cela ignore les causes profondes (conception de l'équipement, pressions de temps, instructions ambiguës).
 
 ---
 

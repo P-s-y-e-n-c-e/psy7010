@@ -1,6 +1,6 @@
 # PSY7010 — Fiche de Révision Express « Cheat Sheet » — Quiz 1 (5%)
-**Date d'évaluation :** Mardi 22 septembre 2026 (dans les 15 premières minutes du cours, 09h30–09h45)  
-**Modalités :** En ligne sur Moodle (1 tentative, 15 min / 20 min BIRÉ, 4 questions, note de passage : 2,50 / 5,00)  
+**Date d'évaluation :** Mardi 22 septembre 2026 (fenêtre d'accès Moodle : 09h30–10h15 EDT)  
+**Modalités :** En ligne sur Moodle (1 tentative, 15 min / 20 min BIRÉ, 5 questions à 1 pt chacune, note de passage : 2,50 / 5,00)  
 **Type d'évaluation :** À livre ouvert (*Open-Book*)  
 **Matière couverte :** Cañas et al. (2011) + Human Factors 101 (Articles A, C, D, E)
 
