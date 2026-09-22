@@ -1181,6 +1181,17 @@
         flex-direction: column !important;
         gap: 8px !important;
       }
+      .podcast-episode-switcher {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+      }
+      .podcast-ep-btn {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+      }
       .podcast-banner-right .podcast-play-btn,
       .podcast-banner-right .podcast-edit-link-btn,
       .flashcards-opt-card .fc-launch-btn {
@@ -1439,6 +1450,84 @@
       line-height: 1.35;
     }
     body.dark-mode .podcast-banner-desc { color: #94a3b8; }
+    .podcast-episode-switcher {
+      display: flex;
+      gap: 8px;
+      margin: 8px 0 10px 0;
+      flex-wrap: wrap;
+    }
+    .podcast-ep-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(217, 119, 6, 0.4);
+      background: rgba(254, 243, 199, 0.7);
+      color: #78350f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .podcast-ep-btn:hover {
+      background: rgba(253, 230, 138, 0.95);
+      border-color: #d97706;
+      transform: translateY(-1px);
+    }
+    .podcast-ep-btn.active {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      border-color: #b45309;
+      box-shadow: 0 2px 5px rgba(217, 119, 6, 0.25);
+    }
+    .podcast-ep-btn .podcast-ep-num {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      opacity: 0.9;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+    .podcast-ep-btn.active .podcast-ep-num {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .podcast-ep-btn .podcast-ep-duration {
+      font-size: 0.7rem;
+      font-weight: 600;
+      opacity: 0.85;
+      margin-left: auto;
+    }
+    .podcast-new-pill {
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 9999px;
+      background: #ef4444;
+      color: #ffffff;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    body.dark-mode .podcast-ep-btn {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: #fde68a;
+    }
+    body.dark-mode .podcast-ep-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #f59e0b;
+    }
+    body.dark-mode .podcast-ep-btn.active {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      color: #ffffff;
+      border-color: #f59e0b;
+    }
+    body.dark-mode .podcast-ep-btn.active .podcast-ep-num {
+      background: rgba(255, 255, 255, 0.25);
+    }
     .podcast-banner-right { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
     .podcast-play-btn {
       display: inline-flex;
@@ -2783,22 +2872,37 @@
           <div class="podcast-banner-center">
             <div class="podcast-banner-tag-row">
               <span class="podcast-tag-badge">🎙️ Podcast de Révision • Trajet UQAM</span>
-                            <span class="podcast-duration-tag" id="podcastDurationBadge">Audio M4A</span>
+              <span class="podcast-duration-tag" id="podcastDurationBadge">Audio 25 min</span>
             </div>
-            <h4 class="podcast-banner-title">L'erreur humaine est un symptôme systémique</h4>
-            <p class="podcast-banner-desc">
-              Généré avec Gemini Notebook d'après Cañas et al. (2011) : Fondements, Cognition, Erreurs, Conscience de la situation &amp; Milieux Technologiques.
+
+            <!-- SÉLECTEUR MULTI-ÉPISODES CONVIVIAL -->
+            <div class="podcast-episode-switcher" role="tablist" aria-label="Sélection de l'épisode du podcast">
+              <button type="button" class="podcast-ep-btn active" id="epBtnAutomation" onclick="switchPodcastEpisode('automation')" role="tab" aria-selected="true" title="Épisode 1 : Bainbridge (1983), Parasuraman &amp; Riley (1997), complaisance">
+                <span class="podcast-ep-num">Ép. 1</span>
+                <span class="podcast-ep-title">🤖 Automatisation &amp; Vulnérabilité</span>
+                <span class="podcast-new-pill">NOUVEAU</span>
+                <span class="podcast-ep-duration">25 min</span>
+              </button>
+              <button type="button" class="podcast-ep-btn" id="epBtnError" onclick="switchPodcastEpisode('systemic_error')" role="tab" aria-selected="false" title="Épisode 2 : Cañas et al. (2011), Cognition, Erreur systémique, SA">
+                <span class="podcast-ep-num">Ép. 2</span>
+                <span class="podcast-ep-title">🧠 Erreur systémique &amp; Cañas</span>
+                <span class="podcast-ep-duration">18 min</span>
+              </button>
+            </div>
+
+            <h4 class="podcast-banner-title" id="podcastBannerTitle">Pourquoi l'automatisation nous rend vulnérables</h4>
+            <p class="podcast-banner-desc" id="podcastBannerDesc">
+              Généré avec Gemini Notebook : Bainbridge (1983) Ironies de l'automatisation, Parasuraman &amp; Riley (1997), complaisance, perte d'habiletés manuelles et sortie de boucle.
             </p>
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
-              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
                 <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
-                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
-                <source src="03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a" type="audio/mp4">
-                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
-                <source src="L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a" type="audio/mp4">
-                <source src="https://drive.google.com/uc?export=download&id=191YDdbGHyRy2noj4CdndxsGnX75qKPeZ" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vulnérables.m4a" type="audio/mp4">
+                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
+                <source src="Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
               </audio>
 
               <div class="custom-audio-controls">
@@ -2832,7 +2936,7 @@
             <a href="https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing" target="_blank" rel="noopener" id="podcastDriveBtn" class="podcast-play-btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); margin-bottom: 4px;" title="Écouter directement sur Google Drive">
               📁 Ouvrir sur Google Drive
             </a>
-            <a href="https://notebook.google.com/notebook/a6975281-74c6-43d5-9645-19152d259069/artifact/a62fd8b2-c3da-42e3-9eda-b79cd5483ac4?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener" class="podcast-play-btn" title="Ouvrir l'artefact original sur Gemini Notebook">
+            <a href="https://notebook.google.com/notebook/a6975281-74c6-43d5-9645-19152d259069/artifact/a62fd8b2-c3da-42e3-9eda-b79cd5483ac4?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener" id="podcastNotebookBtn" class="podcast-play-btn" title="Ouvrir l'artefact original sur Gemini Notebook">
               🌐 Gemini Notebook
             </a>
             <button class="podcast-edit-link-btn" onclick="openPodcastModal()" title="Options et lien de partage">
@@ -5768,8 +5872,8 @@ Concluons par cet aphorisme prémonitoire de Peter F. Drucker, père du manageme
           <p style="font-size: 0.78rem; color: var(--text-muted);">À écouter pendant ton trajet vers l'UQAM</p>
         </div>
       </div>
-      <p style="font-size: 0.86rem; color: var(--text-main); margin-bottom: 14px; line-height: 1.48;">
-        Podcast de révision inspiré du chapitre de Cañas et al. (2011). Il ne remplace pas la lecture du texte source.
+      <p id="podcastModalDesc" style="font-size: 0.86rem; color: var(--text-main); margin-bottom: 14px; line-height: 1.48;">
+        Podcast de révision préparé pour le cours PSY7010. Il synthétise les concepts théoriques pour l'écoute nomade.
       </p>
       <div style="margin-bottom: 16px;">
         <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">
@@ -5780,7 +5884,7 @@ Concluons par cet aphorisme prémonitoire de Peter F. Drucker, père du manageme
       <div style="display: flex; gap: 8px; justify-content: flex-end;">
         <button class="secondary-btn" onclick="closePodcastModal()">Fermer</button>
         <a href="https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing" target="_blank" rel="noopener" id="podcastModalOpenBtn" class="secondary-btn" style="color: #4f46e5; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">📁 Ouvrir sur Drive</a>
-        <a href="https://drive.google.com/uc?export=download&id=191YDdbGHyRy2noj4CdndxsGnX75qKPeZ" download="L_erreur_humaine_est_un_symptôme_systémique.m4a" class="primary-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <a href="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" download="Pourquoi_l_automatisation_nous_rend_vulnérables.m4a" id="podcastModalDownloadBtn" class="primary-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
           ⬇️ Télécharger l'audio
         </a>
       </div>
@@ -9260,16 +9364,142 @@ let previousIsCompact = isCompactUI();
       }
     }
 
+    // --- GESTION MULTI-ÉPISODES DU PODCAST NOTEBOOKLM ---
+    const PODCAST_EPISODES = {
+      automation: {
+        id: 'automation',
+        btnId: 'epBtnAutomation',
+        title: "Pourquoi l'automatisation nous rend vulnérables",
+        desc: "Généré avec Gemini Notebook : Bainbridge (1983) Ironies de l'automatisation, Parasuraman & Riley (1997), complaisance, perte d'habiletés manuelles et sortie de boucle.",
+        durationTag: "Audio 25 min",
+        mascotMsg: "🎙️ Épisode 1 actif : Pourquoi l'automatisation nous rend vulnérables (25 min). Écoute de révision idéale !",
+        src: "03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a",
+        sources: [
+          "03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a",
+          "03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vulnérables.m4a",
+          "../../03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a",
+          "Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a"
+        ],
+        driveUrl: "https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing",
+        notebookUrl: "https://notebook.google.com/notebook/a6975281-74c6-43d5-9645-19152d259069",
+        downloadFilename: "Pourquoi_l_automatisation_nous_rend_vulnérables.m4a"
+      },
+      systemic_error: {
+        id: 'systemic_error',
+        btnId: 'epBtnError',
+        title: "L'erreur humaine est un symptôme systémique",
+        desc: "Généré avec Gemini Notebook d'après Cañas et al. (2011) : Fondements, Cognition, Erreurs, Conscience de la situation & Milieux Technologiques.",
+        durationTag: "Audio 18 min",
+        mascotMsg: "🎙️ Épisode 2 actif : L'erreur humaine est un symptôme systémique (18 min).",
+        src: "03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a",
+        sources: [
+          "03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a",
+          "03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a",
+          "../../03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a",
+          "L_erreur_humaine_est_un_sympt%C3%B4me_syst%C3%A9mique.m4a",
+          "https://drive.google.com/uc?export=download&id=191YDdbGHyRy2noj4CdndxsGnX75qKPeZ"
+        ],
+        driveUrl: "https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing",
+        notebookUrl: "https://notebook.google.com/notebook/a6975281-74c6-43d5-9645-19152d259069/artifact/a62fd8b2-c3da-42e3-9eda-b79cd5483ac4?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
+        downloadFilename: "L_erreur_humaine_est_un_symptôme_systémique.m4a"
+      }
+    };
+    let currentPodcastEp = 'automation';
+
+    function switchPodcastEpisode(epKey, autoPlay = false) {
+      const ep = PODCAST_EPISODES[epKey];
+      if (!ep) return;
+      currentPodcastEp = epKey;
+      safeSetStorageRaw('psy7010_active_podcast_ep', epKey);
+
+      // Met à jour les boutons d'onglets
+      document.querySelectorAll('.podcast-ep-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const activeBtn = document.getElementById(ep.btnId);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // Met à jour les textes du bandeau
+      const titleEl = document.getElementById('podcastBannerTitle');
+      const descEl = document.getElementById('podcastBannerDesc');
+      const durationBadge = document.getElementById('podcastDurationBadge');
+      if (titleEl) titleEl.textContent = ep.title;
+      if (descEl) descEl.textContent = ep.desc;
+      if (durationBadge) durationBadge.textContent = ep.durationTag;
+
+      // Met à jour les boutons d'accès externe
+      const driveBtn = document.getElementById('podcastDriveBtn');
+      const notebookBtn = document.getElementById('podcastNotebookBtn');
+      if (driveBtn && ep.driveUrl) driveBtn.href = ep.driveUrl;
+      if (notebookBtn && ep.notebookUrl) notebookBtn.href = ep.notebookUrl;
+
+      // Met à jour l'audio
+      const audio = getAudioEl();
+      if (audio) {
+        const wasPlaying = !audio.paused;
+        audio.pause();
+        audio.currentTime = 0;
+
+        // Vider et réinsérer les sources
+        while (audio.firstChild) {
+          audio.removeChild(audio.firstChild);
+        }
+        audio.src = ep.src;
+        ep.sources.forEach(srcUrl => {
+          const s = document.createElement('source');
+          s.src = srcUrl;
+          s.type = 'audio/mp4';
+          audio.appendChild(s);
+        });
+        audio.load();
+
+        // Réinitialiser les indicateurs de lecture
+        const playBtnText = document.getElementById('audioPlayPauseText');
+        const playBtnIcon = document.getElementById('audioPlayPauseIcon');
+        const avatarIcon = document.getElementById('podcastPlayIcon');
+        const curTime = document.getElementById('audioCurrentTime');
+        const durationLabel = document.getElementById('audioDuration');
+        const slider = document.getElementById('audioSeekSlider');
+
+        if (playBtnText) playBtnText.textContent = 'Écouter';
+        if (playBtnIcon) playBtnIcon.textContent = '▶️';
+        if (avatarIcon) avatarIcon.textContent = '▶️';
+        if (curTime) curTime.textContent = '00:00';
+        if (durationLabel) durationLabel.textContent = ep.durationTag.replace('Audio ', '');
+        if (slider) slider.value = 0;
+        document.getElementById('podcastBanner')?.classList.remove('playing');
+
+        if (autoPlay || wasPlaying) {
+          audio.play().then(() => {
+            if (playBtnText) playBtnText.textContent = 'Pause';
+            if (playBtnIcon) playBtnIcon.textContent = '⏸️';
+            if (avatarIcon) avatarIcon.textContent = '⏸️';
+            document.getElementById('podcastBanner')?.classList.add('playing');
+          }).catch(err => {
+            console.warn("Lecture audio bloquée ou attente du tampon:", err);
+          });
+        }
+      }
+
+      updateMascot(ep.mascotMsg, "thinking");
+    }
+
     function openMobilePodcast() {
       setMobileView('podcast');
       const banner = document.getElementById('podcastBanner');
       if (banner) {
         banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      updateMascot("🎙️ Podcast audio actif. Écoute l'épisode de révision (17 min) !", "thinking");
+      const epKey = currentPodcastEp || 'automation';
+      const ep = PODCAST_EPISODES[epKey] || PODCAST_EPISODES.automation;
+      updateMascot(ep.mascotMsg, "thinking");
     }
 
-        // --- GESTION DU LECTEUR AUDIO INTÉGRÉ (STREAMING LOCAL / NOTEBOOKLM) ---
+    // --- GESTION DU LECTEUR AUDIO INTÉGRÉ (STREAMING LOCAL / NOTEBOOKLM) ---
     const audioSpeeds = [1.0, 1.25, 1.5, 1.75, 2.0];
     let currentSpeedIdx = 0;
 
@@ -9362,18 +9592,30 @@ let previousIsCompact = isCompactUI();
       if (playBtnText) playBtnText.textContent = 'Écouter';
       if (playBtnIcon) playBtnIcon.textContent = '▶️';
       if (avatarIcon) avatarIcon.textContent = '▶️';
-      if (durationLabel) durationLabel.textContent = '00:00';
-      if (slider) slider.value = 100;
+      if (durationLabel) {
+        const ep = PODCAST_EPISODES[currentPodcastEp] || PODCAST_EPISODES.automation;
+        durationLabel.textContent = ep.durationTag.replace('Audio ', '');
+      }
+      if (slider) slider.value = 0;
       document.getElementById('podcastBanner')?.classList.remove('playing');
     }
 
     function openPodcastModal() {
       const modal = document.getElementById('podcastModal');
       const input = document.getElementById('podcastUrlInput');
-      const currentUrl = localStorage.getItem('psy7010_podcast_url') || 'https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing';
+      const epKey = currentPodcastEp || 'automation';
+      const ep = PODCAST_EPISODES[epKey] || PODCAST_EPISODES.automation;
+      const currentUrl = localStorage.getItem('psy7010_podcast_url') || ep.driveUrl;
       if (input) input.value = currentUrl;
       const openBtn = document.getElementById('podcastModalOpenBtn');
       if (openBtn) openBtn.href = currentUrl;
+      const downloadBtn = document.getElementById('podcastModalDownloadBtn');
+      if (downloadBtn) {
+        downloadBtn.href = ep.src;
+        downloadBtn.download = ep.downloadFilename;
+      }
+      const descEl = document.getElementById('podcastModalDesc');
+      if (descEl) descEl.textContent = ep.desc;
       if (modal) modal.style.display = 'flex';
     }
 
@@ -9398,11 +9640,16 @@ let previousIsCompact = isCompactUI();
     }
 
     function initSavedPodcastUrl() {
-      const savedUrl = localStorage.getItem('psy7010_podcast_url') || 'https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing';
-      const driveBtn = document.getElementById('podcastDriveBtn');
-      if (driveBtn) driveBtn.href = savedUrl;
-      const modalOpenBtn = document.getElementById('podcastModalOpenBtn');
-      if (modalOpenBtn) modalOpenBtn.href = savedUrl;
+      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'automation';
+      switchPodcastEpisode(savedEp, false);
+
+      const savedUrl = localStorage.getItem('psy7010_podcast_url');
+      if (savedUrl) {
+        const driveBtn = document.getElementById('podcastDriveBtn');
+        if (driveBtn) driveBtn.href = savedUrl;
+        const modalOpenBtn = document.getElementById('podcastModalOpenBtn');
+        if (modalOpenBtn) modalOpenBtn.href = savedUrl;
+      }
 
       const audioEl = getAudioEl();
       if (audioEl) {
