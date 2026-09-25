@@ -339,6 +339,7 @@
       flex-direction: column;
       overflow: hidden;
       position: relative;
+      min-height: 0;
     }
     .workstation-container.layout-horizontal .reader-pane {
       flex: 1 1 50%;
@@ -916,6 +917,7 @@
     /* VIEWPORTS DE LECTURE */
     .reader-viewport {
       flex: 1 1 0;
+      min-height: 0;
       overflow-y: auto;
       padding: 16px 20px;
       font-size: calc(0.92rem * var(--reader-font-scale, 1));
@@ -9996,7 +9998,7 @@ const allQuestions = [
 
         if (quizPane) quizPane.style.display = 'block';
         if (readerPane) {
-          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'block' : 'none') : 'block';
+          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'flex' : 'none') : 'flex';
         }
         if (splitDivider) {
           splitDivider.style.display = (isCompact || layoutSetting === 'vertical') ? 'none' : '';
@@ -10032,7 +10034,7 @@ const allQuestions = [
 
         if (quizPane) quizPane.style.display = 'block';
         if (readerPane) {
-          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'block' : 'none') : 'block';
+          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'flex' : 'none') : 'flex';
         }
         if (splitDivider) {
           splitDivider.style.display = (isCompact || layoutSetting === 'vertical') ? 'none' : '';
@@ -10063,7 +10065,7 @@ const allQuestions = [
 
         if (quizPane) quizPane.style.display = 'block';
         if (readerPane) {
-          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'block' : 'none') : 'block';
+          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'flex' : 'none') : 'flex';
         }
         if (splitDivider) {
           splitDivider.style.display = (isCompact || layoutSetting === 'vertical') ? 'none' : '';
@@ -10096,7 +10098,7 @@ const allQuestions = [
 
         if (quizPane) quizPane.style.display = 'block';
         if (readerPane) {
-          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'block' : 'none') : 'block';
+          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'flex' : 'none') : 'flex';
         }
         if (splitDivider) {
           splitDivider.style.display = (isCompact || layoutSetting === 'vertical') ? 'none' : '';
@@ -12254,7 +12256,7 @@ const allQuestions = [
 
       if (!isSinglePaneMode()) {
         if (qPane) qPane.style.display = 'block';
-        if (rPane) rPane.style.display = 'block';
+        if (rPane) rPane.style.display = 'flex';
         if (splitDivider) splitDivider.style.display = '';
         if (optResources) optResources.style.display = '';
         if (fcOptBanner) fcOptBanner.style.display = '';
@@ -12337,7 +12339,7 @@ const allQuestions = [
         updateMobileModebarActive();
       } else if (view === 'source') {
         if (qPane) qPane.style.display = 'none';
-        if (rPane) rPane.style.display = 'block';
+        if (rPane) rPane.style.display = 'flex';
         if (optResources) optResources.style.display = 'none';
         if (fcOptBanner) fcOptBanner.style.display = 'none';
         if (podcastBanner) podcastBanner.style.display = 'none';
