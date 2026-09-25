@@ -292,7 +292,7 @@
       overflow-y: auto;
     }
 
-    /* SÉPARATEUR INTERACTIF DÉPLAÇABLE */
+    /* SÉPARATEUR INTERACTIF DÉPLAÇABLE (SPLIT-DIVIDER) */
     .split-divider {
       background: var(--border-color);
       z-index: 50;
@@ -301,15 +301,36 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: background 0.2s;
+      transition: background 0.15s ease;
+      user-select: none;
+      -webkit-user-select: none;
     }
-    .split-divider:hover, .split-divider.dragging { background: var(--primary); }
-    .workstation-container.layout-horizontal .split-divider { width: 8px; height: 100%; cursor: col-resize; }
-    .workstation-container.layout-vertical .split-divider { height: 8px; width: 100%; cursor: row-resize; }
+    .split-divider:hover, .split-divider.dragging {
+      background: var(--primary);
+    }
+    .workstation-container.layout-horizontal .split-divider {
+      width: 10px;
+      height: 100%;
+      cursor: col-resize;
+    }
+    .workstation-container.layout-vertical .split-divider {
+      height: 10px;
+      width: 100%;
+      cursor: row-resize;
+    }
     
-    .split-divider-handle { background: var(--text-subtle); border-radius: 4px; pointer-events: none; }
-    .workstation-container.layout-horizontal .split-divider-handle { width: 4px; height: 28px; }
-    .workstation-container.layout-vertical .split-divider-handle { width: 28px; height: 4px; }
+    .split-divider-handle {
+      background: var(--text-subtle);
+      border-radius: 4px;
+      pointer-events: none;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .split-divider:hover .split-divider-handle, .split-divider.dragging .split-divider-handle {
+      background: #ffffff;
+      transform: scale(1.2);
+    }
+    .workstation-container.layout-horizontal .split-divider-handle { width: 4px; height: 32px; }
+    .workstation-container.layout-vertical .split-divider-handle { width: 32px; height: 4px; }
 
     /* READER PANE */
     .reader-pane {
@@ -2776,6 +2797,400 @@
       color: var(--primary);
     }
 
+    /* =========================================================================
+       MODULE D'ENTRAÎNEMENT INTERACTIF DU BLOC 2 (QUIZ & FLASHCARDS 3D)
+       ========================================================================= */
+    .b2-training-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .b2-tabs-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1.5px solid var(--border-color);
+      padding-bottom: 14px;
+    }
+    .b2-tabs-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .b2-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: var(--bg-base);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+    .b2-tab-btn:hover {
+      background: var(--bg-card-alt);
+      border-color: var(--primary-border);
+    }
+    .b2-tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+    .b2-badge-cert {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    body.dark-mode .b2-badge-cert {
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+
+    /* B2 QUIZ PLAYER */
+    .b2-quiz-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+    .b2-q-counter {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .b2-q-category {
+      background: var(--bg-card-alt);
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .b2-score-box {
+      font-weight: 700;
+      color: var(--text-main);
+      background: var(--bg-card-alt);
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .b2-q-context-box {
+      background: var(--bg-card-alt);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--text-main);
+    }
+    .b2-q-prompt {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--text-main);
+      margin: 4px 0 12px 0;
+    }
+    .b2-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .b2-option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
+      text-align: left;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-base);
+      color: var(--text-main);
+      font-size: 0.93rem;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: var(--font-sans);
+    }
+    .b2-option-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--bg-card-alt);
+      transform: translateX(2px);
+    }
+    .b2-opt-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      font-weight: 700;
+      font-size: 0.84rem;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+    .b2-option-btn.b2-correct {
+      border-color: #16a34a !important;
+      background: #f0fdf4 !important;
+      color: #15803d !important;
+    }
+    body.dark-mode .b2-option-btn.b2-correct {
+      background: #052e16 !important;
+      color: #4ade80 !important;
+      border-color: #16a34a !important;
+    }
+    .b2-option-btn.b2-wrong {
+      border-color: #dc2626 !important;
+      background: #fef2f2 !important;
+      color: #b91c1c !important;
+    }
+    body.dark-mode .b2-option-btn.b2-wrong {
+      background: #450a0a !important;
+      color: #f87171 !important;
+      border-color: #dc2626 !important;
+    }
+    .b2-feedback-card {
+      border-radius: 10px;
+      padding: 16px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-card-alt);
+      animation: fadeIn 0.25s ease-out;
+    }
+    .b2-feedback-title {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .b2-feedback-card.correct {
+      border-color: #86efac;
+      background: #f0fdf4;
+    }
+    body.dark-mode .b2-feedback-card.correct {
+      border-color: #166534;
+      background: #052e16;
+    }
+    .b2-feedback-card.wrong {
+      border-color: #fca5a5;
+      background: #fef2f2;
+    }
+    body.dark-mode .b2-feedback-card.wrong {
+      border-color: #991b1b;
+      background: #450a0a;
+    }
+    .b2-citation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 8px;
+      width: 100%;
+    }
+    .b2-q-pills-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+    .b2-pill-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: var(--bg-base);
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+    .b2-pill-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .b2-pill-btn.current {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .b2-pill-btn.answered-correct {
+      background: #16a34a;
+      color: #ffffff;
+      border-color: #16a34a;
+    }
+    .b2-pill-btn.answered-wrong {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #dc2626;
+    }
+    .b2-quiz-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    /* B2 FLASHCARDS 3D PLAYER */
+    .b2-fc-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .b2-fc-filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      background: var(--bg-base);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+    .b2-fc-filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .b2-card-scene {
+      perspective: 1000px;
+      width: 100%;
+      min-height: 290px;
+      cursor: pointer;
+    }
+    .b2-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 290px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 14px;
+    }
+    .b2-card-scene.flipped .b2-card-inner {
+      transform: rotateY(180deg);
+    }
+    .b2-card-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 290px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 14px;
+      padding: 24px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-card);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .b2-card-back {
+      transform: rotateY(180deg);
+      background: var(--bg-card-alt);
+      border-color: var(--primary-border);
+    }
+    .b2-card-tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .b2-card-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .b2-card-body {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--text-main);
+      flex: 1;
+    }
+    .b2-card-hint {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 10px;
+    }
+    .b2-fc-actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .b2-fc-rating-group {
+      display: flex;
+      gap: 8px;
+    }
+    .b2-fc-rate-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: var(--bg-base);
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+    .b2-fc-rate-btn.again:hover {
+      background: #fef2f2;
+      border-color: #fca5a5;
+      color: #dc2626;
+    }
+    .b2-fc-rate-btn.mastered:hover {
+      background: #f0fdf4;
+      border-color: #86efac;
+      color: #16a34a;
+    }
+
     /* BANDEAU ARCHIVE BLOC 1 DANS LE QUIZ PANE */
     .archive-notice-banner {
       display: flex;
@@ -3172,8 +3587,8 @@
             <img src="data:image/png;base64,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" alt="Toadette" class="mascot-img">
           </div>
           <div class="mascot-text">
-            <strong>Coucou Michel ! Bienvenue dans le Bloc 2 avec le Pr Mario Passalacqua ! 🍄</strong><br>
-            Nous abordons les <em>milieux technologiques, l'ergonomie cognitive et l'UX</em>. La session Contenu finalise actuellement la boucle dialectique DeepThink ➔ GPT-6 sur les verbatims GOLD. En attendant l'arrivée imminente des nouvelles banques, explore les cas réels ci-dessous, écoute les podcasts dédiés ou révise les 24 questions dans les Archives Bloc 1 !
+            <strong>Bienvenue dans le Bloc 2 : Milieux technologiques ! 🍄</strong><br>
+            Nous abordons l'<em>ergonomie cognitive, les facteurs humains et l'UX</em> avec le <strong>Pr Mario Passalacqua</strong>. Explorez les études de cas cliniques (AF-447, Lin et al., TSL Outdoors), entraînez-vous avec les fiches de dilemmes ou révisez les concepts du Bloc 1 !
           </div>
         </div>
 
@@ -3186,22 +3601,136 @@
               <div class="hub-hero-subtitle">Enseignant responsable : <strong>Pr Mario Passalacqua</strong> • Automne 2026</div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc1')">
-                <span>📦</span> <span>S'entraîner sur Bloc 1 (Cañas)</span>
+              <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc1')" title="Accéder à la station de travail complète avec le lecteur documentaire et le démarqueur interactif">
+                <span>📦</span> <span>Station de Travail &amp; Archives Bloc 1 (Cañas)</span>
               </button>
             </div>
           </div>
 
-          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 16px 0;">
+          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0;">
             Ce bloc d'étude explore les interactions homme-machine complexes, l'analyse cognitive des tâches, la gestion des erreurs humaines et l'ergonomie des interfaces de supervision critique.
           </p>
+        </div>
 
-          <!-- BANDEAU STATUT CERTIFICATION -->
-          <div class="hub-status-banner">
-            <span class="hub-status-icon">⚙️</span>
-            <div class="hub-status-text">
-              <strong>Banque certifiée étalon-or en cours d'intégration technique :</strong><br>
-              La session Contenu finalise le ratissage exhaustif des verbatims GOLD (Cas Agnico Eagle, CHSLD Amical AI, Raquettes à neige, Dynamique Comportement vs Performance, et Mandat Séminaire 1 AF447). Les questions certifiées apparaîtront directement ici.
+        <!-- MODULE D'ENTRAÎNEMENT INTERACTIF DU BLOC 2 (QUIZ & FLASHCARDS 3D) -->
+        <div class="b2-training-section" id="bloc2TrainingModule">
+          <div class="b2-tabs-bar">
+            <div class="b2-tabs-group">
+              <button type="button" class="b2-tab-btn active" id="b2TabBtnQuiz" onclick="switchB2SubTab('quiz')">
+                <span>📝</span> <span>Quiz d'Évaluation Formative (12 Questions)</span>
+              </button>
+              <button type="button" class="b2-tab-btn" id="b2TabBtnCards" onclick="switchB2SubTab('cards')">
+                <span>🗂️</span> <span>Flashcards 3D • Dilemmes de Terrain (12 Cartes)</span>
+              </button>
+            </div>
+            <span class="b2-badge-cert">✨ Programme Officiel • Passalacqua &amp; Bédard</span>
+          </div>
+
+          <!-- SOUS-VUE 1 : QUIZ INTERACTIF DU BLOC 2 -->
+          <div id="b2QuizContainer" class="b2-subview-panel">
+            <div class="b2-quiz-meta-bar">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <span class="b2-q-counter" id="b2QCounter">Question 1 / 12</span>
+                <span class="b2-q-category" id="b2QCategory">Aéronautique &amp; Systèmes complexes</span>
+              </div>
+              <div class="b2-score-box" id="b2ScoreBox">
+                Score : <span id="b2ScoreVal">0</span> / 12 (<span id="b2ScorePct">0%</span>)
+              </div>
+            </div>
+
+            <!-- CONTENU DE LA QUESTION -->
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
+              <div class="b2-q-context-box" id="b2QContext">
+                Chargement du contexte...
+              </div>
+              <div class="b2-q-prompt" id="b2QPrompt">
+                Chargement de la question...
+              </div>
+              <div class="b2-options-list" id="b2OptionsList">
+                <!-- Boutons d'options injectés par JS -->
+              </div>
+              <div id="b2FeedbackBox" style="display: none;"></div>
+            </div>
+
+            <!-- PILULES DE NAVIGATION DES QUESTIONS -->
+            <div class="b2-q-pills-nav" id="b2PillsNav">
+              <!-- 12 pilules générées dynamiquement -->
+            </div>
+
+            <!-- ACTIONS DU QUIZ -->
+            <div class="b2-quiz-actions">
+              <button type="button" class="hub-btn-secondary" id="b2PrevQBtn" onclick="navB2Question(-1)">
+                ⬅️ Question précédente
+              </button>
+              <button type="button" class="tool-btn reset-btn" onclick="resetB2Quiz()">
+                🔄 Réinitialiser le quiz
+              </button>
+              <button type="button" class="hub-btn-primary" id="b2NextQBtn" onclick="navB2Question(1)">
+                Question suivante ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- SOUS-VUE 2 : FLASHCARDS 3D DILEMMES DE TERRAIN -->
+          <div id="b2CardsContainer" class="b2-subview-panel" style="display: none;">
+            <div class="b2-fc-filters">
+              <button type="button" class="b2-fc-filter-btn active" id="b2FcFilterAll" onclick="filterB2Cards('all')">
+                Toutes les fiches (12)
+              </button>
+              <button type="button" class="b2-fc-filter-btn" id="b2FcFilterAero" onclick="filterB2Cards('aero')">
+                ✈️ Aéronautique &amp; AF-447 (4)
+              </button>
+              <button type="button" class="b2-fc-filter-btn" id="b2FcFilterSante" onclick="filterB2Cards('sante')">
+                🏥 Santé &amp; Lin et al. (3)
+              </button>
+              <button type="button" class="b2-fc-filter-btn" id="b2FcFilterMethodo" onclick="filterB2Cards('methodo')">
+                🧭 Méthodologie &amp; 4 Étapes (5)
+              </button>
+            </div>
+
+            <!-- SCÈNE 3D FLASHCARD -->
+            <div class="b2-card-scene" id="b2CardScene" onclick="flipB2Card()">
+              <div class="b2-card-inner" id="b2CardInner">
+                <!-- RECTO -->
+                <div class="b2-card-face b2-card-front">
+                  <div>
+                    <div class="b2-card-tag" id="b2CardFrontTag">Module A • Aéronautique &amp; Systèmes complexes</div>
+                    <div class="b2-card-title" id="b2CardFrontTitle">Titre de la fiche</div>
+                    <div class="b2-card-body" id="b2CardFrontBody">Description du dilemme observable de terrain...</div>
+                  </div>
+                  <div class="b2-card-hint">
+                    🔄 Cliquez n'importe où pour retourner la carte et révéler le diagnostic
+                  </div>
+                </div>
+                <!-- VERSO -->
+                <div class="b2-card-face b2-card-back">
+                  <div>
+                    <div class="b2-card-tag">🔍 Diagnostic d'ingénierie cognitive &amp; Concepts clés</div>
+                    <div class="b2-card-title" id="b2CardBackTitle">Diagnostic &amp; Compromis de conception</div>
+                    <div class="b2-card-body" id="b2CardBackBody">Contenu du diagnostic théorique et concept clé...</div>
+                  </div>
+                  <div class="b2-card-hint">
+                    🔄 Cliquez pour revenir à la situation de terrain
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACTIONS FLASHCARDS -->
+            <div class="b2-fc-actions-bar">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <button type="button" class="hub-btn-secondary" onclick="navB2Card(-1)">⬅️ Précédente</button>
+                <span id="b2CardCounter" style="font-size:0.88rem; font-weight:700; color:var(--text-muted);">Carte 1 / 12</span>
+                <button type="button" class="hub-btn-secondary" onclick="navB2Card(1)">Suivante ➡️</button>
+              </div>
+              <div class="b2-fc-rating-group">
+                <button type="button" class="b2-fc-rate-btn again" onclick="rateB2Card('again')" title="Marquer cette fiche comme à réviser">
+                  ⚠️ À revoir
+                </button>
+                <button type="button" class="b2-fc-rate-btn mastered" onclick="rateB2Card('mastered')" title="Marquer cette fiche comme maîtrisée">
+                  ✅ Maîtrisé
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -8926,12 +9455,13 @@ const allQuestions = [
         if (readerPane) readerPane.style.display = 'none';
         if (splitDivider) splitDivider.style.display = 'none';
         if (archiveNotice) archiveNotice.style.display = 'none';
-        updateMascot("Bienvenue au Bloc 2 avec le Pr Mario Passalacqua ! Les banques certifiées étalon-or arrivent. Révise les cas ou explore les Archives !", "happy");
+        updateMascot("Bienvenue au Bloc 2 avec le Pr Mario Passalacqua ! Entraînez-vous sur les cas cliniques ou explorez les modules de révision.", "happy");
       } else if (mod === 'bloc1') {
         if (bloc2View) bloc2View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
         if (archiveNotice) archiveNotice.style.display = 'flex';
+        if (splitDivider && !isCompactUI()) splitDivider.style.display = '';
         updateDynamicLayout();
         setMobileView(mobileView || 'activity');
         updateMascot("Section Archives / Entraînement — Bloc 1 actif (24 questions Cañas). Bon entraînement !", "study");
@@ -8973,6 +9503,606 @@ const allQuestions = [
     }
     window.copyExampleQuestion = copyExampleQuestion;
 
+
+    // =========================================================================
+    // BANQUE OFFICIELLE DE QUESTIONS ET FLASHCARDS DU BLOC 2
+    // =========================================================================
+    const BLOC2_QUIZ_QUESTIONS = [
+  {
+    id: 1,
+    category: "Aéronautique & Systèmes complexes",
+    context: "Lors de l'accident du vol AF-447, l'aéronef est entré dans un décrochage prolongé après le givrage des sondes Pitot. À plusieurs reprises, les pilotes ont constaté que l'alarme de décrochage (Stall Warning) s'arrêtait spontanément, pour ensuite retentir bruyamment dès qu'ils tentaient de pousser sur le manche à piquer pour faire descendre le nez de l'avion.",
+    prompt: "Selon l'analyse des facteurs humains et le rapport officiel du BEA, quel mécanisme d'ingénierie explique directement ce comportement trompeur du système ?",
+    options: [
+      { letter: "A", text: "Les ordinateurs de bord ont subi une panne électrique totale du bus de données lors du basculement en loi directe." },
+      { letter: "B", text: "Les calculateurs ADR considèrent les mesures d'incidence comme invalides sous 60 nœuds de vitesse mesurée, coupant l'alarme ; l'action à piquer faisant remonter la vitesse au-dessus de 60 nœuds a réadmis les données d'incidence et réactivé l'alarme." },
+      { letter: "C", text: "L'avertisseur sonore était asservi à un algorithme de renforcement adaptatif conçu pour punir les ordres de piqué excessifs à haute altitude." },
+      { letter: "D", text: "Le directeur de vol (Flight Director) a masqué l'alarme auditive pour prioriser les indications visuelles d'assiette sur le PFD." }
+    ],
+    correctLetter: "B",
+    explanation: "Le rapport du BEA documente formellement que lorsque la vitesse mesurée par les calculateurs ADR descend sous 60 nœuds, les valeurs d'angle d'attaque (incidence) sont jugées physiquement non valides et l'alarme de décrochage est automatiquement inhibée. Lorsque le pilote pousse sur le manche, l'avion prend de la vitesse, dépasse à nouveau 60 kt : les données redeviennent calculables et l'alarme se réactive alors que l'avion est toujours en décrochage. C'est une illustration tragique du gouffre d'évaluation de Norman.",
+    citation: "Source : Rapport officiel BEA AF-447 & Don Norman (The Design of Everyday Things)"
+  },
+  {
+    id: 2,
+    category: "Épistémologie & Facteurs Humains",
+    context: "Lors d'un débriefing après un incident dans une unité de production robotisée, un ingénieur affirme : « La cause racine de l'incident est l'erreur humaine de l'opérateur qui a appuyé sur le mauvais bouton ».",
+    prompt: "Selon le cadre épistémologique présenté par Mario Passalacqua à la Séance 3, pourquoi cette affirmation est-elle méthodologiquement inacceptable pour un ergonome des facteurs humains ?",
+    options: [
+      { letter: "A", text: "Parce que l'erreur humaine n'existe pas dans les systèmes automatisés modernes certifiés ISO." },
+      { letter: "B", text: "Parce que l'erreur humaine décrit le résultat d'un dysfonctionnement sociotechnique global, et ne doit jamais être traitée comme la cause explicative primaire." },
+      { letter: "C", text: "Parce que l'ergonome doit systématiquement attribuer 100 % de la responsabilité légale à la direction de l'entreprise pour protéger le travailleur." },
+      { letter: "D", text: "Parce que l'observation du comportement extérieur permet toujours de prouver l'intention malveillante de l'opérateur." }
+    ],
+    correctLetter: "B",
+    explanation: "Dans le cours magistral de la Séance 3, le Pr Passalacqua rappelle le principe fondateur de Rasmussen et Reason : « L'erreur humaine décrit le résultat, jamais la cause ». Blâmer l'opérateur est une tautologie qui masque les défaillances de l'interface, la charge de travail, la fatigue et les faiblesses organisationnelles.",
+    citation: "Source : Séance 3 — Pr Mario Passalacqua & Rasmussen / Reason (1990)"
+  },
+  {
+    id: 3,
+    category: "Technologies Médicales & Psychométrie",
+    context: "Dans leur étude sur l'interface de la pompe PCA Lifecare 4100, Lin et ses collègues évaluent la charge mentale subjective des infirmières à l'aide de l'outil standardisé NASA-TLX.",
+    prompt: "Que révèlent les résultats statistiques obtenus sur cette échelle, et comment l'ergonome doit-il les interpréter ?",
+    options: [
+      { letter: "A", text: "La charge subjective a chuté de 95 % avec une significativité extrême (p < 0.0001), prouvant la disparition complète du stress hospitalier." },
+      { letter: "B", text: "L'ANOVA bilatérale montre une différence non significative (p = 0.12) sur des scores déjà très bas (15 % vs 7 %), ce qui illustre la difficulté des échelles subjectives post-tâche à capturer les micro-pics de charge cognitive." },
+      { letter: "C", text: "Le questionnaire NASA-TLX a été rejeté par les auteurs car les infirmières ont refusé d'y répondre en raison d'un conflit de travail." },
+      { letter: "D", text: "La nouvelle interface a augmenté la charge mentale globale en raison du nombre excessif de couleurs affichées sur l'écran LCD." }
+    ],
+    correctLetter: "B",
+    explanation: "Dans le texte original de Lin et al. (1998), l'ANOVA globale sur la charge perçue n'atteint pas le seuil de significativité classique (p = 0.12), bien qu'un test unilatéral ciblé donne p < 0.025. Les moyennes étaient déjà très faibles (15 % de l'échelle pour l'ancienne interface, 7 % pour la nouvelle). Cela démontre qu'une amélioration comportementale majeure (division par deux des erreurs) peut ne pas se refléter de façon écrasante sur un questionnaire d'auto-évaluation globale post-hoc.",
+    citation: "Source : Lin et al. (1998) — Evaluation of a Patient-Controlled Analgesia Pump Interface"
+  },
+  {
+    id: 4,
+    category: "Méthodologie & Analyse de l'Activité",
+    context: "Lors d'une étude d'ergonomie dans un centre de contrôle ferroviaire, l'analyste observe qu'un opérateur consulte six fois consécutivement le même écran radar en l'espace de deux minutes.",
+    prompt: "En appliquant la consigne méthodologique stricte répétée par Mario Passalacqua à la Séance 3, que peut conclure l'analyste à partir de cette seule observation ?",
+    options: [
+      { letter: "A", text: "L'opérateur souffre d'un trouble obsessionnel-compulsif induit par le stress du poste." },
+      { letter: "B", text: "L'écran est objectivement mal conçu et doit être immédiatement remplacé par une synthèse vocale." },
+      { letter: "C", text: "Rien sur l'état mental interne : l'observation décrit une action motrice, mais ne permet pas de savoir si l'opérateur vérifie une donnée incertaine, attend une mise à jour ou compense un manque de confiance envers l'algorithme." },
+      { letter: "D", text: "L'opérateur est en état de vigilance optimale car la répétition visuelle est le garant de la conscience de la situation de niveau 3." }
+    ],
+    correctLetter: "C",
+    explanation: "C'est le cœur de la mise en garde du Pr Passalacqua (Séance 3 — Milieux technologiques) : l'observable ne renseigne jamais sur la causalité cognitive interne (« Observable ≠ Pensée sous-jacente »). Pour comprendre pourquoi l'opérateur regarde six fois l'écran, il faut trianguler avec du verbal déclaratif (explicitation, penser tout haut) et des métriques physiologiques ou contextuelles.",
+    citation: "Source : Séance 3 — Pr Mario Passalacqua (Observable ≠ Pensée sous-jacente)"
+  },
+  {
+    id: 5,
+    category: "Évaluation & Effets Secondaires",
+    context: "Dans un hôpital, pour empêcher les infirmières d'oublier de valider le numéro de dossier avant d'administrer un médicament, l'équipe informatique installe une fenêtre pop-up modale bloquante exigeant de taper manuellement un code à 8 chiffres.",
+    prompt: "Selon l'étape ÉVALUER de la démarche Passalacqua et l'analyse des « effets pervers » en ergonomie cognitive, quelle conséquence secondaire imprévue est la plus susceptible d'émerger sur le terrain ?",
+    options: [
+      { letter: "A", text: "Les soignantes vont spontanément cesser de parler aux patients pour se concentrer sur le code." },
+      { letter: "B", text: "Les soignantes vont développer des stratégies de contournement (workarounds), par exemple en collant un post-it avec le code universel directement sur l'écran pour cliquer sans lire." },
+      { letter: "C", text: "Le taux d'erreur de saisie va immédiatement tomber à zéro sans aucune modification de la charge de travail." },
+      { letter: "D", text: "Les médecins vont refuser de prescrire des analgésiques sur ce modèle de pompe." }
+    ],
+    correctLetter: "B",
+    explanation: "C'est l'essence du dwell de 15 minutes sur la diapositive D83 (Passalacqua [01:53:40]) : « Il ne faut pas seulement regarder si la solution règle le problème prévu, il faut traquer ce qu'on n'a pas prévu ». Les fonctions de forçage mal calibrées induisent quasi systématiquement des contournements opérationnels informels (workarounds) pour préserver la cadence de travail.",
+    citation: "Source : Séance 3 — Diapositive D83 (Étape ÉVALUER, Pr Mario Passalacqua)"
+  },
+  {
+    id: 6,
+    category: "Méthodologie & Triangulation",
+    context: "Un ergonome junior teste une nouvelle interface de commande vocale en mesurant l'électrocardiogramme (ECG) des utilisateurs. Il observe une accélération brutale du rythme cardiaque de 30 bpm chez un participant et en conclut immédiatement : « Cette interface vocale génère une surcharge cognitive intolérable ».",
+    prompt: "Pourquoi cette déduction viole-t-elle les principes de la triangulation méthodologique enseignés en PSY7010 ?",
+    options: [
+      { letter: "A", text: "Parce que l'électrocardiogramme est un outil réservé aux médecins et interdit en recherche ergonomique." },
+      { letter: "B", text: "Parce que les indices physiologiques sont non-univoques : l'accélération cardiaque peut refléter un stress émotionnel, un sursaut perceptuel lié à un bruit de fond ou un effort physique d'élocution, et non une charge mentale de travail." },
+      { letter: "C", text: "Parce que la variabilité de la fréquence cardiaque est incapable de varier chez l'adulte sain sous simulateur." },
+      { letter: "D", text: "Parce que seule l'oculométrie (eye-tracking) a le statut de preuve scientifique absolue en ergonomie." }
+    ],
+    correctLetter: "B",
+    explanation: "Séance 3 (D60-D67) : la non-univocité physiologique est un piège majeur. Aucun indice physiologique isolé ne possède de relation bijective avec la charge cognitive. D'où la nécessité absolue de croiser le physiologique avec le perceptuel subjectif et l'observationnel comportemental.",
+    citation: "Source : Séance 3 — D60 à D67 (Triangulation physiologique, Pr Mario Passalacqua)"
+  },
+  {
+    id: 7,
+    category: "Automatisation & Complaisance",
+    context: "Chez TSL Outdoors (cas pratique présenté par Mario Passalacqua), une cellule robotique équipée de caméras IA inspecte l'assemblage de raquettes à neige. L'automate atteint un taux de succès de 99 % dans le repérage des défauts de fabrication.",
+    prompt: "Dans le cadre des théories de l'allocation de fonctions (Function Allocation) et des travaux de Parasuraman, Wickens et Bainbridge, pourquoi l'opérateur humain commet-il des omissions graves lorsqu'un défaut résiduel (1 %) se présente ?",
+    options: [
+      { letter: "A", text: "Parce que les opérateurs humains sont naturellement incompétents pour travailler avec des raquettes à neige." },
+      { letter: "B", text: "Parce que la grande fiabilité perçue de l'automate provoque un phénomène de complaisance technologique (complacency) et un décrément de vigilance lié à la rareté extrême des cibles à détecter." },
+      { letter: "C", text: "Parce que les vibrations électromagnétiques des caméras IA perturbent le champ visuel de l'opérateur." },
+      { letter: "D", text: "Parce que la loi sur la santé et sécurité du travail interdit aux humains de corriger un automate." }
+    ],
+    correctLetter: "B",
+    explanation: "L'humain est notoirement inefficace pour maintenir une vigilance active prolongée face à des événements hautement improbables (vigilance decrement). Quand une machine fonctionne bien à 99 %, l'humain lui délègue sa confiance cognitive (complacency) et cesse d'exercer un contrôle critique actif.",
+    citation: "Source : Séance 3 — Cas TSL Outdoors & Parasuraman, Wickens (Complacency)"
+  },
+  {
+    id: 8,
+    category: "Conscience de la Situation d'Équipe",
+    context: "Dans les cockpits Airbus fly-by-wire (comme l'A330 d'AF-447), les mini-manches latéraux (side-sticks) sont découplés mécaniquement : le manche de gauche ne bouge pas lorsque le pilote de droite actionne le sien. Si les deux pilotes agissent simultanément sans enclencher le bouton de priorité, le système applique la moyenne algébrique des deux ordres (Dual Input).",
+    prompt: "Sous l'angle de la conscience de la situation partagée (Shared Situation Awareness / Endsley), quel compromis d'ingénierie ce choix illustre-t-il ?",
+    options: [
+      { letter: "A", text: "Un compromis où la réduction de la masse et de la complexité électromécanique s'est faite au détriment de l'accès perceptuel immédiat (visuel et proprioceptif) aux actions du coéquipier." },
+      { letter: "B", text: "Un choix visant délibérément à empêcher le commandant de bord de corriger les erreurs de ses subordonnés." },
+      { letter: "C", text: "Une exigence militaire imposant que chaque pilote puisse piloter un moteur séparé sans en informer l'autre." },
+      { letter: "D", text: "Une volonté de forcer les pilotes à utiliser exclusivement la communication radio plutôt que verbale en cabine." }
+    ],
+    correctLetter: "A",
+    explanation: "Dans un cockpit classique (Boeing à volants couplés), lorsqu'un pilote tire sur son manche, le volant de son collègue recule physiquement sous ses yeux et entre ses mains (retour haptique et affordance sociale directe). Les side-sticks passifs suppriment la tringlerie lourde mais détruisent ce canal d'information écologique direct.",
+    citation: "Source : Rapport AF-447 & Mica Endsley (Shared Situation Awareness)"
+  },
+  {
+    id: 9,
+    category: "Ergonomie des Interfaces & Mémoire",
+    context: "L'équipe de Lin et al. a remplacé un affichage séquentiel à un seul paramètre par un écran présentant simultanément les quatre dimensions du protocole analgésique (concentration, dose bolus, période d'interdiction, limite 4 heures).",
+    prompt: "Quel concept théorique fondamental de Don Norman ce changement matériel opérationnalise-t-il ?",
+    options: [
+      { letter: "A", text: "L'externalisation de la mémoire : placer la connaissance dans le monde (Knowledge in the World) pour décharger la mémoire de travail de l'opérateur (Knowledge in the Head)." },
+      { letter: "B", text: "Le principe d'inertie cognitive de Reason interdisant toute modification de consigne." },
+      { letter: "C", text: "La loi de Fitts démontrant que plus un écran est petit, plus la vitesse de frappe au clavier augmente." },
+      { letter: "D", text: "L'effet McGurk démontrant que la vue d'un mot modifie l'audition des alarmes sonores." }
+    ],
+    correctLetter: "A",
+    explanation: "Concept central de Don Norman (The Design of Everyday Things) : quand l'état complet du système est visible en permanence dans l'environnement physique (Knowledge in the world), l'opérateur n'a plus besoin de maintenir ces variables instables dans sa mémoire de travail (Knowledge in the head), ce qui prévient les erreurs de confusion d'état.",
+    citation: "Source : Don Norman & Lin et al. (1998)"
+  },
+  {
+    id: 10,
+    category: "Validité Écologique & Contexte",
+    context: "À la fin de la Séance 3, Marc-André Bédard intervient sur la question de la validité des solutions ergonomiques développées en milieu universitaire ou en laboratoire high-tech.",
+    prompt: "Quel principe directeur résume son intervention lors de l'étude de cas sur l'analyse de l'activité en milieu technologique ?",
+    options: [
+      { letter: "A", text: "Toutes les interfaces ergonomiques conçues à Montréal s'appliquent universellement sans adaptation culturelle." },
+      { letter: "B", text: "« Est-ce que ça marche dans ce contexte spécifique ? » : il n'existe aucune solution universelle (no one-size-fits-all), la validité d'une solution d'ingénierie cognitive n'existe que contextualisée à l'écologie réelle du milieu." },
+      { letter: "C", text: "Les tests en laboratoire stérile sont toujours supérieurs aux observations en milieu hospitalier ou industriel." },
+      { letter: "D", text: "La recherche fondamentale doit ignorer les contraintes budgétaires pour imposer la perfection théorique." }
+    ],
+    correctLetter: "B",
+    explanation: "Bédard insiste sur le fait qu'une solution ergonomique n'a aucune valeur dans l'abstrait. Son efficacité dépend étroitement du contexte organisationnel, des usagers réels, du temps disponible et des contraintes physiques de l'écologie de travail.",
+    citation: "Source : Séance 3 — Pr Marc-André Bédard (Validité contextuelle)"
+  },
+  {
+    id: 11,
+    category: "Modèle SRK de Rasmussen",
+    context: "Jens Rasmussen distingue trois niveaux de contrôle cognitif : les habiletés automatisées (Skill-based), les règles procédurales (Rule-based) et les connaissances analytiques (Knowledge-based).",
+    prompt: "Lorsque le pilote automatique de l'AF-447 s'est désengagé en pleine turbulence de nuit avec alarmes multiples, quel phénomène de transition cognitive l'équipage a-t-il subi ?",
+    options: [
+      { letter: "A", text: "Une transition fluide vers le niveau des connaissances théoriques analytiques approfondies sans aucune perte d'attention." },
+      { letter: "B", text: "Un effondrement du niveau des connaissances analytiques sous l'effet de surprise (startle effect), forçant les pilotes à régresser vers des règles réflexes sensori-motrices rapides (Skill/Rule) inadaptées à la panne aérodynamique." },
+      { letter: "C", text: "Une élimination complète du traitement sous-cortical au profit d'un raisonnement bayésien parfait." },
+      { letter: "D", text: "Une focalisation exclusive sur la météo satellite transmise par l'acars." }
+    ],
+    correctLetter: "B",
+    explanation: "Sous stress aigu, surprise et surcharge sensorielle, l'humain perd rapidement sa capacité de raisonnement hypothético-déductif (Knowledge-based) et se rabat sur des heuristiques de niveau inférieur (Rule ou Skill), comme tirer sur le manche pour contrer une chute d'altitude perçue, ce qui aggrave un décrochage au lieu de le résoudre.",
+    citation: "Source : Jens Rasmussen (Cadre SRK) & Analyse AF-447"
+  },
+  {
+    id: 12,
+    category: "Méthodologie de Recherche (Cañas 2011)",
+    context: "Dans le chapitre 13 de son manuel, Cañas analyse les méthodes de recherche en ergonomie et facteurs humains, en opposant les plans d'expérience rigoureusement contrôlés en laboratoire aux études de terrain dans l'industrie.",
+    prompt: "Quel est le compromis méthodologique inhérent à cette opposition ?",
+    options: [
+      { letter: "A", text: "Le laboratoire maximise la validité écologique mais détruit la reproductibilité statistique." },
+      { letter: "B", text: "Le laboratoire permet d'isoler chirurgicalement les variables indépendantes (haute validité interne) mais peine à reproduire la complexité stochastique du terrain (faible validité écologique), tandis que l'étude de terrain capture la réalité sans pouvoir isoler facilement l'effet propre de chaque composante." },
+      { letter: "C", text: "L'ergonome moderne n'utilise plus les méthodes expérimentales, remplacées par des sondages d'opinion sur les réseaux sociaux." },
+      { letter: "D", text: "La validité interne ne concerne que les sciences physiques et ne s'applique pas aux sciences cognitives appliquées." }
+    ],
+    correctLetter: "B",
+    explanation: "C'est le dilemme épistémologique fondamental décrit par Cañas (2011) et réitéré par Passalacqua : isoler chaque variable d'une interface permet de prouver son mécanisme exact, mais ne garantit pas son efficacité dans le chaos d'un hôpital ou d'un cockpit réel.",
+    citation: "Source : Cañas (2011), Chapitre 13 (Validité interne vs écologique)"
+  }
+];
+
+    const BLOC2_FLASHCARDS = [
+  {
+    id: 1,
+    category: "aero",
+    tag: "Module A • Aéronautique & Systèmes complexes",
+    title: "L'Inhibition d'Alarme sous 60 Nœuds (AF-447)",
+    front: "Sur l'Airbus A330 du vol AF-447, l'alarme sonore de décrochage (Stall Warning) s'est tue brusquement alors que l'avion était cabré et en perte d'altitude rapide. Dès que le copilote a poussé sur le manche pour piquer (manœuvre salvatrice), l'alarme a retenti avec violence. Pourquoi cette réaction du système s'est-elle produite ?",
+    backTitle: "Invalidation logique sous 60 kt & Gouffre d'évaluation",
+    back: "<strong>Diagnostic :</strong> Invalidation logique des mesures d'incidence par les calculateurs ADR (Air Data Reference) dès que la vitesse mesurée chute sous 60 kt. Lorsque le pilote pique, l'avion reprend de la vitesse (> 60 kt), ce qui réadmet les calculs et réactive l'alarme alors que l'avion est toujours en décrochage.<br><br><strong>Concept clé :</strong> <em>Gouffre d'évaluation de Norman</em> et piège du retour d'information paradoxal. Le silence de la machine mime la sécurité, tandis que la bonne manœuvre est punie par une alerte stridente.<br><br><strong>Compromis de conception :</strong> Pudeur algorithmique (ne pas déclencher d'alarmes sur données invalides) vs Sécurité cognitive (ne jamais faire du silence une confirmation trompeuse sous stress extrême)."
+  },
+  {
+    id: 2,
+    category: "aero",
+    tag: "Module A • Aéronautique & Systèmes complexes",
+    title: "Les Mini-Manches Désynchronisés (Side-Sticks Airbus)",
+    front: "Dans le cockpit d'un Airbus A330, le copilote de gauche a cherché à reprendre le contrôle sans réaliser pendant de longues secondes que le copilote de droite maintenait son manche tiré en arrière à fond de butée. Pourquoi cette information fondamentale lui a-t-elle échappé ?",
+    backTitle: "Absence de retour haptique & Rupture de SA partagée",
+    back: "<strong>Diagnostic :</strong> Absence de couplage mécanique et haptique entre les deux mini-manches latéraux (passive side-sticks). Le déplacement d'un manche n'entraîne pas le mouvement physique de l'autre, et la position des mains latérales est hors du champ visuel périphérique de l'autre pilote.<br><br><strong>Concept clé :</strong> Rupture de la <em>Conscience de la Situation d'Équipe (Shared Situation Awareness / Endsley Niveau 2)</em> et disparition de l'affordance écologique sociale.<br><br><strong>Compromis de conception :</strong> Réduction de la masse, fiabilité électromécanique et absence de tringlerie lourde vs Perte de la redondance proprioceptive et visuelle immédiate entre équipiers."
+  },
+  {
+    id: 3,
+    category: "aero",
+    tag: "Module A • Aéronautique & Systèmes complexes",
+    title: "Transition Normal Law ➔ Alternate Law (Surprise de Mode)",
+    front: "Lorsque le givrage des sondes Pitot a provoqué la perte des indications de vitesse sur l'AF-447, les ordinateurs de bord sont passés de la « loi normale » à la « loi alternative ». Qu'est-ce que ce changement a modifié dans la relation pilote-avion ?",
+    backTitle: "Perte des protections d'enveloppe & Surprise de mode",
+    back: "<strong>Diagnostic :</strong> En loi normale, le système de commandes de vol électriques assure une protection d'enveloppe stricte (l'avion refuse physiquement de décrocher même si le pilote tire le manche à fond). En loi alternative, cette protection disparaît totalement sans altération sensible du comportement immédiat des gouvernes.<br><br><strong>Concept clé :</strong> <em>Surprise de mode (Mode Surprise / Sarter & Woods)</em> et fausse croyance d'invulnérabilité automatisée. L'équipage a pu agir comme si les protections automatiques étaient toujours actives.<br><br><strong>Compromis de conception :</strong> Continuité du contrôle manuel dégradé sans blocage logiciel vs Rupture brutale du contrat de confiance homme-machine en phase de crise."
+  },
+  {
+    id: 4,
+    category: "aero",
+    tag: "Module A • Aéronautique & Systèmes complexes",
+    title: "Les Ironies de l'Automatisation en Croisière (Bainbridge)",
+    front: "Des pilotes chevronnés passent 98 % de leur temps de vol en croisière à surveiller un pilote automatique. Pourquoi cette assistance prolongée les rend-elle plus vulnérables au moment où l'assistance tombe en panne ?",
+    backTitle: "Exclusion de la boucle & Atrophie des habiletés",
+    back: "<strong>Diagnostic :</strong> Le phénomène d'exclusion de la boucle de contrôle (Out-of-the-loop phenomenon). L'humain n'étant plus actif dans le pilotage direct, son modèle mental de l'état de l'aéronef devient discontinu et imprécis.<br><br><strong>Concept clé :</strong> <em>Ironies de l'automatisation (Lisanne Bainbridge, 1983)</em>. L'automatisation décharge le pilote des tâches faciles en conditions nominales, mais lui renvoie brutalement la commande manuelle dans les situations imprévues et complexes, au moment où ses compétences actives sont les plus émoussées.<br><br><strong>Compromis de conception :</strong> Confort et optimisation de carburant vs Atrophie des habiletés sensori-motrices et allongement du temps de reprise en main (resumption lag)."
+  },
+  {
+    id: 5,
+    category: "sante",
+    tag: "Module B • Technologies médicales & Santé",
+    title: "La Vue d'Ensemble en 4 Fenêtres (Pompe Lifecare 4100)",
+    front: "Dans l'étude de Lin et al. (1998), la nouvelle interface regroupe la concentration, la dose bolus, la période d'interdiction et la limite sur un seul écran divisé en 4 fenêtres titrées. Pourquoi cette organisation réduit-elle les erreurs de 50 % alors que les paramètres à saisir sont exactement les mêmes ?",
+    backTitle: "Externalisation en mémoire de travail (Norman / Sweller)",
+    back: "<strong>Diagnostic :</strong> L'ancienne interface imposait un dialogue séquentiel écran par écran qui obligeait le soignant à stocker en mémoire de travail les valeurs saisies précédemment. La vue d'ensemble fournit une externalisation visuelle permanente de l'état de la prescription.<br><br><strong>Concept clé :</strong> <em>Externalisation de la mémoire de travail (Norman / Zhang & Norman)</em> et réduction de la charge cognitive extrinsèque (Sweller). L'information est disponible dans le monde plutôt qu'en mémoire interne.<br><br><strong>Compromis de conception :</strong> Richesse visuelle sur un petit écran (risque d'encombrement / visual clutter) vs Navigation séquentielle aveugle."
+  },
+  {
+    id: 6,
+    category: "sante",
+    tag: "Module B • Technologies médicales & Santé",
+    title: "Le Paradoxe Statistique du NASA-TLX chez Lin et al.",
+    front: "L'étude de Lin et al. (1998) montre une baisse spectaculaire des erreurs de programmation (de 20 à 10 erreurs), mais l'analyse de variance (ANOVA) sur la charge mentale globale (NASA-TLX) donne un résultat bilatéral non significatif (p = 0.12). Comment interpréter cette discordance ?",
+    backTitle: "Effet plancher & Non-linéarité charge / performance",
+    back: "<strong>Diagnostic :</strong> Deux facteurs expliquent ce paradoxe : (1) La faible taille d'échantillon (N=12), et (2) un effet plancher métacognitif : les soignants évaluaient déjà leur charge à des niveaux très bas (15 % vs 7 % de l'échelle), le NASA-TLX statique post-tâche peinant à capturer les micro-pics de charge cognitive transitoires.<br><br><strong>Concept clé :</strong> <em>Non-linéarité entre charge subjective déclarée et performance objective</em>. Une forte amélioration clinique peut ne pas se traduire par une significativité statistique écrasante sur un questionnaire post-hoc.<br><br><strong>Compromis de conception :</strong> Rigueur de la validation réductionniste en laboratoire vs Validité clinique écologique d'un dispositif qui divise par deux les erreurs de programmation."
+  },
+  {
+    id: 7,
+    category: "sante",
+    tag: "Module B • Technologies médicales & Santé",
+    title: "La Reprogrammation en Cours de Traitement (Titration)",
+    front: "Sur les pompes à perfusion d'analgésie contrôlée par le patient (PCA), pourquoi les erreurs de saisie surviennent-elles plus souvent lors d'un changement de dose en cours de perfusion que lors de l'installation initiale ?",
+    backTitle: "Activation de schéma partiel & Vulnérabilité aux interruptions",
+    back: "<strong>Diagnostic :</strong> Lors de l'installation initiale, l'infirmière suit une procédure protocolaire linéaire complète. Lors d'un ajustement de titration, elle est en mode réactif, souvent interrompue par les plaintes de douleur du patient, et modifie un sous-paramètre sans réinitialiser son modèle mental des autres variables verrouillées.<br><br><strong>Concept clé :</strong> <em>Piège d'activation de schéma partiel (Reason, 1990)</em> et vulnérabilité aux interruptions de tâche (Altmann & Trafton).<br><br><strong>Compromis de conception :</strong> Accès rapide en un clic pour soulager rapidement le patient vs Forçage de confirmation systématique de l'ordonnance globale."
+  },
+  {
+    id: 8,
+    category: "methodo",
+    tag: "Module C • Méthodologie & 4 Étapes",
+    title: "Étape 1 COMPRENDRE : « L'erreur humaine comme résultat »",
+    front: "Lorsqu'un accident industriel ou hospitalier survient, un gestionnaire conclut : « L'accident est dû à l'inattention de l'opérateur qui n'a pas respecté la procédure ». Pourquoi Mario Passalacqua rejette-t-il catégoriquement cette conclusion dès l'étape COMPRENDRE ?",
+    backTitle: "L'erreur comme résultat & Observable ≠ Pensée",
+    back: "<strong>Diagnostic :</strong> L'inattention ou l'erreur humaine est un symptôme ou un résultat systémique, jamais la cause première. Conclure à l'erreur humaine bloque l'analyse des facteurs sous-jacents (interface trompeuse, charge mentale, organisation du travail, ambiguïté des procédures).<br><br><strong>Concept clé :</strong> <em>Postulat de Rasmussen & Reason</em> : « L'erreur humaine décrit le résultat, jamais la cause » (Séance 3 — Pr Mario Passalacqua). L'opérateur adapte son comportement à l'écologie de son poste.<br><br><strong>Règle d'or de terrain :</strong> <em>Observable ≠ Pensée sous-jacente</em> (Séance 3 — Pr Passalacqua). Observer un comportement ne révèle jamais à lui seul l'intention mentale de l'opérateur."
+  },
+  {
+    id: 9,
+    category: "methodo",
+    tag: "Module C • Méthodologie & 4 Étapes",
+    title: "Étape 1 COMPRENDRE : La Triangulation Méthodologique",
+    front: "Pourquoi est-il scientifiquement dangereux d'évaluer la charge mentale d'un opérateur uniquement à l'aide d'un capteur de fréquence cardiaque ou de variabilité cardiaque (VRC) ?",
+    backTitle: "Non-univocité physiologique & Triangulation",
+    back: "<strong>Diagnostic :</strong> Les mesures physiologiques souffrent d'un problème de <em>non-univocité</em>. Une élévation cardiaque peut résulter d'un effort physique, d'un stress émotionnel, d'une tasse de café ou d'un sursaut acoustique, sans lien avec la charge de travail cognitive.<br><br><strong>Concept clé :</strong> <em>Triangulation méthodologique obligatoire (Passalacqua — D60 à D67)</em> :<br>1. Mesures physiologiques (objectives mais non-univoques).<br>2. Mesures perceptuelles / subjectives (NASA-TLX, sensibles mais biaisées par le rappel et la désirabilité sociale).<br>3. Mesures observationnelles / comportementales (précises sur les actions, mais muettes sur les états mentaux internes)."
+  },
+  {
+    id: 10,
+    category: "methodo",
+    tag: "Module C • Méthodologie & 4 Étapes",
+    title: "Étape 2 CONCEVOIR : L'Inspection Automatisée (TSL Outdoors)",
+    front: "Dans le cas industriel de TSL Outdoors présenté par Mario Passalacqua, une caméra IA inspecte les défauts sur les raquettes à neige avec 99 % de précision. Pourtant, au bout de quelques semaines, les rares défauts non détectés par l'IA passent tout droit sous les yeux de l'opérateur humain. Pourquoi ?",
+    backTitle: "Complaisance technologique & Décrément de vigilance",
+    back: "<strong>Diagnostic :</strong> La quasi-perfection apparente de l'automate induit un phénomène de complaisance technologique (complacency). L'opérateur humain réduit son balayage visuel actif, son attention s'émousse face à la rareté de l'événement cible (vigilance decrement), et il perd son expertise de détection fine.<br><br><strong>Concept clé :</strong> <em>Allocation de fonctions sous-optimale (Fitts' List dépassée / Parasuraman & Wickens)</em>. L'humain n'est pas un bon superviseur passif de signaux rares.<br><br><strong>Compromis de conception :</strong> Vitesse de production robotisée vs Maintien de l'engagement cognitif de l'opérateur (nécessité de générer des contrôles croisés actifs)."
+  },
+  {
+    id: 11,
+    category: "methodo",
+    tag: "Module C • Méthodologie & 4 Étapes",
+    title: "Étape 3 ÉVALUER : Le Dwell Majeur D83 (Effets Secondaires)",
+    front: "Une équipe d'ingénieurs déploie une alarme sonore stridente pour empêcher les ouvriers d'oublier une étape critique. Les tests montrent que l'oubli tombe à 0 %. Pourquoi l'ergonome cognitif refuse-t-il de valider la solution à l'étape ÉVALUER ?",
+    backTitle: "Conséquences secondaires imprévues & Rustines IHM",
+    back: "<strong>Diagnostic :</strong> L'évaluation ne doit pas seulement mesurer si la solution résout le défaut initial, mais traquer les <em>conséquences secondaires imprévues</em> (Dwell majeur D83, Passalacqua [01:53:40]). L'alarme stridente peut induire une saturation sensorielle, masquer d'autres alertes vitales ou pousser les opérateurs à saboter le haut-parleur avec du ruban adhésif (workaround).<br><br><strong>Concept clé :</strong> <em>Effets pervers des rustines IHM et contournements opérationnels</em>.<br><br><strong>Règle Passalacqua :</strong> « Ne pas seulement regarder ce qu'on pense qui est important, regarder plus gros et voir ce qu'on n'a pas prévu »."
+  },
+  {
+    id: 12,
+    category: "methodo",
+    tag: "Module C • Méthodologie & 4 Étapes",
+    title: "Étape 4 DÉPLOYER : L'Avis Bédard (Validité Contextuelle)",
+    front: "Une solution d'interface a obtenu des résultats parfaits en laboratoire de simulation à McGill avec des étudiants volontaires. Pourquoi le professeur Marc-André Bédard met-il en garde contre son déploiement direct en milieu réel ?",
+    backTitle: "Validité contextuelle (No one-size-fits-all)",
+    back: "<strong>Diagnostic :</strong> Une validation en laboratoire contrôlé ne garantit aucunement la transférabilité écologique (no one-size-fits-all, Bédard [02:20:02]). Dans l'usine ou l'hôpital réel, il y a des interruptions constantes, des équipes de nuit fatiguées, des pressions hiérarchiques de cadence et une culture d'entreprise préexistante.<br><br><strong>Concept clé :</strong> <em>Validité écologique et faisabilité organisationnelle (Cañas 2011, Chap. 13)</em>.<br><br><strong>Compromis de conception :</strong> Rigueur du contrôle expérimental en milieu stérile vs Robustesse face au bruit et à la variabilité du monde réel."
+  }
+];
+
+    // =========================================================================
+    // CONTRÔLEUR D'ENTRAÎNEMENT INTERACTIF DU BLOC 2 (QUIZ & FLASHCARDS 3D)
+    // =========================================================================
+    let b2CurrentTab = 'quiz';
+    let b2CurrentQIdx = 0;
+    let b2UserAnswers = {}; // { [qIdx]: 'A' | 'B' | 'C' | 'D' }
+    let b2CurrentCardFilter = 'all';
+    let b2FilteredCardIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    let b2CurrentCardPos = 0;
+    let b2CardRatings = {}; // { [cardId]: 'again' | 'mastered' }
+
+    function initB2Training() {
+      try {
+        const savedRatings = localStorage.getItem('psy7010_b2_card_ratings');
+        if (savedRatings) {
+          b2CardRatings = JSON.parse(savedRatings);
+        }
+      } catch (e) {}
+
+      initB2Pills();
+      renderB2Question(0);
+      filterB2Cards('all');
+    }
+
+    function switchB2SubTab(tab) {
+      b2CurrentTab = tab;
+      const quizBtn = document.getElementById('b2TabBtnQuiz');
+      const cardsBtn = document.getElementById('b2TabBtnCards');
+      const quizContainer = document.getElementById('b2QuizContainer');
+      const cardsContainer = document.getElementById('b2CardsContainer');
+
+      if (tab === 'quiz') {
+        if (quizBtn) quizBtn.classList.add('active');
+        if (cardsBtn) cardsBtn.classList.remove('active');
+        if (quizContainer) quizContainer.style.display = 'block';
+        if (cardsContainer) cardsContainer.style.display = 'none';
+        updateMascot("Quiz du Bloc 2 : 12 questions d'entraînement sur les systèmes complexes, les facteurs humains et l'analyse cognitive.", "study");
+      } else {
+        if (quizBtn) quizBtn.classList.remove('active');
+        if (cardsBtn) cardsBtn.classList.add('active');
+        if (quizContainer) quizContainer.style.display = 'none';
+        if (cardsContainer) cardsContainer.style.display = 'block';
+        renderB2Card();
+        updateMascot("Flashcards 3D du Bloc 2 : Dilemmes de terrain et analyse diagnostique. Cliquez pour retourner la fiche !", "happy");
+      }
+    }
+
+    function initB2Pills() {
+      const pillsContainer = document.getElementById('b2PillsNav');
+      if (!pillsContainer) return;
+      pillsContainer.innerHTML = '';
+      for (let i = 0; i < BLOC2_QUIZ_QUESTIONS.length; i++) {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = 'b2-pill-btn' + (i === 0 ? ' current' : '');
+        pill.id = 'b2Pill_' + i;
+        pill.textContent = (i + 1);
+        pill.title = 'Aller à la question ' + (i + 1);
+        pill.onclick = () => renderB2Question(i);
+        pillsContainer.appendChild(pill);
+      }
+    }
+
+    function updateB2ScoreUI() {
+      let correctCount = 0;
+      const answeredTotal = Object.keys(b2UserAnswers).length;
+      for (let i = 0; i < BLOC2_QUIZ_QUESTIONS.length; i++) {
+        if (b2UserAnswers[i] && b2UserAnswers[i] === BLOC2_QUIZ_QUESTIONS[i].correctLetter) {
+          correctCount++;
+        }
+      }
+      const scoreVal = document.getElementById('b2ScoreVal');
+      const scorePct = document.getElementById('b2ScorePct');
+      if (scoreVal) scoreVal.textContent = correctCount;
+      if (scorePct) {
+        const pct = answeredTotal > 0 ? Math.round((correctCount / answeredTotal) * 100) : 0;
+        scorePct.textContent = pct + '%';
+      }
+    }
+
+    function renderB2Question(idx) {
+      if (idx < 0 || idx >= BLOC2_QUIZ_QUESTIONS.length) return;
+      b2CurrentQIdx = idx;
+      const q = BLOC2_QUIZ_QUESTIONS[idx];
+
+      const counterEl = document.getElementById('b2QCounter');
+      const catEl = document.getElementById('b2QCategory');
+      const ctxEl = document.getElementById('b2QContext');
+      const promptEl = document.getElementById('b2QPrompt');
+      const optListEl = document.getElementById('b2OptionsList');
+      const fbBoxEl = document.getElementById('b2FeedbackBox');
+      const prevBtn = document.getElementById('b2PrevQBtn');
+      const nextBtn = document.getElementById('b2NextQBtn');
+
+      if (counterEl) counterEl.textContent = `Question ${idx + 1} / ${BLOC2_QUIZ_QUESTIONS.length}`;
+      if (catEl) catEl.textContent = q.category;
+      if (ctxEl) ctxEl.innerHTML = `<strong>Contexte :</strong> ${q.context}`;
+      if (promptEl) promptEl.textContent = q.prompt;
+
+      if (prevBtn) prevBtn.disabled = (idx === 0);
+      if (nextBtn) nextBtn.disabled = (idx === BLOC2_QUIZ_QUESTIONS.length - 1);
+
+      // Mettre à jour les pilules de navigation
+      for (let i = 0; i < BLOC2_QUIZ_QUESTIONS.length; i++) {
+        const pill = document.getElementById('b2Pill_' + i);
+        if (pill) {
+          pill.classList.remove('current');
+          if (i === idx) pill.classList.add('current');
+          if (b2UserAnswers[i]) {
+            if (b2UserAnswers[i] === BLOC2_QUIZ_QUESTIONS[i].correctLetter) {
+              pill.classList.add('answered-correct');
+              pill.classList.remove('answered-wrong');
+            } else {
+              pill.classList.add('answered-wrong');
+              pill.classList.remove('answered-correct');
+            }
+          } else {
+            pill.classList.remove('answered-correct', 'answered-wrong');
+          }
+        }
+      }
+
+      // Rendre les options
+      if (optListEl) {
+        optListEl.innerHTML = '';
+        const answeredLetter = b2UserAnswers[idx];
+
+        q.options.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'b2-option-btn';
+          btn.id = `b2Opt_${idx}_${opt.letter}`;
+          btn.innerHTML = `<span class="b2-opt-letter">${opt.letter}</span> <span>${opt.text}</span>`;
+
+          if (answeredLetter) {
+            btn.disabled = true;
+            if (opt.letter === q.correctLetter) {
+              btn.classList.add('b2-correct');
+            } else if (opt.letter === answeredLetter) {
+              btn.classList.add('b2-wrong');
+            }
+          } else {
+            btn.onclick = () => selectB2Option(opt.letter);
+          }
+          optListEl.appendChild(btn);
+        });
+      }
+
+      // Afficher ou masquer le feedback
+      if (fbBoxEl) {
+        const answeredLetter = b2UserAnswers[idx];
+        if (answeredLetter) {
+          const isCorrect = (answeredLetter === q.correctLetter);
+          fbBoxEl.style.display = 'block';
+          fbBoxEl.className = 'b2-feedback-card ' + (isCorrect ? 'correct' : 'wrong');
+          fbBoxEl.innerHTML = `
+            <div class="b2-feedback-title">${isCorrect ? '✅ Excellent ! Réponse exacte' : '❌ Réponse inexacte'}</div>
+            <div style="font-size:0.92rem; line-height:1.55; color:var(--text-main); margin-bottom:10px;">
+              ${q.explanation}
+            </div>
+            <div class="b2-citation-badge">
+              📖 <span>${q.citation}</span>
+            </div>
+          `;
+        } else {
+          fbBoxEl.style.display = 'none';
+          fbBoxEl.innerHTML = '';
+        }
+      }
+    }
+
+    function selectB2Option(letter) {
+      if (b2UserAnswers[b2CurrentQIdx]) return; // Déjà répondu
+      b2UserAnswers[b2CurrentQIdx] = letter;
+      const q = BLOC2_QUIZ_QUESTIONS[b2CurrentQIdx];
+      const isCorrect = (letter === q.correctLetter);
+
+      updateB2ScoreUI();
+      renderB2Question(b2CurrentQIdx);
+
+      if (isCorrect) {
+        updateMascot("Bravo ! Excellente maîtrise du concept !", "happy");
+      } else {
+        updateMascot("Pas tout à fait. Examinez attentivement la justification théorique ci-dessous.", "study");
+      }
+    }
+
+    function navB2Question(delta) {
+      const newIdx = b2CurrentQIdx + delta;
+      if (newIdx >= 0 && newIdx < BLOC2_QUIZ_QUESTIONS.length) {
+        renderB2Question(newIdx);
+      }
+    }
+
+    function resetB2Quiz() {
+      if (Object.keys(b2UserAnswers).length > 0) {
+        if (!confirm("Voulez-vous vraiment réinitialiser vos réponses pour ce quiz du Bloc 2 ?")) {
+          return;
+        }
+      }
+      b2UserAnswers = {};
+      updateB2ScoreUI();
+      renderB2Question(0);
+      showToast("Quiz Bloc 2 réinitialisé.");
+    }
+
+    // --- FLASHCARDS 3D CONTROLLER ---
+    function filterB2Cards(category) {
+      b2CurrentCardFilter = category;
+      ['All', 'Aero', 'Sante', 'Methodo'].forEach(c => {
+        const btn = document.getElementById('b2FcFilter' + c);
+        if (btn) btn.classList.remove('active');
+      });
+      const activeBtnId = category === 'all' ? 'b2FcFilterAll' :
+                          category === 'aero' ? 'b2FcFilterAero' :
+                          category === 'sante' ? 'b2FcFilterSante' : 'b2FcFilterMethodo';
+      const activeBtn = document.getElementById(activeBtnId);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (category === 'all') {
+        b2FilteredCardIndices = BLOC2_FLASHCARDS.map((_, i) => i);
+      } else {
+        b2FilteredCardIndices = [];
+        BLOC2_FLASHCARDS.forEach((card, i) => {
+          if (card.category === category) b2FilteredCardIndices.push(i);
+        });
+      }
+      b2CurrentCardPos = 0;
+      renderB2Card();
+    }
+
+    function renderB2Card() {
+      const scene = document.getElementById('b2CardScene');
+      if (scene) scene.classList.remove('flipped');
+
+      if (b2FilteredCardIndices.length === 0) return;
+      const cardIdx = b2FilteredCardIndices[b2CurrentCardPos];
+      const card = BLOC2_FLASHCARDS[cardIdx];
+
+      const tagEl = document.getElementById('b2CardFrontTag');
+      const titleEl = document.getElementById('b2CardFrontTitle');
+      const bodyEl = document.getElementById('b2CardFrontBody');
+      const backTitleEl = document.getElementById('b2CardBackTitle');
+      const backBodyEl = document.getElementById('b2CardBackBody');
+      const counterEl = document.getElementById('b2CardCounter');
+
+      if (tagEl) tagEl.textContent = card.tag;
+      if (titleEl) titleEl.textContent = card.title;
+      if (bodyEl) bodyEl.textContent = card.front;
+      if (backTitleEl) backTitleEl.textContent = card.backTitle;
+      if (backBodyEl) backBodyEl.innerHTML = card.back;
+      if (counterEl) counterEl.textContent = `Carte ${b2CurrentCardPos + 1} / ${b2FilteredCardIndices.length}`;
+
+      // Mettre à jour l'état visuel des boutons de notation
+      const rateAgain = document.querySelector('.b2-fc-rate-btn.again');
+      const rateMastered = document.querySelector('.b2-fc-rate-btn.mastered');
+      const currentRating = b2CardRatings[card.id];
+      if (rateAgain) rateAgain.style.outline = currentRating === 'again' ? '2px solid #dc2626' : '';
+      if (rateMastered) rateMastered.style.outline = currentRating === 'mastered' ? '2px solid #16a34a' : '';
+    }
+
+    function flipB2Card() {
+      const scene = document.getElementById('b2CardScene');
+      if (scene) scene.classList.toggle('flipped');
+    }
+
+    function navB2Card(delta) {
+      if (b2FilteredCardIndices.length === 0) return;
+      b2CurrentCardPos = (b2CurrentCardPos + delta + b2FilteredCardIndices.length) % b2FilteredCardIndices.length;
+      renderB2Card();
+    }
+
+    function rateB2Card(rating) {
+      if (b2FilteredCardIndices.length === 0) return;
+      const cardIdx = b2FilteredCardIndices[b2CurrentCardPos];
+      const card = BLOC2_FLASHCARDS[cardIdx];
+      b2CardRatings[card.id] = rating;
+
+      try {
+        localStorage.setItem('psy7010_b2_card_ratings', JSON.stringify(b2CardRatings));
+      } catch (e) {}
+
+      if (rating === 'mastered') {
+        showToast(`Fiche « ${card.title} » marquée comme maîtrisée ! ✅`);
+        setTimeout(() => {
+          navB2Card(1);
+        }, 300);
+      } else {
+        showToast(`Fiche « ${card.title} » ajoutée aux révisions prioritaires. ⚠️`);
+        renderB2Card();
+      }
+    }
+
+    window.switchB2SubTab = switchB2SubTab;
+    window.selectB2Option = selectB2Option;
+    window.navB2Question = navB2Question;
+    window.resetB2Quiz = resetB2Quiz;
+    window.filterB2Cards = filterB2Cards;
+    window.flipB2Card = flipB2Card;
+    window.navB2Card = navB2Card;
+    window.rateB2Card = rateB2Card;
+
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
       initSplitDivider();
@@ -8997,6 +10127,7 @@ const allQuestions = [
       }
 
       // 3. Initialiser la vue active du Hub
+      initB2Training();
       switchHubModule(currentHubModule);
     });
 
@@ -10319,6 +11450,11 @@ const allQuestions = [
         qp.style.maxWidth = '';
       }
 
+      const splitDivider = document.getElementById('splitDivider');
+      if (splitDivider && typeof currentHubModule !== 'undefined' && currentHubModule === 'bloc1') {
+        splitDivider.style.display = isCompactUI() ? 'none' : '';
+      }
+
       if (layoutSetting === 'auto') {
         if (isVertical) {
           container.classList.add('layout-vertical');
@@ -10392,6 +11528,7 @@ function setMobileView(view) {
       if (!isCompactUI()) {
         if (qPane) qPane.style.display = '';
         if (rPane) rPane.style.display = '';
+        if (splitDivider) splitDivider.style.display = '';
         if (optResources) optResources.style.display = '';
         if (fcOptBanner) fcOptBanner.style.display = '';
         if (podcastBanner) podcastBanner.style.display = '';
@@ -10430,6 +11567,7 @@ function setMobileView(view) {
       }
 
       // Mode compact / Mobile : affichage selon la vue demandée SANS forcer scrollTop = 0
+      if (splitDivider) splitDivider.style.display = 'none';
       if (view === 'activity') {
         if (qPane) qPane.style.display = 'block';
         if (rPane) rPane.style.display = 'none';
@@ -10548,6 +11686,10 @@ let previousIsCompact = isCompactUI();
           quizPane.style.flex = '0 0 ' + newW + 'px';
           quizPane.style.width = newW + 'px';
           quizPane.style.maxWidth = 'none';
+          const rPane = document.getElementById('readerPane');
+          if (rPane) {
+            rPane.style.flex = '1 1 0%';
+          }
         }
       });
 
@@ -10566,6 +11708,12 @@ let previousIsCompact = isCompactUI();
         quizPane.style.height = '';
         quizPane.style.maxHeight = '';
         quizPane.style.maxWidth = '';
+        const rPane = document.getElementById('readerPane');
+        if (rPane) {
+          rPane.style.flex = '';
+          rPane.style.width = '';
+          rPane.style.height = '';
+        }
       });
 
       // Support tactile / écrans tactiles
@@ -10590,6 +11738,10 @@ let previousIsCompact = isCompactUI();
           quizPane.style.flex = '0 0 ' + newW + 'px';
           quizPane.style.width = newW + 'px';
           quizPane.style.maxWidth = 'none';
+          const rPane = document.getElementById('readerPane');
+          if (rPane) {
+            rPane.style.flex = '1 1 0%';
+          }
         }
       }, { passive: true });
 
@@ -11322,7 +12474,7 @@ let previousIsCompact = isCompactUI();
       updateMascot("Mode Test. Configure tes paramètres pour démarrer une évaluation chronométrée.", "study");
     }
 
-    /* --- GESTION DU VOLUME ET DU MODE MUET DU PODCAST (DEMANDE MICHEL) --- */
+    /* --- GESTION DU VOLUME ET DU MODE MUET DU PODCAST --- */
     let lastAudioVolume = 1.0;
 
     function updateVolumeUI(volume, isMuted) {
