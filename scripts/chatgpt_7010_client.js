@@ -171,6 +171,62 @@ async function main() {
         `;
         const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
         console.log(res || '(Aucun message assistant)');
+    } else if (command === 'inspect') {
+        const script = `
+            (() => {
+                const turns = Array.from(document.querySelectorAll('[data-testid*="conversation-turn"]'));
+                const stopBtn = document.querySelector('button[data-testid="stop-button"], button[aria-label*="Stop" i], button[aria-label*="Arrêter" i]');
+                const sendBtn = document.querySelector('button[data-testid="send-button"], button[aria-label*="Send" i]');
+                const allButtons = Array.from(document.querySelectorAll('button')).map(b => b.innerText || b.getAttribute('aria-label') || '').filter(Boolean);
+                const lastTurn = turns.length > 0 ? turns[turns.length - 1] : null;
+                const text = lastTurn ? lastTurn.innerText : '';
+                return {
+                    turnsCount: turns.length,
+                    hasStopBtn: !!stopBtn,
+                    hasSendBtn: !!sendBtn,
+                    buttonsSnippet: allButtons.slice(-10),
+                    textLength: text.length,
+                    fullText: text
+                };
+            })()
+        `;
+        const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
+        console.log(JSON.stringify(res, null, 2));
+    } else if (command === 'dump') {
+        const script = `
+            (() => {
+                const turns = Array.from(document.querySelectorAll('[data-testid*="conversation-turn"]'));
+                const lastTurn = turns.length > 0 ? turns[turns.length - 1] : null;
+                if (!lastTurn) return 'Aucun tour';
+                const paragraphs = Array.from(lastTurn.querySelectorAll('p, h1, h2, h3, li')).map(p => p.innerText).filter(Boolean);
+                const spin = lastTurn.querySelector('.animate-spin, [class*="spin"], [class*="loading"], [class*="pulse"]');
+                return {
+                    paragraphsCount: paragraphs.length,
+                    firstParagraphs: paragraphs.slice(0, 5),
+                    lastParagraphs: paragraphs.slice(-5),
+                    hasSpinner: !!spin,
+                    fullTextLength: lastTurn.innerText.length
+                };
+            })()
+        `;
+        const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
+        console.log(JSON.stringify(res, null, 2));
+    } else if (command === 'tools') {
+        const script = `
+            (() => {
+                const turns = Array.from(document.querySelectorAll('[data-testid*="conversation-turn"]'));
+                const lastTurn = turns.length > 0 ? turns[turns.length - 1] : null;
+                if (!lastTurn) return 'Aucun tour';
+                const buttons = Array.from(lastTurn.querySelectorAll('button')).map(b => ({
+                    text: b.innerText,
+                    aria: b.getAttribute('aria-label'),
+                    expanded: b.getAttribute('aria-expanded')
+                }));
+                return buttons;
+            })()
+        `;
+        const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
+        console.log(JSON.stringify(res, null, 2));
     } else if (command === 'save-last') {
         const targetPath = args[1];
         if (!targetPath) {

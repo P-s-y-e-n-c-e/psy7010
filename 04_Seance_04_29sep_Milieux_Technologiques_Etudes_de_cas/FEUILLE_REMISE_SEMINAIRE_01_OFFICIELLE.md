@@ -8,55 +8,64 @@
 
 ---
 
-### 🎯 CONSIGNES OFFICIELLES DU COURS (RÉF. SÉANCE 3 & PLAN DE COURS)
+### 🎯 CONSIGNES OFFICIELLES DU SÉMINAIRE (SÉANCE 3 & PLAN DE COURS)
 - Remise obligatoire d'**une feuille écrite de deux questions critiques ouvertes** à la fin du séminaire.
-- Une question ciblée sur l'accident aérien du **Vol AF-447** (Airbus A330).
-- Une question ciblée sur l'étude d'ergonomie hospitalière de **Lin et al. (1998)** (Pompe PCA Lifecare 4100).
-- Posture d'ingénierie cognitive : questions spécifiques et ouvertes engageant un véritable débat d'ingénierie des facteurs humains, sans trivialité administrative ni questions fermées (oui/non).
+- **Question 1 :** Cas d'ingénierie aérospatiale du **Vol AF-447** (Airbus A330).
+- **Question 2 :** Cas d'ergonomie médicale et hospitalière de **Lin et al. (1998)** (Pompe PCA Lifecare 4100).
+- **Format exigé :** Structure concise en trois volets (*Constat observable sans jargon > Concept théorique précis > Question ouverte sur un compromis de conception*), calibrée pour une prise de parole percutante de 15 secondes.
+- **Exclusivité :** Ces questions sont réservées à la remise notée de Michel et sont distinctes des banques publiques de la cohorte.
 
 ---
 
-## ✈️ QUESTION 1 — CAS AF-447 : DISPONIBILITÉ DE L'ALARME ET GOUFFRE D'ÉVALUATION
+## ✈️ QUESTION 1 — VOL AF-447 : COORDINATION DES COMMANDES ET RETOUR HAPTIQUE
 
-### 📝 Texte officiel à imprimer pour la remise (28 mots) :
-> **« Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »**
+### 📝 Texte officiel à imprimer pour la remise (30 mots — ~12 secondes) :
+> **« Sur AF447, les mini-manches ne sont pas mécaniquement couplés. Cela interroge la conscience partagée d’Endsley. Comment tester un retour haptique pour améliorer la coordination sans gêner la reprise de priorité ? »**
 
-### 🔍 Décorticage et rigueur factuelle :
-1. **Fait technique documenté (Rapport BEA) :** Lorsque la vitesse mesurée chute sous 60 nœuds, les calculateurs ADR considèrent les mesures d'incidence comme invalides et coupent l'alarme de décrochage. Lors des actions de récupération à piquer, la reprise de vitesse réadmet les calculs et réactive immédiatement l'avertisseur sonore alors que l'appareil est toujours en décrochage.
-2. **Concept d'ingénierie cognitive :** *Gouffre d'évaluation de Norman*. Le retour d'information du système entre en contradiction directe avec la logique d'action de l'opérateur (le silence suggère faussement la résolution du danger ; l'action corrective salvatrice est punie par une alarme stridente).
-3. **Compromis de conception (*Trade-off*) :** Transmission d'une information utile et intègre vs surcharge attentionnelle, distraction ou retard de réaction en phase critique.
-4. **Question de relance pour la discussion orale en classe :**
-   * *« Quels résultats expérimentaux ou observations en simulateur conduiraient à rejeter un signal d'indisponibilité malgré une meilleure compréhension subjectivement déclarée par les pilotes ? »*
-
----
-
-## 🏥 QUESTION 2 — CAS LIN ET AL. (1998) : EFFET PROPRE DE LA VUE D'ENSEMBLE
-
-### 📝 Texte officiel à imprimer pour la remise (31 mots) :
-> **« Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »**
-
-### 🔍 Décorticage et rigueur factuelle :
-1. **Fait expérimental documenté (Lin et al., 1998) :** L'étude compare deux interfaces simulées sur 12 infirmières. La refonte est multicomposante (dialogue, vue d'ensemble en 4 fenêtres titrées, libellés, récupération). Les erreurs de programmation passent de 20 à 10. La charge mentale mesurée au NASA-TLX présente une baisse statistiquement ambiguë ($p = 0.12$ à l'ANOVA bilatérale, $p < 0.025$ au test unilatéral) sur des moyennes initialement très faibles (15 % vs 7 %).
-2. **Concept d'ingénierie cognitive :** *Externalisation de la mémoire de travail (Norman / Zhang & Norman)*. La vue d'ensemble structure le modèle mental de l'opérateur et offre une rétroaction d'état immédiate après une suspension de tâche.
-3. **Compromis de conception (*Trade-off*) :** Validité interne (isoler chirurgicalement l'effet propre de la vue d'ensemble par protocole d'ablation) vs Validité écologique (évaluer l'efficacité systémique et la synergie de l'interface en situation hospitalière réelle).
-4. **Question de relance pour la discussion orale en classe :**
-   * *« Quelles preuves de transfert vers un dispositif physique et des utilisateurs expérimentés, et quels risques nouveaux (encombrement visuel, surconfiance) faudrait-il examiner avant d'autoriser un déploiement hospitalier progressif ? »*
+### 🔍 Décorticage et rigueur scientifique :
+1. **Constat de terrain observable (Rapport officiel BEA) :** Sur l'Airbus A330, les mini-manches latéraux (*side-sticks*) sont indépendants et dépourvus de liaison mécanique. En cas d'actions simultanées, le système effectue une sommation algébrique des ordres avec alerte sonore/visuelle (*Dual Input*), mais aucun retour d'effort physique n'informe passivement un pilote du mouvement imprimé par son collègue.
+2. **Concept d'ingénierie cognitive :** *Conscience de la situation partagée (Shared Situation Awareness — Endsley)*. Dans un cockpit multipilote en situation d'urgence, la coordination repose sur la perception mutuelle immédiate des actions en cours sans exiger une redirection du regard vers des témoins visuels.
+3. **Compromis de conception (*Trade-off*) :** Restitution de la transparence sensorielle et de la coordination intuitive vs risque de confusion biomécanique, de résistance tactile involontaire ou de perturbation lors d'une reprise d'urgence de la priorité de pilotage.
+4. **Question de relance pour la discussion orale :**
+   * *« Professeur Passalacqua [ou Professeur Fiset], quel protocole d'évaluation permettrait de décider si un retour haptique apporte un bénéfice net, lorsque l'on teste systématiquement un signal erroné, une indisponibilité capteur et une reprise de priorité sous stress ? »*
 
 ---
 
-## 🧭 ANCRAGE MÉTHODOLOGIQUE DANS LA DÉMARCHE EN 4 ÉTAPES (PASSALACQUA & BÉDARD)
+## 🏥 QUESTION 2 — CAS LIN ET AL. (1998) : REPRISE DE PROGRAMMATION ET REVALIDATION
 
-| Étape de la démarche | Dossier AF-447 (Aviation) | Dossier Lin et al. 1998 (Santé) |
+### 📝 Texte officiel à imprimer pour la remise (32 mots — ~13 secondes) :
+> **« Chez Lin, REVIEW/CHANGE change de fonction selon l’étape. Le délai de reprise après interruption reste à évaluer. Comment tester une revalidation obligatoire des réglages sans retarder les soins ni favoriser les contournements ? »**
+
+### 🔍 Décorticage et rigueur scientifique :
+1. **Constat de terrain observable (Lin et al., 1998) :** Dans la pompe PCA Lifecare 4100, la commande `REVIEW/CHANGE` présente une ambiguïté contextuelle : elle permet de reculer d'un pas pendant la saisie des paramètres, mais fait avancer séquentiellement dans la révision une fois la programmation amorcée.
+2. **Concept d'ingénierie cognitive :** *Délai de reprise cognitive (Resumption Lag — Altmann & Trafton)* et *Fonctions de forçage (Norman)*. Lors d'une interruption clinique imprévue au chevet du patient, l'opérateur doit reconstruire l'état exact de la machine avant d'agir.
+3. **Compromis de conception (*Trade-off*) :** Sécurisation algorithmique par revalidation bloquante systématique vs charge temporelle en soins intensifs et risque d'induire des contournements informels (*workarounds*) par le personnel soignant.
+4. **Question de relance pour la discussion orale :**
+   * *« Professeur Passalacqua, à guidage et limites de dose identiques, quelles données probantes vous feraient retenir ou rejeter une étape de revalidation obligatoire après interruption, en mesurant à la fois les erreurs résiduelles, les délais de soin et les contournements clandestins ? »*
+
+---
+
+## 🧭 MATRICE MÉTHODOLOGIQUE DES 4 ÉTAPES (PASSALACQUA & BÉDARD)
+
+| Étape de la démarche | Question 1 : AF-447 (Aviation civile) | Question 2 : Lin et al. 1998 (Santé hospitalière) |
 |---|---|---|
-| **1. COMPRENDRE**<br>*(Observable ≠ Pensée sous-jacente)* | Distinguer rigoureusement l'état physique de l'aéronef, les données mesurées par les sondes, l'état de disponibilité de l'alarme et l'interprétation mentale des pilotes sans présumer d'un « conditionnement ». | Décomposer finement les étapes de programmation, les informations à maintenir en mémoire de travail et les stratégies de récupération post-interruption. |
-| **2. CONCEVOIR**<br>*(Allocation de fonctions & Trade-offs)* | Comparer plusieurs modalités sensorielles de signalisation de l'indisponibilité (visuelle, auditive discrète) sans présumer qu'un ajout visuel sera spontanément supérieur. | Construire des variantes de prototypes permettant de tester spécifiquement la vue d'ensemble de manière dissociée des autres modifications d'interface. |
-| **3. ÉVALUER**<br>*(Dwell D83 : Traque des effets imprévus)* | Mesurer objectivement les délais de reconnaissance, les confusions de mode et les erreurs nouvelles en intégrant des scénarios dégradés et hors-enveloppe au simulateur. | Contrôler l'ordre d'exposition et l'effet d'apprentissage ; mesurer séparément le taux d'erreurs, le temps de récupération et la charge subjective sous interruptions calibrées. |
-| **4. DÉPLOYER**<br>*(Validité contextuelle — Bédard)* | Analyser l'intégration technique aux calculateurs existants, la formation de transition des équipages et les critères de réexamen post-mise en service. | Valider le transfert sur automate physique réel avec des soignants expérimentés ; chiffrer les coûts de transition et anticiper les risques liés à la coexistence de parcs hétérogènes. |
+| **1. COMPRENDRE**<br>*(Observable ≠ Pensée sous-jacente)* | Reconstituer précisément les commandes, les alertes d'affichage, les annonces vocales et les transferts de priorité ; identifier les vecteurs sensoriels effectivement disponibles sans présumer des intentions internes des pilotes. | Observer in situ les interruptions réelles au chevet, la structure des états de programmation et les stratégies spontanées de reprise ; distinguer une reprise motrice rapide d'une reprise cognitivement correcte. |
+| **2. CONCEVOIR**<br>*(Allocation de fonctions & Trade-offs)* | Modéliser l'information transmise par un retour d'effort actif (*Active Inceptors*) et anticiper ses interactions avec les logiques de désengagement et de bouton de priorité. | Comparer une assistance visuelle à la reprise d'état avec une fonction de forçage exigeant une revalidation active, à limites de dose pharmacologiques inchangées. |
+| **3. ÉVALUER**<br>*(Traque systématique des effets pervers)* | Tester en simulateur sous charge élevée les scénarios critiques : absence de retour, retour erroné, actions asynchrones et mesure du délai de résolution effective du conflit. | Évaluer en protocole double tâche avec interruptions contrôlées : mesurer les erreurs de titration, le temps de récupération, les retards d'administration et les tentatives de validation aveugle. |
+| **4. DÉPLOYER**<br>*(Validité contextuelle et terrain — Bédard)* | Analyser l'intégration technique aux calculateurs avioniques, la formation sur les nouveaux modes de défaillance haptique et le suivi de maintenance opérationnelle. | Valider le transfert sur automate physique en service clinique réel avec des infirmières en rotation de nuit ; suivre l'émergence d'éventuels contournements procéduraux organisationnels. |
 
 ---
 
-### ⚖️ ATTESTATION DE CONVERGENCE DIALECTIQUE (DEEPTHINK ↔ GPT-6)
-- **Cycle dialectique :** 2 passes complètes exécutées de manière strictement séquentielle.
-- **Vérification épistémique :** Éradication totale des extrapolations non prouvées (suppression du dogme de « conditionnement » et de la fausse « éradication d'erreurs mortelles »).
-- **Ressources contrôlées :** Rapport officiel BEA, texte intégral Lin et al. (1998), chapitre Cañas (2011), transcription GOLD Séance 3 Passalacqua/Bédard.
-- **Statut final :** Document certifié étalon-or, prêt pour impression et soutenance.
+## 💼 QUESTIONS DE RÉSERVE (VARIANTE MÉTHODOLOGIQUE B)
+*Si la discussion de classe aborde déjà les mini-manches ou les interruptions hospitalières, utiliser cette seconde paire entièrement calibrée :*
+
+- **Variante AF-447 (Disponibilité de l'alarme — 28 mots) :**  
+  > *« Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »*
+- **Variante Lin et al. (Vue d'ensemble et mémoire de travail — 31 mots) :**  
+  > *« Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »*
+
+---
+
+### 🏛️ VALIDATION SCIENTIFIQUE ET FACTUELLE
+- **Sources primaires contrôlées :** Rapport officiel du BEA (Vol AF-447), article original Lin, Isla, Donchin et al. (1998, *Human Factors*), chapitre 13 Cañas (2011), enseignements magistraux des Prs Passalacqua et Bédard.
+- **Rigueur éditoriale :** Document exempt de tout jargon interne de développement, directement imprimable pour la remise officielle du mardi 29 septembre 2026.
