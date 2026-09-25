@@ -166,3 +166,16 @@ Ce fichier définit les directives absolues et les compétences automatisées po
    - La session Contenu Web (`27764a31`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
    - La session Quartier Général (`d6fea03c`) a la charge de supervision de rejeter tout livrable ne fournissant pas la preuve formelle de cette télémétrie avant de clore un mandat.
 
+---
+
+## 🏛️ 7. Règle d'Or d'Hygiène Éditoriale Publique : Zéro Jargon Interne, Zéro Fuite Personnelle
+
+> [!CAUTION]
+> **Étanchéité Totale entre la Plomberie Interne et les Livrables Publics :**
+> Le site web (`index.html`) et toutes les banques de révision sont des supports académiques officiels consultables par les pairs de la cohorte et les professeurs de l'UQAM.
+> Il est formellement interdit d'y faire figurer :
+> 1. **Toute interpellation ou référence personnelle nominative :** Jamais de « Coucou Michel », de prénom ou de marqueur d'identité de l'étudiant dans le code ou les textes publics.
+> 2. **Tout jargon d'ingénierie et de conception interne :** Jamais de termes comme « étalon-or », « verbatim GOLD », « boucle dialectique DeepThink ➔ GPT-6 », « session Contenu », « session Maintenance », ni aucune allusion aux coulisses des modèles ou des prompts.
+> 3. **Rigueur Terminologique et Ton Académique :** Toutes les formulations doivent adopter une posture pédagogique, clinique et universitaire irréprochable (UQAM, Maîtrise en sciences psychologiques appliquées, Pr Mario Passalacqua, Pr Marc-André Bédard). Les références aux enseignements doivent citer les concepts, les thématiques et les discussions magistrales réelles, et non des artefacts techniques de transcription.
+
+
