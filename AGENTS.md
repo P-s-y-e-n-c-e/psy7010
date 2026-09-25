@@ -148,3 +148,21 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 3. **Le Git comme Pont Public :** GPT-6 n'inspecte que le code et les fichiers poussés sur GitHub (`https://github.com/P-s-y-e-n-c-e/psy7010`).
 4. **Saturation Asymptotique ($\Delta \le 1\%$) :** Pousser les analyses jusqu'au fond sans accepter de premier jet.
 5. **Zéro Faux Positif, Zéro Faux Négatif :** Rigueur psychométrique absolue sur toutes les questions.
+
+---
+
+## 🛡️ 6. Règle d'Incorruptibilité Télémétrique : Vérification Systématique du Modèle Réel (Anti-Faux Positif Gemini)
+
+> [!CAUTION]
+> **Interdiction Formelle de se Fier au Sélecteur d'Entrée :**
+> Le bouton de sélection de mode au bas de l'interface Gemini (`mode-picker`) indique uniquement le préréglage du prochain message. Lors d'une micro-coupure réseau, d'un rechargement ou d'un timeout Google, l'interface web bascule silencieusement en mode standard `Gemini 3.1 Pro`.
+
+1. **Vérification Obligatoire sur la Réponse Déjà Générée :**
+   - Tout script ou agent automatisant Gemini doit obligatoirement cliquer sur le menu `More` (`button[aria-label*="more" i]`) du conteneur `model-response` correspondant.
+   - Il doit parser textuellement la ligne officielle du menu : `Model: 3.1 Deep Think`.
+2. **Garde-Fou Bloquant :**
+   - Si la ligne indique `Model: 3.1 Pro` ou toute mention sans `Deep Think`, la réponse est **formellement rejetée** et ne doit sous aucun prétexte être enregistrée, poussée sur GitHub ni soumise à l'audit.
+3. **Responsabilité Conjointe (Contenu & Quartier Général) :**
+   - La session Contenu Web (`27764a31`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
+   - La session Quartier Général (`d6fea03c`) a la charge de supervision de rejeter tout livrable ne fournissant pas la preuve formelle de cette télémétrie avant de clore un mandat.
+
