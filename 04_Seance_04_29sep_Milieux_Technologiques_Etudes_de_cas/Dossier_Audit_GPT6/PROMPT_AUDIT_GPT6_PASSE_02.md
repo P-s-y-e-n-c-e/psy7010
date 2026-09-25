@@ -29,8 +29,12 @@ Vous devez exécuter un audit de contrôle sans complaisance selon les 4 critèr
    - Les formulations de DeepThink atteignent-elles le niveau d'incisivité requis pour le séminaire de 10 % face aux professeurs (Passalacqua, Bédard, Fiset) ?
    - Confrontation : Comparez les formulations finales de DeepThink avec vos propres contre-propositions de Passe 1. Laquelle offre la meilleure valeur ajoutée pédagogique ?
 
-3. **Validation de l'ancrage méthodologique (Passalacqua) :**
-   - Les compromis de terrain (*trade-offs*) à travers les 4 étapes (*Comprendre ➔ Concevoir ➔ Évaluer ➔ Déployer*) sont-ils scientifiquement étayés sans dogmatisme ?
+3. **Validation de l'ancrage méthodologique et terrain (Passalacqua & Bédard — Séance 3 GOLD) :**
+   - **Comprendre :** Respect du principe directeur *« L'erreur humaine décrit le résultat, jamais la cause »* ([00:26:37]) et de la règle *« Observable ≠ Pensée sous-jacente »* ([01:28:59]). Triangulation méthodologique stricte (faillibilité isolée du physio, du perceptuel et de l'observé).
+   - **Concevoir & Compromis (Trade-offs) :** Prise en compte de l'allocation de fonctions (*Function Allocation*) et des **Ironies de l'automatisation de Bainbridge** (complaisance sous charge faible, perte de conscience de la situation *out-of-the-loop* lors de la reprise en manuel).
+   - **Évaluer (Dwell majeur D83) :** Traque systématique des conséquences secondaires imprévues (*« Ne pas seulement regarder ce qu'on pense qui est important, regarder plus gros et voir ce qu'on n'a pas prévu »* [01:53:41]).
+   - **Déployer (Intervention Bédard) :** Validité écologique et contextuelle (*« Est-ce que ça marche dans ce contexte spécifique ? No one-size-fits-all »* [02:20:02]) et faisabilité organisationnelle réelle.
+   - **Posture Séminaire 1 (Pr Mario Fiset) :** Questions spécifiques, ouvertes, engageant un véritable débat d'ingénierie cognitive, excluant toute trivialité administrative ([02:28:35]).
 
 4. **Mesure formelle du Delta de convergence ($\Delta$) :**
    - Estimez rigoureusement le gain ou l'écart résiduel : sommes-nous parvenus à la saturation asymptotique ($\Delta \le 1\%$) autorisant la certification étalon-or pour la feuille de remise, ou subsiste-t-il une anomalie justifiant une Passe 3 ?
