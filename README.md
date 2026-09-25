@@ -47,7 +47,8 @@ PSY7010/
 ├── 03_Seance_03_22sep_Milieux_Technologiques/
 │   ├── INSTRUCTIONS_ET_REGLES_SEANCE_03.md
 │   ├── notes_seance_03_2026-09-22.md
-│   ├── Diapos/                            <-- Réservé pour les diapos dès parution
+│   ├── Diapos/
+│   │   └── PSY7010_22_septembre.pdf       <-- Déposé le 22 sept. (92 diapos, 1 diapo/page)
 │   └── Lectures_et_Articles/
 │       ├── 1-CANAS2011(CHAP-13-humanFactor).pdf
 │       ├── A_Qu_est_ce_que_les_facteurs_humains.md
