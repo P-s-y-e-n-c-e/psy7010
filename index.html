@@ -2874,11 +2874,150 @@
       color: var(--text-main);
       margin: 0 0 4px 0;
     }
-    .timeline-info p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
+    /* VUE SÉMINAIRE 1 — FEUILLE OFFICIELLE */
+    .seminar-official-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 20px;
+      box-shadow: var(--card-shadow);
+    }
+    .seminar-official-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .seminar-tag-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #d97706;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    body.dark-mode .seminar-tag-gold {
+      color: #fbbf24;
+      background: rgba(245, 158, 11, 0.22);
+    }
+    .seminar-q-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+    .seminar-q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .seminar-q-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
       margin: 0;
-      line-height: 1.4;
+    }
+    .seminar-quote-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 12px 0 16px 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--text-main);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+    .seminar-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .seminar-copy-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    .seminar-copy-btn.secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+    .seminar-copy-btn.secondary:hover {
+      background: var(--bg-card-alt);
+    }
+    .seminar-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.55;
+    }
+    .seminar-breakdown-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .seminar-breakdown-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .seminar-table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+    }
+    .seminar-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .seminar-table th, .seminar-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+      text-align: left;
+    }
+    .seminar-table th {
+      background: var(--bg-card-alt);
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .seminar-table tr:last-child td {
+      border-bottom: none;
     }
 
     @media (max-width: 768px) {
@@ -3215,20 +3354,152 @@
         <div class="hub-hero-card">
           <div class="hub-hero-header">
             <div>
-              <span class="hub-hero-badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border-color: rgba(56, 189, 248, 0.4);">✈️ Séminaire 1 • Mandat Équipe 1</span>
-              <h2 class="hub-hero-title">Vol Air France 447 &amp; Grille d'analyse Lin et al. (1998)</h2>
-              <div class="hub-hero-subtitle">Étude des défaillances d'automatisation, des pertes de SA et de l'ergonomie des cockpits</div>
+              <span class="hub-hero-badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border-color: rgba(56, 189, 248, 0.4);">✈️ Séminaire 1 • 29 Septembre 2026 (10 %)</span>
+              <h2 class="hub-hero-title">Feuille Officielle de Remise — Vol AF447 &amp; Lin et al. (1998)</h2>
+              <div class="hub-hero-subtitle">Évaluateurs : Pr Mario Passalacqua (PhD) &amp; Pr Marc-André Bédard (PhD) | Conférencier invité : Pr Mario Fiset (Aviation civile)</div>
             </div>
-            <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
-              <span>🎯</span> <span>Revenir au Bloc 2</span>
-            </button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+                <span>🎯</span> <span>Revenir au Bloc 2</span>
+              </button>
+              <button type="button" class="seminar-copy-btn secondary" onclick="copyAllSeminarQuestions()">
+                <span>📄</span> <span>Copier les 2 Questions</span>
+              </button>
+            </div>
           </div>
-          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 16px 0;">
-            Le 1er juin 2009, l'Airbus A330 du vol AF447 s'abîme dans l'Atlantique suite au givrage des sondes Pitot. Cette catastrophe est l'archétype des <em>paradoxes de l'automatisation</em> (Bainbridge, 1983) et illustre parfaitement la grille de vulnérabilité des systèmes complexes développée par Lin, Essebier et Dekker (1998).
+          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 12px 0;">
+            <strong>Consignes officielles du cours :</strong> Remise obligatoire d'une feuille écrite de <strong>deux questions critiques ouvertes</strong> à la fin du séminaire. Posture d'ingénierie cognitive et facteurs humains : questions spécifiques ciblant des compromis de conception (<em>trade-offs</em>), sans questions fermées (oui/non) ni banalités administratives.
           </p>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span class="seminar-tag-gold">⭐ Certifié Étalon-Or</span>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">Boucle dialectique séquentielle DeepThink ↔ GPT-6 (Passe 2 validée, commit <code>7aad6ae</code>)</span>
+          </div>
         </div>
 
-        <h3 class="hub-section-title">🔍 Les 4 Dimensions d'Analyse (Lin et al., 1998)</h3>
+        <!-- BLOC QUESTIONS OFFICIELLES DE REMISE -->
+        <div class="seminar-official-box">
+          <div class="seminar-official-header">
+            <div>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">📝 Les Deux Questions Officielles à Remettre</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Texte calibré mot à mot pour impression et soutenance orale</p>
+            </div>
+          </div>
+
+          <!-- QUESTION 1 -->
+          <div class="seminar-q-card">
+            <div class="seminar-q-header">
+              <div>
+                <span class="hub-hero-badge" style="background: rgba(14, 165, 233, 0.12); color: #0284c7; border-color: rgba(14, 165, 233, 0.3);">✈️ Question 1 • Dossier AF-447 (Aviation)</span>
+                <h4 class="seminar-q-title" style="margin-top: 6px;">Disponibilité de l'alarme &amp; Gouffre d'évaluation de Norman</h4>
+              </div>
+              <button type="button" class="seminar-copy-btn" onclick="copySeminarQuestion(1)">
+                <span>📋</span> <span>Copier Q1 (28 mots)</span>
+              </button>
+            </div>
+
+            <div class="seminar-quote-box">
+              « Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »
+            </div>
+
+            <div class="seminar-breakdown">
+              <div class="seminar-breakdown-item">
+                <strong>🔍 Fait technique documenté (Rapport BEA)</strong>
+                Sous 60 nœuds, les calculateurs ADR invalident l'incidence et coupent l'avertisseur de décrochage (silence trompeur). Les manœuvres salvatrices à piquer font remonter la vitesse, ce qui réadmet les calculs et réactive brusquement l'alarme stridente alors que l'avion est encore en décrochage.
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>🧠 Concept théorique mobilisé</strong>
+                <em>Gouffre d'évaluation de Norman</em> (le retour sensoriel contredit directement la logique d'action de l'opérateur : le silence rassure à tort, l'action correctrice est punie par une alarme).
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>⚖️ Compromis de conception (Trade-off)</strong>
+                Transmission d'un signal explicite d'indisponibilité / invalidité vs risque de surcharge attentionnelle, distraction ou retard de réaction de l'équipage en situation critique.
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>🗣️ Question de relance pour la discussion orale en classe</strong>
+                <em>« Quels résultats expérimentaux ou observations en simulateur conduiraient à rejeter un signal d'indisponibilité malgré une meilleure compréhension subjectivement déclarée par les pilotes ? »</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUESTION 2 -->
+          <div class="seminar-q-card">
+            <div class="seminar-q-header">
+              <div>
+                <span class="hub-hero-badge" style="background: rgba(16, 185, 129, 0.12); color: #059669; border-color: rgba(16, 185, 129, 0.3);">🏥 Question 2 • Dossier Lin et al. 1998 (Santé)</span>
+                <h4 class="seminar-q-title" style="margin-top: 6px;">Effet propre de la vue d'ensemble &amp; Externalisation mnésique</h4>
+              </div>
+              <button type="button" class="seminar-copy-btn" onclick="copySeminarQuestion(2)">
+                <span>📋</span> <span>Copier Q2 (31 mots)</span>
+              </button>
+            </div>
+
+            <div class="seminar-quote-box">
+              « Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »
+            </div>
+
+            <div class="seminar-breakdown">
+              <div class="seminar-breakdown-item">
+                <strong>🔍 Fait expérimental documenté (Lin et al., 1998)</strong>
+                Étude sur 12 infirmières comparant l'interface originale et une refonte multicomposante (dialogue pas-à-pas, vue d'ensemble en 4 fenêtres titrées, libellés explicites). Les erreurs de programmation diminuent de 20 à 10. La baisse de charge subjective (NASA-TLX) demeure statistiquement ambiguë (<em>p = 0.12</em> à l'ANOVA bilatérale).
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>🧠 Concept théorique mobilisé</strong>
+                <em>Externalisation de la mémoire de travail (Norman / Zhang &amp; Norman)</em>. La structuration visuelle ancre le modèle mental et offre un feedback d'état immédiat après suspension de tâche.
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>⚖️ Compromis de conception (Trade-off)</strong>
+                Validité interne (isoler chirurgicalement l'effet propre de la vue d'ensemble via un protocole d'ablation) vs Validité écologique (synergie globale de l'interface en situation hospitalière réelle et bruyante).
+              </div>
+              <div class="seminar-breakdown-item">
+                <strong>🗣️ Question de relance pour la discussion orale en classe</strong>
+                <em>« Quelles preuves de transfert vers un dispositif physique et des utilisateurs expérimentés, et quels risques nouveaux (encombrement visuel, surconfiance) faudrait-il examiner avant d'autoriser un déploiement hospitalier progressif ? »</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DÉMARCHE EN 4 ÉTAPES -->
+        <div class="seminar-official-box">
+          <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--text-main); margin: 0 0 6px 0;">🧭 Ancrage Méthodologique : Démarche en 4 Étapes (Passalacqua &amp; Bédard)</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0 0 16px 0;">Structure d'ingénierie cognitive appliquée aux deux cas d'étude du Séminaire 1</p>
+
+          <div class="seminar-table-wrap">
+            <table class="seminar-table">
+              <thead>
+                <tr>
+                  <th style="width: 22%;">Étape de la Démarche</th>
+                  <th style="width: 39%;">✈️ Dossier AF-447 (Aviation)</th>
+                  <th style="width: 39%;">🏥 Dossier Lin et al. 1998 (Santé)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. COMPRENDRE</strong><br><span style="font-size: 0.78rem; color: var(--text-muted);">Observable ≠ Pensée sous-jacente</span></td>
+                  <td>Distinguer l'état physique de l'aéronef, les données mesurées par les sondes, l'état d'alarme et l'interprétation mentale des pilotes sans présumer d'un « conditionnement ».</td>
+                  <td>Décomposer finement les étapes de programmation de la pompe PCA, les informations maintenues en mémoire de travail et les stratégies de reprise post-interruption.</td>
+                </tr>
+                <tr>
+                  <td><strong>2. CONCEVOIR</strong><br><span style="font-size: 0.78rem; color: var(--text-muted);">Allocation de fonctions &amp; Trade-offs</span></td>
+                  <td>Comparer plusieurs modalités sensorielles de signalisation de l'indisponibilité (visuelle, auditive discrète) sans présumer qu'un ajout visuel sera spontanément supérieur.</td>
+                  <td>Construire des variantes de prototypes permettant de tester spécifiquement la vue d'ensemble de manière dissociée des autres modifications d'interface.</td>
+                </tr>
+                <tr>
+                  <td><strong>3. ÉVALUER</strong><br><span style="font-size: 0.78rem; color: var(--text-muted);">Dwell D83 : Traque des effets imprévus</span></td>
+                  <td>Mesurer objectivement les délais de reconnaissance, les confusions de mode et les erreurs nouvelles en intégrant des scénarios dégradés et hors-enveloppe au simulateur.</td>
+                  <td>Contrôler l'ordre d'exposition et l'effet d'apprentissage ; mesurer séparément le taux d'erreurs, le temps de récupération et la charge subjective sous interruptions calibrées.</td>
+                </tr>
+                <tr>
+                  <td><strong>4. DÉPLOYER</strong><br><span style="font-size: 0.78rem; color: var(--text-muted);">Validité contextuelle (Bédard)</span></td>
+                  <td>Analyser l'intégration technique aux calculateurs existants, la formation de transition des équipages et les critères de réexamen post-mise en service.</td>
+                  <td>Valider le transfert sur automate physique réel avec des soignants expérimentés ; chiffrer les coûts de transition et anticiper les risques de parcs hétérogènes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4 DIMENSIONS DE LIN ET AL. (1998) -->
+        <h3 class="hub-section-title" style="margin-top: 24px;">🔍 Les 4 Dimensions de Vulnérabilité des Systèmes Complexes (Lin et al., 1998)</h3>
         <div class="hub-cases-grid">
           <div class="hub-case-card">
             <div class="hub-case-title">1. Complexité des Modes (Mode Awareness)</div>
@@ -3262,6 +3533,9 @@
           </button>
           <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')">
             <span>📦</span> <span>Réviseur Cañas (Bloc 1)</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('calendar')">
+            <span>🗓️</span> <span>Calendrier Officiel</span>
           </button>
         </div>
       </div>
@@ -8659,6 +8933,42 @@ const allQuestions = [
         updateMascot("Calendrier du trimestre : garde le cap sur les prochaines échéances !", "happy");
       }
     }
+
+    // --- GESTION DE LA COPIE DES QUESTIONS DU SÉMINAIRE 1 ---
+    function copySeminarQuestion(num) {
+      const q1 = "Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ?";
+      const q2 = "Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ?";
+      const text = (num === 1) ? q1 : q2;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`Question ${num} copiée dans le presse-papier !`);
+        }).catch(() => {
+          showToast(`Question ${num} sélectionnée.`);
+        });
+      } else {
+        showToast(`Question ${num} sélectionnée.`);
+      }
+    }
+    window.copySeminarQuestion = copySeminarQuestion;
+
+    function copyAllSeminarQuestions() {
+      const fullText = "FEUILLE OFFICIELLE DE REMISE — SÉMINAIRE 1 (PSY7010)\n" +
+        "Évaluateurs : Pr Mario Passalacqua & Pr Marc-André Bédard | Invité : Pr Mario Fiset\n\n" +
+        "QUESTION 1 (AF-447 - Airbus A330) :\n" +
+        "« Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »\n\n" +
+        "QUESTION 2 (Lin et al. 1998 - Pompe PCA Lifecare 4100) :\n" +
+        "« Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(fullText).then(() => {
+          showToast("Feuille des 2 questions copiée !");
+        }).catch(() => {
+          showToast("Questions sélectionnées.");
+        });
+      } else {
+        showToast("Questions sélectionnées.");
+      }
+    }
+    window.copyAllSeminarQuestions = copyAllSeminarQuestions;
 
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
