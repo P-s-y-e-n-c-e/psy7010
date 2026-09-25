@@ -93,8 +93,8 @@ Chaque carte est structurée selon un **micro-dilemme observable** :
   Lorsqu'un accident industriel ou hospitalier survient, un gestionnaire conclut : *« L'accident est dû à l'inattention de l'opérateur qui n'a pas respecté la procédure »*. Pourquoi Mario Passalacqua rejette-t-il catégoriquement cette conclusion dès l'étape COMPRENDRE ?
 - **Verso (Ingénierie cognitive) :**  
   **Diagnostic :** L'inattention ou l'erreur humaine est un symptôme ou un résultat systémique, jamais la cause première. Conclure à l'erreur humaine bloque l'analyse des facteurs sous-jacents (interface trompeuse, charge mentale, organisation du travail, ambiguïté des procédures).  
-  **Concept clé :** *Postulat de Rasmussen & Reason* : « L'erreur humaine décrit le résultat, jamais la cause » (Séance 3 GOLD [00:29:11]). L'opérateur adapte son comportement à l'écologie de son poste.  
-  **Règle d'or de terrain :** *Observable ≠ Pensée sous-jacente* ([01:28:59]). Observer un comportement ne révèle jamais à lui seul l'intention mentale de l'opérateur.
+  **Concept clé :** *Postulat de Rasmussen & Reason* : « L'erreur humaine décrit le résultat, jamais la cause » (Séance 3 — Pr Mario Passalacqua). L'opérateur adapte son comportement à l'écologie de son poste.  
+  **Règle d'or de terrain :** *Observable ≠ Pensée sous-jacente* (Séance 3 — Pr Passalacqua). Observer un comportement ne révèle jamais à lui seul l'intention mentale de l'opérateur.
 
 ---
 

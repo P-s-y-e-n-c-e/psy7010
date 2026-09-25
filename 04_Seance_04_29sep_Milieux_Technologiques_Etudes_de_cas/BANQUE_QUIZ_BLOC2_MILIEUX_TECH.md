@@ -30,10 +30,10 @@
 - **D)** Parce que l'observation du comportement extérieur permet toujours de prouver l'intention malveillante de l'opérateur.  
 
 > **Feedback Pédagogique :**
-> - **✅ Réponse B correcte :** Dans la transcription GOLD de la Séance 3 (`[00:29:11]`), Passalacqua rappelle le principe fondateur de Rasmussen et Reason : *« L'erreur humaine décrit le résultat, jamais la cause »*. Blâmer l'opérateur est une tautologie qui masque les défaillances de l'interface, la charge de travail, la fatigue et les faiblesses organisationnelles.
+> - **✅ Réponse B correcte :** Dans le cours magistral de la Séance 3, le Pr Passalacqua rappelle le principe fondateur de Rasmussen et Reason : *« L'erreur humaine décrit le résultat, jamais la cause »*. Blâmer l'opérateur est une tautologie qui masque les défaillances de l'interface, la charge de travail, la fatigue et les faiblesses organisationnelles.
 > - **❌ Distracteur A faux :** L'humain commet des erreurs ; c'est précisément l'objet d'étude des facteurs humains.
 > - **❌ Distracteur C faux :** L'ergonome n'est pas un juriste syndical : sa mission est scientifique et systémique, et non une attribution dogmatique de blâme managérial.
-> - **❌ Distracteur D faux :** Règle fondamentale du cours : *« Observable ≠ Pensée sous-jacente »* (`[01:28:59]`).
+> - **❌ Distracteur D faux :** Règle fondamentale du cours : *« Observable ≠ Pensée sous-jacente »* (Séance 3 — Pr Passalacqua).
 
 ---
 
@@ -60,7 +60,7 @@
 - **D)** L'opérateur est en état de vigilance optimale car la répétition visuelle est le garant de la conscience de la situation de niveau 3.  
 
 > **Feedback Pédagogique :**
-> - **✅ Réponse C correcte :** C'est le cœur de la mise en garde de Passalacqua (Séance 3 GOLD `[01:28:59]`) : l'observable ne renseigne jamais sur la causalité cognitive interne. Pour comprendre pourquoi l'opérateur regarde six fois l'écran, il faut trianguler avec du verbal déclaratif (explicitation, penser tout haut) et des métriques physiologiques ou contextuelles.
+> - **✅ Réponse C correcte :** C'est le cœur de la mise en garde du Pr Passalacqua (Séance 3 — Milieux technologiques) : l'observable ne renseigne jamais sur la causalité cognitive interne. Pour comprendre pourquoi l'opérateur regarde six fois l'écran, il faut trianguler avec du verbal déclaratif (explicitation, penser tout haut) et des métriques physiologiques ou contextuelles.
 > - **❌ Distracteurs A, B, D faux :** Ce sont des extrapolations abusives sans fondement empirique.
 
 ---
@@ -137,7 +137,7 @@
 
 ### Question 10 : La validité contextuelle et l'avertissement de Marc-André Bédard
 **Contexte :** À la fin de la Séance 3, Marc-André Bédard intervient sur la question de la validité des solutions ergonomiques développées en milieu universitaire ou en laboratoire high-tech.  
-**Question :** Quel principe directeur résume son intervention à la minute [02:20:02] de la transcription GOLD ?  
+**Question :** Quel principe directeur résume son intervention lors de l'étude de cas sur l'analyse de l'activité en milieu technologique ?  
 - **A)** Toutes les interfaces ergonomiques conçues à Montréal s'appliquent universellement sans adaptation culturelle.  
 - **B)** « Est-ce que ça marche dans ce contexte spécifique ? » : il n'existe aucune solution universelle (*no one-size-fits-all*), la validité d'une solution d'ingénierie cognitive n'existe que contextualisée à l'écologie réelle du milieu. *(Correct)*  
 - **C)** Les tests en laboratoire stérile sont toujours supérieurs aux observations en milieu hospitalier ou industriel.  
