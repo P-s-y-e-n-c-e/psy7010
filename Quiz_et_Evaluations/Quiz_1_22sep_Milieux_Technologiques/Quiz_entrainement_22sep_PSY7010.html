@@ -9548,7 +9548,7 @@ const allQuestions = [
     let userAnswers = {};
     let activeDocId = 'doc_canas';
     let docLanguage = 'en'; // Par défaut en anglais (texte original de référence)
-    let sourceTextVisible = true;
+    let sourceTextVisible = false;
     let readerCollapsed = false;
         // --- SÉCURISATION DU STOCKAGE LOCAL (TRY/CATCH & DÉFENSE) ---
     function safeGetStorageRaw(key, defaultVal) {
@@ -10009,12 +10009,22 @@ const allQuestions = [
 
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
-        // Basculer sur le premier document AF447 par défaut si pas de doc actif
-        if (!activeDocId || (!activeDocId.startsWith('doc_af447') && !activeDocId.startsWith('doc_lin1998') && !activeDocId.startsWith('doc_notes_s03') && !activeDocId.startsWith('doc_canas'))) {
-          switchTab('doc_af447', false);
+
+        const b2DocMap = {
+          1: 'doc_af447', 2: 'doc_notes_s03', 3: 'doc_lin1998', 4: 'doc_notes_s03',
+          5: 'doc_notes_s03', 6: 'doc_notes_s03', 7: 'doc_notes_s03', 8: 'doc_af447',
+          9: 'doc_lin1998', 10: 'doc_notes_s03', 11: 'doc_af447', 12: 'doc_canas'
+        };
+        const currentB2Q = (typeof BLOC2_QUIZ_QUESTIONS !== 'undefined' && BLOC2_QUIZ_QUESTIONS[b2CurrentQIdx]) ? BLOC2_QUIZ_QUESTIONS[b2CurrentQIdx] : null;
+        const targetB2Doc = (currentB2Q && b2DocMap[currentB2Q.id]) ? b2DocMap[currentB2Q.id] : 'doc_af447';
+        switchTab(targetB2Doc, false);
+        const answeredLetter = b2UserAnswers[b2CurrentQIdx];
+        if (answeredLetter) {
+          showDocumentPostAnswer();
         } else {
-          switchTab(activeDocId, false);
+          hideDocumentPreAnswer();
         }
+
         if (typeof getAudioEl === 'function') {
           const a = getAudioEl();
           if (a && a.paused && currentPodcastEp !== 'automation') {
@@ -10046,7 +10056,16 @@ const allQuestions = [
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
         setMobileView(mobileView || 'activity');
-        switchTab('doc_canas', false);
+
+        const currentQ = (filteredQuestions && filteredQuestions[currentQuestionIndex]) ? filteredQuestions[currentQuestionIndex] : null;
+        const b1TargetDoc = (currentQ && currentQ.doc_id) ? currentQ.doc_id : 'doc_canas';
+        switchTab(b1TargetDoc, false);
+        if (currentQ && userAnswers[currentQ.id] !== undefined) {
+          showDocumentPostAnswer();
+        } else {
+          hideDocumentPreAnswer();
+        }
+
         if (typeof getAudioEl === 'function') {
           const a = getAudioEl();
           if (a && a.paused && currentPodcastEp !== 'systemic_error') {
@@ -10637,9 +10656,20 @@ const allQuestions = [
         });
       }
 
-      // Afficher ou masquer le feedback
+      // Synchroniser le document associé à la question du Bloc 2
+      const b2DocMap = {
+        1: 'doc_af447', 2: 'doc_notes_s03', 3: 'doc_lin1998', 4: 'doc_notes_s03',
+        5: 'doc_notes_s03', 6: 'doc_notes_s03', 7: 'doc_notes_s03', 8: 'doc_af447',
+        9: 'doc_lin1998', 10: 'doc_notes_s03', 11: 'doc_af447', 12: 'doc_canas'
+      };
+      const targetDocId = b2DocMap[q.id] || 'doc_af447';
+      if (activeDocId !== targetDocId) {
+        switchTab(targetDocId, false);
+      }
+
+      // Afficher ou masquer le feedback et masquer/révéler le texte source
+      const answeredLetter = b2UserAnswers[idx];
       if (fbBoxEl) {
-        const answeredLetter = b2UserAnswers[idx];
         if (answeredLetter) {
           const isCorrect = (answeredLetter === q.correctLetter);
           fbBoxEl.style.display = 'block';
@@ -10653,9 +10683,11 @@ const allQuestions = [
               📖 <span>${q.citation}</span>
             </div>
           `;
+          showDocumentPostAnswer();
         } else {
           fbBoxEl.style.display = 'none';
           fbBoxEl.innerHTML = '';
+          hideDocumentPreAnswer();
         }
       }
     }
@@ -10692,6 +10724,7 @@ const allQuestions = [
       b2UserAnswers = {};
       updateB2ScoreUI();
       renderB2Question(0);
+      hideDocumentPreAnswer();
       showToast("Quiz Bloc 2 réinitialisé.");
     }
 
@@ -11100,6 +11133,7 @@ const allQuestions = [
       }
       if (fcActions) fcActions.style.display = 'flex';
       isCurrentCardFlipped = false;
+      hideDocumentPreAnswer();
 
       if (idx < 0) idx = flashcardList.length - 1;
       if (idx >= flashcardList.length) idx = 0;
@@ -11153,6 +11187,8 @@ const allQuestions = [
         if (q) {
           highlightAndScrollSource(q.id, true, false);
         }
+      } else {
+        hideDocumentPreAnswer();
       }
     }
 
@@ -11488,11 +11524,19 @@ const allQuestions = [
         targetVp = document.getElementById('viewport_' + docId + '_en');
       }
 
-      if (targetVp && sourceTextVisible) {
-        targetVp.style.display = 'block';
-        const hint = document.getElementById('readerPreAnswerHint');
+      const hint = document.getElementById('readerPreAnswerHint');
+      if (sourceTextVisible) {
+        if (targetVp) targetVp.style.display = 'block';
         if (hint) hint.style.display = 'none';
+      } else {
+        if (targetVp) targetVp.style.display = 'none';
+        if (hint) hint.style.display = 'flex';
       }
+
+      const icon = document.getElementById('toggleTextIcon');
+      const label = document.getElementById('toggleTextLabel');
+      if (icon) icon.textContent = sourceTextVisible ? '🔒' : '👁️';
+      if (label) label.textContent = sourceTextVisible ? 'Masquer le texte' : 'Afficher le texte';
 
       // Bannière de statut documentaire
       const banner = document.getElementById('docStatusBanner');
@@ -11519,9 +11563,15 @@ const allQuestions = [
     // --- VISIBILITÉ DU TEXTE SOURCE ---
     function showDocumentPostAnswer() {
       sourceTextVisible = true;
-      document.getElementById('readerPreAnswerHint').style.display = 'none';
+      const hint = document.getElementById('readerPreAnswerHint');
+      if (hint) hint.style.display = 'none';
       const targetVpId = 'viewport_' + activeDocId + '_' + docLanguage;
-      const vp = document.getElementById(targetVpId);
+      let vp = document.getElementById(targetVpId);
+      if (!vp && docLanguage === 'en') {
+        vp = document.getElementById('viewport_' + activeDocId + '_fr');
+      } else if (!vp && docLanguage === 'fr') {
+        vp = document.getElementById('viewport_' + activeDocId + '_en');
+      }
       if (vp) vp.style.display = 'block';
 
       const icon = document.getElementById('toggleTextIcon');
@@ -11533,7 +11583,8 @@ const allQuestions = [
     function hideDocumentPreAnswer() {
       sourceTextVisible = false;
       document.querySelectorAll('.reader-viewport').forEach(vp => vp.style.display = 'none');
-      document.getElementById('readerPreAnswerHint').style.display = 'flex';
+      const hint = document.getElementById('readerPreAnswerHint');
+      if (hint) hint.style.display = 'flex';
 
       const icon = document.getElementById('toggleTextIcon');
       const label = document.getElementById('toggleTextLabel');
@@ -11837,13 +11888,21 @@ const allQuestions = [
       if (fbCard) {
         if (isTestScreen()) {
           fbCard.style.display = 'none'; // Pas de feedback direct durant la simulation
+          if (!simSourceOpened) {
+            hideDocumentPreAnswer();
+          }
         } else {
           const savedAns = userAnswers[q.id];
           if (savedAns !== undefined) {
             showFeedback(q, savedAns.selected);
+            showDocumentPostAnswer();
             highlightAndScrollSource(q.id, true, false);
           } else {
             fbCard.style.display = 'none';
+            if (q.doc_id && activeDocId !== q.doc_id) {
+              switchTab(q.doc_id, false);
+            }
+            hideDocumentPreAnswer();
           }
         }
       }
@@ -11909,6 +11968,7 @@ const allQuestions = [
       renderQuestion(currentQuestionIndex);
       updateMasteryBadge();
       renderGooglePagination();
+      hideDocumentPreAnswer();
       updateMascot("Tu peux maintenant sélectionner un autre choix pour cette question.", "neutral");
     }
 
@@ -11972,6 +12032,7 @@ const allQuestions = [
         return;
       }
 
+      showDocumentPostAnswer();
       const targetDocId = q.doc_id;
       const targetLang = docLanguage;
       if (activeDocId !== targetDocId) switchTab(targetDocId);
