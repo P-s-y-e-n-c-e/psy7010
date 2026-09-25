@@ -116,7 +116,7 @@ async function main() {
                 const editable = document.querySelector('rich-textarea p, rich-textarea [contenteditable="true"], [contenteditable="true"]');
                 const sendBtn = document.querySelector('button[aria-label*="Send message" i], button[aria-label*="Send" i], button[aria-label*="Envoyer" i], .send-button');
                 const stopBtn = document.querySelector('button[aria-label*="Arrêter" i], button[aria-label*="Stop" i], .stop-button');
-                const responses = Array.from(document.querySelectorAll('.model-response-text, message-content, [data-test-id="model-response"]'));
+                const responses = Array.from(document.querySelectorAll('model-response, [data-test-id="model-response"]'));
                 const lastResp = responses.length > 0 ? responses[responses.length - 1] : null;
                 const isDeepThinking = lastResp ? (lastResp.getAttribute('aria-busy') === 'true' || (lastResp.innerText && lastResp.innerText.includes('Generating your response'))) : false;
 
@@ -124,19 +124,43 @@ async function main() {
                 const activeMode = picker ? (picker.getAttribute('aria-label') || picker.innerText) : null;
                 const isDeepThinkActive = activeMode ? activeMode.toLowerCase().includes('deep think') : false;
 
-                return {
-                    tabId: "${tab.id}",
-                    title: title,
-                    url: window.location.href,
-                    activeMode: activeMode,
-                    isDeepThinkActive: isDeepThinkActive,
-                    hasInput: !!editable,
-                    hasSendBtn: !!sendBtn,
-                    sendBtnDisabled: sendBtn ? (sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') : null,
-                    isGenerating: !!stopBtn || isDeepThinking,
-                    responseCount: responses.length,
-                    lastResponseSnippet: lastResp ? lastResp.innerText.substring(0, 300).replace(/\\n/g, ' ') : null
-                };
+                return new Promise(resolve => {
+                    let verifiedModel = null;
+                    if (lastResp) {
+                        const moreBtn = lastResp.querySelector('button[aria-label*="More" i], button[aria-label*="Plus" i], button[aria-label*="options" i]');
+                        if (moreBtn) {
+                            moreBtn.click();
+                            setTimeout(() => {
+                                const menu = document.querySelector('.mat-mdc-menu-panel, [role="menu"]');
+                                const text = menu ? menu.innerText : '';
+                                document.body.click();
+                                const match = text.match(/Model:\\s*([^\\n]+)/i);
+                                verifiedModel = match ? match[1].trim() : (text.includes('Deep Think') ? 'Deep Think' : (text.includes('Pro') ? 'Pro' : null));
+                                finish();
+                            }, 300);
+                            return;
+                        }
+                    }
+                    finish();
+
+                    function finish() {
+                        resolve({
+                            tabId: "${tab.id}",
+                            title: title,
+                            url: window.location.href,
+                            inputActiveMode: activeMode,
+                            isInputDeepThinkActive: isDeepThinkActive,
+                            verifiedResponseModel: verifiedModel,
+                            isResponseVerifiedDeepThink: verifiedModel ? verifiedModel.toLowerCase().includes('deep think') : false,
+                            hasInput: !!editable,
+                            hasSendBtn: !!sendBtn,
+                            sendBtnDisabled: sendBtn ? (sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') : null,
+                            isGenerating: !!stopBtn || isDeepThinking,
+                            responseCount: responses.length,
+                            lastResponseSnippet: lastResp ? lastResp.innerText.substring(0, 300).replace(/\\n/g, ' ') : null
+                        });
+                    }
+                });
             })()
         `;
         const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
@@ -144,7 +168,7 @@ async function main() {
     } else if (command === 'read-last') {
         const script = `
             (() => {
-                const responses = Array.from(document.querySelectorAll('.model-response-text, message-content, [data-test-id="model-response"]'));
+                const responses = Array.from(document.querySelectorAll('model-response, [data-test-id="model-response"]'));
                 if (responses.length === 0) return null;
                 return responses[responses.length - 1].innerText;
             })()
@@ -159,15 +183,40 @@ async function main() {
         }
         const script = `
             (() => {
-                const responses = Array.from(document.querySelectorAll('.model-response-text, message-content, [data-test-id="model-response"]'));
-                if (responses.length === 0) return null;
-                return responses[responses.length - 1].innerText;
+                const responses = Array.from(document.querySelectorAll('model-response, [data-test-id="model-response"]'));
+                if (responses.length === 0) return { error: 'Aucune reponse trouvee' };
+                const lastResp = responses[responses.length - 1];
+
+                return new Promise(resolve => {
+                    const moreBtn = lastResp.querySelector('button[aria-label*="more" i], button[aria-label*="Plus" i], button[aria-label*="options" i]');
+                    if (moreBtn) {
+                        moreBtn.click();
+                        setTimeout(() => {
+                            const menu = document.querySelector('gem-menu, [role="menu"], .mat-mdc-menu-panel');
+                            const text = menu ? menu.innerText : '';
+                            document.body.click();
+                            const match = text.match(/Model:\\s*([^\\n]+)/i);
+                            const verifiedModel = match ? match[1].trim() : (text.includes('Deep Think') ? '3.1 Deep Think' : (text.includes('Pro') ? 'Pro' : 'Inconnu'));
+                            resolve({
+                                content: lastResp.innerText,
+                                verifiedModel: verifiedModel,
+                                isDeepThink: verifiedModel.toLowerCase().includes('deep think')
+                            });
+                        }, 400);
+                        return;
+                    }
+                    resolve({ content: lastResp.innerText, verifiedModel: 'Inconnu', isDeepThink: false });
+                });
             })()
         `;
         const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
-        if (res) {
-            fs.writeFileSync(targetPath, res, 'utf8');
-            console.log('Réponse DeepThink sauvegardée (' + res.length + ' caractères) dans: ' + targetPath);
+        if (res && res.content) {
+            if (!res.isDeepThink) {
+                console.error('ALERTE REJET : La réponse a été générée par le modèle "' + res.verifiedModel + '" et NON par Deep Think ! Sauvegarde annulée.');
+                process.exit(1);
+            }
+            fs.writeFileSync(targetPath, res.content, 'utf8');
+            console.log('Réponse DeepThink VÉRIFIÉE (' + res.verifiedModel + ', ' + res.content.length + ' caractères) sauvegardée dans: ' + targetPath);
         } else {
             console.log('Aucune réponse à sauvegarder.');
         }
