@@ -31,7 +31,42 @@ async function getGemTab() {
     return tab;
 }
 
+function callCdp(wsUrl, method, params) {
+    return new Promise((resolve, reject) => {
+        const ws = new WebSocket(wsUrl);
+        const timeout = setTimeout(() => {
+            ws.close();
+            reject(new Error('Timeout CDP (30s)'));
+        }, 30000);
+
+        ws.onopen = () => {
+            ws.send(JSON.stringify({
+                id: 1,
+                method: method,
+                params: params
+            }));
+        };
+
+        ws.onmessage = (event) => {
+            clearTimeout(timeout);
+            const data = JSON.parse(event.data);
+            ws.close();
+            if (data.error) {
+                reject(new Error(JSON.stringify(data.error)));
+            } else {
+                resolve(data.result);
+            }
+        };
+
+        ws.onerror = (err) => {
+            clearTimeout(timeout);
+            reject(err);
+        };
+    });
+}
+
 function evaluateInTab(wsUrl, expression) {
+
     return new Promise((resolve, reject) => {
         const ws = new WebSocket(wsUrl);
         const timeout = setTimeout(() => {
@@ -82,7 +117,9 @@ async function main() {
                 const sendBtn = document.querySelector('button[aria-label*="Send message" i], button[aria-label*="Send" i], button[aria-label*="Envoyer" i], .send-button');
                 const stopBtn = document.querySelector('button[aria-label*="Arrêter" i], button[aria-label*="Stop" i], .stop-button');
                 const responses = Array.from(document.querySelectorAll('.model-response-text, message-content, [data-test-id="model-response"]'));
-                
+                const lastResp = responses.length > 0 ? responses[responses.length - 1] : null;
+                const isDeepThinking = lastResp ? (lastResp.getAttribute('aria-busy') === 'true' || (lastResp.innerText && lastResp.innerText.includes('Generating your response'))) : false;
+
                 return {
                     tabId: "${tab.id}",
                     title: title,
@@ -90,9 +127,9 @@ async function main() {
                     hasInput: !!editable,
                     hasSendBtn: !!sendBtn,
                     sendBtnDisabled: sendBtn ? (sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') : null,
-                    isGenerating: !!stopBtn,
+                    isGenerating: !!stopBtn || isDeepThinking,
                     responseCount: responses.length,
-                    lastResponseSnippet: responses.length > 0 ? responses[responses.length - 1].innerText.substring(0, 300).replace(/\\n/g, ' ') : null
+                    lastResponseSnippet: lastResp ? lastResp.innerText.substring(0, 300).replace(/\\n/g, ' ') : null
                 };
             })()
         `;
@@ -146,25 +183,32 @@ async function main() {
             process.exit(1);
         }
 
-        const escapedText = JSON.stringify(textToSend);
+        // 1. Vider et focaliser l'éditeur Quill
+        await evaluateInTab(tab.webSocketDebuggerUrl, `
+            (() => {
+                const editable = document.querySelector('rich-textarea .ql-editor, rich-textarea [contenteditable="true"]');
+                if (!editable) return false;
+                editable.focus();
+                document.execCommand('selectAll', false, null);
+                document.execCommand('delete', false, null);
+                return true;
+            })()
+        `);
+
+        // 2. Injection native via CDP Input.insertText (gère le modèle Quill et efface ql-blank)
+        await callCdp(tab.webSocketDebuggerUrl, 'Input.insertText', { text: textToSend });
+
+        // 3. Clic sur le bouton Envoyer dès qu'il est activé
         const script = `
             (() => {
-                const editable = document.querySelector('rich-textarea p, rich-textarea [contenteditable="true"], [contenteditable="true"]');
-                if (!editable) return { error: 'Zone de texte introuvable' };
-                
-                editable.focus();
-                editable.textContent = ${escapedText};
-                editable.dispatchEvent(new Event('input', { bubbles: true }));
-                editable.dispatchEvent(new Event('change', { bubbles: true }));
-                
                 const sendBtn = document.querySelector('button[aria-label*="Send message" i], button[aria-label*="Send" i], button[aria-label*="Envoyer" i], .send-button');
-                if (!sendBtn) return { error: 'Bouton Envoyer introuvable', textInjected: true };
+                if (!sendBtn) return { error: 'Bouton Envoyer introuvable' };
                 if (sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') {
-                    return { error: 'Bouton Envoyer désactivé', textInjected: true };
+                    return { error: 'Bouton Envoyer désactivé' };
                 }
                 
                 sendBtn.click();
-                return { success: true, textLength: ${escapedText}.length };
+                return { success: true, textLength: ${textToSend.length} };
             })()
         `;
         const res = await evaluateInTab(tab.webSocketDebuggerUrl, script);
