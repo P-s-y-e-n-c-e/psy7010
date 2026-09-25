@@ -188,24 +188,28 @@ async function main() {
                 const lastResp = responses[responses.length - 1];
 
                 return new Promise(resolve => {
-                    const moreBtn = lastResp.querySelector('button[aria-label*="more" i], button[aria-label*="Plus" i], button[aria-label*="options" i]');
+                    const moreBtn = lastResp.querySelector('button[aria-label*="More" i], button[aria-label*="Plus" i], button[aria-label*="options" i]');
                     if (moreBtn) {
                         moreBtn.click();
                         setTimeout(() => {
-                            const menu = document.querySelector('gem-menu, [role="menu"], .mat-mdc-menu-panel');
+                            const menu = document.querySelector('.mat-mdc-menu-panel, [role="menu"]');
                             const text = menu ? menu.innerText : '';
                             document.body.click();
-                            const match = text.match(/Model:\\s*([^\\n]+)/i);
-                            const verifiedModel = match ? match[1].trim() : (text.includes('Deep Think') ? '3.1 Deep Think' : (text.includes('Pro') ? 'Pro' : 'Inconnu'));
+                            const fullText = (text + ' ' + lastResp.innerText);
+                            const match = fullText.match(/Model:\\s*([^\\n]+)/i);
+                            const verifiedModel = match ? match[1].trim() : (fullText.includes('Deep Think') ? '3.1 Deep Think' : (fullText.includes('Pro') ? 'Pro' : 'Inconnu'));
                             resolve({
                                 content: lastResp.innerText,
                                 verifiedModel: verifiedModel,
                                 isDeepThink: verifiedModel.toLowerCase().includes('deep think')
                             });
-                        }, 400);
+                        }, 300);
                         return;
                     }
-                    resolve({ content: lastResp.innerText, verifiedModel: 'Inconnu', isDeepThink: false });
+                    const fullText = lastResp.innerText;
+                    const match = fullText.match(/Model:\\s*([^\\n]+)/i);
+                    const verifiedModel = match ? match[1].trim() : (fullText.includes('Deep Think') ? '3.1 Deep Think' : (fullText.includes('Pro') ? 'Pro' : 'Inconnu'));
+                    resolve({ content: lastResp.innerText, verifiedModel: verifiedModel, isDeepThink: verifiedModel.toLowerCase().includes('deep think') });
                 });
             })()
         `;
