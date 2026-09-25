@@ -120,10 +120,16 @@ async function main() {
                 const lastResp = responses.length > 0 ? responses[responses.length - 1] : null;
                 const isDeepThinking = lastResp ? (lastResp.getAttribute('aria-busy') === 'true' || (lastResp.innerText && lastResp.innerText.includes('Generating your response'))) : false;
 
+                const picker = document.querySelector('button[aria-label*="mode picker" i], [data-test-id="mode-picker"]');
+                const activeMode = picker ? (picker.getAttribute('aria-label') || picker.innerText) : null;
+                const isDeepThinkActive = activeMode ? activeMode.toLowerCase().includes('deep think') : false;
+
                 return {
                     tabId: "${tab.id}",
                     title: title,
                     url: window.location.href,
+                    activeMode: activeMode,
+                    isDeepThinkActive: isDeepThinkActive,
                     hasInput: !!editable,
                     hasSendBtn: !!sendBtn,
                     sendBtnDisabled: sendBtn ? (sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') : null,
@@ -180,6 +186,19 @@ async function main() {
 
         if (!textToSend.trim()) {
             console.error('Erreur: Texte vide');
+            process.exit(1);
+        }
+
+        // Vérification de sécurité absolue : Le mode Deep Think doit être actif
+        const isDeepThink = await evaluateInTab(tab.webSocketDebuggerUrl, `
+            (() => {
+                const picker = document.querySelector('button[aria-label*="mode picker" i], [data-test-id="mode-picker"]');
+                const activeMode = picker ? (picker.getAttribute('aria-label') || picker.innerText) : '';
+                return activeMode.toLowerCase().includes('deep think');
+            })()
+        `);
+        if (!isDeepThink) {
+            console.error('ALERTE BLOQUANTE : Le mode Deep Think est désactivé dans Gemini ! Envoi annulé pour éviter de gaspiller un tour.');
             process.exit(1);
         }
 
