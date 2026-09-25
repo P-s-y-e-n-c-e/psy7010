@@ -3355,104 +3355,102 @@
           <div class="hub-hero-header">
             <div>
               <span class="hub-hero-badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border-color: rgba(56, 189, 248, 0.4);">✈️ Séminaire 1 • 29 Septembre 2026 (10 %)</span>
-              <h2 class="hub-hero-title">Feuille Officielle de Remise — Vol AF447 &amp; Lin et al. (1998)</h2>
-              <div class="hub-hero-subtitle">Évaluateurs : Pr Mario Passalacqua (PhD) &amp; Pr Marc-André Bédard (PhD) | Conférencier invité : Pr Mario Fiset (Aviation civile)</div>
+              <h2 class="hub-hero-title">Atelier Méthodologique — Préparation aux Questions Critiques</h2>
+              <div class="hub-hero-subtitle">Ingénierie cognitive et critères d'évaluation (Pr Mario Passalacqua, Pr Marc-André Bédard &amp; Pr Mario Fiset)</div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
-                <span>🎯</span> <span>Revenir au Bloc 2</span>
-              </button>
-              <button type="button" class="seminar-copy-btn secondary" onclick="copyAllSeminarQuestions()">
-                <span>📄</span> <span>Copier les 2 Questions</span>
-              </button>
-            </div>
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+              <span>🎯</span> <span>Revenir au Bloc 2</span>
+            </button>
           </div>
           <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 12px 0;">
-            <strong>Consignes officielles du cours :</strong> Remise obligatoire d'une feuille écrite de <strong>deux questions critiques ouvertes</strong> à la fin du séminaire. Posture d'ingénierie cognitive et facteurs humains : questions spécifiques ciblant des compromis de conception (<em>trade-offs</em>), sans questions fermées (oui/non) ni banalités administratives.
+            <strong>Consignes officielles du cours :</strong> Remise écrite individuelle obligatoire d'<strong>une feuille de deux questions critiques ouvertes</strong> à la fin du séminaire (une ciblée sur l'accident du <em>Vol AF-447</em>, une ciblée sur l'étude d'ergonomie hospitalière de <em>Lin et al. 1998</em>). Cet atelier vous guide pas à pas pour formuler vos propres questions en respectant les exigences des évaluateurs.
           </p>
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <span class="seminar-tag-gold">⭐ Certifié Étalon-Or</span>
-            <span style="font-size: 0.82rem; color: var(--text-muted);">Boucle dialectique séquentielle DeepThink ↔ GPT-6 (Passe 2 validée, commit <code>7aad6ae</code>)</span>
+            <span class="seminar-tag-gold">🧭 Guide de Conception Critique</span>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">Critères académiques officiels • Zéro question fermée • Compromis d'ingénierie (Trade-offs)</span>
           </div>
         </div>
 
-        <!-- BLOC QUESTIONS OFFICIELLES DE REMISE -->
+        <!-- GUIDE DES 3 CRITÈRES ACADÉMIQUES -->
         <div class="seminar-official-box">
           <div class="seminar-official-header">
             <div>
-              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">📝 Les Deux Questions Officielles à Remettre</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Texte calibré mot à mot pour impression et soutenance orale</p>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">🎯 Les 3 Critères Clés d'une Question Réussie</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Ce que les professeurs Passalacqua, Bédard et le conférencier invité Mario Fiset évaluent en priorité</p>
             </div>
           </div>
 
-          <!-- QUESTION 1 -->
+          <div class="seminar-breakdown" style="margin-top: 6px;">
+            <div class="seminar-breakdown-item">
+              <strong>1. Incisivité dialectique &amp; Question ouverte</strong>
+              Bannir formellement les questions fermées appelant un simple « oui » ou « non », ainsi que les trivialités administratives. Votre question doit ouvrir un débat de fond et contraindre l'expert à expliciter ses choix d'architecture ou ses compromis.
+            </div>
+            <div class="seminar-breakdown-item">
+              <strong>2. Ciblage d'un compromis réel de conception (Trade-off)</strong>
+              L'ingénierie cognitive n'est pas une recherche de solutions magiques mais d'arbitrages documentés : intégrité de l'information vs saturation attentionnelle en urgence, ou validité interne en laboratoire vs validité écologique en réanimation.
+            </div>
+            <div class="seminar-breakdown-item">
+              <strong>3. Ancrage théorique solide &amp; Faits documentés</strong>
+              Mobiliser les modèles conceptuels de référence (Gouffre d'évaluation de Norman, Ironies de l'automatisation de Bainbridge, Dimensions de Lin et al. 1998, Conscience de la situation d'Endsley, Externalisation de Zhang &amp; Norman) appliqués aux données factuelles des dossiers.
+            </div>
+          </div>
+        </div>
+
+        <!-- PISTES D'INVESTIGATION PAR DOSSIER -->
+        <div class="seminar-official-box">
+          <div class="seminar-official-header">
+            <div>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">🔍 Pistes d'Investigation &amp; Faits Techniques pour vos Questions</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Repères documentaires pour construire votre propre feuille de remise</p>
+            </div>
+          </div>
+
+          <!-- DOSSIER 1 : AF-447 -->
           <div class="seminar-q-card">
             <div class="seminar-q-header">
               <div>
-                <span class="hub-hero-badge" style="background: rgba(14, 165, 233, 0.12); color: #0284c7; border-color: rgba(14, 165, 233, 0.3);">✈️ Question 1 • Dossier AF-447 (Aviation)</span>
-                <h4 class="seminar-q-title" style="margin-top: 6px;">Disponibilité de l'alarme &amp; Gouffre d'évaluation de Norman</h4>
+                <span class="hub-hero-badge" style="background: rgba(14, 165, 233, 0.12); color: #0284c7; border-color: rgba(14, 165, 233, 0.3);">✈️ Dossier 1 • Vol AF-447 (Airbus A330 / Aviation civile)</span>
+                <h4 class="seminar-q-title" style="margin-top: 6px;">Disponibilité des alarmes, Surprises de mode &amp; Gouffre d'évaluation</h4>
               </div>
-              <button type="button" class="seminar-copy-btn" onclick="copySeminarQuestion(1)">
-                <span>📋</span> <span>Copier Q1 (28 mots)</span>
-              </button>
-            </div>
-
-            <div class="seminar-quote-box">
-              « Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »
             </div>
 
             <div class="seminar-breakdown">
               <div class="seminar-breakdown-item">
-                <strong>🔍 Fait technique documenté (Rapport BEA)</strong>
-                Sous 60 nœuds, les calculateurs ADR invalident l'incidence et coupent l'avertisseur de décrochage (silence trompeur). Les manœuvres salvatrices à piquer font remonter la vitesse, ce qui réadmet les calculs et réactive brusquement l'alarme stridente alors que l'avion est encore en décrochage.
+                <strong>🔍 Fait technique documenté (Rapport officiel BEA)</strong>
+                Sous 60 nœuds de vitesse anémométrique, les calculateurs ADR invalident l'angle d'attaque et coupent l'avertisseur sonore de décrochage. Lors des manœuvres de récupération à piquer, la reprise de vitesse réadmet les calculs et réactive brusquement l'alarme stridente alors que l'appareil est encore en décrochage.
               </div>
               <div class="seminar-breakdown-item">
-                <strong>🧠 Concept théorique mobilisé</strong>
-                <em>Gouffre d'évaluation de Norman</em> (le retour sensoriel contredit directement la logique d'action de l'opérateur : le silence rassure à tort, l'action correctrice est punie par une alarme).
+                <strong>🧠 Concepts d'ingénierie cognitive à mobiliser</strong>
+                <em>Gouffre d'évaluation de Norman</em> (contradiction entre le retour sensoriel et la logique d'action), <em>Surprise de mode</em> (passage en loi alternative), <em>Pertes de conscience de la situation</em> (Endsley Niveau 1 à 3).
               </div>
               <div class="seminar-breakdown-item">
-                <strong>⚖️ Compromis de conception (Trade-off)</strong>
-                Transmission d'un signal explicite d'indisponibilité / invalidité vs risque de surcharge attentionnelle, distraction ou retard de réaction de l'équipage en situation critique.
-              </div>
-              <div class="seminar-breakdown-item">
-                <strong>🗣️ Question de relance pour la discussion orale en classe</strong>
-                <em>« Quels résultats expérimentaux ou observations en simulateur conduiraient à rejeter un signal d'indisponibilité malgré une meilleure compréhension subjectivement déclarée par les pilotes ? »</em>
+                <strong>💡 Pistes de questionnement critique pour votre feuille</strong>
+                Comment concevoir un retour d'information explicite sur l'indisponibilité des capteurs sans provoquer de retard de perception du danger ? Quels protocoles expérimentaux en simulateur permettraient d'évaluer le comportement des pilotes sous stress aigu face à une alarme discontinue ?
               </div>
             </div>
           </div>
 
-          <!-- QUESTION 2 -->
+          <!-- DOSSIER 2 : LIN ET AL. 1998 -->
           <div class="seminar-q-card">
             <div class="seminar-q-header">
               <div>
-                <span class="hub-hero-badge" style="background: rgba(16, 185, 129, 0.12); color: #059669; border-color: rgba(16, 185, 129, 0.3);">🏥 Question 2 • Dossier Lin et al. 1998 (Santé)</span>
-                <h4 class="seminar-q-title" style="margin-top: 6px;">Effet propre de la vue d'ensemble &amp; Externalisation mnésique</h4>
+                <span class="hub-hero-badge" style="background: rgba(16, 185, 129, 0.12); color: #059669; border-color: rgba(16, 185, 129, 0.3);">🏥 Dossier 2 • Lin et al. 1998 (Pompe PCA Lifecare 4100 / Santé)</span>
+                <h4 class="seminar-q-title" style="margin-top: 6px;">Vue d'ensemble, Externalisation mnésique &amp; Compromis de validité</h4>
               </div>
-              <button type="button" class="seminar-copy-btn" onclick="copySeminarQuestion(2)">
-                <span>📋</span> <span>Copier Q2 (31 mots)</span>
-              </button>
-            </div>
-
-            <div class="seminar-quote-box">
-              « Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »
             </div>
 
             <div class="seminar-breakdown">
               <div class="seminar-breakdown-item">
-                <strong>🔍 Fait expérimental documenté (Lin et al., 1998)</strong>
-                Étude sur 12 infirmières comparant l'interface originale et une refonte multicomposante (dialogue pas-à-pas, vue d'ensemble en 4 fenêtres titrées, libellés explicites). Les erreurs de programmation diminuent de 20 à 10. La baisse de charge subjective (NASA-TLX) demeure statistiquement ambiguë (<em>p = 0.12</em> à l'ANOVA bilatérale).
+                <strong>🔍 Fait expérimental documenté (Lin, Essebier &amp; Dekker, 1998)</strong>
+                Expérimentation sur 12 infirmières comparant l'interface originale et une refonte multicomposante (dialogue guidé, 4 fenêtres titrées, vue d'ensemble, libellés explicites). Les erreurs diminuent de 20 à 10. Cependant, la réduction de charge mentale perçue (NASA-TLX) présente une ambiguïté statistique (<em>p = 0.12</em> à l'ANOVA bilatérale).
               </div>
               <div class="seminar-breakdown-item">
-                <strong>🧠 Concept théorique mobilisé</strong>
-                <em>Externalisation de la mémoire de travail (Norman / Zhang &amp; Norman)</em>. La structuration visuelle ancre le modèle mental et offre un feedback d'état immédiat après suspension de tâche.
+                <strong>🧠 Concepts d'ingénierie cognitive à mobiliser</strong>
+                <em>Externalisation de la mémoire de travail (Norman / Zhang &amp; Norman)</em>, structuration visuelle du modèle mental, récupération post-interruption.
               </div>
               <div class="seminar-breakdown-item">
-                <strong>⚖️ Compromis de conception (Trade-off)</strong>
-                Validité interne (isoler chirurgicalement l'effet propre de la vue d'ensemble via un protocole d'ablation) vs Validité écologique (synergie globale de l'interface en situation hospitalière réelle et bruyante).
-              </div>
-              <div class="seminar-breakdown-item">
-                <strong>🗣️ Question de relance pour la discussion orale en classe</strong>
-                <em>« Quelles preuves de transfert vers un dispositif physique et des utilisateurs expérimentés, et quels risques nouveaux (encombrement visuel, surconfiance) faudrait-il examiner avant d'autoriser un déploiement hospitalier progressif ? »</em>
+                <strong>💡 Pistes de questionnement critique pour votre feuille</strong>
+                Comment concevoir une étude d'ablation pour isoler chirurgicalement l'effet propre de la vue d'ensemble face à des interruptions cliniques ? Quels nouveaux risques (encombrement visuel, surconfiance, coexistence de parcs hospitaliers hétérogènes) faut-il anticiper avant un déploiement clinique ?
               </div>
             </div>
           </div>
@@ -8933,42 +8931,6 @@ const allQuestions = [
         updateMascot("Calendrier du trimestre : garde le cap sur les prochaines échéances !", "happy");
       }
     }
-
-    // --- GESTION DE LA COPIE DES QUESTIONS DU SÉMINAIRE 1 ---
-    function copySeminarQuestion(num) {
-      const q1 = "Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ?";
-      const q2 = "Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ?";
-      const text = (num === 1) ? q1 : q2;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          showToast(`Question ${num} copiée dans le presse-papier !`);
-        }).catch(() => {
-          showToast(`Question ${num} sélectionnée.`);
-        });
-      } else {
-        showToast(`Question ${num} sélectionnée.`);
-      }
-    }
-    window.copySeminarQuestion = copySeminarQuestion;
-
-    function copyAllSeminarQuestions() {
-      const fullText = "FEUILLE OFFICIELLE DE REMISE — SÉMINAIRE 1 (PSY7010)\n" +
-        "Évaluateurs : Pr Mario Passalacqua & Pr Marc-André Bédard | Invité : Pr Mario Fiset\n\n" +
-        "QUESTION 1 (AF-447 - Airbus A330) :\n" +
-        "« Sur AF447, certaines actions à piquer réactivent l’alarme de décrochage. Cela interroge le gouffre d’évaluation de Norman. Comment évaluer un signal d’indisponibilité sans retarder la reconnaissance du danger ? »\n\n" +
-        "QUESTION 2 (Lin et al. 1998 - Pompe PCA Lifecare 4100) :\n" +
-        "« Chez Lin, la refonte modifie plusieurs éléments de l’interface. La vue d’ensemble pourrait réduire les exigences de mémoire de travail. Comment isoler son effet sur les erreurs après une interruption réaliste ? »";
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(fullText).then(() => {
-          showToast("Feuille des 2 questions copiée !");
-        }).catch(() => {
-          showToast("Questions sélectionnées.");
-        });
-      } else {
-        showToast("Questions sélectionnées.");
-      }
-    }
-    window.copyAllSeminarQuestions = copyAllSeminarQuestions;
 
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
