@@ -2432,6 +2432,498 @@
       }
     }
 
+    /* =========================================================================
+       HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2 ACTIF, ARCHIVES BLOC 1, SÉMINAIRES)
+       ========================================================================= */
+    .hub-module-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 95;
+    }
+    .hub-module-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 0;
+      scrollbar-width: none;
+    }
+    .hub-module-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .hub-module-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card-alt);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .hub-module-pill:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-border);
+      color: var(--primary);
+    }
+    .hub-module-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    }
+    body.dark-mode .hub-module-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary-hover);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+    }
+    .hub-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-subtle);
+    }
+    .hub-module-pill.active .hub-pill-dot {
+      background: #ffffff;
+      box-shadow: 0 0 6px #ffffff;
+    }
+    .dot-active { background: #22c55e; }
+    .dot-archive { background: #f59e0b; }
+    .dot-info { background: #38bdf8; }
+    .dot-calendar { background: #a855f7; }
+
+    .hub-pill-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .tag-primary {
+      background: rgba(34, 197, 94, 0.18);
+      color: #16a34a;
+    }
+    .hub-module-pill.active .tag-primary {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    body.dark-mode .tag-primary {
+      background: rgba(34, 197, 94, 0.25);
+      color: #4ade80;
+    }
+    .tag-muted {
+      background: rgba(148, 163, 184, 0.18);
+      color: var(--text-muted);
+    }
+    .hub-module-pill.active .tag-muted {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    .tag-info {
+      background: rgba(56, 189, 248, 0.18);
+      color: #0284c7;
+    }
+    .hub-module-pill.active .tag-info {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    body.dark-mode .tag-info {
+      background: rgba(56, 189, 248, 0.25);
+      color: #7dd3fc;
+    }
+    .tag-date {
+      background: rgba(168, 85, 247, 0.18);
+      color: #7e22ce;
+    }
+    .hub-module-pill.active .tag-date {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    body.dark-mode .tag-date {
+      background: rgba(168, 85, 247, 0.25);
+      color: #c084fc;
+    }
+
+    /* CONTENEUR DES VUES DU HUB */
+    .hub-view-container {
+      flex: 1 1 100%;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background: var(--bg-base);
+      padding: 24px 20px;
+      box-sizing: border-box;
+    }
+    .hub-view-content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* CARTE HÉROS DU BLOC 2 */
+    .hub-hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hub-hero-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .hub-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+    body.dark-mode .hub-hero-badge {
+      background: rgba(59, 130, 246, 0.18);
+      color: #60a5fa;
+    }
+    .hub-hero-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 8px 0 4px 0;
+      line-height: 1.3;
+    }
+    .hub-hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* BANDEAU STATUT CERTIFICATION */
+    .hub-status-banner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-top: 14px;
+    }
+    .hub-status-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .hub-status-text {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--text-main);
+    }
+
+    /* GRILLE DES ÉTUDES DE CAS */
+    .hub-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0 4px 0;
+    }
+    .hub-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .hub-case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .hub-case-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+    .hub-case-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hub-case-icon {
+      font-size: 1.6rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--bg-card-alt);
+      flex-shrink: 0;
+    }
+    .hub-case-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .hub-case-theme {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .hub-case-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      flex: 1;
+    }
+    .hub-case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .hub-case-tag {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--bg-card-alt);
+      color: var(--text-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    /* BARRE D'ACTIONS CTA DANS LE HUB */
+    .hub-actions-bar {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .hub-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+    .hub-btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+    }
+    .hub-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      color: var(--text-main);
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+    .hub-btn-secondary:hover {
+      background: var(--bg-card-alt);
+      border-color: var(--primary-border);
+      color: var(--primary);
+    }
+
+    /* BANDEAU ARCHIVE BLOC 1 DANS LE QUIZ PANE */
+    .archive-notice-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      background: var(--warning-light);
+      border: 1px solid var(--warning-border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+    }
+    body.dark-mode .archive-notice-banner {
+      background: #451a03;
+      border-color: #92400e;
+    }
+    .archive-notice-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-main);
+      font-size: 0.88rem;
+    }
+    .archive-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .btn-return-hub {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+    .btn-return-hub:hover {
+      background: var(--primary-hover);
+    }
+
+    /* TIMELINE CALENDRIER */
+    .timeline-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .timeline-entry {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: var(--card-shadow);
+      align-items: flex-start;
+    }
+    .timeline-date-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      padding: 8px 6px;
+      border-radius: 8px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .timeline-day {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+    }
+    .timeline-month {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .timeline-info {
+      flex: 1;
+    }
+    .timeline-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 4px 0;
+    }
+    .timeline-info p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .hub-module-bar {
+        padding: 6px 10px;
+      }
+      .hub-view-container {
+        padding: 16px 12px;
+      }
+      .hub-hero-card {
+        padding: 18px 16px;
+      }
+      .hub-hero-title {
+        font-size: 1.25rem;
+      }
+      .hub-cases-grid {
+        grid-template-columns: 1fr;
+      }
+      .hub-actions-bar {
+        flex-direction: column;
+      }
+      .hub-btn-primary, .hub-btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      .archive-notice-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-return-hub {
+        width: 100%;
+        justify-content: center;
+      }
+      .timeline-entry {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .timeline-date-box {
+        flex-direction: row;
+        gap: 6px;
+        width: auto;
+        padding: 4px 12px;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -2440,14 +2932,40 @@
     <header class="app-header">
     <div class="header-brand-row">
       <div class="header-brand">
-        <h1 class="quiz-main-title">PSY7010 - Quiz d'entraînement</h1>
-        <div class="quiz-sub-date">22 septembre</div>
+        <h1 class="quiz-main-title">PSY7010 — Hub d'apprentissage</h1>
+        <div class="quiz-sub-date" id="hubModuleSubtitle">Bloc 2 : Pr Mario Passalacqua — Milieux technologiques &amp; Ergonomie cognitive</div>
       </div>
       <div class="mobile-header-tools mobile-only" style="display: flex; align-items: center; gap: 8px;">
         <div id="mobMasteryBadge" class="mastery-counter" style="padding: 4px 8px; font-size: 0.78rem;">🏆 0/44</div>
         <button class="tool-btn" onclick="openOptionsModal()" style="padding: 5px 10px; font-size: 0.8rem;" title="Options">⚙️ Plus</button>
       </div>
     </div>
+
+    <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
+    <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
+      <div class="hub-module-scroll">
+        <button type="button" class="hub-module-pill active" id="pillBloc2" onclick="switchHubModule('bloc2')">
+          <span class="hub-pill-dot dot-active"></span>
+          <span class="hub-pill-title">🎯 Bloc 2 : Mario Passalacqua</span>
+          <span class="hub-pill-tag tag-primary">En cours</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
+          <span class="hub-pill-dot dot-archive"></span>
+          <span class="hub-pill-title">📦 Archives : Bloc 1 (Cañas)</span>
+          <span class="hub-pill-tag tag-muted">24 Questions</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+          <span class="hub-pill-dot dot-info"></span>
+          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
+          <span class="hub-pill-tag tag-info">Mandat</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillCalendar" onclick="switchHubModule('calendar')">
+          <span class="hub-pill-dot dot-calendar"></span>
+          <span class="hub-pill-title">🗓️ Calendrier Épreuves</span>
+          <span class="hub-pill-tag tag-date">Quiz 2 &amp; 3</span>
+        </button>
+      </div>
+    </nav>
 
     <!-- BARRE DES 4 ACTIVITÉS MOBILES (ADDENDUM SECTION 3.2) -->
     <nav class="mobile-modebar" aria-label="Activités principales">
@@ -2504,11 +3022,352 @@
 
   <!-- WORKSTATION CONTAINER -->
   <main class="workstation-container" id="workstationContainer">
+
+    <!-- VUE 1 : BLOC 2 (PR MARIO PASSALACQUA — MILIEUX TECHNOLOGIQUES & ERGONOMIE COGNITIVE) -->
+    <div id="viewBloc2Hub" class="hub-view-container" style="display: block;">
+      <div class="hub-view-content">
+        
+        <!-- MASCOTTE TOADETTE GREETING -->
+        <div class="mascot-bubble" style="margin-bottom: 0;">
+          <div class="mascot-avatar-wrap">
+            <img src="data:image/png;base64,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" alt="Toadette" class="mascot-img">
+          </div>
+          <div class="mascot-text">
+            <strong>Coucou Michel ! Bienvenue dans le Bloc 2 avec le Pr Mario Passalacqua ! 🍄</strong><br>
+            Nous abordons les <em>milieux technologiques, l'ergonomie cognitive et l'UX</em>. La session Contenu finalise actuellement la boucle dialectique DeepThink ➔ GPT-6 sur les verbatims GOLD. En attendant l'arrivée imminente des nouvelles banques, explore les cas réels ci-dessous, écoute les podcasts dédiés ou révise les 24 questions dans les Archives Bloc 1 !
+          </div>
+        </div>
+
+        <!-- CARTE HERO BLOC 2 -->
+        <div class="hub-hero-card">
+          <div class="hub-hero-header">
+            <div>
+              <span class="hub-hero-badge">🚀 Enseignement Actif • Séances 03 &amp; 04</span>
+              <h2 class="hub-hero-title">Milieux technologiques, UX et Ergonomie cognitive</h2>
+              <div class="hub-hero-subtitle">Enseignant responsable : <strong>Pr Mario Passalacqua</strong> • Automne 2026</div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc1')">
+                <span>📦</span> <span>S'entraîner sur Bloc 1 (Cañas)</span>
+              </button>
+            </div>
+          </div>
+
+          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 16px 0;">
+            Ce bloc d'étude explore les interactions homme-machine complexes, l'analyse cognitive des tâches, la gestion des erreurs humaines et l'ergonomie des interfaces de supervision critique.
+          </p>
+
+          <!-- BANDEAU STATUT CERTIFICATION -->
+          <div class="hub-status-banner">
+            <span class="hub-status-icon">⚙️</span>
+            <div class="hub-status-text">
+              <strong>Banque certifiée étalon-or en cours d'intégration technique :</strong><br>
+              La session Contenu finalise le ratissage exhaustif des verbatims GOLD (Cas Agnico Eagle, CHSLD Amical AI, Raquettes à neige, Dynamique Comportement vs Performance, et Mandat Séminaire 1 AF447). Les questions certifiées apparaîtront directement ici.
+            </div>
+          </div>
+        </div>
+
+        <!-- ÉTUDES DE CAS ET MODULES DU BLOC 2 -->
+        <div>
+          <h3 class="hub-section-title">📂 Études de cas cliniques &amp; Thématiques au programme</h3>
+          <div class="hub-cases-grid">
+            
+            <!-- CAS 1 : AGNICO EAGLE -->
+            <div class="hub-case-card">
+              <div class="hub-case-header">
+                <div class="hub-case-icon">⛏️</div>
+                <div>
+                  <div class="hub-case-theme">Supervision industrielle</div>
+                  <div class="hub-case-title">Cas Agnico Eagle (Mines automatisées)</div>
+                </div>
+              </div>
+              <div class="hub-case-desc">
+                Supervision à distance de véhicules autonomes en fosse profonde. Télémétrie, vigilance soutenue des opérateurs, latence des réseaux et prévention de la surcharge mentale en environnement isolé.
+              </div>
+              <div class="hub-case-tags">
+                <span class="hub-case-tag">Télé-opération</span>
+                <span class="hub-case-tag">Charge mentale</span>
+                <span class="hub-case-tag">Feedback loop</span>
+              </div>
+            </div>
+
+            <!-- CAS 2 : CHSLD AMICAL AI -->
+            <div class="hub-case-card">
+              <div class="hub-case-header">
+                <div class="hub-case-icon">🏥</div>
+                <div>
+                  <div class="hub-case-theme">Santé &amp; Intelligence Artificielle</div>
+                  <div class="hub-case-title">Cas CHSLD Amical AI</div>
+                </div>
+              </div>
+              <div class="hub-case-desc">
+                Déploiement d'agents conversationnels et robots d'assistance en gériatrie. Ergonomie cognitive pour le personnel soignant, acceptabilité technologique, confiance interhumaine et éthique des soins.
+              </div>
+              <div class="hub-case-tags">
+                <span class="hub-case-tag">Acceptabilité UX</span>
+                <span class="hub-case-tag">Agents conversationnels</span>
+                <span class="hub-case-tag">Charge de travail</span>
+              </div>
+            </div>
+
+            <!-- CAS 3 : RAQUETTES À NEIGE -->
+            <div class="hub-case-card">
+              <div class="hub-case-header">
+                <div class="hub-case-icon">🎿</div>
+                <div>
+                  <div class="hub-case-theme">Design d'interfaces physiques</div>
+                  <div class="hub-case-title">Cas Raquettes à neige (MSR vs Tubbs)</div>
+                </div>
+              </div>
+              <div class="hub-case-desc">
+                Analyse ergonomique comparative des systèmes d'attaches. Affordances perçues vs réelles (modèle de Norman), feedback tactile sous conditions de grand froid et prévention des erreurs d'ajustement.
+              </div>
+              <div class="hub-case-tags">
+                <span class="hub-case-tag">Affordance (Norman)</span>
+                <span class="hub-case-tag">Feedback tactile</span>
+                <span class="hub-case-tag">Modèle mental</span>
+              </div>
+            </div>
+
+            <!-- CAS 4 : COMPORTEMENT VS PERFORMANCE -->
+            <div class="hub-case-card">
+              <div class="hub-case-header">
+                <div class="hub-case-icon">🧠</div>
+                <div>
+                  <div class="hub-case-theme">Fondements théoriques</div>
+                  <div class="hub-case-title">Dynamique Comportement vs Performance</div>
+                </div>
+              </div>
+              <div class="hub-case-desc">
+                Taxonomie SRK de Jens Rasmussen (Skills, Rules, Knowledge), taxonomie des défaillances de James Reason (slips/lapses vs mistakes/violations) et Conscience de la situation (SA niveaux 1, 2, 3) de Mica Endsley.
+              </div>
+              <div class="hub-case-tags">
+                <span class="hub-case-tag">Rasmussen (SRK)</span>
+                <span class="hub-case-tag">Reason (Erreur humaine)</span>
+                <span class="hub-case-tag">Endsley (SA)</span>
+              </div>
+            </div>
+
+            <!-- CAS 5 : SÉMINAIRE 1 -->
+            <div class="hub-case-card">
+              <div class="hub-case-header">
+                <div class="hub-case-icon">✈️</div>
+                <div>
+                  <div class="hub-case-theme">Mandat Séminaire 1 • Équipe 1</div>
+                  <div class="hub-case-title">Vol AF447 &amp; Grille Lin et al. (1998)</div>
+                </div>
+              </div>
+              <div class="hub-case-desc">
+                Décrochage en haute altitude, perte des indications anémométriques, surprise de mode et interfaces opaques. Analyse selon les 4 dimensions de vulnérabilité technologique de Lin, Essebier &amp; Dekker (1998).
+              </div>
+              <div class="hub-case-tags">
+                <span class="hub-case-tag">Bainbridge (1983)</span>
+                <span class="hub-case-tag">Lin et al. (1998)</span>
+                <span class="hub-case-tag">Surprise de mode</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RESSOURCES MULTIMÉDIAS NOTEBOOKLM -->
+        <div class="hub-hero-card" style="padding: 20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+            <div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); display:flex; align-items:center; gap:8px;">
+                <span>🎙️</span> <span>Podcasts audio de révision (NotebookLM)</span>
+              </div>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">
+                Deux synthèses audio conçues pour tes trajets vers l'UQAM :
+                <strong>Épisode 1</strong> (Automatisation &amp; Bainbridge - 25 min) et <strong>Épisode 2</strong> (Erreur systémique &amp; Cañas - 18 min).
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1'); setTimeout(() => { switchPodcastEpisode('automation'); scrollToPodcastOrOpen(); }, 150);">
+                <span>▶️</span> <span>Écouter Ép. 1 (Automatisation)</span>
+              </button>
+              <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1'); setTimeout(() => { switchPodcastEpisode('systemic_error'); scrollToPodcastOrOpen(); }, 150);">
+                <span>▶️</span> <span>Écouter Ép. 2 (Cañas)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS TRANSVERSALES -->
+        <div class="hub-actions-bar">
+          <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc1')">
+            <span>📦</span> <span>Accéder aux 24 questions du Bloc 1 (Cañas et al.)</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('seminaire1')">
+            <span>🏛️</span> <span>Consulter la fiche Séminaire 1 (AF447 / Lin 1998)</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('calendar')">
+            <span>🗓️</span> <span>Voir le Calendrier des Quiz 2 et 3</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VUE 2 : SÉMINAIRE 1 (AF447 & LIN ET AL. 1998) -->
+    <div id="viewSeminaire1" class="hub-view-container" style="display: none;">
+      <div class="hub-view-content">
+        <div class="hub-hero-card">
+          <div class="hub-hero-header">
+            <div>
+              <span class="hub-hero-badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border-color: rgba(56, 189, 248, 0.4);">✈️ Séminaire 1 • Mandat Équipe 1</span>
+              <h2 class="hub-hero-title">Vol Air France 447 &amp; Grille d'analyse Lin et al. (1998)</h2>
+              <div class="hub-hero-subtitle">Étude des défaillances d'automatisation, des pertes de SA et de l'ergonomie des cockpits</div>
+            </div>
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+              <span>🎯</span> <span>Revenir au Bloc 2</span>
+            </button>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 16px 0;">
+            Le 1er juin 2009, l'Airbus A330 du vol AF447 s'abîme dans l'Atlantique suite au givrage des sondes Pitot. Cette catastrophe est l'archétype des <em>paradoxes de l'automatisation</em> (Bainbridge, 1983) et illustre parfaitement la grille de vulnérabilité des systèmes complexes développée par Lin, Essebier et Dekker (1998).
+          </p>
+        </div>
+
+        <h3 class="hub-section-title">🔍 Les 4 Dimensions d'Analyse (Lin et al., 1998)</h3>
+        <div class="hub-cases-grid">
+          <div class="hub-case-card">
+            <div class="hub-case-title">1. Complexité des Modes (Mode Awareness)</div>
+            <div class="hub-case-desc">
+              Le passage automatique de la loi normale (<em>Normal Law</em> avec protections de domaine de vol) à la loi alternative (<em>Alternate Law</em> sans protection de décrochage) a créé une surprise de mode fatale chez les pilotes.
+            </div>
+          </div>
+          <div class="hub-case-card">
+            <div class="hub-case-title">2. Opacité des Interfaces (Interface Opacity)</div>
+            <div class="hub-case-desc">
+              Le système n'indiquait pas clairement pourquoi le pilote automatique avait décroché ni quelles lois de contrôle s'appliquaient. Les mini-manches (<em>side-sticks</em>) non couplés empêchaient le copilote de voir les actions de cabré de son collègue.
+            </div>
+          </div>
+          <div class="hub-case-card">
+            <div class="hub-case-title">3. Feedback défaillant &amp; Logique perverse</div>
+            <div class="hub-case-desc">
+              L'alarme de décrochage (<em>Stall Warning</em>) s'est éteinte lorsque l'avion volait trop lentement pour être mesuré, puis s'est réactivée lorsque le copilote poussait sur le manche, renforçant paradoxalement son action erronée de tirer à fond.
+            </div>
+          </div>
+          <div class="hub-case-card">
+            <div class="hub-case-title">4. Chute brutale de la SA (Endsley)</div>
+            <div class="hub-case-desc">
+              Perte immédiate de la SA de niveau 1 (perception des alarmes et des vitesses), empêchant tout niveau 2 (compréhension que l'avion décrochait) et niveau 3 (projection et action correctrice pour piquer du nez).
+            </div>
+          </div>
+        </div>
+
+        <div class="hub-actions-bar">
+          <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+            <span>🎯</span> <span>Retour au Hub Bloc 2</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')">
+            <span>📦</span> <span>Réviseur Cañas (Bloc 1)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VUE 3 : CALENDRIER DES ÉPREUVES PSY7010 -->
+    <div id="viewCalendar" class="hub-view-container" style="display: none;">
+      <div class="hub-view-content">
+        <div class="hub-hero-card">
+          <div class="hub-hero-header">
+            <div>
+              <span class="hub-hero-badge" style="background: rgba(168, 85, 247, 0.15); color: #7e22ce; border-color: rgba(168, 85, 247, 0.4);">🗓️ Calendrier Officiel</span>
+              <h2 class="hub-hero-title">Échéancier des Évaluations &amp; Quiz — Automne 2026</h2>
+              <div class="hub-hero-subtitle">Programme du cours PSY7010 (Sciences psychologiques appliquées, UQAM)</div>
+            </div>
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+              <span>🎯</span> <span>Revenir au Bloc 2</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-entry" style="border-left: 4px solid var(--warning);">
+            <div class="timeline-date-box">
+              <span class="timeline-day">22</span>
+              <span class="timeline-month">Sept.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>📦 Quiz 1 — Milieux Technologiques &amp; Cañas et al. (Archivé)</h4>
+              <p>24 questions officielles sur Cañas et al. (2011, Chapitre 13) et Articles A-E. Toujours accessible dans la section Archives pour révision continue.</p>
+            </div>
+            <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')" style="padding: 6px 12px; font-size: 0.82rem; align-self: center;">
+              S'entraîner
+            </button>
+          </div>
+
+          <div class="timeline-entry" style="border-left: 4px solid #38bdf8;">
+            <div class="timeline-date-box">
+              <span class="timeline-day">29</span>
+              <span class="timeline-month">Sept.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>🏛️ Séminaire 1 — Études de cas (AF447 &amp; Lin et al. 1998)</h4>
+              <p>Présentation en classe de l'Équipe 1 sur l'automatisation, la complaisance, les surprises de mode et l'analyse systémique des accidents.</p>
+            </div>
+            <button type="button" class="hub-btn-secondary" onclick="switchHubModule('seminaire1')" style="padding: 6px 12px; font-size: 0.82rem; align-self: center;">
+              Consulter
+            </button>
+          </div>
+
+          <div class="timeline-entry" style="border-left: 4px solid var(--primary);">
+            <div class="timeline-date-box">
+              <span class="timeline-day">13</span>
+              <span class="timeline-month">Oct.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>🎯 Quiz 2 — Milieux technologiques &amp; UX (15 % de la note)</h4>
+              <p>Évaluation officielle avec le Pr Mario Passalacqua. Cas concrets (Agnico Eagle, CHSLD, Raquettes à neige), modèles SRK et ergonomie cognitive.</p>
+            </div>
+            <span class="hub-pill-tag tag-primary" style="align-self: center;">À venir</span>
+          </div>
+
+          <div class="timeline-entry" style="border-left: 4px solid #a855f7;">
+            <div class="timeline-date-box">
+              <span class="timeline-day">03</span>
+              <span class="timeline-month">Nov.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>📝 Quiz 3 — Applications avancées (15 % de la note)</h4>
+              <p>Troisième évaluation sommative du trimestre sur les interventions cliniques et organisationnelles en psychologie appliquée.</p>
+            </div>
+            <span class="hub-pill-tag tag-date" style="align-self: center;">À venir</span>
+          </div>
+        </div>
+
+        <div class="hub-actions-bar">
+          <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+            <span>🎯</span> <span>Retour au Hub Bloc 2</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')">
+            <span>📦</span> <span>S'entraîner sur Bloc 1</span>
+          </button>
+        </div>
+      </div>
+    </div>
     
     <!-- QUIZ PANE -->
-    <section class="quiz-pane" id="quizPane">
+    <section class="quiz-pane" id="quizPane" style="display: none;">
       <div class="quiz-content-wrap">
         
+        <!-- BANDEAU D'ARCHIVE BLOC 1 -->
+        <div class="archive-notice-banner" id="archiveNoticeBanner" style="display: none;">
+          <div class="archive-notice-content">
+            <span class="archive-icon">📦</span>
+            <div>
+              <strong>Section secondaire — Archives &amp; Entraînement : Bloc 1 (Cañas et al. 2011)</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Séance du 22 septembre (Chapitre 13 &amp; Articles A-E). 24 questions officielles actives + approfondissements (44 items).
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-return-hub" onclick="switchHubModule('bloc2')">
+            🎯 Revenir au Bloc 2 (Actif)
+          </button>
+        </div>
+
         <!-- MASCOTTE BUBBLE -->
         <div class="mascot-bubble" id="mascotBox">
           <div class="mascot-avatar-wrap">
@@ -7708,36 +8567,101 @@ const allQuestions = [
       return calculateDifficultyScoreForStat(s);
     }
 
-    // DATE D'EXPIRATION AUTOMATIQUE DU QUIZ (APRÈS LE COURS DU 22 SEPTEMBRE À 23H59 EDT)
-    // Note : Ne s'active que si la page est hébergée sur le Web (HTTP/HTTPS).
-    // En local (file://), l'accès reste illimité et permanent pour Michel !
-    const QUIZ_EXPIRATION_DATE = new Date('2026-09-22T23:59:59-04:00');
-
+    // DÉSACTIVATION DÉFINITIVE DU SHUTDOWN : La plateforme web est en service actif permanent (Hub modulaire)
     function checkQuizExpiration() {
-      if (window.location.protocol === 'file:') return false;
-      const now = new Date();
-      if (now > QUIZ_EXPIRATION_DATE) {
-        document.body.innerHTML = `
-          <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0f172a; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; text-align: center;">
-            <div style="font-size: 3.5rem; margin-bottom: 16px;">🔒</div>
-            <h1 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; color: #60a5fa;">Session d'entraînement terminée</h1>
-            <p style="font-size: 1rem; color: #94a3b8; max-width: 520px; line-height: 1.5; margin-bottom: 20px;">
-              Le quiz d'entraînement en ligne pour la séance du <strong>22 septembre</strong> (Milieux Technologiques &amp; Facteurs Humains) est désormais clos suite à la tenue du cours.
-            </p>
-            <div style="padding: 12px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; font-size: 0.88rem; color: #cbd5e1; max-width: 480px;">
-              💬 Les questions et fiches d'entraînement restent archivées pour consultation pédagogique.
-            </div>
-          </div>
-        `;
-        return true;
-      }
       return false;
+    }
+
+    // =========================================================================
+    // GESTION DU HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2, ARCHIVES BLOC 1, ETC.)
+    // =========================================================================
+    let currentHubModule = safeGetStorageRaw('psy7010_hub_module', 'bloc2');
+
+    // Vérification d'ancre URL (#bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
+    const hash = window.location.hash.toLowerCase();
+    if (hash === '#bloc1' || hash === '#archive' || hash === '#archives') {
+      currentHubModule = 'bloc1';
+    } else if (hash === '#seminaire1' || hash === '#seminaire') {
+      currentHubModule = 'seminaire1';
+    } else if (hash === '#calendar' || hash === '#calendrier') {
+      currentHubModule = 'calendar';
+    } else if (hash === '#bloc2') {
+      currentHubModule = 'bloc2';
+    }
+
+    function switchHubModule(mod) {
+      currentHubModule = mod;
+      safeSetStorageRaw('psy7010_hub_module', mod);
+      
+      const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
+      pills.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+      
+      const activePill = document.getElementById(
+        mod === 'bloc2' ? 'pillBloc2' :
+        mod === 'bloc1' ? 'pillBloc1' :
+        mod === 'seminaire1' ? 'pillSeminaire1' : 'pillCalendar'
+      );
+      if (activePill) activePill.classList.add('active');
+
+      const subTitle = document.getElementById('hubModuleSubtitle');
+      if (subTitle) {
+        if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua — Milieux technologiques & Ergonomie cognitive";
+        else if (mod === 'bloc1') subTitle.textContent = "Archives — Bloc 1 : Cañas et al. (2011) | 24 Questions";
+        else if (mod === 'seminaire1') subTitle.textContent = "Séminaire 1 : Vol AF447 & Grille Lin et al. (1998)";
+        else if (mod === 'calendar') subTitle.textContent = "Calendrier officiel des Évaluations (Quiz 2 le 13 oct., Quiz 3 le 3 nov.)";
+      }
+
+      const bloc2View = document.getElementById('viewBloc2Hub');
+      const seminaire1View = document.getElementById('viewSeminaire1');
+      const calendarView = document.getElementById('viewCalendar');
+      const quizPane = document.getElementById('quizPane');
+      const readerPane = document.getElementById('readerPane');
+      const splitDivider = document.getElementById('splitDivider');
+      const archiveNotice = document.getElementById('archiveNoticeBanner');
+
+      if (mod === 'bloc2') {
+        if (bloc2View) bloc2View.style.display = 'block';
+        if (seminaire1View) seminaire1View.style.display = 'none';
+        if (calendarView) calendarView.style.display = 'none';
+        if (quizPane) quizPane.style.display = 'none';
+        if (readerPane) readerPane.style.display = 'none';
+        if (splitDivider) splitDivider.style.display = 'none';
+        if (archiveNotice) archiveNotice.style.display = 'none';
+        updateMascot("Bienvenue au Bloc 2 avec le Pr Mario Passalacqua ! Les banques certifiées étalon-or arrivent. Révise les cas ou explore les Archives !", "happy");
+      } else if (mod === 'bloc1') {
+        if (bloc2View) bloc2View.style.display = 'none';
+        if (seminaire1View) seminaire1View.style.display = 'none';
+        if (calendarView) calendarView.style.display = 'none';
+        if (archiveNotice) archiveNotice.style.display = 'flex';
+        updateDynamicLayout();
+        setMobileView(mobileView || 'activity');
+        updateMascot("Section Archives / Entraînement — Bloc 1 actif (24 questions Cañas). Bon entraînement !", "study");
+      } else if (mod === 'seminaire1') {
+        if (bloc2View) bloc2View.style.display = 'none';
+        if (seminaire1View) seminaire1View.style.display = 'block';
+        if (calendarView) calendarView.style.display = 'none';
+        if (quizPane) quizPane.style.display = 'none';
+        if (readerPane) readerPane.style.display = 'none';
+        if (splitDivider) splitDivider.style.display = 'none';
+        if (archiveNotice) archiveNotice.style.display = 'none';
+        updateMascot("Séminaire 1 : Analyse des défaillances et de l'automatisation (AF447 & Lin et al. 1998).", "study");
+      } else if (mod === 'calendar') {
+        if (bloc2View) bloc2View.style.display = 'none';
+        if (seminaire1View) seminaire1View.style.display = 'none';
+        if (calendarView) calendarView.style.display = 'block';
+        if (quizPane) quizPane.style.display = 'none';
+        if (readerPane) readerPane.style.display = 'none';
+        if (splitDivider) splitDivider.style.display = 'none';
+        if (archiveNotice) archiveNotice.style.display = 'none';
+        updateMascot("Calendrier du trimestre : garde le cap sur les prochaines échéances !", "happy");
+      }
     }
 
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
-      if (checkQuizExpiration()) return;
-      setInterval(checkQuizExpiration, 30000);
       initSplitDivider();
       updateDynamicLayout();
       initKeyboardShortcuts();
@@ -7748,7 +8672,7 @@ const allQuestions = [
       
       // 2. Synchroniser le périmètre d'étude AVANT le premier rendu
       setStudyScope(currentStudyScope);
-      setMode('study');
+      setMode('study', false);
       updateMasteryBadge();
       updateFlashcardStatsUI();
       initSavedPodcastUrl();
@@ -7758,10 +8682,16 @@ const allQuestions = [
         document.body.classList.add('is-mobile-compact');
         setMobileView('activity');
       }
+
+      // 3. Initialiser la vue active du Hub
+      switchHubModule(currentHubModule);
     });
 
     // --- GESTION DU MODE ÉTUDE / FLASHCARDS / SIMULATION ---
-    function setMode(mode) {
+    function setMode(mode, autoSwitchHub = true) {
+      if (autoSwitchHub && currentHubModule !== 'bloc1') {
+        switchHubModule('bloc1');
+      }
       if (currentMode === mode && mode === 'flashcards') return;
       currentMode = mode;
       
@@ -9123,6 +10053,16 @@ function setMobileView(view) {
       mobileView = view;
       const qPane = document.getElementById('quizPane');
       const rPane = document.getElementById('readerPane');
+      const splitDivider = document.getElementById('splitDivider');
+
+      // Si nous ne sommes pas dans les Archives (Bloc 1), garder quizPane et readerPane masqués
+      if (typeof currentHubModule !== 'undefined' && currentHubModule !== 'bloc1') {
+        if (qPane) qPane.style.display = 'none';
+        if (rPane) rPane.style.display = 'none';
+        if (splitDivider) splitDivider.style.display = 'none';
+        return;
+      }
+
       const podcastBanner = document.getElementById('podcastBanner');
       const fcOptBanner = document.getElementById('flashcardsOptBanner');
       const optResources = document.getElementById('optionalResourcesSection');
@@ -9489,6 +10429,9 @@ let previousIsCompact = isCompactUI();
     }
 
     function openMobilePodcast() {
+      if (typeof currentHubModule !== 'undefined' && currentHubModule !== 'bloc1') {
+        switchHubModule('bloc1');
+      }
       setMobileView('podcast');
       const banner = document.getElementById('podcastBanner');
       if (banner) {
