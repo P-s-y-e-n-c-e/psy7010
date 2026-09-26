@@ -1,9 +1,9 @@
-# Audio files (large recordings)
+# Audio files (large raw recordings ignored, curated podcasts whitelisted)
 *.m4a
 *.mp3
 *.wav
-!03_Seance_03_22sep_Milieux_Technologiques/L_erreur_humaine_est_un_symptôme_systémique.m4a
-!03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vulnérables.m4a
+!03_Seance_03_22sep_Milieux_Technologiques/*.m4a
+!04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/*.m4a
 
 # OS / Temporary
 Thumbs.db
