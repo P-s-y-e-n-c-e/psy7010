@@ -154,6 +154,20 @@
       line-height: 1.15;
       margin: 0;
     }
+    /* EASTER EGG : MASCOTTE TOAD VERS STATION PSY9613 */
+    .header-mascot-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .header-mascot-link:hover img, .header-mascot-icon:hover {
+      transform: scale(1.2) rotate(-10deg);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .header-mascot-icon {
+      transition: transform 0.2s ease;
+    }
     .quiz-sub-date {
       font-size: 0.96rem;
       font-weight: 700;
@@ -3474,6 +3488,57 @@
       border-bottom: none;
     }
 
+    /* CAPSULES AUDIO IMMERSIVES DU SÉMINAIRE 1 */
+    .seminar-audio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .seminar-audio-card:hover {
+      border-left-color: var(--primary-hover);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .seminar-audio-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .seminar-audio-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .seminar-audio-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .seminar-audio-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+    .seminar-audio-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .seminar-audio-player {
+      width: 100%;
+      height: 38px;
+      border-radius: 8px;
+      outline: none;
+      margin-top: 4px;
+    }
+
     @media (max-width: 768px) {
       .hub-module-bar {
         padding: 6px 10px;
@@ -3719,7 +3784,10 @@
     <header class="app-header">
     <div class="header-brand-row">
       <div class="header-brand">
-        <h1 class="quiz-main-title">
+        <h1 class="quiz-main-title" style="display: flex; align-items: center; gap: 8px;">
+          <a href="../psy9613/" class="header-mascot-link" title="~ Basculer vers la station d'étude PSY9613">
+            <img src="toad.png" alt="Toad - Bascule vers PSY9613" class="header-mascot-icon" style="height: 32px; width: 32px; border-radius: 50%; object-fit: contain; flex-shrink: 0; margin-right: 8px;">
+          </a>
           <span>PSY7010 - Station d'Étude</span>
           <span class="construction-badge-wrap" tabindex="0" role="note" aria-label="Plateforme d'étude en cours de perfectionnement et de construction continue. Des ajustements ou coquilles peuvent subsister, merci de vérifier avec les textes de cours officiels. Vos remarques et commentaires sont les bienvenus !">
             <span class="construction-badge">🚧 En construction</span>
@@ -3737,24 +3805,24 @@
     <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
     <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
       <div class="hub-module-scroll">
-        <button type="button" class="hub-module-pill active" id="pillBloc2" onclick="switchHubModule('bloc2')">
+        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+          <span class="hub-pill-dot dot-info"></span>
+          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
+          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillBloc2" onclick="switchHubModule('bloc2')">
           <span class="hub-pill-dot dot-active"></span>
           <span class="hub-pill-title">🎯 Bloc 2 : Mario Passalacqua</span>
           <span class="hub-pill-tag tag-primary">En cours</span>
-        </button>
-        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
-          <span class="hub-pill-dot dot-archive"></span>
-          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
-        </button>
-        <button type="button" class="hub-module-pill" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
-          <span class="hub-pill-dot dot-info"></span>
-          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
-          <span class="hub-pill-tag tag-info">Mandat</span>
         </button>
         <button type="button" class="hub-module-pill" id="pillCalendar" onclick="switchHubModule('calendar')">
           <span class="hub-pill-dot dot-calendar"></span>
           <span class="hub-pill-title">🗓️ Calendrier Épreuves</span>
           <span class="hub-pill-tag tag-date">Quiz 2 &amp; 3</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
+          <span class="hub-pill-dot dot-archive"></span>
+          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
         </button>
       </div>
     </nav>
@@ -4387,10 +4455,10 @@
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
-              <audio id="localPodcastAudio" src="../../03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
                 <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
-                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
                 <source src="03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
+                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
                 <source src="PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
               </audio>
 
@@ -4448,7 +4516,10 @@
       <!-- TABS BAR -->
       <!-- TABS BAR POUR BLOC 2 (ENSEIGNEMENT ACTIF) -->
       <div class="reader-header-bar" id="readerTabsBloc2">
-        <button class="reader-tab active" id="tab_doc_af447" onclick="switchTab('doc_af447')">
+        <button class="reader-tab active" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
+          🏛️ Séminaire 1
+        </button>
+        <button class="reader-tab" id="tab_doc_af447" onclick="switchTab('doc_af447')">
           ✈️ AF447 (Human Factors 101)
         </button>
         <button class="reader-tab" id="tab_doc_lin1998" onclick="switchTab('doc_lin1998')">
@@ -4459,9 +4530,6 @@
         </button>
         <button class="reader-tab" id="tab_doc_canas" onclick="switchTab('doc_canas')">
           🔴 Cañas et al. (2011)
-        </button>
-        <button class="reader-tab" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
-          🏛️ Séminaire 1
         </button>
         <button class="reader-tab" id="tab_calendar" onclick="switchHubModule('calendar')">
           🗓️ Calendrier
@@ -4502,8 +4570,42 @@
             </button>
           </div>
           <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 12px 0;">
-            <strong>Consignes officielles de remise :</strong> Remise écrite individuelle obligatoire d'<strong>une feuille de deux questions critiques ouvertes</strong> à la clôture de la séance (Question 1 sur l'accident du <em>Vol AF-447</em>, Question 2 sur l'étude d'ergonomie hospitalière de <em>Lin et al. 1998</em>). Cet atelier fournit à la cohorte le cadrage méthodologique, les sensibilités des évaluateurs et les pistes de formulation.
+            <strong>Consignes officielles de remise :</strong> Remise écrite individuelle obligatoire d'<strong>une feuille de deux questions critiques ouvertes</strong> à la clôture de la séance (Question 1 sur l'accident du <em>Vol AF-447</em>, Question 2 sur l'étude d'ergonomie hospitalière de <em>Lin et al. 1998</em>).
           </p>
+
+          <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;">
+            <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-main); margin-bottom: 8px;">📋 Déroulement de l'atelier</div>
+            <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55;">
+              <div style="margin-bottom: 8px;">
+                <strong>Organisation en 3 locaux distincts par concentration :</strong> Dès l'arrivée au local SU-1550, le groupe est divisé en trois sous-groupes répartis dans trois locaux différents (Santé et services sociaux, Ingénierie et facteurs humains, Commerce et consommation). L'objectif de cette séparation est de mobiliser le regard spécifique de chaque discipline face aux problèmes concrets.
+              </div>
+              <div style="margin-bottom: 8px;">
+                <strong>Circulation des professeurs :</strong> Mario Passalacqua et Marc-André Bédard circulent activement d'un local à l'autre pour écouter les échanges, tester la solidité des analyses et relancer la discussion sur les points méthodologiques sensibles.
+              </div>
+              <div>
+                <strong>Livrable :</strong> À la clôture (12h15–12h30), chaque étudiant remet individuellement sa feuille écrite de deux questions ouvertes.
+              </div>
+            </div>
+          </div>
+
+          <!-- CAPSULE 0 : BRIEFING DE L'ATELIER SU-1550 -->
+          <div class="seminar-audio-card" style="border-left-color: #38bdf8;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Capsule 0 • Briefing de l'Atelier au Local SU-1550 (2 min 45)</h4>
+                  <div class="seminar-audio-meta">Consignes opérationnelles, organisation en 3 sous-groupes par concentration et critères de remise à 12h15.</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-info">🎧 Capsule Audio • fr-CA</span>
+            </div>
+            <audio class="seminar-audio-player" controls preload="none">
+              <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_00_Briefing_Atelier_SU1550.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <span class="seminar-tag-badge">🧭 Guide de Cadrage Méthodologique</span>
             <span style="font-size: 0.82rem; color: var(--text-muted);">Cohorte de Maîtrise UQAM • Zéro question fermée • Arbitrages de conception (Trade-offs)</span>
@@ -4604,6 +4706,33 @@
               <div class="seminar-breakdown-item">
                 <strong>🔍 Contexte empirique documenté :</strong> Givrage des sondes Pitot, déconnexion du PA, basculement en loi alternative, extinction trompeuse de l'alarme de décrochage sous 60 nœuds puis réactivation paradoxale lors de l'action salvatrice à piquer.
               </div>
+              <div class="seminar-breakdown-item" style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-top: 6px;">
+                <div style="font-weight: 700; color: var(--text-main); margin-bottom: 6px;">📌 Faits empiriques établis (Rapport BEA)</div>
+                <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                  <div style="margin-bottom: 6px;"><strong>1. L'inhibition paradoxale de l'alarme :</strong> Lorsque la vitesse mesurée descend sous 60 nœuds, les calculateurs jugent les valeurs d'incidence non valides et <em>coupent</em> l'alarme sonore. Quand le copilote pousse pour piquer et regagner de la portance, la vitesse repasse au-dessus de 60 nœuds, ce qui <strong>réactive l'alarme</strong>, induisant l'illusion que l'action à piquer aggrave le problème.</div>
+                  <div style="margin-bottom: 6px;"><strong>2. Les side-sticks passifs :</strong> Les commandes des deux pilotes ne sont pas couplées mécaniquement. Le copilote surveillant n'avait aucun retour tactile ni visuel direct pour constater que son collègue maintenait le manche cabré à fond pendant la quasi-totalité de la chute.</div>
+                  <div><strong>3. Perte de conscience de la situation (SA) :</strong> L'alarme de décrochage a retenti pendant près de 4 minutes sans jamais être verbalisée ni discutée par les pilotes, saturés par les alertes visuelles secondaires de l'ECAM.</div>
+                </div>
+              </div>
+
+              <!-- CAPSULE 1 : CRASH VOL AF-447 -->
+              <div class="seminar-audio-card" style="border-left-color: #0284c7;">
+                <div class="seminar-audio-header">
+                  <div class="seminar-audio-title-group">
+                    <span class="seminar-audio-icon">🎙️</span>
+                    <div>
+                      <h4 class="seminar-audio-title">Capsule 1 • Autopsie Cognitive du Crash AF-447 (3 min 40)</h4>
+                      <div class="seminar-audio-meta">Givrage des sondes Pitot, side-sticks passifs asynchrones et paradoxe de l'avertisseur de décrochage.</div>
+                    </div>
+                  </div>
+                  <span class="hub-pill-tag tag-primary">🎧 Capsule Audio • fr-CA</span>
+                </div>
+                <audio class="seminar-audio-player" controls preload="none">
+                  <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_01_Vol_AF447.m4a" type="audio/mp4">
+                  Votre navigateur ne prend pas en charge la lecture audio.
+                </audio>
+              </div>
+
               <div class="seminar-breakdown-item">
                 <strong>🧠 Concepts théoriques :</strong> Gouffre d'évaluation (Norman), Conscience de la situation niveaux 2 et 3 (Endsley), Surprise de mode et Ironies de l'automatisation (Bainbridge).
               </div>
@@ -4632,8 +4761,36 @@
 
             <div class="seminar-breakdown">
               <div class="seminar-breakdown-item">
-                <strong>🔍 Contexte empirique documenté :</strong> Défilement séquentiel opaque de 8 à 27 écrans sur la pompe Abbott Lifecare 4100, multifonctionnalité ambiguë de REVIEW/CHANGE, risque de surdosage x10 par glissement d'unité.
+                <strong>🔍 Contexte empirique documenté :</strong> Les pompes PCA permettent aux patients hospitalisés d'administrer des doses précises de morphine. Les statistiques hospitalières démontrent que <strong>60 % des incidents graves sont dus à des erreurs d'utilisation humaine</strong> et non à des pannes mécaniques.
               </div>
+              <div class="seminar-breakdown-item" style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-top: 6px;">
+                <div style="font-weight: 700; color: var(--text-main); margin-bottom: 6px;">📌 Faits empiriques établis (Lin et al., 1998)</div>
+                <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                  <div style="margin-bottom: 6px;"><strong>1. Opacité du dialogue séquentiel :</strong> Sur l'appareil Abbott Lifecare 4100, la programmation impose de naviguer à l'aveugle à travers 8 à 27 écrans sur un minuscule afficheur LCD d'une seule ligne, sans vue d'ensemble du protocole.</div>
+                  <div style="margin-bottom: 6px;"><strong>2. Touches multifonctions ambiguës :</strong> La même touche (<code>REVIEW/CHANGE</code>) sert tantôt à valider un paramètre, tantôt à en modifier la valeur, créant des risques majeurs d'erreurs de mode.</div>
+                  <div style="margin-bottom: 6px;"><strong>3. L'impact critique des interruptions :</strong> En salle de réveil ou aux soins intensifs, les infirmières sont continuellement interrompues. L'absence de visibilité immédiate de l'état système oblige à stocker les réglages en mémoire de travail, provoquant un délai de reprise (<em>resumption lag</em>) propice aux erreurs.</div>
+                  <div><strong>4. La nuance écologique :</strong> L'étude a validé son interface révisée auprès de 12 étudiantes novices en laboratoire. En milieu hospitalier réel, implanter une nouvelle interface chez des soignants expérimentés peut provoquer des erreurs d'intrusion dues au conflit avec leurs anciennes habitudes motrices.</div>
+                </div>
+              </div>
+
+              <!-- CAPSULE 2 : POMPES PCA LIN ET AL. 1998 -->
+              <div class="seminar-audio-card" style="border-left-color: #059669;">
+                <div class="seminar-audio-header">
+                  <div class="seminar-audio-title-group">
+                    <span class="seminar-audio-icon">🎙️</span>
+                    <div>
+                      <h4 class="seminar-audio-title">Capsule 2 • Pompes PCA &amp; Dialogue Séquentiel — Lin et al. 1998 (3 min 45)</h4>
+                      <div class="seminar-audio-meta">Navigation aveugle à travers 27 écrans, ambiguïté de REVIEW/CHANGE et interruptions en soins intensifs.</div>
+                    </div>
+                  </div>
+                  <span class="hub-pill-tag tag-info" style="color: #059669; border-color: rgba(5, 150, 105, 0.35); background: rgba(5, 150, 105, 0.15);">🎧 Capsule Audio • fr-CA</span>
+                </div>
+                <audio class="seminar-audio-player" controls preload="none">
+                  <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_02_Pompes_PCA_Lin1998.m4a" type="audio/mp4">
+                  Votre navigateur ne prend pas en charge la lecture audio.
+                </audio>
+              </div>
+
               <div class="seminar-breakdown-item">
                 <strong>🧠 Concepts théoriques :</strong> Knowledge in the World vs Knowledge in the Head (Norman), Délai de reprise cognitive (Resumption Lag), Forcing functions vs Workarounds.
               </div>
@@ -4681,6 +4838,61 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <!-- CAPSULE 3 : MÉTHODE PASSALACQUA DIAPO 92 -->
+          <div class="seminar-audio-card" style="border-left-color: #a855f7;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Capsule 3 • Démarche en 4 Étapes &amp; Diapositive 92 — Pr Mario Passalacqua (3 min 50)</h4>
+                  <div class="seminar-audio-meta">Comprendre, Concevoir, Évaluer, Déployer : la démarche d'ingénierie cognitive et la grille de raisonnement guidé.</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-date" style="color: #a855f7; border-color: rgba(168, 85, 247, 0.35); background: rgba(168, 85, 247, 0.15);">🎧 Capsule Audio • fr-CA</span>
+            </div>
+            <audio class="seminar-audio-player" controls preload="none">
+              <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_03_Methode_Passalacqua_Diapo92.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+        </div>
+
+        <!-- LES 4 PIÈGES RÉELS À ÉVITER -->
+        <div class="seminar-official-box">
+          <div class="seminar-official-header">
+            <div>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">⚠️ Les 4 Pièges Réels à Éviter Impérativement</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Directives explicites des professeurs Passalacqua et Bédard en classe</p>
+            </div>
+          </div>
+
+          <div class="seminar-breakdown" style="margin-top: 10px;">
+            <div class="seminar-breakdown-item" style="border-left-color: #ef4444;">
+              <strong>❌ Piège 1 : Blâmer l'opérateur humain</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                <em>Directive de Mario Passalacqua :</em> <strong>« L'erreur humaine décrit le résultat, jamais la cause. »</strong> Blâmer l'usager est un non-sens en facteurs humains. L'analyse consiste à comprendre ce qui, dans la structure de l'interface et le contexte du travail, a rendu l'action de l'opérateur rationnelle à ses yeux au moment où il l'a accomplie.
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #ef4444;">
+              <strong>❌ Piège 2 : La fausse question fermée (Oui / Non)</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                <em>Directive de Marc-André Bédard :</em> Une question dont la réponse se résume par un « oui » ou un « non » bloque la discussion et n'apporte rien. Vos questions doivent inviter à un arbitrage de conception complexe.
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #ef4444;">
+              <strong>❌ Piège 3 : Le « roman » de 500 mots</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                <em>Directive de Mario Passalacqua :</em> Les professeurs demandent de la concision. Évitez les longues tournures académiques. Une formulation courte, articulée en quelques puces directes, est beaucoup plus percutante et professionnelle.
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #ef4444;">
+              <strong>❌ Piège 4 : Le problème formulé comme un simple détail mécanique</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                Veillez à toujours relier le dysfonctionnement technique à la perception ou au comportement de l'opérateur. Une force excessive sur un outil n'est pas qu'un frottement mécanique — c'est un déficit de retour haptique qui empêche l'opérateur de confirmer l'état de son action.
+              </div>
+            </div>
           </div>
         </div>
 
@@ -10588,7 +10800,7 @@ const allQuestions = [
     // =========================================================================
     // GESTION DU HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2, ARCHIVES BLOC 1, ETC.)
     // =========================================================================
-    let currentHubModule = safeGetStorageRaw('psy7010_hub_module', 'bloc2');
+    let currentHubModule = safeGetStorageRaw('psy7010_hub_module_v2', 'seminaire1');
 
     // Vérification d'ancre URL (#bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
     const hash = window.location.hash.toLowerCase();
@@ -10604,7 +10816,7 @@ const allQuestions = [
 
     function switchHubModule(mod) {
       currentHubModule = mod;
-      safeSetStorageRaw('psy7010_hub_module', mod);
+      safeSetStorageRaw('psy7010_hub_module_v2', mod);
       
       const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
       pills.forEach(id => {
@@ -10686,8 +10898,8 @@ const allQuestions = [
 
         if (typeof getAudioEl === 'function') {
           const a = getAudioEl();
-          if (a && a.paused && currentPodcastEp !== 'automation') {
-            switchPodcastEpisode('automation', false);
+          if (a && a.paused && currentPodcastEp === 'systemic_error') {
+            switchPodcastEpisode('deep_dive_s03', false);
           }
         }
         updateMascot("Bloc 2 : Milieux technologiques avec le Pr Mario Passalacqua. Entraînez-vous sur les cas cliniques et explorez les documents sources à droite.", "happy");
@@ -11322,7 +11534,7 @@ const allQuestions = [
         9: 'doc_lin1998', 10: 'doc_notes_s03', 11: 'doc_af447', 12: 'doc_canas'
       };
       const targetDocId = b2DocMap[q.id] || 'doc_af447';
-      if (activeDocId !== targetDocId) {
+      if (currentHubModule === 'bloc2' && activeDocId !== targetDocId) {
         switchTab(targetDocId, false);
       }
 
@@ -11485,6 +11697,7 @@ const allQuestions = [
 
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
+      const intendedModule = currentHubModule;
       initSplitDivider();
       updateDynamicLayout();
       initKeyboardShortcuts();
@@ -11508,7 +11721,7 @@ const allQuestions = [
 
       // 3. Initialiser la vue active du Hub
       initB2Training();
-      switchHubModule(currentHubModule);
+      switchHubModule(intendedModule);
     });
 
     // --- GESTION DU MODE ÉTUDE / FLASHCARDS / SIMULATION ---
@@ -12137,7 +12350,7 @@ const allQuestions = [
       // Si on était dans la vue Séminaire 1 ou Calendrier, rétablir la vue Bloc 2
       if (typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar')) {
         currentHubModule = 'bloc2';
-        safeSetStorageRaw('psy7010_hub_module', 'bloc2');
+        safeSetStorageRaw('psy7010_hub_module_v2', 'bloc2');
         const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
         pills.forEach(id => {
           const el = document.getElementById(id);

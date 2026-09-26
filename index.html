@@ -154,6 +154,20 @@
       line-height: 1.15;
       margin: 0;
     }
+    /* EASTER EGG : MASCOTTE TOAD VERS STATION PSY9613 */
+    .header-mascot-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .header-mascot-link:hover img, .header-mascot-icon:hover {
+      transform: scale(1.2) rotate(-10deg);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .header-mascot-icon {
+      transition: transform 0.2s ease;
+    }
     .quiz-sub-date {
       font-size: 0.96rem;
       font-weight: 700;
@@ -3770,7 +3784,10 @@
     <header class="app-header">
     <div class="header-brand-row">
       <div class="header-brand">
-        <h1 class="quiz-main-title">
+        <h1 class="quiz-main-title" style="display: flex; align-items: center; gap: 8px;">
+          <a href="../psy9613/" class="header-mascot-link" title="~ Basculer vers la station d'étude PSY9613">
+            <img src="toad.png" alt="Toad - Bascule vers PSY9613" class="header-mascot-icon" style="height: 32px; width: 32px; border-radius: 50%; object-fit: contain; flex-shrink: 0; margin-right: 8px;">
+          </a>
           <span>PSY7010 - Station d'Étude</span>
           <span class="construction-badge-wrap" tabindex="0" role="note" aria-label="Plateforme d'étude en cours de perfectionnement et de construction continue. Des ajustements ou coquilles peuvent subsister, merci de vérifier avec les textes de cours officiels. Vos remarques et commentaires sont les bienvenus !">
             <span class="construction-badge">🚧 En construction</span>
