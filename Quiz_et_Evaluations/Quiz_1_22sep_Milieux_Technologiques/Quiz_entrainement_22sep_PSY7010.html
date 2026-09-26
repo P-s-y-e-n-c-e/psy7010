@@ -3364,55 +3364,61 @@
     }
     /* ENTRÉES DU CALENDRIER PASSÉES (ARCHIVÉES / COMPLÉTÉES) */
     .timeline-entry.past {
-      background: #f1f5f9;
+      background: #e2e8f0;
       border-color: #cbd5e1;
       box-shadow: none;
       transition: all 0.2s ease;
     }
     .timeline-entry.past:hover {
-      background: #e2e8f0;
+      background: #cbd5e1;
       border-color: #94a3b8;
     }
     body.dark-mode .timeline-entry.past {
-      background: rgba(11, 17, 32, 0.70);
+      background: #080d1a;
       border-color: rgba(255, 255, 255, 0.08);
       box-shadow: none;
     }
     body.dark-mode .timeline-entry.past:hover {
-      background: rgba(15, 23, 42, 0.90);
+      background: #0e1628;
       border-color: rgba(255, 255, 255, 0.16);
     }
     .timeline-entry.past .timeline-date-box {
-      background: #e2e8f0;
-      border-color: #cbd5e1;
+      background: #cbd5e1;
+      border-color: #94a3b8;
     }
     body.dark-mode .timeline-entry.past .timeline-date-box {
       background: rgba(255, 255, 255, 0.04);
       border-color: rgba(255, 255, 255, 0.08);
     }
     .timeline-entry.past .timeline-day {
-      color: #475569;
+      color: #1e293b;
     }
     body.dark-mode .timeline-entry.past .timeline-day {
       color: #94a3b8;
     }
     .timeline-entry.past .timeline-info h4 {
-      color: #334155;
+      color: #0f172a;
     }
     body.dark-mode .timeline-entry.past .timeline-info h4 {
       color: #cbd5e1;
+    }
+    .timeline-entry.past .timeline-info p {
+      color: #334155;
+    }
+    body.dark-mode .timeline-entry.past .timeline-info p {
+      color: #94a3b8;
     }
     .timeline-badge-completed {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 9999px;
       font-size: 0.76rem;
       font-weight: 700;
-      background: rgba(100, 116, 139, 0.14);
-      color: #475569;
-      border: 1px solid rgba(100, 116, 139, 0.28);
+      background: #cbd5e1;
+      color: #1e293b;
+      border: 1px solid #94a3b8;
       white-space: nowrap;
       align-self: center;
       flex-shrink: 0;
@@ -3885,6 +3891,11 @@
     <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
     <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
       <div class="hub-module-scroll">
+        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+          <span class="hub-pill-dot dot-info"></span>
+          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
+          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
+        </button>
         <button type="button" class="hub-module-pill" id="pillBloc2" onclick="switchHubModule('bloc2')">
           <span class="hub-pill-dot dot-active"></span>
           <span class="hub-pill-title">🎯 Bloc 2 : Mario Passalacqua</span>
@@ -3894,15 +3905,9 @@
           <span class="hub-pill-dot dot-archive"></span>
           <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
         </button>
-        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
-          <span class="hub-pill-dot dot-info"></span>
-          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
-          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
-        </button>
         <button type="button" class="hub-module-pill" id="pillCalendar" onclick="switchHubModule('calendar')">
           <span class="hub-pill-dot dot-calendar"></span>
-          <span class="hub-pill-title">🗓️ Calendrier Épreuves</span>
-          <span class="hub-pill-tag tag-date">Quiz 2 &amp; 3</span>
+          <span class="hub-pill-title">🗓️ Calendrier</span>
         </button>
       </div>
     </nav>
@@ -5074,7 +5079,7 @@
           </div>
 
           <!-- 22 SEPT (SÉANCE 3 & QUIZ 1 - PASSÉE) -->
-          <div class="timeline-entry past" style="border-left: 4px solid #f59e0b;">
+          <div class="timeline-entry past" style="border-left: 4px solid #64748b;">
             <div class="timeline-date-box">
               <span class="timeline-day">22</span>
               <span class="timeline-month">Sept.</span>
@@ -5083,12 +5088,7 @@
               <h4>📦 Séance 3 — Milieux Technologiques &amp; Quiz 1 (5 % - Complété)</h4>
               <p>Enseignement magistral du Pr Mario Passalacqua sur les facteurs humains, les systèmes complexes et l'ergonomie cognitive. Passation en classe de l'évaluation sommative du Quiz 1 (Chapitre 13 de Cañas et al. 2011 et Human Factors 101). Questions archivées pour entraînement continu.</p>
             </div>
-            <div style="display:flex; flex-direction:column; gap:6px; align-self:center; align-items:flex-end; flex-shrink:0;">
-              <span class="timeline-badge-completed">✓ Évalué (5 %)</span>
-              <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')" style="padding: 5px 10px; font-size: 0.78rem;">
-                S'entraîner
-              </button>
-            </div>
+            <span class="timeline-badge-completed">✓ Évalué (5 %)</span>
           </div>
 
           <!-- 29 SEPT (SÉANCE 4 / SÉMINAIRE 1 - EN COURS / PROCHAINE ÉCHÉANCE) -->
@@ -10961,7 +10961,7 @@ const allQuestions = [
         if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
         else if (mod === 'bloc1') subTitle.textContent = "Bloc 1 : Cañas et al. (2011)";
         else if (mod === 'seminaire1') subTitle.textContent = "Séminaire 1 : Vol AF447 & Grille Lin et al. (1998)";
-        else if (mod === 'calendar') subTitle.textContent = "Calendrier officiel des Évaluations (Quiz 2 le 13 oct., Quiz 3 le 10 nov.)";
+        else if (mod === 'calendar') subTitle.textContent = "Calendrier officiel du trimestre (Automne 2026)";
       }
 
       const seminaire1View = document.getElementById('viewSeminaire1');
