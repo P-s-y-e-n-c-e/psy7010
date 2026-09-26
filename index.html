@@ -3474,6 +3474,57 @@
       border-bottom: none;
     }
 
+    /* CAPSULES AUDIO IMMERSIVES DU SÉMINAIRE 1 */
+    .seminar-audio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .seminar-audio-card:hover {
+      border-left-color: var(--primary-hover);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .seminar-audio-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .seminar-audio-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .seminar-audio-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .seminar-audio-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+    .seminar-audio-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .seminar-audio-player {
+      width: 100%;
+      height: 38px;
+      border-radius: 8px;
+      outline: none;
+      margin-top: 4px;
+    }
+
     @media (max-width: 768px) {
       .hub-module-bar {
         padding: 6px 10px;
@@ -4520,6 +4571,24 @@
             </div>
           </div>
 
+          <!-- CAPSULE 4 : BRIEFING JOUR J SU-1550 -->
+          <div class="seminar-audio-card" style="border-left-color: #38bdf8;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Capsule 4 • Briefing Jour J au Local SU-1550 (2 min 45)</h4>
+                  <div class="seminar-audio-meta">Consignes opérationnelles, organisation en 3 sous-groupes par concentration et critères de remise à 12h15.</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-info">🎧 Capsule Audio • fr-CA</span>
+            </div>
+            <audio class="seminar-audio-player" controls preload="none">
+              <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_04_Briefing_Jour_J_SU1550.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <span class="seminar-tag-badge">🧭 Guide de Cadrage Méthodologique</span>
             <span style="font-size: 0.82rem; color: var(--text-muted);">Cohorte de Maîtrise UQAM • Zéro question fermée • Arbitrages de conception (Trade-offs)</span>
@@ -4628,6 +4697,25 @@
                   <div><strong>3. Perte de conscience de la situation (SA) :</strong> L'alarme de décrochage a retenti pendant près de 4 minutes sans jamais être verbalisée ni discutée par les pilotes, saturés par les alertes visuelles secondaires de l'ECAM.</div>
                 </div>
               </div>
+
+              <!-- CAPSULE 1 : CRASH VOL AF-447 -->
+              <div class="seminar-audio-card" style="border-left-color: #0284c7;">
+                <div class="seminar-audio-header">
+                  <div class="seminar-audio-title-group">
+                    <span class="seminar-audio-icon">🎙️</span>
+                    <div>
+                      <h4 class="seminar-audio-title">Capsule 1 • Autopsie Cognitive du Crash AF-447 (3 min 40)</h4>
+                      <div class="seminar-audio-meta">Givrage des sondes Pitot, side-sticks passifs asynchrones et paradoxe de l'avertisseur de décrochage.</div>
+                    </div>
+                  </div>
+                  <span class="hub-pill-tag tag-primary">🎧 Capsule Audio • fr-CA</span>
+                </div>
+                <audio class="seminar-audio-player" controls preload="none">
+                  <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_01_Vol_AF447.m4a" type="audio/mp4">
+                  Votre navigateur ne prend pas en charge la lecture audio.
+                </audio>
+              </div>
+
               <div class="seminar-breakdown-item">
                 <strong>🧠 Concepts théoriques :</strong> Gouffre d'évaluation (Norman), Conscience de la situation niveaux 2 et 3 (Endsley), Surprise de mode et Ironies de l'automatisation (Bainbridge).
               </div>
@@ -4667,6 +4755,25 @@
                   <div><strong>4. La nuance écologique :</strong> L'étude a validé son interface révisée auprès de 12 étudiantes novices en laboratoire. En milieu hospitalier réel, implanter une nouvelle interface chez des soignants expérimentés peut provoquer des erreurs d'intrusion dues au conflit avec leurs anciennes habitudes motrices.</div>
                 </div>
               </div>
+
+              <!-- CAPSULE 2 : POMPES PCA LIN ET AL. 1998 -->
+              <div class="seminar-audio-card" style="border-left-color: #059669;">
+                <div class="seminar-audio-header">
+                  <div class="seminar-audio-title-group">
+                    <span class="seminar-audio-icon">🎙️</span>
+                    <div>
+                      <h4 class="seminar-audio-title">Capsule 2 • Pompes PCA &amp; Dialogue Séquentiel — Lin et al. 1998 (3 min 45)</h4>
+                      <div class="seminar-audio-meta">Navigation aveugle à travers 27 écrans, ambiguïté de REVIEW/CHANGE et interruptions en soins intensifs.</div>
+                    </div>
+                  </div>
+                  <span class="hub-pill-tag tag-info" style="color: #059669; border-color: rgba(5, 150, 105, 0.35); background: rgba(5, 150, 105, 0.15);">🎧 Capsule Audio • fr-CA</span>
+                </div>
+                <audio class="seminar-audio-player" controls preload="none">
+                  <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_02_Pompes_PCA_Lin1998.m4a" type="audio/mp4">
+                  Votre navigateur ne prend pas en charge la lecture audio.
+                </audio>
+              </div>
+
               <div class="seminar-breakdown-item">
                 <strong>🧠 Concepts théoriques :</strong> Knowledge in the World vs Knowledge in the Head (Norman), Délai de reprise cognitive (Resumption Lag), Forcing functions vs Workarounds.
               </div>
@@ -4714,6 +4821,24 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <!-- CAPSULE 3 : MÉTHODE PASSALACQUA DIAPO 92 -->
+          <div class="seminar-audio-card" style="border-left-color: #a855f7;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Capsule 3 • Démarche en 4 Étapes &amp; Diapositive 92 — Pr Mario Passalacqua (3 min 50)</h4>
+                  <div class="seminar-audio-meta">Comprendre, Concevoir, Évaluer, Déployer : la démarche d'ingénierie cognitive et la grille de raisonnement guidé.</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-date" style="color: #a855f7; border-color: rgba(168, 85, 247, 0.35); background: rgba(168, 85, 247, 0.15);">🎧 Capsule Audio • fr-CA</span>
+            </div>
+            <audio class="seminar-audio-player" controls preload="none">
+              <source src="04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/PSY7010_S04_Capsule_03_Methode_Passalacqua_Diapo92.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
           </div>
         </div>
 
