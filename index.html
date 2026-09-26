@@ -533,6 +533,26 @@
     body.dark-mode .q-badge.optional { background: #052e16; color: #86efac; border-color: #14532d; }
 
     .q-counter-text { font-size: 0.86rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-mono); }
+    .q-progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin: 10px 0 16px 0;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    body.dark-mode .q-progress-track {
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .q-progress-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 9999px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 8px;
+    }
     .q-context-box {
       font-size: 0.92rem;
       color: var(--text-muted);
@@ -3794,7 +3814,7 @@
             <span class="construction-tooltip" role="tooltip">Plateforme d'étude en cours de perfectionnement et de construction continue. Des ajustements ou coquilles peuvent subsister, merci de vérifier avec les textes de cours officiels. Vos remarques et commentaires sont les bienvenus !</span>
           </span>
         </h1>
-        <div class="quiz-sub-date" id="hubModuleSubtitle">Sciences psychologiques appliquées • Automne 2026</div>
+        <div class="quiz-sub-date" id="hubModuleSubtitle">Séminaire 1 : Vol AF447 &amp; Grille Lin et al. (1998)</div>
       </div>
       <div class="mobile-header-tools mobile-only" style="display: flex; align-items: center; gap: 8px;">
         <div id="mobMasteryBadge" class="mastery-counter" style="padding: 4px 8px; font-size: 0.78rem;">🏆 0/44</div>
@@ -3805,24 +3825,24 @@
     <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
     <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
       <div class="hub-module-scroll">
-        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
-          <span class="hub-pill-dot dot-info"></span>
-          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
-          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
-        </button>
         <button type="button" class="hub-module-pill" id="pillBloc2" onclick="switchHubModule('bloc2')">
           <span class="hub-pill-dot dot-active"></span>
           <span class="hub-pill-title">🎯 Bloc 2 : Mario Passalacqua</span>
           <span class="hub-pill-tag tag-primary">En cours</span>
         </button>
+        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
+          <span class="hub-pill-dot dot-archive"></span>
+          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
+        </button>
+        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+          <span class="hub-pill-dot dot-info"></span>
+          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
+          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
+        </button>
         <button type="button" class="hub-module-pill" id="pillCalendar" onclick="switchHubModule('calendar')">
           <span class="hub-pill-dot dot-calendar"></span>
           <span class="hub-pill-title">🗓️ Calendrier Épreuves</span>
           <span class="hub-pill-tag tag-date">Quiz 2 &amp; 3</span>
-        </button>
-        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
-          <span class="hub-pill-dot dot-archive"></span>
-          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
         </button>
       </div>
     </nav>
@@ -3945,8 +3965,13 @@
               </div>
             </div>
 
+            <!-- BARRE DE PROGRESSION AU-DESSUS DE LA QUESTION (PARITÉ PSY9613) -->
+            <div class="q-progress-track" aria-hidden="true" title="Progression du questionnaire">
+              <div class="q-progress-fill" id="b2ProgressBarFill" style="width: 8.33%;"></div>
+            </div>
+
             <!-- CONTENU DE LA QUESTION -->
-            <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:0;">
               <div class="b2-q-context-box" id="b2QContext">
                 Chargement du contexte...
               </div>
@@ -4322,6 +4347,11 @@
             <span class="q-counter-text" id="qProgressText">Question 1 sur 44 • 1 point</span>
           </div>
 
+          <!-- BARRE DE PROGRESSION AU-DESSUS DE LA QUESTION (PARITÉ PSY9613) -->
+          <div class="q-progress-track" aria-hidden="true" title="Progression du questionnaire">
+            <div class="q-progress-fill" id="qProgressBarFill" style="width: 2.27%;"></div>
+          </div>
+
           <div class="q-context-box" id="qContextText"></div>
           <h2 class="q-title" id="qQuestionTitle"></h2>
 
@@ -4516,9 +4546,6 @@
       <!-- TABS BAR -->
       <!-- TABS BAR POUR BLOC 2 (ENSEIGNEMENT ACTIF) -->
       <div class="reader-header-bar" id="readerTabsBloc2">
-        <button class="reader-tab active" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
-          🏛️ Séminaire 1
-        </button>
         <button class="reader-tab" id="tab_doc_af447" onclick="switchTab('doc_af447')">
           ✈️ AF447 (Human Factors 101)
         </button>
@@ -4530,6 +4557,9 @@
         </button>
         <button class="reader-tab" id="tab_doc_canas" onclick="switchTab('doc_canas')">
           🔴 Cañas et al. (2011)
+        </button>
+        <button class="reader-tab active" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
+          🏛️ Séminaire 1
         </button>
         <button class="reader-tab" id="tab_calendar" onclick="switchHubModule('calendar')">
           🗓️ Calendrier
@@ -4556,7 +4586,7 @@
       </div>
 
       <!-- VUE 2 : SÉMINAIRE 1 (AF447 & LIN ET AL. 1998) -->
-    <div id="viewSeminaire1" class="hub-view-container" style="display: none;">
+    <div id="viewSeminaire1" class="hub-view-container" style="display: block;">
       <div class="hub-view-content">
         <div class="hub-hero-card">
           <div class="hub-hero-header">
@@ -10800,18 +10830,21 @@ const allQuestions = [
     // =========================================================================
     // GESTION DU HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2, ARCHIVES BLOC 1, ETC.)
     // =========================================================================
-    let currentHubModule = safeGetStorageRaw('psy7010_hub_module_v2', 'seminaire1');
+    // Par défaut à l'ouverture du site : Séminaire 1
+    let currentHubModule = 'seminaire1';
 
     // Vérification d'ancre URL (#bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
     const hash = window.location.hash.toLowerCase();
     if (hash === '#bloc1' || hash === '#archive' || hash === '#archives') {
       currentHubModule = 'bloc1';
-    } else if (hash === '#seminaire1' || hash === '#seminaire') {
-      currentHubModule = 'seminaire1';
-    } else if (hash === '#calendar' || hash === '#calendrier') {
-      currentHubModule = 'calendar';
     } else if (hash === '#bloc2') {
       currentHubModule = 'bloc2';
+    } else if (hash === '#calendar' || hash === '#calendrier') {
+      currentHubModule = 'calendar';
+    } else if (hash === '#seminaire1' || hash === '#seminaire') {
+      currentHubModule = 'seminaire1';
+    } else {
+      currentHubModule = 'seminaire1';
     }
 
     function switchHubModule(mod) {
@@ -11474,6 +11507,11 @@ const allQuestions = [
       const nextBtn = document.getElementById('b2NextQBtn');
 
       if (counterEl) counterEl.textContent = `Question ${idx + 1} / ${BLOC2_QUIZ_QUESTIONS.length}`;
+      const b2ProgFill = document.getElementById('b2ProgressBarFill');
+      if (b2ProgFill && BLOC2_QUIZ_QUESTIONS.length > 0) {
+        const pct = Math.round(((idx + 1) / BLOC2_QUIZ_QUESTIONS.length) * 100);
+        b2ProgFill.style.width = pct + '%';
+      }
       if (catEl) catEl.textContent = q.category;
       if (ctxEl) ctxEl.innerHTML = `<strong>Contexte :</strong> ${q.context}`;
       if (promptEl) promptEl.textContent = q.prompt;
@@ -11704,7 +11742,9 @@ const allQuestions = [
       
       // 1. Initialiser la langue par défaut (Anglais original)
       updateLanguageUI();
-      switchTab('doc_canas', false);
+      if (intendedModule === 'bloc1') {
+        switchTab('doc_canas', false, false);
+      }
       
       // 2. Synchroniser le périmètre d'étude AVANT le premier rendu
       setStudyScope(currentStudyScope);
@@ -12344,11 +12384,11 @@ const allQuestions = [
       }
     }
 
-    function switchTab(docId, autoUnmask = true) {
+    function switchTab(docId, autoUnmask = true, autoSwitchModule = true) {
       activeDocId = docId;
 
       // Si on était dans la vue Séminaire 1 ou Calendrier, rétablir la vue Bloc 2
-      if (typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar')) {
+      if (autoSwitchModule && typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar')) {
         currentHubModule = 'bloc2';
         safeSetStorageRaw('psy7010_hub_module_v2', 'bloc2');
         const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
@@ -12364,15 +12404,17 @@ const allQuestions = [
         }
       }
 
-      const seminaire1View = document.getElementById('viewSeminaire1');
-      const calendarView = document.getElementById('viewCalendar');
-      if (seminaire1View) seminaire1View.style.display = 'none';
-      if (calendarView) calendarView.style.display = 'none';
+      if (autoSwitchModule) {
+        const seminaire1View = document.getElementById('viewSeminaire1');
+        const calendarView = document.getElementById('viewCalendar');
+        if (seminaire1View) seminaire1View.style.display = 'none';
+        if (calendarView) calendarView.style.display = 'none';
 
-      const docControls = document.querySelector('.reader-search-bar');
-      const docBanner = document.getElementById('docStatusBanner');
-      if (docControls) docControls.style.display = 'flex';
-      if (docBanner) docBanner.style.display = 'block';
+        const docControls = document.querySelector('.reader-search-bar');
+        const docBanner = document.getElementById('docStatusBanner');
+        if (docControls) docControls.style.display = 'flex';
+        if (docBanner) docBanner.style.display = 'block';
+      }
 
       document.querySelectorAll('.reader-tab').forEach(b => b.classList.remove('active'));
       const activeTab = document.getElementById('tab_' + docId);
@@ -12709,6 +12751,11 @@ const allQuestions = [
           const qCode = 'Q' + String(q.id).padStart(2, '0');
           prog.textContent = 'Question ' + (idx + 1) + ' sur ' + totalCount + ' · ' + qCode + ' · 1 point';
         }
+      }
+      const qProgFill = document.getElementById('qProgressBarFill');
+      if (qProgFill && totalCount > 0) {
+        const pct = Math.round(((idx + 1) / totalCount) * 100);
+        qProgFill.style.width = pct + '%';
       }
 
       const ctx = document.getElementById('qContextText');
