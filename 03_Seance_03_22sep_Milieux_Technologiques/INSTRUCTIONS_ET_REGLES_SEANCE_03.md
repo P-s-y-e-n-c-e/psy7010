@@ -6,8 +6,9 @@ Ce document rassemble les directives méthodologiques, techniques et relationnel
 
 ## 🎯 1. Règles d'Or pour la Prise de Notes (Rigueur Technique)
 
-1. **ZÉRO REFORMULATION / PARAPHRASE :**
-   - Dès que le document PDF des diapositives est disponible, tous les titres, sous-titres et puces doivent être **100 % littéraux mot à mot** (*verbatim*).
+1. **RIGUEUR DU SUPPORT VISUEL (REPÈRE TEXTUEL MOT À MOT) :**
+   - Dès que le document PDF des diapositives est disponible, tous les titres, sous-titres et puces doivent reproduire **fidèlement et mot à mot** le support visuel officiel.
+   - **Distinction terminologique :** Le terme *verbatim* s'applique strictement à la transcription intégrale de la parole audio (traitée plus tard dans ENCORA/Whisper). Les diapositives sont un support visuel d'ancrage textuel pour compenser l'absence de numérotation à l'écran.
    - Aucune interprétation ou résumé approximatif dans les sections de diapositives.
 
 2. **HORODATAGE & SYNCHRONISATION MULTI-APPAREILS :**
