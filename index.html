@@ -3737,24 +3737,24 @@
     <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
     <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
       <div class="hub-module-scroll">
-        <button type="button" class="hub-module-pill active" id="pillBloc2" onclick="switchHubModule('bloc2')">
+        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+          <span class="hub-pill-dot dot-info"></span>
+          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
+          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillBloc2" onclick="switchHubModule('bloc2')">
           <span class="hub-pill-dot dot-active"></span>
           <span class="hub-pill-title">🎯 Bloc 2 : Mario Passalacqua</span>
           <span class="hub-pill-tag tag-primary">En cours</span>
-        </button>
-        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
-          <span class="hub-pill-dot dot-archive"></span>
-          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
-        </button>
-        <button type="button" class="hub-module-pill" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
-          <span class="hub-pill-dot dot-info"></span>
-          <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
-          <span class="hub-pill-tag tag-info">Mandat</span>
         </button>
         <button type="button" class="hub-module-pill" id="pillCalendar" onclick="switchHubModule('calendar')">
           <span class="hub-pill-dot dot-calendar"></span>
           <span class="hub-pill-title">🗓️ Calendrier Épreuves</span>
           <span class="hub-pill-tag tag-date">Quiz 2 &amp; 3</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillBloc1" onclick="switchHubModule('bloc1')">
+          <span class="hub-pill-dot dot-archive"></span>
+          <span class="hub-pill-title">📦 Bloc 1 (Cañas)</span>
         </button>
       </div>
     </nav>
@@ -4448,7 +4448,10 @@
       <!-- TABS BAR -->
       <!-- TABS BAR POUR BLOC 2 (ENSEIGNEMENT ACTIF) -->
       <div class="reader-header-bar" id="readerTabsBloc2">
-        <button class="reader-tab active" id="tab_doc_af447" onclick="switchTab('doc_af447')">
+        <button class="reader-tab active" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
+          🏛️ Séminaire 1
+        </button>
+        <button class="reader-tab" id="tab_doc_af447" onclick="switchTab('doc_af447')">
           ✈️ AF447 (Human Factors 101)
         </button>
         <button class="reader-tab" id="tab_doc_lin1998" onclick="switchTab('doc_lin1998')">
@@ -4459,9 +4462,6 @@
         </button>
         <button class="reader-tab" id="tab_doc_canas" onclick="switchTab('doc_canas')">
           🔴 Cañas et al. (2011)
-        </button>
-        <button class="reader-tab" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
-          🏛️ Séminaire 1
         </button>
         <button class="reader-tab" id="tab_calendar" onclick="switchHubModule('calendar')">
           🗓️ Calendrier
@@ -9999,7 +9999,7 @@ const allQuestions = [
     // =========================================================================
     // GESTION DU HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2, ARCHIVES BLOC 1, ETC.)
     // =========================================================================
-    let currentHubModule = safeGetStorageRaw('psy7010_hub_module', 'bloc2');
+    let currentHubModule = safeGetStorageRaw('psy7010_hub_module_v2', 'seminaire1');
 
     // Vérification d'ancre URL (#bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
     const hash = window.location.hash.toLowerCase();
@@ -10015,7 +10015,7 @@ const allQuestions = [
 
     function switchHubModule(mod) {
       currentHubModule = mod;
-      safeSetStorageRaw('psy7010_hub_module', mod);
+      safeSetStorageRaw('psy7010_hub_module_v2', mod);
       
       const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
       pills.forEach(id => {
@@ -10733,7 +10733,7 @@ const allQuestions = [
         9: 'doc_lin1998', 10: 'doc_notes_s03', 11: 'doc_af447', 12: 'doc_canas'
       };
       const targetDocId = b2DocMap[q.id] || 'doc_af447';
-      if (activeDocId !== targetDocId) {
+      if (currentHubModule === 'bloc2' && activeDocId !== targetDocId) {
         switchTab(targetDocId, false);
       }
 
@@ -10896,6 +10896,7 @@ const allQuestions = [
 
     // --- INITIALISATION ---
     document.addEventListener('DOMContentLoaded', () => {
+      const intendedModule = currentHubModule;
       initSplitDivider();
       updateDynamicLayout();
       initKeyboardShortcuts();
@@ -10919,7 +10920,7 @@ const allQuestions = [
 
       // 3. Initialiser la vue active du Hub
       initB2Training();
-      switchHubModule(currentHubModule);
+      switchHubModule(intendedModule);
     });
 
     // --- GESTION DU MODE ÉTUDE / FLASHCARDS / SIMULATION ---
@@ -11548,7 +11549,7 @@ const allQuestions = [
       // Si on était dans la vue Séminaire 1 ou Calendrier, rétablir la vue Bloc 2
       if (typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar')) {
         currentHubModule = 'bloc2';
-        safeSetStorageRaw('psy7010_hub_module', 'bloc2');
+        safeSetStorageRaw('psy7010_hub_module_v2', 'bloc2');
         const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
         pills.forEach(id => {
           const el = document.getElementById(id);
