@@ -3883,22 +3883,23 @@
           </div>
           <div class="mascot-text" id="b2MascotText">
             <strong>Bloc 2 : Milieux technologiques</strong><br>
-            Nous abordons l'<em>ergonomie cognitive, les facteurs humains et l'UX</em> avec le <strong>Pr Mario Passalacqua</strong>. Consultez les textes sources dans le volet lecteur de droite et entraînez-vous sur les cas cliniques et les fiches de dilemmes.
+            Nous abordons l'<em>ergonomie cognitive, les facteurs humains et l'UX</em> avec le <strong>Pr Mario Passalacqua</strong>. Consultez les textes sources dans le volet lecteur de droite et entraînez-vous sur les cas cliniques et les fiches de compréhension clinique et appliquée.
           </div>
         </div>
 
 
-        <!-- ENCART DU PROCHAIN QUIZ OFFICIEL SOMMATIF (QUIZ 2) -->
-        <div class="b2-quiz-countdown-card">
-          <div>
-            <span class="b2-countdown-badge">⏳ Prochain quiz officiel sommatif</span>
-            <div class="b2-countdown-title">Quiz 2 : Mardi 13 octobre 2026 (Séance 06) • 5 % de la note</div>
-            <div class="b2-countdown-desc">
-              <strong>Thématique :</strong> Psychologie du commerce, Économie comportementale &amp; UXr (Prs Beaulac &amp; Passalacqua).
-            </div>
+        <!-- BANDEAU DE CADRAGE PÉDAGOGIQUE FORMATIF DU BLOC 2 -->
+        <div class="b2-quiz-countdown-card" style="display: block;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+            <span class="b2-countdown-badge" style="color: #0284c7; background: rgba(14, 165, 233, 0.12); border: 1px solid rgba(14, 165, 233, 0.3);">🎯 Auto-évaluation formative • Séance 03</span>
+            <span class="hub-pill-tag tag-primary" style="font-size: 0.72rem;">Facteurs humains &amp; Ergonomie cognitive</span>
           </div>
-          <div class="b2-countdown-pill" id="b2Quiz2CountdownPill">
-            ⏳ Quiz 2 dans 18 jours (13 octobre)
+          <div class="b2-countdown-title" style="font-size: 1.02rem; margin-bottom: 6px;">Consolidation des acquis du cours du Pr Mario Passalacqua</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 8px 0;">
+            Les questions et fiches ci-dessous constituent une révision formative du cours précédent (enseignements du Pr Mario Passalacqua sur l'aéronautique, les technologies médicales et les 4 phases ergonomiques). Elles visent à consolider vos acquis et à préparer les études de cas.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px; display: flex; align-items: center; gap: 6px;">
+            <span>🗓️</span> <span><em>Rappel :</em> Le prochain quiz sommatif officiel (Quiz 2 à 5 %) aura lieu le <strong>13 octobre</strong> et portera sur l'Économie comportementale &amp; Nudge (Prs Beaulac &amp; Passalacqua).</span>
           </div>
         </div>
 
@@ -3909,7 +3910,7 @@
                 <span>📝</span> <span>Questions de révision</span>
               </button>
               <button type="button" class="b2-tab-btn" id="b2TabBtnCards" onclick="switchB2SubTab('cards')">
-                <span>🗂️</span> <span>Flashcards • Dilemmes de Terrain</span>
+                <span>🗂️</span> <span>Flashcards • Compréhension appliquée</span>
               </button>
             </div>
             <span class="b2-badge-cert">✨ Programme Officiel • Passalacqua &amp; Bédard</span>
@@ -3960,7 +3961,7 @@
             </div>
           </div>
 
-          <!-- SOUS-VUE 2 : FLASHCARDS DILEMMES DE TERRAIN -->
+          <!-- SOUS-VUE 2 : FLASHCARDS COMPRÉHENSION APPLIQUÉE -->
           <div id="b2CardsContainer" class="b2-subview-panel" style="display: none;">
             <div class="b2-fc-filters">
               <button type="button" class="b2-fc-filter-btn active" id="b2FcFilterAll" onclick="filterB2Cards('all')">
@@ -3985,7 +3986,7 @@
                   <div>
                     <div class="b2-card-tag" id="b2CardFrontTag">Module A • Aéronautique &amp; Systèmes complexes</div>
                     <div class="b2-card-title" id="b2CardFrontTitle">Titre de la fiche</div>
-                    <div class="b2-card-body" id="b2CardFrontBody">Description du dilemme observable de terrain...</div>
+                    <div class="b2-card-body" id="b2CardFrontBody">Description de la situation clinique ou technique...</div>
                   </div>
                   <div class="b2-card-hint">
                     🔄 Cliquez n'importe où pour retourner la carte et révéler le diagnostic
@@ -4652,7 +4653,7 @@
             </div>
             <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
               <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #16a34a; margin-bottom: 4px;">Phase 3 (10–15s)</div>
-              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Dilemme &amp; Question Ouverte</div>
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Mise en situation &amp; Question de réflexion</div>
               <div style="font-size: 0.86rem; color: var(--text-muted);">Mise en tension de deux exigences concurrentes (Trade-off). SILENCE COMPLET dès la fin de la phrase.</div>
             </div>
           </div>
@@ -10535,7 +10536,7 @@ const allQuestions = [
       { letter: "D", text: "La validité interne ne concerne que les sciences physiques et ne s'applique pas aux sciences cognitives appliquées." }
     ],
     correctLetter: "B",
-    explanation: "C'est le dilemme épistémologique fondamental décrit par Cañas (2011) et réitéré par Passalacqua : isoler chaque variable d'une interface permet de prouver son mécanisme exact, mais ne garantit pas son efficacité dans le chaos d'un hôpital ou d'un cockpit réel.",
+    explanation: "C'est le défi méthodologique fondamental décrit par Cañas (2011) et réitéré par Passalacqua : isoler chaque variable d'une interface permet de prouver son mécanisme exact, mais ne garantit pas son efficacité dans le chaos d'un hôpital ou d'un cockpit réel.",
     citation: "Source : Cañas (2011), Chapitre 13 (Validité interne vs écologique)"
   }
 ];
@@ -10703,7 +10704,7 @@ const allQuestions = [
 
       if (currentHubModule === 'bloc2') {
         if (tagBadge) tagBadge.textContent = "Entraînement Mémoire • Bloc 2";
-        if (titleEl) titleEl.textContent = "Flashcards • Dilemmes de Terrain";
+        if (titleEl) titleEl.textContent = "Flashcards • Compréhension appliquée";
         if (descEl) descEl.textContent = "Mémorisation active et révision des cas cliniques de terrain : Aéronautique (AF447), Santé (Lin et al.) et Méthodologie des 4 étapes.";
         if (launchBtn) launchBtn.innerHTML = "🗂️ Lancer Flashcards Bloc 2";
         if (typeof b2CurrentTab !== 'undefined' && b2CurrentTab === 'cards') {
@@ -10744,7 +10745,7 @@ const allQuestions = [
         if (quizContainer) quizContainer.style.display = 'none';
         if (cardsContainer) cardsContainer.style.display = 'block';
         renderB2Card();
-        updateMascot("Flashcards du Bloc 2 : Dilemmes de terrain et analyse diagnostique. Cliquez pour retourner la fiche !", "happy");
+        updateMascot("Flashcards du Bloc 2 : Compréhension clinique et analyse diagnostique. Cliquez pour retourner la fiche !", "happy");
       }
       updateFlashcardsBannerForCurrentModule();
     }

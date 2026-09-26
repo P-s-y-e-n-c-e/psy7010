@@ -5,8 +5,8 @@
 
 ---
 
-### 🎯 Pédagogie des Flashcards : Des « Dilemmes de Terrain » plutôt que des Définitions
-Chaque carte est structurée selon un **micro-dilemme observable** :
+### 🎯 Pédagogie des Flashcards : Compréhension Clinique & Analyse Diagnostique
+Chaque carte est structurée selon une **situation opérationnelle observable** :
 - **Recto (Terrain) :** Un incident, une anomalie IHM ou un comportement opérationnel observable.
 - **Verso (Ingénierie cognitive) :** Le diagnostic théorique rigoureux, les concepts clés mobilisés et le compromis de conception (*trade-off*).
 
