@@ -3362,6 +3362,66 @@
       color: var(--text-main);
       margin: 0 0 4px 0;
     }
+    /* ENTRÉES DU CALENDRIER PASSÉES (ARCHIVÉES / COMPLÉTÉES) */
+    .timeline-entry.past {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      box-shadow: none;
+      transition: all 0.2s ease;
+    }
+    .timeline-entry.past:hover {
+      background: #e2e8f0;
+      border-color: #94a3b8;
+    }
+    body.dark-mode .timeline-entry.past {
+      background: rgba(11, 17, 32, 0.70);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+    }
+    body.dark-mode .timeline-entry.past:hover {
+      background: rgba(15, 23, 42, 0.90);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .timeline-entry.past .timeline-date-box {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+    body.dark-mode .timeline-entry.past .timeline-date-box {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .timeline-entry.past .timeline-day {
+      color: #475569;
+    }
+    body.dark-mode .timeline-entry.past .timeline-day {
+      color: #94a3b8;
+    }
+    .timeline-entry.past .timeline-info h4 {
+      color: #334155;
+    }
+    body.dark-mode .timeline-entry.past .timeline-info h4 {
+      color: #cbd5e1;
+    }
+    .timeline-badge-completed {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(100, 116, 139, 0.14);
+      color: #475569;
+      border: 1px solid rgba(100, 116, 139, 0.28);
+      white-space: nowrap;
+      align-self: center;
+      flex-shrink: 0;
+    }
+    body.dark-mode .timeline-badge-completed {
+      background: rgba(148, 163, 184, 0.14);
+      color: #94a3b8;
+      border-color: rgba(148, 163, 184, 0.25);
+    }
     /* VUE SÉMINAIRE 1 - FEUILLE OFFICIELLE */
     .seminar-official-box {
       background: var(--bg-card);
@@ -4987,32 +5047,64 @@
 
         <div class="timeline-wrap">
 
-          <!-- 22 SEPT -->
-          <div class="timeline-entry" style="border-left: 4px solid var(--warning);">
+          <!-- 08 SEPT (SÉANCE 1 - PASSÉE) -->
+          <div class="timeline-entry past" style="border-left: 4px solid #64748b;">
+            <div class="timeline-date-box">
+              <span class="timeline-day">08</span>
+              <span class="timeline-month">Sept.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>👋 Séance 1 — Bienvenue au programme &amp; Présentation du cours</h4>
+              <p>Accueil de la cohorte de Maîtrise par les Prs Marc-André Bédard et Mario Passalacqua. Présentation des objectifs de formation, de la structure du programme professionnel, de l'équipe professorale, de l'AGEPSY-CS et aperçu de la pédagogie par APP (Apprentissage Par Problèmes).</p>
+            </div>
+            <span class="timeline-badge-completed">✓ Séance passée</span>
+          </div>
+
+          <!-- 15 SEPT (SÉANCE 2 - PASSÉE) -->
+          <div class="timeline-entry past" style="border-left: 4px solid #64748b;">
+            <div class="timeline-date-box">
+              <span class="timeline-day">15</span>
+              <span class="timeline-month">Sept.</span>
+            </div>
+            <div class="timeline-info">
+              <h4>🔍 Séance 2 — Résolution de problèmes réels &amp; Démarche APP</h4>
+              <p>Fondements de la démarche d'intervention en psychologie appliquée : études de cas réels (retrait de cartes bancaires et mémoire de travail, surprescription d'antibiotiques et comparaison aux pairs, feux de circulation). Introduction à la méthode d'investigation en 4 étapes pour le mandat APP.</p>
+            </div>
+            <span class="timeline-badge-completed">✓ Séance passée</span>
+          </div>
+
+          <!-- 22 SEPT (SÉANCE 3 & QUIZ 1 - PASSÉE) -->
+          <div class="timeline-entry past" style="border-left: 4px solid #f59e0b;">
             <div class="timeline-date-box">
               <span class="timeline-day">22</span>
               <span class="timeline-month">Sept.</span>
             </div>
             <div class="timeline-info">
-              <h4>📦 Quiz 1 - Milieux Technologiques &amp; Cañas et al. (5 % - Archivé)</h4>
-              <p>Évaluation sommative en classe. Chapitre 13 complet de Cañas et al. (2011) et articles Human Factors 101. Questions toujours accessibles dans la section Archives pour révision.</p>
+              <h4>📦 Séance 3 — Milieux Technologiques &amp; Quiz 1 (5 % - Complété)</h4>
+              <p>Enseignement magistral du Pr Mario Passalacqua sur les facteurs humains, les systèmes complexes et l'ergonomie cognitive. Passation en classe de l'évaluation sommative du Quiz 1 (Chapitre 13 de Cañas et al. 2011 et Human Factors 101). Questions archivées pour entraînement continu.</p>
             </div>
-            <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')" style="padding: 6px 12px; font-size: 0.82rem; align-self: center;">
-              S'entraîner
-            </button>
+            <div style="display:flex; flex-direction:column; gap:6px; align-self:center; align-items:flex-end; flex-shrink:0;">
+              <span class="timeline-badge-completed">✓ Évalué (5 %)</span>
+              <button type="button" class="hub-btn-secondary" onclick="switchHubModule('bloc1')" style="padding: 5px 10px; font-size: 0.78rem;">
+                S'entraîner
+              </button>
+            </div>
           </div>
 
-          <!-- 29 SEPT -->
+          <!-- 29 SEPT (SÉANCE 4 / SÉMINAIRE 1 - EN COURS / PROCHAINE ÉCHÉANCE) -->
           <div class="timeline-entry" style="border-left: 4px solid #38bdf8;">
             <div class="timeline-date-box">
               <span class="timeline-day">29</span>
               <span class="timeline-month">Sept.</span>
             </div>
             <div class="timeline-info">
-              <h4>🏛️ Séminaire 1 - Études de cas : AF447 &amp; Lin et al. (10 % de la note)</h4>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+                <h4 style="margin:0;">🏛️ Séminaire 1 - Études de cas : AF447 &amp; Lin et al. (10 % de la note)</h4>
+                <span class="hub-pill-tag tag-primary" style="font-size:0.75rem;">Prochaine séance</span>
+              </div>
               <p><strong>Remise écrite obligatoire en fin de cours :</strong> Feuille imprimée individuelle d'une page comprenant deux questions critiques ouvertes (1 sur l'accident AF-447, 1 sur la pompe PCA de Lin et al. 1998).</p>
             </div>
-            <button type="button" class="hub-btn-secondary" onclick="switchHubModule('seminaire1')" style="padding: 6px 12px; font-size: 0.82rem; align-self: center;">
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('seminaire1')" style="padding: 6px 14px; font-size: 0.82rem; align-self: center; white-space: nowrap;">
               Consulter le cadrage
             </button>
           </div>
