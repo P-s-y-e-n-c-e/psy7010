@@ -4408,12 +4408,12 @@
           <div class="podcast-banner-center">
             <div class="podcast-banner-tag-row">
               <span class="podcast-tag-badge">🎙️ Podcast de Révision • Trajet UQAM</span>
-              <span class="podcast-duration-tag" id="podcastDurationBadge">Audio 25 min</span>
+              <span class="podcast-duration-tag" id="podcastDurationBadge">Audio 17 min</span>
             </div>
 
             <!-- SÉLECTEUR MULTI-ÉPISODES CONVIVIAL -->
             <div class="podcast-episode-switcher" role="tablist" aria-label="Sélection de l'épisode du podcast">
-              <button type="button" class="podcast-ep-btn active" id="epBtnAutomation" onclick="switchPodcastEpisode('automation')" role="tab" aria-selected="true" title="Épisode 1 : Bainbridge (1983), Parasuraman &amp; Riley (1997), complaisance">
+              <button type="button" class="podcast-ep-btn" id="epBtnAutomation" onclick="switchPodcastEpisode('automation')" role="tab" aria-selected="false" title="Épisode 1 : Bainbridge (1983), Parasuraman &amp; Riley (1997), complaisance">
                 <span class="podcast-ep-num">Ép. 1</span>
                 <span class="podcast-ep-title">🤖 Automatisation &amp; Vulnérabilité</span>
                 <span class="podcast-ep-duration">25 min</span>
@@ -4423,26 +4423,25 @@
                 <span class="podcast-ep-title">🧠 Erreur systémique &amp; Cañas</span>
                 <span class="podcast-ep-duration">18 min</span>
               </button>
-              <button type="button" class="podcast-ep-btn" id="epBtnUpcoming" onclick="showToast('⏳ Épisode 3 : Prochain enregistrement de révision à venir lors des prochains ateliers !')" role="tab" aria-selected="false" title="Épisode 3 : À venir" style="opacity: 0.75;">
+              <button type="button" class="podcast-ep-btn active" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="true" title="Épisode 3 : Consolidation intégrale Séance 3 (Pr Mario Passalacqua)">
                 <span class="podcast-ep-num">Ép. 3</span>
-                <span class="podcast-ep-title">⏳ Épisode 3 • À venir</span>
-                <span class="podcast-ep-duration">-- min</span>
+                <span class="podcast-ep-title">🎓 Bilan Séance 3 • Pr Passalacqua</span>
+                <span class="podcast-ep-duration">17 min</span>
               </button>
             </div>
 
-            <h4 class="podcast-banner-title" id="podcastBannerTitle">Pourquoi l'automatisation nous rend vulnérables</h4>
+            <h4 class="podcast-banner-title" id="podcastBannerTitle">L'Essentiel de la Séance 3 : Systèmes sociotechniques et démarche du Pr Passalacqua</h4>
             <p class="podcast-banner-desc" id="podcastBannerDesc">
-              Généré avec Gemini Notebook : Bainbridge (1983) Ironies de l'automatisation, Parasuraman &amp; Riley (1997), complaisance, perte d'habiletés manuelles et sortie de boucle.
+              Grand épisode de consolidation post-cours (17 min) : du postulat sociotechnique (« l'erreur est un résultat, jamais une cause ») au triptyque cognitif/psychosocial/comportemental, à la triangulation des mesures et aux retours d'expérience sur l'inspection IA.
             </p>
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
             <div class="podcast-player-wrap">
-              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+              <audio id="localPodcastAudio" src="03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
                 <!-- 1. Hébergement direct GitHub / Local (au même niveau ou en sous-dossier) -->
-                <source src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
-                <source src="03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vulnérables.m4a" type="audio/mp4">
-                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
-                <source src="Pourquoi_l_automatisation_nous_rend_vuln%C3%A9rables.m4a" type="audio/mp4">
+                <source src="03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
+                <source src="../../03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
+                <source src="PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a" type="audio/mp4">
               </audio>
 
               <div class="custom-audio-controls">
@@ -10222,8 +10221,8 @@ const allQuestions = [
 
         if (typeof getAudioEl === 'function') {
           const a = getAudioEl();
-          if (a && a.paused && currentPodcastEp !== 'automation') {
-            switchPodcastEpisode('automation', false);
+          if (a && a.paused && currentPodcastEp === 'systemic_error') {
+            switchPodcastEpisode('deep_dive_s03', false);
           }
         }
         updateMascot("Bloc 2 : Milieux technologiques avec le Pr Mario Passalacqua. Entraînez-vous sur les cas cliniques et explorez les documents sources à droite.", "happy");
@@ -12793,9 +12792,26 @@ let previousIsCompact = isCompactUI();
         driveUrl: "https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing",
         notebookUrl: "https://notebook.google.com/notebook/a6975281-74c6-43d5-9645-19152d259069/artifact/a62fd8b2-c3da-42e3-9eda-b79cd5483ac4?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
         downloadFilename: "L_erreur_humaine_est_un_symptôme_systémique.m4a"
+      },
+      deep_dive_s03: {
+        id: 'deep_dive_s03',
+        btnId: 'epBtnDeepDiveS03',
+        title: "L'Essentiel de la Séance 3 : Systèmes sociotechniques et démarche du Pr Passalacqua",
+        desc: "Grand épisode de consolidation post-cours (17 min) : du postulat sociotechnique (« l'erreur est un résultat, jamais une cause ») au triptyque cognitif/psychosocial/comportemental, à la triangulation des mesures et aux retours d'expérience sur l'inspection IA.",
+        durationTag: "Audio 17 min",
+        mascotMsg: "🎙️ Épisode 3 actif : L'Essentiel de la Séance 3 avec le Pr Passalacqua (17 min). La consolidation post-cours par excellence !",
+        src: "03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a",
+        sources: [
+          "03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a",
+          "../../03_Seance_03_22sep_Milieux_Technologiques/PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a",
+          "PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a"
+        ],
+        driveUrl: "https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing",
+        notebookUrl: "https://notebooklm.google.com/notebook/9959df78-66c1-4256-acec-c90f18a39652",
+        downloadFilename: "PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a"
       }
     };
-    let currentPodcastEp = 'automation';
+    let currentPodcastEp = 'deep_dive_s03';
 
     function switchPodcastEpisode(epKey, autoPlay = false) {
       const ep = PODCAST_EPISODES[epKey];
@@ -13034,7 +13050,7 @@ let previousIsCompact = isCompactUI();
     }
 
     function initSavedPodcastUrl() {
-      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'automation';
+      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'deep_dive_s03';
       switchPodcastEpisode(savedEp, false);
 
       const savedUrl = localStorage.getItem('psy7010_podcast_url');
