@@ -607,6 +607,61 @@
     .option-btn.correct { border-color: var(--success) !important; background: var(--success-light) !important; color: var(--success-dark) !important; }
     .option-btn.wrong { border-color: var(--danger) !important; background: var(--danger-light) !important; color: #b91c1c !important; }
 
+    /* BOUTON DÉCLENCHEUR DU RETOUR ÉTUDIANT (PARITÉ PSY9613) */
+    .feedback-trigger-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .feedback-trigger-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* TOAST FLOTTANT DE NOTIFICATION DU FEEDBACK */
+    #notificationToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+      pointer-events: none;
+    }
+    #notificationToast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    body.dark-mode #notificationToast {
+      background: #0f172a;
+      border: 1px solid var(--border-color);
+      color: #f1f5f9;
+    }
+
     /* FEEDBACK CARD */
     .feedback-card {
       margin-top: 14px;
@@ -826,7 +881,11 @@
       flex-shrink: 0;
     }
     .reader-tab {
-      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 6px 12px;
       border-radius: 6px;
       font-size: 0.74rem;
       font-weight: 700;
@@ -834,6 +893,7 @@
       background: var(--bg-card);
       color: var(--text-muted);
       cursor: pointer;
+      white-space: nowrap;
       transition: all 0.2s;
     }
     .reader-tab:hover { border-color: var(--primary); color: var(--primary); }
@@ -2072,7 +2132,8 @@
       display: none;
       align-items: center;
       gap: 6px;
-      padding: 8px 14px;
+      min-height: 46px !important;
+      padding: 10px 16px !important;
       background: var(--primary);
       color: #fff;
       font-weight: 700;
@@ -2124,7 +2185,7 @@
         width: 100%;
       }
       .mobile-modebar > button {
-        min-height: 42px;
+        min-height: 44px;
         padding: 6px 4px;
         font-size: 0.82rem;
         font-weight: 700;
@@ -4024,8 +4085,13 @@
                 <span class="b2-q-counter" id="b2QCounter">Question 1 / 12</span>
                 <span class="b2-q-category" id="b2QCategory">Aéronautique &amp; Systèmes complexes</span>
               </div>
-              <div class="b2-score-box" id="b2ScoreBox">
-                Score : <span id="b2ScoreVal">0</span> / 12 (<span id="b2ScorePct">0%</span>)
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <div class="b2-score-box" id="b2ScoreBox">
+                  Score : <span id="b2ScoreVal">0</span> / 12 (<span id="b2ScorePct">0%</span>)
+                </div>
+                <button type="button" class="feedback-trigger-btn" onclick="openFeedbackModal('b2_question')" title="Signaler une anomalie ou proposer une amélioration sur cette question">
+                  <span>💬</span> <span>Feedback</span>
+                </button>
               </div>
             </div>
 
@@ -4119,13 +4185,18 @@
                 <span id="b2CardCounter" style="font-size:0.88rem; font-weight:700; color:var(--text-muted);">Carte 1 / 12</span>
                 <button type="button" class="hub-btn-secondary" onclick="navB2Card(1)">Suivante ➡️</button>
               </div>
-              <div class="b2-fc-rating-group">
-                <button type="button" class="b2-fc-rate-btn again" onclick="rateB2Card('again')" title="Marquer cette fiche comme à réviser">
-                  ⚠️ À revoir
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="feedback-trigger-btn" onclick="openFeedbackModal('b2_flashcard')" title="Signaler une anomalie ou proposer une amélioration sur cette flashcard">
+                  <span>💬</span> <span>Feedback</span>
                 </button>
-                <button type="button" class="b2-fc-rate-btn mastered" onclick="rateB2Card('mastered')" title="Marquer cette fiche comme maîtrisée">
-                  ✅ Maîtrisé
-                </button>
+                <div class="b2-fc-rating-group">
+                  <button type="button" class="b2-fc-rate-btn again" onclick="rateB2Card('again')" title="Marquer cette fiche comme à réviser">
+                    ⚠️ À revoir
+                  </button>
+                  <button type="button" class="b2-fc-rate-btn mastered" onclick="rateB2Card('mastered')" title="Marquer cette fiche comme maîtrisée">
+                    ✅ Maîtrisé
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -4228,6 +4299,9 @@
               <span class="fc-stat-chip chip-mastered" title="Cartes maîtrisées">🟢 <span id="fcCountMastered">0</span></span>
               <span class="fc-stat-chip chip-review" title="Cartes en cours d'apprentissage">🟡 <span id="fcCountReview">0</span></span>
               <span class="fc-stat-chip chip-hard" title="Cartes prioritaires avec difficultés">🔴 <span id="fcCountHard">0</span></span>
+              <button type="button" class="feedback-trigger-btn" onclick="openFeedbackModal('flashcard')" title="Signaler une anomalie ou proposer une amélioration sur cette flashcard">
+                <span>💬</span> <span>Feedback</span>
+              </button>
               <button class="fc-stat-chip chip-reset mobile-only" onclick="openResetModal()" title="Voulez-vous réinitialiser ?" aria-label="Réinitialiser">🔄</button>
             </div>
           </div>
@@ -4408,7 +4482,12 @@
         <div class="q-card" id="qCard">
           <div class="q-meta-top">
             <span class="q-badge mandatory" id="qDocBadge" onclick="openDocumentFromBadge()" style="cursor: pointer;" title="Ouvrir et afficher ce document officiel">🔴 Cañas et al. (2011) [Lecture obligatoire] 📖</span>
-            <span class="q-counter-text" id="qProgressText">Question 1 sur 44 • 1 point</span>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="q-counter-text" id="qProgressText">Question 1 sur 44 • 1 point</span>
+              <button type="button" class="feedback-trigger-btn" onclick="openFeedbackModal('b1_question')" title="Signaler une anomalie ou proposer une amélioration sur cette question">
+                <span>💬</span> <span>Feedback</span>
+              </button>
+            </div>
           </div>
 
           <!-- BARRE DE PROGRESSION AU-DESSUS DE LA QUESTION (PARITÉ PSY9613) -->
@@ -11004,6 +11083,9 @@ const allQuestions = [
 
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
+        if (isSinglePaneMode()) {
+          setMobileView('activity');
+        }
 
         const b2DocMap = {
           1: 'doc_af447', 2: 'doc_notes_s03', 3: 'doc_lin1998', 4: 'doc_notes_s03',
@@ -11050,7 +11132,9 @@ const allQuestions = [
 
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
-        setMobileView(mobileView || 'activity');
+        if (isSinglePaneMode()) {
+          setMobileView('activity');
+        }
 
         const currentQ = (filteredQuestions && filteredQuestions[currentQuestionIndex]) ? filteredQuestions[currentQuestionIndex] : null;
         const b1TargetDoc = (currentQ && currentQ.doc_id) ? currentQ.doc_id : 'doc_canas';
@@ -11100,6 +11184,9 @@ const allQuestions = [
 
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
+        if (isSinglePaneMode()) {
+          setMobileView('source');
+        }
         updateMascot("Séminaire 1 : Analyse des défaillances et de l'automatisation (AF447 & Lin et al. 1998). Consultez le cadrage à droite !", "study");
       } else if (mod === 'calendar') {
         // En mode Calendrier : Le volet gauche d'entraînement et le séparateur RESTENT 100% INTACTS
@@ -11133,6 +11220,9 @@ const allQuestions = [
 
         updateDynamicLayout();
         updateFlashcardsBannerForCurrentModule();
+        if (isSinglePaneMode()) {
+          setMobileView('source');
+        }
         updateMascot("Calendrier du trimestre : gardez le cap sur les prochaines échéances !", "happy");
       }
     }
@@ -11681,6 +11771,11 @@ const allQuestions = [
             </div>
             <div class="b2-citation-badge">
               📖 <span>${q.citation}</span>
+            </div>
+            <div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+              <button type="button" class="jump-to-source-btn" onclick="jumpToB2Doc(${q.id})">
+                📍 Consulter le texte source (${q.citation})
+              </button>
             </div>
           `;
           showDocumentPostAnswer();
@@ -12373,11 +12468,12 @@ const allQuestions = [
 
     // --- CLAVIER & RACCOURCIS ---
     
-        function closeAllModals() {
+    function closeAllModals() {
       if (typeof closeResetModal === 'function') closeResetModal();
       if (typeof closeCelebrationModal === 'function') closeCelebrationModal();
       if (typeof closeOptionsModal === 'function') closeOptionsModal();
       if (typeof closePodcastModal === 'function') closePodcastModal();
+      if (typeof closeFeedbackModal === 'function') closeFeedbackModal();
       const simResultsModal = document.getElementById('simResultsModal');
       if (simResultsModal) simResultsModal.style.display = 'none';
       const helpModal = document.getElementById('helpModal');
@@ -12389,7 +12485,7 @@ const allQuestions = [
     window.closeAllModals = closeAllModals;
 
     function isAnyModalOpen() {
-      const modalIds = ['resetModal', 'celebrationModal', 'optionsModal', 'podcastModal', 'simResultsModal', 'helpModal'];
+      const modalIds = ['resetModal', 'celebrationModal', 'optionsModal', 'podcastModal', 'simResultsModal', 'helpModal', 'feedbackModal'];
       for (const mid of modalIds) {
         const mEl = document.getElementById(mid);
         if (mEl && mEl.style.display && mEl.style.display !== 'none') return true;
@@ -14371,6 +14467,227 @@ let previousIsCompact = isCompactUI();
       return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
+    /* =========================================================================
+       21. SYSTÈME DE RETOUR ÉTUDIANT (ACHEMINEMENT DIRECT COURRIEL UQAM)
+       ========================================================================= */
+    let currentFeedbackContext = null;
+    let feedbackLastTrigger = null;
+
+    function getCurrentFeedbackItem(sourceType) {
+      if (sourceType === 'b2_question' || (currentHubModule === 'bloc2' && (!b2CurrentTab || b2CurrentTab === 'quiz') && sourceType !== 'b2_flashcard')) {
+        const q = (typeof BLOC2_QUIZ_QUESTIONS !== 'undefined' && BLOC2_QUIZ_QUESTIONS[b2CurrentQIdx]) ? BLOC2_QUIZ_QUESTIONS[b2CurrentQIdx] : null;
+        if (!q) return null;
+        return {
+          sourceType: 'b2_question',
+          id: q.id,
+          module: 'Bloc 2 (Mario Passalacqua)',
+          session: 'Séance 3 & 4',
+          doc_title: 'Facteurs humains & Systèmes complexes',
+          category: q.category || 'Aéronautique & Santé',
+          question: q.prompt || '',
+          context: q.context || '',
+          citation: q.citation || ''
+        };
+      }
+      if (sourceType === 'b2_flashcard' || (currentHubModule === 'bloc2' && b2CurrentTab === 'cards')) {
+        const cardIdx = (typeof b2FilteredCardIndices !== 'undefined' && b2FilteredCardIndices.length > 0) ? b2FilteredCardIndices[b2CurrentCardPos] : null;
+        const card = (cardIdx !== null && typeof BLOC2_FLASHCARDS !== 'undefined') ? BLOC2_FLASHCARDS[cardIdx] : null;
+        if (!card) return null;
+        return {
+          sourceType: 'b2_flashcard',
+          id: card.id,
+          module: 'Bloc 2 Flashcards',
+          session: 'Séance 3 & 4',
+          doc_title: card.tag || 'Cas cliniques & Ingénierie cognitive',
+          category: card.tag || 'Flashcard Bloc 2',
+          question: card.title ? `${card.title} - ${card.front}` : (card.front || 'Flashcard Bloc 2'),
+          context: card.front || ''
+        };
+      }
+      if (sourceType === 'flashcard' || currentMode === 'flashcards') {
+        const card = (typeof flashcardList !== 'undefined') ? flashcardList[currentFlashcardIdx] : null;
+        if (!card) return null;
+        return {
+          sourceType: 'flashcard',
+          id: card.id,
+          module: 'Bloc 1 Flashcards',
+          session: 'Séance 1 & 2',
+          doc_title: card.doc_title || 'Cañas et al. (2011)',
+          category: card.category || 'Ergonomie cognitive',
+          question: card.question || '',
+          context: card.theme || ''
+        };
+      }
+      // Bloc 1 Question (mode étude ou simulation)
+      const q = (typeof getCurrentActiveQuestion === 'function') ? getCurrentActiveQuestion() : (filteredQuestions[currentQuestionIndex] || null);
+      if (!q) return null;
+      return {
+        sourceType: 'question',
+        id: q.id,
+        module: 'Bloc 1 (Cañas et al.)',
+        session: 'Séance 1 & 2',
+        doc_title: q.doc_title || 'Cañas et al. (2011)',
+        category: q.category || 'Questions Bloc 1',
+        question: q.question || '',
+        context: q.context || ''
+      };
+    }
+
+    function openFeedbackModal(sourceType) {
+      feedbackLastTrigger = document.activeElement;
+      const modal = document.getElementById('feedbackModal');
+      if (!modal) return;
+
+      const item = getCurrentFeedbackItem(sourceType);
+      if (!item) return;
+
+      currentFeedbackContext = item;
+
+      const badgeEl = document.getElementById('feedbackTargetBadge');
+      const titleEl = document.getElementById('feedbackTargetTitle');
+      if (badgeEl) {
+        let label = 'Question';
+        if (item.sourceType === 'flashcard' || item.sourceType === 'b2_flashcard') label = 'Flashcard';
+        badgeEl.textContent = `📌 ${label} #${item.id} • ${item.module} (${item.category})`;
+      }
+      if (titleEl) {
+        titleEl.textContent = `« ${item.question} »`;
+      }
+
+      const commentEl = document.getElementById('feedbackCommentText');
+      if (commentEl) commentEl.value = '';
+
+      modal.style.display = 'flex';
+      setTimeout(() => {
+        if (commentEl) commentEl.focus();
+      }, 50);
+    }
+    window.openFeedbackModal = openFeedbackModal;
+
+    function closeFeedbackModal() {
+      const modal = document.getElementById('feedbackModal');
+      if (modal) modal.style.display = 'none';
+      currentFeedbackContext = null;
+      if (feedbackLastTrigger && typeof feedbackLastTrigger.focus === 'function') {
+        feedbackLastTrigger.focus();
+      }
+    }
+    window.closeFeedbackModal = closeFeedbackModal;
+
+    async function submitFeedbackForm() {
+      const commentEl = document.getElementById('feedbackCommentText');
+      const comment = commentEl ? commentEl.value.trim() : '';
+      if (!comment) {
+        alert("Veuillez saisir votre observation ou remarque avant de transmettre le formulaire.");
+        if (commentEl) commentEl.focus();
+        return;
+      }
+
+      const typeSelect = document.getElementById('feedbackTypeSelect');
+      const feedbackTypeLabel = typeSelect ? typeSelect.options[typeSelect.selectedIndex].text : 'Autre remarque';
+
+      const authorInput = document.getElementById('feedbackAuthorInput');
+      const author = authorInput ? authorInput.value.trim() : '';
+
+      const submitBtn = document.getElementById('feedbackSubmitBtn');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>📤</span> <span>Transmettre le feedback</span>';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>⏳</span> <span>Transmission en cours...</span>';
+      }
+
+      const ctx = currentFeedbackContext || {};
+      const endpoint = 'https://formsubmit.co/ajax/mercier.michel.4@courrier.uqam.ca';
+      const label = (ctx.sourceType === 'flashcard' || ctx.sourceType === 'b2_flashcard') ? 'Flashcard' : 'Question';
+      const payload = {
+        _subject: `[PSY7010] Signalement étudiant - ${label} #${ctx.id} (${ctx.module || 'Général'})`,
+        _template: 'table',
+        _captcha: 'false',
+        'Type de signalement': feedbackTypeLabel,
+        'Élément': `${label} #${ctx.id}`,
+        'Module': ctx.module || 'Non spécifié',
+        'Séance': ctx.session || 'Non spécifiée',
+        'Texte source': ctx.doc_title || 'Non spécifié',
+        'Intitulé': ctx.question || '',
+        'Observation étudiante': comment,
+        'Auteur / Courriel': author || 'Anonyme / Non spécifié',
+        'Date (Montréal)': new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' })
+      };
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          closeFeedbackModal();
+          showNotificationToast('✅ Observation transmise directement à Michel Mercier ! Merci.');
+        } else {
+          throw new Error('Erreur HTTP ' + response.status);
+        }
+      } catch (err) {
+        console.warn('Transmission AJAX échouée, bascule vers le client de messagerie (mailto):', err);
+        const subject = encodeURIComponent(`[PSY7010] Signalement étudiant - ${label} #${ctx.id} (${ctx.module || 'Général'})`);
+        const body = encodeURIComponent(
+          `Bonjour Michel,\n\n` +
+          `Voici une observation concernant la ${label.toLowerCase()} #${ctx.id} (${ctx.module || ''}) :\n\n` +
+          `- Type : ${feedbackTypeLabel}\n` +
+          `- Intitulé : ${ctx.question || ''}\n` +
+          `- Observation : ${comment}\n` +
+          `- De : ${author || 'Anonyme'}\n`
+        );
+        window.location.href = `mailto:mercier.michel.4@courrier.uqam.ca?subject=${subject}&body=${body}`;
+        closeFeedbackModal();
+        showNotificationToast('✉️ Préparation du courriel vers Michel Mercier...');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      }
+    }
+    window.submitFeedbackForm = submitFeedbackForm;
+
+    let toastTimeoutId = null;
+    function showNotificationToast(msg, isSuccess = true) {
+      const toast = document.getElementById('notificationToast');
+      const icon = document.getElementById('toastIcon');
+      const text = document.getElementById('toastMsg');
+      if (!toast || !text) return;
+
+      if (icon) icon.textContent = isSuccess ? '✅' : 'ℹ️';
+      text.textContent = msg;
+
+      toast.classList.add('show');
+      if (toastTimeoutId) clearTimeout(toastTimeoutId);
+      toastTimeoutId = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+    window.showNotificationToast = showNotificationToast;
+
+    /* --- SAUT VERS LE TEXTE SOURCE POUR LE BLOC 2 --- */
+    function jumpToB2Doc(qId) {
+      const b2DocMap = {
+        1: 'doc_af447', 2: 'doc_notes_s03', 3: 'doc_lin1998', 4: 'doc_notes_s03',
+        5: 'doc_notes_s03', 6: 'doc_notes_s03', 7: 'doc_notes_s03', 8: 'doc_af447',
+        9: 'doc_lin1998', 10: 'doc_notes_s03', 11: 'doc_af447', 12: 'doc_canas'
+      };
+      const doc = b2DocMap[qId] || 'doc_af447';
+      switchTab(doc, false);
+      showDocumentPostAnswer();
+      if (isSinglePaneMode()) {
+        setMobileView('source');
+      }
+    }
+    window.jumpToB2Doc = jumpToB2Doc;
+
   </script>
   <!-- MODAL OPTIONS ET PREFERENCES MOBILE / BUREAU -->
   <div id="optionsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="optionsModalTitle" style="display: none;" onclick="if(event.target === this) closeOptionsModal();">
@@ -14407,6 +14724,76 @@ let previousIsCompact = isCompactUI();
         Cañas, J. J., Velichkovsky, B. B., et Velichkovsky, B. M. (2011). <em>Human Factors and Ergonomics</em>. Chapitre 13 de l'IAAP Handbook of Applied Psychology. Blackwell (pp. 316–336).
       </div>
     </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL : RETOUR ÉTUDIANT & SIGNALEMENT (PARITÉ PSY9613)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="feedbackModal" style="display: none;" onclick="if(event.target === this) closeFeedbackModal();">
+    <div class="reset-modal-box" style="text-align: left; max-width: 540px; max-height: 90vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="margin: 0; font-size: 1.22rem; font-weight: 800; display: flex; align-items: center; gap: 8px; color: var(--text-main);">
+          <span>💬</span> <span>Faire un retour sur cet élément</span>
+        </h3>
+        <button type="button" class="modal-close-btn" onclick="closeFeedbackModal()" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+      </div>
+
+      <!-- Contexte de l'élément cible -->
+      <div id="feedbackTargetInfo" style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.86rem; color: var(--text-muted); line-height: 1.45;">
+        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;" id="feedbackTargetBadge">Question 1 • Bloc 2</div>
+        <div id="feedbackTargetTitle" style="font-style: italic; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: var(--text-main);">Intitulé...</div>
+      </div>
+
+      <!-- Motif du feedback -->
+      <div style="margin-bottom: 14px;">
+        <label for="feedbackTypeSelect" style="display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; color: var(--text-main);">
+          Nature de la remarque ou de l'anomalie :
+        </label>
+        <select id="feedbackTypeSelect" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-size: 0.88rem; font-family: inherit;">
+          <option value="options_trop_faciles">🎯 Choix de réponse trop faciles / évidents</option>
+          <option value="ambiguite_question">❓ Formulation ambiguë ou question imprécise</option>
+          <option value="discordance_classe">⚠️ Discordance / contradiction avec l'enseignement en classe</option>
+          <option value="explication_floue">📖 Explication théorique floue ou incomplète</option>
+          <option value="coquille_typo">✏️ Erreur matérielle, coquille ou typographie</option>
+          <option value="autre_remarque" selected>💡 Autre remarque ou suggestion pédagogique</option>
+        </select>
+      </div>
+
+      <!-- Commentaire détaillé -->
+      <div style="margin-bottom: 14px;">
+        <label for="feedbackCommentText" style="display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; color: var(--text-main);">
+          Vos observations &amp; suggestions détaillées :
+        </label>
+        <textarea id="feedbackCommentText" rows="4" placeholder="Expliquez ce qui vous semble imprécis, trop évident ou à corriger. Vos remarques seront consignées pour examen humain..." style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-size: 0.88rem; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+      </div>
+
+      <!-- Auteur (optionnel) - ZERO EXEMPLE DANS LE PLACEHOLDER -->
+      <div style="margin-bottom: 20px;">
+        <label for="feedbackAuthorInput" style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: var(--text-muted);">
+          Votre prénom ou courriel UQAM (optionnel) :
+        </label>
+        <input type="text" id="feedbackAuthorInput" placeholder="" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-size: 0.88rem; font-family: inherit; box-sizing: border-box;">
+      </div>
+
+      <!-- Note d'acheminement direct -->
+      <div style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.45; background: var(--bg-card-alt); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 0 6px 6px 0;">
+        📨 <strong>Acheminement direct :</strong> Vos observations seront transmises directement à Michel Mercier (<code style="font-size: 0.78rem;">mercier.michel.4@courrier.uqam.ca</code>) pour analyse critique et vérification avec les verbatims officiels du cours.
+      </div>
+
+      <!-- Actions -->
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
+        <button type="button" class="secondary-btn" onclick="closeFeedbackModal()" style="padding: 8px 16px;">Annuler</button>
+        <button type="button" class="primary-btn" id="feedbackSubmitBtn" onclick="submitFeedbackForm()" style="padding: 8px 20px; font-weight: 700;">
+          <span>📤</span> <span>Transmettre le feedback</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST DE NOTIFICATION FLOTTANT -->
+  <div id="notificationToast">
+    <span id="toastIcon">✅</span>
+    <span id="toastMsg">Feedback enregistré avec succès !</span>
   </div>
 </body>
 </html>
