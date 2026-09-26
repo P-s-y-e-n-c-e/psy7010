@@ -105,41 +105,52 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 
 ---
 
-## 🏗️ 5. Architecture Triangulaire du Workspace (HQ, Contenu, Maintenance)
+## 🏗️ 5. Nomenclature Officielle et Architecture des 8 Sessions PSY7010
 
 > [!IMPORTANT]
-> **Découplage Cognitif Strict (Modèle éprouvé PSY9613) :**
-> Pour préserver la mémoire de contexte, éradiquer le « AI slop » et garantir la rigueur, les opérations sont réparties entre trois sessions dédiées aux responsabilités étanches. Aucune session ne doit empiéter sur le périmètre d'une autre.
+> **Règle Absolue de Nomenclature des Sessions (Zéro Tiret Cadratin, Zéro Dénomination Fantaisiste) :**
+> Pour garantir la lisibilité parfaite dans l'interface Antigravity et une harmonisation totale entre PSY7010 et PSY9613, chaque session porte un nom officiel strict et immuable correspondant mot à mot à la barre latérale de Michel.
+> - **Format imposé :** `<CATÉGORIE_EN_MAJUSCULES> - <Nom du rôle>` avec un tiret court ASCII standard entouré d'espaces (` - `).
+> - **Interdiction formelle des tirets cadratins (`—`) ou demi-cadratins (`–`).**
+> - **Interdiction des acronymes ou surnoms non officiels.**
+> 
+> Les 8 sessions actives du workspace PSY7010 sont :
 
-1. **Session « Quartier Général » (HQ — `d6fea03c`) :**
+1. **GITHUB - Compatibilité mobile** (`7f1eeac8-dc14-49e6-be9b-bd0dbf0ad9c0`) :
+   - **Mission exclusive :** Audit ergonomique continu, accessibilité tactile et fluidité responsive sur smartphones et tablettes.
+   - **Coordination :** Remonte ses anomalies et correctifs directement à `GITHUB - Maintenance du site`.
+
+2. **GITHUB - Maintenance du site** (`620d8c7a-e3d2-4df7-9db0-1af3f8b76824`) :
+   - **Mission exclusive :** Ingénierie logicielle pure — code front-end (HTML/CSS/JS vanilla de `index.html`), tests automatisés Chrome CDP (port 9223), vérifications de parité miroir (`fc.exe /b`) et déploiements GitHub Pages.
+   - **Périmètre préservé :** Ne conçoit aucun contenu pédagogique.
+
+3. **QUARTIER GÉNÉRAL - PSY7010** (`d6fea03c-228d-438c-bb4e-541e2d0eaeac`) :
    - **Mission exclusive :** Tour de contrôle académique, stratégie globale de réussite du cours.
    - **Responsabilités :**
      * Supervision du calendrier officiel (APP 35 %, séminaires 30 %, quiz 15 %, réflexions 15 %, présence 5 %).
      * Coaching relationnel TDAH (micro-pitch, décompression, gestion des interactions avec Passalacqua et Bédard).
-     * Coordination entre les sessions Contenu et Maintenance.
-     * Veille Moodle, ENCORA et synchronisation inter-cours avec PSY9613.
-   - **Périmètre préservé :** Aucun code HTML/CSS/JS, aucune conception de questions.
+     * Coordination générale entre toutes les sessions et liaison inter-cours avec `QUARTIER GÉNÉRAL - PSY9613`.
+   - **Périmètre préservé :** Aucun code front-end, aucune conception brute de questions.
 
-2. **Session « GitHub — Contenu du site web » (`27764a31`) :**
+4. **GITHUB - Contenu du site web** (`27764a31-b75d-4f15-9988-cb940026e6e2`) :
    - **Mission exclusive :** Ingénierie pédagogique pure — questions de quiz, analyses de cas, rétroactions cliniques.
    - **Responsabilités :**
-     * Ratissage systématique de chaque séance à partir du verbatim GOLD et des lectures obligatoires.
-     * Conception de banques de questions avec justification et sources directes.
-     * Application de la boucle dialectique séquentielle : DeepThink → Commit/Push Git → GPT-6 → DeepThink.
-     * Transmission des banques validées à la session Maintenance.
-   - **Périmètre préservé :** Aucun développement logiciel HTML/CSS/JS.
+     * Ratissage systématique des séances à partir du verbatim validé et des lectures obligatoires.
+     * Conception de banques de questions ZPD avec justification et sources directes.
+     * Boucle dialectique séquentielle (DeepThink ➔ Commit/Push Git ➔ GPT-6 ➔ DeepThink).
+     * Transmission des banques finalisées à `GITHUB - Maintenance du site`.
 
-3. **Session « GitHub — Maintenance du site » (`620d8c7a`) :**
-   - **Mission exclusive :** Ingénierie logicielle pure — code front-end, tests, Git, déploiement.
-   - **Responsabilités :**
-     * Maintenance du code HTML, CSS et JavaScript vanilla de `index.html`.
-     * Intégration technique exclusive des banques de questions validées transmises par la session Contenu.
-     * Tests fonctionnels (CDP port 9223), vérifications syntaxiques, commits GitHub Pages.
-     * Parité mobile/desktop, mode sombre, interface Toadette, lecteur podcast.
-   - **Périmètre préservé :** Ne conçoit jamais de contenu pédagogique.
+5. **GITHUB - Rédaction/Traduction** (`f852f02f-b82b-48da-af7d-123441669300`) :
+   - **Mission exclusive :** Traduction intégrale mot à mot et rigoureuse anglais → français des articles scientifiques et chapitres obligatoires (ex: Cañas et al., Lin et al., articles HF101).
 
-4. **Session « Préparation de podcasts » (Inchangée) :**
-   - Périmètre dédié à la production et édition des podcasts audio.
+6. **PODCAST - Salle de production** (`c4cc8418-9ede-4afb-9b3b-37c2e4090e79`) :
+   - **Mission exclusive :** Conception, structuration pédagogique et spécifications de production des capsules audio de révision (NotebookLM).
+
+7. **MOODLE - Extraction et suivis** (`8c0a4b69-8bc6-4654-934d-e9c5c64bf2ba`) :
+   - **Mission exclusive :** Veille continue des dépôts Moodle, extraction des documents académiques propres et contrôle de conformité des exigences d'évaluation.
+
+8. **ENCORA - Débruitage terrain** (`e7f07ea4-7251-4ca4-8081-eb2d55c44790`) :
+   - **Mission exclusive :** Traitement local lourd sur GPU (Everfree) des enregistrements de classe, réduction de bruit, synchronisation multi-enregistreurs et alignement temporel des transcriptions.
 
 ### Principes Dialectiques Communs (Méthode Anti-Slop)
 1. **La Vérité Terrain d'Abord :** Toujours vérifier les extractions de cours (`PSY7010-XX_GOLD.md`) avant d'affirmer quoi que ce soit.
@@ -163,8 +174,8 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 2. **Garde-Fou Bloquant :**
    - Si la ligne indique `Model: 3.1 Pro` ou toute mention sans `Deep Think`, la réponse est **formellement rejetée** et ne doit sous aucun prétexte être enregistrée, poussée sur GitHub ni soumise à l'audit.
 3. **Responsabilité Conjointe (Contenu & Quartier Général) :**
-   - La session Contenu Web (`27764a31`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
-   - La session Quartier Général (`d6fea03c`) a la charge de supervision de rejeter tout livrable ne fournissant pas la preuve formelle de cette télémétrie avant de clore un mandat.
+   - La session `GITHUB - Contenu du site web` (`27764a31-b75d-4f15-9988-cb940026e6e2`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
+   - La session `QUARTIER GÉNÉRAL - PSY7010` (`d6fea03c-228d-438c-bb4e-541e2d0eaeac`) a la charge de supervision de rejeter tout livrable ne fournissant pas la preuve formelle de cette télémétrie avant de clore un mandat.
 
 ---
 
