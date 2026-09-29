@@ -105,16 +105,16 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 
 ---
 
-## 🏗️ 5. Nomenclature Officielle et Architecture des 8 Sessions PSY7010
+## 🏗️ 5. Nomenclature Officielle et Architecture des 9 Sessions PSY7010
 
 > [!IMPORTANT]
 > **Règle Absolue de Nomenclature des Sessions (Zéro Tiret Cadratin, Zéro Dénomination Fantaisiste) :**
 > Pour garantir la lisibilité parfaite dans l'interface Antigravity et une harmonisation totale entre PSY7010 et PSY9613, chaque session porte un nom officiel strict et immuable correspondant mot à mot à la barre latérale de Michel.
-> - **Format imposé :** `<CATÉGORIE_EN_MAJUSCULES> - <Nom du rôle>` avec un tiret court ASCII standard entouré d'espaces (` - `).
+> - **Format imposé :** `<CATÉGORIE_EN_MAJUSCULES> - <Nom du rôle>` (ou nom en majuscules sans séparateur pour `ECHEANCES RAPPELS NOTES`).
 > - **Interdiction formelle des tirets cadratins (`—`) ou demi-cadratins (`–`).**
 > - **Interdiction des acronymes ou surnoms non officiels.**
 > 
-> Les 8 sessions actives du workspace PSY7010 sont :
+> Les 9 sessions actives du workspace PSY7010 sont :
 
 1. **GITHUB - Compatibilité mobile** (`7f1eeac8-dc14-49e6-be9b-bd0dbf0ad9c0`) :
    - **Mission exclusive :** Audit ergonomique continu, accessibilité tactile et fluidité responsive sur smartphones et tablettes.
@@ -151,6 +151,9 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 
 8. **ENCORA - Débruitage terrain** (`e7f07ea4-7251-4ca4-8081-eb2d55c44790`) :
    - **Mission exclusive :** Traitement local lourd sur GPU (Everfree) des enregistrements de classe, réduction de bruit, synchronisation multi-enregistreurs et alignement temporel des transcriptions.
+
+9. **ECHEANCES RAPPELS NOTES** (`2dc1239a-379f-4d60-a540-b365c076d3e6`) :
+   - **Mission exclusive :** Session ultra-lean et légère dédiée à la veille continue du calendrier officiel, des échéances de remise (APP 35 %, Séminaires 30 %, Quiz 15 %, Réflexions 15 %, Présence 5 %) et du statut des formulaires administratifs (SESH / BIRE). Zéro calcul lourd, zéro devis complexe, posture de décharge cognitive pour profil TDAH.
 
 ### Principes Dialectiques Communs (Méthode Anti-Slop)
 1. **La Vérité Terrain d'Abord :** Toujours vérifier les extractions de cours (`PSY7010-XX_GOLD.md`) avant d'affirmer quoi que ce soit.
