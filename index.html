@@ -3958,10 +3958,14 @@
     <!-- SÉLECTEUR DE MODULES / HUB PRINCIPAL -->
     <nav class="hub-module-bar" id="hubModuleBar" aria-label="Sélecteur de modules et évaluations">
       <div class="hub-module-scroll">
-        <button type="button" class="hub-module-pill active" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
+        <button type="button" class="hub-module-pill active" id="pillSeance5" onclick="switchHubModule('seance5')">
+          <span class="hub-pill-dot dot-active" style="background: #10b981;"></span>
+          <span class="hub-pill-title">💼 Séance 5 : La Profession</span>
+          <span class="hub-pill-tag tag-date" style="background: rgba(16, 185, 129, 0.2); color: #059669;">Mardi 6 oct.</span>
+        </button>
+        <button type="button" class="hub-module-pill" id="pillSeminaire1" onclick="switchHubModule('seminaire1')">
           <span class="hub-pill-dot dot-info"></span>
           <span class="hub-pill-title">🏛️ Séminaire 1 : AF447</span>
-          <span class="hub-pill-tag tag-info">Mardi 29 sept.</span>
         </button>
         <button type="button" class="hub-module-pill" id="pillBloc2" onclick="switchHubModule('bloc2')">
           <span class="hub-pill-dot dot-active"></span>
@@ -4620,16 +4624,21 @@
                 <span class="podcast-ep-title">🧠 Erreur systémique &amp; Cañas</span>
                 <span class="podcast-ep-duration">18 min</span>
               </button>
-              <button type="button" class="podcast-ep-btn active" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="true" title="Épisode 3 : Consolidation intégrale Séance 3 (Pr Mario Passalacqua)">
+              <button type="button" class="podcast-ep-btn active" id="epBtnSeance5" onclick="switchPodcastEpisode('seance5_profession')" role="tab" aria-selected="true" title="Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique">
+                <span class="podcast-ep-num">S05</span>
+                <span class="podcast-ep-title">💼 Séance 5 • La Profession</span>
+                <span class="podcast-ep-duration">17 min</span>
+              </button>
+              <button type="button" class="podcast-ep-btn" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="false" title="Épisode 3 : Consolidation intégrale Séance 3 (Pr Mario Passalacqua)">
                 <span class="podcast-ep-num">Ép. 3</span>
                 <span class="podcast-ep-title">🎓 Bilan Séance 3 • Pr Passalacqua</span>
                 <span class="podcast-ep-duration">17 min</span>
               </button>
             </div>
 
-            <h4 class="podcast-banner-title" id="podcastBannerTitle">L'Essentiel de la Séance 3 : Systèmes sociotechniques et démarche</h4>
+            <h4 class="podcast-banner-title" id="podcastBannerTitle">Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique</h4>
             <p class="podcast-banner-desc" id="podcastBannerDesc">
-              Grand épisode de consolidation post-cours (17 min) : du postulat sociotechnique (« l'erreur est un résultat, jamais une cause ») au triptyque cognitif/psychosocial/comportemental, à la triangulation des mesures et aux retours d'expérience sur l'inspection IA.
+              Synthèse audio matinale (17 min 15 s) : logistique SU-1550, profils d'Emmanuelle Poilier &amp; Karine Ung (Bombardier, CAE, Desjardins, NASA), et cadrage du devoir réflexif de 15 %.
             </p>
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
@@ -4695,7 +4704,10 @@
       <!-- TABS BAR -->
       <!-- TABS BAR POUR BLOC 2 (ENSEIGNEMENT ACTIF) -->
       <div class="reader-header-bar" id="readerTabsBloc2">
-        <button class="reader-tab active" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
+        <button class="reader-tab active" id="tab_seance5" onclick="switchHubModule('seance5')">
+          💼 Séance 5 (La Profession)
+        </button>
+        <button class="reader-tab" id="tab_seminaire1" onclick="switchHubModule('seminaire1')">
           🏛️ Séminaire 1
         </button>
         <button class="reader-tab" id="tab_doc_af447" onclick="switchTab('doc_af447')">
@@ -4735,7 +4747,7 @@
       </div>
 
       <!-- VUE 2 : SÉMINAIRE 1 (AF447 & LIN ET AL. 1998) -->
-    <div id="viewSeminaire1" class="hub-view-container" style="display: block;">
+    <div id="viewSeminaire1" class="hub-view-container" style="display: none;">
       <div class="hub-view-content">
         <div class="hub-hero-card">
           <div class="hub-hero-header">
@@ -5117,6 +5129,152 @@
       </div>
     </div>
 
+    <!-- VUE SÉANCE 5 : LA PROFESSION & MILIEUX DE PRATIQUE (06 OCT) -->
+    <div id="viewSeance5" class="hub-view-container" style="display: block;">
+      <div class="hub-view-content">
+        <div class="hub-hero-card">
+          <div class="hub-hero-header">
+            <div>
+              <span class="hub-hero-badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.4);">💼 Séance 5 • Mardi 6 Octobre 2026 • Facteurs Humains &amp; IHM</span>
+              <h2 class="hub-hero-title">La Profession &amp; Milieux de Pratique — Rencontre avec les Conférencières</h2>
+              <div class="hub-hero-subtitle">Échange professionnel avec Emmanuelle Poilier &amp; Karine Ung (Bombardier, CAE, Desjardins, Radio-Canada, Dassault, OACI, NASA)</div>
+            </div>
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+              <span>🎯</span> <span>Retour à la Station d'Étude</span>
+            </button>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 12px 0;">
+            <strong>Cadrage de l'activité :</strong> Rencontre professionnelle au local <strong>SU-1550</strong> (Pavillon Adrien-Pinard) avec deux spécialistes de pointe en facteurs humains, interfaces humain-machine (IHM) et expérience utilisateur (UX). Cette séance amorce le premier des trois devoirs réflexifs sur la profession (Réflexion 1 à remettre sur Moodle d'ici le 15 octobre, 5 % de la note).
+          </p>
+
+          <!-- CARTE AUDIO MASTER : ÉDITION INTÉGRALE MATINALE (17 MIN 15 S) -->
+          <div class="seminar-audio-card" style="border-left-color: #10b981; background: var(--bg-card); margin: 16px 0;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique (17 min 15 s)</h4>
+                  <div class="seminar-audio-meta">Synthèse complète de préparation : logistique SU-1550, profils des conférencières invitées et directives du devoir réflexif de 15 %.</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-info" style="color: #059669; border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.15);">🎧 Audio Officiel • fr-CA</span>
+            </div>
+            <audio id="playerSeance5" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 12px 0 8px 0;">
+              <source src="05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a" type="audio/mp4">
+              <source src="../../05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a" type="audio/mp4">
+              <source src="PSY7010_S05_Integrale_Matinale_La_Profession.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+
+            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL -->
+            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-top: 8px;">
+              <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-main); margin-bottom: 6px;">⏱️ Sommaire des 4 parties (cliquez pour écouter un chapitre) :</div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; font-size: 0.82rem;">
+                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance5', 0)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
+                  <span>▶️</span> <span><strong>Partie 1 :</strong> Introduction express (01:14)</span>
+                </button>
+                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance5', 74)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
+                  <span>▶️</span> <span><strong>Partie 2 :</strong> Cadrage logistique SU-1550 (05:20)</span>
+                </button>
+                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance5', 394)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
+                  <span>▶️</span> <span><strong>Partie 3 :</strong> Conférencières Poilier &amp; Ung (05:02)</span>
+                </button>
+                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance5', 696)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
+                  <span>▶️</span> <span><strong>Partie 4 :</strong> Devoir réflexif 15 % (deadline 15 oct.) (05:31)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span class="seminar-tag-badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.3);">💼 Facteurs Humains, Ergonomie &amp; UX</span>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">Cohorte de Maîtrise UQAM • Insertion professionnelle • Échange interactif</span>
+          </div>
+        </div>
+
+        <!-- GUIDE D'ÉCHANGE AVEC LES CONFÉRENCIÈRES (QUESTIONS PRÉPARÉES) -->
+        <div class="seminar-official-box">
+          <div class="seminar-official-header">
+            <div>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">🎙️ Guide d'Échange &amp; Questions Préparées par les Professeurs</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">5 axes thématiques pour animer la discussion avec Emmanuelle Poilier et Karine Ung</p>
+            </div>
+          </div>
+
+          <div class="seminar-breakdown" style="margin-top: 10px;">
+            <div class="seminar-breakdown-item" style="border-left-color: #3b82f6;">
+              <strong>1. Parcours académique et compétences clés :</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                • Formations universitaires requises pour accéder au métier de spécialiste FH-IHM-UX.<br>
+                • Compétences techniques et méthodologiques que les étudiants ou jeunes diplômés sous-estiment fréquemment à l'embauche.
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #8b5cf6;">
+              <strong>2. Spécificité disciplinaire et valeur ajoutée de la psychologie :</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                • L'apport distinct d'un profil issu de la psychologie cognitive appliquée face aux ingénieurs ou informaticiens.<br>
+                • Demande de l'employeur en milieu commercial VS scientifique : différences d'exigences entre secteurs (aéronautique, transport, santé, services financiers).
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #10b981;">
+              <strong>3. Quotidien professionnel et collaboration interdisciplinaire :</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                • Partage du temps entre le terrain (observations, simulations, tests usagers) et le bureau (analyses, réunions d'équipe).<br>
+                • Collaboration avec les développeurs, designers, ergonomes physiques et gestionnaires de produit.
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #f59e0b;">
+              <strong>4. Méthodologie et pratique de terrain :</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                • Démarche d'analyse face à un problème d'interface complexe : observation, protocoles verbaux, analyse des tâches, expérimentation, télémétrie.<br>
+                • Critères de validation empirique d'une recommandation et gestion des arbitrages (recommandations d'abandon ou de refonte majeure).
+              </div>
+            </div>
+            <div class="seminar-breakdown-item" style="border-left-color: #ec4899;">
+              <strong>5. Conseils d'orientation et de carrière :</strong>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
+                • Stratégie de développement professionnel pour les 2 à 3 prochaines années pour les étudiants de la cohorte.<br>
+                • Choix des mandats de stage, constitution d'un portfolio empirique et réseautage dans l'écosystème montréalais.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXIGENCES DU DEVOIR RÉFLEXIF 1 (5 %) -->
+        <div class="seminar-official-box">
+          <div class="seminar-official-header">
+            <div>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">📝 Exigences du Devoir Réflexif 1 (5 % de la note)</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Date limite de remise sur Moodle : Jeudi 15 octobre 2026 à 23h59</p>
+            </div>
+          </div>
+
+          <div class="seminar-breakdown" style="margin-top: 10px;">
+            <div class="seminar-breakdown-item">
+              <strong>Format du livrable :</strong> Travail individuel écrit de 1 à 2 pages au traitement de texte (format PDF).
+            </div>
+            <div class="seminar-breakdown-item">
+              <strong>Volet 1 — Résumé exécutif des métiers présentés :</strong> Synthèse concise et rigoureuse des champs de pratique décrits par les conférencières, de leurs contextes d'intervention et des compétences clés mobilisées.
+            </div>
+            <div class="seminar-breakdown-item">
+              <strong>Volet 2 — Analyse réflexive argumentée :</strong> Réflexion personnelle et structurée sur vos propres intérêts, réserves et perspectives d'intégration professionnelle au regard de votre concentration de maîtrise.
+            </div>
+          </div>
+        </div>
+
+        <div class="hub-actions-bar">
+          <button type="button" class="hub-btn-primary" onclick="switchHubModule('bloc2')">
+            <span>🎯</span> <span>Retour à la Station d'Étude</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('seminaire1')">
+            <span>🏛️</span> <span>Séminaire 1 (Archives 29 sept.)</span>
+          </button>
+          <button type="button" class="hub-btn-secondary" onclick="switchHubModule('calendar')">
+            <span>🗓️</span> <span>Calendrier Officiel</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- VUE 3 : CALENDRIER DES ÉPREUVES PSY7010 -->
     <div id="viewCalendar" class="hub-view-container" style="display: none;">
@@ -5175,8 +5333,8 @@
             <span class="timeline-badge-completed">✓ Évalué (5 %)</span>
           </div>
 
-          <!-- 29 SEPT (SÉANCE 4 / SÉMINAIRE 1 - EN COURS / PROCHAINE ÉCHÉANCE) -->
-          <div class="timeline-entry" style="border-left: 4px solid #38bdf8;">
+          <!-- 29 SEPT (SÉANCE 4 / SÉMINAIRE 1 - ARCHIVES) -->
+          <div class="timeline-entry past" style="border-left: 4px solid #64748b;">
             <div class="timeline-date-box">
               <span class="timeline-day">29</span>
               <span class="timeline-month">Sept.</span>
@@ -5184,26 +5342,31 @@
             <div class="timeline-info">
               <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
                 <h4 style="margin:0;">🏛️ Séminaire 1 - Études de cas : AF447 &amp; Lin et al. (10 % de la note)</h4>
-                <span class="hub-pill-tag tag-primary" style="font-size:0.75rem;">Prochaine séance</span>
+                <span class="timeline-badge-completed">✓ Séance complétée</span>
               </div>
-              <p><strong>Remise écrite obligatoire en fin de cours :</strong> Feuille imprimée individuelle d'une page comprenant deux questions critiques ouvertes (1 sur l'accident AF-447, 1 sur la pompe PCA de Lin et al. 1998).</p>
+              <p><strong>Remise effectuée :</strong> Feuille imprimée individuelle de deux questions critiques ouvertes (Vol AF-447 et pompe PCA Lin et al. 1998).</p>
             </div>
-            <button type="button" class="hub-btn-primary" onclick="switchHubModule('seminaire1')" style="padding: 6px 14px; font-size: 0.82rem; align-self: center; white-space: nowrap;">
-              Consulter le cadrage
+            <button type="button" class="hub-btn-secondary" onclick="switchHubModule('seminaire1')" style="padding: 6px 14px; font-size: 0.82rem; align-self: center; white-space: nowrap;">
+              Consulter l'archive
             </button>
           </div>
 
-          <!-- 06 OCT -->
-          <div class="timeline-entry" style="border-left: 4px solid #10b981;">
-            <div class="timeline-date-box">
-              <span class="timeline-day">06</span>
-              <span class="timeline-month">Oct.</span>
+          <!-- 06 OCT (SÉANCE 5 - ACTIVE AUJOURD'HUI) -->
+          <div class="timeline-entry" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.04);">
+            <div class="timeline-date-box" style="background: rgba(16, 185, 129, 0.15); border-color: #10b981;">
+              <span class="timeline-day" style="color: #059669;">06</span>
+              <span class="timeline-month" style="color: #059669;">Oct.</span>
             </div>
             <div class="timeline-info">
-              <h4>📝 Réflexion 1 sur LA PROFESSION - Facteurs Humains &amp; IHM (5 % de la note)</h4>
-              <p><strong>Travail écrit individuel (1 à 2 pages) :</strong> Accueil de 3 conférencier-ière-s externes. Remise obligatoire comprenant : 1) Résumés exécutifs des métiers présentés ; 2) Réflexion argumentée sur vos intérêts et réserves professionnels.</p>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+                <h4 style="margin:0;">💼 Séance 5 — LA PROFESSION : Facteurs Humains &amp; IHM (5 % de la note)</h4>
+                <span class="hub-pill-tag tag-primary" style="font-size:0.75rem; background: rgba(16, 185, 129, 0.2); color: #059669; border-color: rgba(16, 185, 129, 0.4);">Séance active aujourd'hui</span>
+              </div>
+              <p><strong>Rencontre professionnelle au local SU-1550 :</strong> Accueil d'Emmanuelle Poilier et Karine Ung. Début de la rédaction du devoir réflexif 1 (15 % total, échéance 15 oct. sur Moodle) : résumés exécutifs des métiers présentés et analyse réflexive argumentée.</p>
             </div>
-            <span class="hub-pill-tag tag-date" style="align-self: center;">Conférenciers</span>
+            <button type="button" class="hub-btn-primary" onclick="switchHubModule('seance5')" style="padding: 6px 14px; font-size: 0.82rem; align-self: center; white-space: nowrap; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              🎧 Consulter le guide &amp; Audio
+            </button>
           </div>
 
           <!-- 13 OCT : DOUBLE ÉCHÉANCE -->
@@ -11006,10 +11169,10 @@ const allQuestions = [
     // =========================================================================
     // GESTION DU HUB MODULAIRE MULTI-ÉPREUVES (BLOC 2, ARCHIVES BLOC 1, ETC.)
     // =========================================================================
-    // Par défaut à l'ouverture du site : Séminaire 1
-    let currentHubModule = 'seminaire1';
+    // Par défaut à l'ouverture du site : Séance 5 (Aujourd'hui 06 Octobre)
+    let currentHubModule = 'seance5';
 
-    // Vérification d'ancre URL (#bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
+    // Vérification d'ancre URL (#seance5, #profession, #bloc1, #archive, #archives, #seminaire1, #calendar, #bloc2)
     const hash = window.location.hash.toLowerCase();
     if (hash === '#bloc1' || hash === '#archive' || hash === '#archives') {
       currentHubModule = 'bloc1';
@@ -11019,21 +11182,24 @@ const allQuestions = [
       currentHubModule = 'calendar';
     } else if (hash === '#seminaire1' || hash === '#seminaire') {
       currentHubModule = 'seminaire1';
+    } else if (hash === '#seance5' || hash === '#profession') {
+      currentHubModule = 'seance5';
     } else {
-      currentHubModule = 'seminaire1';
+      currentHubModule = 'seance5';
     }
 
     function switchHubModule(mod) {
       currentHubModule = mod;
       safeSetStorageRaw('psy7010_hub_module_v2', mod);
       
-      const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
+      const pills = ['pillSeance5', 'pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
       pills.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('active');
       });
       
       const activePill = document.getElementById(
+        mod === 'seance5' ? 'pillSeance5' :
         mod === 'bloc2' ? 'pillBloc2' :
         mod === 'bloc1' ? 'pillBloc1' :
         mod === 'seminaire1' ? 'pillSeminaire1' : 'pillCalendar'
@@ -11042,12 +11208,14 @@ const allQuestions = [
 
       const subTitle = document.getElementById('hubModuleSubtitle');
       if (subTitle) {
-        if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
+        if (mod === 'seance5') subTitle.textContent = "Séance 5 : La Profession & Milieux de pratique (Rencontre conférencières)";
+        else if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
         else if (mod === 'bloc1') subTitle.textContent = "Bloc 1 : Cañas et al. (2011)";
         else if (mod === 'seminaire1') subTitle.textContent = "Séminaire 1 : Vol AF447 & Grille Lin et al. (1998)";
         else if (mod === 'calendar') subTitle.textContent = "Calendrier officiel du trimestre (Automne 2026)";
       }
 
+      const seance5View = document.getElementById('viewSeance5');
       const seminaire1View = document.getElementById('viewSeminaire1');
       const calendarView = document.getElementById('viewCalendar');
       const quizPane = document.getElementById('quizPane');
@@ -11067,6 +11235,7 @@ const allQuestions = [
       const isCompact = isCompactUI() || (window.innerHeight > window.innerWidth && layoutSetting !== 'horizontal');
 
       if (mod === 'bloc2') {
+        if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
         if (headerNavStudy) headerNavStudy.style.display = 'none';
@@ -11116,6 +11285,7 @@ const allQuestions = [
         }
         updateMascot("Bloc 2 : Milieux technologiques avec le Pr Mario Passalacqua. Entraînez-vous sur les cas cliniques et explorez les documents sources à droite.", "happy");
       } else if (mod === 'bloc1') {
+        if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
         if (headerNavStudy) headerNavStudy.style.display = 'flex';
@@ -11181,6 +11351,7 @@ const allQuestions = [
         if (docBanner) docBanner.style.display = 'none';
         if (hint) hint.style.display = 'none';
 
+        if (seance5View) seance5View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'block';
 
@@ -11217,6 +11388,7 @@ const allQuestions = [
         if (docBanner) docBanner.style.display = 'none';
         if (hint) hint.style.display = 'none';
 
+        if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'block';
 
@@ -11230,6 +11402,43 @@ const allQuestions = [
           setMobileView('source');
         }
         updateMascot("Calendrier du trimestre : gardez le cap sur les prochaines échéances !", "happy");
+      } else if (mod === 'seance5') {
+        // En mode Séance 5 : Présentation officielle de la Profession & Milieux de pratique
+        if (headerNavStudy) headerNavStudy.style.display = 'none';
+        if (headerNavPipe) headerNavPipe.style.display = 'none';
+        if (bloc2Section) bloc2Section.style.display = 'block';
+        if (bloc1Section) bloc1Section.style.display = 'none';
+        if (readerTabsB2) readerTabsB2.style.display = 'flex';
+        if (readerTabsB1) readerTabsB1.style.display = 'none';
+
+        if (quizPane) quizPane.style.display = 'block';
+        if (readerPane) {
+          readerPane.style.display = isCompact ? (mobileView === 'source' ? 'flex' : 'none') : 'flex';
+        }
+        if (splitDivider) {
+          splitDivider.style.display = (isCompact || layoutSetting === 'vertical') ? 'none' : '';
+        }
+
+        // Masquer les viewports et contrôles documentaires, afficher la vue Séance 5 dans le volet lecteur
+        document.querySelectorAll('.reader-viewport').forEach(vp => vp.style.display = 'none');
+        if (docControls) docControls.style.display = 'none';
+        if (docBanner) docBanner.style.display = 'none';
+        if (hint) hint.style.display = 'none';
+
+        if (seminaire1View) seminaire1View.style.display = 'none';
+        if (calendarView) calendarView.style.display = 'none';
+        if (seance5View) seance5View.style.display = 'block';
+
+        document.querySelectorAll('.reader-tab').forEach(b => b.classList.remove('active'));
+        const s5Tab = document.getElementById('tab_seance5');
+        if (s5Tab) s5Tab.classList.add('active');
+
+        updateDynamicLayout();
+        updateFlashcardsBannerForCurrentModule();
+        if (isSinglePaneMode()) {
+          setMobileView('source');
+        }
+        updateMascot("Séance 5 active : La Profession & Milieux de pratique. Écoutez l'édition intégrale matinale et explorez le guide de rencontre !", "study");
       }
     }
 
@@ -12580,11 +12789,11 @@ const allQuestions = [
     function switchTab(docId, autoUnmask = true, autoSwitchModule = true) {
       activeDocId = docId;
 
-      // Si on était dans la vue Séminaire 1 ou Calendrier, rétablir la vue Bloc 2
-      if (autoSwitchModule && typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar')) {
+      // Si on était dans la vue Séminaire 1, Calendrier ou Séance 5, rétablir la vue Bloc 2
+      if (autoSwitchModule && typeof currentHubModule !== 'undefined' && (currentHubModule === 'seminaire1' || currentHubModule === 'calendar' || currentHubModule === 'seance5')) {
         currentHubModule = 'bloc2';
         safeSetStorageRaw('psy7010_hub_module_v2', 'bloc2');
-        const pills = ['pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
+        const pills = ['pillSeance5', 'pillBloc2', 'pillBloc1', 'pillSeminaire1', 'pillCalendar'];
         pills.forEach(id => {
           const el = document.getElementById(id);
           if (el) el.classList.remove('active');
@@ -12598,8 +12807,10 @@ const allQuestions = [
       }
 
       if (autoSwitchModule) {
+        const seance5View = document.getElementById('viewSeance5');
         const seminaire1View = document.getElementById('viewSeminaire1');
         const calendarView = document.getElementById('viewCalendar');
+        if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
 
@@ -13726,9 +13937,26 @@ let previousIsCompact = isCompactUI();
         driveUrl: "https://drive.google.com/file/d/191YDdbGHyRy2noj4CdndxsGnX75qKPeZ/view?usp=sharing",
         notebookUrl: "https://notebooklm.google.com/notebook/9959df78-66c1-4256-acec-c90f18a39652",
         downloadFilename: "PSY7010_S03_Episode_03_Grand_Deep_Dive_Passalacqua.m4a"
+      },
+      seance5_profession: {
+        id: 'seance5_profession',
+        btnId: 'epBtnSeance5',
+        title: "Séance 5 : Édition intégrale matinale — La Profession & Milieux de pratique",
+        desc: "Synthèse audio matinale (17 min 15 s) : logistique SU-1550, profils d'Emmanuelle Poilier & Karine Ung (Bombardier, CAE, Desjardins, NASA), et cadrage du devoir réflexif de 15 %.",
+        durationTag: "Audio 17 min",
+        mascotMsg: "🎙️ Séance 5 active : Édition intégrale matinale sur La Profession & Milieux de pratique (17 min). Idéal pour préparer la rencontre avec les conférencières !",
+        src: "05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a",
+        sources: [
+          "05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a",
+          "../../05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a",
+          "PSY7010_S05_Integrale_Matinale_La_Profession.m4a"
+        ],
+        driveUrl: "05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a",
+        notebookUrl: "https://notebooklm.google.com",
+        downloadFilename: "PSY7010_S05_Integrale_Matinale_La_Profession.m4a"
       }
     };
-    let currentPodcastEp = 'deep_dive_s03';
+    let currentPodcastEp = 'seance5_profession';
 
     function switchPodcastEpisode(epKey, autoPlay = false) {
       const ep = PODCAST_EPISODES[epKey];
@@ -13875,6 +14103,15 @@ let previousIsCompact = isCompactUI();
       return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
+    function seekAudioTrack(playerId, seconds) {
+      const player = document.getElementById(playerId);
+      if (player) {
+        player.currentTime = seconds;
+        player.play().catch(e => console.warn("Lecture audio:", e));
+      }
+    }
+    window.seekAudioTrack = seekAudioTrack;
+
     function updateAudioProgress() {
       const audio = getAudioEl();
       if (!audio) return;
@@ -13967,7 +14204,7 @@ let previousIsCompact = isCompactUI();
     }
 
     function initSavedPodcastUrl() {
-      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'deep_dive_s03';
+      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'seance5_profession';
       switchPodcastEpisode(savedEp, false);
 
       const savedUrl = localStorage.getItem('psy7010_podcast_url');

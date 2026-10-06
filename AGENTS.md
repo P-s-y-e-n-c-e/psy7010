@@ -192,4 +192,17 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 > 2. **Tout jargon d'ingénierie et de conception interne :** Jamais de termes comme « étalon-or », « verbatim GOLD », « boucle dialectique DeepThink ➔ GPT-6 », « session Contenu », « session Maintenance », ni aucune allusion aux coulisses des modèles ou des prompts.
 > 3. **Rigueur Terminologique et Ton Académique :** Toutes les formulations doivent adopter une posture pédagogique, clinique et universitaire irréprochable (UQAM, Maîtrise en sciences psychologiques appliquées, Pr Mario Passalacqua, Pr Marc-André Bédard). Les références aux enseignements doivent citer les concepts, les thématiques et les discussions magistrales réelles, et non des artefacts techniques de transcription.
 
+---
+
+## 🛑 8. Règle d'Or de Séquentialité Stricte & Anti-Split-Brain (Interdiction du Multitâche Prématuré)
+
+> [!CAUTION]
+> **Interdiction Formelle du Multitâche Asynchrone lors de Chaînes de Dépendance :**
+> Lorsqu'une séquence d'actions ou de transmissions inter-sessions est demandée par Michel (ex. « D'abord interroger Moodle, attendre sa réponse, consolider l'analyse, puis transférer à Podcast »), **l'agent a l'interdiction absolue d'anticiper ou de lancer les étapes aval en parallèle**.
+> 1. **Risque de Split-Brain :** Le parallélisme prématuré disperse l'attention, génère des états contradictoires entre agents, fait perdre des données critiques et déstabilise l'utilisateur.
+> 2. **Séquentialité Linéaire Obligatoire :**
+>    $$\text{Étape } N \text{ (Requête)} \longrightarrow \text{Attente passive \& Réception validée} \longrightarrow \text{Consolidation} \longrightarrow \text{Étape } N+1$$
+> 3. **Validation Préalable de l'Intrant :** Aucune directive, plan de production ou consigne ne doit être transmise à une session aval (ex. Podcast, Maintenance) tant que la session amont (ex. Moodle, ENCORA, Contenu) n'a pas formellement retourné son livrable et que celui-ci n'a pas été inspecté.
+
+
 

@@ -4,6 +4,7 @@
 *.wav
 !03_Seance_03_22sep_Milieux_Technologiques/*.m4a
 !04_Seance_04_29sep_Milieux_Technologiques_Etudes_de_cas/*.m4a
+!05_Seance_05_06oct_Profession/*.m4a
 
 # OS / Temporary
 Thumbs.db
