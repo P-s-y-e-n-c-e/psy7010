@@ -1,23 +1,22 @@
 {
   "metadata": {
-    "title": "Banque officielle de révision - Quiz 2 (Séance 06 : Commerce et consommation 1)",
+    "title": "Banque officielle didactique et exhaustive - Quiz 2 (Séance 06 : Commerce et consommation 1)",
     "course": "PSY7010 - Sciences psychologiques appliquées (UQAM)",
     "professors": [
       "Pr Guillaume Beaulac",
       "Pr Mario Passalacqua"
     ],
     "date": "Mardi 13 octobre 2026",
-    "time": "09h30 - 09h45",
-    "duration": "15 minutes (20 minutes pour les étudiant·e·s du BIRÉ)",
+    "time": "09h30 - 09h45 (15 min / 20 min BIRÉ)",
     "weight": "5% de la note finale",
-    "format": "4 questions à choix multiples / appariement (Examen à livre ouvert, notes et recueils autorisés)",
-    "total_questions": 20,
+    "format": "4 questions à choix multiples / appariement (Examen individuel à livre ouvert)",
+    "total_questions": 24,
     "total_flashcards": 12,
-    "correct_index_distribution": {
-      "A (0)": 5,
-      "B (1)": 5,
-      "C (2)": 5,
-      "D (3)": 5
+    "key_distribution": {
+      "C": 6,
+      "A": 6,
+      "D": 6,
+      "B": 6
     }
   },
   "questions": [
@@ -28,32 +27,30 @@
       "anchor_id": "anchor_chen_q1",
       "tag": "Chen (2024) • Rationalité limitée",
       "points": "1 point",
-      "context": "Dans son survol des fondements de l'économie comportementale, Chen (2024, p. 101) rappelle que l'économie néoclassique repose traditionnellement sur le postulat d'un décideur purement rationnel (« Homo Economicus »).",
-      "question": "Quel principe fondamental introduit par Herbert Simon et repris par l'économie comportementale réfute directement l'hypothèse d'une maximisation parfaite de l'utilité ?",
+      "context": "Dans son survol des fondements de l'économie comportementale, Chen (2024, p. 101) rappelle que l'économie néoclassique standard repose traditionnellement sur le postulat d'un décideur maximisateur d'utilité (« Homo Economicus »).",
+      "prompt": "Quel principe fondamental introduit par Herbert Simon et repris par l'économie comportementale formalise la rupture avec l'hypothèse d'une maximisation exhaustive de l'utilité ?",
       "options": [
-        "Le principe de rationalité limitée (Bounded Rationality) : en raison de ressources attentionnelles, temporelles et informationnelles finies, l'agent recherche une solution « satisfaisante » (satisficing) plutôt qu'optimale.",
-        "Le principe de l'irrationalité aléatoire : l'humain prend toujours des décisions de manière totalement chaotique et imprévisible.",
-        "Le postulat de l'infaillibilité cognitive : l'opérateur humain optimise parfaitement ses choix dès qu'on lui fournit des incitations financières suffisantes.",
-        "La théorie du choix rationnel absolu : les biais observés sont uniquement dus à des pannes mécaniques des outils de mesure et non au fonctionnement cognitif."
+        {
+          "letter": "A",
+          "text": "L'irrationalité aléatoire : les comportements humains dévient du modèle standard de manière purement chaotique et imprévisible."
+        },
+        {
+          "letter": "B",
+          "text": "L'optimisation globale sous incertitude : les décideurs calculent l'intégrale mathématique de tous les futurs possibles avant d'agir."
+        },
+        {
+          "letter": "C",
+          "text": "Le 'satisficing' (recherche d'une solution satisfaisante) : face à des capacités computationnelles et un temps limités, les décideurs arrêtent leur recherche dès qu'une option atteint leurs seuils d'acceptabilité."
+        },
+        {
+          "letter": "D",
+          "text": "La stratégie minimax absolue : les agents choisissent systématiquement l'option qui minimise le regret théorique maximal quel qu'en soit le coût."
+        }
       ],
-      "correctIndex": 0,
-      "feedbacks": [
-        "Correct ! Herbert Simon a montré que les capacités computationnelles et la mémoire de travail de l'humain étant limitées, celui-ci adopte des heuristiques pour trouver une issue satisfaisante (« satisficing ») au lieu de maximiser l'utilité globale.",
-        "Incorrect. L'économie comportementale ne postule pas une irrationalité chaotique ou aléatoire, mais démontre au contraire que les déviations par rapport à la rationalité standard sont systématiques et prévisibles (Kahneman & Tversky).",
-        "Incorrect. L'un des résultats majeurs de l'économie comportementale (ex. Dan Ariely, George Loewenstein) est que de simples incitations monétaires ne compensent pas les limites structurelles de l'attention et de la mémoire de travail.",
-        "Incorrect. La théorie du choix rationnel classique est précisément le modèle néoclassique que Simon, Kahneman et Chen remettent en cause sur la base des données expérimentales."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 101 (Section 3.1 Bounded Rationality)",
-      "doc_quote": "« Bounded rationality, introduced by Herbert Simon, suggests that individuals have limited computational capabilities, information, and time to make decisions. Instead of optimizing and finding the best possible outcome, people often settle for a choice that is 'good enough' or satisfies their criteria, a strategy known as satisficing. »",
-      "doc_quote_fr": "« La rationalité limitée, introduite par Herbert Simon, suggère que les individus disposent de capacités de calcul, d'informations et de temps limités pour prendre des décisions. Au lieu d'optimiser et de chercher le meilleur résultat possible, les gens se contentent souvent d'un choix 'suffisamment bon' ou répondant à leurs critères, une stratégie connue sous le nom de recherche d'une solution satisfaisante (satisficing). »",
-      "doc_explanation": "La rationalité limitée ne signifie pas absence de rationalité, mais rationalité sous contraintes de ressources cognitives. L'ergonome cognitif conçoit donc des systèmes qui allègent la charge mentale plutôt que d'exiger une omniscience de l'utilisateur.",
-      "exam_tip": "Ne confondez jamais 'satisficing' (chercher un résultat suffisant) avec 'optimizing' (calculer la solution mathématiquement optimale).",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 101, Bounded Rationality.",
-      "flashcard_question": "Qu'est-ce que le 'satisficing' selon Herbert Simon et Chen (2024) ?",
-      "flashcard_answer": "La stratégie par laquelle un décideur soumis à des limites cognitives et temporelles choisit une option satisfaisante plutôt que de chercher l'optimum global."
+      "correctLetter": "C",
+      "explanation": "Herbert Simon a montré que les limites computationnelles de l'esprit humain conduisent au 'satisficing' : chercher un résultat satisfaisant plutôt qu'optimiser exhaustivement. L'économie comportementale ne postule pas une irrationalité chaotique, mais des biais systématiques et prévisibles.",
+      "citation": "Chen (2024), p. 101, Section 3.1 Bounded Rationality",
+      "correctIndex": 2
     },
     {
       "id": 2,
@@ -62,32 +59,30 @@
       "anchor_id": "anchor_chen_q2",
       "tag": "Chen (2024) • Théorie des perspectives",
       "points": "1 point",
-      "context": "Dans la Théorie des perspectives (*Prospect Theory*) de Kahneman et Tversky (1979, reprise par Chen, p. 101), la valeur subjective d'un résultat n'est pas calculée sur la richesse absolue de l'individu, mais évaluée par rapport à un point de référence neutre.",
-      "question": "Quelle est la caractéristique géométrique fondamentale de la fonction de valeur subjective en fonction des gains et des pertes ?",
+      "context": "Développée par Kahneman et Tversky (1979) et synthétisée par Chen (2024, p. 101), la théorie des perspectives remplace la fonction d'utilité standard par une fonction de valeur subjective v(x).",
+      "prompt": "Quelle description géométrique caractérise fidèlement la fonction de valeur subjective en fonction des gains et des pertes par rapport au point de référence ?",
       "options": [
-        "Elle est parfaitement linéaire pour les gains comme pour les pertes, indiquant une neutralité absolue au risque quel que soit le contexte.",
-        "Elle est concave dans le domaine des gains (aversion au risque), convexe dans le domaine des pertes (recherche de risque), et sa pente est plus abrupte pour les pertes que pour les gains.",
-        "Elle est convexe dans le domaine des gains (aversion au risque) et concave dans le domaine des pertes (recherche de risque).",
-        "Elle ne s'applique qu'aux situations de certitude absolue et s'annule complètement dès qu'une probabilité inférieure à 100 % est introduite."
+        {
+          "letter": "A",
+          "text": "La fonction est concave dans le domaine des gains, convexe dans le domaine des pertes, et sa pente est significativement plus abrupte pour les pertes que pour les gains (aversion aux pertes)."
+        },
+        {
+          "letter": "B",
+          "text": "La fonction est convexe dans le domaine des gains et concave dans le domaine des pertes, avec une pente identique des deux côtés du point neutre."
+        },
+        {
+          "letter": "C",
+          "text": "La fonction est strictement linéaire sur tout son domaine, traduisant une neutralité universelle face au risque financier."
+        },
+        {
+          "letter": "D",
+          "text": "La fonction est symétrique par rapport à l'origine, indiquant qu'un gain de 100 $ procure une satisfaction strictement égale à la douleur d'une perte de 100 $."
+        }
       ],
-      "correctIndex": 1,
-      "feedbacks": [
-        "Incorrect. Une fonction linéaire caractériserait un décideur neutre face au risque, ce qui contredit directement les observations empiriques de la psychologie de la décision.",
-        "Correct ! La fonction de valeur en forme de S est concave au-dessus du point de référence (les gains marginaux procurent un plaisir décroissant : aversion au risque) et convexe en dessous (recherche de risque pour éviter une perte certaine). De plus, sa pente est environ 2 fois plus raide pour les pertes (aversion aux pertes : 'losses loom larger than gains').",
-        "Incorrect. La convexité dans les gains et la concavité dans les pertes décriraient l'exact opposé du modèle de Kahneman et Tversky (ce serait de la recherche de risque dans les gains et de l'aversion au risque dans les pertes).",
-        "Incorrect. La théorie des perspectives a précisément été développée pour modéliser les choix en univers probabiliste et risqué, notamment via la fonction de pondération des probabilités pi(p)."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 101 (Section 3.2 Prospect Theory)",
-      "doc_quote": "« Prospect theory, developed by Daniel Kahneman and Amos Tversky, describes how people make decisions involving risk and uncertainty. It shows that individuals evaluate outcomes relative to a reference point, rather than their absolute wealth. The value function is typically S-shaped, being concave for gains (indicating risk aversion) and convex for losses (indicating risk-seeking behavior). Additionally, people exhibit loss aversion, where losses are felt more keenly than equivalent gains. »",
-      "doc_quote_fr": "« La théorie des perspectives, développée par Daniel Kahneman et Amos Tversky, décrit la manière dont les gens prennent des décisions impliquant risque et incertitude. Elle montre que les individus évaluent les résultats par rapport à un point de référence plutôt qu'en fonction de leur richesse absolue. La fonction de valeur est typiquement en forme de S, étant concave pour les gains (indiquant une aversion au risque) et convexe pour les pertes (indiquant un comportement de recherche de risque). De plus, les individus manifestent une aversion aux pertes, où les pertes sont ressenties plus douloureusement que des gains équivalents. »",
-      "doc_explanation": "L'aversion aux pertes explique des phénomènes majeurs en ergonomie du commerce : la peur de perdre un avantage acquis pousse les consommateurs à refuser des changements bénéfiques ou à sur-réagir aux frais supplémentaires.",
-      "exam_tip": "Retenez la règle mnémotechnique : Gains = Concave (on sécurise le gain, aversion au risque). Pertes = Convexe (on parie pour éviter la perte, recherche de risque). Pente pertes > Pente gains.",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 101, Prospect Theory.",
-      "flashcard_question": "Quelle est l'asymétrie majeure de la fonction de valeur dans la Théorie des perspectives ?",
-      "flashcard_answer": "Les pertes font environ deux fois plus mal que des gains équivalents ne procurent de satisfaction ('losses loom larger than gains'), ce qui se traduit par une pente plus raide sous le point de référence."
+      "correctLetter": "A",
+      "explanation": "La fonction de valeur subjective de la théorie des perspectives présente une forme en S : concave pour les gains (recherche de sécurité) et convexe pour les pertes (recherche de risque pour éviter la perte). De plus, l'aversion aux pertes rend la pente environ deux fois plus forte pour les pertes que pour les gains équivalents.",
+      "citation": "Chen (2024), p. 101, Section 3.2 Prospect Theory",
+      "correctIndex": 0
     },
     {
       "id": 3,
@@ -96,66 +91,62 @@
       "anchor_id": "anchor_chen_q3",
       "tag": "Chen (2024) • Adhésion par défaut & Politiques publiques",
       "points": "1 point",
-      "context": "L'un des succès les plus documentés de l'économie comportementale appliquée aux politiques publiques (Chen, 2024, p. 100 et 102) concerne les plans d'épargne-retraite d'entreprise et le don d'organes.",
-      "question": "Pourquoi la formule d'adhésion automatique avec possibilité de désengagement (« opt-out ») augmente-t-elle si massivement le taux de participation par rapport à l'adhésion volontaire (« opt-in ») ?",
+      "context": "Dans l'analyse des politiques publiques d'épargne-retraite et de santé, Chen (2024, p. 100 & 102) examine l'impact du changement d'option par défaut.",
+      "prompt": "Pourquoi le passage d'une adhésion volontaire ('opt-in') à une adhésion automatique avec option de retrait ('opt-out') augmente-t-il massivement le taux de participation effectif ?",
       "options": [
-        "Parce qu'elle supprime formellement la liberté de choix et inflige des sanctions financières immédiates aux employés qui souhaitent s'en retirer.",
-        "Parce qu'elle verse une prime en argent comptant équivalente à six mois de salaire dès la signature du contrat.",
-        "Parce qu'elle capitalise sur l'inertie humaine, le biais du statu quo et le coût cognitif de la démarche active sans restreindre la liberté de refus.",
-        "Parce qu'elle oblige les employés à assister à des séances d'endoctrinement psychologique obligatoire lors de leur embauche."
+        {
+          "letter": "A",
+          "text": "Parce que l'option de retrait est sanctionnée par des frais financiers dissuasifs imposés par l'employeur."
+        },
+        {
+          "letter": "B",
+          "text": "Parce que le formulaire d'adhésion volontaire était rendu inaccessible par des protocoles de sécurité gouvernementaux."
+        },
+        {
+          "letter": "C",
+          "text": "Parce que les employés sont juridiquement déchus de leur droit de regard sur leurs cotisations salariales."
+        },
+        {
+          "letter": "D",
+          "text": "Parce que l'architecture par défaut exploite l'inertie décisionnelle, le coût cognitif du changement et le signal implicite d'une recommandation institutionnelle bienveillante."
+        }
       ],
-      "correctIndex": 2,
-      "feedbacks": [
-        "Incorrect. Le principe cardinal d'un nudge (paternalisme libertarien) est justement de préserver à 100 % la liberté de choix sans aucune pénalité financière.",
-        "Incorrect. Un nudge ne modifie pas de façon significative les incitatifs économiques (pas de prime financière géante).",
-        "Correct ! La majorité des individus remettent à plus tard les décisions complexes en raison de l'inertie et du biais de statu quo. En faisant de l'adhésion l'option par défaut, l'inertie joue en faveur de l'épargne tout en laissant quiconque libre de se désengager en une case à cocher.",
-        "Incorrect. Une formation obligatoire ou un endoctrinement relèverait de la contrainte réglementaire ou de l'injonction autoritaire, et non d'une modification de l'architecture des choix."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 100 & 102 (Section 4.1 Public Policy)",
-      "doc_quote": "« One prominent application of behavioral economics in public policy is the use of 'nudges'... A classic example is the implementation of automatic enrollment in retirement savings plans. By making enrollment the default option, with the choice to opt-out, participation rates have increased dramatically, helping individuals save more for their future without imposing mandates. »",
-      "doc_quote_fr": "« Une application éminente de l'économie comportementale dans les politiques publiques est l'utilisation des 'nudges'... Un exemple classique est la mise en oeuvre de l'adhésion automatique aux régimes d'épargne-retraite. En faisant de l'adhésion l'option par défaut, avec la possibilité de s'en retirer, les taux de participation ont augmenté de façon spectaculaire, aidant les individus à épargner davantage pour leur avenir sans imposer d'obligations légales. »",
-      "doc_explanation": "L'option par défaut est l'outil le plus puissant de l'architecte des choix : en l'absence d'action délibérée de l'usager, c'est l'état prédéfini qui s'applique.",
-      "exam_tip": "Assurez-vous de bien distinguer l'option par défaut (qui laisse la sortie libre et gratuite) d'une obligation légale contraignante.",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 102, Opt-in vs Opt-out.",
-      "flashcard_question": "Pourquoi l'opt-out est-il plus efficace que l'opt-in pour l'épargne-retraite ?",
-      "flashcard_answer": "Parce qu'il exploite l'inertie et le biais de statu quo au profit du comportement cible, sans restreindre la liberté de refus de l'individu."
+      "correctLetter": "D",
+      "explanation": "L'adhésion par défaut (opt-out) fonctionne sans coercition ni altération financière : elle capitalise sur l'inertie humaine, le biais de statu quo et l'effet d'approbation perçu, tout en préservant la liberté totale de se désengager sans pénalité.",
+      "citation": "Chen (2024), p. 100 & 102, Section 4.1 Public Policy",
+      "correctIndex": 3
     },
     {
       "id": 4,
       "category": "chen_2024",
       "doc_id": "doc_chen2024",
       "anchor_id": "anchor_chen_q4",
-      "tag": "Chen (2024) • Biais du présent & Incohérence temporelle",
+      "tag": "Chen (2024) • Biais du présent & Actualisation hyperbolique",
       "points": "1 point",
-      "context": "Dans la section sur les heuristiques et biais cognitifs, Chen (2024, p. 101) détaille le phénomène de l'actualisation hyperbolique (*hyperbolic discounting*) et du biais du présent (*present bias*).",
-      "question": "En quoi consiste précisément ce biais dans la prise de décision économique et ergonomique ?",
+      "context": "L'économie néoclassique modélise l'actualisation temporelle par une fonction exponentielle à taux constant. L'économie comportementale observe plutôt une actualisation hyperbolique (Chen, 2024, p. 101).",
+      "prompt": "En quoi consiste précisément le phénomène d'incohérence temporelle induit par le biais du présent dans la prise de décision financière et préventive ?",
       "options": [
-        "Les consommateurs adoptent un taux d'actualisation rigoureusement constant et exponentiel tout au long de leur cycle de vie.",
-        "Les individus se souviennent avec une précision photographique des événements passés mais sont incapables de calculer des probabilités simples.",
-        "Les décideurs refusent catégoriquement de consommer des biens dont la date de fabrication remonte à plus de 24 heures.",
-        "Les gens ont tendance à accorder un poids disproportionné aux bénéfices et plaisirs immédiats au détriment des récompenses futures plus importantes mais différées."
+        {
+          "letter": "A",
+          "text": "L'individu maintient un plan d'épargne rigoureux et stable tout au long de sa vie sans jamais ressentir d'impatience."
+        },
+        {
+          "letter": "B",
+          "text": "L'individu préfère systématiquement les récompenses retardées par rapport aux récompenses immédiates en raison d'une hyper-rationalité prospective."
+        },
+        {
+          "letter": "C",
+          "text": "L'individu est totalement incapable d'évaluer le passage du temps en raison d'un déficit d'attention primaire."
+        },
+        {
+          "letter": "D",
+          "text": "L'individu survalorise disproportionnellement la gratification immédiate, ce qui conduit à inverser ses préférences lorsque le moment d'agir dans le présent arrive (myopie temporelle)."
+        }
       ],
-      "correctIndex": 3,
-      "feedbacks": [
-        "Incorrect. L'actualisation exponentielle à taux constant est justement le postulat théorique de l'économie standard que l'actualisation hyperbolique empirique réfute.",
-        "Incorrect. Cela décrit un éventuel effet de mémoire ou d'ancrage rétrospectif, sans rapport avec la pondération intertemporelle des récompenses.",
-        "Incorrect. C'est une interprétation littérale absurde du mot 'présent' n'ayant aucun fondement théorique.",
-        "Correct ! Le biais du présent se traduit par une préférence marquée pour la gratification instantanée (ex. consommer aujourd'hui) au détriment des investissements de long terme (ex. épargner, faire de l'exercice), générant une incohérence temporelle entre les intentions et les actes."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 101 (Section 3.3 Heuristics and Biases)",
-      "doc_quote": "« Present bias, also known as hyperbolic discounting, refers to the tendency to prioritize immediate rewards over long-term benefits. This bias explains why people often struggle with self-control, leading to behaviors such as procrastination, overeating, or undersaving for retirement. »",
-      "doc_quote_fr": "« Le biais du présent, également connu sous le nom d'actualisation hyperbolique, fait référence à la tendance à donner la priorité aux récompenses immédiates par rapport aux bénéfices à long terme. Ce biais explique pourquoi les gens ont souvent du mal à faire preuve d'autocontrôle, ce qui conduit à des comportements tels que la procrastination, la suralimentation ou le sous-financement de la retraite. »",
-      "doc_explanation": "En ergonomie et conception d'applications, le biais du présent explique l'abandon des tâches dont le bénéfice est différé. Pour soutenir l'engagement, l'interface doit fournir des rétroactions ou micro-récompenses immédiates.",
-      "exam_tip": "Rappelez-vous : Modèle standard = actualisation exponentielle (rationnelle). Réalité psychologique = actualisation hyperbolique / biais du présent (myopie face au futur proche).",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 101, Present bias.",
-      "flashcard_question": "Quel problème comportemental majeur découle directement du biais du présent ?",
-      "flashcard_answer": "Le déficit d'autocontrôle : les individus procrastinent les tâches exigeantes ou sous-investissent dans leur santé et leur retraite au profit du confort immédiat."
+      "correctLetter": "D",
+      "explanation": "Le biais du présent (actualisation hyperbolique ou beta-delta) produit une inversion dynamique des préférences : lorsqu'on planifie pour un futur lointain, on choisit l'option vertueuse ; mais dès que l'échéance devient immédiate, le coût présent surpasse le bénéfice différé, poussant à la procrastination ou à la surconsommation.",
+      "citation": "Chen (2024), p. 101, Section 3.3 Heuristics and Biases",
+      "correctIndex": 3
     },
     {
       "id": 5,
@@ -164,32 +155,30 @@
       "anchor_id": "anchor_chen_q5",
       "tag": "Chen (2024) • Effet de cadrage (Framing effect)",
       "points": "1 point",
-      "context": "L'effet de cadrage (*framing effect*) est l'une des heuristiques les plus documentées en économie comportementale (Chen, 2024, p. 101-102). Dans une expérience classique, deux produits alimentaires identiques sont présentés avec des étiquettes sémantiquement opposées : « 80 % de viande maigre » contre « 20 % de gras ».",
-      "question": "Que démontrent empiriquement les réactions des consommateurs face à ces deux présentations ?",
+      "context": "Dans une étude classique citée par Chen (2024, p. 101-102), des consommateurs évaluent deux barquettes de viande hachée strictement identiques sur le plan nutritionnel : l'une est étiquetée « 80 % de viande maigre », l'autre « 20 % de matières grasses ».",
+      "prompt": "Que démontrent empiriquement les réponses des consommateurs face à ces deux présentations logiquement équivalentes ?",
       "options": [
-        "L'étiquette '80 % de viande maigre' est jugée significativement plus saine et de meilleure qualité gustative, car le cadrage positif active des associations mentales favorables malgré une identité logique parfaite.",
-        "L'étiquette '20 % de gras' est préférée car les consommateurs recherchent activement un apport calorique maximal pour prévenir la famine.",
-        "Les consommateurs calculent mentalement la composition lipidique exacte et attribuent une note gustative et sanitaire strictement identique aux deux produits.",
-        "L'effet de cadrage disparaît instantanément dès que le consommateur sait lire les chiffres arabes de 0 à 100."
+        {
+          "letter": "A",
+          "text": "L'étiquette '20 % de gras' est préférée car les consommateurs recherchent activement un apport calorique maximal pour prévenir la famine."
+        },
+        {
+          "letter": "B",
+          "text": "Les consommateurs calculent mentalement la composition lipidique exacte et attribuent une note gustative et sanitaire strictement identique aux deux produits."
+        },
+        {
+          "letter": "C",
+          "text": "L'étiquette '80 % de viande maigre' est jugée significativement plus saine et savoureuse car le cadrage positif active des associations mentales favorables (effet de saillance sémantique)."
+        },
+        {
+          "letter": "D",
+          "text": "L'effet de cadrage disparaît complètement dès lors que le consommateur dispose d'une calculatrice de poche."
+        }
       ],
-      "correctIndex": 0,
-      "feedbacks": [
-        "Correct ! La description positive ('80 % maigre') suscite des associations mnésiques liées à la santé et à la diététique, tandis que la formulation en termes de perte ou de défaut ('20 % gras') suscite le dégoût ou la méfiance, violant le principe logique d'invariance descriptive.",
-        "Incorrect. C'est l'inverse : la mention du 'gras' active des représentations négatives de risque cardiovasculaire et de mauvaise santé.",
-        "Incorrect. L'hypothèse de l'invariance descriptive de l'économie néoclassique prédisait cette indifférence, mais l'expérience de Levin & Gaeth (1988) a prouvé que la description altère le jugement de valeur perçu.",
-        "Incorrect. L'effet de cadrage est robuste, universel et touche aussi bien les experts financiers que les consommateurs avertis, indépendamment de leurs compétences de calcul arithmétique."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 101-102 (Section 3.3 Heuristics and Biases)",
-      "doc_quote": "« Framing effects occur when the way information is presented influences decision-making. For example, people react differently depending on whether an outcome is framed as a gain or a loss, or whether an option is described using positive or negative terms, even if the underlying facts remain unchanged. »",
-      "doc_quote_fr": "« Les effets de cadrage se produisent lorsque la manière dont l'information est présentée influence la prise de décision. Par exemple, les gens réagissent différemment selon qu'un résultat est présenté sous forme de gain ou de perte, ou selon qu'une option est décrite en termes positifs ou négatifs, même si les faits sous-jacents demeurent inchangés. »",
-      "doc_explanation": "Le cadrage sémantique prouve que l'architecture de présentation façonne le sens perçu. En UX, la façon d'annoncer un prix (ex. 'Seulement 1 $ par jour' vs '365 $ par an') utilise ce levier.",
-      "exam_tip": "Dans un énoncé d'examen, identifiez toujours l'attribut valorisé : si l'information est objectivement identique mais que la formulation change la décision, c'est un effet de cadrage.",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 101, Framing effects.",
-      "flashcard_question": "Quel principe théorique standard est violé par l'effet de cadrage ?",
-      "flashcard_answer": "Le principe d'invariance descriptive : deux présentations formellement équivalentes d'un même problème devraient logiquement susciter le même choix."
+      "correctLetter": "C",
+      "explanation": "L'effet de cadrage viole le principe d'invariance de la théorie économique standard : bien que '80 % maigre' et '20 % gras' soient logiquement indiscernables, le cadrage positif focalise l'attention sur la composante saine, modifiant la valeur perçue du produit.",
+      "citation": "Chen (2024), p. 101-102, Section 3.3 Heuristics and Biases",
+      "correctIndex": 2
     },
     {
       "id": 6,
@@ -198,32 +187,30 @@
       "anchor_id": "anchor_chen_q6",
       "tag": "Chen (2024) • Système 1 vs Système 2 (Kahneman)",
       "points": "1 point",
-      "context": "L'architecture cognitive duale popularisée par Daniel Kahneman (*Thinking, Fast and Slow*) et synthétisée par Chen (2024, p. 100-101) distingue deux modes de pensée.",
-      "question": "Quelle distinction fonctionnelle caractérise respectivement le Système 1 et le Système 2 ?",
+      "context": "L'architecture cognitive duale popularisée par Daniel Kahneman et reprise par Chen (2024, p. 100-101) structure les mécanismes de prise de décision en deux modes de traitement.",
+      "prompt": "Quelle distinction fonctionnelle caractérise rigoureusement le Système 1 et le Système 2 en ergonomie et économie comportementale ?",
       "options": [
-        "Le Système 1 est lent, analytique et conscient ; le Système 2 est rapide, automatique et géré par les réflexes spinaux.",
-        "Le Système 1 est rapide, automatique, intuitif et économe en énergie ; le Système 2 est lent, délibératif, séquentiel et exigeant en efforts cognitifs.",
-        "Le Système 1 n'opère que durant le sommeil paradoxal ; le Système 2 est le seul activé lors de l'état de veille active.",
-        "Les deux systèmes fonctionnent selon la même vitesse de traitement mais utilisent des neurotransmetteurs totalement incompatibles."
+        {
+          "letter": "A",
+          "text": "Le Système 1 est lent, analytique et infaillible, tandis que le Système 2 est rapide, automatique et toujours erroné."
+        },
+        {
+          "letter": "B",
+          "text": "Le Système 1 fonctionne de façon rapide, automatique, associative et peu coûteuse en ressources cognitives ; le Système 2 est délibératif, séquentiel, contrôlé et exige un effort attentionnel soutenu."
+        },
+        {
+          "letter": "C",
+          "text": "Le Système 1 est exclusivement activé durant le sommeil paradoxal, tandis que le Système 2 gère l'état d'éveil."
+        },
+        {
+          "letter": "D",
+          "text": "Le Système 1 et le Système 2 sont des zones cérébrales physiquement indépendantes qui ne communiquent jamais entre elles."
+        }
       ],
-      "correctIndex": 1,
-      "feedbacks": [
-        "Incorrect. La description est inversée : c'est le Système 1 qui est rapide et automatique, et le Système 2 qui est lent et analytique.",
-        "Correct ! Le Système 1 repose sur des heuristiques associatives rapides qui résolvent les situations courantes à faible coût cognitif. Le Système 2 mobilise l'attention volontaire, vérifie les hypothèses et gère le calcul complexe, mais il est prompt à la fatigue cognitive.",
-        "Incorrect. Les deux systèmes opèrent durant l'éveil, le Système 1 générant continuellement des impressions et intuitions que le Système 2 peut approuver ou moduler.",
-        "Incorrect. Cette affirmation pseudo-biologique ne correspond à aucune modélisation en sciences cognitives ou en psychologie expérimentale."
-      ],
-      "doc_title": "Chen (2024) - Behavioral Economics: An Overview",
-      "doc_page": "Page 100-101 (Section 2 Historical Milestones & Core Concepts)",
-      "doc_quote": "« Daniel Kahneman and Amos Tversky revolutionized the field by demonstrating that human decision-making is systematically influenced by cognitive biases and heuristics... Dual-process theory categorizes human thinking into two modes: System 1 (fast, intuitive, emotional, and automatic) and System 2 (slow, deliberative, logical, and effortful). »",
-      "doc_quote_fr": "« Daniel Kahneman et Amos Tversky ont révolutionné la discipline en démontrant que la prise de décision humaine est systématiquement influencée par des biais cognitifs et des heuristiques... La théorie du double processus catégorise la pensée humaine en deux modes : le Système 1 (rapide, intuitif, émotionnel et automatique) et le Système 2 (lent, délibératif, logique et exigeant des efforts). »",
-      "doc_explanation": "La plupart des nudges ciblent le Système 1 pour guider sans effort le comportement, tandis que les approches éducatives (ou 'boosts') visent à activer et équiper le Système 2.",
-      "exam_tip": "Associez toujours : Système 1 = Heuristiques / Économie d'énergie. Système 2 = Délibération / Surveillance / Coût attentionnel élevé.",
-      "study_scope": "chen2024",
-      "scope_badge": "Chen (2024) [pp. 99-104]",
-      "flashcard_context": "Chen (2024), p. 100, Dual-process theory.",
-      "flashcard_question": "Pourquoi la plupart des décisions quotidiennes sont-elles déléguées au Système 1 ?",
-      "flashcard_answer": "Parce que le cerveau cherche à économiser ses ressources attentionnelles limitées face à un flux continu d'informations complexes."
+      "correctLetter": "B",
+      "explanation": "Le Système 1 opère automatiquement et rapidement, avec peu ou pas d'effort conscient (heuristiques). Le Système 2 alloue l'attention aux opérations mentales complexes qui exigent de l'effort, mais sa capacité est limitée par la mémoire de travail.",
+      "citation": "Chen (2024), p. 100-101, Section 2 Historical Milestones & Core Concepts",
+      "correctIndex": 1
     },
     {
       "id": 7,
@@ -232,32 +219,30 @@
       "anchor_id": "anchor_congiu_q7",
       "tag": "Congiu & Moscati (2022) • Définition officielle du Nudge",
       "points": "1 point",
-      "context": "Dans leur revue systématique sur les définitions, justifications et efficacités des nudges, Congiu & Moscati (2022, p. 190) s'appuient sur la définition séminale de Thaler et Sunstein (2008).",
-      "question": "Quelles sont les conditions indispensables pour qu'une intervention publique ou managériale soit rigoureusement qualifiée de « nudge » ?",
+      "context": "Dans leur revue critique, Congiu et Moscati (2022, p. 190) dissèquent la définition académique originale formulée par Thaler et Sunstein (2008).",
+      "prompt": "Quelles sont les conditions cumulatives indispensables pour qu'une intervention soit rigoureusement qualifiée de 'nudge' ?",
       "options": [
-        "L'intervention doit interdire au moins une option commerciale dangereuse et imposer des amendes progressives aux contrevenants.",
-        "L'intervention doit doubler le prix du produit non désiré par une taxe spécifique pour décourager son achat.",
-        "L'intervention doit modifier l'architecture du choix de façon prévisible, sans interdire aucune option ni altérer significativement les incitatifs financiers, et être facilement évitable.",
-        "L'intervention doit rendre obligatoire le suivi d'une formation universitaire de 30 heures avant toute décision d'achat."
+        {
+          "letter": "A",
+          "text": "L'intervention doit interdire au moins deux options commerciales nocives et imposer des pénalités financières aux récalcitrants."
+        },
+        {
+          "letter": "B",
+          "text": "L'intervention doit doubler le prix du produit non désiré par une taxe spécifique pour décourager son achat."
+        },
+        {
+          "letter": "C",
+          "text": "L'intervention doit modifier l'architecture du choix de façon prévisible, sans interdire aucune option ni altérer significativement les incitatifs économiques, et être facile et peu coûteuse à éviter."
+        },
+        {
+          "letter": "D",
+          "text": "L'intervention doit obligatoirement être secrète et opérer à l'insu absolu de l'ensemble des citoyens."
+        }
       ],
-      "correctIndex": 2,
-      "feedbacks": [
-        "Incorrect. Dès qu'une interdiction légale ou une amende coercitive est introduite, il s'agit d'une réglementation traditionnelle (*mandate/ban*), et formellement pas d'un nudge.",
-        "Incorrect. Une taxe ou une surtaxe modifie directement le coût financier relatif de l'option, ce qui relève de l'incitation économique standard (loi de l'offre et de la demande) et non de l'architecture du choix.",
-        "Correct ! La définition canonique de Thaler et Sunstein exige deux critères d'exclusion stricts : 1) aucune option ne doit être interdite ; 2) les incitatifs économiques (taxes, prix, subventions) ne doivent pas être modifiés de façon significative. De plus, l'intervention doit être 'cheap and easy to avoid'.",
-        "Incorrect. Une formation obligatoire contraignante impose un coût temporel et juridique majeur qui viole le critère d'évitement aisé et peu coûteux."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 190 (Section 1.1 Setting the stage)",
-      "doc_quote": "« In their 2008 book, Thaler and Sunstein define a nudge as: 'any aspect of the choice architecture that alters people's behavior in a predictable way without forbidding any options or significantly changing their economic incentives. To count as a mere nudge, the intervention must be easy and cheap to avoid. Nudges are not mandates. Putting fruit at eye level counts as a nudge. Banning junk food does not.' »",
-      "doc_quote_fr": "« Dans leur ouvrage de 2008, Thaler et Sunstein définissent un nudge comme : 'tout aspect de l'architecture du choix qui modifie le comportement des gens de manière prévisible sans interdire aucune option ni changer significativement leurs incitatifs économiques. Pour être considéré comme un simple coup de pouce, l'intervention doit être facile et peu coûteuse à éviter. Les nudges ne sont pas des obligations. Placer les fruits à la hauteur des yeux compte comme un nudge. Bannir la malbouffe n'en est pas un.' »",
-      "doc_explanation": "Placer les fruits à hauteur des yeux dans une cafétéria est un nudge ; interdire les desserts sucrés est une interdiction. Taxer les sodas est un levier fiscal, non un nudge.",
-      "exam_tip": "Vérifiez toujours deux choses : Y a-t-il une interdiction ? Y a-t-il une taxe/amende ? Si oui à l'un des deux, ce n'est PAS un nudge au sens académique strict.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 190, Nudge definition.",
-      "flashcard_question": "Pourquoi la taxe sur les boissons sucrées n'est-elle PAS un nudge ?",
-      "flashcard_answer": "Parce qu'elle modifie substantiellement les incitatifs économiques financiers relatifs, ce qui contredit le critère fondamental de la définition de Thaler & Sunstein."
+      "correctLetter": "C",
+      "explanation": "Un nudge selon Thaler et Sunstein modifie l'agencement du choix sans coercition (aucune option interdite) et sans altération majeure des prix ou incitatifs matériels. Une taxe ou une loi d'interdiction n'est pas un nudge.",
+      "citation": "Congiu & Moscati (2022), p. 190, Section 1.1 Setting the stage",
+      "correctIndex": 2
     },
     {
       "id": 8,
@@ -266,134 +251,126 @@
       "anchor_id": "anchor_congiu_q8",
       "tag": "Congiu & Moscati (2022) • Paternalisme libertarien",
       "points": "1 point",
-      "context": "Le cadre normatif revendiqué par Thaler et Sunstein pour justifier moralement et politiquement l'usage des nudges est le « paternalisme libertarien » (*libertarian paternalism*), discuté en détail par Congiu & Moscati (2022, p. 195-196).",
-      "question": "Pourquoi cette appellation, souvent qualifiée d'oxymore apparent, traduit-elle fidèlement la posture des architectes du choix ?",
+      "context": "Le cadre éthique proposé par Thaler et Sunstein pour justifier les nudges est désigné sous le terme de « paternalisme libertarien » (Congiu & Moscati, 2022, p. 195-196).",
+      "prompt": "Pourquoi cette appellation, souvent perçue comme un oxymore apparent, traduit-elle fidèlement la philosophie de l'architecture du choix ?",
       "options": [
-        "Parce qu'elle vise à remplacer tous les juges et policiers par des psychologues comportementaux autoproclamés.",
-        "Parce qu'elle refuse catégoriquement que quiconque modifie la moindre variable de l'environnement physique.",
-        "Parce qu'elle accorde une immunité fiscale totale aux entreprises qui s'engagent à ne faire aucun profit.",
-        "Parce qu'elle allie la préservation de la liberté de refuser ou d'opter pour une autre option (libertarien) avec la volonté de concevoir délibérément l'environnement pour orienter les gens vers des choix bénéfiques pour leur propre bien-être (paternalisme)."
+        {
+          "letter": "A",
+          "text": "Parce qu'elle vise à transférer tous les pouvoirs de régulation de l'État aux corporations privées les plus puissantes."
+        },
+        {
+          "letter": "B",
+          "text": "Parce qu'elle associe la préservation intégrale de la liberté de refuser (volet libertarien) à la volonté délibérée de structurer l'environnement pour guider l'individu vers des choix bénéfiques selon son propre jugement réflexif (volet paternaliste)."
+        },
+        {
+          "letter": "C",
+          "text": "Parce qu'elle supprime le droit de vote des individus qui échouent aux tests de littératie financière."
+        },
+        {
+          "letter": "D",
+          "text": "Parce qu'elle refuse catégoriquement que quiconque modifie la moindre variable de l'environnement physique."
+        }
       ],
-      "correctIndex": 3,
-      "feedbacks": [
-        "Incorrect. Il ne s'agit aucunement d'un projet de suppression de l'appareil judiciaire, mais d'une doctrine de conception des politiques publiques.",
-        "Incorrect. Les auteurs rappellent qu'une architecture neutre est impossible : dans toute situation (ex. ordre d'un menu), un agencement doit exister, il est donc pragmatique de choisir celui qui aide l'usager.",
-        "Incorrect. C'est une invention fantaisiste sans rapport avec la philosophie politique des nudges.",
-        "Correct ! L'aspect libertarien réside dans l'absence de coercition et le maintien intégral de toutes les options disponibles ; l'aspect paternaliste réside dans l'intervention bienveillante de l'architecte du choix pour aider les individus à réaliser ce qu'ils considéreraient eux-mêmes comme leur meilleur intérêt."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 195-196 (Section 3 Justifications of nudges)",
-      "doc_quote": "« Thaler and Sunstein advocate nudges under the banner of 'libertarian paternalism'... It is paternalistic because choice architects explicitly design environments to influence choices in a way that will make choosers better off, as judged by themselves. It is libertarian because it strives to preserve freedom of choice without imposing material costs on those who wish to choose otherwise. »",
-      "doc_quote_fr": "« Thaler et Sunstein défendent les nudges sous la bannière du 'paternalisme libertarien'... Il est paternaliste parce que les architectes du choix conçoivent explicitement les environnements pour influencer les choix d'une manière qui améliorera le sort des décideurs, selon leur propre jugement. Il est libertarien parce qu'il s'efforce de préserver la liberté de choix sans imposer de coûts matériels à ceux qui souhaitent choisir autrement. »",
-      "doc_explanation": "Puisque l'environnement influence inévitablement les décisions (il faut bien afficher les options dans un certain ordre), autant que cet ordre serve la santé ou le bien-être de l'individu.",
-      "exam_tip": "Retenez les deux volets : Libertarien = Liberté de choix préservée (pas de coercition). Paternaliste = Guidage vers ce que l'individu considère comme son intérêt réflexif.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 195, Libertarian paternalism.",
-      "flashcard_question": "Pourquoi l'argument de l'inévitabilité de l'architecture du choix soutient-il le paternalisme libertarien ?",
-      "flashcard_answer": "Parce qu'il est impossible de ne pas concevoir un environnement de choix (un formulaire a obligatoirement un ordre, une cantine a obligatoirement un agencement) : la neutralité absolue n'existe pas."
+      "correctLetter": "B",
+      "explanation": "Le paternalisme libertarien est 'libertarien' car les individus restent libres de choisir l'option de leur choix sans surcoût prohibitif, et 'paternaliste' car les concepteurs font l'effort légitime d'influencer les choix pour améliorer la vie des gens selon leurs propres critères de bien-être.",
+      "citation": "Congiu & Moscati (2022), p. 195-196, Section 3 Justifications of nudges",
+      "correctIndex": 1
     },
     {
       "id": 9,
       "category": "congiu_2022",
       "doc_id": "doc_congiu2022",
       "anchor_id": "anchor_congiu_q9",
-      "tag": "Congiu & Moscati (2022) • Typologies des interventions",
+      "tag": "Congiu & Moscati (2022) • Typologie de Hansen & Jespersen (2013)",
       "points": "1 point",
-      "context": "Pour dépasser la définition large de Thaler et Sunstein, plusieurs typologies ont été proposées (Hansen & Jespersen 2013, Bovens 2009, revues par Congiu & Moscati, p. 193-194).",
-      "question": "Sur quelles deux dimensions conceptuelles majeures s'articule la classification de Hansen & Jespersen (2013) entre nudges de type 1 / type 2 et nudges transparents / opaques ?",
+      "context": "Pour dépasser la définition générique de Thaler et Sunstein, Congiu et Moscati (2022, p. 193-194) analysent la matrice en 4 quadrants de Hansen et Jespersen (2013).",
+      "prompt": "Sur quelles deux dimensions conceptuelles s'articule la classification entre nudges de type 1 / type 2 et nudges transparents / opaques ?",
       "options": [
-        "Le degré de sollicitation cognitive (pensée automatique Système 1 vs réflexive Système 2) et le niveau de transparence quant à l'intention manipulatoire de l'architecte du choix.",
-        "Le coût financier de l'intervention et le pourcentage de taxe prélevé sur les transactions.",
-        "La couleur dominante de l'interface (teintes chaudes vs froides) et la taille de la police de caractères.",
-        "L'âge biologique de l'utilisateur cible (mineurs vs adultes) et son statut socio-professionnel."
+        {
+          "letter": "A",
+          "text": "La distinction entre nudges destinés aux mineurs et nudges réservés aux entreprises cotées en bourse."
+        },
+        {
+          "letter": "B",
+          "text": "Le montant du budget public alloué et le taux de TVA applicable au produit ciblé."
+        },
+        {
+          "letter": "C",
+          "text": "Le niveau de traitement cognitif (Système 1 automatique vs Système 2 réflexif) et la transparence de l'intervention quant à son intention et ses mécanismes d'action."
+        },
+        {
+          "letter": "D",
+          "text": "La couleur des emballages commerciaux (tons froids vs chauds) et la typographie utilisée sur l'étiquette."
+        }
       ],
-      "correctIndex": 0,
-      "feedbacks": [
-        "Correct ! La première dimension distingue les interventions qui exploitent des automatismes non conscients (Type 1 : Système 1) de celles qui incitent à la réflexion (Type 2 : Système 2). La seconde dimension oppose les nudges où l'usager peut aisément deviner l'objectif poursuivi (transparents) à ceux où le mécanisme d'influence reste inapparent (opaques).",
-        "Incorrect. Les nudges n'ont par définition aucun lien avec des pourcentages de taxes ou des montants d'amendes.",
-        "Incorrect. La mise en forme visuelle est un vecteur d'implémentation, non la dimension taxinomique théorique.",
-        "Incorrect. La typologie est universelle et fondée sur les processus cognitifs, et non sur des catégories démographiques."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 193-194 (Section 2.2 Alternative classifications)",
-      "doc_quote": "« Hansen and Jespersen (2013) propose a four-fold taxonomy based on two dimensions: (i) whether the nudge engages automatic (Type 1) or reflective (Type 2) thinking, and (ii) whether the choice architect's intention and the nudge's behavioral mechanism are transparent or opaque to the chooser. This yields four categories of nudges: transparent Type 1, opaque Type 1, transparent Type 2, and opaque Type 2. »",
-      "doc_quote_fr": "« Hansen et Jespersen (2013) proposent une taxonomie en quatre volets basée sur deux dimensions : (i) si le coup de pouce engage une pensée automatique (Type 1) ou réflexive (Type 2), et (ii) si l'intention de l'architecte du choix et le mécanisme comportemental du nudge sont transparents ou opaques pour le décideur. Cela donne quatre catégories de nudges : Type 1 transparent, Type 1 opaque, Type 2 transparent et Type 2 opaque. »",
-      "doc_explanation": "Un tracé au sol guidant vers les escaliers est un nudge de Type 1 (automatique) et transparent. Une modification subtile de l'ordre d'affichage d'un site de voyage pour favoriser un hôtel partenaire peut être un nudge de Type 1 opaque.",
-      "exam_tip": "Associez : Type 1 = Automatique / Inconscient (Système 1). Type 2 = Réflexif / Conscient (Système 2). Transparent = intention visible. Opaque = intention masquée.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 193, Hansen & Jespersen taxonomy.",
-      "flashcard_question": "Qu'est-ce qu'un nudge de Type 2 transparent selon Hansen & Jespersen ?",
-      "flashcard_answer": "Une intervention qui sollicite explicitement la réflexion consciente de l'usager (Système 2) tout en rendant claire l'intention poursuivie par l'architecte du choix (ex. afficher les calories de manière visible)."
+      "correctLetter": "C",
+      "explanation": "La matrice de Hansen et Jespersen (2013) croise le mode de fonctionnement psychologique sollicité (Type 1 heuristique / Type 2 réflexif) et le degré de transparence perçu par le décideur (transparent vs opaque), sans porter de jugement moral a priori.",
+      "citation": "Congiu & Moscati (2022), p. 193-194, Section 2.2 Alternative classifications",
+      "correctIndex": 2
     },
     {
       "id": 10,
       "category": "congiu_2022",
       "doc_id": "doc_congiu2022",
       "anchor_id": "anchor_congiu_q10",
-      "tag": "Congiu & Moscati (2022) • Effet d'éviction (Nudging-out)",
+      "tag": "Congiu & Moscati (2022) • Effet de Nudging-Out",
       "points": "1 point",
-      "context": "L'un des effets pervers majeurs identifiés dans la littérature critique des nudges est « l'effet d'éviction » (*nudging-out effect*), documenté par Hagmann, Ho & Loewenstein (2019) et analysé par Congiu & Moscati (2022, p. 202-203).",
-      "question": "En quoi consiste précisément ce phénomène en économie comportementale de la consommation et de l'environnement ?",
+      "context": "Parmi les critiques examinées par Congiu et Moscati (2022, p. 198-199), plusieurs économistes s'inquiètent des effets pervers politiques des nudges sur les réformes structurelles.",
+      "prompt": "En quoi consiste précisément l'effet indésirable désigné sous le terme de « nudging-out » dans les politiques environnementales et de santé publique ?",
       "options": [
-        "Les consommateurs cessent complètement d'acheter des produits lorsqu'une couleur verte est présente sur l'emballage.",
-        "La mise en place d'un nudge écologique doux (ex. compensation carbone par défaut de quelques sous) conduit les citoyens à retirer leur soutien à des politiques structurelles plus contraignantes (ex. une véritable taxe carbone).",
-        "L'installation d'un nudge oblige les commerçants à fermer leurs portes après 18h sous peine de boycott.",
-        "Les incitations douces augmentent de 300 % le consentement à payer pour des politiques coercitives lourdes."
+        {
+          "letter": "A",
+          "text": "L'éviction physique des citoyens des supermarchés lorsqu'ils refusent d'acheter des produits biologiques."
+        },
+        {
+          "letter": "B",
+          "text": "La baisse de l'efficacité d'un nudge lorsque celui-ci est répété plus de trois fois dans la même journée."
+        },
+        {
+          "letter": "C",
+          "text": "L'affaiblissement du soutien des citoyens et des décideurs publics envers des politiques structurelles ambitieuses (ex. taxe carbone, régulation contraignante) provoqué par l'illusion qu'un petit nudge individuel symbolique suffit à résoudre le problème."
+        },
+        {
+          "letter": "D",
+          "text": "L'obligation légale faite aux entreprises polluantes de fermer leurs usines sans préavis."
+        }
       ],
-      "correctIndex": 1,
-      "feedbacks": [
-        "Incorrect. L'effet de halo vert (*greenwashing*) produit en général l'inverse à court terme, mais ce n'est pas la définition du nudging-out.",
-        "Correct ! Hagmann et al. ont démontré que l'introduction d'un nudge à faible impact crée l'illusion que le problème écologique est déjà pris en charge, ce qui déresponsabilise les citoyens et réduit significativement leur acceptabilité sociale envers des politiques fiscales ou réglementaires plus rigoureuses et efficaces.",
-        "Incorrect. Cela ne correspond à aucun modèle économique ni à aucune donnée empirique.",
-        "Incorrect. C'est l'exact opposé : le nudging-out démontre une baisse (*crowding-out*) du soutien aux réformes structurelles, non une hausse."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 202-203 (Section 7 Unintended consequences of nudges)",
-      "doc_quote": "« Hagmann et al. (2019) documented the 'nudging-out effect' in environmental policy: introducing a green nudge (such as a default carbon offset) can crowd out public support for more effective but more coercive and economically significant policies, like a carbon tax. People feel that the problem is already being addressed by the nudge, weakening the perceived necessity of bolder legislative action. »",
-      "doc_quote_fr": "« Hagmann et al. (2019) ont documenté 'l'effet d'éviction' (nudging-out effect) dans les politiques environnementales : l'introduction d'un coup de pouce écologique (comme une compensation carbone par défaut) peut évincer le soutien du public envers des politiques plus efficaces mais plus contraignantes et économiquement significatives, comme une taxe carbone. Les gens ont l'impression que le problème est déjà pris en charge par le nudge, ce qui affaiblit la nécessité perçue d'une action législative plus audacieuse. »",
-      "doc_explanation": "Le nudging-out est un enjeu critique : le nudge peut servir d'alibi politique ou managérial à bon marché pour éviter d'aborder les réformes systémiques coûteuses.",
-      "exam_tip": "Associez toujours 'nudging-out' à 'éviction du soutien aux politiques structurelles' (le petit geste inefficace tue la grande réforme nécessaire).",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 202, Nudging-out effect.",
-      "flashcard_question": "Quel risque politique et systémique soulève l'effet de 'nudging-out' ?",
-      "flashcard_answer": "Le risque qu'un gouvernement ou une entreprise utilise un nudge mineur comme substitut de complaisance, affaiblissant la volonté citoyenne d'adopter des réformes structurelles profondes."
+      "correctLetter": "C",
+      "explanation": "L'effet de nudging-out (Hagmann et al., 2019) survient lorsqu'une intervention comportementale douce donne un faux sentiment d'accomplissement, réduisant la volonté politique et citoyenne d'adopter des réformes fiscales ou législatives plus coûteuses mais indispensables.",
+      "citation": "Congiu & Moscati (2022), p. 198-199, Section 3.2 Crowding out",
+      "correctIndex": 2
     },
     {
       "id": 11,
       "category": "congiu_2022",
       "doc_id": "doc_congiu2022",
       "anchor_id": "anchor_congiu_q11",
-      "tag": "Congiu & Moscati (2022) • Nudges versus Boosts",
+      "tag": "Congiu & Moscati (2022) • Nudges vs Boosts (Hertwig & Grüne-Yanoff)",
       "points": "1 point",
-      "context": "Une divergence théorique et méthodologique majeure oppose l'approche du « Nudging » (Thaler & Sunstein) à celle du « Boosting » (Hertwig & Grüne-Yanoff 2016), analysée par Congiu & Moscati (2022, p. 203-204).",
-      "question": "Quelle est la divergence philosophique et méthodologique fondamentale entre un Nudge et un Boost ?",
+      "context": "Face au paternalisme des nudges, Ralph Hertwig et Till Grüne-Yanoff (2017) ont introduit le concept de « boost », analysé en détail par Congiu et Moscati (2022, p. 194-195).",
+      "prompt": "Quelle différence fondamentale distingue l'approche par les « nudges » de celle par les « boosts » en intervention comportementale ?",
       "options": [
-        "Les nudges reposent sur des subventions monétaires massives, alors que les boosts interdisent formellement le recours aux mathématiques.",
-        "Les boosts s'adressent uniquement aux enfants en bas âge, tandis que les nudges sont réservés aux ingénieurs et chercheurs.",
-        "Les nudges exploitent les biais et faiblesses cognitives sans chercher à développer les compétences, tandis que les boosts visent à renforcer et autonomiser les compétences décisionnelles de l'individu (ex. utilisation de fréquences naturelles, heuristiques rapides et frugales).",
-        "Il n'existe aucune différence, les deux termes sont rigoureusement synonymes et interchangeables dans toute la littérature."
+        {
+          "letter": "A",
+          "text": "Les nudges modifient l'architecture du choix immédiat sans chercher à accroître les compétences de l'agent ; les boosts visent au contraire à enrichir, développer et pérenniser les compétences et heuristiques décisionnelles de la personne pour renforcer son autonomie."
+        },
+        {
+          "letter": "B",
+          "text": "Les nudges s'appuient sur des augmentations de taxes monétaires, alors que les boosts distribuent des subventions financières directes."
+        },
+        {
+          "letter": "C",
+          "text": "Les nudges visent à interdire la liberté de choix, tandis que les boosts obligent les usagers à passer un examen annuel de psychologie."
+        },
+        {
+          "letter": "D",
+          "text": "Les nudges sont exclusivement appliqués aux animaux de laboratoire, tandis que les boosts ciblent les humains adultes."
+        }
       ],
-      "correctIndex": 2,
-      "feedbacks": [
-        "Incorrect. Les nudges ne modifient pas significativement les incitatifs économiques (pas de subventions financières directes).",
-        "Incorrect. Les deux approches s'adressent à la population générale ou à des usagers de tout âge.",
-        "Correct ! Hertwig et Grüne-Yanoff soulignent que le nudge modifie l'architecture externe pour contourner les faiblesses de l'agent sans changer ses capacités intrinsèques. Le boost, au contraire, cherche à enseigner une compétence décisionnelle transférable (ex. convertir des probabilités abstraites en fréquences naturelles compréhensibles par tous).",
-        "Incorrect. La communauté scientifique distingue très nettement ces deux paradigmes (paternalisme des nudges vs autonomisation éducative des boosts)."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 203-204 (Section 8 Boosts versus nudges)",
-      "doc_quote": "« Hertwig and Grüne-Yanoff (2016) contrast nudges with 'boosts'. While nudges alter the choice architecture to steer behavior by exploiting cognitive biases—often without the individual acquiring new competencies—boosts aim to build, foster, and expand individuals' existing decision-making abilities. Boosts empower people to make their own choices competently (e.g., by teaching simple fast-and-frugal heuristics or representing risk in natural frequencies). »",
-      "doc_quote_fr": "« Hertwig et Grüne-Yanoff (2016) opposent les nudges aux 'boosts'. Tandis que les nudges modifient l'architecture du choix pour orienter le comportement en exploitant les biais cognitifs — souvent sans que l'individu n'acquière de nouvelles compétences —, les boosts visent à construire, favoriser et étendre les capacités de décision existantes des individus. Les boosts rendent les gens autonomes pour faire leurs propres choix avec compétence (par exemple, en enseignant des heuristiques simples et rapides ou en représentant le risque sous forme de fréquences naturelles). »",
-      "doc_explanation": "En facteurs humains : le nudge installe un détrompeur visuel automatique (poka-yoke) ; le boost entraîne l'opérateur à diagnostiquer l'état interne d'un système pour réagir avec discernement.",
-      "exam_tip": "Nudge = Exploite le biais / Guide le comportement de l'extérieur. Boost = Développe la compétence / Autonomise le décideur de l'intérieur.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 203, Boosts vs Nudges.",
-      "flashcard_question": "Pourquoi la représentation du risque en 'fréquences naturelles' (ex. 1 sur 10) est-elle un boost et non un nudge ?",
-      "flashcard_answer": "Parce qu'elle rend l'information transparente et compréhensible par la cognition humaine, améliorant le raisonnement intrinsèque de l'usager sans orienter artificiellement son choix final."
+      "correctLetter": "A",
+      "explanation": "Tandis que le nudge façonne l'environnement extérieur pour compenser une défaillance cognitive passagère sans modifier les compétences de l'individu, le boost investit dans le répertoire cognitif de l'agent (formation, heuristiques simples, représentations graphiques) pour le rendre autonome et durablement compétent.",
+      "citation": "Congiu & Moscati (2022), p. 194-195, Section 2.3 Nudges vs. boosts",
+      "correctIndex": 0
     },
     {
       "id": 12,
@@ -402,304 +379,414 @@
       "anchor_id": "anchor_congiu_q12",
       "tag": "Congiu & Moscati (2022) • Programme Save More Tomorrow (SMarT)",
       "points": "1 point",
-      "context": "Le programme d'épargne-retraite « Save More Tomorrow » (SMarT), conçu par Richard Thaler et Shlomo Benartzi (2004, discuté dans Congiu & Moscati, p. 203), est considéré comme l'un des archétypes de l'ingénierie comportementale.",
-      "question": "Quel mécanisme psychologique sophistiqué explique le succès de SMarT pour contourner l'aversion aux pertes immédiates des travailleurs ?",
+      "context": "Le programme d'épargne-retraite 'Save More Tomorrow' conçu par Richard Thaler et Shlomo Benartzi (2004) est un cas d'école emblématique décortiqué par Congiu et Moscati (2022, p. 191).",
+      "prompt": "Comment ce programme combine-t-il les principes de la théorie des perspectives et de l'actualisation temporelle pour inciter les salariés à épargner davantage ?",
       "options": [
-        "Le programme contraint l'employeur à prélever 80 % du salaire brut dès le premier mois de travail.",
-        "Le programme conditionne le versement du salaire à l'obtention d'un certificat médical de bonne santé chaque trimestre.",
-        "Le programme remplace le paiement des salaires par des tickets de loterie hebdomadaires pour stimuler l'optimisme.",
-        "Le programme propose aux employés de s'engager à l'avance à allouer une fraction de leurs futures augmentations de salaire à leur compte de retraite, de sorte que leur salaire net ne subit jamais de diminution nominale."
+        {
+          "letter": "A",
+          "text": "Il double le salaire des employés qui acceptent de renoncer définitivement à leur pension de retraite."
+        },
+        {
+          "letter": "B",
+          "text": "Il prélève 50 % du salaire dès le premier mois d'embauche de façon obligatoire et non négociable."
+        },
+        {
+          "letter": "C",
+          "text": "Il propose aux salariés de s'engager dès aujourd'hui à épargner une fraction de leurs augmentations de salaire futures, ce qui neutralise l'aversion aux pertes (le salaire net ne baisse jamais) et utilise le biais du présent à son avantage."
+        },
+        {
+          "letter": "D",
+          "text": "Il remplace le versement des salaires par des bons d'achat valables uniquement dans les épiceries solidaires."
+        }
       ],
-      "correctIndex": 3,
-      "feedbacks": [
-        "Incorrect. Une telle ponction unilatérale serait illégale et violerait le principe de liberté de choix du paternalisme libertarien.",
-        "Incorrect. L'état de santé physique des employés ne fait aucunement partie du mécanisme de SMarT.",
-        "Incorrect. C'est une caricature grotesque n'ayant aucun lien avec l'épargne-retraite structurée de SMarT.",
-        "Correct ! Thaler et Benartzi ont combiné trois concepts : 1) l'engagement anticipé (qui neutralise le biais du présent) ; 2) la synchronisation avec les hausses de salaire futures (l'épargne augmente en même temps que le salaire brut, donc le travailleur ne ressent aucune baisse de son revenu net disponible : aversion aux pertes désactivée) ; 3) l'adhésion par défaut renouvelée automatiquement."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 203 (Section 7 Unintended consequences & hybrid policies)",
-      "doc_quote": "« Thaler and Benartzi's (2004) 'Save More Tomorrow' (SMarT) plan illustrates how behaviorally informed design mitigates loss aversion and present bias. Employees commit in advance to allocate a portion of future salary increases toward retirement savings. Because the deductions coincide with pay raises, employees never see a reduction in their take-home pay, effectively neutralizing loss aversion. »",
-      "doc_quote_fr": "« Le plan 'Save More Tomorrow' (SMarT) de Thaler et Benartzi (2004) illustre la façon dont une conception comportementale atténue l'aversion aux pertes et le biais du présent. Les salariés s'engagent à l'avance à allouer une partie de leurs futures augmentations de salaire à leur épargne-retraite. Parce que les déductions coïncident avec les hausses de salaire, les employés ne constatent jamais de diminution de leur revenu net, neutralisant ainsi efficacement l'aversion aux pertes. »",
-      "doc_explanation": "SMarT illustre la finesse du design cognitif : on ne lutte pas frontalement contre un biais humain (l'aversion aux pertes), on aligne la procédure pour que le biais ne soit jamais déclenché.",
-      "exam_tip": "SMarT = Engagement futur + Synchronisation avec augmentations salariales = Zéro perte perçue sur le chèque de paie.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 203, Save More Tomorrow.",
-      "flashcard_question": "Pourquoi la synchronisation avec les augmentations futures désamorce-t-elle l'aversion aux pertes dans SMarT ?",
-      "flashcard_answer": "Parce que le salarié ne voit jamais son salaire net disponible diminuer : le point de référence mental de ses gains passés reste intact."
+      "correctLetter": "C",
+      "explanation": "SMarT tire parti de trois biais : 1) l'engagement préalable (biais du présent surmonté car l'effort est dans le futur), 2) l'adhésion par défaut automatique après accord, et 3) la synchronisation avec les hausses salariales : comme la cotisation augmente au moment où le salaire brut monte, le salaire net perçu ne baisse jamais, éliminant la perception d'une perte.",
+      "citation": "Congiu & Moscati (2022), p. 191, Section 1.2 A famous example: Save More Tomorrow",
+      "correctIndex": 2
     },
     {
       "id": 13,
       "category": "congiu_2022",
       "doc_id": "doc_congiu2022",
       "anchor_id": "anchor_congiu_q13",
-      "tag": "Congiu & Moscati (2022) • Sensibilité différentielle et équité",
+      "tag": "Congiu & Moscati (2022) • Équité distributive & Vulnérabilité",
       "points": "1 point",
-      "context": "Dans la section consacrée aux effets non intentionnels et à l'équité distributive des politiques comportementales, Congiu & Moscati (2022, p. 190 et 201) analysent la « sensibilité différentielle » des citoyens aux nudges.",
-      "question": "Quelle affirmation résume fidèlement les constats empiriques sur la façon dont les nudges touchent les différents groupes sociodémographiques ?",
+      "context": "Dans la section consacrée aux effets distributifs des nudges, Congiu et Moscati (2022, p. 200-202) examinent l'impact différentiel des architectures de choix selon les caractéristiques socio-économiques.",
+      "prompt": "Quelle affirmation résume fidèlement les constats empiriques sur la sensibilité des populations aux architectures de choix par défaut ?",
       "options": [
-        "Les individus soumis à une forte charge mentale, vivant dans la pauvreté ou ayant une faible littératie financière sont souvent plus sensibles aux architectures par défaut, ce qui soulève des enjeux éthiques de manipulation ou d'équité distributive.",
-        "Les personnes disposant des revenus les plus élevés sont les seules à être sensibles aux options par défaut en raison de leur volume de dépenses.",
-        "Les nudges ont un effet parfaitement homogène sur tous les êtres humains, indépendamment de leurs ressources cognitives ou économiques.",
-        "Les enfants sont totalement immunisés contre tous les types de biais cognitifs et d'effets de cadrage."
+        {
+          "letter": "A",
+          "text": "Les personnes disposant des revenus les plus élevés sont les seules à être sensibles aux défauts par manque de temps de gestion."
+        },
+        {
+          "letter": "B",
+          "text": "Les personnes vulnérables refusent systématiquement toute option par défaut par méfiance instinctive envers les institutions."
+        },
+        {
+          "letter": "C",
+          "text": "Les nudges ont un impact statistique strictement uniforme sur tous les individus indépendamment de leur capital économique ou culturel."
+        },
+        {
+          "letter": "D",
+          "text": "Les individus soumis à une forte charge mentale, à la précarité ou à une faible littératie financière ont une bande passante cognitive saturée (Mullainathan & Shafir), ce qui les rend nettement plus dépendants des choix par défaut et impose une vigilance éthique accrue sur l'option retenue."
+        }
       ],
-      "correctIndex": 0,
-      "feedbacks": [
-        "Correct ! La recherche montre que le manque de ressources (financières ou attentionnelles) sature la bande passante cognitive (Mullainathan & Shafir, 2013). Les personnes sous contrainte s'en remettent plus souvent aux choix par défaut, ce qui oblige le concepteur à veiller à ce que l'option par défaut soit réellement protectrice pour les plus vulnérables.",
-        "Incorrect. Les cadres supérieurs et les populations éduquées ont au contraire davantage tendance à personnaliser leurs options et à se désengager des défauts (*opt-out*).",
-        "Incorrect. L'hétérogénéité des réponses aux nudges est l'un des constats les plus robustes de la recherche contemporaine.",
-        "Incorrect. Les enfants présentent au contraire des heuristiques très marquées et une sensibilité forte aux stimuli visuels immédiats."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 190 & 201 (Section 1.1 Setting the stage & Section 6 Ethics)",
-      "doc_quote": "« Nudges do not affect all individuals equally. Research indicates differential susceptibility: people with lower financial literacy, less education, or those experiencing high cognitive load and scarcity are often significantly more influenced by default options and framing, raising crucial questions about equity, paternalism, and potential exploitation. »",
-      "doc_quote_fr": "« Les nudges n'affectent pas tous les individus de la même manière. La recherche indique une sensibilité différentielle : les personnes ayant une faible culture financière, moins d'éducation, ou celles soumises à une charge cognitive élevée et à la précarité sont souvent significativement plus influencées par les options par défaut et le cadrage, ce qui soulève des questions cruciales sur l'équité, le paternalisme et l'exploitation potentielle. »",
-      "doc_explanation": "La charge mentale restreint la capacité de délibération du Système 2. Concevoir une option par défaut désavantageuse (dark pattern) cible donc disproportionnellement les populations vulnérables.",
-      "exam_tip": "Retenez le concept de 'bande passante cognitive' (scarcity mindset) : la précarité épuise le Système 2, rendant l'individu dépendant des options par défaut.",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 201, Differential susceptibility.",
-      "flashcard_question": "Pourquoi l'hétérogénéité des effets du nudge soulève-t-elle des questions éthiques en ergonomie publique ?",
-      "flashcard_answer": "Parce que les usagers disposant de moins de ressources attentionnelles ou financières s'en remettent passivement au choix par défaut, subissant de plein fouet les décisions de l'architecte."
+      "correctLetter": "D",
+      "explanation": "La théorie de la rareté (Mullainathan & Shafir, 2013) montre que la pauvreté et le stress consument les ressources attentionnelles exécutives. Ces populations se désengagent moins souvent des options par défaut (*opt-out*), ce qui rend le choix de l'option par défaut déterminant pour leur sécurité financière et sanitaire.",
+      "citation": "Congiu & Moscati (2022), p. 200-202, Section 4.2 Distributive issues",
+      "correctIndex": 3
     },
     {
       "id": 14,
       "category": "congiu_2022",
       "doc_id": "doc_congiu2022",
       "anchor_id": "anchor_congiu_q14",
-      "tag": "Congiu & Moscati (2022) • Efficacité empirique & Méta-analyses",
+      "tag": "Congiu & Moscati (2022) • Efficacité empirique (DellaVigna & Linos, 2022)",
       "points": "1 point",
-      "context": "Dans la section évaluant l'efficacité réelle des interventions comportementales, Congiu & Moscati (2022, p. 204-205) comparent les résultats des publications universitaires aux données de terrain des équipes d'intervention gouvernementales (*Nudge Units*, ex. DellaVigna & Linos 2022).",
-      "question": "Que révèlent ces méta-analyses à grande échelle sur la taille d'effet moyenne des nudges en milieu naturel ?",
+      "context": "Congiu et Moscati (2022, p. 202-205) consacrent une analyse approfondie à la méta-analyse de Stefano DellaVigna et Elizabeth Linos (2022) sur l'efficacité réelle des nudges à grande échelle.",
+      "prompt": "Que révèle la comparaison entre les études publiées dans les revues académiques et les essais menés sur le terrain par les Nudge Units gouvernementales ?",
       "options": [
-        "Les nudges produisent des modifications comportementales supérieures à 85 % dans la quasi-totalité des politiques publiques.",
-        "Bien que statistiquement significatifs et rentables en raison de leur coût dérisoire, les effets moyens observés sur le terrain (1 à 3 points de pourcentage d'augmentation du comportement cible) sont souvent nettement plus modestes que ceux des études pionnières en laboratoire.",
-        "Les nudges ont un effet nul ou strictement négatif dans 100 % des cas documentés.",
-        "L'efficacité des nudges double automatiquement chaque mois sans qu'aucun renouvellement du message ne soit nécessaire."
+        {
+          "letter": "A",
+          "text": "Les interventions gouvernementales obtiennent des augmentations de comportements de plus de 80 points de pourcentage dans toutes les administrations."
+        },
+        {
+          "letter": "B",
+          "text": "Les études universitaires rapportent un impact moyen d'environ 8 points de pourcentage, alors que les Nudge Units réelles sur des millions de citoyens obtiennent un effet moyen de 1,4 point de pourcentage, un résultat modeste mais hautement rentable en raison du coût marginal négligeable."
+        },
+        {
+          "letter": "C",
+          "text": "Les Nudge Units gouvernementales échouent à 100 % et aggravent systématiquement les crises sanitaires."
+        },
+        {
+          "letter": "D",
+          "text": "Les études académiques sous-estiment massivement l'efficacité des nudges par rapport aux résultats du monde réel."
+        }
       ],
-      "correctIndex": 1,
-      "feedbacks": [
-        "Incorrect. Aucun essai randomisé à grande échelle n'observe des tailles d'effet de 85 % avec de simples modifications d'architecture de choix.",
-        "Correct ! DellaVigna et Linos (2022) ont comparé les études académiques (effet moyen de ~8 points de pourcentage) aux interventions réelles des Nudge Units gouvernementales sur des millions de citoyens (effet moyen de 1,4 point de pourcentage). Bien que modeste, cet impact est hautement rentable car le coût marginal d'envoi d'un courriel ou d'un changement de formulaire est proche de zéro.",
-        "Incorrect. L'effet global moyen reste statistiquement significatif et positif sur des millions d'individus.",
-        "Incorrect. Au contraire, la recherche documente une habituation ou érosion temporelle des nudges simples s'ils ne sont pas renouvelés."
-      ],
-      "doc_title": "Congiu & Moscati (2022) - A review of nudges: Definitions, justifications, effectiveness",
-      "doc_page": "Page 204-205 (Section 9 Effectiveness of nudging)",
-      "doc_quote": "« Recent large-scale meta-analyses and comparisons—notably DellaVigna and Linos (2022)—reveal a substantial publication bias in the academic literature. While academic studies report an average effect size of 8.7 percentage points, trials conducted by government Nudge Units on millions of citizens show an average impact of 1.4 percentage points. Although modest in absolute terms, these effects remain highly cost-effective due to the minimal implementation costs of choice architecture interventions. »",
-      "doc_quote_fr": "« De récentes méta-analyses et comparaisons à grande échelle — notamment DellaVigna et Linos (2022) — révèlent un biais de publication substantiel dans la littérature académique. Tandis que les études universitaires rapportent une taille d'effet moyenne de 8,7 points de pourcentage, les essais menés par les Nudge Units gouvernementales sur des millions de citoyens montrent un impact moyen de 1,4 point de pourcentage. Bien que modestes en termes absolus, ces effets demeurent hautement rentables en raison des coûts de mise en oeuvre minimes des interventions d'architecture du choix. »",
-      "doc_explanation": "1,4 point sur des millions de contribuables ou d'usagers hospitaliers représente des dizaines de milliers de personnes et des millions de dollars d'économies pour un coût de programmation minime.",
-      "exam_tip": "Retenez l'écart : Laboratoire académique = ~8-9 points (biais de publication). Terrain réel des Nudge Units = ~1-3 points (modeste mais rentable).",
-      "study_scope": "congiu2022",
-      "scope_badge": "Congiu & Moscati (2022) [pp. 189-214]",
-      "flashcard_context": "Congiu & Moscati (2022), p. 204, DellaVigna & Linos.",
-      "flashcard_question": "Pourquoi un effet de 1,4 point de pourcentage est-il considéré comme un succès majeur par une Nudge Unit ?",
-      "flashcard_answer": "Parce que rapporté à une population de millions d'usagers, le gain sociétal est considérable pour un coût marginal d'implémentation presque nul."
+      "correctLetter": "B",
+      "explanation": "DellaVigna et Linos (2022) démontrent l'existence d'un écart substantiel entre les résultats académiques (sujets au biais de publication et aux petits échantillons) et les déploiements réels des Nudge Units (1,4 point de pourcentage sur des millions d'individus). Bien que modeste, ce gain est très rentable car le coût par contact est quasi nul.",
+      "citation": "Congiu & Moscati (2022), p. 202-205, Section 4.3 Effectiveness and meta-analyses",
+      "correctIndex": 1
     },
     {
       "id": 15,
       "category": "bva_nudge",
       "doc_id": "doc_bva_nudge",
       "anchor_id": "anchor_bva_q15",
-      "tag": "BVA Nudge Unit • Normes sociales (O-Power)",
+      "tag": "BVA Nudge Unit • Normes sociales (O-Power & Smiley)",
       "points": "1 point",
-      "context": "Dans la vidéo documentaire de la BVA Nudge Unit sur l'histoire du nudge, le cas de l'entreprise O-Power est présenté comme l'un des exemples les plus emblématiques de changement comportemental à grande échelle.",
-      "question": "Quel levier psychologique précis a permis à O-Power d'économiser plus de 250 millions de dollars d'électricité sans aucune subvention ni changement de tarif d'Hydro-Électricité ?",
+      "context": "Dans la capsule vidéo de la BVA Nudge Unit, l'intervention à grande échelle menée par l'entreprise O-Power sur les factures d'énergie est présentée comme un modèle d'application des normes sociales.",
+      "prompt": "Quel mécanisme psychologique explique l'ajout indispensable d'un émoticône souriant (« smiley ») ou d'une mention d'approbation sur les relevés des ménages sobres ?",
       "options": [
-        "La coupure planifiée du courant durant 2 heures chaque jour aux ménages qui dépassaient le quota fixé par l'État.",
-        "L'envoi de lettres comminatoires annonçant une comparution devant un tribunal d'arbitrage en cas de gaspillage.",
-        "La comparaison sociale avec la consommation des voisins sur la facture (norme descriptive), combinée à un indicateur d'approbation visuelle sous forme d'émoticônes (norme injonctive).",
-        "La promesse d'un tirage au sort mensuel d'une automobile électrique haut de gamme réservé aux usagers les plus économes."
+        {
+          "letter": "A",
+          "text": "Permettre aux ménages sobres d'échanger leurs smileys contre des réductions sur leur taxe foncière municipale."
+        },
+        {
+          "letter": "B",
+          "text": "Combiner la norme injonctive (approbation morale explicite) à la norme descriptive (consommation moyenne des voisins) pour neutraliser « l'effet boomerang », où les ménages déjà sobres augmenteraient leur consommation pour s'aligner sur la moyenne du quartier."
+        },
+        {
+          "letter": "C",
+          "text": "Corriger une anomalie technique du logiciel de facturation qui refusait d'imprimer des lettres de texte."
+        },
+        {
+          "letter": "D",
+          "text": "Signaler aux enfants de la famille que leurs parents ont payé leur facture par carte de crédit."
+        }
       ],
-      "correctIndex": 2,
-      "feedbacks": [
-        "Incorrect. Il s'agirait d'une mesure coercitive violant la liberté contractuelle et la définition d'un nudge.",
-        "Incorrect. La menace judiciaire est un outil de contrainte pénale, pas une architecture du choix bienveillante.",
-        "Correct ! O-Power a affiché sur le relevé mensuel la consommation du foyer comparée à la moyenne de ses voisins et à celle des 20 % les plus efficaces (norme descriptive : ce que font les autres). Pour éviter que les consommateurs les plus sobres n'augmentent leur consommation par alignement sur la moyenne ('effet boomerang'), ils ont ajouté des smileys approbateurs (norme injonctive : ce qui est socialement valorisé).",
-        "Incorrect. Une loterie avec gain matériel majeur constituerait une prime financière économique, ce qui exclurait l'intervention du champ des purs nudges."
-      ],
-      "doc_title": "BVA Nudge Unit - A Brief History of Nudge (Vidéo YouTube)",
-      "doc_page": "Minutage 02:00 -> 02:35",
-      "doc_quote": "« O-Power was able to save over 250 million dollars in energy costs simply by showing people on their bills how their consumption compared to their neighbors, and adding a simple smiley face for efficient households. This leveraged descriptive social norms and injunctive feedback to drive conservation without any price changes. »",
-      "doc_quote_fr": "« O-Power a pu économiser plus de 250 millions de dollars en coûts d'énergie simplement en montrant aux gens sur leur facture comment leur consommation se comparait à celle de leurs voisins, et en ajoutant un simple smiley pour les foyers efficaces. Cela a mobilisé les normes sociales descriptives et un retour injonctif pour susciter la sobriété sans aucun changement de prix. »",
-      "doc_explanation": "La comparaison sociale est un puissant régulateur du comportement : l'humain est un animal social qui calibre ses normes internes sur ses pairs immédiats.",
-      "exam_tip": "Retenez le duo : Norme descriptive = 'ce que font les autres' (chiffres des voisins). Norme injonctive = 'ce qui est moralement/socialement approuvé' (les smileys). Le smiley empêche l'effet boomerang !",
-      "study_scope": "bva_nudge",
-      "scope_badge": "BVA Nudge Unit [Vidéo]",
-      "flashcard_context": "BVA Nudge Unit, 02:15, O-Power.",
-      "flashcard_question": "Quel était le rôle précis du 'smiley' sur les factures d'électricité d'O-Power ?",
-      "flashcard_answer": "Agir comme norme injonctive pour éviter 'l'effet boomerang' : empêcher que les ménages très sobres ne relâchent leurs efforts pour s'aligner sur la moyenne de leurs voisins."
+      "correctLetter": "B",
+      "explanation": "Une simple norme descriptive (comparaison avec le quartier) crée un effet pervers (« effet boomerang ») : les personnes vertueuses réalisent qu'elles consomment moins que la norme et relâchent leurs efforts. L'adjonction d'une norme injonctive (le smiley d'approbation sociale) bloque cet effet en validant moralement leur sobriété.",
+      "citation": "BVA Nudge Unit - A Brief History of Nudge (Vidéo Séance 06)",
+      "correctIndex": 1
     },
     {
       "id": 16,
       "category": "bva_nudge",
       "doc_id": "doc_bva_nudge",
       "anchor_id": "anchor_bva_q16",
-      "tag": "BVA Nudge Unit • Biais d'ancrage en magasin",
+      "tag": "BVA Nudge Unit • Ancrage numérique & Architecture commerciale",
       "points": "1 point",
-      "context": "Dans la vidéo de la BVA Nudge Unit, l'expérience de terrain sur les conserves de soupe en supermarché (Brian Wansink et al.) est citée pour illustrer le pouvoir de l'ancrage numérique dans le comportement d'achat.",
-      "question": "Pourquoi l'ajout d'une simple affichette indiquant « Limite de 12 boîtes par personne » sur un présentoir promotionnel a-t-il fait bondir les achats moyens de 3,3 à 7 boîtes par client ?",
+      "context": "La vidéo de la BVA Nudge Unit présente plusieurs expériences menées en supermarché sur la mise en rayon, notamment la fixation d'un panneau « Limite de 12 unités par client » pour une promotion de soupes en boîte.",
+      "prompt": "Pourquoi cette mention quantitative fictive augmente-t-elle significativement le volume moyen d'unités achetées par les consommateurs ?",
       "options": [
-        "Parce que la loi commerciale obligeait quiconque entrait dans le rayon à acheter au moins la moitié du plafond autorisé sous peine de contravention.",
-        "Parce que le prix unitaire d'une boîte de soupe était diminué de 80 % uniquement pour les clients atteignant exactement le chiffre 12.",
-        "Parce que les clients craignaient une fermeture définitive du magasin dans les 30 minutes suivantes.",
-        "Parce que le nombre 12 a agi comme une ancre cognitive inconsciente, suggérant une norme quantitative de consommation et activant le sentiment d'une rareté promotionnelle exceptionnelle."
+        {
+          "letter": "A",
+          "text": "Parce que le chiffre 12 agit comme une ancre cognitive heuristique : les acheteurs ajustent inconsciemment leur volume d'achat à la hausse à partir de cette valeur de référence élevée."
+        },
+        {
+          "letter": "B",
+          "text": "Parce qu'elle active une peur panique de pénurie alimentaire organisée par le ministère de l'agriculture."
+        },
+        {
+          "letter": "C",
+          "text": "Parce que le magasin refuse physiquement de scanner les paniers contenant moins de 12 boîtes à la caisse."
+        },
+        {
+          "letter": "D",
+          "text": "Parce que les boîtes de soupe sont obligatoirement vendues ficelées par paquets de 12 dans le rayon."
+        }
       ],
-      "correctIndex": 3,
-      "feedbacks": [
-        "Incorrect. La pancarte n'avait aucune valeur légale coercitive, elle fixait un simple plafond maximal théorique.",
-        "Incorrect. Le prix unitaire promotionnel à l'unité était rigoureusement le même, qu'on achète 1, 3 ou 12 boîtes.",
-        "Incorrect. C'est une justification farfelue sans lien avec la psychologie de l'ancrage.",
-        "Correct ! En mentionnant un chiffre élevé (12), l'esprit des consommateurs ancre son estimation sur ce nombre. De plus, une 'limite' active le biais de rareté (si c'est rationné, c'est que c'est une excellente affaire). Le panier moyen a plus que doublé sans changer le prix d'un seul centime !"
-      ],
-      "doc_title": "BVA Nudge Unit - A Brief History of Nudge (Vidéo YouTube)",
-      "doc_page": "Minutage 03:50 -> 04:20",
-      "doc_quote": "« In a classic supermarket study, adding a sign saying 'Limit of 12 per customer' increased sales from 3.3 to 7 cans of soup per shopper. The number 12 acted as a psychological anchor and suggested that buying in volume was customary and desirable. »",
-      "doc_quote_fr": "« Dans une étude classique en supermarché, l'ajout d'une pancarte indiquant 'Limite de 12 par client' a fait passer les ventes de 3,3 à 7 boîtes de soupe par acheteur. Le chiffre 12 a agi comme une ancre psychologique et a suggéré qu'acheter en volume était d'usage et désirable. »",
-      "doc_explanation": "L'ancrage démontre que l'estimation humaine ne part jamais de zéro : elle ajuste son jugement à partir du premier chiffre fourni par l'environnement.",
-      "exam_tip": "L'ancrage ne change pas les préférences réelles : il déplace l'échelle d'évaluation numérique en fournissant un point de départ arbitraire.",
-      "study_scope": "bva_nudge",
-      "scope_badge": "BVA Nudge Unit [Vidéo]",
-      "flashcard_context": "BVA Nudge Unit, 03:55, Ancrage commercial.",
-      "flashcard_question": "Comment l'affichage d'un plafond 'Limite de X articles' produit-il un effet d'ancrage ?",
-      "flashcard_answer": "Le chiffre X sert d'ancre cognitive qui élève le volume de référence spontané de l'acheteur tout en signalant une rareté artificielle."
+      "correctLetter": "A",
+      "explanation": "L'heuristique d'ancrage et ajustement (Tversky & Kahneman) montre qu'en présence d'une valeur numérique proéminente (même arbitraire comme une 'limite de 12'), les individus ancrent leur jugement sur ce chiffre et ajustent de manière insuffisante, ce qui double presque les achats moyens par rapport à une absence d'ancre.",
+      "citation": "BVA Nudge Unit - A Brief History of Nudge & Wansink et al. (1998)",
+      "correctIndex": 0
     },
     {
       "id": 17,
-      "category": "ux_research",
+      "category": "ux_researcher",
       "doc_id": "doc_ux_researcher",
       "anchor_id": "anchor_ux_q17",
-      "tag": "UX Research • Rôle & Moments d'intervention",
+      "tag": "UX Researcher (Konrad) • Recherche générative vs évaluative",
       "points": "1 point",
-      "context": "La vidéo explicative « Qu'est-ce qu'un UX Researcher ? » détaille le rôle de ce spécialiste dans le cycle de développement d'un produit numérique ou d'un service.",
-      "question": "À quels deux moments clés du cycle produit l'UX Researcher intervient-il prioritairement ?",
+      "context": "Dans la vidéo et les guides méthodologiques sur le métier d'UX Researcher (Konrad), une distinction cardinale est établie entre les deux grands moments de la recherche utilisateur.",
+      "prompt": "Quelle est la finalité spécifique de la recherche dite 'générative' (ou de découverte) par opposition à la recherche 'évaluative' ?",
       "options": [
-        "Avant la conception (pour comprendre les utilisateurs, leurs besoins réels, leurs habitudes et leurs freins) et pendant la conception (pour tester les prototypes et interfaces avec de vrais usagers).",
-        "Pendant la nuit pour exécuter la maintenance logicielle des bases de données SQL du serveur.",
-        "Uniquement après la mise en marché pour rédiger les réponses types du service après-vente.",
-        "Au moment de la signature des contrats d'embauche des ingénieurs pour vérifier leurs références universitaires."
+        {
+          "letter": "A",
+          "text": "La recherche générative se déroule uniquement le dernier jour avant le lancement commercial d'une application."
+        },
+        {
+          "letter": "B",
+          "text": "La recherche générative sert exclusivement à calculer le prix de vente optimal d'un logiciel en dollars."
+        },
+        {
+          "letter": "C",
+          "text": "La recherche évaluative est menée par des robots sans intervention d'aucun être humain."
+        },
+        {
+          "letter": "D",
+          "text": "La recherche générative explore le problème en amont (besoins profonds, modèles mentaux, pratiques réelles) avant toute conception ; la recherche évaluative teste des solutions, prototypes ou interfaces pour mesurer l'utilisabilité et identifier les blocages."
+        }
       ],
-      "correctIndex": 0,
-      "feedbacks": [
-        "Correct ! La vidéo souligne la double intervention de l'UX Researcher : 1) en amont (recherche exploratoire/découverte : cerner le problème, les modèles mentaux et les besoins non satisfaits) ; 2) en cours de conception (recherche évaluative : tests d'utilisabilité itératifs sur prototypes basse et haute fidélité pour corriger les erreurs avant le codage final).",
-        "Incorrect. La maintenance des serveurs est la responsabilité des administrateurs système et développeurs back-end, pas des ergonomes UX.",
-        "Incorrect. Intervenir uniquement après le déploiement empêcherait toute conception centrée sur l'utilisateur et transformerait l'UX en simple gestion des plaintes.",
-        "Incorrect. Les processus d'embauche relèvent des ressources humaines, sans rapport avec la recherche utilisateur produit."
-      ],
-      "doc_title": "Vidéo - Qu'est-ce qu'un UX Researcher ?",
-      "doc_page": "Transcription (Lignes 20 à 25)",
-      "doc_quote": "« L'UX Researcher intervient principalement à deux moments clés : avant la conception du produit, pour comprendre les besoins, les habitudes et les frustrations des utilisateurs cibles ; et pendant la conception, pour faire tester des prototypes et vérifier que la solution imaginée est simple, fluide et intuitive. »",
-      "doc_quote_fr": "« L'UX Researcher intervient principalement à deux moments clés : avant la conception du produit, pour comprendre les besoins, les habitudes et les frustrations des utilisateurs cibles ; et pendant la conception, pour faire tester des prototypes et vérifier que la solution imaginée est simple, fluide et intuitive. »",
-      "doc_explanation": "Ce double rôle correspond exactement aux phases 'Comprendre/Diagnostic' et 'Évaluer/Expérimentation' de la méthode ergonomique en 4 phases enseignée à la Séance 2.",
-      "exam_tip": "Retenez les deux casquettes : 1. En amont = Découverte (Besoins, Modèles mentaux). 2. En cours = Évaluation (Tests usabilité sur prototypes).",
-      "study_scope": "ux_research",
-      "scope_badge": "UX Research [Vidéo & Konrad]",
-      "flashcard_context": "Vidéo UX Researcher, lignes 20-25.",
-      "flashcard_question": "Quelle est la valeur économique majeure d'un test UX avant le codage final ?",
-      "flashcard_answer": "Détecter et corriger les incompréhensions d'interface sur prototype coûte 10 à 100 fois moins cher que de refactoriser un logiciel déjà codé et déployé."
+      "correctLetter": "D",
+      "explanation": "La recherche générative (découverte) vise à comprendre le problème et à faire émerger des opportunités de conception sans présupposer la solution. La recherche évaluative intervient plus tard dans le cycle pour tester et valider des artefacts concrets (écrans, flux, prototypes).",
+      "citation": "Guide UX Researcher (Konrad) & Nielsen Norman Group",
+      "correctIndex": 3
     },
     {
       "id": 18,
-      "category": "ux_research",
+      "category": "ux_researcher",
       "doc_id": "doc_ux_researcher",
       "anchor_id": "anchor_ux_q18",
-      "tag": "UX Research • Méthodes Quali vs Quanti (Konrad)",
+      "tag": "UX Researcher (Konrad) • Méthodes qualitatives vs quantitatives",
       "points": "1 point",
-      "context": "Le guide méthodologique de l'agence KONRAD (*What is UX research?*) et la vidéo officielle articulent les méthodes qualitatives et quantitatives dans une perspective de triangulation.",
-      "question": "Quelle distinction méthodologique fondamentale sépare ces deux approches en recherche utilisateur ?",
+      "context": "Un chef de produit demande à l'UX Researcher : « Nous voulons savoir combien d'utilisateurs abandonnent leur panier d'achat et pourquoi ils le font ».",
+      "prompt": "Quelle articulation méthodologique rigoureuse l'ergonome cognitif doit-il proposer pour répondre fidèlement à cette double exigence ?",
       "options": [
-        "Le qualitatif est exclusivement utilisé par les graphistes pour choisir les palettes de couleurs, tandis que le quantitatif est géré par les comptables de l'entreprise.",
-        "Le qualitatif cherche à répondre au « POURQUOI » (comprendre en profondeur les motivations, modèles mentaux et obstacles par des entretiens et observations), tandis que le quantitatif répond au « COMBIEN » (mesurer à grande échelle des comportements via des analytics ou des métriques statistiques).",
-        "Le qualitatif s'appuie uniquement sur des équations mathématiques pures, alors que le quantitatif repose sur des dessins à main levée sans aucun chiffre.",
-        "Le qualitatif est scientifiquement invalide et ne doit jamais être utilisé en psychologie ergonomique contemporaine."
+        {
+          "letter": "A",
+          "text": "Mobiliser une méthode quantitative (analyse des logs et entonnoirs de conversion) pour quantifier l'abandon ('Combien ?'), complétée par une méthode qualitative (tests d'utilisabilité modérés et verbalisation concurrente) pour diagnostiquer les modèles mentaux et les causes profondes ('Pourquoi ?')."
+        },
+        {
+          "letter": "B",
+          "text": "Remplacer l'équipe d'analystes par un sondage d'opinion diffusé sur les réseaux sociaux auprès de 50 000 influenceurs."
+        },
+        {
+          "letter": "C",
+          "text": "Considérer que les données quantitatives permettent à elles seules de deviner infailliblement les pensées intimes des usagers."
+        },
+        {
+          "letter": "D",
+          "text": "Interdire toute mesure chiffrée car l'ergonomie ne s'intéresse qu'à la poésie des interfaces visuelles."
+        }
       ],
-      "correctIndex": 1,
-      "feedbacks": [
-        "Incorrect. La recherche utilisateur informe l'architecture d'information et la logique d'interaction, bien au-delà du seul stylisme graphique.",
-        "Correct ! Le guide Konrad insiste sur la complémentarité : les analytics quantitatifs révèlent *où* les utilisateurs abandonnent (ex. 40 % de drop-off à l'étape 3 du panier), mais seuls les entretiens qualitatifs ou les tests utilisateurs filmés révèlent *pourquoi* ils abandonnent (ex. label ambigu créant la peur d'un débit bancaire immédiat).",
-        "Incorrect. C'est l'inverse : le quantitatif emploie des métriques statistiques et des indicateurs numériques.",
-        "Incorrect. Le qualitatif rigoureux (analyse thématique, protocoles de verbalisation 'think-aloud', analyse de l'activité) est le socle indispensable de l'ergonomie cognitive."
-      ],
-      "doc_title": "Vidéo - Qu'est-ce qu'un UX Researcher ? & Konrad",
-      "doc_page": "Transcription (Lignes 41 à 45) & Konrad Section 'Methods'",
-      "doc_quote": "« Qualitative research focuses on understanding the 'why' behind behaviors—through interviews, contextual inquiry, and usability testing. Quantitative research focuses on the 'how many' or 'how much'—using surveys, A/B testing, and web analytics to measure patterns at scale. Effective UX research triangulates both approaches. »",
-      "doc_quote_fr": "« La recherche qualitative se concentre sur la compréhension du 'pourquoi' derrière les comportements — grâce aux entretiens, à l'enquête contextuelle et aux tests d'utilisabilité. La recherche quantitative se concentre sur le 'combien' — en utilisant des questionnaires, des tests A/B et des analyses d'audience web pour mesurer des tendances à grande échelle. Une recherche UX efficace triangule les deux approches. »",
-      "doc_explanation": "La triangulation qualitative + quantitative est le coeur de la démarche enseignée par Mario Passalacqua : observer l'action (quanti/quali), recueillir le verbalisé (quali), et valider l'impact global.",
-      "exam_tip": "Qualitatif = Le 'Pourquoi' (sens, modèles mentaux, blocages). Quantitatif = Le 'Combien' (volume, taux d'échec, significativité).",
-      "study_scope": "ux_research",
-      "scope_badge": "UX Research [Vidéo & Konrad]",
-      "flashcard_context": "Guide Konrad, section Methods.",
-      "flashcard_question": "Pourquoi dit-on que les données quantitatives seules sont aveugles en UX ?",
-      "flashcard_answer": "Parce que les chiffres (analytics) indiquent précisément OÙ l'usager bloque ou abandonne, mais sont incapables d'expliquer POURQUOI il le fait sans retour qualitatif."
+      "correctLetter": "A",
+      "explanation": "La triangulation quali/quanti est la règle d'or en recherche utilisateur : le quantitatif indique où et dans quelle proportion le problème survient (comportement observable à l'échelle), tandis que le qualitatif révèle les intentions, confusions et modèles mentaux des usagers (diagnostic en profondeur).",
+      "citation": "Guide UX Researcher (Konrad) & Cañas et al. (2011)",
+      "correctIndex": 0
     },
     {
       "id": 19,
-      "category": "ux_research",
+      "category": "ux_researcher",
       "doc_id": "doc_ux_researcher",
       "anchor_id": "anchor_ux_q19",
-      "tag": "UX Research • Conception des Personas (Konrad)",
+      "tag": "UX Researcher (Konrad) • Personas basés sur la recherche",
       "points": "1 point",
-      "context": "Dans la section consacrée aux livrables de la recherche, le guide KONRAD (*User Persona*) et la vidéo décrivent la construction des « personas » comme un outil pivot de communication interdisciplinaire.",
-      "question": "Qu'est-ce qu'un « User Persona » et quelle est son utilité centrale dans le processus de conception ergonomique ?",
+      "context": "Dans la pratique professionnelle d'UX Research, la création de personas est un livrable récurrent, souvent dévoyé par des approches purement marketing.",
+      "prompt": "Qu'est-ce qui caractérise un persona de recherche scientifiquement et cliniquement valide en ergonomie cognitive ?",
       "options": [
-        "Une fausse identité juridique créée par le service fiscal de l'entreprise pour masquer des bénéfices commerciaux.",
-        "Un mannequin robotique articulé installé dans le laboratoire pour simuler des mouvements physiques.",
-        "Un archétype ou portrait-robot représentatif d'un segment cible d'utilisateurs réels, synthétisant leurs objectifs, leurs freins, leurs modèles mentaux et leurs capacités cognitives pour guider les décisions de l'équipe de conception.",
-        "Une liste alphabétique des employés de l'entreprise ayant des compétences informatiques avancées."
+        {
+          "letter": "A",
+          "text": "C'est une fiche fictive inventée en 15 minutes lors d'une séance de remue-méninges de l'équipe de communication."
+        },
+        {
+          "letter": "B",
+          "text": "C'est une photo libre de droits accompagnée de l'âge exact, du signe astrologique et du plat préféré d'un client imaginaire."
+        },
+        {
+          "letter": "C",
+          "text": "C'est la copie mot à mot du profil Facebook du directeur général de l'entreprise cliente."
+        },
+        {
+          "letter": "D",
+          "text": "C'est un modèle comportemental synthétique fondé sur des régularités empiriques observées chez de multiples utilisateurs réels, documentant leurs buts, compétences cognitives, contraintes et stratégies de contournement."
+        }
       ],
-      "correctIndex": 2,
-      "feedbacks": [
-        "Incorrect. Un persona n'a aucune dimension de fraude juridique ou fiscale.",
-        "Incorrect. Cela confond le persona cognitif avec un mannequin de crash-test biomécanique.",
-        "Correct ! Un persona n'est pas un personnage imaginaire né de fantasmes marketing, mais une synthèse rigoureuse dérivée de données empiriques (entretiens, observations). Il incarne les besoins et contraintes d'un groupe d'usagers pour éviter que les ingénieurs ne conçoivent le produit pour eux-mêmes.",
-        "Incorrect. Le persona représente les utilisateurs finaux du produit, et non les membres internes de l'entreprise."
-      ],
-      "doc_title": "Vidéo UX Researcher & Konrad - What is UX Research",
-      "doc_page": "Transcription (Lignes 36 à 40) & Konrad Section 'User persona'",
-      "doc_quote": "« A user persona is a semi-fictional archetype representing a key segment of your audience, built from real research data. Personas capture users' goals, mental models, pain points, and behavioral patterns. They serve as an empathy tool, helping multidisciplinary teams design for real human needs rather than personal assumptions. »",
-      "doc_quote_fr": "« Un persona utilisateur est un archétype semi-fictif représentant un segment clé de votre public, construit à partir de données de recherche réelles. Les personas synthétisent les objectifs, les modèles mentaux, les difficultés et les schémas comportementaux des usagers. Ils servent d'outil d'empathie, aidant les équipes multidisciplinaires à concevoir pour des besoins humains réels plutôt que sur des suppositions personnelles. »",
-      "doc_explanation": "Le persona ancre l'empathie cognitive : il empêche l'erreur classique d'égocentrisme de l'ingénieur qui suppose que tout le monde maîtrise les technologies complexes comme lui.",
-      "exam_tip": "Un vrai persona repose toujours sur des données de recherche terrain (interviews/observations), jamais sur de la pure spéculation d'équipe.",
-      "study_scope": "ux_research",
-      "scope_badge": "UX Research [Vidéo & Konrad]",
-      "flashcard_context": "Guide Konrad, section User Persona.",
-      "flashcard_question": "Quel piège cognitif de l'équipe de conception le User Persona permet-il d'éviter ?",
-      "flashcard_answer": "Le biais du concepteur ('je ne suis pas l'utilisateur') : il empêche l'équipe de projeter ses propres habitudes technologiques expertes sur des usagers néophytes."
+      "correctLetter": "D",
+      "explanation": "Un persona de recherche est un archétype empirique issu de données d'observation et d'entretiens. Il synthétise des schémas de comportement, des modèles mentaux et des freins cognitifs réels pour guider la conception centrée sur l'humain.",
+      "citation": "Guide UX Researcher (Konrad) & Alan Cooper (The Inmates Are Running the Asylum)",
+      "correctIndex": 3
     },
     {
       "id": 20,
-      "category": "ux_research",
+      "category": "ux_researcher",
       "doc_id": "doc_ux_researcher",
       "anchor_id": "anchor_ux_q20",
-      "tag": "UX Research • Posture déontologique & Neutralité",
+      "tag": "UX Researcher (Konrad) • Déontologie de la modération de test",
       "points": "1 point",
-      "context": "Dans la vidéo « Qu'est-ce qu'un UX Researcher ? », une compétence déontologique et méthodologique fondamentale est soulignée à propos de la conduite des entrevues et des tests d'utilisabilité.",
-      "question": "Pourquoi la « neutralité scientifique » est-elle désignée comme une compétence indispensable de l'UX Researcher lors de la passation des tests ?",
+      "context": "Lors d'une séance de test d'utilisabilité en laboratoire, un participant hésite longuement devant un formulaire de commande en ligne et semble désorienté.",
+      "prompt": "Quelle posture et quelle formulation de relance respectent scrupuleusement la déontologie clinique de l'UX Researcher ?",
       "options": [
-        "Pour s'assurer que le chercheur ne parle jamais durant le test et communique exclusivement par signaux lumineux.",
-        "Pour refuser de transmettre les résultats aux ingénieurs et garder les conclusions sous secret professionnel absolu.",
-        "Pour obliger les usagers à donner uniquement des réponses positives afin d'assurer le succès commercial du produit.",
-        "Pour éviter de biaiser la formulation des questions ou d'influencer le comportement des participants, afin de recueillir la vérité terrain brute sans chercher à flatter les intuitions préalables de l'équipe produit."
+        {
+          "letter": "A",
+          "text": "« Voyons, le gros bouton rouge 'Valider' est juste en bas à droite, cliquez dessus ! »"
+        },
+        {
+          "letter": "B",
+          "text": "Garder une neutralité bienveillante et encourager la verbalisation sans indice : « Que cherchez-vous à faire en ce moment ? Qu'attendez-vous qu'il se produise si vous cliquez là ? »."
+        },
+        {
+          "letter": "C",
+          "text": "Prendre la souris des mains du participant et compléter l'achat à sa place pour gagner du temps."
+        },
+        {
+          "letter": "D",
+          "text": "« Excusez-moi, nos designers ont fait une erreur stupide en plaçant ce menu là, ne leur en voulez pas. »"
+        }
       ],
-      "correctIndex": 3,
-      "feedbacks": [
-        "Incorrect. Bien que le chercheur doive limiter ses interventions, il mène des relances verbales neutres ('Pouvez-vous me dire à quoi vous pensez en ce moment ?').",
-        "Incorrect. La restitution claire et constructive des résultats auprès des designers et développeurs est la mission première de l'UXr.",
-        "Incorrect. Forcer des réponses positives relèverait de la manipulation malhonnête et ruinerait toute utilité ergonomique du test.",
-        "Correct ! La vidéo insiste sur le fait que l'UX Researcher doit poser des questions neutres et ouvertes (éviter les questions inductives comme 'Ne trouvez-vous pas ce bouton facile à utiliser ?'), observer en silence les hésitations de l'usager et résister à la tentation de lui montrer comment faire, afin de tester l'ergonomie réelle de l'artefact."
+      "correctLetter": "B",
+      "explanation": "La règle déontologique absolue de la modération UX est la non-directivité : ne jamais souffler la solution, ne pas défendre l'équipe de design, ne pas juger l'utilisateur. Le chercheur encourage le 'think aloud' (protocole de verbalisation concurrente) pour capturer les représentations internes sans biaiser le test.",
+      "citation": "Guide UX Researcher (Konrad) & Dumas & Redish (A Practical Guide to Usability Testing)",
+      "correctIndex": 1
+    },
+    {
+      "id": 21,
+      "category": "chen_2024",
+      "doc_id": "doc_chen2024",
+      "anchor_id": "anchor_chen_q21",
+      "tag": "Chen (2024) • Préférences sociales & Jeu de l'ultimatum",
+      "points": "1 point",
+      "context": "Contrairement au postulat néoclassique de l'Homo Economicus motivé par le seul profit matériel immédiat, Chen (2024, p. 101-102) examine les données du 'Jeu de l'ultimatum'.",
+      "prompt": "Que prouvent empiriquement les rejets réguliers d'offres positives mais perçues comme inéquitables (ex. 10 $ sur 100 $) par les répondants ?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Que les répondants ne savent pas compter et ignorent que 10 $ est supérieur à 0 $."
+        },
+        {
+          "letter": "B",
+          "text": "Que les humains intègrent une aversion à l'iniquité et une réciprocité négative : ils préfèrent subir une perte financière personnelle pour infliger une punition altruiste à un partenaire jugé injuste."
+        },
+        {
+          "letter": "C",
+          "text": "Que le jeu a été mal programmé par les assistants de recherche de l'université."
+        },
+        {
+          "letter": "D",
+          "text": "Que tous les répondants sont animés par un altruisme inconditionnel envers les banques centrales."
+        }
       ],
-      "doc_title": "Vidéo - Qu'est-ce qu'un UX Researcher ?",
-      "doc_page": "Transcription (Lignes 62 à 70)",
-      "doc_quote": "« L'UX Researcher doit posséder une grande neutralité scientifique. Il ne doit pas orienter les réponses des participants ni défendre l'idée du designer. Son travail consiste à écouter avec recul, à poser des questions ouvertes et à faire émerger la réalité des usages sans porter de jugement ni suggérer les bonnes réponses. »",
-      "doc_quote_fr": "« L'UX Researcher doit posséder une grande neutralité scientifique. Il ne doit pas orienter les réponses des participants ni défendre l'idée du designer. Son travail consiste à écouter avec recul, à poser des questions ouvertes et à faire émerger la réalité des usages sans porter de jugement ni suggérer les bonnes réponses. »",
-      "doc_explanation": "En ergonomie comme en psychologie clinique, l'expérimentateur doit surveiller son propre biais d'attente (effet Pygmalion/Rosenthal) pour laisser émerger les dysfonctionnements du système.",
-      "exam_tip": "Question ouverte et neutre = 'Que pensez-vous de cette page ?' Question inductive interdite = 'Trouvez-vous cette page claire ?'",
-      "study_scope": "ux_research",
-      "scope_badge": "UX Research [Vidéo & Konrad]",
-      "flashcard_context": "Vidéo UX Researcher, lignes 62-70.",
-      "flashcard_question": "Pourquoi l'UX Researcher doit-il se taire lorsqu'un utilisateur hésite ou commet une erreur sur un prototype ?",
-      "flashcard_answer": "Parce que l'hésitation ou l'erreur est précisément la donnée clinique révélatrice d'un gouffre d'exécution ou d'évaluation dans l'interface."
+      "correctLetter": "B",
+      "explanation": "Dans le jeu de l'ultimatum, la rationalité économique pure prédit que le répondant acceptera toute offre non nulle (1 cent vaut mieux que 0). En réalité, les offres inéquitables sont massivement rejetées, démontrant que l'équité et le désir de punir l'injustice surpassent le gain matériel égoïste.",
+      "citation": "Chen (2024), p. 101-102, Section 3.4 Social Preferences",
+      "correctIndex": 1
+    },
+    {
+      "id": 22,
+      "category": "congiu_2022",
+      "doc_id": "doc_congiu2022",
+      "anchor_id": "anchor_congiu_q11",
+      "tag": "Congiu & Moscati (2022) • Compétence décisionnelle vs Architecture passive",
+      "points": "1 point",
+      "context": "Un organisme de santé publique hésite entre deux stratégies pour réduire la consommation de sel : installer des salières à trous réduits dans les restaurants d'entreprise (Option 1) ou dispenser un atelier de formation interactif apprenant aux employés à lire et interpréter les tableaux de sodium sur les étiquettes alimentaires (Option 2).",
+      "prompt": "Selon la typologie de Hertwig et Grüne-Yanoff (2017) présentée par Congiu et Moscati (2022), comment qualifier rigoureusement ces deux interventions ?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "L'Option 1 est un Nudge (modification de l'environnement physique de choix sans apprentissage) ; l'Option 2 est un Boost (développement d'une compétence décisionnelle autonome pérenne)."
+        },
+        {
+          "letter": "B",
+          "text": "Les deux options sont des taxes obligatoires déguisées au sens de la fiscalité municipale."
+        },
+        {
+          "letter": "C",
+          "text": "L'Option 1 est un Boost, tandis que l'Option 2 est une interdiction dictatoriale de consommer du sel."
+        },
+        {
+          "letter": "D",
+          "text": "Aucune des deux interventions n'appartient aux sciences psychologiques appliquées."
+        }
+      ],
+      "correctLetter": "A",
+      "explanation": "La salière modifiée est un nudge classique de type 1 : elle modifie la mécanique physique du choix sans instruire l'usager. L'atelier de lecture d'étiquettes est un 'boost' : il enrichit les compétences cognitives de l'agent pour qu'il puisse prendre des décisions autonomes dans n'importe quel contexte futur.",
+      "citation": "Congiu & Moscati (2022), p. 194-195 & Hertwig & Grüne-Yanoff (2017)",
+      "correctIndex": 0
+    },
+    {
+      "id": 23,
+      "category": "congiu_2022",
+      "doc_id": "doc_congiu2022",
+      "anchor_id": "anchor_congiu_q8",
+      "tag": "Congiu & Moscati (2022) • Éthique & Dark Patterns",
+      "points": "1 point",
+      "context": "Un site de commerce électronique pré-coche par défaut une case ajoutant automatiquement une assurance payante facultative de 15 $ au panier d'achat, dissimulée sous des conditions générales déroulantes.",
+      "prompt": "À la lumière des principes éthiques de Thaler & Sunstein (2008) et de l'analyse de Congiu & Moscati (2022), comment qualifier cette pratique et en quoi viole-t-elle le contrat moral du paternalisme libertarien ?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "C'est un 'sludge' ou un 'dark pattern' abusif : l'architecture du choix est manipulée au profit exclusif du marchand et au détriment du bien-être réfléchi du consommateur, violant l'obligation de bienveillance du paternalisme libertarien."
+        },
+        {
+          "letter": "B",
+          "text": "C'est un exemple parfait de nudge vertueux approuvé par l'ensemble des comités d'éthique de la consommation."
+        },
+        {
+          "letter": "C",
+          "text": "C'est une loi fédérale imposée pour renflouer le régime des rentes du Québec."
+        },
+        {
+          "letter": "D",
+          "text": "C'est une simple erreur de programmation Javascript qui n'a aucun impact psychologique."
+        }
+      ],
+      "correctLetter": "A",
+      "explanation": "Pour qu'une intervention soit un nudge éthique au sens de Thaler & Sunstein, elle doit viser le bien-être de la personne tel que jugé par elle-même. Lorsque l'architecture du choix exploite la négligence ou la confusion pour soutirer de l'argent au profit du commerçant, c'est un 'sludge' ou 'dark pattern', contraire aux principes de transparence et de bienveillance.",
+      "citation": "Congiu & Moscati (2022), p. 195-197 & Thaler (2018, Nudge, not sludge)",
+      "correctIndex": 0
+    },
+    {
+      "id": 24,
+      "category": "ux_researcher",
+      "doc_id": "doc_ux_researcher",
+      "anchor_id": "anchor_ux_q18",
+      "tag": "UX Researcher (Konrad) • Triangulation ergonomique & Méthode en 4 phases",
+      "points": "1 point",
+      "context": "Dans la démarche ergonomique officielle enseignée à l'UQAM (Méthode en 4 phases de la Séance 02 et méthode Cañas de la Séance 01), l'analyste doit articuler observation terrain et verbalisation.",
+      "prompt": "Pourquoi la triangulation entre l'observation du comportement objectif (ce que l'utilisateur fait) et la verbalisation concourante (ce que l'utilisateur dit ou pense) est-elle indispensable pour l'évaluation ergonomique ?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Parce que les caméras vidéo sont trop coûteuses pour enregistrer le comportement physique seul."
+        },
+        {
+          "letter": "B",
+          "text": "Parce que les utilisateurs mentent intentionnellement dans 100 % des tests de convivialité."
+        },
+        {
+          "letter": "C",
+          "text": "Parce que les professeurs exigent toujours au moins deux logiciels différents pour valider un devoir de maîtrise."
+        },
+        {
+          "letter": "D",
+          "text": "Parce que l'observation seule décrit la performance motrice sans révéler le modèle mental interne, tandis que le discours seul est sujet aux biais de rationalisation après coup ; leur croisement révèle les gouffres d'exécution et d'évaluation."
+        }
+      ],
+      "correctLetter": "D",
+      "explanation": "La triangulation méthodologique est au cœur de l'ergonomie cognitive (Passalacqua & Bédard) : observer les actions sans écouter l'utilisateur laisse le modèle mental dans l'ombre ; écouter l'utilisateur sans observer ses clics expose aux biais de désirabilité sociale ou d'oubli. Le croisement des deux permet d'identifier précisément les défaillances de conception.",
+      "citation": "Méthode en 4 phases (UQAM) & Cañas et al. (2011) & Don Norman",
+      "correctIndex": 3
     }
   ],
   "flashcards": [
