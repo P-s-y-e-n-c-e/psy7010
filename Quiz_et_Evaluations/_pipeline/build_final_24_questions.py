@@ -160,7 +160,7 @@ MASTER_QUESTIONS = [
             },
             {
                 "letter": "B",
-                "text": "Les interventions éducatives ou informatives sont exclues de toutes les définitions des nudges, car un nudge doit obligatoirement agir sur des mécanismes automatiques non conscients."
+                "text": "Selon la définition large de Sunstein, une campagne purement factuelle relève d'une politique d'information plutôt que d'un nudge, faute d'exploitation instrumentale de biais ou de limites de rationalité."
             },
             {
                 "letter": "C",
@@ -173,7 +173,7 @@ MASTER_QUESTIONS = [
         ],
         "correctLetter": "A",
         "correctIndex": 0,
-        "explanation": "Sunstein défend explicitement une définition au sens large (broad sense, §3.2, p. 195) incluant des nudges réflexifs ou éducatifs. De plus, la littérature sur les boosts (Hertwig & Grüne-Yanoff, §8, pp. 202-203) montre qu'aménager l'environnement pour outiller les compétences de l'agent ne constitue pas une contrainte.",
+        "explanation": "Sunstein défend explicitement une définition au sens large (broad sense, §3.2, p. 195) incluant des nudges réflexifs ou éducatifs (« educational campaigns may convey sheer factual information »). Le distracteur B attribue à tort à Sunstein le critère d'exclusion de Hansen (définition étroite). De plus, la littérature sur les boosts (Hertwig & Grüne-Yanoff, §8, pp. 202-203) montre qu'aménager l'environnement pour outiller les compétences de l'agent ne constitue pas une contrainte.",
         "citation": "Congiu & Moscati (2022), §3.2, p. 195 & §8, pp. 202–203"
     },
     {
@@ -377,14 +377,14 @@ MASTER_QUESTIONS = [
         "category": "congiu_2022",
         "doc_id": "doc_congiu2022",
         "anchor_id": "anchor_congiu_q12",
-        "tag": "Congiu & Moscati (2022) • Norme descriptive & Norme injonctive",
+        "tag": "BVA Nudge Unit & Congiu & Moscati (2022) • Normes descriptive & injonctive",
         "points": "1 point",
-        "context": "Dans une étude sur la consommation d'énergie citée par Congiu et Moscati, les ménages reçoivent une facture comparant leur consommation à celle de voisins comparables, accompagnée d'un symbole d'approbation (« smiley ») lorsque leur consommation est inférieure à la moyenne.",
-        "prompt": "Pourquoi l'ajout du symbole d'approbation est-il théoriquement crucial selon l'analyse des normes sociales ?",
+        "context": "Dans le dispositif Opower présenté dans la vidéo BVA Nudge Unit (et relié aux normes sociales chez Congiu et Moscati), les ménages reçoivent un relevé comparant leur consommation à celle de leurs voisins. Lorsque leur consommation est inférieure à la moyenne, le relevé ajoute des félicitations accompagnées de « smileys ».",
+        "prompt": "Selon l'analyse théorique des normes sociales appliquées aux nudges, quelle est la fonction essentielle de cet ajout visuel ?",
         "options": [
             {
                 "letter": "A",
-                "text": "Parce qu'une norme descriptive seule n'a jamais aucun effet mesurable sur le comportement humain."
+                "text": "Il sert uniquement de repère ergonomique pour faciliter la lecture des données chiffrées, sans véhiculer de jugement normatif sur la consommation du ménage."
             },
             {
                 "letter": "B",
@@ -401,8 +401,8 @@ MASTER_QUESTIONS = [
         ],
         "correctLetter": "D",
         "correctIndex": 3,
-        "explanation": "Congiu et Moscati (§4.2, p. 196) soulignent que la seule norme descriptive (savoir qu'on consomme moins que la moyenne) risque d'induire un « effet boomerang » : les ménages vertueux se relâchent. L'adjonction d'une norme injonctive (approbation sociale via le symbole positif) ancre le comportement sobre et empêche ce relâchement.",
-        "citation": "Congiu & Moscati (2022), Section 4.2 Social Norms, p. 196"
+        "explanation": "La vidéo BVA (02:12-02:18) et l'analyse théorique de Congiu et Moscati (§4.2, p. 196) articulent norme descriptive (comparaison sociale) et norme injonctive (approbation sociale via les félicitations/smileys). Sans cette norme injonctive, la seule norme descriptive risque d'induire un « effet boomerang » où les ménages économes relâchent leurs efforts pour s'aligner sur la moyenne.",
+        "citation": "BVA Nudge Unit (2015), 02:12–02:26 & Congiu & Moscati (2022), §4.2, p. 196"
     },
 
     # =========================================================================

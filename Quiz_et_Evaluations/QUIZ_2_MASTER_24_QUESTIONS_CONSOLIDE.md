@@ -97,12 +97,12 @@
 ### Question 5 — Nudge au sens large de Sunstein et paradigme des boosts
 **Énoncé :** Une municipalité installe des panneaux montrant un tracé simplifié et des repères visuels pour aider les piétons à s'orienter. Le dispositif n'utilise ni tromperie ni automatisme. Une conseillère soutient que ce n'est pas un nudge parce qu'il informe les usagers et sollicite leur réflexion. Quelle analyse correspond aux définitions et distinctions examinées par Congiu et Moscati ?
 - **A) La définition au sens large de Sunstein peut inclure des interventions réflexives ; par ailleurs, la littérature sur les boosts montre que modifier l'environnement pour soutenir la décision ne se confond pas avec une contrainte.**
-- B) Les interventions éducatives ou informatives sont exclues de toutes les définitions des nudges, car un nudge doit obligatoirement agir sur des mécanismes automatiques non conscients.
+- B) Selon la définition large de Sunstein, une campagne purement factuelle relève d'une politique d'information plutôt que d'un nudge, faute d'exploitation instrumentale de biais ou de limites de rationalité.
 - C) Dès qu'une intervention sollicite la réflexion, elle perd son caractère libertarien et devient une politique paternaliste coercitive.
 - D) Un dispositif visuel ne relève des nudges que s'il induit une erreur de jugement ou exploite une illusion d'optique pour orienter les déplacements.
 
 **Clé : A**  
-**Rétroaction intégrale :** Cass Sunstein défend explicitement une définition au sens large (*broad sense*, §3.2, p. 195) incluant des démarches éducatives et réflexives qui aident les individus à faire des choix éclairés selon leur propre jugement. De plus, la littérature sur les boosts (Hertwig & Grüne-Yanoff, §8, pp. 202–203) démontre que restructurer l'environnement pour enrichir les compétences décisionnelles ne constitue en aucun cas une entrave coercitive à la liberté.  
+**Rétroaction intégrale :** Cass Sunstein défend explicitement une définition au sens large (*broad sense*, §3.2, p. 195) incluant des démarches éducatives et réflexives qui aident les individus à faire des choix éclairés selon leur propre jugement (« educational campaigns may convey sheer factual information »). Le distracteur B attribue à tort à Sunstein le critère d'exclusion propre à Hansen (définition étroite). De plus, la littérature sur les boosts (Hertwig & Grüne-Yanoff, §8, pp. 202–203) démontre que restructurer l'environnement pour enrichir les compétences décisionnelles ne constitue en aucun cas une entrave coercitive à la liberté.  
 **Source :** Congiu & Moscati (2022), §3.2, p. 195 & §8, pp. 202–203.
 
 ---
@@ -187,16 +187,16 @@
 
 ---
 
-### Question 12 — Norme descriptive et norme injonctive : neutralisation de l'effet boomerang
-**Énoncé :** Dans une étude sur la consommation d'énergie citée par Congiu et Moscati, les ménages reçoivent une facture comparant leur consommation à celle de voisins comparables, accompagnée d'un symbole d'approbation (« smiley ») lorsque leur consommation est inférieure à la moyenne. Pourquoi l'ajout du symbole d'approbation est-il théoriquement crucial selon l'analyse des normes sociales ?
-- A) Parce qu'une norme descriptive seule n'a jamais aucun effet mesurable sur le comportement humain.
+### Question 12 — Normes sociale, BVA et effet boomerang
+**Énoncé :** Dans le dispositif Opower présenté dans la vidéo BVA Nudge Unit (et relié aux normes sociales chez Congiu et Moscati), les ménages reçoivent un relevé comparant leur consommation à celle de leurs voisins. Lorsque leur consommation est inférieure à la moyenne, le relevé ajoute des félicitations accompagnées de « smileys ». Selon l'analyse théorique des normes sociales appliquées aux nudges, quelle est la fonction essentielle de cet ajout visuel ?
+- A) Il sert uniquement de repère ergonomique pour faciliter la lecture des données chiffrées, sans véhiculer de jugement normatif sur la consommation du ménage.
 - B) Parce que le symbole transforme immédiatement le rapport d'énergie en un incitatif financier direct.
 - C) Parce que le symbole dispense l'administration de fournir les données chiffrées de comparaison.
 - **D) Parce qu'il introduit une norme injonctive qui neutralise l'effet boomerang chez les ménages déjà économes, évitant qu'ils augmentent leur consommation en découvrant qu'ils utilisent moins d'énergie que la moyenne.**
 
 **Clé : D**  
-**Rétroaction intégrale :** La norme descriptive seule (constater qu'on consomme moins que ses voisins) risque d'engendrer un « effet boomerang » : les ménages vertueux se relâchent et augmentent leur usage. L'adjonction d'une norme injonctive (un symbole d'approbation sociale explicite) ancre le comportement sobre et empêche cette dérive (Congiu & Moscati, §4.2, p. 196).  
-**Source :** Congiu & Moscati (2022), Section 4.2 Social Norms, p. 196.
+**Rétroaction intégrale :** La vidéo BVA (02:12–02:18) et l'analyse théorique de Congiu et Moscati (§4.2, p. 196) articulent norme descriptive (comparaison sociale chiffrée) et norme injonctive (approbation sociale via les félicitations et smileys). Sans cette norme injonctive, la seule norme descriptive risque d'induire un « effet boomerang » : les ménages vertueux se relâchent et augmentent leur usage pour s'aligner sur la moyenne.  
+**Sources :** BVA Nudge Unit (2015), 02:12–02:26 & Congiu & Moscati (2022), Section 4.2 Social Norms, p. 196.
 
 ---
 

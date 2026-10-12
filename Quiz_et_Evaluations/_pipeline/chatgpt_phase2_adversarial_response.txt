@@ -1,0 +1,51 @@
+ChatGPT a dit :
+
+Je valide la suppression des indices liés aux absolus, mais pas les deux remplacements sans réserve. Je ne confirme pas non plus une « saturation dialectique complète » à Δ ≤ 1 %.
+
+1. Q5, option B : acceptable comme distracteur si la définition visée est explicitement celle de Sunstein au sens large.
+
+La confusion proposée est pertinente : elle transpose au sens large une exigence caractéristique de la définition étroite de Hansen. Congiu et Moscati indiquent pourtant que des campagnes purement factuelles peuvent constituer des nudges au sens large : « educational campaigns may convey sheer factual information » (§3.2, p. imprimée 195). Texte authentique.
+
+Deux expressions méritent donc un ajustement :
+
+« l’architecture de choix exige » attribue à toute architecture de choix une condition propre à certaines définitions du nudge.
+« un mécanisme automatique ou un biais cognitif » restitue imparfaitement Hansen : son analyse comprend également les limites de rationalité, les routines et les habitudes (§3.1, p. 194).
+
+Je recommande ce distracteur intentionnellement faux, qui situe précisément la confusion :
+
+« Selon la définition large de Sunstein, une campagne purement factuelle relève d’une politique d’information plutôt que d’un nudge, faute d’exploitation instrumentale de biais ou de limites de rationalité. »
+
+Sa réfutation est directement étayée par la p. 195. Sans cadrage explicite dans l’item, un étudiant pourrait cependant défendre une lecture fondée sur Hansen.
+
+2. Q12, option A : je ne valide pas le remplacement en l’état.
+
+« Empiriquement insuffisant » remplace l’absolu manifeste par une généralisation empirique qui reste problématique. La revue rapporte des effets comportementaux de rapports comparant la consommation énergétique à celle des pairs, notamment une persistance pendant deux ans (§9.2, pp. imprimées 205–206). Cependant, ce passage n’isole pas l’effet d’une norme descriptive seule : il ne permet donc pas de réfuter rigoureusement cette option telle qu’elle est formulée. Texte authentique.
+
+Si l’énoncé concerne l’ajout d’un smiley au relevé énergétique, un distracteur plus directement réfutable serait :
+
+« Parce que le smiley facilite la compréhension de la comparaison chiffrée, plutôt qu’il n’exprime une approbation sociale de la faible consommation du ménage. »
+
+La transcription BVA décrit explicitement une félicitation : « If your energy use is lower, you are congratulated. », suivie des smileys (02:12.600–02:18.760). Cela étaye leur fonction d’approbation, sans démontrer à lui seul qu’ils éliminent causalement un effet boomerang. Transcription authentique.
+
+Un audit adversarial améliore la solidité argumentative ; il ne mesure pas une erreur résiduelle ≤ 1 %. Les éléments fournis ne définissent ni Δ ni sa procédure de mesure, et ne permettent pas d’établir empiriquement la discrimination des items.
+
+Enfin, ces formulations renvoient à une autre version : dans la banque rédigée ici, Q5 portait sur l’ancrage et Q12 sur les méthodes UX. Transmets les deux items complets — énoncé, quatre options et clé — pour vérifier que chaque remplacement conserve une seule réponse défendable.
+
+ChatGPT peut faire des erreurs. Vérifiez les informations importantes.
+Dernière réponse
+
+
+
+
+GPT-6.1 Sol
+Max
+Aucun
+Réflexion minimale
+Léger
+Moyen
+Élevé
+Très élevé
+Max
+Ultra
+Persistant
+Réponse terminée
