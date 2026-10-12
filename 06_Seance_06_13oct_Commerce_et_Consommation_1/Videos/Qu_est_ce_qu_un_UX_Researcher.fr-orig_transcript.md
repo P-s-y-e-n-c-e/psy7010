@@ -1,0 +1,82 @@
+# Transcription — Qu_est_ce_qu_un_UX_Researcher
+
+**Source :** https://www.youtube.com/watch?v=tE7xjh_cd2w
+
+---
+
+Kind: captions
+Language: fr
+[Musique]
+quand on parle de user researcher ou de
+you extrait searcher on peut le traduire
+par chercheurs en expérience utilisateur
+si l'on veut concevoir un produit de
+qualité il faut impérativement qu'il
+s'adapte aux différents profils
+utilisateurs le user researcher met en
+oeuvre des méthodes qui sont basés sur
+les sciences humaines et la psychologie
+afin d'aider à concevoir un produit de
+la meilleure qualité possible il
+intervient à deux moments clés avant la
+conception pour comprendre les
+utilisateurs leurs aspirations et leurs
+problèmes et pendant la conception pour
+tester avec eux des prototypes de design
+le user et chercheurs est celui qui va
+sur le terrain il va rencontrer les
+utilisateurs les interroger les observer
+en situation d'utilisation
+il va essayer de vraiment comprendre la
+manière dont il pense qu'elles sont
+leurs habitudes quels sont leurs
+objectifs d'utilisation quelles sont
+leurs freins leurs problèmes leurs
+capacités de perception que comprennent
+t-il qu'attendent-ils c'est l'ensemble
+de ces informations que le user et
+searcher va regrouper en créant des
+personnages qui sont des archétypes des
+portraits des différents utilisateurs
+les méthodes du user researcher sont de
+deux types le qualitatif pour comprendre
+le pourquoi et le quantitatif pour
+connaître le combien les méthodes
+qualitatives permettent de comprendre
+vraiment finement les utilisateurs il va
+mettre en oeuvre par exemple la méthode
+de l'entretien individuel ou du test
+utilisateur les méthodes quantitatives
+elles permettent d'avoir une vision plus
+globale de l'expérience utilisateur
+plutôt statistiques pour ce faire le
+user researcher va mettre en place des
+méthodes comme des questionnaires qui va
+envoyer à des milliers des centaines de
+personnes ou alors l'analyse de données
+de navigation par exemple sur un site
+internet le user researcher a donc pour
+responsabilité que l'ensemble de
+l'équipe produit reste vraiment focalisé
+sur la satisfaction des utilisateurs
+les qualités essentielles du loser et
+searcher son l'empathie auprès des
+utilisateurs en esprit d'analysé pour
+s'assurer qu'ils extraient l'essentiel
+des données qu'il a reçu 10 une
+ouverture et neutralité tel un
+scientifique pour s'assurer qu'il ne
+biaise pas les résultats de ces études
+et une capacité à communiquer auprès de
+l'équipe produit la complexité de
+l'utilisateur pour que cela serve dans
+la conception du produit
+en bref le user researcher et le porte
+parole des utilisateurs il est capable
+de comprendre leurs problématiques et de
+la retranscrire auprès de l'équipe
+produits afin d'augmenter la qualité de
+l'expérience si vous voulez en apprendre
+plus sur le sujet retrouvez notre vidéo
+sur la chaîne du laptop
+je
