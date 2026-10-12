@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Banque officielle de questions et flashcards pour le Quiz 2 (Séance 06 : Commerce et consommation 1)
-Enseignants : Pr Guillaume Beaulac & Pr Mario Passalacqua
+Enseignants : Guillaume Beaulac & Mario Passalacqua
 Mardi 13 octobre 2026 (09h30 - 09h45, 5 % de la note, examen à livre ouvert, 15 min / 20 min BIRÉ)
 
 Cette banque contient :
@@ -833,7 +833,7 @@ def export_data():
         "metadata": {
             "title": "Banque officielle de révision - Quiz 2 (Séance 06 : Commerce et consommation 1)",
             "course": "PSY7010 - Sciences psychologiques appliquées (UQAM)",
-            "professors": ["Pr Guillaume Beaulac", "Pr Mario Passalacqua"],
+            "professors": ["Guillaume Beaulac", "Mario Passalacqua"],
             "date": "Mardi 13 octobre 2026",
             "time": "09h30 - 09h45",
             "duration": "15 minutes (20 minutes pour les étudiant·e·s du BIRÉ)",

@@ -12,7 +12,7 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 
 ### Commande native d'instanciation :
 ```powershell
-& "C:\Users\Psyence\.gemini\antigravity\bin\agentapi.bat" new-conversation --title="<Titre de la session>" "<Prompt initial d'accueil et de directives>"
+& "$env:USERPROFILE\.gemini\antigravity\bin\agentapi.bat" new-conversation --title="<Titre de la session>" "<Prompt initial d'accueil et de directives>"
 ```
 
 ### Commandes disponibles via `agentapi.bat` :
@@ -22,6 +22,17 @@ Ce fichier définit les directives absolues et les compétences automatisées po
    `agentapi get-conversation-metadata <conversation_id>`
 3. **Communiquer entre sessions :**
    `agentapi send-message [--title=<titre>] <recipient_id> <contenu>`
+
+### Procédure d'ancrage dans la barre latérale Antigravity 2.0 (`source = 1`) :
+> [!NOTE]
+> Par défaut, toute session instanciée via `agentapi new-conversation` reçoit l'attribut `source = 19` (contexte IDE/sous-processus) dans sa base de données SQLite locale. L'interface Antigravity 2.0 (bureau) ne rend visibles dans la barre latérale sous `Projects` que les sessions marquées `source = 1` (`CORTEX_TRAJECTORY_SOURCE_CASCADE_CLIENT`).
+> 
+> **Activation immédiate après création :**
+> 1. **Mettre à jour la source dans la base SQLite locale :**
+>    ```powershell
+>    python -c "import sqlite3, os; db=os.path.expandvars(r'%USERPROFILE%\.gemini\antigravity\conversations\<conversation_id>.db'); conn=sqlite3.connect(db); conn.execute('UPDATE trajectory_meta SET source = 1 WHERE cascade_id = ?;', ('<conversation_id>',)); conn.commit(); conn.close()"
+>    ```
+> 2. **Actualiser l'interface :** Recharger la fenêtre Antigravity (`Ctrl + R` / Menu `View -> Reload`) ou redémarrer l'application. La session apparaît alors immédiatement dans l'arborescence du projet.
 
 ---
 
@@ -132,7 +143,7 @@ Ce fichier définit les directives absolues et les compétences automatisées po
      * Coordination générale entre toutes les sessions et liaison inter-cours avec `QUARTIER GÉNÉRAL - PSY9613`.
    - **Périmètre préservé :** Aucun code front-end, aucune conception brute de questions.
 
-4. **GITHUB - Contenu du site web** (`27764a31-b75d-4f15-9988-cb940026e6e2`) :
+4. **GITHUB - Contenu du site web** (`27764a31-5ff2-4a20-acc0-12446d624b09`) :
    - **Mission exclusive :** Ingénierie pédagogique pure — questions de quiz, analyses de cas, rétroactions cliniques.
    - **Responsabilités :**
      * Ratissage systématique des séances à partir du verbatim validé et des lectures obligatoires.
@@ -177,7 +188,7 @@ Ce fichier définit les directives absolues et les compétences automatisées po
 2. **Garde-Fou Bloquant :**
    - Si la ligne indique `Model: 3.1 Pro` ou toute mention sans `Deep Think`, la réponse est **formellement rejetée** et ne doit sous aucun prétexte être enregistrée, poussée sur GitHub ni soumise à l'audit.
 3. **Responsabilité Conjointe (Contenu & Quartier Général) :**
-   - La session `GITHUB - Contenu du site web` (`27764a31-b75d-4f15-9988-cb940026e6e2`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
+   - La session `GITHUB - Contenu du site web` (`27764a31-5ff2-4a20-acc0-12446d624b09`) a la charge technique de vérifier cette métadonnée lors de l'extraction.
    - La session `QUARTIER GÉNÉRAL - PSY7010` (`d6fea03c-228d-438c-bb4e-541e2d0eaeac`) a la charge de supervision de rejeter tout livrable ne fournissant pas la preuve formelle de cette télémétrie avant de clore un mandat.
 
 ---

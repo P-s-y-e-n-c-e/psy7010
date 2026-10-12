@@ -1,7 +1,7 @@
 # 🏆 ÉTALON D'OR OFFICIEL & DISPOSITIF D'ÉVALUATION — QUIZ 2
 ## Séance 06 : Commerce et consommation 1
 **Cours :** PSY7010 - Sciences psychologiques appliquées (UQAM)  
-**Professeurs :** Pr Guillaume Beaulac, Pr Mario Passalacqua  
+**Professeurs :** Guillaume Beaulac, Mario Passalacqua  
 **Date officielle :** Mardi 13 octobre 2026 (09h30 - 09h45 (15 min / 20 min BIRÉ))  
 **Pondération :** 5% de la note finale | **Format :** 4 questions à choix multiples / appariement (Examen individuel à livre ouvert)  
 **Banque didactique :** 24 questions ZPD hautement calibrées & 12 flashcards cliniques  

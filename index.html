@@ -3933,6 +3933,31 @@
         width: 250px;
       }
     }
+
+    /* SURBRILLANCE RECHERCHE DANS LE TEXTE HAUTE VISIBILITÉ (SÉANCE 6 & TOUS MODULES) */
+    mark.search-highlight {
+      background-color: #fef08a !important; /* Jaune éclatant */
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      padding: 1px 3px !important;
+      border-radius: 3px !important;
+      border-bottom: 2px solid #eab308 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+      display: inline !important;
+    }
+    mark.search-highlight-active {
+      background-color: #f97316 !important; /* Orange radiant pour le résultat actif */
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      border-bottom: none !important;
+      outline: 2px solid #c2410c !important;
+      box-shadow: 0 0 0 3px #fde047, 0 0 16px rgba(249, 115, 22, 0.95) !important;
+      animation: searchPulseActive 1.1s infinite ease-in-out !important;
+    }
+    @keyframes searchPulseActive {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 3px #fde047, 0 0 14px rgba(249, 115, 22, 0.85); }
+      50% { transform: scale(1.06); box-shadow: 0 0 0 5px #fde047, 0 0 24px rgba(249, 115, 22, 1); }
+    }
 </style>
 </head>
 <body>
@@ -4050,6 +4075,204 @@
       <div class="quiz-content-wrap">
 
         <!-- SECTION ACTIVITÉ BLOC 2 -->
+                <!-- SECTION ACTIVITÉ SÉANCE 6 : COMMERCE & CONSOMMATION 1 (QUIZ 2 OFFICIEL) -->
+        <div id="seance6ActivitySection" style="display: block;">
+
+          <!-- MASCOTTE TOADETTE SÉANCE 6 -->
+          <div class="mascot-bubble" id="s6MascotBox" style="margin-bottom: 12px; border-left-color: #e11d48;">
+            <div class="mascot-avatar-wrap">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAACgCAYAAADD/HitAAAKMWlDQ1BJQ0MgUHJvZmlsZQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYIMijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXCTFgJgAyhWBTh58WIjYtnYAcBDPAAA2wA4HCzs0IW+EYCmQJ82IxsmRP4F726DiD5+yrTP4zBAP+flLlZIjEAUJiM5/L42VwZF8k4PVecJbdPyZi2NE3OMErOIlmCMlaTc/IsW3z2mWUPOfMyhDwZy3PO4mXw5Nwn4405Er6MkWAZF+cI+LkyviZjg3RJhkDGb+SxGXxONgAoktwu5nNTZGwtY5IoMoIt43kA4EjJX/DSL1jMzxPLD8XOzFouEiSniBkmXFOGjZMTi+HPz03ni8XMMA43jSPiMdiZGVkc4XIAZs/8WRR5bRmyIjvYODk4MG0tbb4o1H9d/JuS93aWXoR/7hlEH/jD9ld+mQ0AsKZltdn6h21pFQBd6wFQu/2HzWAvAIqyvnUOfXEeunxeUsTiLGcrq9zcXEsBn2spL+jv+p8Of0NffM9Svt3v5WF485M4knQxQ143bmZ6pkTEyM7icPkM5p+H+B8H/nUeFhH8JL6IL5RFRMumTCBMlrVbyBOIBZlChkD4n5r4D8P+pNm5lona+BHQllgCpSEaQH4eACgqESAJe2Qr0O99C8ZHA/nNi9GZmJ37z4L+fVe4TP7IFiR/jmNHRDK4ElHO7Jr8WgI0IABFQAPqQBvoAxPABLbAEbgAD+ADAkEoiARxYDHgghSQAUQgFxSAtaAYlIKtYCeoBnWgETSDNnAYdIFj4DQ4By6By2AE3AFSMA6egCnwCsxAEISFyBAVUod0IEPIHLKFWJAb5AMFQxFQHJQIJUNCSAIVQOugUqgcqobqoWboW+godBq6AA1Dt6BRaBL6FXoHIzAJpsFasBFsBbNgTzgIjoQXwcnwMjgfLoK3wJVwA3wQ7oRPw5fgEVgKP4GnEYAQETqiizAR" alt="Toadette" class="mascot-avatar" id="s6MascotAvatar">
+            </div>
+            <div class="mascot-text" id="s6MascotText">
+              <strong>Séance 6 : Commerce &amp; Consommation 1</strong><br>
+              Bienvenue à la station officielle pour le <strong>Quiz 2</strong> (5 % de la note, mardi 13 octobre 2026, 09h30–09h45). Les 4 lectures obligatoires sont indexées dans le volet de droite avec surbrillance dynamique des passages clés et recherche instantanée. Entraînez-vous ci-dessous !
+            </div>
+          </div>
+
+          <!-- BANDEAU DE CADRAGE SOMMATIF DU QUIZ 2 -->
+          <div class="b2-quiz-countdown-card" style="display: block; border-left: 4px solid #e11d48; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+              <span class="b2-countdown-badge" style="color: #e11d48; background: rgba(225, 29, 72, 0.12); border: 1px solid rgba(225, 29, 72, 0.3);">🛒 Examen sommatif officiel • 5 % de la note</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="hub-pill-tag tag-primary" style="font-size: 0.72rem; background: rgba(225, 29, 72, 0.12); color: #e11d48; border-color: rgba(225, 29, 72, 0.3);">Économie comportementale &amp; UX</span>
+                <span id="s6TimerBadge" style="font-size: 0.78rem; font-weight: 700; background: var(--bg-card-alt); padding: 2px 8px; border-radius: 12px; border: 1px solid var(--border-color); color: var(--text-main);">⏱️ 15:00</span>
+              </div>
+            </div>
+            <div class="b2-countdown-title" style="font-size: 1.02rem; margin-bottom: 6px;">Quiz 2 — Séance 06 (Guillaume Beaulac &amp; Mario Passalacqua)</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 10px 0;">
+              L'épreuve en classe dure <strong>15 minutes</strong> (20 min pour les étudiants bénéficiant de mesures d'aménagements BIRÉ) et comporte <strong>4 questions à choix multiple</strong> tirées au sort, examen individuel à livre ouvert.
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--border-color); padding-top: 8px;">
+              <button type="button" class="hub-btn-primary" id="btnS6ModeSim" onclick="setS6Mode('simulation')" style="font-size: 0.82rem; padding: 6px 12px; background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);">
+                <span>🎯</span> <span>Mode Simulation (15 min / 4 questions)</span>
+              </button>
+              <button type="button" class="hub-btn-primary" id="btnS6ModeStudy" onclick="setS6Mode('study')" style="font-size: 0.82rem; padding: 6px 12px; background: var(--bg-card-alt); color: var(--text-main); border: 1px solid var(--border-color);">
+                <span>📚</span> <span>Mode Étude libre (24 questions ZPD)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- MODULE D'ENTRAÎNEMENT SÉANCE 6 -->
+          <div class="b2-training-section" id="seance6TrainingModule">
+            <div class="b2-tabs-bar">
+              <div class="b2-tabs-group">
+                <button type="button" class="b2-tab-btn active" id="s6TabBtnQuiz" onclick="switchS6SubTab('quiz')">
+                  <span>📝</span> <span>Banque de questions Quiz 2</span>
+                </button>
+                <button type="button" class="b2-tab-btn" id="s6TabBtnCards" onclick="switchS6SubTab('cards')">
+                  <span>🗂️</span> <span>Flashcards • Compréhension clinique (12 fiches)</span>
+                </button>
+              </div>
+              <span class="b2-badge-cert" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.4); background: rgba(225, 29, 72, 0.1);">✨ Programme Officiel • Beaulac &amp; Passalacqua</span>
+            </div>
+
+            <!-- SOUS-VUE 1 : QUIZ INTERACTIF DE LA SÉANCE 6 -->
+            <div id="s6QuizContainer" class="b2-subview-panel">
+              <div class="b2-quiz-meta-bar">
+                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                  <span class="b2-q-counter" id="s6QCounter" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.1);">Question 1 / 24</span>
+                  <span class="b2-q-category" id="s6QCategory">Chen (2024) • Rationalité limitée</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                  <div class="b2-score-box" id="s6ScoreBox">
+                    Score : <span id="s6ScoreVal">0</span> / <span id="s6ScoreTotal">24</span> (<span id="s6ScorePct">0%</span>)
+                  </div>
+                  <button type="button" class="feedback-trigger-btn" onclick="openFeedbackModal('s6_question')" title="Signaler une anomalie ou proposer une amélioration sur cette question">
+                    <span>💬</span> <span>Feedback</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- BARRE DE PROGRESSION DE LA QUESTION -->
+              <div class="q-progress-track" aria-hidden="true" title="Progression du questionnaire">
+                <div class="q-progress-fill" id="s6ProgressBarFill" style="width: 4.16%; background: #e11d48;"></div>
+              </div>
+
+              <!-- CONTENU DE LA QUESTION -->
+              <div style="display:flex; flex-direction:column; gap:12px; margin-top:0;">
+                <div class="b2-q-context-box" id="s6QContext">
+                  Chargement du contexte...
+                </div>
+                <div class="b2-q-prompt" id="s6QPrompt">
+                  Chargement de la question...
+                </div>
+                <div class="b2-options-list" id="s6OptionsList">
+                  <!-- Boutons d'options injectés par JS -->
+                </div>
+                <div id="s6FeedbackBox" style="display: none;"></div>
+              </div>
+
+              <!-- PILULES DE NAVIGATION DES QUESTIONS -->
+              <div class="b2-q-pills-bar" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Accès rapide aux questions :</div>
+                <div class="b2-q-pills-wrap" id="s6QPillsWrap">
+                  <!-- Pilules 1 à 24 générées par JS -->
+                </div>
+              </div>
+
+              <!-- CONTRÔLES INFÉRIEURS -->
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 6px;">
+                  <button type="button" class="b2-ctrl-btn" onclick="prevS6Question()"><span>⬅️</span> <span>Précédente</span></button>
+                  <button type="button" class="b2-ctrl-btn" onclick="nextS6Question()"><span>Suivante</span> <span>➡️</span></button>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                  <button type="button" class="b2-ctrl-btn" onclick="resetS6Quiz()"><span>🔄</span> <span>Réinitialiser</span></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SOUS-VUE 2 : FLASHCARDS DE LA SÉANCE 6 -->
+            <div id="s6CardsContainer" class="b2-subview-panel" style="display: none;">
+              <div class="b2-quiz-meta-bar">
+                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                  <span class="b2-q-counter" id="s6CardCounter" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.1);">Fiche 1 / 12</span>
+                  <span class="b2-q-category" id="s6CardCategory">Compréhension clinique &amp; appliquée</span>
+                </div>
+                <span class="hub-pill-tag tag-primary" style="font-size: 0.72rem;">Cliquez sur la fiche pour révéler l'analyse</span>
+              </div>
+
+              <div class="b2-card-scene" onclick="flipS6Card()" style="cursor: pointer; perspective: 1000px; min-height: 240px; margin: 12px 0;">
+                <div class="b2-card-inner" id="s6CardInner" style="transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; position: relative; width: 100%; min-height: 240px;">
+                  <!-- RECTO -->
+                  <div class="b2-card-face b2-card-front" id="s6CardFront" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: var(--bg-card); border: 2px solid var(--border-color); border-radius: 12px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                      <div style="font-size: 0.8rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 8px;" id="s6CardFrontTheme">Thème</div>
+                      <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 10px 0; color: var(--text-main);" id="s6CardFrontTitle">Titre du cas clinique</h3>
+                      <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-muted); margin: 0;" id="s6CardFrontBody">Chargement du cas...</p>
+                    </div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 12px;">
+                      🔄 Cliquez pour retourner et voir l'analyse théorique
+                    </div>
+                  </div>
+                  <!-- VERSO -->
+                  <div class="b2-card-face b2-card-back" id="s6CardBack" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; transform: rotateY(180deg); background: var(--bg-card); border: 2px solid #e11d48; border-radius: 12px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                      <div style="font-size: 0.8rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-bottom: 8px;" id="s6CardBackConcept">Concept clé</div>
+                      <h4 style="font-size: 0.98rem; font-weight: 700; margin: 0 0 8px 0; color: var(--text-main);" id="s6CardBackPrinciple">Principe théorique &amp; Ergonomique</h4>
+                      <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0 0 8px 0;" id="s6CardBackAnalysis">Analyse...</p>
+                      <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;" id="s6CardBackCitation">Source</div>
+                    </div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 10px;">
+                      🔄 Cliquez pour retourner au recto
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CONTRÔLES FLASHCARDS -->
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 6px;">
+                  <button type="button" class="b2-ctrl-btn" onclick="prevS6Card()"><span>⬅️</span> <span>Fiche précédente</span></button>
+                  <button type="button" class="b2-ctrl-btn" onclick="flipS6Card()"><span>🔄</span> <span>Retourner</span></button>
+                  <button type="button" class="b2-ctrl-btn" onclick="nextS6Card()"><span>Fiche suivante</span> <span>➡️</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARTE AUDIO MASTER : PODCAST SÉANCE 6 (~20 MIN) -->
+          <div class="seminar-audio-card" style="border-left-color: #e11d48; background: var(--bg-card); margin: 16px 0;">
+            <div class="seminar-audio-header">
+              <div class="seminar-audio-title-group">
+                <span class="seminar-audio-icon">🎙️</span>
+                <div>
+                  <h4 class="seminar-audio-title">Séance 6 : Capsule audio de révision — Commerce &amp; Consommation 1 (~20 min)</h4>
+                  <div class="seminar-audio-meta">Synthèse des lectures obligatoires : Chen (2024), Congiu &amp; Moscati (2022), BVA Nudge et recherche UX (Konrad).</div>
+                </div>
+              </div>
+              <span class="hub-pill-tag tag-info" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.15);">🎧 Audio Officiel • fr-CA</span>
+            </div>
+            <audio id="playerSeance6" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 12px 0 8px 0;">
+              <source src="06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
+              <source src="../../06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+
+            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL -->
+            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-top: 10px;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 6px;">Chapitres de révision (cliquez pour écouter) :</div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px; font-size: 0.82rem;">
+                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(0)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
+                  ⏱️ <strong>00:00</strong> — Cadrage &amp; Logistique du Quiz
+                </button>
+                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(270)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
+                  ⏱️ <strong>04:30</strong> — Chen (2024) : Fondements &amp; Biais
+                </button>
+                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(600)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
+                  ⏱️ <strong>10:00</strong> — Congiu &amp; BVA : Nudges vs Boosts
+                </button>
+                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(960)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
+                  ⏱️ <strong>16:00</strong> — Recherche UX : Méthodes &amp; Pièges
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- FIN SECTION ACTIVITÉ SÉANCE 6 -->
+
+
         <div id="bloc2ActivitySection" style="display: block;">
 
         <!-- MASCOTTE TOADETTE BLOC 2 -->
@@ -4060,7 +4283,7 @@
           </div>
           <div class="mascot-text" id="b2MascotText">
             <strong>Bloc 2 : Milieux technologiques</strong><br>
-            Nous abordons l'<em>ergonomie cognitive, les facteurs humains et l'UX</em> avec le <strong>Pr Mario Passalacqua</strong>. Consultez les textes sources dans le volet lecteur de droite et entraînez-vous sur les cas cliniques et les fiches de compréhension clinique et appliquée.
+            Nous abordons l'<em>ergonomie cognitive, les facteurs humains et l'UX</em> avec <strong>Mario Passalacqua</strong>. Consultez les textes sources dans le volet lecteur de droite et entraînez-vous sur les cas cliniques et les fiches de compréhension clinique et appliquée.
           </div>
         </div>
 
@@ -4071,12 +4294,12 @@
             <span class="b2-countdown-badge" style="color: #0284c7; background: rgba(14, 165, 233, 0.12); border: 1px solid rgba(14, 165, 233, 0.3);">🎯 Auto-évaluation formative • Séance 03</span>
             <span class="hub-pill-tag tag-primary" style="font-size: 0.72rem;">Facteurs humains &amp; Ergonomie cognitive</span>
           </div>
-          <div class="b2-countdown-title" style="font-size: 1.02rem; margin-bottom: 6px;">Consolidation des acquis du cours du Pr Mario Passalacqua</div>
+          <div class="b2-countdown-title" style="font-size: 1.02rem; margin-bottom: 6px;">Consolidation des acquis du cours de Mario Passalacqua</div>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 8px 0;">
-            Les questions et fiches ci-dessous constituent une révision formative du cours précédent (enseignements du Pr Mario Passalacqua sur l'aéronautique, les technologies médicales et les 4 phases ergonomiques). Elles visent à consolider vos acquis et à préparer les études de cas.
+            Les questions et fiches ci-dessous constituent une révision formative du cours précédent (enseignements de Mario Passalacqua sur l'aéronautique, les technologies médicales et les 4 phases ergonomiques). Elles visent à consolider vos acquis et à préparer les études de cas.
           </p>
           <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px; display: flex; align-items: center; gap: 6px;">
-            <span>🗓️</span> <span><em>Rappel :</em> Le prochain quiz sommatif officiel (Quiz 2 à 5 %) aura lieu le <strong>13 octobre</strong> et portera sur l'Économie comportementale &amp; Nudge (Prs Beaulac &amp; Passalacqua).</span>
+            <span>🗓️</span> <span><em>Rappel :</em> Le prochain quiz sommatif officiel (Quiz 2 à 5 %) aura lieu le <strong>13 octobre</strong> et portera sur l'Économie comportementale &amp; Nudge (Guillaume Beaulac &amp; Mario Passalacqua).</span>
           </div>
         </div>
 
@@ -4634,9 +4857,9 @@
                 <span class="podcast-ep-title">💼 Séance 5 • La Profession</span>
                 <span class="podcast-ep-duration">17 min</span>
               </button>
-              <button type="button" class="podcast-ep-btn" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="false" title="Épisode 3 : Consolidation intégrale Séance 3 (Pr Mario Passalacqua)">
+              <button type="button" class="podcast-ep-btn" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="false" title="Épisode 3 : Consolidation intégrale Séance 3 (Mario Passalacqua)">
                 <span class="podcast-ep-num">Ép. 3</span>
-                <span class="podcast-ep-title">🎓 Bilan Séance 3 • Pr Passalacqua</span>
+                <span class="podcast-ep-title">🎓 Bilan Séance 3 • Mario Passalacqua</span>
                 <span class="podcast-ep-duration">17 min</span>
               </button>
             </div>
@@ -4837,7 +5060,7 @@
 
           <div class="seminar-breakdown" style="margin-top: 10px;">
             <div class="seminar-breakdown-item" style="border-left-color: #0284c7;">
-              <strong>👨‍🏫 Pr Mario Passalacqua (PhD) - Responsable académique du Bloc 2</strong>
+              <strong>👨‍🏫 Mario Passalacqua (PhD) - Responsable académique du Bloc 2</strong>
               <div style="font-size: 0.88rem; color: var(--text-muted); margin: 4px 0;">Champs : Ergonomie cognitive des interfaces de supervision, fiabilité humaine, analyse de l'activité réelle et résilience.</div>
               <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">
                 <em>Sensibilité clé :</em> Rejette catégoriquement « l'erreur humaine » comme cause première (<em>« L'erreur décrit le résultat, jamais la cause »</em>). Il exige la <strong>triangulation obligatoire des données</strong> (physiologiques, subjectives, comportementales) et le respect de la <strong>démarche en 4 étapes</strong> (Comprendre, Concevoir, Évaluer, Déployer).
@@ -4845,7 +5068,7 @@
             </div>
 
             <div class="seminar-breakdown-item" style="border-left-color: #d97706;">
-              <strong>✈️ Pr Mario Fiset (PhD) - Conférencier invité d'honneur</strong>
+              <strong>✈️ Mario Fiset (PhD) - Conférencier invité d'honneur</strong>
               <div style="font-size: 0.88rem; color: var(--text-muted); margin: 4px 0;">Champs : Facteurs humains aéronautiques, sécurité des vols, navigabilité et conception des postes de pilotage.</div>
               <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">
                 <em>Sensibilité clé :</em> Confronte la théorie ergonomique aux dures réalités des contraintes opérationnelles avioniques (masse, redondances électriques, pannes en chaîne, certification FAA/AESA). Il apprécie particulièrement les questions analysant la <strong>charge allostatique en cockpit</strong> et les <strong>transitions d'autorité automatisme-équipage.</strong>
@@ -4853,7 +5076,7 @@
             </div>
 
             <div class="seminar-breakdown-item" style="border-left-color: #8b5cf6;">
-              <strong>🧠 Pr Marc-André Bédard (PhD) - Coordonnateur du programme PSY7010</strong>
+              <strong>🧠 Marc-André Bédard (PhD) - Coordonnateur du programme PSY7010</strong>
               <div style="font-size: 0.88rem; color: var(--text-muted); margin: 4px 0;">Champs : Neuropsychologie clinique, neurosciences cognitives, attention et modélisation du contrôle exécutif.</div>
               <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">
                 <em>Sensibilité clé :</em> Veille à la rigueur méthodologique et met en garde contre les extrapolations hâtives de laboratoire (<em>« No one-size-fits-all »</em>). Il rappelle qu'aucune solution ergonomique n'est universelle et exige d'analyser <strong>l'écologie propre du milieu d'implantation.</strong>
@@ -5060,7 +5283,7 @@
               <div class="seminar-audio-title-group">
                 <span class="seminar-audio-icon">🎙️</span>
                 <div>
-                  <h4 class="seminar-audio-title">Capsule 3 • Démarche en 4 Étapes &amp; Diapositive 92 — Pr Mario Passalacqua (3 min 50)</h4>
+                  <h4 class="seminar-audio-title">Capsule 3 • Démarche en 4 Étapes &amp; Diapositive 92 — Mario Passalacqua (3 min 50)</h4>
                   <div class="seminar-audio-meta">Comprendre, Concevoir, Évaluer, Déployer : la démarche d'ingénierie cognitive et la grille de raisonnement guidé.</div>
                 </div>
               </div>
@@ -5153,69 +5376,6 @@
     </div>
 
     <!-- VUE SÉANCE 5 : LA PROFESSION & MILIEUX DE PRATIQUE (06 OCT) -->
-    <div id="viewSeance6" class="hub-view-container" style="display: block;">
-      <div class="hub-view-content">
-        <div class="hub-hero-card">
-          <div class="hub-hero-header">
-            <div>
-              <span class="hub-hero-badge" style="background: rgba(225, 29, 72, 0.15); color: #e11d48; border-color: rgba(225, 29, 72, 0.4);">🛒 Séance 6 • Mardi 13 Octobre 2026 • Commerce et Consommation 1</span>
-              <h2 class="hub-hero-title">Station d'Étude &amp; Évaluation — Quiz 2 (5 % de la note)</h2>
-              <div class="hub-hero-subtitle">Économie comportementale, théorie des perspectives, architecture du choix, nudges vs boosts et ergonomie UX</div>
-            </div>
-            <button type="button" class="hub-btn-primary" onclick="setMode('study')" style="background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);">
-              <span>🎯</span> <span>Lancer l'Entraînement Quiz 2</span>
-            </button>
-          </div>
-          <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin: 0 0 12px 0;">
-            <strong>Cadrage de l'évaluation :</strong> Quiz 2 en classe (09h30–09h45, 15 min / 20 min BIRÉ, 4 questions tirées aléatoirement parmi la banque officielle, examen à livre ouvert). Les 4 lectures obligatoires sont intégralement indexées à droite avec surbrillance dynamique des passages clés lors de chaque question.
-          </p>
-
-          <!-- CARTE AUDIO MASTER : PODCAST SÉANCE 6 (~20 MIN) -->
-          <div class="seminar-audio-card" style="border-left-color: #e11d48; background: var(--bg-card); margin: 16px 0;">
-            <div class="seminar-audio-header">
-              <div class="seminar-audio-title-group">
-                <span class="seminar-audio-icon">🎙️</span>
-                <div>
-                  <h4 class="seminar-audio-title">Séance 6 : Capsule audio de préparation matinale — Commerce &amp; Consommation 1 (20 min)</h4>
-                  <div class="seminar-audio-meta">Synthèse des lectures obligatoires : Chen (2024), Congiu &amp; Moscati (2022), BVA Nudge et recherche UX (Konrad).</div>
-                </div>
-              </div>
-              <span class="hub-pill-tag tag-info" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.15);">🎧 Audio Officiel • fr-CA</span>
-            </div>
-            <audio id="playerSeance6" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 12px 0 8px 0;">
-              <source src="06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
-              <source src="../../06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
-              Votre navigateur ne prend pas en charge la lecture audio.
-            </audio>
-
-            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL -->
-            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 14px; margin-top: 8px;">
-              <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-main); margin-bottom: 6px;">⏱️ Sommaire des 4 parties (cliquez pour écouter un chapitre) :</div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; font-size: 0.82rem;">
-                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance6', 0)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
-                  <span>▶️</span> <span><strong>Partie 1 :</strong> Rationalité limitée &amp; Perspectives (Chen, 2024) (05:00)</span>
-                </button>
-                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance6', 300)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
-                  <span>▶️</span> <span><strong>Partie 2 :</strong> Nudges, Paternalisme &amp; SMarT (Congiu, 2022) (05:15)</span>
-                </button>
-                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance6', 615)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
-                  <span>▶️</span> <span><strong>Partie 3 :</strong> Normes sociales O-Power &amp; BVA Nudge (04:45)</span>
-                </button>
-                <button type="button" class="hub-btn-secondary" onclick="seekAudioTrack('playerSeance6', 900)" style="justify-content: flex-start; padding: 6px 10px; font-size: 0.8rem; text-align: left;">
-                  <span>▶️</span> <span><strong>Partie 4 :</strong> Recherche UX : Découverte vs Évaluation (Konrad) (05:00)</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <span class="seminar-tag-badge" style="background: rgba(225, 29, 72, 0.15); color: #e11d48; border-color: rgba(225, 29, 72, 0.3);">🛒 Économie Comportementale &amp; UX</span>
-            <span style="font-size: 0.82rem; color: var(--text-muted);">24 questions ZPD maîtresses • 12 flashcards • 4 lectures obligatoires intégrales à droite</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div id="viewSeance5" class="hub-view-container" style="display: none;">
       <div class="hub-view-content">
         <div class="hub-hero-card">
@@ -5282,7 +5442,7 @@
         <div class="seminar-official-box">
           <div class="seminar-official-header">
             <div>
-              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">🎙️ Guide d'Échange &amp; Questions Préparées par les Professeurs</h3>
+              <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">🎙️ Guide d'Échange &amp; Questions Préparées pour la Classe</h3>
               <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">5 axes thématiques pour animer la discussion avec Emmanuelle Poilier et Karine Ung</p>
             </div>
           </div>
@@ -5388,7 +5548,7 @@
             </div>
             <div class="timeline-info">
               <h4>👋 Séance 1 — Bienvenue au programme &amp; Présentation du cours</h4>
-              <p>Accueil de la cohorte de Maîtrise par les Prs Marc-André Bédard et Mario Passalacqua. Présentation des objectifs de formation, de la structure du programme professionnel, de l'équipe professorale, de l'AGEPSY-CS et aperçu de la pédagogie par APP (Apprentissage Par Problèmes).</p>
+              <p>Accueil de la cohorte de Maîtrise par Marc-André Bédard et Mario Passalacqua. Présentation des objectifs de formation, de la structure du programme professionnel, de l'équipe professorale, de l'AGEPSY-CS et aperçu de la pédagogie par APP (Apprentissage Par Problèmes).</p>
             </div>
             <span class="timeline-badge-completed">✓ Séance passée</span>
           </div>
@@ -5414,7 +5574,7 @@
             </div>
             <div class="timeline-info">
               <h4>📦 Séance 3 — Milieux Technologiques &amp; Quiz 1 (5 % - Complété)</h4>
-              <p>Enseignement magistral du Pr Mario Passalacqua sur les facteurs humains, les systèmes complexes et l'ergonomie cognitive. Passation en classe de l'évaluation sommative du Quiz 1 (Chapitre 13 de Cañas et al. 2011 et Human Factors 101). Questions archivées pour entraînement continu.</p>
+              <p>Enseignement magistral de Mario Passalacqua sur les facteurs humains, les systèmes complexes et l'ergonomie cognitive. Passation en classe de l'évaluation sommative du Quiz 1 (Chapitre 13 de Cañas et al. 2011 et Human Factors 101). Questions archivées pour entraînement continu.</p>
             </div>
             <span class="timeline-badge-completed">✓ Évalué (5 %)</span>
           </div>
@@ -5505,7 +5665,7 @@
             </div>
             <div class="timeline-info">
               <h4>📝 Quiz 3 - Travail et Organisations (5 % de la note)</h4>
-              <p>Évaluation en classe avec les Prs Bédard et Passalacqua sur la psychologie organisationnelle et la santé au travail (Kelloway 2023, Anaweokhai 2026).</p>
+              <p>Évaluation en classe avec Marc-André Bédard et Mario Passalacqua sur la psychologie organisationnelle et la santé au travail (Kelloway 2023, Anaweokhai 2026).</p>
               <div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-color);">
                 <strong>🏛️ Séminaire 3 (10 % de la note) :</strong> Remise écrite de 2 questions critiques ouvertes sur l'anémie en milieu rural (Singh 2024) et le bien-être des travailleurs sociaux (O'Flaherty 2024).
               </div>
@@ -5615,7 +5775,7 @@
         <h2 class="doc-art-title">Chen, Y. (2024) — Économie Comportementale : Un Survol Général</h2>
         <ul class="doc-list">
           <li><strong>Source officielle :</strong> <em>International Journal of Global Economics and Management</em>, 4(1), 99–104.</li>
-          <li><strong>Cadre pédagogique :</strong> PSY7010 - Séance 06 : Commerce et consommation 1 (Prs Guillaume Beaulac &amp; Mario Passalacqua)</li>
+          <li><strong>Cadre pédagogique :</strong> PSY7010 - Séance 06 : Commerce et consommation 1 (Guillaume Beaulac &amp; Mario Passalacqua)</li>
           <li><strong>Thématiques clés :</strong> Rationalité limitée, Théorie des perspectives, Heuristiques et biais, Préférences sociales, Politiques publiques.</li>
           <li><strong>Traduction de travail académique française pour la cohorte de maîtrise (UQAM).</strong></li>
         </ul>
@@ -5713,7 +5873,7 @@
         <h2 class="doc-art-title">Congiu, R., &amp; Moscati, I. (2022) — Revue Critique des Nudges : Définitions, Justifications et Efficacité</h2>
         <ul class="doc-list">
           <li><strong>Source officielle :</strong> <em>European Economic Review</em> (Journal of Economic Surveys, 36(1), 188–213).</li>
-          <li><strong>Cadre pédagogique :</strong> PSY7010 - Séance 06 : Commerce et consommation 1 (Prs Guillaume Beaulac &amp; Mario Passalacqua)</li>
+          <li><strong>Cadre pédagogique :</strong> PSY7010 - Séance 06 : Commerce et consommation 1 (Guillaume Beaulac &amp; Mario Passalacqua)</li>
           <li><strong>Thématiques clés :</strong> Définition officielle de Thaler &amp; Sunstein, Paternalisme libertarien, Typologie de Hansen &amp; Jespersen, Nudging-out, Boosts vs Nudges, DellaVigna &amp; Linos.</li>
           <li><strong>Traduction de travail académique française pour la cohorte de maîtrise (UQAM).</strong></li>
         </ul>
@@ -6435,7 +6595,7 @@ Les méthodes et principes directeurs mobilisés dans cette recherche transcende
         <h2 class="doc-art-title">Notes Magistrales &amp; Diapositives : Séance 03</h2>
         <ul class="doc-list">
           <li><strong>Cours :</strong> PSY7010 - Sciences psychologiques appliquées : Milieux technologiques (Séance 03)</li>
-          <li><strong>Enseignants :</strong> Pr Mario Passalacqua (PhD) &amp; Pr Marc-André Bédard (PhD)</li>
+          <li><strong>Enseignants :</strong> Mario Passalacqua (PhD) &amp; Marc-André Bédard (PhD)</li>
           <li><strong>Support visuel officiel :</strong> 92 diapositives (diaporama_cours_03.md) &amp; Enregistrement magistral</li>
         </ul>
         <hr class="doc-divider">
@@ -6449,7 +6609,7 @@ Les méthodes et principes directeurs mobilisés dans cette recherche transcende
         </p>
 
         <hr class="doc-divider">
-        <h3 class="doc-art-h2">2. Projets de Recherche de Terrain (Pr Mario Passalacqua)</h3>
+        <h3 class="doc-art-h2">2. Projets de Recherche de Terrain (Mario Passalacqua)</h3>
         <ul class="doc-list">
           <li><strong>Agnico Eagle (Opération minière et téléopération) :</strong> Comparaison du travail en fosse souterraine directe versus en salle de contrôle à distance (téléopération de chargeuses et véhicules autonomes). Enjeux majeurs : latence des flux vidéo, perte des repères proprioceptifs et haptiques, vigilance soutenue sur événements rares, fatigue et charge mentale en milieu isolé.</li>
           <li><strong>Amical (Agents conversationnels en CHSLD) :</strong> Introduction de robots sociaux et d'assistants IA conversationnels auprès des aînés hébergés et du personnel soignant. Enjeux : acceptabilité de l'UX, diminution de la solitude, charge de travail des soignants et éthique relationnelle.</li>
@@ -6478,7 +6638,7 @@ Les méthodes et principes directeurs mobilisés dans cette recherche transcende
         </div>
         <div class="doc-callout" style="border-left: 4px solid #8b5cf6; padding: 12px 16px; background: rgba(139, 92, 246, 0.08); margin-bottom: 12px; border-radius: 8px;">
           <strong>4. DÉPLOYER - Écologie du milieu &amp; Non-transposabilité aveugle</strong><br>
-          • <em>Avertissement du Pr Bédard :</em> « No one-size-fits-all ». Une solution performante en laboratoire peut s'avérer catastrophique dans l'écologie spécifique d'un hôpital ou d'un cockpit.<br>
+          • <em>Avertissement de Marc-André Bédard :</em> « No one-size-fits-all ». Une solution performante en laboratoire peut s'avérer catastrophique dans l'écologie spécifique d'un hôpital ou d'un cockpit.<br>
           • Mesurer l'adhésion, la gestion du changement et les coûts de transition.
         </div>
 
@@ -8417,7 +8577,7 @@ Comments are closed.
 <ul class="doc-list">
   <li><strong>Ouvrage de référence :</strong> <em>The IAAP Handbook of Applied Psychology</em> (Éditeurs : P. R. Martin, F. M. Cheung, M. C. Knowles, M. Kyrios, L. Littlefield, J. B. Overmier, &amp; J. M. Prieto), Première édition, Wiley-Blackwell (2011), Chapitre 13, pp. 316–336.</li>
   <li><strong>Cadre académique :</strong> PSY7010 — Sciences psychologiques appliquées : Milieux technologiques (UQAM, Maîtrise).</li>
-  <li><strong>Statut pédagogique :</strong> Lecture obligatoire fondamentale — Séance 03 (Pr Mario Passalacqua).</li>
+  <li><strong>Statut pédagogique :</strong> Lecture obligatoire fondamentale — Séance 03 (Mario Passalacqua).</li>
   <li><strong>Traduction académique :</strong> Version intégrale française annotée avec synthèse préalable, pagination originale et ancres interactives d'examen.</li>
 </ul>
 <hr class="doc-divider">
@@ -11589,9 +11749,9 @@ const allQuestions = [
 
       const subTitle = document.getElementById('hubModuleSubtitle');
       if (subTitle) {
-        if (mod === 'seance6') subTitle.textContent = "Séance 6 : Commerce & Consommation 1 — Prs Guillaume Beaulac & Mario Passalacqua (Quiz 2)";
+        if (mod === 'seance6') subTitle.textContent = "Séance 6 : Commerce & Consommation 1 — Guillaume Beaulac & Mario Passalacqua (Quiz 2)";
         else if (mod === 'seance5') subTitle.textContent = "Séance 5 : La Profession & Milieux de pratique (Rencontre conférencières)";
-        else if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
+        else if (mod === 'bloc2') subTitle.textContent = "Bloc 2 : Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
         else if (mod === 'bloc1') subTitle.textContent = "Bloc 1 : Cañas et al. (2011)";
         else if (mod === 'seminaire1') subTitle.textContent = "Séminaire 1 : Vol AF447 & Grille Lin et al. (1998)";
         else if (mod === 'calendar') subTitle.textContent = "Calendrier officiel du trimestre (Automne 2026)";
@@ -11619,15 +11779,17 @@ const allQuestions = [
       const seance6View = document.getElementById('viewSeance6');
       const readerTabsS6 = document.getElementById('readerTabsSeance6');
 
+      const seance6Act = document.getElementById('seance6ActivitySection');
+      if (seance6Act) seance6Act.style.display = (mod === 'seance6' ? 'block' : 'none');
+
       if (mod === 'seance6') {
-        if (seance6View) seance6View.style.display = 'block';
+        if (bloc2Section) bloc2Section.style.display = 'none';
+        if (bloc1Section) bloc1Section.style.display = 'none';
         if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
         if (calendarView) calendarView.style.display = 'none';
         if (headerNavStudy) headerNavStudy.style.display = 'none';
         if (headerNavPipe) headerNavPipe.style.display = 'none';
-        if (bloc2Section) bloc2Section.style.display = 'none';
-        if (bloc1Section) bloc1Section.style.display = 'none';
         if (readerTabsS6) readerTabsS6.style.display = 'flex';
         if (readerTabsB2) readerTabsB2.style.display = 'none';
         if (readerTabsB1) readerTabsB1.style.display = 'none';
@@ -11645,7 +11807,10 @@ const allQuestions = [
 
         updateDynamicLayout();
         switchTab('doc_chen2024', false, false);
-        updateMascot("Séance 6 active : Commerce & Consommation 1. Prs Guillaume Beaulac & Mario Passalacqua. Préparez-vous pour le Quiz 2 !", "study");
+        if (typeof renderS6Question === 'function') {
+          renderS6Question(s6CurrentQIdx);
+        }
+        updateMascot("Séance 6 active : Commerce & Consommation 1 (Guillaume Beaulac & Mario Passalacqua). Préparez-vous pour le Quiz 2 !", "study");
       } else if (mod === 'bloc2') {
         if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
@@ -11695,7 +11860,7 @@ const allQuestions = [
             switchPodcastEpisode('deep_dive_s03', false);
           }
         }
-        updateMascot("Bloc 2 : Milieux technologiques avec le Pr Mario Passalacqua. Entraînez-vous sur les cas cliniques et explorez les documents sources à droite.", "happy");
+        updateMascot("Bloc 2 : Milieux technologiques avec Mario Passalacqua. Entraînez-vous sur les cas cliniques et explorez les documents sources à droite.", "happy");
       } else if (mod === 'bloc1') {
         if (seance5View) seance5View.style.display = 'none';
         if (seminaire1View) seminaire1View.style.display = 'none';
@@ -12788,8 +12953,8 @@ const allQuestions = [
       { letter: "D", text: "Parce que l'observation du comportement extérieur permet toujours de prouver l'intention malveillante de l'opérateur." }
     ],
     correctLetter: "B",
-    explanation: "Dans le cours magistral de la Séance 3, le Pr Passalacqua rappelle le principe fondateur de Rasmussen et Reason : « L'erreur humaine décrit le résultat, jamais la cause ». Blâmer l'opérateur est une tautologie qui masque les défaillances de l'interface, la charge de travail, la fatigue et les faiblesses organisationnelles.",
-    citation: "Source : Séance 3 - Pr Mario Passalacqua & Rasmussen / Reason (1990)"
+    explanation: "Dans le cours magistral de la Séance 3, Mario Passalacqua rappelle le principe fondateur de Rasmussen et Reason : « L'erreur humaine décrit le résultat, jamais la cause ». Blâmer l'opérateur est une tautologie qui masque les défaillances de l'interface, la charge de travail, la fatigue et les faiblesses organisationnelles.",
+    citation: "Source : Séance 3 - Mario Passalacqua & Rasmussen / Reason (1990)"
   },
   {
     id: 3,
@@ -12818,8 +12983,8 @@ const allQuestions = [
       { letter: "D", text: "L'opérateur est en état de vigilance optimale car la répétition visuelle est le garant de la conscience de la situation de niveau 3." }
     ],
     correctLetter: "C",
-    explanation: "C'est le cœur de la mise en garde du Pr Passalacqua (Séance 3 - Milieux technologiques) : l'observable ne renseigne jamais sur la causalité cognitive interne (« Observable ≠ Pensée sous-jacente »). Pour comprendre pourquoi l'opérateur regarde six fois l'écran, il faut trianguler avec du verbal déclaratif (explicitation, penser tout haut) et des métriques physiologiques ou contextuelles.",
-    citation: "Source : Séance 3 - Pr Mario Passalacqua (Observable ≠ Pensée sous-jacente)"
+    explanation: "C'est le cœur de la mise en garde de Mario Passalacqua (Séance 3 - Milieux technologiques) : l'observable ne renseigne jamais sur la causalité cognitive interne (« Observable ≠ Pensée sous-jacente »). Pour comprendre pourquoi l'opérateur regarde six fois l'écran, il faut trianguler avec du verbal déclaratif (explicitation, penser tout haut) et des métriques physiologiques ou contextuelles.",
+    citation: "Source : Séance 3 - Mario Passalacqua (Observable ≠ Pensée sous-jacente)"
   },
   {
     id: 5,
@@ -12834,7 +12999,7 @@ const allQuestions = [
     ],
     correctLetter: "B",
     explanation: "C'est l'essence du dwell de 15 minutes sur la diapositive D83 (Passalacqua [01:53:40]) : « Il ne faut pas seulement regarder si la solution règle le problème prévu, il faut traquer ce qu'on n'a pas prévu ». Les fonctions de forçage mal calibrées induisent quasi systématiquement des contournements opérationnels informels (workarounds) pour préserver la cadence de travail.",
-    citation: "Source : Séance 3 - Diapositive D83 (Étape ÉVALUER, Pr Mario Passalacqua)"
+    citation: "Source : Séance 3 - Diapositive D83 (Étape ÉVALUER, Mario Passalacqua)"
   },
   {
     id: 6,
@@ -12849,7 +13014,7 @@ const allQuestions = [
     ],
     correctLetter: "B",
     explanation: "Séance 3 (D60-D67) : la non-univocité physiologique est un piège majeur. Aucun indice physiologique isolé ne possède de relation bijective avec la charge cognitive. D'où la nécessité absolue de croiser le physiologique avec le perceptuel subjectif et l'observationnel comportemental.",
-    citation: "Source : Séance 3 - D60 à D67 (Triangulation physiologique, Pr Mario Passalacqua)"
+    citation: "Source : Séance 3 - D60 à D67 (Triangulation physiologique, Mario Passalacqua)"
   },
   {
     id: 7,
@@ -12909,7 +13074,7 @@ const allQuestions = [
     ],
     correctLetter: "B",
     explanation: "Bédard insiste sur le fait qu'une solution ergonomique n'a aucune valeur dans l'abstrait. Son efficacité dépend étroitement du contexte organisationnel, des usagers réels, du temps disponible et des contraintes physiques de l'écologie de travail.",
-    citation: "Source : Séance 3 - Pr Marc-André Bédard (Validité contextuelle)"
+    citation: "Source : Séance 3 - Marc-André Bédard (Validité contextuelle)"
   },
   {
     id: 11,
@@ -13014,7 +13179,7 @@ const allQuestions = [
     title: "Étape 1 COMPRENDRE : « L'erreur humaine comme résultat »",
     front: "Lorsqu'un accident industriel ou hospitalier survient, un gestionnaire conclut : « L'accident est dû à l'inattention de l'opérateur qui n'a pas respecté la procédure ». Pourquoi Mario Passalacqua rejette-t-il catégoriquement cette conclusion dès l'étape COMPRENDRE ?",
     backTitle: "L'erreur comme résultat & Observable ≠ Pensée",
-    back: "<strong>Diagnostic :</strong> L'inattention ou l'erreur humaine est un symptôme ou un résultat systémique, jamais la cause première. Conclure à l'erreur humaine bloque l'analyse des facteurs sous-jacents (interface trompeuse, charge mentale, organisation du travail, ambiguïté des procédures).<br><br><strong>Concept clé :</strong> <em>Postulat de Rasmussen & Reason</em> : « L'erreur humaine décrit le résultat, jamais la cause » (Séance 3 - Pr Mario Passalacqua). L'opérateur adapte son comportement à l'écologie de son poste.<br><br><strong>Règle d'or de terrain :</strong> <em>Observable ≠ Pensée sous-jacente</em> (Séance 3 - Pr Passalacqua). Observer un comportement ne révèle jamais à lui seul l'intention mentale de l'opérateur."
+    back: "<strong>Diagnostic :</strong> L'inattention ou l'erreur humaine est un symptôme ou un résultat systémique, jamais la cause première. Conclure à l'erreur humaine bloque l'analyse des facteurs sous-jacents (interface trompeuse, charge mentale, organisation du travail, ambiguïté des procédures).<br><br><strong>Concept clé :</strong> <em>Postulat de Rasmussen & Reason</em> : « L'erreur humaine décrit le résultat, jamais la cause » (Séance 3 - Mario Passalacqua). L'opérateur adapte son comportement à l'écologie de son poste.<br><br><strong>Règle d'or de terrain :</strong> <em>Observable ≠ Pensée sous-jacente</em> (Séance 3 - Mario Passalacqua). Observer un comportement ne révèle jamais à lui seul l'intention mentale de l'opérateur."
   },
   {
     id: 9,
@@ -14099,7 +14264,7 @@ const allQuestions = [
         if (p2) p2.classList.add('active');
         const subTitle = document.getElementById('hubModuleSubtitle');
         if (subTitle) {
-          subTitle.textContent = "Bloc 2 : Pr Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
+          subTitle.textContent = "Bloc 2 : Mario Passalacqua - Milieux technologiques & Ergonomie cognitive";
         }
       }
 
@@ -14164,7 +14329,7 @@ const allQuestions = [
           banner.innerHTML = '🏥 LECTURE DU SÉMINAIRE 1 : Lin et al. (1998) - Ergonomie des pompes PCA en milieu hospitalier';
         } else if (docId === 'doc_notes_s03') {
           banner.className = 'doc-status-banner status-optional';
-          banner.innerHTML = '📝 COURS MAGISTRAL : Séance 03 - Milieux technologiques, UX et Ergonomie (Pr Mario Passalacqua)';
+          banner.innerHTML = '📝 COURS MAGISTRAL : Séance 03 - Milieux technologiques, UX et Ergonomie (Mario Passalacqua)';
         } else if (docId === 'doc_canas') {
           banner.className = 'doc-status-banner status-mandatory';
           banner.innerHTML = '🔴 LECTURE DU COURS : Cañas et al. (2011) - Chapitre 13 complet (pp. 316-336)';
@@ -14688,8 +14853,24 @@ const allQuestions = [
         if (!activeVp) return;
 
         const anchorSuffix = (docLanguage === 'fr') ? '_fr' : '';
-        const targetAnchor = activeVp.querySelector('#anchor_q' + qid + anchorSuffix) || 
-          (docLanguage === 'en' ? activeVp.querySelector('#anchor_q' + qid) : null);
+        const q = (typeof allQuestions !== 'undefined' && allQuestions[qid - 1]) || null;
+        const customAnchorId = q && q.anchor_id ? q.anchor_id : null;
+        
+        let targetAnchor = null;
+        if (customAnchorId) {
+          targetAnchor = activeVp.querySelector('#' + customAnchorId + anchorSuffix) || 
+                         activeVp.querySelector('#' + customAnchorId) ||
+                         document.getElementById(customAnchorId + anchorSuffix) ||
+                         document.getElementById(customAnchorId);
+        }
+        if (!targetAnchor) {
+          targetAnchor = activeVp.querySelector('#anchor_s6_q' + qid + anchorSuffix) ||
+                         activeVp.querySelector('#anchor_s6_q' + qid) ||
+                         activeVp.querySelector('#anchor_q' + qid + anchorSuffix) || 
+                         (docLanguage === 'en' ? activeVp.querySelector('#anchor_q' + qid) : null) ||
+                         document.getElementById('anchor_s6_q' + qid + anchorSuffix) ||
+                         document.getElementById('anchor_q' + qid + anchorSuffix);
+        }
 
         document.querySelectorAll('.source-anchor-target').forEach(el => el.classList.remove('active-highlight'));
         if (targetAnchor) {
@@ -14778,66 +14959,158 @@ const allQuestions = [
       if (mobBadge) mobBadge.textContent = '🏆 ' + correct + '/' + total;
     }
 
-    // --- RECHERCHE DANS LE TEXTE ---
+    // --- RECHERCHE DANS LE TEXTE HAUTE VISIBILITÉ (AVEC SURLIGNAGE EN DIRECT) ---
+        function buildAccentInsensitivePattern(term) {
+      const map = {
+        'a': '[aàáâãäåAÀÁÂÃÄÅ]', 'à': '[aàáâãäåAÀÁÂÃÄÅ]', 'á': '[aàáâãäåAÀÁÂÃÄÅ]', 'â': '[aàáâãäåAÀÁÂÃÄÅ]', 'ä': '[aàáâãäåAÀÁÂÃÄÅ]',
+        'e': '[eèéêëEÈÉÊË]', 'è': '[eèéêëEÈÉÊË]', 'é': '[eèéêëEÈÉÊË]', 'ê': '[eèéêëEÈÉÊË]', 'ë': '[eèéêëEÈÉÊË]',
+        'i': '[iìíîïIÌÍÎÏ]', 'ì': '[iìíîïIÌÍÎÏ]', 'í': '[iìíîïIÌÍÎÏ]', 'î': '[iìíîïIÌÍÎÏ]', 'ï': '[iìíîïIÌÍÎÏ]',
+        'o': '[oòóôõöOÒÓÔÕÖ]', 'ò': '[oòóôõöOÒÓÔÕÖ]', 'ó': '[oòóôõöOÒÓÔÕÖ]', 'ô': '[oòóôõöOÒÓÔÕÖ]', 'ö': '[oòóôõöOÒÓÔÕÖ]',
+        'u': '[uùúûüUÙÚÛÜ]', 'ù': '[uùúûüUÙÚÛÜ]', 'ú': '[uùúûüUÙÚÛÜ]', 'û': '[uùúûüUÙÚÛÜ]', 'ü': '[uùúûüUÙÚÛÜ]',
+        'c': '[cçCÇ]', 'ç': '[cçCÇ]'
+      };
+      return escapeRegExp(term).split('').map(ch => map[ch.toLowerCase()] || escapeRegExp(ch)).join('');
+    }
+
+    function clearSearchHighlights(vp) {
+      if (!vp) return;
+      const marks = Array.from(vp.querySelectorAll('mark.search-highlight, mark.search-highlight-active'));
+      marks.forEach(m => {
+        const p = m.parentNode;
+        if (p) {
+          p.replaceChild(document.createTextNode(m.textContent), m);
+          p.normalize();
+        }
+      });
+    }
+
     function handleSearch(e) {
-      if (e.key === 'Enter') nextSearchResult();
-      else executeSearch();
+      if (e.key === 'Enter') {
+        if (e.shiftKey) prevSearchResult();
+        else nextSearchResult();
+      } else {
+        executeSearch();
+      }
     }
 
     function executeSearch() {
       const inputEl = document.getElementById('readerSearchInput');
       const term = inputEl ? inputEl.value.trim() : '';
       const countEl = document.getElementById('searchCount');
-      if (!term || term.length < 2) {
-        if (countEl) countEl.textContent = '0 résultat';
-        searchResults = [];
-        currentSearchIdx = 0;
-        return;
-      }
-      showDocumentPostAnswer();
+      
       const targetVpId = 'viewport_' + activeDocId + '_' + docLanguage;
       const vp = document.getElementById(targetVpId);
+      
+      if (vp) clearSearchHighlights(vp);
+      searchResults = [];
+      currentSearchIdx = -1;
+
+      if (!term || term.length < 2) {
+        if (countEl) countEl.textContent = '0 résultat';
+        return;
+      }
+
+      showDocumentPostAnswer();
       if (!vp) return;
 
-      // Normaliser espaces multiples et sauts de ligne pour éviter les faux négatifs (T12)
-      const escaped = escapeRegExp(term).replace(/\s+/g, '\\s+');
-      const regex = new RegExp(escaped, 'i');
+      const pattern = buildAccentInsensitivePattern(term);
+      const regex = new RegExp('(' + pattern + ')', 'gi');
 
-      // Recherche par blocs en excluant les paragraphes à l'intérieur d'un blockquote (T13)
-      const allCandidates = vp.querySelectorAll('.doc-para, .doc-subheading, .doc-heading, .doc-art-h2, .doc-art-h3, p, h1, h2, h3, h4, li, blockquote, .doc-bullet, div.doc-bullet');
-      searchResults = [];
-      const seen = new Set();
-      allCandidates.forEach(block => {
-        if (block.tagName === 'P' && block.closest('blockquote')) {
-          return;
-        }
-        if (regex.test(block.textContent)) {
-          if (!seen.has(block)) {
-            seen.add(block);
-            searchResults.push(block);
+      // Parcourir récursivement les nœuds textuels du document pour surligner chaque occurrence
+      const walker = document.createTreeWalker(vp, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentNode;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          const tag = parent.tagName.toUpperCase();
+          if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'BUTTON') {
+            return NodeFilter.FILTER_REJECT;
           }
+          if (parent.closest('.mobile-reader-header') || parent.closest('.reader-doc-controls')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return regex.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
         }
       });
 
-      if (countEl) {
-        countEl.textContent = searchResults.length + ' résultat' + (searchResults.length > 1 ? 's' : '');
+      const textNodes = [];
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
       }
+
+      textNodes.forEach(node => {
+        const val = node.nodeValue;
+        regex.lastIndex = 0;
+        if (!regex.test(val)) return;
+
+        const frag = document.createDocumentFragment();
+        let lastIdx = 0;
+        regex.lastIndex = 0;
+        let match;
+        while ((match = regex.exec(val)) !== null) {
+          const matchStart = match.index;
+          const matchEnd = regex.lastIndex;
+          if (matchStart > lastIdx) {
+            frag.appendChild(document.createTextNode(val.substring(lastIdx, matchStart)));
+          }
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match[0];
+          frag.appendChild(mark);
+          lastIdx = matchEnd;
+        }
+        if (lastIdx < val.length) {
+          frag.appendChild(document.createTextNode(val.substring(lastIdx)));
+        }
+        if (node.parentNode) {
+          node.parentNode.replaceChild(frag, node);
+        }
+      });
+
+      // Récupérer toutes les marques insérées
+      searchResults = Array.from(vp.querySelectorAll('mark.search-highlight'));
+
+      if (countEl) {
+        if (searchResults.length === 0) {
+          countEl.textContent = '0 résultat';
+        } else {
+          countEl.textContent = '1 / ' + searchResults.length;
+        }
+      }
+
       if (searchResults.length > 0) {
         currentSearchIdx = 0;
+        searchResults[0].classList.add('search-highlight-active');
         searchResults[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
     function nextSearchResult() {
       if (searchResults.length === 0) return;
+      if (currentSearchIdx >= 0 && currentSearchIdx < searchResults.length) {
+        searchResults[currentSearchIdx].classList.remove('search-highlight-active');
+      }
       currentSearchIdx = (currentSearchIdx + 1) % searchResults.length;
+      searchResults[currentSearchIdx].classList.add('search-highlight-active');
       searchResults[currentSearchIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const countEl = document.getElementById('searchCount');
+      if (countEl) {
+        countEl.textContent = (currentSearchIdx + 1) + ' / ' + searchResults.length;
+      }
     }
 
     function prevSearchResult() {
       if (searchResults.length === 0) return;
+      if (currentSearchIdx >= 0 && currentSearchIdx < searchResults.length) {
+        searchResults[currentSearchIdx].classList.remove('search-highlight-active');
+      }
       currentSearchIdx = (currentSearchIdx - 1 + searchResults.length) % searchResults.length;
+      searchResults[currentSearchIdx].classList.add('search-highlight-active');
       searchResults[currentSearchIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const countEl = document.getElementById('searchCount');
+      if (countEl) {
+        countEl.textContent = (currentSearchIdx + 1) + ' / ' + searchResults.length;
+      }
     }
 
     // --- DISPOSITION GÉOMÉTRIQUE & SÉPARATEUR ---
@@ -14847,7 +15120,7 @@ const allQuestions = [
       const container = document.getElementById('workstationContainer');
       const icon = document.getElementById('layoutIcon');
       const text = document.getElementById('layoutText');
-      const isVertical = window.innerHeight > window.innerWidth;
+      const isVertical = window.innerWidth < 850 && window.innerHeight > window.innerWidth;
 
       container.classList.remove('layout-horizontal', 'layout-vertical');
 
@@ -14868,7 +15141,7 @@ const allQuestions = [
 
       const splitDivider = document.getElementById('splitDivider');
       if (splitDivider) {
-        const isSinglePane = isCompactUI() || (window.innerHeight > window.innerWidth && layoutSetting !== 'horizontal') || (layoutSetting === 'vertical');
+        const isSinglePane = isCompactUI() || (window.innerWidth < 850 && window.innerHeight > window.innerWidth && layoutSetting !== 'horizontal') || (layoutSetting === 'vertical');
         splitDivider.style.display = isSinglePane ? 'none' : '';
       }
 
@@ -14916,7 +15189,7 @@ const allQuestions = [
     function isSinglePaneMode() {
       if (isCompactUI()) return true;
       if (layoutSetting === 'vertical') return true;
-      if (layoutSetting === 'auto' && window.innerHeight > window.innerWidth) return true;
+      if (layoutSetting === 'auto' && window.innerWidth < 850 && window.innerHeight > window.innerWidth) return true;
       return false;
     }
 
@@ -16240,7 +16513,1337 @@ let previousIsCompact = isCompactUI();
     }
     window.jumpToB2Doc = jumpToB2Doc;
 
-  </script>
+  
+
+    /* =========================================================================
+       CONTRÔLEUR INTERACTIF SÉANCE 06 (QUIZ 2 OFFICIEL & 12 FLASHCARDS)
+       ========================================================================= */
+    const S6_MASTER_QUESTIONS = [
+  {
+    "id": 1,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q1",
+    "tag": "Chen (2024) • Rationalité limitée",
+    "points": "1 point",
+    "context": "Dans son survol des fondements de l'économie comportementale, Chen (2024, p. 101) rappelle que l'économie néoclassique standard repose traditionnellement sur le postulat d'un décideur maximisateur d'utilité (« Homo Economicus »).",
+    "prompt": "Quel principe fondamental introduit par Herbert Simon et repris par l'économie comportementale formalise la rupture avec l'hypothèse d'une maximisation exhaustive de l'utilité ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'irrationalité aléatoire : les comportements humains dévient du modèle standard de manière purement chaotique et imprévisible."
+      },
+      {
+        "letter": "B",
+        "text": "L'optimisation globale sous incertitude : les décideurs calculent l'intégrale mathématique de tous les futurs possibles avant d'agir."
+      },
+      {
+        "letter": "C",
+        "text": "Le 'satisficing' (recherche d'une solution satisfaisante) : face à des capacités computationnelles et un temps limités, les décideurs arrêtent leur recherche dès qu'une option atteint leurs seuils d'acceptabilité."
+      },
+      {
+        "letter": "D",
+        "text": "La stratégie minimax absolue : les agents choisissent systématiquement l'option qui minimise le regret théorique maximal quel qu'en soit le coût."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "Herbert Simon a montré que les limites computationnelles de l'esprit humain conduisent au 'satisficing' : chercher un résultat satisfaisant plutôt qu'optimiser exhaustivement. L'économie comportementale ne postule pas une irrationalité chaotique, mais des biais systématiques et prévisibles.",
+    "citation": "Chen (2024), p. 101, Section 3.1 Bounded Rationality",
+    "correctIndex": 2
+  },
+  {
+    "id": 2,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q2",
+    "tag": "Chen (2024) • Théorie des perspectives",
+    "points": "1 point",
+    "context": "Développée par Kahneman et Tversky (1979) et synthétisée par Chen (2024, p. 101), la théorie des perspectives remplace la fonction d'utilité standard par une fonction de valeur subjective v(x).",
+    "prompt": "Quelle description géométrique caractérise fidèlement la fonction de valeur subjective en fonction des gains et des pertes par rapport au point de référence ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "La fonction est concave dans le domaine des gains, convexe dans le domaine des pertes, et sa pente est significativement plus abrupte pour les pertes que pour les gains (aversion aux pertes)."
+      },
+      {
+        "letter": "B",
+        "text": "La fonction est convexe dans le domaine des gains et concave dans le domaine des pertes, avec une pente identique des deux côtés du point neutre."
+      },
+      {
+        "letter": "C",
+        "text": "La fonction est strictement linéaire sur tout son domaine, traduisant une neutralité universelle face au risque financier."
+      },
+      {
+        "letter": "D",
+        "text": "La fonction est symétrique par rapport à l'origine, indiquant qu'un gain de 100 $ procure une satisfaction strictement égale à la douleur d'une perte de 100 $."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "La fonction de valeur subjective de la théorie des perspectives présente une forme en S : concave pour les gains (recherche de sécurité) et convexe pour les pertes (recherche de risque pour éviter la perte). De plus, l'aversion aux pertes rend la pente environ deux fois plus forte pour les pertes que pour les gains équivalents.",
+    "citation": "Chen (2024), p. 101, Section 3.2 Prospect Theory",
+    "correctIndex": 0
+  },
+  {
+    "id": 3,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q3",
+    "tag": "Chen (2024) • Adhésion par défaut & Politiques publiques",
+    "points": "1 point",
+    "context": "Dans l'analyse des politiques publiques d'épargne-retraite et de santé, Chen (2024, p. 100 & 102) examine l'impact du changement d'option par défaut.",
+    "prompt": "Pourquoi le passage d'une adhésion volontaire ('opt-in') à une adhésion automatique avec option de retrait ('opt-out') augmente-t-il massivement le taux de participation effectif ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Parce que l'option de retrait est sanctionnée par des frais financiers dissuasifs imposés par l'employeur."
+      },
+      {
+        "letter": "B",
+        "text": "Parce que le formulaire d'adhésion volontaire était rendu inaccessible par des protocoles de sécurité gouvernementaux."
+      },
+      {
+        "letter": "C",
+        "text": "Parce que les employés sont juridiquement déchus de leur droit de regard sur leurs cotisations salariales."
+      },
+      {
+        "letter": "D",
+        "text": "Parce que l'architecture par défaut exploite l'inertie décisionnelle, le coût cognitif du changement et le signal implicite d'une recommandation institutionnelle bienveillante."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "L'adhésion par défaut (opt-out) fonctionne sans coercition ni altération financière : elle capitalise sur l'inertie humaine, le biais de statu quo et l'effet d'approbation perçu, tout en préservant la liberté totale de se désengager sans pénalité.",
+    "citation": "Chen (2024), p. 100 & 102, Section 4.1 Public Policy",
+    "correctIndex": 3
+  },
+  {
+    "id": 4,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q4",
+    "tag": "Chen (2024) • Biais du présent & Actualisation hyperbolique",
+    "points": "1 point",
+    "context": "L'économie néoclassique modélise l'actualisation temporelle par une fonction exponentielle à taux constant. L'économie comportementale observe plutôt une actualisation hyperbolique (Chen, 2024, p. 101).",
+    "prompt": "En quoi consiste précisément le phénomène d'incohérence temporelle induit par le biais du présent dans la prise de décision financière et préventive ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'individu maintient un plan d'épargne rigoureux et stable tout au long de sa vie sans jamais ressentir d'impatience."
+      },
+      {
+        "letter": "B",
+        "text": "L'individu préfère systématiquement les récompenses retardées par rapport aux récompenses immédiates en raison d'une hyper-rationalité prospective."
+      },
+      {
+        "letter": "C",
+        "text": "L'individu est totalement incapable d'évaluer le passage du temps en raison d'un déficit d'attention primaire."
+      },
+      {
+        "letter": "D",
+        "text": "L'individu survalorise disproportionnellement la gratification immédiate, ce qui conduit à inverser ses préférences lorsque le moment d'agir dans le présent arrive (myopie temporelle)."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "Le biais du présent (actualisation hyperbolique ou beta-delta) produit une inversion dynamique des préférences : lorsqu'on planifie pour un futur lointain, on choisit l'option vertueuse ; mais dès que l'échéance devient immédiate, le coût présent surpasse le bénéfice différé, poussant à la procrastination ou à la surconsommation.",
+    "citation": "Chen (2024), p. 101, Section 3.3 Heuristics and Biases",
+    "correctIndex": 3
+  },
+  {
+    "id": 5,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q5",
+    "tag": "Chen (2024) • Effet de cadrage (Framing effect)",
+    "points": "1 point",
+    "context": "Dans une étude classique citée par Chen (2024, p. 101-102), des consommateurs évaluent deux barquettes de viande hachée strictement identiques sur le plan nutritionnel : l'une est étiquetée « 80 % de viande maigre », l'autre « 20 % de matières grasses ».",
+    "prompt": "Que démontrent empiriquement les réponses des consommateurs face à ces deux présentations logiquement équivalentes ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'étiquette '20 % de gras' est préférée car les consommateurs recherchent activement un apport calorique maximal pour prévenir la famine."
+      },
+      {
+        "letter": "B",
+        "text": "Les consommateurs calculent mentalement la composition lipidique exacte et attribuent une note gustative et sanitaire strictement identique aux deux produits."
+      },
+      {
+        "letter": "C",
+        "text": "L'étiquette '80 % de viande maigre' est jugée significativement plus saine et savoureuse car le cadrage positif active des associations mentales favorables (effet de saillance sémantique)."
+      },
+      {
+        "letter": "D",
+        "text": "L'effet de cadrage disparaît complètement dès lors que le consommateur dispose d'une calculatrice de poche."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "L'effet de cadrage viole le principe d'invariance de la théorie économique standard : bien que '80 % maigre' et '20 % gras' soient logiquement indiscernables, le cadrage positif focalise l'attention sur la composante saine, modifiant la valeur perçue du produit.",
+    "citation": "Chen (2024), p. 101-102, Section 3.3 Heuristics and Biases",
+    "correctIndex": 2
+  },
+  {
+    "id": 6,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q6",
+    "tag": "Chen (2024) • Système 1 vs Système 2 (Kahneman)",
+    "points": "1 point",
+    "context": "L'architecture cognitive duale popularisée par Daniel Kahneman et reprise par Chen (2024, p. 100-101) structure les mécanismes de prise de décision en deux modes de traitement.",
+    "prompt": "Quelle distinction fonctionnelle caractérise rigoureusement le Système 1 et le Système 2 en ergonomie et économie comportementale ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Le Système 1 est lent, analytique et infaillible, tandis que le Système 2 est rapide, automatique et toujours erroné."
+      },
+      {
+        "letter": "B",
+        "text": "Le Système 1 fonctionne de façon rapide, automatique, associative et peu coûteuse en ressources cognitives ; le Système 2 est délibératif, séquentiel, contrôlé et exige un effort attentionnel soutenu."
+      },
+      {
+        "letter": "C",
+        "text": "Le Système 1 est exclusivement activé durant le sommeil paradoxal, tandis que le Système 2 gère l'état d'éveil."
+      },
+      {
+        "letter": "D",
+        "text": "Le Système 1 et le Système 2 sont des zones cérébrales physiquement indépendantes qui ne communiquent jamais entre elles."
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "Le Système 1 opère automatiquement et rapidement, avec peu ou pas d'effort conscient (heuristiques). Le Système 2 alloue l'attention aux opérations mentales complexes qui exigent de l'effort, mais sa capacité est limitée par la mémoire de travail.",
+    "citation": "Chen (2024), p. 100-101, Section 2 Historical Milestones & Core Concepts",
+    "correctIndex": 1
+  },
+  {
+    "id": 7,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q7",
+    "tag": "Congiu & Moscati (2022) • Définition officielle du Nudge",
+    "points": "1 point",
+    "context": "Dans leur revue critique, Congiu et Moscati (2022, p. 190) dissèquent la définition académique originale formulée par Thaler et Sunstein (2008).",
+    "prompt": "Quelles sont les conditions cumulatives indispensables pour qu'une intervention soit rigoureusement qualifiée de 'nudge' ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'intervention doit interdire au moins deux options commerciales nocives et imposer des pénalités financières aux récalcitrants."
+      },
+      {
+        "letter": "B",
+        "text": "L'intervention doit doubler le prix du produit non désiré par une taxe spécifique pour décourager son achat."
+      },
+      {
+        "letter": "C",
+        "text": "L'intervention doit modifier l'architecture du choix de façon prévisible, sans interdire aucune option ni altérer significativement les incitatifs économiques, et être facile et peu coûteuse à éviter."
+      },
+      {
+        "letter": "D",
+        "text": "L'intervention doit obligatoirement être secrète et opérer à l'insu absolu de l'ensemble des citoyens."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "Un nudge selon Thaler et Sunstein modifie l'agencement du choix sans coercition (aucune option interdite) et sans altération majeure des prix ou incitatifs matériels. Une taxe ou une loi d'interdiction n'est pas un nudge.",
+    "citation": "Congiu & Moscati (2022), p. 190, Section 1.1 Setting the stage",
+    "correctIndex": 2
+  },
+  {
+    "id": 8,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q8",
+    "tag": "Congiu & Moscati (2022) • Paternalisme libertarien",
+    "points": "1 point",
+    "context": "Le cadre éthique proposé par Thaler et Sunstein pour justifier les nudges est désigné sous le terme de « paternalisme libertarien » (Congiu & Moscati, 2022, p. 195-196).",
+    "prompt": "Pourquoi cette appellation, souvent perçue comme un oxymore apparent, traduit-elle fidèlement la philosophie de l'architecture du choix ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Parce qu'elle vise à transférer tous les pouvoirs de régulation de l'État aux corporations privées les plus puissantes."
+      },
+      {
+        "letter": "B",
+        "text": "Parce qu'elle associe la préservation intégrale de la liberté de refuser (volet libertarien) à la volonté délibérée de structurer l'environnement pour guider l'individu vers des choix bénéfiques selon son propre jugement réflexif (volet paternaliste)."
+      },
+      {
+        "letter": "C",
+        "text": "Parce qu'elle supprime le droit de vote des individus qui échouent aux tests de littératie financière."
+      },
+      {
+        "letter": "D",
+        "text": "Parce qu'elle refuse catégoriquement que quiconque modifie la moindre variable de l'environnement physique."
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "Le paternalisme libertarien est 'libertarien' car les individus restent libres de choisir l'option de leur choix sans surcoût prohibitif, et 'paternaliste' car les concepteurs font l'effort légitime d'influencer les choix pour améliorer la vie des gens selon leurs propres critères de bien-être.",
+    "citation": "Congiu & Moscati (2022), p. 195-196, Section 3 Justifications of nudges",
+    "correctIndex": 1
+  },
+  {
+    "id": 9,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q9",
+    "tag": "Congiu & Moscati (2022) • Typologie de Hansen & Jespersen (2013)",
+    "points": "1 point",
+    "context": "Pour dépasser la définition générique de Thaler et Sunstein, Congiu et Moscati (2022, p. 193-194) analysent la matrice en 4 quadrants de Hansen et Jespersen (2013).",
+    "prompt": "Sur quelles deux dimensions conceptuelles s'articule la classification entre nudges de type 1 / type 2 et nudges transparents / opaques ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "La distinction entre nudges destinés aux mineurs et nudges réservés aux entreprises cotées en bourse."
+      },
+      {
+        "letter": "B",
+        "text": "Le montant du budget public alloué et le taux de TVA applicable au produit ciblé."
+      },
+      {
+        "letter": "C",
+        "text": "Le niveau de traitement cognitif (Système 1 automatique vs Système 2 réflexif) et la transparence de l'intervention quant à son intention et ses mécanismes d'action."
+      },
+      {
+        "letter": "D",
+        "text": "La couleur des emballages commerciaux (tons froids vs chauds) et la typographie utilisée sur l'étiquette."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "La matrice de Hansen et Jespersen (2013) croise le mode de fonctionnement psychologique sollicité (Type 1 heuristique / Type 2 réflexif) et le degré de transparence perçu par le décideur (transparent vs opaque), sans porter de jugement moral a priori.",
+    "citation": "Congiu & Moscati (2022), p. 193-194, Section 2.2 Alternative classifications",
+    "correctIndex": 2
+  },
+  {
+    "id": 10,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q10",
+    "tag": "Congiu & Moscati (2022) • Effet de Nudging-Out",
+    "points": "1 point",
+    "context": "Parmi les critiques examinées par Congiu et Moscati (2022, p. 198-199), plusieurs économistes s'inquiètent des effets pervers politiques des nudges sur les réformes structurelles.",
+    "prompt": "En quoi consiste précisément l'effet indésirable désigné sous le terme de « nudging-out » dans les politiques environnementales et de santé publique ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'éviction physique des citoyens des supermarchés lorsqu'ils refusent d'acheter des produits biologiques."
+      },
+      {
+        "letter": "B",
+        "text": "La baisse de l'efficacité d'un nudge lorsque celui-ci est répété plus de trois fois dans la même journée."
+      },
+      {
+        "letter": "C",
+        "text": "L'affaiblissement du soutien des citoyens et des décideurs publics envers des politiques structurelles ambitieuses (ex. taxe carbone, régulation contraignante) provoqué par l'illusion qu'un petit nudge individuel symbolique suffit à résoudre le problème."
+      },
+      {
+        "letter": "D",
+        "text": "L'obligation légale faite aux entreprises polluantes de fermer leurs usines sans préavis."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "L'effet de nudging-out (Hagmann et al., 2019) survient lorsqu'une intervention comportementale douce donne un faux sentiment d'accomplissement, réduisant la volonté politique et citoyenne d'adopter des réformes fiscales ou législatives plus coûteuses mais indispensables.",
+    "citation": "Congiu & Moscati (2022), p. 198-199, Section 3.2 Crowding out",
+    "correctIndex": 2
+  },
+  {
+    "id": 11,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q11",
+    "tag": "Congiu & Moscati (2022) • Nudges vs Boosts (Hertwig & Grüne-Yanoff)",
+    "points": "1 point",
+    "context": "Face au paternalisme des nudges, Ralph Hertwig et Till Grüne-Yanoff (2017) ont introduit le concept de « boost », analysé en détail par Congiu et Moscati (2022, p. 194-195).",
+    "prompt": "Quelle différence fondamentale distingue l'approche par les « nudges » de celle par les « boosts » en intervention comportementale ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Les nudges modifient l'architecture du choix immédiat sans chercher à accroître les compétences de l'agent ; les boosts visent au contraire à enrichir, développer et pérenniser les compétences et heuristiques décisionnelles de la personne pour renforcer son autonomie."
+      },
+      {
+        "letter": "B",
+        "text": "Les nudges s'appuient sur des augmentations de taxes monétaires, alors que les boosts distribuent des subventions financières directes."
+      },
+      {
+        "letter": "C",
+        "text": "Les nudges visent à interdire la liberté de choix, tandis que les boosts obligent les usagers à passer un examen annuel de psychologie."
+      },
+      {
+        "letter": "D",
+        "text": "Les nudges sont exclusivement appliqués aux animaux de laboratoire, tandis que les boosts ciblent les humains adultes."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "Tandis que le nudge façonne l'environnement extérieur pour compenser une défaillance cognitive passagère sans modifier les compétences de l'individu, le boost investit dans le répertoire cognitif de l'agent (formation, heuristiques simples, représentations graphiques) pour le rendre autonome et durablement compétent.",
+    "citation": "Congiu & Moscati (2022), p. 194-195, Section 2.3 Nudges vs. boosts",
+    "correctIndex": 0
+  },
+  {
+    "id": 12,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q12",
+    "tag": "Congiu & Moscati (2022) • Programme Save More Tomorrow (SMarT)",
+    "points": "1 point",
+    "context": "Le programme d'épargne-retraite 'Save More Tomorrow' conçu par Richard Thaler et Shlomo Benartzi (2004) est un cas d'école emblématique décortiqué par Congiu et Moscati (2022, p. 191).",
+    "prompt": "Comment ce programme combine-t-il les principes de la théorie des perspectives et de l'actualisation temporelle pour inciter les salariés à épargner davantage ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Il double le salaire des employés qui acceptent de renoncer définitivement à leur pension de retraite."
+      },
+      {
+        "letter": "B",
+        "text": "Il prélève 50 % du salaire dès le premier mois d'embauche de façon obligatoire et non négociable."
+      },
+      {
+        "letter": "C",
+        "text": "Il propose aux salariés de s'engager dès aujourd'hui à épargner une fraction de leurs augmentations de salaire futures, ce qui neutralise l'aversion aux pertes (le salaire net ne baisse jamais) et utilise le biais du présent à son avantage."
+      },
+      {
+        "letter": "D",
+        "text": "Il remplace le versement des salaires par des bons d'achat valables uniquement dans les épiceries solidaires."
+      }
+    ],
+    "correctLetter": "C",
+    "explanation": "SMarT tire parti de trois biais : 1) l'engagement préalable (biais du présent surmonté car l'effort est dans le futur), 2) l'adhésion par défaut automatique après accord, et 3) la synchronisation avec les hausses salariales : comme la cotisation augmente au moment où le salaire brut monte, le salaire net perçu ne baisse jamais, éliminant la perception d'une perte.",
+    "citation": "Congiu & Moscati (2022), p. 191, Section 1.2 A famous example: Save More Tomorrow",
+    "correctIndex": 2
+  },
+  {
+    "id": 13,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q13",
+    "tag": "Congiu & Moscati (2022) • Équité distributive & Vulnérabilité",
+    "points": "1 point",
+    "context": "Dans la section consacrée aux effets distributifs des nudges, Congiu et Moscati (2022, p. 200-202) examinent l'impact différentiel des architectures de choix selon les caractéristiques socio-économiques.",
+    "prompt": "Quelle affirmation résume fidèlement les constats empiriques sur la sensibilité des populations aux architectures de choix par défaut ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Les personnes disposant des revenus les plus élevés sont les seules à être sensibles aux défauts par manque de temps de gestion."
+      },
+      {
+        "letter": "B",
+        "text": "Les personnes vulnérables refusent systématiquement toute option par défaut par méfiance instinctive envers les institutions."
+      },
+      {
+        "letter": "C",
+        "text": "Les nudges ont un impact statistique strictement uniforme sur tous les individus indépendamment de leur capital économique ou culturel."
+      },
+      {
+        "letter": "D",
+        "text": "Les individus soumis à une forte charge mentale, à la précarité ou à une faible littératie financière ont une bande passante cognitive saturée (Mullainathan & Shafir), ce qui les rend nettement plus dépendants des choix par défaut et impose une vigilance éthique accrue sur l'option retenue."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "La théorie de la rareté (Mullainathan & Shafir, 2013) montre que la pauvreté et le stress consument les ressources attentionnelles exécutives. Ces populations se désengagent moins souvent des options par défaut (*opt-out*), ce qui rend le choix de l'option par défaut déterminant pour leur sécurité financière et sanitaire.",
+    "citation": "Congiu & Moscati (2022), p. 200-202, Section 4.2 Distributive issues",
+    "correctIndex": 3
+  },
+  {
+    "id": 14,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q14",
+    "tag": "Congiu & Moscati (2022) • Efficacité empirique (DellaVigna & Linos, 2022)",
+    "points": "1 point",
+    "context": "Congiu et Moscati (2022, p. 202-205) consacrent une analyse approfondie à la méta-analyse de Stefano DellaVigna et Elizabeth Linos (2022) sur l'efficacité réelle des nudges à grande échelle.",
+    "prompt": "Que révèle la comparaison entre les études publiées dans les revues académiques et les essais menés sur le terrain par les Nudge Units gouvernementales ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Les interventions gouvernementales obtiennent des augmentations de comportements de plus de 80 points de pourcentage dans toutes les administrations."
+      },
+      {
+        "letter": "B",
+        "text": "Les études universitaires rapportent un impact moyen d'environ 8 points de pourcentage, alors que les Nudge Units réelles sur des millions de citoyens obtiennent un effet moyen de 1,4 point de pourcentage, un résultat modeste mais hautement rentable en raison du coût marginal négligeable."
+      },
+      {
+        "letter": "C",
+        "text": "Les Nudge Units gouvernementales échouent à 100 % et aggravent systématiquement les crises sanitaires."
+      },
+      {
+        "letter": "D",
+        "text": "Les études académiques sous-estiment massivement l'efficacité des nudges par rapport aux résultats du monde réel."
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "DellaVigna et Linos (2022) démontrent l'existence d'un écart substantiel entre les résultats académiques (sujets au biais de publication et aux petits échantillons) et les déploiements réels des Nudge Units (1,4 point de pourcentage sur des millions d'individus). Bien que modeste, ce gain est très rentable car le coût par contact est quasi nul.",
+    "citation": "Congiu & Moscati (2022), p. 202-205, Section 4.3 Effectiveness and meta-analyses",
+    "correctIndex": 1
+  },
+  {
+    "id": 15,
+    "category": "bva_nudge",
+    "doc_id": "doc_bva_nudge",
+    "anchor_id": "anchor_bva_q15",
+    "tag": "BVA Nudge Unit • Normes sociales (O-Power & Smiley)",
+    "points": "1 point",
+    "context": "Dans la capsule vidéo de la BVA Nudge Unit, l'intervention à grande échelle menée par l'entreprise O-Power sur les factures d'énergie est présentée comme un modèle d'application des normes sociales.",
+    "prompt": "Quel mécanisme psychologique explique l'ajout indispensable d'un émoticône souriant (« smiley ») ou d'une mention d'approbation sur les relevés des ménages sobres ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Permettre aux ménages sobres d'échanger leurs smileys contre des réductions sur leur taxe foncière municipale."
+      },
+      {
+        "letter": "B",
+        "text": "Combiner la norme injonctive (approbation morale explicite) à la norme descriptive (consommation moyenne des voisins) pour neutraliser « l'effet boomerang », où les ménages déjà sobres augmenteraient leur consommation pour s'aligner sur la moyenne du quartier."
+      },
+      {
+        "letter": "C",
+        "text": "Corriger une anomalie technique du logiciel de facturation qui refusait d'imprimer des lettres de texte."
+      },
+      {
+        "letter": "D",
+        "text": "Signaler aux enfants de la famille que leurs parents ont payé leur facture par carte de crédit."
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "Une simple norme descriptive (comparaison avec le quartier) crée un effet pervers (« effet boomerang ») : les personnes vertueuses réalisent qu'elles consomment moins que la norme et relâchent leurs efforts. L'adjonction d'une norme injonctive (le smiley d'approbation sociale) bloque cet effet en validant moralement leur sobriété.",
+    "citation": "BVA Nudge Unit - A Brief History of Nudge (Vidéo Séance 06)",
+    "correctIndex": 1
+  },
+  {
+    "id": 16,
+    "category": "bva_nudge",
+    "doc_id": "doc_bva_nudge",
+    "anchor_id": "anchor_bva_q16",
+    "tag": "BVA Nudge Unit • Ancrage numérique & Architecture commerciale",
+    "points": "1 point",
+    "context": "La vidéo de la BVA Nudge Unit présente plusieurs expériences menées en supermarché sur la mise en rayon, notamment la fixation d'un panneau « Limite de 12 unités par client » pour une promotion de soupes en boîte.",
+    "prompt": "Pourquoi cette mention quantitative fictive augmente-t-elle significativement le volume moyen d'unités achetées par les consommateurs ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Parce que le chiffre 12 agit comme une ancre cognitive heuristique : les acheteurs ajustent inconsciemment leur volume d'achat à la hausse à partir de cette valeur de référence élevée."
+      },
+      {
+        "letter": "B",
+        "text": "Parce qu'elle active une peur panique de pénurie alimentaire organisée par le ministère de l'agriculture."
+      },
+      {
+        "letter": "C",
+        "text": "Parce que le magasin refuse physiquement de scanner les paniers contenant moins de 12 boîtes à la caisse."
+      },
+      {
+        "letter": "D",
+        "text": "Parce que les boîtes de soupe sont obligatoirement vendues ficelées par paquets de 12 dans le rayon."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "L'heuristique d'ancrage et ajustement (Tversky & Kahneman) montre qu'en présence d'une valeur numérique proéminente (même arbitraire comme une 'limite de 12'), les individus ancrent leur jugement sur ce chiffre et ajustent de manière insuffisante, ce qui double presque les achats moyens par rapport à une absence d'ancre.",
+    "citation": "BVA Nudge Unit - A Brief History of Nudge & Wansink et al. (1998)",
+    "correctIndex": 0
+  },
+  {
+    "id": 17,
+    "category": "ux_researcher",
+    "doc_id": "doc_ux_researcher",
+    "anchor_id": "anchor_ux_q17",
+    "tag": "UX Researcher (Konrad) • Recherche générative vs évaluative",
+    "points": "1 point",
+    "context": "Dans la vidéo et les guides méthodologiques sur le métier d'UX Researcher (Konrad), une distinction cardinale est établie entre les deux grands moments de la recherche utilisateur.",
+    "prompt": "Quelle est la finalité spécifique de la recherche dite 'générative' (ou de découverte) par opposition à la recherche 'évaluative' ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "La recherche générative se déroule uniquement le dernier jour avant le lancement commercial d'une application."
+      },
+      {
+        "letter": "B",
+        "text": "La recherche générative sert exclusivement à calculer le prix de vente optimal d'un logiciel en dollars."
+      },
+      {
+        "letter": "C",
+        "text": "La recherche évaluative est menée par des robots sans intervention d'aucun être humain."
+      },
+      {
+        "letter": "D",
+        "text": "La recherche générative explore le problème en amont (besoins profonds, modèles mentaux, pratiques réelles) avant toute conception ; la recherche évaluative teste des solutions, prototypes ou interfaces pour mesurer l'utilisabilité et identifier les blocages."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "La recherche générative (découverte) vise à comprendre le problème et à faire émerger des opportunités de conception sans présupposer la solution. La recherche évaluative intervient plus tard dans le cycle pour tester et valider des artefacts concrets (écrans, flux, prototypes).",
+    "citation": "Guide UX Researcher (Konrad) & Nielsen Norman Group",
+    "correctIndex": 3
+  },
+  {
+    "id": 18,
+    "category": "ux_researcher",
+    "doc_id": "doc_ux_researcher",
+    "anchor_id": "anchor_ux_q18",
+    "tag": "UX Researcher (Konrad) • Méthodes qualitatives vs quantitatives",
+    "points": "1 point",
+    "context": "Un chef de produit demande à l'UX Researcher : « Nous voulons savoir combien d'utilisateurs abandonnent leur panier d'achat et pourquoi ils le font ».",
+    "prompt": "Quelle articulation méthodologique rigoureuse l'ergonome cognitif doit-il proposer pour répondre fidèlement à cette double exigence ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Mobiliser une méthode quantitative (analyse des logs et entonnoirs de conversion) pour quantifier l'abandon ('Combien ?'), complétée par une méthode qualitative (tests d'utilisabilité modérés et verbalisation concurrente) pour diagnostiquer les modèles mentaux et les causes profondes ('Pourquoi ?')."
+      },
+      {
+        "letter": "B",
+        "text": "Remplacer l'équipe d'analystes par un sondage d'opinion diffusé sur les réseaux sociaux auprès de 50 000 influenceurs."
+      },
+      {
+        "letter": "C",
+        "text": "Considérer que les données quantitatives permettent à elles seules de deviner infailliblement les pensées intimes des usagers."
+      },
+      {
+        "letter": "D",
+        "text": "Interdire toute mesure chiffrée car l'ergonomie ne s'intéresse qu'à la poésie des interfaces visuelles."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "La triangulation quali/quanti est la règle d'or en recherche utilisateur : le quantitatif indique où et dans quelle proportion le problème survient (comportement observable à l'échelle), tandis que le qualitatif révèle les intentions, confusions et modèles mentaux des usagers (diagnostic en profondeur).",
+    "citation": "Guide UX Researcher (Konrad) & Cañas et al. (2011)",
+    "correctIndex": 0
+  },
+  {
+    "id": 19,
+    "category": "ux_researcher",
+    "doc_id": "doc_ux_researcher",
+    "anchor_id": "anchor_ux_q19",
+    "tag": "UX Researcher (Konrad) • Personas basés sur la recherche",
+    "points": "1 point",
+    "context": "Dans la pratique professionnelle d'UX Research, la création de personas est un livrable récurrent, souvent dévoyé par des approches purement marketing.",
+    "prompt": "Qu'est-ce qui caractérise un persona de recherche scientifiquement et cliniquement valide en ergonomie cognitive ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "C'est une fiche fictive inventée en 15 minutes lors d'une séance de remue-méninges de l'équipe de communication."
+      },
+      {
+        "letter": "B",
+        "text": "C'est une photo libre de droits accompagnée de l'âge exact, du signe astrologique et du plat préféré d'un client imaginaire."
+      },
+      {
+        "letter": "C",
+        "text": "C'est la copie mot à mot du profil Facebook du directeur général de l'entreprise cliente."
+      },
+      {
+        "letter": "D",
+        "text": "C'est un modèle comportemental synthétique fondé sur des régularités empiriques observées chez de multiples utilisateurs réels, documentant leurs buts, compétences cognitives, contraintes et stratégies de contournement."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "Un persona de recherche est un archétype empirique issu de données d'observation et d'entretiens. Il synthétise des schémas de comportement, des modèles mentaux et des freins cognitifs réels pour guider la conception centrée sur l'humain.",
+    "citation": "Guide UX Researcher (Konrad) & Alan Cooper (The Inmates Are Running the Asylum)",
+    "correctIndex": 3
+  },
+  {
+    "id": 20,
+    "category": "ux_researcher",
+    "doc_id": "doc_ux_researcher",
+    "anchor_id": "anchor_ux_q20",
+    "tag": "UX Researcher (Konrad) • Déontologie de la modération de test",
+    "points": "1 point",
+    "context": "Lors d'une séance de test d'utilisabilité en laboratoire, un participant hésite longuement devant un formulaire de commande en ligne et semble désorienté.",
+    "prompt": "Quelle posture et quelle formulation de relance respectent scrupuleusement la déontologie clinique de l'UX Researcher ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "« Voyons, le gros bouton rouge 'Valider' est juste en bas à droite, cliquez dessus ! »"
+      },
+      {
+        "letter": "B",
+        "text": "Garder une neutralité bienveillante et encourager la verbalisation sans indice : « Que cherchez-vous à faire en ce moment ? Qu'attendez-vous qu'il se produise si vous cliquez là ? »."
+      },
+      {
+        "letter": "C",
+        "text": "Prendre la souris des mains du participant et compléter l'achat à sa place pour gagner du temps."
+      },
+      {
+        "letter": "D",
+        "text": "« Excusez-moi, nos designers ont fait une erreur stupide en plaçant ce menu là, ne leur en voulez pas. »"
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "La règle déontologique absolue de la modération UX est la non-directivité : ne jamais souffler la solution, ne pas défendre l'équipe de design, ne pas juger l'utilisateur. Le chercheur encourage le 'think aloud' (protocole de verbalisation concurrente) pour capturer les représentations internes sans biaiser le test.",
+    "citation": "Guide UX Researcher (Konrad) & Dumas & Redish (A Practical Guide to Usability Testing)",
+    "correctIndex": 1
+  },
+  {
+    "id": 21,
+    "category": "chen_2024",
+    "doc_id": "doc_chen2024",
+    "anchor_id": "anchor_chen_q21",
+    "tag": "Chen (2024) • Préférences sociales & Jeu de l'ultimatum",
+    "points": "1 point",
+    "context": "Contrairement au postulat néoclassique de l'Homo Economicus motivé par le seul profit matériel immédiat, Chen (2024, p. 101-102) examine les données du 'Jeu de l'ultimatum'.",
+    "prompt": "Que prouvent empiriquement les rejets réguliers d'offres positives mais perçues comme inéquitables (ex. 10 $ sur 100 $) par les répondants ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Que les répondants ne savent pas compter et ignorent que 10 $ est supérieur à 0 $."
+      },
+      {
+        "letter": "B",
+        "text": "Que les humains intègrent une aversion à l'iniquité et une réciprocité négative : ils préfèrent subir une perte financière personnelle pour infliger une punition altruiste à un partenaire jugé injuste."
+      },
+      {
+        "letter": "C",
+        "text": "Que le jeu a été mal programmé par les assistants de recherche de l'université."
+      },
+      {
+        "letter": "D",
+        "text": "Que tous les répondants sont animés par un altruisme inconditionnel envers les banques centrales."
+      }
+    ],
+    "correctLetter": "B",
+    "explanation": "Dans le jeu de l'ultimatum, la rationalité économique pure prédit que le répondant acceptera toute offre non nulle (1 cent vaut mieux que 0). En réalité, les offres inéquitables sont massivement rejetées, démontrant que l'équité et le désir de punir l'injustice surpassent le gain matériel égoïste.",
+    "citation": "Chen (2024), p. 101-102, Section 3.4 Social Preferences",
+    "correctIndex": 1
+  },
+  {
+    "id": 22,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q11",
+    "tag": "Congiu & Moscati (2022) • Compétence décisionnelle vs Architecture passive",
+    "points": "1 point",
+    "context": "Un organisme de santé publique hésite entre deux stratégies pour réduire la consommation de sel : installer des salières à trous réduits dans les restaurants d'entreprise (Option 1) ou dispenser un atelier de formation interactif apprenant aux employés à lire et interpréter les tableaux de sodium sur les étiquettes alimentaires (Option 2).",
+    "prompt": "Selon la typologie de Hertwig et Grüne-Yanoff (2017) présentée par Congiu et Moscati (2022), comment qualifier rigoureusement ces deux interventions ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "L'Option 1 est un Nudge (modification de l'environnement physique de choix sans apprentissage) ; l'Option 2 est un Boost (développement d'une compétence décisionnelle autonome pérenne)."
+      },
+      {
+        "letter": "B",
+        "text": "Les deux options sont des taxes obligatoires déguisées au sens de la fiscalité municipale."
+      },
+      {
+        "letter": "C",
+        "text": "L'Option 1 est un Boost, tandis que l'Option 2 est une interdiction dictatoriale de consommer du sel."
+      },
+      {
+        "letter": "D",
+        "text": "Aucune des deux interventions n'appartient aux sciences psychologiques appliquées."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "La salière modifiée est un nudge classique de type 1 : elle modifie la mécanique physique du choix sans instruire l'usager. L'atelier de lecture d'étiquettes est un 'boost' : il enrichit les compétences cognitives de l'agent pour qu'il puisse prendre des décisions autonomes dans n'importe quel contexte futur.",
+    "citation": "Congiu & Moscati (2022), p. 194-195 & Hertwig & Grüne-Yanoff (2017)",
+    "correctIndex": 0
+  },
+  {
+    "id": 23,
+    "category": "congiu_2022",
+    "doc_id": "doc_congiu2022",
+    "anchor_id": "anchor_congiu_q8",
+    "tag": "Congiu & Moscati (2022) • Éthique & Dark Patterns",
+    "points": "1 point",
+    "context": "Un site de commerce électronique pré-coche par défaut une case ajoutant automatiquement une assurance payante facultative de 15 $ au panier d'achat, dissimulée sous des conditions générales déroulantes.",
+    "prompt": "À la lumière des principes éthiques de Thaler & Sunstein (2008) et de l'analyse de Congiu & Moscati (2022), comment qualifier cette pratique et en quoi viole-t-elle le contrat moral du paternalisme libertarien ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "C'est un 'sludge' ou un 'dark pattern' abusif : l'architecture du choix est manipulée au profit exclusif du marchand et au détriment du bien-être réfléchi du consommateur, violant l'obligation de bienveillance du paternalisme libertarien."
+      },
+      {
+        "letter": "B",
+        "text": "C'est un exemple parfait de nudge vertueux approuvé par l'ensemble des comités d'éthique de la consommation."
+      },
+      {
+        "letter": "C",
+        "text": "C'est une loi fédérale imposée pour renflouer le régime des rentes du Québec."
+      },
+      {
+        "letter": "D",
+        "text": "C'est une simple erreur de programmation Javascript qui n'a aucun impact psychologique."
+      }
+    ],
+    "correctLetter": "A",
+    "explanation": "Pour qu'une intervention soit un nudge éthique au sens de Thaler & Sunstein, elle doit viser le bien-être de la personne tel que jugé par elle-même. Lorsque l'architecture du choix exploite la négligence ou la confusion pour soutirer de l'argent au profit du commerçant, c'est un 'sludge' ou 'dark pattern', contraire aux principes de transparence et de bienveillance.",
+    "citation": "Congiu & Moscati (2022), p. 195-197 & Thaler (2018, Nudge, not sludge)",
+    "correctIndex": 0
+  },
+  {
+    "id": 24,
+    "category": "ux_researcher",
+    "doc_id": "doc_ux_researcher",
+    "anchor_id": "anchor_ux_q18",
+    "tag": "UX Researcher (Konrad) • Triangulation ergonomique & Méthode en 4 phases",
+    "points": "1 point",
+    "context": "Dans la démarche ergonomique officielle enseignée à l'UQAM (Méthode en 4 phases de la Séance 02 et méthode Cañas de la Séance 01), l'analyste doit articuler observation terrain et verbalisation.",
+    "prompt": "Pourquoi la triangulation entre l'observation du comportement objectif (ce que l'utilisateur fait) et la verbalisation concourante (ce que l'utilisateur dit ou pense) est-elle indispensable pour l'évaluation ergonomique ?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Parce que les caméras vidéo sont trop coûteuses pour enregistrer le comportement physique seul."
+      },
+      {
+        "letter": "B",
+        "text": "Parce que les utilisateurs mentent intentionnellement dans 100 % des tests de convivialité."
+      },
+      {
+        "letter": "C",
+        "text": "Parce que les professeurs exigent toujours au moins deux logiciels différents pour valider un devoir de maîtrise."
+      },
+      {
+        "letter": "D",
+        "text": "Parce que l'observation seule décrit la performance motrice sans révéler le modèle mental interne, tandis que le discours seul est sujet aux biais de rationalisation après coup ; leur croisement révèle les gouffres d'exécution et d'évaluation."
+      }
+    ],
+    "correctLetter": "D",
+    "explanation": "La triangulation méthodologique est au cœur de l'ergonomie cognitive (Passalacqua & Bédard) : observer les actions sans écouter l'utilisateur laisse le modèle mental dans l'ombre ; écouter l'utilisateur sans observer ses clics expose aux biais de désirabilité sociale ou d'oubli. Le croisement des deux permet d'identifier précisément les défaillances de conception.",
+    "citation": "Méthode en 4 phases (UQAM) & Cañas et al. (2011) & Don Norman",
+    "correctIndex": 3
+  }
+];
+    const S6_MASTER_FLASHCARDS = [
+  {
+    "id": 1,
+    "category": "economie_comportementale",
+    "tag": "Module A • Économie comportementale & Biais",
+    "title": "Rationalité limitée vs Homo Economicus",
+    "front": "Dans les modèles économiques traditionnels, l'agent décideur optimise ses choix de manière froide, omnisciente et infaillible. Pourquoi Herbert Simon et Daniel Kahneman affirment-ils que ce modèle est une fiction empirique ?",
+    "backTitle": "Capacités cognitives finies & Modèle satisfaisant",
+    "back": "<strong>Diagnostic clinique :</strong> L'être humain dispose de ressources attentionnelles, d'une mémoire de travail et d'un temps de calcul finis. Face à l'incertitude, il ne maximise pas l'utilité globale mais cherche une solution « satisfaisante » (<em>satisficing</em>) en utilisant des raccourcis mentaux.<br><br><strong>Concept clé :</strong> <em>Rationalité limitée (Bounded Rationality - Herbert Simon)</em> et <em>Double processus Système 1 / Système 2 (Kahneman)</em>.<br><br><strong>Application terrain :</strong> Concevoir des interfaces simples qui minimisent l'effort cognitif plutôt que de submerger l'utilisateur de tableaux comparatifs complexes."
+  },
+  {
+    "id": 2,
+    "category": "economie_comportementale",
+    "tag": "Module A • Économie comportementale & Biais",
+    "title": "Aversion aux pertes (Loss Aversion)",
+    "front": "Pourquoi un consommateur ressent-il une détresse psychologique bien plus vive lorsqu'on lui retire une remise de 10 $ que le plaisir qu'il éprouve lorsqu'on lui accorde un rabais de 10 $ ?",
+    "backTitle": "Asymétrie de la fonction de valeur (Kahneman & Tversky)",
+    "back": "<strong>Diagnostic clinique :</strong> Selon la Théorie des perspectives, les pertes sont ressenties environ 2 fois plus intensément que des gains équivalents (« <em>losses loom larger than gains</em> »). La fonction de valeur est plus abrupte sous le point de référence.<br><br><strong>Concept clé :</strong> <em>Aversion aux pertes (Loss aversion - Kahneman & Tversky 1979)</em>.<br><br><strong>Application terrain :</strong> Cadrer un choix sous l'angle de ce que l'usager risque de perdre (ex. 'Ne perdez pas vos avantages acquis') est plus incitatif que de promettre un gain futur identique."
+  },
+  {
+    "id": 3,
+    "category": "economie_comportementale",
+    "tag": "Module A • Économie comportementale & Biais",
+    "title": "Biais du présent & Procrastination",
+    "front": "Pourquoi la majorité des individus reconnaissent-ils l'importance cruciale d'épargner pour la retraite ou d'adopter une alimentation saine, tout en reportant continuellement l'action au lendemain ?",
+    "backTitle": "Actualisation hyperbolique & Incohérence temporelle",
+    "back": "<strong>Diagnostic clinique :</strong> L'humain surpondère disproportionnellement les récompenses immédiates par rapport aux gratifications différées (<em>present bias</em>). Le coût de l'effort est immédiat (Système 1), alors que le bénéfice est lointain et abstrait.<br><br><strong>Concept clé :</strong> <em>Actualisation hyperbolique (Hyperbolic discounting)</em>.<br><br><strong>Application terrain :</strong> Utiliser des mécanismes de pré-engagement (ex. programme SMarT) ou lier la tâche ardue à une récompense immédiate pour neutraliser la myopie temporelle."
+  },
+  {
+    "id": 4,
+    "category": "economie_comportementale",
+    "tag": "Module A • Économie comportementale & Biais",
+    "title": "Effet d'ancrage en contexte d'achat",
+    "front": "Lorsqu'un site marchand affiche un prix initial barré de 200 $ à côté d'un prix soldé de 80 $, pourquoi les acheteurs perçoivent-ils une affaire bien plus avantageuse que si le produit était simplement affiché à 80 $ dès le départ ?",
+    "backTitle": "Ajustement insuffisant à partir d'une ancre initiale",
+    "back": "<strong>Diagnostic clinique :</strong> Le chiffre 200 $ sert d'ancre cognitive initiale. Même si l'usager sait que ce prix est gonflé, son jugement d'évaluation reste polarisé vers cette valeur de départ et calibre son sentiment d'aubaine sur le rabais perçu plutôt que sur la valeur absolue de 80 $.<br><br><strong>Concept clé :</strong> <em>Heuristique d'ancrage et d'ajustement (Tversky & Kahneman 1974)</em>.<br><br><strong>Application terrain :</strong> Présenter des points de repère explicites pour guider l'évaluation de la valeur sans induire l'usager en erreur."
+  },
+  {
+    "id": 5,
+    "category": "nudges_politiques",
+    "tag": "Module B • Architecture du choix & Nudges",
+    "title": "L'option par défaut (Default effect)",
+    "front": "Pourquoi les formulaires avec adhésion par défaut (opt-out) génèrent-ils des taux de participation de plus de 80 %, alors que les formulaires d'adhésion volontaire (opt-in) plafonnent souvent sous la barre des 25 % ?",
+    "backTitle": "Inertie, coût de friction et approbation implicite",
+    "back": "<strong>Diagnostic clinique :</strong> L'option par défaut capitalise sur trois forces cognitives : 1) l'inertie et le biais de statu quo ; 2) le coût de friction cognitif ou moteur nécessaire pour cocher la case inverse ; 3) l'inférence que l'option par défaut représente la recommandation légitime de l'institution.<br><br><strong>Concept clé :</strong> <em>Architecture du choix & Biais de statu quo (Thaler & Sunstein 2008)</em>.<br><br><strong>Application terrain :</strong> En UX éthique, placer en défaut l'option qui protège la vie privée ou la sécurité de l'usager (*privacy by default*)."
+  },
+  {
+    "id": 6,
+    "category": "nudges_politiques",
+    "tag": "Module B • Architecture du choix & Nudges",
+    "title": "Normes sociales descriptives vs injonctives",
+    "front": "Dans les hôtels, pourquoi le message « 75 % des clients de cette chambre réutilisent leurs serviettes pour protéger l'environnement » est-il plus efficace qu'un appel générique à la morale civique ?",
+    "backTitle": "Conformité aux pairs & Référence contextuelle",
+    "back": "<strong>Diagnostic clinique :</strong> La norme descriptive informe l'individu sur ce que font réellement ses pairs dans une situation identique. L'humain s'appuie sur le comportement du groupe pour déterminer l'attitude sociale appropriée (effet d'entraînement / preuve sociale).<br><br><strong>Concept clé :</strong> <em>Normes sociales descriptives (Robert Cialdini)</em>.<br><br><strong>Application terrain :</strong> Montrer des repères de pairs comparables (ex. O-Power) pour encourager la sobriété sans sentiment de contrainte autoritaire."
+  },
+  {
+    "id": 7,
+    "category": "nudges_politiques",
+    "tag": "Module B • Architecture du choix & Nudges",
+    "title": "Nudges versus Boosts",
+    "front": "Quelle distinction clinique fondamentale sépare la décision de placer des fruits à hauteur des yeux dans une cantine scolaire (Nudge) de celle d'enseigner aux élèves à décrypter les étiquettes nutritionnelles (Boost) ?",
+    "backTitle": "Guidage comportemental passif vs Autonomisation cognitive",
+    "back": "<strong>Diagnostic clinique :</strong> Le Nudge modifie l'environnement physique immédiat pour orienter le choix sans effort conscient, mais sans développer les capacités intrinsèques de l'élève. Le Boost transmet une compétence cognitive pérenne et transférable (comprendre la valeur nutritive) qui le rend autonome dans n'importe quel magasin.<br><br><strong>Concept clé :</strong> <em>Boosts versus Nudges (Hertwig & Grüne-Yanoff 2016)</em>.<br><br><strong>Application terrain :</strong> Privilégier les boosts lorsque l'enjeu requiert un engagement réfléchi durable et une responsabilisation personnelle."
+  },
+  {
+    "id": 8,
+    "category": "nudges_politiques",
+    "tag": "Module B • Architecture du choix & Nudges",
+    "title": "Effet d'éviction (Nudging-out)",
+    "front": "Pourquoi certains économistes de l'environnement s'inquiètent-ils lorsqu'une compagnie aérienne propose une micro-option de compensation carbone par défaut de 1,50 $ lors de l'achat d'un billet d'avion ?",
+    "backTitle": "Substitution de complaisance & Démobilisation citoyenne",
+    "back": "<strong>Diagnostic clinique :</strong> L'effet d'éviction (*nudging-out effect*, Hagmann et al. 2019) montre que l'adoption d'un micro-nudge peu coûteux apaise la mauvaise conscience des usagers et réduit significativement leur soutien envers des réformes fiscales structurelles plus contraignantes (comme une véritable taxe kérosène).<br><br><strong>Concept clé :</strong> <em>Effet d'éviction / Nudging-out effect</em>.<br><br><strong>Application terrain :</strong> Ne jamais présenter un nudge symbolique comme une solution complète à un problème systémique complexe."
+  },
+  {
+    "id": 9,
+    "category": "ux_research",
+    "tag": "Module C • UX Research & Facteurs Humains",
+    "title": "Le piège de la question inductive",
+    "front": "Lors d'un test utilisateur, un designer demande à l'usager : « Ne trouvez-vous pas que le menu déroulant est facile à trouver ? ». Pourquoi cette question est-elle méthodologiquement proscrite pour un UX Researcher ?",
+    "backTitle": "Biais d'acquiescement & Suggestion de réponse",
+    "back": "<strong>Diagnostic clinique :</strong> C'est une question inductive (*leading question*) qui oriente le participant et active le biais de désirabilité sociale (peur de blesser le concepteur). Elle détruit la validité scientifique du test.<br><br><strong>Concept clé :</strong> <em>Neutralité scientifique & Biais d'expérimentateur (Vidéo UX Researcher)</em>.<br><br><strong>Application terrain :</strong> Poser des questions strictement ouvertes et neutres : « Que remarquez-vous sur cet écran ? » ou « Où iriez-vous pour changer ce réglage ? » et observer l'action motrice."
+  },
+  {
+    "id": 10,
+    "category": "ux_research",
+    "tag": "Module C • UX Research & Facteurs Humains",
+    "title": "Triangulation : Comportement vs Déclaratif",
+    "front": "Lors d'une entrevue, 85 % des répondants affirment accorder une importance capitale à la protection de leurs données personnelles. Pourtant, 92 % d'entre eux cliquent sur 'Tout accepter' en moins de 2 secondes lors de l'apparition d'une bannière de cookies. Pourquoi ?",
+    "backTitle": "Paradoxe de la vie privée & Coût attentionnel",
+    "back": "<strong>Diagnostic clinique :</strong> Ce décalage illustre le « Privacy Paradox ». Le déclaratif (ce que les gens pensent ou aimeraient faire) est biaisé par l'idéal normatif. L'action observée (ce qu'ils font réellement) est dominée par le désir immédiat d'accéder au contenu (Système 1 / friction minimale).<br><br><strong>Concept clé :</strong> <em>Dissociation Déclaratif vs Comportement observable (Cañas 2011 / UX Research)</em>.<br><br><strong>Application terrain :</strong> Fonder les décisions de conception sur l'observation des comportements effectifs en situation d'usage plutôt que sur de simples questionnaires d'opinion."
+  },
+  {
+    "id": 11,
+    "category": "ux_research",
+    "tag": "Module C • UX Research & Facteurs Humains",
+    "title": "L'utilité cognitive du User Persona",
+    "front": "Dans une équipe d'ingénieurs logiciel, chacun a tendance à concevoir l'interface en fonction de sa propre aisance technologique. Comment la création d'un User Persona permet-elle de corriger cette dérive ?",
+    "backTitle": "Ancrage de l'empathie & Désaxement de l'expert",
+    "back": "<strong>Diagnostic clinique :</strong> Le persona matérialise un profil type d'usager réel avec ses compétences limitées, ses habitudes et ses contraintes. Il force l'équipe à dépasser son biais égocentrique en posant la question : « Est-ce que ce vocabulaire technique a du sens pour notre persona Martin, 62 ans, commerçant débutant ? ».<br><br><strong>Concept clé :</strong> <em>User Persona (Guide Konrad / Vidéo UXr)</em>.<br><br><strong>Application terrain :</strong> Placer le persona au centre des revues de sprint pour arbitrer les choix ergonomiques sans conflit d'opinions personnelles."
+  },
+  {
+    "id": 12,
+    "category": "ux_research",
+    "tag": "Module C • UX Research & Facteurs Humains",
+    "title": "Méta-analyses et taille d'effet terrain",
+    "front": "Pourquoi les méta-analyses récentes sur les Nudge Units (DellaVigna & Linos 2022) rapportent-elles des tailles d'effet de 1 à 3 % sur le terrain alors que les revues académiques rapportent souvent 8 à 10 % ?",
+    "backTitle": "Biais de publication & Bruit du milieu naturel",
+    "back": "<strong>Diagnostic clinique :</strong> Les revues universitaires souffrent d'un biais de publication (*file-drawer problem*) qui surreprésente les études de laboratoire spectaculaires à petits échantillons. Sur le terrain réel, le milieu naturel est bruité et saturé de distractions, mais un gain de 1,4 point sur des millions de citoyens génère un impact économique massif pour un coût presque nul.<br><br><strong>Concept clé :</strong> <em>Évaluation de l'efficacité réelle (Congiu & Moscati 2022 / DellaVigna & Linos)</em>.<br><br><strong>Application terrain :</strong> Toujours évaluer le succès d'une intervention par son ratio bénéfice/coût à grande échelle plutôt que par un pourcentage brut d'effet isolé."
+  }
+];
+
+    let s6CurrentQIdx = 0;
+    let s6UserAnswers = {};
+    let s6Mode = 'study'; // 'study' (24 QCM) | 'simulation' (4 QCM chronométrées)
+    let s6SimQuestions = [];
+    let s6TimerSeconds = 15 * 60;
+    let s6TimerInterval = null;
+    let s6CardIdx = 0;
+    let s6CardFlipped = false;
+
+    function getActiveS6Questions() {
+      return (s6Mode === 'simulation' && s6SimQuestions.length > 0) ? s6SimQuestions : S6_MASTER_QUESTIONS;
+    }
+
+    function setS6Mode(mode) {
+      s6Mode = mode;
+      const btnSim = document.getElementById('btnS6ModeSim');
+      const btnStudy = document.getElementById('btnS6ModeStudy');
+      const timerBadge = document.getElementById('s6TimerBadge');
+
+      if (mode === 'simulation') {
+        if (btnSim) {
+          btnSim.style.background = 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)';
+          btnSim.style.color = '#ffffff';
+        }
+        if (btnStudy) {
+          btnStudy.style.background = 'var(--bg-card-alt)';
+          btnStudy.style.color = 'var(--text-main)';
+        }
+        // Tirer 4 questions aléatoires sans remise
+        const shuffled = [...S6_MASTER_QUESTIONS].sort(() => 0.5 - Math.random());
+        s6SimQuestions = shuffled.slice(0, 4);
+        s6UserAnswers = {};
+        s6CurrentQIdx = 0;
+
+        // Démarrer chronomètre 15 min
+        if (s6TimerInterval) clearInterval(s6TimerInterval);
+        s6TimerSeconds = 15 * 60;
+        updateS6TimerDisplay();
+        s6TimerInterval = setInterval(() => {
+          if (s6TimerSeconds > 0) {
+            s6TimerSeconds--;
+            updateS6TimerDisplay();
+          } else {
+            clearInterval(s6TimerInterval);
+            showToast("⏱️ Temps écoulé pour la simulation du Quiz 2 !");
+          }
+        }, 1000);
+
+        showToast("🎯 Mode Simulation activé : 4 questions tirées au sort, 15 minutes chrono !");
+      } else {
+        if (btnStudy) {
+          btnStudy.style.background = 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)';
+          btnStudy.style.color = '#ffffff';
+        }
+        if (btnSim) {
+          btnSim.style.background = 'var(--bg-card-alt)';
+          btnSim.style.color = 'var(--text-main)';
+        }
+        if (s6TimerInterval) clearInterval(s6TimerInterval);
+        if (timerBadge) timerBadge.textContent = '⏱️ Étude libre';
+        s6UserAnswers = {};
+        s6CurrentQIdx = 0;
+        showToast("📚 Mode Étude libre activé : les 24 questions ZPD sont accessibles.");
+      }
+      renderS6Question(0);
+    }
+
+    function updateS6TimerDisplay() {
+      const timerBadge = document.getElementById('s6TimerBadge');
+      if (!timerBadge) return;
+      const m = Math.floor(s6TimerSeconds / 60);
+      const s = s6TimerSeconds % 60;
+      timerBadge.textContent = '⏱️ ' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+      if (s6TimerSeconds <= 120) {
+        timerBadge.style.color = '#e11d48';
+        timerBadge.style.borderColor = '#e11d48';
+      } else {
+        timerBadge.style.color = 'var(--text-main)';
+        timerBadge.style.borderColor = 'var(--border-color)';
+      }
+    }
+
+    function renderS6Question(idx) {
+      const questionsList = getActiveS6Questions();
+      if (!questionsList || questionsList.length === 0) return;
+      if (idx < 0) idx = 0;
+      if (idx >= questionsList.length) idx = questionsList.length - 1;
+      s6CurrentQIdx = idx;
+
+      const q = questionsList[idx];
+
+      // Mise à jour des compteurs et titres
+      const counterEl = document.getElementById('s6QCounter');
+      if (counterEl) counterEl.textContent = 'Question ' + (idx + 1) + ' / ' + questionsList.length;
+
+      const catEl = document.getElementById('s6QCategory');
+      if (catEl) catEl.textContent = q.tag || 'Séance 06 : Commerce et Consommation 1';
+
+      const progressEl = document.getElementById('s6ProgressBarFill');
+      if (progressEl) {
+        progressEl.style.width = (((idx + 1) / questionsList.length) * 100) + '%';
+      }
+
+      // Score
+      let correctCount = 0;
+      let answeredCount = 0;
+      questionsList.forEach((item, i) => {
+        const ans = s6UserAnswers[i];
+        if (ans) {
+          answeredCount++;
+          if (ans === item.correctLetter) correctCount++;
+        }
+      });
+      const scoreValEl = document.getElementById('s6ScoreVal');
+      const scoreTotEl = document.getElementById('s6ScoreTotal');
+      const scorePctEl = document.getElementById('s6ScorePct');
+      if (scoreValEl) scoreValEl.textContent = correctCount;
+      if (scoreTotEl) scoreTotEl.textContent = questionsList.length;
+      if (scorePctEl) {
+        const pct = answeredCount > 0 ? Math.round((correctCount / questionsList.length) * 100) : 0;
+        scorePctEl.textContent = pct + '%';
+      }
+
+      // Contexte et Énoncé
+      const contextEl = document.getElementById('s6QContext');
+      if (contextEl) {
+        contextEl.innerHTML = '<strong>Mise en situation clinique :</strong> ' + (q.context || '');
+      }
+
+      const promptEl = document.getElementById('s6QPrompt');
+      if (promptEl) {
+        promptEl.innerHTML = '<strong>' + (q.prompt || q.question || '') + '</strong>';
+      }
+
+      // Options
+      const optionsContainer = document.getElementById('s6OptionsList');
+      if (optionsContainer) {
+        optionsContainer.innerHTML = '';
+        const answered = s6UserAnswers[idx];
+
+        q.options.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'b2-option-btn';
+          btn.style.textAlign = 'left';
+          btn.style.width = '100%';
+          btn.style.display = 'flex';
+          btn.style.alignItems = 'flex-start';
+          btn.style.gap = '10px';
+          btn.style.padding = '12px 14px';
+          btn.style.margin = '4px 0';
+          btn.style.borderRadius = '8px';
+          btn.style.border = '1px solid var(--border-color)';
+          btn.style.background = 'var(--bg-card)';
+          btn.style.color = 'var(--text-main)';
+          btn.style.cursor = answered ? 'default' : 'pointer';
+
+          const badge = document.createElement('span');
+          badge.className = 'b2-opt-letter';
+          badge.textContent = opt.letter;
+          badge.style.fontWeight = '700';
+          badge.style.padding = '2px 8px';
+          badge.style.borderRadius = '4px';
+          badge.style.background = 'var(--bg-card-alt)';
+          badge.style.border = '1px solid var(--border-color)';
+
+          const textSpan = document.createElement('span');
+          textSpan.style.flex = '1';
+          textSpan.style.fontSize = '0.92rem';
+          textSpan.style.lineHeight = '1.5';
+          textSpan.textContent = opt.text;
+
+          btn.appendChild(badge);
+          btn.appendChild(textSpan);
+
+          if (answered) {
+            if (opt.letter === q.correctLetter) {
+              btn.style.borderColor = '#10b981';
+              btn.style.background = 'rgba(16, 185, 129, 0.12)';
+              badge.style.background = '#10b981';
+              badge.style.color = '#ffffff';
+            } else if (opt.letter === answered) {
+              btn.style.borderColor = '#ef4444';
+              btn.style.background = 'rgba(239, 68, 68, 0.12)';
+              badge.style.background = '#ef4444';
+              badge.style.color = '#ffffff';
+            } else {
+              btn.style.opacity = '0.6';
+            }
+          } else {
+            btn.onclick = () => selectS6Option(opt.letter);
+          }
+
+          optionsContainer.appendChild(btn);
+        });
+      }
+
+      // Rétroaction
+      const feedbackBox = document.getElementById('s6FeedbackBox');
+      if (feedbackBox) {
+        const answered = s6UserAnswers[idx];
+        if (answered) {
+          feedbackBox.style.display = 'block';
+          const isCorrect = (answered === q.correctLetter);
+          feedbackBox.className = 'b2-feedback-box ' + (isCorrect ? 'b2-feedback-correct' : 'b2-feedback-incorrect');
+          feedbackBox.style.borderLeft = isCorrect ? '4px solid #10b981' : '4px solid #ef4444';
+          feedbackBox.style.background = 'var(--bg-card-alt)';
+          feedbackBox.style.padding = '14px';
+          feedbackBox.style.borderRadius = '8px';
+          feedbackBox.style.marginTop = '12px';
+
+          feedbackBox.innerHTML = `
+            <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; color: ${isCorrect ? '#10b981' : '#ef4444'};">
+              ${isCorrect ? '✅ Réponse exacte !' : '❌ Réponse incorrecte (Option attendue : ' + q.correctLetter + ')'}
+            </div>
+            <div style="font-size: 0.9rem; line-height: 1.55; color: var(--text-main); margin-bottom: 8px;">
+              <strong>Explication théorique :</strong> ${q.explanation || ''}
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px;">
+              <strong>Source officielle :</strong> ${q.citation || ''}
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="hub-btn-primary" onclick="jumpToS6Anchor(${idx})" style="font-size: 0.82rem; padding: 6px 12px; background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);">
+                <span>🔍</span> <span>Voir le passage surligné dans le document</span>
+              </button>
+            </div>
+          `;
+        } else {
+          feedbackBox.style.display = 'none';
+        }
+      }
+
+      // Pilules de navigation
+      const pillsWrap = document.getElementById('s6QPillsWrap');
+      if (pillsWrap) {
+        pillsWrap.innerHTML = '';
+        questionsList.forEach((item, i) => {
+          const pill = document.createElement('button');
+          pill.type = 'button';
+          pill.className = 'b2-q-pill' + (i === idx ? ' active' : '');
+          pill.style.width = '28px';
+          pill.style.height = '28px';
+          pill.style.borderRadius = '50%';
+          pill.style.border = '1px solid var(--border-color)';
+          pill.style.fontSize = '0.78rem';
+          pill.style.fontWeight = '700';
+          pill.style.cursor = 'pointer';
+          pill.style.margin = '2px';
+          pill.textContent = (i + 1);
+
+          const ans = s6UserAnswers[i];
+          if (ans) {
+            if (ans === item.correctLetter) {
+              pill.style.background = '#10b981';
+              pill.style.color = '#ffffff';
+              pill.style.borderColor = '#10b981';
+            } else {
+              pill.style.background = '#ef4444';
+              pill.style.color = '#ffffff';
+              pill.style.borderColor = '#ef4444';
+            }
+          } else {
+            if (i === idx) {
+              pill.style.background = '#e11d48';
+              pill.style.color = '#ffffff';
+              pill.style.borderColor = '#e11d48';
+            } else {
+              pill.style.background = 'var(--bg-card-alt)';
+              pill.style.color = 'var(--text-main)';
+            }
+          }
+
+          pill.onclick = () => renderS6Question(i);
+          pillsWrap.appendChild(pill);
+        });
+      }
+    }
+
+    function selectS6Option(letter) {
+      s6UserAnswers[s6CurrentQIdx] = letter;
+      renderS6Question(s6CurrentQIdx);
+    }
+
+    function nextS6Question() {
+      const questionsList = getActiveS6Questions();
+      if (s6CurrentQIdx < questionsList.length - 1) {
+        renderS6Question(s6CurrentQIdx + 1);
+      } else {
+        showToast("Vous avez atteint la dernière question de la série.");
+      }
+    }
+
+    function prevS6Question() {
+      if (s6CurrentQIdx > 0) {
+        renderS6Question(s6CurrentQIdx - 1);
+      }
+    }
+
+    function resetS6Quiz() {
+      if (confirm("Réinitialiser vos réponses pour cette série du Quiz 2 ?")) {
+        s6UserAnswers = {};
+        renderS6Question(0);
+        showToast("Questionnaire réinitialisé.");
+      }
+    }
+
+    function jumpToS6Anchor(qIdx) {
+      const questionsList = getActiveS6Questions();
+      const q = questionsList[qIdx];
+      if (!q) return;
+
+      // Basculer vers le document de référence
+      if (q.doc_id && typeof switchTab === 'function') {
+        switchTab(q.doc_id, false, false);
+      }
+
+      // Ouvrir le volet source sur mobile
+      if (isSinglePaneMode()) {
+        setMobileView('source');
+      }
+
+      // Surligner l'ancre cible
+      setTimeout(() => {
+        const targetVpId = 'viewport_' + (q.doc_id || activeDocId) + '_' + docLanguage;
+        const vp = document.getElementById(targetVpId);
+        if (!vp) return;
+
+        const anchorSuffix = (docLanguage === 'fr') ? '_fr' : '';
+        const targetId = (q.anchor_id ? q.anchor_id : ('anchor_s6_q' + q.id)) + anchorSuffix;
+        let targetEl = vp.querySelector('#' + targetId) || 
+                       vp.querySelector('#' + (q.anchor_id || ('anchor_s6_q' + q.id))) ||
+                       document.getElementById(targetId) ||
+                       document.getElementById(q.anchor_id);
+
+        document.querySelectorAll('.source-anchor-target').forEach(el => el.classList.remove('active-highlight'));
+        if (targetEl) {
+          targetEl.classList.add('active-highlight');
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          showToast("Passage de référence localisé et surligné.");
+        } else {
+          // Repli sur recherche automatique du premier concept clé
+          const inputEl = document.getElementById('readerSearchInput');
+          if (inputEl && q.tag) {
+            const kw = q.tag.split('•')[1] ? q.tag.split('•')[1].trim() : q.tag.trim();
+            inputEl.value = kw.split(' ')[0] || '';
+            executeSearch();
+          }
+        }
+      }, 100);
+    }
+
+    // --- FLASHCARDS SÉANCE 6 ---
+    function switchS6SubTab(tab) {
+      const quizBtn = document.getElementById('s6TabBtnQuiz');
+      const cardsBtn = document.getElementById('s6TabBtnCards');
+      const quizView = document.getElementById('s6QuizContainer');
+      const cardsView = document.getElementById('s6CardsContainer');
+
+      if (tab === 'cards') {
+        if (quizBtn) quizBtn.classList.remove('active');
+        if (cardsBtn) cardsBtn.classList.add('active');
+        if (quizView) quizView.style.display = 'none';
+        if (cardsView) cardsView.style.display = 'block';
+        renderS6Flashcard(s6CardIdx);
+      } else {
+        if (cardsBtn) cardsBtn.classList.remove('active');
+        if (quizBtn) quizBtn.classList.add('active');
+        if (cardsView) cardsView.style.display = 'none';
+        if (quizView) quizView.style.display = 'block';
+        renderS6Question(s6CurrentQIdx);
+      }
+    }
+
+    function renderS6Flashcard(idx) {
+      if (!S6_MASTER_FLASHCARDS || S6_MASTER_FLASHCARDS.length === 0) return;
+      if (idx < 0) idx = 0;
+      if (idx >= S6_MASTER_FLASHCARDS.length) idx = S6_MASTER_FLASHCARDS.length - 1;
+      s6CardIdx = idx;
+
+      const card = S6_MASTER_FLASHCARDS[idx];
+
+      const counterEl = document.getElementById('s6CardCounter');
+      if (counterEl) counterEl.textContent = 'Fiche ' + (idx + 1) + ' / ' + S6_MASTER_FLASHCARDS.length;
+
+      const themeEl = document.getElementById('s6CardFrontTheme');
+      if (themeEl) themeEl.textContent = card.theme || 'Facteurs humains & Nudges';
+
+      const titleEl = document.getElementById('s6CardFrontTitle');
+      if (titleEl) titleEl.textContent = card.title || 'Cas clinique';
+
+      const bodyEl = document.getElementById('s6CardFrontBody');
+      if (bodyEl) bodyEl.textContent = card.case || '';
+
+      const conceptEl = document.getElementById('s6CardBackConcept');
+      if (conceptEl) conceptEl.textContent = card.concept || 'Concept théorique';
+
+      const principleEl = document.getElementById('s6CardBackPrinciple');
+      if (principleEl) principleEl.textContent = card.principle || 'Analyse ergonomique';
+
+      const analysisEl = document.getElementById('s6CardBackAnalysis');
+      if (analysisEl) analysisEl.textContent = card.analysis || '';
+
+      const citationEl = document.getElementById('s6CardBackCitation');
+      if (citationEl) citationEl.textContent = 'Source : ' + (card.citation || '');
+
+      // Réinitialiser la rotation
+      s6CardFlipped = false;
+      const inner = document.getElementById('s6CardInner');
+      if (inner) inner.style.transform = 'rotateY(0deg)';
+    }
+
+    function flipS6Card() {
+      s6CardFlipped = !s6CardFlipped;
+      const inner = document.getElementById('s6CardInner');
+      if (inner) {
+        inner.style.transform = s6CardFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      }
+    }
+
+    function nextS6Card() {
+      if (s6CardIdx < S6_MASTER_FLASHCARDS.length - 1) {
+        renderS6Flashcard(s6CardIdx + 1);
+      } else {
+        renderS6Flashcard(0);
+      }
+    }
+
+    function prevS6Card() {
+      if (s6CardIdx > 0) {
+        renderS6Flashcard(s6CardIdx - 1);
+      } else {
+        renderS6Flashcard(S6_MASTER_FLASHCARDS.length - 1);
+      }
+    }
+
+    function seekPodcastSeance6(sec) {
+      const p = document.getElementById('playerSeance6');
+      if (p) {
+        p.currentTime = sec;
+        p.play();
+        showToast("Lecture de la capsule audio à " + Math.floor(sec / 60) + "m " + (sec % 60) + "s.");
+      }
+    }
+
+</script>
   <!-- MODAL OPTIONS ET PREFERENCES MOBILE / BUREAU -->
   <div id="optionsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="optionsModalTitle" style="display: none;" onclick="if(event.target === this) closeOptionsModal();">
     <div class="reset-modal-box" style="text-align: left; max-width: 440px;">
