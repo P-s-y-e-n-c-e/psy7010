@@ -5,6 +5,8 @@
 *.mp4
 *.webm
 *.mkv
+!06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a
+!Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a
 
 # OS / Temporary
 Thumbs.db
