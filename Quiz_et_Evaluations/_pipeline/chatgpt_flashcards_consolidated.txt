@@ -1,0 +1,227 @@
+ChatGPT a dit :
+Fiche 1 — Rationalité limitée et choix satisfaisant
+
+Catégorie : Décision économique
+Tag source : Chen2024_3_1_p101
+
+Recto : Une acheteuse compare plusieurs voitures, puis arrête sa recherche lorsqu’un modèle satisfait ses critères essentiels. Elle sait qu’elle n’a pas examiné toute l’offre. Comment Chen explique-t-il cette décision sans la réduire à un choix aléatoire ?
+
+Titre verso : Décider suffisamment bien sous contraintes
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> La mémoire, les capacités de calcul et l’information disponibles limitent l’examen des possibilités. Le choix satisfaisant consiste à retenir une solution suffisamment bonne dans ces conditions, plutôt qu’à rechercher exhaustivement la meilleure. Cette stratégie peut être pratique et efficace, tout en produisant un choix sous-optimal.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Rationalité limitée de Herbert Simon et satisficing, présentés par Chen (2024), §3.1, p. imprimée 101.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Ne pas attribuer le satisficing à la distinction Système 1/Système 2. Une décision satisfaisante peut comporter une délibération ; elle ne démontre pas à elle seule un automatisme ni une erreur.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Rendre les critères pertinents faciles à comparer et limiter les exigences de mémorisation. Aider l’usager à vérifier qu’une option répond à ses besoins.</p>
+Fiche 2 — Aversion aux pertes et asymétrie gains/pertes
+
+Catégorie : Émotions et décisions financières
+Tag source : Chen2024_4_1_p102
+
+Recto : À montants équivalents, une personne réagit plus fortement à la possibilité de perdre de l’argent qu’à celle d’en gagner. Quelle asymétrie Chen décrit-il, et quelle conclusion générale sur le risque faut-il éviter ?
+
+Titre verso : Une perte pèse davantage qu’un gain équivalent
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> L’aversion aux pertes désigne l’intensité plus grande attribuée aux pertes qu’aux gains équivalents. Chen relie la peur de perdre à des choix financiers excessivement conservateurs. Le mécanisme concerne l’asymétrie gains/pertes ; il ne suffit pas à caractériser tous les choix risqués de la personne.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Chen (2024), §4.1, Emotional Influences, p. imprimée 102.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Chen ne fournit ni rapport universel de deux pour un ni exposé géométrique de la fonction en S. Ne pas lui attribuer ces précisions. Ne pas confondre aversion aux pertes et refus systématique de tout risque.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Présenter clairement les gains possibles, les pertes possibles et leurs conditions. Éviter qu’une formulation uniquement centrée sur la perte empêche une comparaison informée.</p>
+Fiche 3 — Joie impulsive et culpabilité réparatrice
+
+Catégorie : Influences émotionnelles
+Tag source : Chen2024_4_1_p102__CM2022_9_4_p207
+
+Recto : Lors d’une célébration, une personne effectue un achat coûteux non prévu. Une autre fait un don pour apaiser un malaise moral. Comment ces conduites différentes illustrent-elles les influences émotionnelles décrites par Chen ?
+
+Titre verso : Gratification immédiate et soulagement de l’inconfort moral
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> La joie et l’excitation peuvent favoriser l’achat impulsif : la gratification immédiate prend le pas sur la prudence financière à long terme. La culpabilité peut encourager un don ou une conduite socialement responsable visant à atténuer l’inconfort moral. Les motivations et les conduites diffèrent, malgré leur dimension émotionnelle commune.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Chen (2024), §4.1, p. imprimée 102. Rectification du périmètre : Save More Tomorrow figure bien dans Congiu et Moscati (2022), §9.4, p. 207.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Les émotions ne rendent pas nécessairement toute décision irrationnelle et ne doivent pas être assimilées automatiquement au Système 1. Le modèle β–δ n’est pas exposé dans le corpus ; en revanche, déclarer SMarT absent de la revue serait faux.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Examiner séparément les états émotionnels susceptibles d’influencer l’usage. Prévoir une possibilité de reconsidérer une décision coûteuse plutôt que supposer que joie et culpabilité produisent le même comportement.</p>
+Fiche 4 — Ancrage d’une quantité dans la promotion Campbell
+
+Catégorie : Heuristiques et consommation
+Tag source : Chen2024_3_2_p101__BVA_03_56_04_19
+
+Recto : Dans la vidéo BVA, une promotion affiche une limite de 12 boîtes de soupe par personne. La vidéo rapporte une moyenne d’achat passant de 3,3 à 7 boîtes. Quel mécanisme est explicitement mobilisé pour expliquer ce changement ?
+
+Titre verso : Le nombre affiché devient un repère de quantité
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Le nombre 12 fournit une ancre au moment de la décision. BVA attribue l’augmentation des achats à ce repère et à l’activation de l’idée d’une bonne affaire. Chen décrit plus généralement l’influence d’une information initiale sur les jugements ultérieurs.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Chen (2024), §3.2, p. imprimée 101 ; BVA Nudge Unit, 03:56.160–04:19.360. Les chiffres sont ceux rapportés par la vidéo.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Le prix régulier barré accompagné d’un prix réduit est nommé cadrage du prix par Chen, §5, p. 103. Cela ne rend pas cadrage et ancrage incompatibles en général. Ici, retenir l’ancrage est directement justifié par BVA ; ne pas inventer un protocole ni un ajustement mesuré.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Examiner l’influence des nombres présentés comme limites, suggestions ou références. Distinguer l’information utile au besoin réel du repère qui peut orienter la quantité choisie.</p>
+Fiche 5 — Option par défaut, retrait et autonomie
+
+Catégorie : Architecture du choix et éthique
+Tag source : Chen2024_5_p103__CM2022_6_3_p200_7_3_p202_9_p204
+
+Recto : Une organisation inscrit automatiquement les employés à un programme d’épargne, avec retrait accessible. La participation augmente. Cette hausse permet-elle de conclure que les employés ont exprimé une préférence éclairée et que toute objection éthique disparaît ?
+
+Titre verso : Participation, liberté formelle et autonomie sont distinctes
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Un défaut peut augmenter la participation parce que les personnes conservent l’option présélectionnée. Ce comportement ne révèle pas à lui seul les raisons du choix. La disponibilité du retrait préserve une possibilité formelle ; les critiques rapportées par la revue examinent aussi la délibération et la transparence.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Chen (2024), §5, p. 103 ; Congiu et Moscati (2022), §6.3, p. 200 ; §7.3, p. 202 ; §9, p. 204.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Un taux de participation ne mesure ni le consentement éclairé individuel ni l’approbation morale du public. Un défaut n’est pas nécessairement opaque : type de processus cognitif et transparence doivent être distingués.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Rendre compréhensibles l’option présélectionnée, son objectif et la manière de la modifier. Évaluer séparément participation, compréhension et possibilité effective de retrait.</p>
+Fiche 6 — Comparaison sociale et signal d’approbation
+
+Catégorie : Influences sociales
+Tag source : CM2022_4_2_p196__BVA_02_09_02_18
+
+Recto : Un relevé énergétique compare la consommation d’un ménage à celle de ses voisins. Quand elle est plus faible, le ménage reçoit des félicitations accompagnées de smileys. Quelles informations différentes transmettent la comparaison et la félicitation ?
+
+Titre verso : Informer sur les autres et approuver une conduite
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> La comparaison renseigne sur la consommation des voisins. La félicitation exprime une approbation de la faible consommation. Le smiley n’est donc pas présenté uniquement comme un moyen de rendre les chiffres lisibles : il accompagne explicitement un message de félicitation.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Congiu et Moscati (2022), §4.2, p. imprimée 196, pour la comparaison sociale ; transcription BVA, 02:09.320–02:18.760, pour les félicitations et les smileys.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Ces passages ne démontrent pas expérimentalement que le smiley neutralise un effet boomerang. Ne pas attribuer ce protocole à Congiu et Moscati, p. 196, ni confondre la description du dispositif BVA avec l’isolement causal de ses composantes.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Distinguer visuellement la comparaison de consommation et le signal d’approbation. Vérifier les effets des différentes composantes avant d’attribuer un changement de comportement au seul symbole.</p>
+Fiche 7 — Nudges et boosts : orientation et compétences
+
+Catégorie : Interventions comportementales
+Tag source : CM2022_8_p202_203
+
+Recto : Une intervention rend les fruits plus saillants dans une cafétéria. Une autre apprend à raisonner sur les risques avec des fréquences naturelles. Comment distinguer leurs objectifs sans supposer que nudges et boosts constituent deux catégories étanches ?
+
+Titre verso : Orienter une conduite et soutenir la capacité de décider
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Dans la comparaison proposée au §8, le nudge oriente une conduite en mobilisant les limites de rationalité, tandis que le boost aide à les dépasser en soutenant les compétences. Le boost peut modifier l’environnement décisionnel, les stratégies et connaissances, ou les deux. Certaines interventions peuvent relever des deux descriptions.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Congiu et Moscati (2022), §8, pp. imprimées 202–203 : présentation des boosts et recoupements avec les nudges de Type 2 transparents.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Un boost n’exige pas exclusivement une formation durable : rendre l’information plus compréhensible peut en être un. Comprendre davantage ne garantit pas un changement de conduite. Ne pas transformer la distinction en opposition absolue entre béquille et compétence.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Définir l’objectif : faciliter une action, soutenir la compréhension ou combiner les deux. Vérifier séparément ce que l’usager comprend et ce qu’il fait.</p>
+Fiche 8 — Éviction des politiques : substitution perçue
+
+Catégorie : Politiques publiques
+Tag source : CM2022_9_4_p207 
+Wiley Online Library
+
+Recto : Dans les expériences de Hagmann et al. rapportées par la revue, introduire un nudge environnemental réduit le soutien à une taxe carbone. Quel mécanisme les auteurs envisagent-ils, et pourquoi l’objectif commun des deux interventions importe-t-il ?
+
+Titre verso : Le nudge peut être perçu comme un substitut moins contraignant
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Les personnes peuvent considérer le nudge et la taxe comme deux moyens substituables d’atteindre le même objectif environnemental, puis préférer le moyen le moins contraignant. La revue rapporte que l’éviction disparaît lorsque les interventions concernent des objectifs différents.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Congiu et Moscati (2022), §9.4, p. imprimée 207, présentant notamment Hagmann et al. (2019).</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Il ne s’agit pas d’une loi générale de soulagement moral ni d’une preuve que les nudges remplacent efficacement les taxes. Le renvoi §6.4 est erroné. Le passage de la revue parle de nudges environnementaux ; il ne décrit pas un protocole de compensation de vols.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Présenter clairement si deux politiques sont complémentaires ou substituables. Vérifier qu’une intervention légère ne fait pas croire qu’elle suffit à atteindre l’objectif poursuivi par une politique plus exigeante.</p>
+Fiche 9 — Question inductive et neutralité en recherche UX
+
+Catégorie : Recherche UX — posture
+Tag source : UX_Transcription_L67_78
+
+Recto : Pendant un test, la personne qui mène l’entretien demande : « Ce bouton est maintenant plus facile à repérer, n’est-ce pas ? » Quelle exigence du guide est compromise, et comment reformuler l’intervention ?
+
+Titre verso : Recueillir l’expérience sans imposer l’interprétation
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> La question annonce l’amélioration attendue et invite à l’approuver. Elle risque d’orienter la réponse plutôt que de recueillir librement l’expérience. L’ouverture et la neutralité méthodologique permettent d’examiner les difficultés observées sans présumer que la solution fonctionne.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Guide UX fourni, transcription Le Laptop, lignes 67–78 : empathie, analyse, ouverture, neutralité et communication. La question du recto est une illustration construite de ce principe.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> L’empathie ne consiste pas à obtenir l’accord du participant. La neutralité ne signifie pas absence d’intérêt pour son expérience. Le diagnostic porte ici sur une formulation qui oriente la réponse.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Demander, par exemple, ce que la personne cherche à faire, puis observer la tâche. Éviter d’annoncer la réponse souhaitée ou d’approuver ses réponses pendant le recueil.</p>
+Fiche 10 — Quantitatif : combien ; qualitatif : pourquoi
+
+Catégorie : Recherche UX — méthodes
+Tag source : UX_Transcription_L46_63
+
+Recto : Les données de navigation montrent des abandons fréquents à l’étape du paiement. L’équipe ignore ce qui rend cette étape difficile. Comment compléter ces données selon l’articulation des méthodes présentée dans le guide ?
+
+Titre verso : Mesurer le phénomène et comprendre l’expérience
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Les données quantitatives renseignent sur l’ampleur et la répartition des comportements mesurés. Des entretiens ou tests utilisateurs qualitatifs permettent d’explorer les difficultés, attentes et incompréhensions. Les informations recueillies répondent à des questions différentes et peuvent être combinées.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Guide UX fourni, transcription Le Laptop, lignes 46–63 : qualitatif pour comprendre le pourquoi ; quantitatif pour connaître le combien ; exemples d’entretiens, tests, questionnaires et données de navigation.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Une fréquence d’abandon n’établit pas à elle seule sa cause. Un entretien ne mesure pas à lui seul sa prévalence dans la population. Une explication verbalisée reste à confronter aux conduites observées.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Repérer l’étape problématique avec les traces, puis observer son exécution et recueillir les difficultés exprimées. Formuler des hypothèses explicatives plutôt que déclarer une cause profonde démontrée.</p>
+Fiche 11 — Persona : un archétype issu des données
+
+Catégorie : Recherche UX — synthèse
+Tag source : UX_Transcription_L32_45_64_78
+
+Recto : Une équipe crée un portrait séduisant de son utilisateur idéal sans enquête préalable. Une autre regroupe les habitudes, objectifs, freins et attentes observés sur le terrain. Quel travail correspond à la fonction des personas décrite dans le guide ?
+
+Titre verso : Synthétiser les profils utiles à la conception
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Le guide décrit des archétypes construits en regroupant les informations recueillies auprès des utilisateurs. Leur intérêt tient à la synthèse des habitudes, objectifs, problèmes, perceptions et attentes, afin d’aider l’équipe à concevoir un produit adapté.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Guide UX fourni, transcription Le Laptop, lignes 32–45, pour le terrain et les archétypes ; lignes 64–78, pour la responsabilité envers l’équipe produit et la communication.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> La précision d’un portrait ne garantit pas son fondement empirique. Le guide n’impose pas un persona composé uniquement de variables cognitives et n’interdit pas toute donnée démographique. Le critère décisif est son ancrage dans les informations pertinentes recueillies.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Relier chaque caractéristique importante aux observations qui la soutiennent. Utiliser les archétypes pour discuter des besoins et difficultés de conception, tout en conservant les différences entre utilisateurs.</p>
+Fiche 12 — Efficacité des défauts : limites contextuelles
+
+Catégorie : Évaluation des interventions
+Tag source : CM2022_9_p203_204 
+Wiley Online Library
+
+Recto : La revue rapporte un effet important des défauts pour le don d’organes. Elle présente aussi un essai auprès de contribuables à faible revenu où l’affectation par défaut d’une partie du remboursement fiscal à l’épargne n’a pas modifié le comportement d’épargne. Ces résultats sont-ils contradictoires ?
+
+Titre verso : Un mécanisme robuste n’est pas efficace dans chaque contexte
+
+XML
+<p><strong>🧠 Diagnostic cognitif :</strong> Les résultats n’impliquent pas une efficacité universelle du défaut. Dans le second cas, les auteurs envisagent que de fortes intentions de dépenser le remboursement aient limité son influence. Cette interprétation reste une explication proposée, et non une cause isolée expérimentalement.</p>
+
+<p><strong>📚 Théorie & Source académique :</strong> Congiu et Moscati (2022), §9, pp. imprimées 203–204 : Johnson et Goldstein (2003, 2004) et Bronchetti et al. (2013), tels que présentés dans la revue.</p>
+
+<p><strong>⚠️ Piège à l'examen :</strong> Le §5, pp. 197–198, porte sur le paternalisme libertarien. Il ne présente pas DellaVigna et Linos ni le file-drawer problem, absents du texte. Ne pas déduire de ces exemples un écart général laboratoire/terrain ni une taille d’effet universelle.</p>
+
+<p><strong>🛠️ Règle ergonomique terrain :</strong> Avant de transposer un défaut, examiner les objectifs, intentions et contraintes du public concerné. Mesurer le comportement ciblé et vérifier si l’effet se maintient dans le contexte d’application.</p>
+PSY7010_Quiz2_12_Flashcards_Verifiees.md
+Document
+ChatGPT peut faire des erreurs. Vérifiez les informations importantes.
+Dernière réponse
+
+
+
+
+GPT-6.1 Sol
+Max
+Aucun
+Réflexion minimale
+Léger
+Moyen
+Élevé
+Très élevé
+Max
+Ultra
+Persistant
+Réponse terminée

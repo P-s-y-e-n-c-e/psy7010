@@ -1,0 +1,102 @@
+Gemini said
+
+=== RAPPORT D'AUDIT CONTRADICTOIRE (PHASE 2 : FICHES 7 À 12) ===
+
+J’ai repris mon scalpel de réviseur psychométrique impitoyable et d'avocat du diable pour le cours PSY7010.
+
+Ce deuxième bloc de fiches touche au cœur de l'application clinique et des politiques publiques. Votre intelligence du terrain est indéniable, mais sous l'angle strict d'un examen universitaire, j'ai détecté un problème systémique majeur : l'inflation bibliographique hors-périmètre (le sur-sourçage).
+
+Vous injectez des auteurs classiques de l'ergonomie (Rasmussen, Hollnagel, Chapanis, Cooper) et des concepts (Effet Hawthorne, Privacy Paradox) qui sont brillants, mais qui n'appartiennent pas au corpus obligatoire de la séance 6 (Guide UX Konrad). Un examen est un contrat légal : évaluer un étudiant sur une littérature externe est le moyen le plus rapide de voir une question annulée en appel pour matière non couverte. De plus, j'ai intercepté une erreur de classification clinique sur le Nutri-Score et une erreur de référencement de section.
+
+Voici mon audit chirurgical, fiche par fiche, et les rustines exigées.
+
+Fiche 7 : Nudges versus Boosts : Béquille vs Compétence durable
+
+Verdict : 🔴 CONFLIT CONCEPTUEL ET ERREUR DE SECTION
+
+La faille (L'objection de l'étudiant pointilleux) : Deux failles ici. Premièrement, vous opposez la salade au « décodage du Nutri-Score ». Or, dans la littérature d'architecture de choix, le Nutri-Score est lui-même un Nudge (informatif de type 2, transparent). Un étudiant pointilleux contestera le fait que lire un nudge constitue un boost. Le boost doit développer une compétence pure (ex. probabilités, calcul financier). Deuxièmement, la discussion sur Hertwig & Grüne-Yanoff dans Congiu & Moscati n'est pas au §6.2 (qui parle de persuasion rationnelle), mais au §8 (pp. 202-203).
+
+Correction chirurgicale (Mot à mot) :
+
+Recto : [...] (Nudge) de celle d'entraîner les employés à maîtriser les règles de l'équilibre alimentaire ou de littératie statistique pour calculer leurs propres besoins (Boost) ?
+
+Verso (Source) : 📚 Nudging vs Boosting (Hertwig & Grüne-Yanoff, 2017 ; Congiu & Moscati, 2022, §8, pp. 202-203).
+
+Fiche 8 : Effet d'éviction des politiques publiques (Nudging-Out)
+
+Verdict : 🟡 SOURÇAGE IMPRÉCIS (Le cas Hagmann)
+
+La faille (L'objection de l'étudiant pointilleux) : L'analyse psychologique du soulagement moral est parfaite. Cependant, l'exemple clinique de l'étude de Hagmann et al. (2019) discutée par Congiu & Moscati (§6.4, p. 201) ne porte pas sur la « compensation carbone lors de l'achat d'un vol ». Elle porte spécifiquement sur un nudge d'énergie verte par défaut (green energy default), qui a eu pour effet pervers de faire chuter le soutien citoyen à une vraie taxe carbone. Il faut être fidèle à la situation clinique décrite dans les textes pour éviter la confusion à l'examen.
+
+Correction chirurgicale (Mot à mot) :
+
+Recto : Pourquoi l'étude de Hagmann et al. (2019) met-elle en garde contre l'utilisation de nudges par défaut en faveur de l'énergie verte en politique publique ?
+
+Titre Verso : Démobilisation civique & Effet d'éviction (Crowding-out effect / Nudging-out)
+
+Fiche 9 : Le piège de la question inductive en UX Research
+
+Verdict : 🔴 HORS-PÉRIMÈTRE LITTÉRAIRE (ALERTE ROUGE)
+
+La faille (Scandale de validité) : L'explication du biais (question inductive / désirabilité) est excellente. MAIS citer l'« Effet Hawthorne » dans le titre, ainsi que « Chapanis (1996) » et « Cañas et al. (2011) » dans les sources introduit une littérature externe. La transcription vidéo du Guide UX Konrad exigée pour l'examen ne parle que de la posture d'« ouverture et neutralité tel un scientifique ».
+
+Correction chirurgicale (Mot à mot) :
+
+Titre Verso : Question inductive (Leading question) & Rupture de la neutralité scientifique.
+
+Verso (Source) : 📚 Posture de neutralité scientifique et prévention des biais (Transcription Guide UX Researcher Konrad, lignes 72-78). (Purger totalement Chapanis et Cañas).
+
+Fiche 10 : Triangulation : Comportement vs Déclaratif
+
+Verdict : 🔴 HORS-PÉRIMÈTRE LITTÉRAIRE ET DÉVIATION CONCEPTUELLE
+
+La faille (Scandale de validité) : Même verdict implacable. Le Privacy Paradox, Rasmussen (SRK) et Hollnagel (ETTO) sont des pontes de l'ergonomie des systèmes complexes, mais ils excèdent totalement le Guide UX Konrad. Il faut réécrire cette fiche pour l'ancrer exclusivement sur la distinction méthodologique fondamentale de Konrad testée à l'examen : la recherche quantitative (mesurer le combien) vs la recherche qualitative (comprendre le pourquoi).
+
+Correction chirurgicale (Mot à mot) :
+
+Nouveau Recto : Une équipe UX sait grâce à ses données de navigation (analytics) que 80 % des usagers abandonnent le tunnel d'achat en 400 millisecondes, mais elle ignore la cause de cette friction. Comment le Guide UX Konrad articule-t-il les méthodes pour résoudre cette impasse ?
+
+Nouveau Titre Verso : Le Quantitatif (Combien) couplé au Qualitatif (Pourquoi).
+
+Nouveau Diagnostic : Les métriques de navigation (recherche quantitative) révèlent l'ampleur du problème et sa localisation (le « combien »). Cependant, les données seules ne disent rien du modèle mental de l'usager. Il faut trianguler avec une recherche exploratoire qualitative (entrevues, observation) pour comprendre la cause profonde de la friction (le « pourquoi »).
+
+Nouvelle Source : 📚 Articuler le Qualitatif et le Quantitatif (Transcription Guide UX Researcher Konrad, lignes 47-49). (Purger Rasmussen et Hollnagel).
+
+Fiche 11 : Le Persona cognitif vs le Stéréotype marketing
+
+Verdict : 🟡 SOURÇAGE À ÉPURER
+
+La faille (L'objection de l'étudiant pointilleux) : La distinction clinique entre l'archétype UX (basé sur la tâche/charge mentale) et le stéréotype marketing (loisirs/VUS hybride) est un joyau. Seul problème légal : il faut retirer Alan Cooper et Cañas pour coller à la définition stricte de la transcription vidéo de Konrad, qui parle de personnages « archétypes ».
+
+Correction chirurgicale (Mot à mot) :
+
+Verso (Source) : 📚 Création d'archétypes utilisateurs (Transcription Guide UX Researcher Konrad, lignes 44-45). (Purger Cooper et Cañas).
+
+Fiche 12 : Taille d'effet terrain vs Laboratoire & Biais de publication
+
+Verdict : 🟢 STANDARD D'OR (100 % inattaquable)
+
+Analyse : C'est un chef-d'œuvre absolu de synthèse de niveau maîtrise. Contrairement aux fiches précédentes, cette littérature avancée est bel et bien dans les textes imposés ! Congiu & Moscati (§5, pp. 197-198) discutent explicitement de DellaVigna & Linos (2022) et du file-drawer problem pour comparer les taux de laboratoire avec ceux des gouvernements. Le piège à l'examen sur la scalability (passage à l'échelle) est une leçon magistrale d'ingénierie comportementale.
+
+Correction chirurgicale : Aucune. À conserver précieusement.
+
+📊 TABLEAU RÉCAPITULATIF DU STATUT D'AUDIT (BLOC 2)
+Fiche	Thématique (Concept)	Statut d'Audit	Action d'ingénierie exigée
+Fiche 7	Nudges vs Boosts	🔴 Réécriture ciblée	Changer le Nutri-Score par une vraie compétence. Corriger la source au §8.
+Fiche 8	Nudging-Out (Éviction)	🟡 Retouche mineure	Aligner l'exemple du Recto (Énergie verte par défaut) sur C&M §6.4.
+Fiche 9	Question inductive UX	🔴 Purger sources	Éliminer Chapanis/Cañas/Hawthorne. Recentrer sur la « neutralité scientifique » (Guide Konrad).
+Fiche 10	Triangulation UX	🔴 RÉÉCRITURE	Remplacer SRK/ETTO/Privacy Paradox par l'articulation stricte Qualitatif (Pourquoi) / Quantitatif (Combien).
+Fiche 11	Persona (Archétype)	🟡 Purger sources	Éliminer Cooper/Cañas. Aligner sur le terme « Archétype » de Konrad.
+Fiche 12	Validité écologique	🟢 Validée Or	Impeccable (DellaVigna & Linos via C&M §5).
+CONCLUSION DE L'AUDIT FINAL :
+
+Votre volonté d'élever le niveau théorique est pédagogiquement admirable, mais en psychométrie d'évaluation certificative, l'introduction de littérature hors-programme (Rasmussen, Hollnagel, Chapanis, Cooper) est une faute professionnelle qui expose l'équipe enseignante à l'invalidation de questions d'examen.
+
+Appliquez ces purges bibliographiques radicales et ces recentrages sémantiques. Le Bloc 2 sera alors aussi intraitable, cliniquement pertinent et juridiquement protégé que le Bloc 1 !
+
+Today, 12:38 a.m.
+Branch in new chat
+Report legal issue
+See response details
+Model: 3.1 Deep Think
+Redo

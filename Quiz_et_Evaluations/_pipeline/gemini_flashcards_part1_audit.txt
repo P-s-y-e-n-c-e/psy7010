@@ -1,0 +1,100 @@
+Gemini said
+
+=== RAPPORT D'AUDIT CONTRADICTOIRE (PHASE 1 : FICHES 1 À 6) ===
+
+J’ai retiré ma casquette de concepteur pour endosser la toge du réviseur psychométrique impitoyable et de l'avocat du diable de l'UQAM (Niveau Maîtrise, PSY7010).
+
+Votre matériel est visuellement séduisant et votre vulgarisation est excellente. Cependant, sous la loupe d'un examen universitaire strict basé sur des textes spécifiques, j'ai détecté deux failles fatales (hors-périmètre et contradiction interne directe avec le quiz) ainsi que des approximations taxinomiques qui donneraient des munitions en or à un étudiant pour faire annuler des questions.
+
+Voici mon audit chirurgical, fiche par fiche, et les corrections exigées.
+
+Fiche 1 : Rationalité limitée vs Homo Economicus
+
+Verdict : 🟡 AMALGAME THÉORIQUE ET HISTORIQUE
+
+La faille (L'objection de l'étudiant pointilleux) : Le Recto et le Verso fusionnent dangereusement la Rationalité limitée de Simon (1955) avec la théorie du Double processus (Système 1 / Système 2) de Kahneman (2011). Bien qu'elles soient conceptuellement liées en psychologie générale, Chen (2024, §3.1) attribue le satisficing strictement à Simon. Si une question d'examen exige d'associer le satisficing à sa racine textuelle exacte, cet amalgame créera de la confusion.
+
+Correction chirurgicale (Mot à mot) :
+
+Recto : Supprimer « et Daniel Kahneman ». (Conserver : « Pourquoi Herbert Simon (1955) et l'économie comportementale affirment-ils... »).
+
+Verso (Source académique) : 📚 Rationalité limitée et Heuristique du « Satisficing » (Herbert Simon, 1955 ; Chen, 2024, §3.1, p. 101). (Purger Kahneman 2011).
+
+Fiche 2 : Aversion aux pertes & Asymétrie de la fonction de valeur
+
+Verdict : 🟡 IMPRÉCISION GÉOMÉTRIQUE ET SOURÇAGE
+
+La faille (L'objection de l'étudiant pointilleux) : Vous écrivez que la courbe en S est « convexe et deux fois plus abrupte dans le domaine des pertes que dans celui des gains ». C'est géométriquement flou. La fonction de la Théorie des perspectives est concave dans les gains et convexe dans les pertes. Par ailleurs, la source pointe vers Chen p. 5-7, alors que Chen traite de l'aversion aux pertes sous le chapitre des Influences Émotionnelles (§4.1, p. 102). Enfin, le terme dark patterns (Règle UX) est hors-texte.
+
+Correction chirurgicale (Mot à mot) :
+
+Verso (Diagnostic) : [...] présente une courbure asymétrique en S : elle est concave dans le domaine des gains et convexe dans celui des pertes, avec une pente environ deux fois plus abrupte pour les pertes (« losses loom larger than gains »).
+
+Verso (Source) : 📚 Prospect Theory (Kahneman & Tversky, 1979) ; Emotional Influence (Chen, 2024, §4.1, p. 102).
+
+Verso (Règle UX) : [...] S'il est utilisé de manière opaque, ce levier bascule dans la manipulation et subvertit l'autonomie décisionnelle de l'usager (Congiu & Moscati, §6.3).
+
+Fiche 3 : Biais du présent & Incohérence temporelle
+
+Verdict : 🔴 HORS-PÉRIMÈTRE CRITIQUE (ALERTE ROUGE)
+
+La faille (Scandale de validité) : L'explication de l'actualisation quasi-hyperbolique (β-δ), de Laibson et du programme SMarT est d'un excellent niveau de microéconomie... mais elle ne figure NULLE PART dans les textes obligatoires du Quiz 2 (Chen 2024, Congiu & Moscati 2022) ! Vous importez de la culture générale. Évaluer des étudiants là-dessus constitue un vice de procédure majeur (matière non couverte par les sources).
+
+Correction chirurgicale : À SUPPRIMER ET REMPLACER. Utilisez le concept des Émotions (Joie vs Culpabilité) de Chen (§4.1), testé à la Q14 de notre Quiz.
+
+Nouveau Recto : Pourquoi un achat impulsif très coûteux lors d'une fête et un don soudain à une association caritative relèvent-ils tous deux du même canal cognitif, malgré des motivations opposées ?
+
+Nouveau Titre Verso : Influences émotionnelles : Gratification immédiate vs Inconfort moral.
+
+Nouveau Diagnostic : Les émotions court-circuitent la rationalité. La joie donne priorité à la gratification immédiate (achat impulsif). À l'inverse, la culpabilité pousse l'individu vers une action socialement responsable (ex. un don) visant spécifiquement à soulager son inconfort moral.
+
+Nouvelle Source : 📚 Emotional Influence (Chen, 2024, §4.1, p. 102).
+
+Fiche 4 : Heuristique d'ancrage et d'ajustement
+
+Verdict : 🔴 CONTRADICTION FATALE AVEC LE QUIZ 2 (BOMBE À RETARDEMENT)
+
+La faille (Scandale d'examen) : C'est ici que mon audit vous sauve. Le Recto utilise l'exemple du prix barré (250 vs95) pour illustrer l'ancrage. OR, dans le texte de Chen (2024, §5, p. 103) et dans la Question 8 validée de notre propre Quiz, cette pratique est explicitement classée sous le Cadrage du prix (Price Framing / Modèle du rabais). Si un étudiant étudie votre fiche, il répondra « Ancrage » à la Q8, aura un zéro, et contestera formellement.
+
+Correction chirurgicale (Mot à mot) :
+
+Nouveau Recto : Lorsqu'un supermarché ajoute la mention « Limite de 12 boîtes de soupe par personne » sur une promotion, pourquoi les acheteurs repartent-ils avec une moyenne de 7 boîtes contre 3,3 auparavant ?
+
+Nouveau Diagnostic : L'esprit évalue rarement les quantités dans l'absolu. Le nombre « 12 » s'implante comme point de référence cognitif (ancre). L'ajustement subséquent de l'acheteur vers son besoin réel est insuffisant et reste aimanté vers le haut par cette ancre numérique arbitraire.
+
+Nouvelle Source : 📚 Anchoring (Chen, 2024, §3.2) ; Capsule BVA Nudge Unit.
+
+Fiche 5 : L'Option par défaut (Default Effect)
+
+Verdict : 🟡 OMISSION ÉTHIQUE GRAVE (Congiu & Moscati)
+
+La faille (L'objection de l'étudiant pointilleux) : Le « Piège à l'examen » affirme de façon très naïve que puisque l'usager peut se désinscrire, cela consacre la « liberté pleine et entière ». Congiu & Moscati (§6.3, §7.3 et §9) passent plusieurs pages à détruire cet argument : des taux de 90 % d'adhésion au don d'organes ne prouvent absolument pas l'approbation morale du public, car l'opacité du défaut (Type 1) contourne la délibération et menace l'autonomie.
+
+Correction chirurgicale (Mot à mot) :
+
+Verso (Piège à l'examen) : ⚠️ Ne confondez pas « efficacité comportementale » et « consentement éclairé ». Selon Congiu & Moscati (§6.3, §9), même si le droit de retrait (opt-out) existe, des taux massifs d'adhésion par inertie ne prouvent pas l'approbation morale du public et soulèvent de profonds enjeux de manipulation de l'autonomie.
+
+Fiche 6 : Normes sociales descriptives vs injonctives & Effet Boomerang
+
+Verdict : 🟢 STANDARD D'OR (100 % inattaquable)
+
+Analyse : C'est un chef-d'œuvre. La mécanique de l'effet boomerang (relâchement des usagers vertueux) et sa neutralisation par la norme injonctive (l'approbation morale du smiley) sont restituées avec une précision clinique redoutable.
+
+Correction chirurgicale : Ajouter simplement la source Congiu & Moscati pour que l'étudiant fasse le lien direct avec sa lecture.
+
+Verso (Source) : 📚 Social Norms & Constructive Boomerang Effect (Schultz et al., 2007 ; Congiu & Moscati, 2022, §4.2, p. 196 ; Capsule BVA).
+
+📊 TABLEAU RÉCAPITULATIF DU STATUT D'AUDIT (BLOC 1)
+Fiche	Thématique (Concept)	Statut d'Audit	Action d'ingénierie exigée
+Fiche 1	Rationalité limitée	🟡 Retouche mineure	Retirer Kahneman du Recto/Sources pour cibler Simon et Chen.
+Fiche 2	Aversion aux pertes	🟡 Retouche mineure	Corriger la géométrie (concave gains / convexe pertes).
+Fiche 3	Biais du présent	🔴 À REMPLACER	Hors-périmètre textuel. Remplacer par la fiche "Émotions (Joie vs Culpabilité)".
+Fiche 4	Ancrage & Ajustement	🔴 RÉÉCRITURE	Conflit fatal avec Q8. Remplacer l'exemple du prix barré (Cadrage) par la soupe BVA (Ancrage).
+Fiche 5	Option par défaut	🟡 Retouche mineure	Ajouter la nuance éthique de Congiu & Moscati (Inertie ≠ Consentement éclairé).
+Fiche 6	Normes (Boomerang)	🟢 Validée Or	Impeccable. Ajouter C&M §4.2 aux sources.
+Export to Sheets
+Copy
+
+La Fiche 4 était une véritable bombe à retardement pour votre examen. Une fois ces rustines appliquées, ce premier bloc de fiches de révision atteindra la saturation psychométrique et une robustesse universitaire absolue.
+
+Prêt pour auditer le Bloc 2 (Fiches 7 à 12) !
