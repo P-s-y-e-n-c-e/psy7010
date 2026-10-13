@@ -4267,31 +4267,80 @@
             </div>
           </div>
 
-          <!-- CARTE AUDIO MASTER : PODCAST SÉANCE 6 (~19 MIN) -->
-          <div class="seminar-audio-card" style="border-left-color: #e11d48; background: var(--bg-card); margin: 16px 0;">
-            <div class="seminar-audio-header">
+          <!-- SUITE OFFICIELLE DES 4 BALADOS SÉANCE 6 (VISION COMPLÈTE • FULL PICTURE) -->
+          <div class="seminar-audio-card" id="s6MultiAudioCard" style="border-left-color: #e11d48; background: var(--bg-card); margin: 16px 0;">
+            
+            <!-- EN-TÊTE PRINCIPAL DU LECTEUR SÉANCE 6 -->
+            <div class="seminar-audio-header" style="flex-wrap: wrap; gap: 8px;">
               <div class="seminar-audio-title-group">
                 <span class="seminar-audio-icon">🎙️</span>
                 <div>
-                  <h4 class="seminar-audio-title">Séance 6 : Capsule audio de révision — Commerce &amp; Consommation 1 (~19 min)</h4>
-                  <div class="seminar-audio-meta">Synthèse des lectures obligatoires : Chen (2024), Congiu &amp; Moscati (2022), BVA Nudge et recherche UX (Konrad).</div>
+                  <h4 class="seminar-audio-title" id="s6AudioActiveTitle">Piste 01 • Grand cours clinique &amp; éthique (18 min 47 s)</h4>
+                  <div class="seminar-audio-meta" id="s6AudioActiveDesc">
+                    <strong>Le cours théorique approfondi :</strong> Fondements épistémologiques, Simon &amp; RAM cognitive, Kahneman, schisme Congiu &amp; Moscati (2022), taxe de 5 sous, opt-out, programme SMarT, don d'organes, normes Opower (smiley), posture UX Konrad (critique du Think-Aloud), Nudge vs Boost.
+                  </div>
                 </div>
               </div>
-              <span class="hub-pill-tag tag-info" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.15);">🎧 Audio Officiel • fr-CA</span>
+              <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+                <span class="hub-pill-tag tag-info" id="s6AudioDurationBadge" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.15);">⏱️ 18:47 • Certifié 99/100</span>
+                <span class="hub-pill-tag" style="background: rgba(16, 185, 129, 0.12); color: #059669; border-color: rgba(16, 185, 129, 0.3);">🎧 Audio Officiel • .m4a Master</span>
+              </div>
             </div>
-            <audio id="playerSeance6" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 12px 0 8px 0;">
-              <source src="Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a" type="audio/mp4">
-              <source src="06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
+
+            <!-- SÉLECTEUR DES 4 PISTES COMPLÉMENTAIRES (FULL PICTURE) -->
+            <div style="margin: 12px 0 8px 0; padding: 8px; background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px;">
+              <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <span>🎯 Choisissez votre angle d'écoute (4 balados complémentaires classés par ordre d'écoute) :</span>
+                <span style="font-weight: 600; color: #e11d48; font-size: 0.74rem;">Full Picture • Formats originaux .m4a</span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px;">
+                <button type="button" class="s6-track-pill b2-ctrl-btn active" id="s6TrackBtn1" onclick="switchS6AudioTrack(1)" style="padding: 8px 10px; font-size: 0.8rem; text-align: left; display: flex; align-items: center; justify-content: space-between; border-left: 3px solid #e11d48;">
+                  <span><strong>01.</strong> 🩺 Clinique &amp; Éthique</span>
+                  <span class="hub-pill-tag" style="font-size: 0.7rem; padding: 2px 6px;">18:47</span>
+                </button>
+                <button type="button" class="s6-track-pill b2-ctrl-btn" id="s6TrackBtn2" onclick="switchS6AudioTrack(2)" style="padding: 8px 10px; font-size: 0.8rem; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+                  <span><strong>02.</strong> ⚡ Bootcamp Recall</span>
+                  <span class="hub-pill-tag" style="font-size: 0.7rem; padding: 2px 6px;">16:35</span>
+                </button>
+                <button type="button" class="s6-track-pill b2-ctrl-btn" id="s6TrackBtn3" onclick="switchS6AudioTrack(3)" style="padding: 8px 10px; font-size: 0.8rem; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+                  <span><strong>03.</strong> ⏱️ Synthèse Express Maya</span>
+                  <span class="hub-pill-tag" style="font-size: 0.7rem; padding: 2px 6px;">10:55</span>
+                </button>
+                <button type="button" class="s6-track-pill b2-ctrl-btn" id="s6TrackBtn4" onclick="switchS6AudioTrack(4)" style="padding: 8px 10px; font-size: 0.8rem; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+                  <span><strong>04.</strong> ⚔️ Débat Dialectique</span>
+                  <span class="hub-pill-tag" style="font-size: 0.7rem; padding: 2px 6px;">15:38</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LECTEUR AUDIO HTML5 PRINCIPAL -->
+            <audio id="playerSeance6" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 8px 0;">
+              <source id="playerSeance6SourcePrimary" src="Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a" type="audio/mp4">
+              <source id="playerSeance6SourceSecondary" src="06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
               Votre navigateur ne prend pas en charge la lecture audio.
             </audio>
 
-            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL (18 MIN 47 S - CANDIDAT 3 CLINIQUE & ÉTHIQUE) -->
-            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-top: 10px;">
-              <div style="font-size: 0.78rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                <span>⏱️ Sommaire des 8 chapitres (cliquez pour écouter) :</span>
-                <span style="font-weight: 600; color: var(--text-muted); font-size: 0.74rem;">Épisode certifié 99/100 • Durée : 18:47</span>
+            <!-- BARRE D'ACTIONS COMPLÉMENTAIRES (TÉLÉCHARGEMENT & VITESSES) -->
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px 0; font-size: 0.8rem;">
+              <a id="s6AudioDownloadBtn" href="Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a" download="01_PSY7010_S06_Clinique_et_Ethique_19min.m4a" class="b2-ctrl-btn" style="text-decoration: none; padding: 4px 10px; font-size: 0.76rem;">
+                📥 Télécharger cette piste (.m4a master)
+              </a>
+              <div style="display: flex; gap: 4px; align-items: center;">
+                <span style="color: var(--text-muted); font-size: 0.76rem;">Vitesse :</span>
+                <button type="button" class="b2-ctrl-btn" onclick="setS6AudioSpeed(1.0)" style="padding: 2px 7px; font-size: 0.74rem;">1.0x</button>
+                <button type="button" class="b2-ctrl-btn" onclick="setS6AudioSpeed(1.25)" style="padding: 2px 7px; font-size: 0.74rem;">1.25x</button>
+                <button type="button" class="b2-ctrl-btn" onclick="setS6AudioSpeed(1.5)" style="padding: 2px 7px; font-size: 0.74rem;">1.5x</button>
+                <button type="button" class="b2-ctrl-btn" onclick="setS6AudioSpeed(1.75)" style="padding: 2px 7px; font-size: 0.74rem;">1.75x</button>
               </div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 6px; font-size: 0.82rem;">
+            </div>
+
+            <!-- CHAPITRAGE DYNAMIQUE AVEC SAUT TEMPOREL INTERACTIF -->
+            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-top: 6px;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <span id="s6ChaptersHeader">⏱️ Sommaire des chapitres (cliquez pour écouter) :</span>
+                <span id="s6ChaptersSub" style="font-weight: 600; color: var(--text-muted); font-size: 0.74rem;">Piste 01 active • Durée : 18:47</span>
+              </div>
+              <div id="s6ChaptersGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 6px; font-size: 0.82rem;">
                 <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(0)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
                   ⏱️ <strong>00:00</strong> — Cadrage épistémologique &amp; 35 000 décisions
                 </button>
@@ -4903,10 +4952,15 @@
                 <span class="podcast-ep-title">🧠 Erreur systémique &amp; Cañas</span>
                 <span class="podcast-ep-duration">18 min</span>
               </button>
-              <button type="button" class="podcast-ep-btn active" id="epBtnSeance5" onclick="switchPodcastEpisode('seance5_profession')" role="tab" aria-selected="true" title="Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique">
+              <button type="button" class="podcast-ep-btn" id="epBtnSeance5" onclick="switchPodcastEpisode('seance5_profession')" role="tab" aria-selected="false" title="Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique">
                 <span class="podcast-ep-num">S05</span>
                 <span class="podcast-ep-title">💼 Séance 5 • La Profession</span>
                 <span class="podcast-ep-duration">17 min</span>
+              </button>
+              <button type="button" class="podcast-ep-btn active" id="epBtnSeance6" onclick="switchPodcastEpisode('seance6_clinique')" role="tab" aria-selected="true" title="Séance 6 : Commerce &amp; Consommation 1 — Quiz 2">
+                <span class="podcast-ep-num">S06</span>
+                <span class="podcast-ep-title">🛒 Séance 6 • Commerce &amp; Conso</span>
+                <span class="podcast-ep-duration">19 min</span>
               </button>
               <button type="button" class="podcast-ep-btn" id="epBtnDeepDiveS03" onclick="switchPodcastEpisode('deep_dive_s03')" role="tab" aria-selected="false" title="Épisode 3 : Consolidation intégrale Séance 3 (Mario Passalacqua)">
                 <span class="podcast-ep-num">Ép. 3</span>
@@ -4915,9 +4969,9 @@
               </button>
             </div>
 
-            <h4 class="podcast-banner-title" id="podcastBannerTitle">Séance 5 : Édition intégrale matinale — La Profession &amp; Milieux de pratique</h4>
+            <h4 class="podcast-banner-title" id="podcastBannerTitle">Séance 6 (Piste 01) : Grand cours clinique &amp; éthique</h4>
             <p class="podcast-banner-desc" id="podcastBannerDesc">
-              Synthèse audio matinale (17 min 15 s) : logistique SU-1550, profils d'Emmanuelle Poilier &amp; Karine Ung (Bombardier, CAE, Desjardins, NASA), et cadrage du devoir réflexif de 15 %.
+              Cours théorique approfondi (18 min 47 s) : Simon &amp; RAM, Kahneman, schisme Congiu &amp; Moscati (2022), taxe de 5 sous, opt-out, SMarT, don d'organes, Opower, posture UX Konrad, Nudge vs Boost.
             </p>
 
             <!-- LECTEUR AUDIO STREAMING INTÉGRÉ -->
@@ -16122,9 +16176,70 @@ let previousIsCompact = isCompactUI();
         driveUrl: "05_Seance_05_06oct_Profession/PSY7010_S05_Integrale_Matinale_La_Profession.m4a",
         notebookUrl: "https://notebooklm.google.com",
         downloadFilename: "PSY7010_S05_Integrale_Matinale_La_Profession.m4a"
+      },
+      seance6_clinique: {
+        id: 'seance6_clinique',
+        btnId: 'epBtnSeance6',
+        title: "Séance 6 (Piste 01) : Grand cours clinique & éthique",
+        desc: "Cours théorique approfondi (18 min 47 s) : Simon & RAM, Kahneman, schisme Congiu & Moscati (2022), taxe de 5 sous, opt-out, SMarT, don d'organes, Opower, posture UX Konrad, Nudge vs Boost.",
+        durationTag: "Audio 19 min",
+        mascotMsg: "🎙️ Séance 6 active : Grand cours clinique & éthique (18 min 47 s). Idéal pour maîtriser les fondements avant le Quiz 2 !",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a",
+        sources: [
+          "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a",
+          "06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a"
+        ],
+        driveUrl: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a",
+        notebookUrl: "https://notebooklm.google.com",
+        downloadFilename: "01_PSY7010_S06_Clinique_et_Ethique_19min.m4a"
+      },
+      seance6_commando: {
+        id: 'seance6_commando',
+        btnId: 'epBtnSeance6',
+        title: "Séance 6 (Piste 02) : Bootcamp sommatif — Active Recall",
+        desc: "Entraînement direct au quiz (16 min 35 s) avec silences de 2s pour forcer le rappel mnésique avant chaque explication, et destruction méthodique des pièges d'examen.",
+        durationTag: "Audio 17 min",
+        mascotMsg: "🎙️ Séance 6 (Piste 02) : Bootcamp sommatif Active Recall (16 min 35 s). Testez vos réflexes en direct !",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_4_Commando_Quiz.m4a",
+        sources: [
+          "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_4_Commando_Quiz.m4a"
+        ],
+        driveUrl: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_4_Commando_Quiz.m4a",
+        notebookUrl: "https://notebooklm.google.com",
+        downloadFilename: "02_PSY7010_S06_Commando_Quiz_Recall_17min.m4a"
+      },
+      seance6_synthese: {
+        id: 'seance6_synthese',
+        btnId: 'epBtnSeance6',
+        title: "Séance 6 (Piste 03) : Synthèse express d'avant-cours — Parcours Maya",
+        desc: "Révision flash d'avant-cours (10 min 55 s) : journée clinique de Maya (08h00 à 19h00), idéale pour les 15 dernières minutes avant le Quiz 2.",
+        durationTag: "Audio 11 min",
+        mascotMsg: "🎙️ Séance 6 (Piste 03) : Synthèse express d'avant-cours (10 min 55 s). La révision flash parfaite !",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a",
+        sources: [
+          "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a"
+        ],
+        driveUrl: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a",
+        notebookUrl: "https://notebooklm.google.com",
+        downloadFilename: "03_PSY7010_S06_Synthese_Express_11min.m4a"
+      },
+      seance6_choc: {
+        id: 'seance6_choc',
+        btnId: 'epBtnSeance6',
+        title: "Séance 6 (Piste 04) : Débat contradictoire pur — Économie vs UX",
+        desc: "Confrontation directe sans filtre (15 min 38 s) entre un économiste puriste et une chercheuse UX sur les cas limites de calcul et d'incitations.",
+        durationTag: "Audio 16 min",
+        mascotMsg: "🎙️ Séance 6 (Piste 04) : Débat contradictoire pur (15 min 38 s). Tension intellectuelle et pièges d'examen !",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_1_Choc_Dialectique.m4a",
+        sources: [
+          "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_1_Choc_Dialectique.m4a"
+        ],
+        driveUrl: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_1_Choc_Dialectique.m4a",
+        notebookUrl: "https://notebooklm.google.com",
+        downloadFilename: "04_PSY7010_S06_Choc_Dialectique_16min.m4a"
       }
     };
-    let currentPodcastEp = 'seance5_profession';
+    let currentPodcastEp = 'seance6_clinique';
 
     function switchPodcastEpisode(epKey, autoPlay = false) {
       const ep = PODCAST_EPISODES[epKey];
@@ -16372,7 +16487,7 @@ let previousIsCompact = isCompactUI();
     }
 
     function initSavedPodcastUrl() {
-      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'seance5_profession';
+      const savedEp = localStorage.getItem('psy7010_active_podcast_ep') || 'seance6_clinique';
       switchPodcastEpisode(savedEp, false);
 
       const savedUrl = localStorage.getItem('psy7010_podcast_url');
@@ -18427,12 +18542,176 @@ let previousIsCompact = isCompactUI();
       }
     }
 
+    // --- LECTEUR MULTI-BALADOS SÉANCE 6 (VISION COMPLÈTE • 4 ANGLES PÉDAGOGIQUES) ---
+    const S6_AUDIO_TRACKS = {
+      1: {
+        id: 1,
+        title: "Piste 01 • Grand cours clinique & éthique (18 min 47 s)",
+        roleTitle: "Le cours théorique approfondi",
+        desc: "<strong>Le cours théorique approfondi :</strong> Décortique les fondements épistémologiques (Simon/RAM, Kahneman, schisme Congiu & Moscati 2022, taxe de 5 sous, opt-out, don d'organes, SMarT, Opower, posture UX Konrad et débat éthique Nudge vs Boost).",
+        durationTag: "⏱️ 18:47 • Certifié 99/100",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_3_Clinique_Ethique.m4a",
+        secondarySrc: "06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a",
+        downloadFilename: "01_PSY7010_S06_Clinique_et_Ethique_19min.m4a",
+        chapters: [
+          { sec: 0, time: "00:00", text: "Cadrage épistémologique & 35 000 décisions" },
+          { sec: 105, time: "01:45", text: "08h00 : Maya, rationalité limitée (Simon) & RAM" },
+          { sec: 293, time: "04:53", text: "12h00 : Effet leurre (Decoy) & Nudge strict (T&S 2008)" },
+          { sec: 442, time: "07:22", text: "Taxe de 5 sous : Schisme Congiu (2022) & Hansen" },
+          { sec: 553, time: "09:13", text: "14h00 : Adhésion par défaut, SMarT & Don d'organes" },
+          { sec: 685, time: "11:25", text: "19h00 : Opower, effet boomerang & Nudges Type 1/2" },
+          { sec: 805, time: "13:25", text: "Guide UX Konrad & Pièges du Think-Aloud" },
+          { sec: 947, time: "15:47", text: "Nudge (béquille) vs Boost (compétence durable)" }
+        ]
+      },
+      2: {
+        id: 2,
+        title: "Piste 02 • Bootcamp sommatif — Active Recall (16 min 35 s)",
+        roleTitle: "Le bootcamp sommatif (Active Recall)",
+        desc: "<strong>Le bootcamp sommatif (Active Recall) :</strong> Format entraînement intensif au quiz avec des silences de 2 secondes pour forcer le rappel mnésique avant chaque réponse, et destruction méthodique des pièges et distracteurs d'examen.",
+        durationTag: "⏱️ 16:35 • Certifié 98/100",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_4_Commando_Quiz.m4a",
+        secondarySrc: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_4_Commando_Quiz.m4a",
+        downloadFilename: "02_PSY7010_S06_Commando_Quiz_Recall_17min.m4a",
+        chapters: [
+          { sec: 0, time: "00:00", text: "Énigme initiale & Cadrage Commando Quiz" },
+          { sec: 105, time: "01:45", text: "Cas 1 : Comparaison d'assurances & Simon (Satisficing)" },
+          { sec: 255, time: "04:15", text: "Anatomie de l'effet leurre & 4 piliers Thaler & Sunstein" },
+          { sec: 366, time: "06:06", text: "Rappel 1 : Taxe de 5 sous (T&S 2008 vs Hansen)" },
+          { sec: 486, time: "08:06", text: "Rappel 2 : Contravention de 200 $ (Coercition vs Nudge)" },
+          { sec: 560, time: "09:20", text: "Rappel 3 : Mouche de Schiphol & Nudge Type 1" },
+          { sec: 644, time: "10:44", text: "Cas 5 : Joie impulsive vs Culpabilité réparatrice" },
+          { sec: 721, time: "12:01", text: "Cas 6 : Opower, normes sociales & Smiley injonctif" },
+          { sec: 787, time: "13:07", text: "Méthodologie UX Konrad & Critique du Think-Aloud" },
+          { sec: 859, time: "14:19", text: "Grille décisionnelle commando en 4 critères" },
+          { sec: 945, time: "15:45", text: "Hyper-nudging algorithmique & Conclusion éthique" }
+        ]
+      },
+      3: {
+        id: 3,
+        title: "Piste 03 • Synthèse express d'avant-cours — Parcours Maya (10 min 55 s)",
+        roleTitle: "La révision éclair d'avant-cours",
+        desc: "<strong>La révision éclair d'avant-cours :</strong> Synthèse condensée chronologique suivant Maya de 08h00 à 19h00 (assurance, taxe de 5 sous, leurre, SMarT, Boost, Opower), idéale pour les 15 dernières minutes avant le cours.",
+        durationTag: "⏱️ 10:55 • Joyau d'Or 100/100",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a",
+        secondarySrc: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a",
+        downloadFilename: "03_PSY7010_S06_Synthese_Express_11min.m4a",
+        chapters: [
+          { sec: 0, time: "00:00", text: "Cadrage institutionnel & Affrontement épistémologique" },
+          { sec: 75, time: "01:15", text: "08h00 : Choix d'assurance, satisficing & Méthodologie UX" },
+          { sec: 196, time: "03:16", text: "Pause active 1 : La taxe de 5 sous (T&S vs Hansen)" },
+          { sec: 280, time: "04:40", text: "12h00 : Abonnement en ligne & Effet leurre (Decoy)" },
+          { sec: 371, time: "06:11", text: "14h00 : Épargne SMarT, opt-out & Nudges Type 1/2" },
+          { sec: 489, time: "08:09", text: "Pause active 2 : Nudge (béquille) vs Boost (compétence)" },
+          { sec: 543, time: "09:03", text: "19h00 : Facture Opower & Régulation des normes sociales" },
+          { sec: 624, time: "10:24", text: "Synthèse clinique finale & Conseils pour le Quiz 2" }
+        ]
+      },
+      4: {
+        id: 4,
+        title: "Piste 04 • Débat contradictoire pur — Économie vs UX (15 min 38 s)",
+        roleTitle: "Le débat contradictoire pur",
+        desc: "<strong>Le débat contradictoire pur :</strong> Confrontation directe entre économiste puriste et chercheuse UX sur les cas limites de calcul, les incitatifs économiques et les dark patterns.",
+        durationTag: "⏱️ 15:38 • Mention B+ 90/100",
+        src: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_1_Choc_Dialectique.m4a",
+        secondarySrc: "Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_1_Choc_Dialectique.m4a",
+        downloadFilename: "04_PSY7010_S06_Choc_Dialectique_16min.m4a",
+        chapters: [
+          { sec: 0, time: "00:00", text: "Cadrage du débat : Économiste puriste vs Chercheuse UX" },
+          { sec: 109, time: "01:49", text: "Déconstruction de l'Homo economicus & Herbert Simon" },
+          { sec: 257, time: "04:17", text: "Théorie des perspectives, courbe en S & Aversion aux pertes" },
+          { sec: 356, time: "05:56", text: "Schisme définitionnel du Nudge, taxe de 5 sous & Leurre" },
+          { sec: 513, time: "08:33", text: "Choix par défaut, programme SMarT & Normes Opower" },
+          { sec: 677, time: "11:17", text: "Recherche exploratoire vs évaluative & Posture UX" },
+          { sec: 828, time: "13:48", text: "Distracteurs d'examen & Erreurs mortelles à éviter" }
+        ]
+      }
+    };
+
+    let s6ActiveTrackId = 1;
+
+    function switchS6AudioTrack(trackNum, autoPlay = false) {
+      const track = S6_AUDIO_TRACKS[trackNum];
+      if (!track) return;
+      s6ActiveTrackId = trackNum;
+
+      // 1. Boutons du sélecteur
+      [1, 2, 3, 4].forEach(n => {
+        const btn = document.getElementById('s6TrackBtn' + n);
+        if (btn) {
+          if (n === trackNum) {
+            btn.classList.add('active');
+            btn.style.borderLeft = '3px solid #e11d48';
+          } else {
+            btn.classList.remove('active');
+            btn.style.borderLeft = 'none';
+          }
+        }
+      });
+
+      // 2. Textes et badges
+      const titleEl = document.getElementById('s6AudioActiveTitle');
+      const descEl = document.getElementById('s6AudioActiveDesc');
+      const badgeEl = document.getElementById('s6AudioDurationBadge');
+      const subEl = document.getElementById('s6ChaptersSub');
+      const downloadBtn = document.getElementById('s6AudioDownloadBtn');
+
+      if (titleEl) titleEl.textContent = track.title;
+      if (descEl) descEl.innerHTML = track.desc;
+      if (badgeEl) badgeEl.textContent = track.durationTag;
+      if (subEl) subEl.textContent = 'Piste ' + (trackNum < 10 ? '0' : '') + trackNum + ' active • ' + track.chapters.length + ' chapitres';
+      if (downloadBtn) {
+        downloadBtn.href = track.src;
+        downloadBtn.download = track.downloadFilename;
+      }
+
+      // 3. Lecteur audio
+      const player = document.getElementById('playerSeance6');
+      if (player) {
+        const wasPlaying = !player.paused;
+        player.pause();
+        player.src = track.src;
+        player.load();
+        if (autoPlay || wasPlaying) {
+          player.play().catch(e => console.warn("Lecture audio:", e));
+        }
+      }
+
+      // 4. Chapitres
+      renderS6Chapters(track.chapters);
+    }
+
+    function renderS6Chapters(chapters) {
+      const grid = document.getElementById('s6ChaptersGrid');
+      if (!grid || !chapters) return;
+      grid.innerHTML = '';
+      chapters.forEach(ch => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'audio-chapter-pill b2-ctrl-btn';
+        btn.style.textAlign = 'left';
+        btn.style.padding = '6px 10px';
+        btn.style.fontSize = '0.8rem';
+        btn.innerHTML = '⏱️ <strong>' + ch.time + '</strong> — ' + ch.text;
+        btn.onclick = () => seekPodcastSeance6(ch.sec);
+        grid.appendChild(btn);
+      });
+    }
+
+    function setS6AudioSpeed(rate) {
+      const player = document.getElementById('playerSeance6');
+      if (player) {
+        player.playbackRate = rate;
+        showToast("Vitesse de lecture : " + rate + "x");
+      }
+    }
+
     function seekPodcastSeance6(sec) {
       const p = document.getElementById('playerSeance6');
       if (p) {
         p.currentTime = sec;
-        p.play();
-        showToast("Lecture de la capsule audio à " + Math.floor(sec / 60) + "m " + (sec % 60) + "s.");
+        p.play().catch(e => console.warn("Lecture audio:", e));
+        showToast("Lecture de la capsule à " + Math.floor(sec / 60) + "m " + (sec % 60) + "s.");
       }
     }
 
@@ -18465,6 +18744,9 @@ let previousIsCompact = isCompactUI();
 
       // 3. Initialiser la vue active du Hub
       initB2Training();
+      if (typeof switchS6AudioTrack === 'function') {
+        switchS6AudioTrack(1, false);
+      }
       switchHubModule(intendedModule);
     });
 
