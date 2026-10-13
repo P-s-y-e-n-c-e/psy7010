@@ -2983,6 +2983,43 @@
       border-color: var(--primary);
       box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
     }
+    .b2-ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: var(--font-sans);
+      user-select: none;
+    }
+    .b2-ctrl-btn:hover {
+      background: rgba(225, 29, 72, 0.08);
+      border-color: #e11d48;
+      color: #e11d48;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.15);
+    }
+    .b2-ctrl-btn:active {
+      transform: translateY(0);
+    }
+    .b2-ctrl-btn.primary {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      color: #ffffff;
+      border-color: #e11d48;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.25);
+    }
+    .b2-ctrl-btn.primary:hover {
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.35);
+    }
     .b2-badge-cert {
       font-size: 0.76rem;
       font-weight: 700;
@@ -4172,11 +4209,11 @@
 
               <!-- CONTRÔLES INFÉRIEURS -->
               <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color);">
-                <div style="display: flex; gap: 6px;">
+                <div style="display: flex; gap: 8px;">
                   <button type="button" class="b2-ctrl-btn" onclick="prevS6Question()"><span>⬅️</span> <span>Précédente</span></button>
-                  <button type="button" class="b2-ctrl-btn" onclick="nextS6Question()"><span>Suivante</span> <span>➡️</span></button>
+                  <button type="button" class="b2-ctrl-btn primary" onclick="nextS6Question()"><span>Suivante</span> <span>➡️</span></button>
                 </div>
-                <div style="display: flex; gap: 6px;">
+                <div style="display: flex; gap: 8px;">
                   <button type="button" class="b2-ctrl-btn" onclick="resetS6Quiz()"><span>🔄</span> <span>Réinitialiser</span></button>
                 </div>
               </div>
@@ -4192,29 +4229,28 @@
                 <span class="hub-pill-tag tag-primary" style="font-size: 0.72rem;">Cliquez sur la fiche pour révéler l'analyse</span>
               </div>
 
-              <div class="b2-card-scene" onclick="flipS6Card()" style="cursor: pointer; perspective: 1000px; min-height: 240px; margin: 12px 0;">
-                <div class="b2-card-inner" id="s6CardInner" style="transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; position: relative; width: 100%; min-height: 240px;">
+              <div class="b2-card-scene" id="s6CardScene" onclick="flipS6Card()" style="cursor: pointer; margin: 12px 0;">
+                <div class="b2-card-inner" id="s6CardInner">
                   <!-- RECTO -->
-                  <div class="b2-card-face b2-card-front" id="s6CardFront" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: var(--bg-card); border: 2px solid var(--border-color); border-radius: 12px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div class="b2-card-face b2-card-front" id="s6CardFront">
                     <div>
-                      <div style="font-size: 0.8rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 8px;" id="s6CardFrontTheme">Thème</div>
-                      <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 10px 0; color: var(--text-main);" id="s6CardFrontTitle">Titre du cas clinique</h3>
-                      <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-muted); margin: 0;" id="s6CardFrontBody">Chargement du cas...</p>
+                      <div class="b2-card-tag" id="s6CardFrontTheme" style="color: #e11d48;">Module A • Économie comportementale &amp; Biais</div>
+                      <h3 class="b2-card-title" id="s6CardFrontTitle">Titre du cas clinique</h3>
+                      <div class="b2-card-body" id="s6CardFrontBody">Chargement du cas...</div>
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 12px;">
-                      🔄 Cliquez pour retourner et voir l'analyse théorique
+                    <div class="b2-card-hint">
+                      🔄 Cliquez n'importe où pour retourner la carte et révéler le diagnostic
                     </div>
                   </div>
                   <!-- VERSO -->
-                  <div class="b2-card-face b2-card-back" id="s6CardBack" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; transform: rotateY(180deg); background: var(--bg-card); border: 2px solid #e11d48; border-radius: 12px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div class="b2-card-face b2-card-back" id="s6CardBack" style="border-color: #e11d48;">
                     <div>
-                      <div style="font-size: 0.8rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-bottom: 8px;" id="s6CardBackConcept">Concept clé</div>
-                      <h4 style="font-size: 0.98rem; font-weight: 700; margin: 0 0 8px 0; color: var(--text-main);" id="s6CardBackPrinciple">Principe théorique &amp; Ergonomique</h4>
-                      <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0 0 8px 0;" id="s6CardBackAnalysis">Analyse...</p>
-                      <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;" id="s6CardBackCitation">Source</div>
+                      <div class="b2-card-tag" style="color: #10b981;">🔍 Diagnostic clinique &amp; Concepts clés</div>
+                      <h4 class="b2-card-title" id="s6CardBackConcept">Diagnostic &amp; Analyse</h4>
+                      <div class="b2-card-body" id="s6CardBackAnalysis">Analyse...</div>
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 10px;">
-                      🔄 Cliquez pour retourner au recto
+                    <div class="b2-card-hint">
+                      🔄 Cliquez pour revenir au cas clinique
                     </div>
                   </div>
                 </div>
@@ -4222,9 +4258,9 @@
 
               <!-- CONTRÔLES FLASHCARDS -->
               <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color);">
-                <div style="display: flex; gap: 6px;">
+                <div style="display: flex; gap: 8px;">
                   <button type="button" class="b2-ctrl-btn" onclick="prevS6Card()"><span>⬅️</span> <span>Fiche précédente</span></button>
-                  <button type="button" class="b2-ctrl-btn" onclick="flipS6Card()"><span>🔄</span> <span>Retourner</span></button>
+                  <button type="button" class="b2-ctrl-btn primary" onclick="flipS6Card()"><span>🔄</span> <span>Retourner la fiche</span></button>
                   <button type="button" class="b2-ctrl-btn" onclick="nextS6Card()"><span>Fiche suivante</span> <span>➡️</span></button>
                 </div>
               </div>
@@ -4244,26 +4280,35 @@
               <span class="hub-pill-tag tag-info" style="color: #e11d48; border-color: rgba(225, 29, 72, 0.35); background: rgba(225, 29, 72, 0.15);">🎧 Audio Officiel • fr-CA</span>
             </div>
             <audio id="playerSeance6" class="seminar-audio-player" controls preload="metadata" style="width: 100%; margin: 12px 0 8px 0;">
+              <source src="Quiz_et_Evaluations/Quiz_2_13oct_Commerce_Consommation/Podcasts/Candidat_5_Joyau_Or.m4a" type="audio/mp4">
               <source src="06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
-              <source src="../../06_Seance_06_13oct_Commerce_et_Consommation_1/PSY7010_S06_Podcast_Preparation_Quiz_2.m4a" type="audio/mp4">
               Votre navigateur ne prend pas en charge la lecture audio.
             </audio>
 
-            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL -->
+            <!-- CHAPITRAGE INTERACTIF AVEC SAUT TEMPOREL (22 MIN 18 S - CANDIDAT 5 JOYAU D'OR) -->
             <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-top: 10px;">
-              <div style="font-size: 0.78rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 6px;">Chapitres de révision (cliquez pour écouter) :</div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px; font-size: 0.82rem;">
-                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(0)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
-                  ⏱️ <strong>00:00</strong> — Cadrage &amp; Logistique du Quiz
+              <div style="font-size: 0.78rem; font-weight: 700; color: #e11d48; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <span>⏱️ Sommaire des 6 chapitres (cliquez pour écouter) :</span>
+                <span style="font-weight: 600; color: var(--text-muted); font-size: 0.74rem;">Épisode certifié 100/100 • Durée : 22:18</span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 6px; font-size: 0.82rem;">
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(0)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>00:00</strong> — 08h00 : Rationalité limitée (Simon) &amp; Mémoire finie
                 </button>
-                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(270)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
-                  ⏱️ <strong>04:30</strong> — Chen (2024) : Fondements &amp; Biais
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(270)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>04:30</strong> — 10h00 : Kahneman &amp; Tversky : Aversion aux pertes vs risque
                 </button>
-                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(600)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
-                  ⏱️ <strong>10:00</strong> — Congiu &amp; BVA : Nudges vs Boosts
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(510)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>08:30</strong> — 12h00 : Schisme Congiu (2022) &amp; Cas taxe de 5 sous
                 </button>
-                <button type="button" class="audio-chapter-pill" onclick="seekPodcastSeance6(960)" style="text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 8px; border-radius: 6px; cursor: pointer;">
-                  ⏱️ <strong>16:00</strong> — Recherche UX : Méthodes &amp; Pièges
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(780)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>13:00</strong> — 15h00 : Effet leurre (Decoy) &amp; Programme SMarT
+                </button>
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(1020)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>17:00</strong> — 17h30 : Normes O-Power &amp; Émoticône anti-effet boomerang
+                </button>
+                <button type="button" class="audio-chapter-pill b2-ctrl-btn" onclick="seekPodcastSeance6(1170)" style="text-align: left; padding: 6px 10px; font-size: 0.8rem;">
+                  ⏱️ <strong>19:30</strong> — 19h00 : Nudge vs Boost &amp; Méthodes UX Konrad (Think-Aloud)
                 </button>
               </div>
             </div>
@@ -4805,12 +4850,12 @@
         </div>
 
         <!-- SÉPARATEUR & RESSOURCES OPTIONNELLES D'APPRENTISSAGE (COMPLÈTEMENT EN BAS) -->
-        <div class="podcast-section-divider" id="optionalResourcesSection">
+        <div class="podcast-section-divider" id="optionalResourcesSection" style="display: none;">
           <span>🌟 RESSOURCES D'APPRENTISSAGE</span>
         </div>
 
         <!-- CARTE FLASHCARDS OPTIONNELLE -->
-        <div class="flashcards-opt-card" id="flashcardsOptBanner">
+        <div class="flashcards-opt-card" id="flashcardsOptBanner" style="display: none;">
           <div class="fc-avatar-circle" id="fcOptAvatarCircle" onclick="handleLaunchFlashcardsFromBanner()" style="cursor: pointer;" title="Lancer le mode Flashcards">🗂️</div>
           <div class="podcast-banner-center">
             <div class="podcast-banner-tag-row">
@@ -4829,7 +4874,7 @@
         </div>
 
         <!-- CARTE PODCAST GEMINI NOTEBOOK OPTIONNELLE -->
-        <div class="podcast-banner" id="podcastBanner">
+        <div class="podcast-banner" id="podcastBanner" style="display: none;">
           <div class="podcast-avatar-circle" id="podcastAvatarCircle" onclick="togglePlayPodcast()" style="cursor: pointer;" title="Lancer / Mettre en pause l'audio">
             <span id="podcastPlayIcon">▶️</span>
           </div>
@@ -11441,6 +11486,12 @@ const allQuestions = [
     }
 
     let layoutSetting = safeGetStorageRaw('psy7010_layout_setting', 'auto');
+    const compactMedia = window.matchMedia('(max-width: 48rem), (max-height: 32rem) and (pointer: coarse)');
+    function isCompactUI() {
+      return compactMedia.matches;
+    }
+    let isDraggingDivider = false;
+    let userHasDraggedSplit = false;
     let searchResults = [];
     let currentSearchIdx = -1;
 
@@ -11868,6 +11919,13 @@ const allQuestions = [
         if (readerTabsS6) readerTabsS6.style.display = 'flex';
         if (readerTabsB2) readerTabsB2.style.display = 'none';
         if (readerTabsB1) readerTabsB1.style.display = 'none';
+
+        const optRes = document.getElementById('optionalResourcesSection');
+        if (optRes) optRes.style.display = 'none';
+        const fcOpt = document.getElementById('flashcardsOptBanner');
+        if (fcOpt) fcOpt.style.display = 'none';
+        const podBanner = document.getElementById('podcastBanner');
+        if (podBanner) podBanner.style.display = 'none';
 
         if (quizPane) quizPane.style.display = 'block';
         if (readerPane) {
@@ -12889,117 +12947,6 @@ const allQuestions = [
     "correctIndex": 3
   }
 ];
-    const SEANCE6_FLASHCARDS = [
-  {
-    "id": 1,
-    "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Rationalité limitée vs Homo Economicus",
-    "front": "Dans les modèles économiques traditionnels, l'agent décideur optimise ses choix de manière froide, omnisciente et infaillible. Pourquoi Herbert Simon et Daniel Kahneman affirment-ils que ce modèle est une fiction empirique ?",
-    "backTitle": "Capacités cognitives finies & Modèle satisfaisant",
-    "back": "<strong>Diagnostic clinique :</strong> L'être humain dispose de ressources attentionnelles, d'une mémoire de travail et d'un temps de calcul finis. Face à l'incertitude, il ne maximise pas l'utilité globale mais cherche une solution « satisfaisante » (<em>satisficing</em>) en utilisant des raccourcis mentaux.<br><br><strong>Concept clé :</strong> <em>Rationalité limitée (Bounded Rationality - Herbert Simon)</em> et <em>Double processus Système 1 / Système 2 (Kahneman)</em>.<br><br><strong>Application terrain :</strong> Concevoir des interfaces simples qui minimisent l'effort cognitif plutôt que de submerger l'utilisateur de tableaux comparatifs complexes."
-  },
-  {
-    "id": 2,
-    "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Aversion aux pertes (Loss Aversion)",
-    "front": "Pourquoi un consommateur ressent-il une détresse psychologique bien plus vive lorsqu'on lui retire une remise de 10 $ que le plaisir qu'il éprouve lorsqu'on lui accorde un rabais de 10 $ ?",
-    "backTitle": "Asymétrie de la fonction de valeur (Kahneman & Tversky)",
-    "back": "<strong>Diagnostic clinique :</strong> Selon la Théorie des perspectives, les pertes sont ressenties environ 2 fois plus intensément que des gains équivalents (« <em>losses loom larger than gains</em> »). La fonction de valeur est plus abrupte sous le point de référence.<br><br><strong>Concept clé :</strong> <em>Aversion aux pertes (Loss aversion - Kahneman & Tversky 1979)</em>.<br><br><strong>Application terrain :</strong> Cadrer un choix sous l'angle de ce que l'usager risque de perdre (ex. 'Ne perdez pas vos avantages acquis') est plus incitatif que de promettre un gain futur identique."
-  },
-  {
-    "id": 3,
-    "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Biais du présent & Procrastination",
-    "front": "Pourquoi la majorité des individus reconnaissent-ils l'importance cruciale d'épargner pour la retraite ou d'adopter une alimentation saine, tout en reportant continuellement l'action au lendemain ?",
-    "backTitle": "Actualisation hyperbolique & Incohérence temporelle",
-    "back": "<strong>Diagnostic clinique :</strong> L'humain surpondère disproportionnellement les récompenses immédiates par rapport aux gratifications différées (<em>present bias</em>). Le coût de l'effort est immédiat (Système 1), alors que le bénéfice est lointain et abstrait.<br><br><strong>Concept clé :</strong> <em>Actualisation hyperbolique (Hyperbolic discounting)</em>.<br><br><strong>Application terrain :</strong> Utiliser des mécanismes de pré-engagement (ex. programme SMarT) ou lier la tâche ardue à une récompense immédiate pour neutraliser la myopie temporelle."
-  },
-  {
-    "id": 4,
-    "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Effet d'ancrage en contexte d'achat",
-    "front": "Lorsqu'un site marchand affiche un prix initial barré de 200 $ à côté d'un prix soldé de 80 $, pourquoi les acheteurs perçoivent-ils une affaire bien plus avantageuse que si le produit était simplement affiché à 80 $ dès le départ ?",
-    "backTitle": "Ajustement insuffisant à partir d'une ancre initiale",
-    "back": "<strong>Diagnostic clinique :</strong> Le chiffre 200 $ sert d'ancre cognitive initiale. Même si l'usager sait que ce prix est gonflé, son jugement d'évaluation reste polarisé vers cette valeur de départ et calibre son sentiment d'aubaine sur le rabais perçu plutôt que sur la valeur absolue de 80 $.<br><br><strong>Concept clé :</strong> <em>Heuristique d'ancrage et d'ajustement (Tversky & Kahneman 1974)</em>.<br><br><strong>Application terrain :</strong> Présenter des points de repère explicites pour guider l'évaluation de la valeur sans induire l'usager en erreur."
-  },
-  {
-    "id": 5,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "L'option par défaut (Default effect)",
-    "front": "Pourquoi les formulaires avec adhésion par défaut (opt-out) génèrent-ils des taux de participation de plus de 80 %, alors que les formulaires d'adhésion volontaire (opt-in) plafonnent souvent sous la barre des 25 % ?",
-    "backTitle": "Inertie, coût de friction et approbation implicite",
-    "back": "<strong>Diagnostic clinique :</strong> L'option par défaut capitalise sur trois forces cognitives : 1) l'inertie et le biais de statu quo ; 2) le coût de friction cognitif ou moteur nécessaire pour cocher la case inverse ; 3) l'inférence que l'option par défaut représente la recommandation légitime de l'institution.<br><br><strong>Concept clé :</strong> <em>Architecture du choix & Biais de statu quo (Thaler & Sunstein 2008)</em>.<br><br><strong>Application terrain :</strong> En UX éthique, placer en défaut l'option qui protège la vie privée ou la sécurité de l'usager (*privacy by default*)."
-  },
-  {
-    "id": 6,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Normes sociales descriptives vs injonctives",
-    "front": "Dans les hôtels, pourquoi le message « 75 % des clients de cette chambre réutilisent leurs serviettes pour protéger l'environnement » est-il plus efficace qu'un appel générique à la morale civique ?",
-    "backTitle": "Conformité aux pairs & Référence contextuelle",
-    "back": "<strong>Diagnostic clinique :</strong> La norme descriptive informe l'individu sur ce que font réellement ses pairs dans une situation identique. L'humain s'appuie sur le comportement du groupe pour déterminer l'attitude sociale appropriée (effet d'entraînement / preuve sociale).<br><br><strong>Concept clé :</strong> <em>Normes sociales descriptives (Robert Cialdini)</em>.<br><br><strong>Application terrain :</strong> Montrer des repères de pairs comparables (ex. O-Power) pour encourager la sobriété sans sentiment de contrainte autoritaire."
-  },
-  {
-    "id": 7,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Nudges versus Boosts",
-    "front": "Quelle distinction clinique fondamentale sépare la décision de placer des fruits à hauteur des yeux dans une cantine scolaire (Nudge) de celle d'enseigner aux élèves à décrypter les étiquettes nutritionnelles (Boost) ?",
-    "backTitle": "Guidage comportemental passif vs Autonomisation cognitive",
-    "back": "<strong>Diagnostic clinique :</strong> Le Nudge modifie l'environnement physique immédiat pour orienter le choix sans effort conscient, mais sans développer les capacités intrinsèques de l'élève. Le Boost transmet une compétence cognitive pérenne et transférable (comprendre la valeur nutritive) qui le rend autonome dans n'importe quel magasin.<br><br><strong>Concept clé :</strong> <em>Boosts versus Nudges (Hertwig & Grüne-Yanoff 2016)</em>.<br><br><strong>Application terrain :</strong> Privilégier les boosts lorsque l'enjeu requiert un engagement réfléchi durable et une responsabilisation personnelle."
-  },
-  {
-    "id": 8,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Effet d'éviction (Nudging-out)",
-    "front": "Pourquoi certains économistes de l'environnement s'inquiètent-ils lorsqu'une compagnie aérienne propose une micro-option de compensation carbone par défaut de 1,50 $ lors de l'achat d'un billet d'avion ?",
-    "backTitle": "Substitution de complaisance & Démobilisation citoyenne",
-    "back": "<strong>Diagnostic clinique :</strong> L'effet d'éviction (*nudging-out effect*, Hagmann et al. 2019) montre que l'adoption d'un micro-nudge peu coûteux apaise la mauvaise conscience des usagers et réduit significativement leur soutien envers des réformes fiscales structurelles plus contraignantes (comme une véritable taxe kérosène).<br><br><strong>Concept clé :</strong> <em>Effet d'éviction / Nudging-out effect</em>.<br><br><strong>Application terrain :</strong> Ne jamais présenter un nudge symbolique comme une solution complète à un problème systémique complexe."
-  },
-  {
-    "id": 9,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "Le piège de la question inductive",
-    "front": "Lors d'un test utilisateur, un designer demande à l'usager : « Ne trouvez-vous pas que le menu déroulant est facile à trouver ? ». Pourquoi cette question est-elle méthodologiquement proscrite pour un UX Researcher ?",
-    "backTitle": "Biais d'acquiescement & Suggestion de réponse",
-    "back": "<strong>Diagnostic clinique :</strong> C'est une question inductive (*leading question*) qui oriente le participant et active le biais de désirabilité sociale (peur de blesser le concepteur). Elle détruit la validité scientifique du test.<br><br><strong>Concept clé :</strong> <em>Neutralité scientifique & Biais d'expérimentateur (Vidéo UX Researcher)</em>.<br><br><strong>Application terrain :</strong> Poser des questions strictement ouvertes et neutres : « Que remarquez-vous sur cet écran ? » ou « Où iriez-vous pour changer ce réglage ? » et observer l'action motrice."
-  },
-  {
-    "id": 10,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "Triangulation : Comportement vs Déclaratif",
-    "front": "Lors d'une entrevue, 85 % des répondants affirment accorder une importance capitale à la protection de leurs données personnelles. Pourtant, 92 % d'entre eux cliquent sur 'Tout accepter' en moins de 2 secondes lors de l'apparition d'une bannière de cookies. Pourquoi ?",
-    "backTitle": "Paradoxe de la vie privée & Coût attentionnel",
-    "back": "<strong>Diagnostic clinique :</strong> Ce décalage illustre le « Privacy Paradox ». Le déclaratif (ce que les gens pensent ou aimeraient faire) est biaisé par l'idéal normatif. L'action observée (ce qu'ils font réellement) est dominée par le désir immédiat d'accéder au contenu (Système 1 / friction minimale).<br><br><strong>Concept clé :</strong> <em>Dissociation Déclaratif vs Comportement observable (Cañas 2011 / UX Research)</em>.<br><br><strong>Application terrain :</strong> Fonder les décisions de conception sur l'observation des comportements effectifs en situation d'usage plutôt que sur de simples questionnaires d'opinion."
-  },
-  {
-    "id": 11,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "L'utilité cognitive du User Persona",
-    "front": "Dans une équipe d'ingénieurs logiciel, chacun a tendance à concevoir l'interface en fonction de sa propre aisance technologique. Comment la création d'un User Persona permet-elle de corriger cette dérive ?",
-    "backTitle": "Ancrage de l'empathie & Désaxement de l'expert",
-    "back": "<strong>Diagnostic clinique :</strong> Le persona matérialise un profil type d'usager réel avec ses compétences limitées, ses habitudes et ses contraintes. Il force l'équipe à dépasser son biais égocentrique en posant la question : « Est-ce que ce vocabulaire technique a du sens pour notre persona Martin, 62 ans, commerçant débutant ? ».<br><br><strong>Concept clé :</strong> <em>User Persona (Guide Konrad / Vidéo UXr)</em>.<br><br><strong>Application terrain :</strong> Placer le persona au centre des revues de sprint pour arbitrer les choix ergonomiques sans conflit d'opinions personnelles."
-  },
-  {
-    "id": 12,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "Méta-analyses et taille d'effet terrain",
-    "front": "Pourquoi les méta-analyses récentes sur les Nudge Units (DellaVigna & Linos 2022) rapportent-elles des tailles d'effet de 1 à 3 % sur le terrain alors que les revues académiques rapportent souvent 8 à 10 % ?",
-    "backTitle": "Biais de publication & Bruit du milieu naturel",
-    "back": "<strong>Diagnostic clinique :</strong> Les revues universitaires souffrent d'un biais de publication (*file-drawer problem*) qui surreprésente les études de laboratoire spectaculaires à petits échantillons. Sur le terrain réel, le milieu naturel est bruité et saturé de distractions, mais un gain de 1,4 point sur des millions de citoyens génère un impact économique massif pour un coût presque nul.<br><br><strong>Concept clé :</strong> <em>Évaluation de l'efficacité réelle (Congiu & Moscati 2022 / DellaVigna & Linos)</em>.<br><br><strong>Application terrain :</strong> Toujours évaluer le succès d'une intervention par son ratio bénéfice/coût à grande échelle plutôt que par un pourcentage brut d'effet isolé."
-  }
-];
-
     const BLOC2_QUIZ_QUESTIONS = [
   {
     id: 1,
@@ -13319,7 +13266,13 @@ const allQuestions = [
     }
 
     function handleLaunchFlashcardsFromBanner() {
-      if (currentHubModule === 'bloc2') {
+      if (currentHubModule === 'seance6') {
+        switchS6SubTab('cards');
+        const cardsCont = document.getElementById('s6CardsContainer');
+        if (cardsCont) {
+          cardsCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else if (currentHubModule === 'bloc2') {
         switchB2SubTab('cards');
         const cardsCont = document.getElementById('b2CardsContainer');
         if (cardsCont) {
@@ -13344,7 +13297,18 @@ const allQuestions = [
 
       if (!fcBanner) return;
 
-      if (currentHubModule === 'bloc2') {
+      if (currentHubModule === 'seance6') {
+        if (tagBadge) tagBadge.textContent = "Entraînement Mémoire • Séance 6";
+        if (titleEl) titleEl.textContent = "Flashcards • Commerce & Consommation";
+        if (descEl) descEl.textContent = "Mémorisation active et révision des concepts clés : Biais cognitifs, Architecture du choix, Nudges et Méthodes UX.";
+        if (launchBtn) launchBtn.innerHTML = "🗂️ Lancer Flashcards Séance 6";
+        const cardsView = document.getElementById('s6CardsContainer');
+        if (cardsView && cardsView.style.display === 'block') {
+          fcBanner.style.display = 'none';
+        } else {
+          fcBanner.style.display = 'flex';
+        }
+      } else if (currentHubModule === 'bloc2') {
         if (tagBadge) tagBadge.textContent = "Entraînement Mémoire • Bloc 2";
         if (titleEl) titleEl.textContent = "Flashcards • Compréhension appliquée";
         if (descEl) descEl.textContent = "Mémorisation active et révision des cas cliniques de terrain : Aéronautique (AF447), Santé (Lin et al.) et Méthodologie des 4 étapes.";
@@ -13364,6 +13328,8 @@ const allQuestions = [
         } else {
           fcBanner.style.display = 'flex';
         }
+      } else {
+        fcBanner.style.display = 'none';
       }
     }
     window.updateFlashcardsBannerForCurrentModule = updateFlashcardsBannerForCurrentModule;
@@ -13671,39 +13637,33 @@ const allQuestions = [
     window.navB2Card = navB2Card;
     window.rateB2Card = rateB2Card;
 
-    // --- INITIALISATION ---
-    document.addEventListener('DOMContentLoaded', () => {
-      const intendedModule = currentHubModule;
-      initSplitDivider();
-      updateDynamicLayout();
-      initKeyboardShortcuts();
-      
-      // 1. Initialiser la langue par défaut (Anglais original)
-      updateLanguageUI();
-      if (intendedModule === 'bloc1') {
-        switchTab('doc_canas', false, false);
-      }
-      
-      // 2. Synchroniser le périmètre d'étude AVANT le premier rendu
-      setStudyScope(currentStudyScope);
-      setMode('study', false);
-      updateMasteryBadge();
-      updateFlashcardStatsUI();
-      initSavedPodcastUrl();
-      initTheme();
-      applyReaderFontScale();
-      if (isCompactUI()) {
-        document.body.classList.add('is-mobile-compact');
-        setMobileView('activity');
-      }
-
-      // 3. Initialiser la vue active du Hub
-      initB2Training();
-      switchHubModule(intendedModule);
-    });
 
     // --- GESTION DU MODE ÉTUDE / FLASHCARDS / SIMULATION ---
     function setMode(mode, autoSwitchHub = true) {
+      if (mode === 'flashcards' && typeof currentHubModule !== 'undefined' && currentHubModule === 'seance6') {
+        switchS6SubTab('cards');
+        const cardsCont = document.getElementById('s6CardsContainer');
+        if (cardsCont) cardsCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (mode === 'study' && typeof currentHubModule !== 'undefined' && currentHubModule === 'seance6') {
+        switchS6SubTab('quiz');
+        const qCont = document.getElementById('s6QuizContainer');
+        if (qCont) qCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (mode === 'flashcards' && typeof currentHubModule !== 'undefined' && currentHubModule === 'bloc2') {
+        switchB2SubTab('cards');
+        const cardsCont = document.getElementById('b2CardsContainer');
+        if (cardsCont) cardsCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (mode === 'study' && typeof currentHubModule !== 'undefined' && currentHubModule === 'bloc2') {
+        switchB2SubTab('quiz');
+        const qCont = document.getElementById('b2QuizContainer');
+        if (qCont) qCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
       if (autoSwitchHub && currentHubModule !== 'bloc1') {
         switchHubModule('bloc1');
       }
@@ -15189,8 +15149,6 @@ const allQuestions = [
     }
 
     // --- DISPOSITION GÉOMÉTRIQUE & SÉPARATEUR ---
-    let isDraggingDivider = false;
-    let userHasDraggedSplit = false;
     function updateDynamicLayout() {
       const container = document.getElementById('workstationContainer');
       const icon = document.getElementById('layoutIcon');
@@ -15256,11 +15214,6 @@ const allQuestions = [
       updateDynamicLayout();
     }
 
-    const compactMedia = window.matchMedia('(max-width: 48rem), (max-height: 32rem) and (pointer: coarse)');
-    function isCompactUI() {
-      return compactMedia.matches;
-    }
-
     function isSinglePaneMode() {
       if (isCompactUI()) return true;
       if (layoutSetting === 'vertical') return true;
@@ -15299,9 +15252,15 @@ const allQuestions = [
         if (qPane) qPane.style.display = 'block';
         if (rPane) rPane.style.display = 'flex';
         if (splitDivider) splitDivider.style.display = '';
-        if (optResources) optResources.style.display = '';
-        if (fcOptBanner) fcOptBanner.style.display = '';
-        if (podcastBanner) podcastBanner.style.display = '';
+        if (currentHubModule === 'seance6') {
+          if (optResources) optResources.style.display = 'none';
+          if (fcOptBanner) fcOptBanner.style.display = 'none';
+          if (podcastBanner) podcastBanner.style.display = 'none';
+        } else {
+          if (optResources) optResources.style.display = '';
+          if (fcOptBanner) fcOptBanner.style.display = '';
+          if (podcastBanner) podcastBanner.style.display = '';
+        }
         if (filterSec) filterSec.style.display = (currentMode === 'simulation') ? 'none' : 'block';
         
         if (currentMode === 'study') {
@@ -15386,18 +15345,28 @@ const allQuestions = [
         if (podcastBanner) podcastBanner.style.display = 'none';
         updateMobileModebarActive('source');
       } else if (view === 'podcast') {
-        if (qPane) qPane.style.display = 'block';
-        if (rPane) rPane.style.display = 'none';
-        if (qCard) qCard.style.display = 'none';
-        if (qEmptyNotice) qEmptyNotice.style.display = 'none';
-        if (fcContainer) fcContainer.style.display = 'none';
-        if (filterSec) filterSec.style.display = 'none';
-        if (simSetup) simSetup.style.display = 'none';
-        if (simResults) simResults.style.display = 'none';
-        if (optResources) optResources.style.display = 'none';
-        if (fcOptBanner) fcOptBanner.style.display = 'none';
-        if (podcastBanner) {
-          podcastBanner.style.display = 'block';
+        if (currentHubModule === 'seance6') {
+          if (qPane) qPane.style.display = 'block';
+          if (rPane) rPane.style.display = 'none';
+          if (optResources) optResources.style.display = 'none';
+          if (fcOptBanner) fcOptBanner.style.display = 'none';
+          if (podcastBanner) podcastBanner.style.display = 'none';
+          const p = document.getElementById('playerSeance6');
+          if (p) p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          if (qPane) qPane.style.display = 'block';
+          if (rPane) rPane.style.display = 'none';
+          if (qCard) qCard.style.display = 'none';
+          if (qEmptyNotice) qEmptyNotice.style.display = 'none';
+          if (fcContainer) fcContainer.style.display = 'none';
+          if (filterSec) filterSec.style.display = 'none';
+          if (simSetup) simSetup.style.display = 'none';
+          if (simResults) simResults.style.display = 'none';
+          if (optResources) optResources.style.display = 'none';
+          if (fcOptBanner) fcOptBanner.style.display = 'none';
+          if (podcastBanner) {
+            podcastBanner.style.display = 'block';
+          }
         }
         updateMobileModebarActive('podcast');
       }
@@ -17367,112 +17336,114 @@ let previousIsCompact = isCompactUI();
   {
     "id": 1,
     "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
+    "tag": "Chen (2024) • Rationalité limitée & Biais",
     "title": "Rationalité limitée vs Homo Economicus",
-    "front": "Dans les modèles économiques traditionnels, l'agent décideur optimise ses choix de manière froide, omnisciente et infaillible. Pourquoi Herbert Simon et Daniel Kahneman affirment-ils que ce modèle est une fiction empirique ?",
-    "backTitle": "Capacités cognitives finies & Modèle satisfaisant",
-    "back": "<strong>Diagnostic clinique :</strong> L'être humain dispose de ressources attentionnelles, d'une mémoire de travail et d'un temps de calcul finis. Face à l'incertitude, il ne maximise pas l'utilité globale mais cherche une solution « satisfaisante » (<em>satisficing</em>) en utilisant des raccourcis mentaux.<br><br><strong>Concept clé :</strong> <em>Rationalité limitée (Bounded Rationality - Herbert Simon)</em> et <em>Double processus Système 1 / Système 2 (Kahneman)</em>.<br><br><strong>Application terrain :</strong> Concevoir des interfaces simples qui minimisent l'effort cognitif plutôt que de submerger l'utilisateur de tableaux comparatifs complexes."
+    "front": "Dans les modèles néoclassiques, l'agent décideur optimise ses choix de manière omnisciente et infaillible. Pourquoi Herbert Simon (1955, 1957) et Daniel Kahneman affirment-ils que ce modèle est une fiction empirique en contexte réel d'achat ou de navigation web ?",
+    "backTitle": "Capacités computationnelles finies & Heuristique du « Satisficing »",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> L'être humain dispose d'une mémoire de travail finie (RAM cognitive), d'une attention sélective vulnérable à la surcharge et d'un temps de calcul restreint. Face à un catalogue saturé, il ne calcule pas l'utilité espérée de chaque combinaison : il utilise des heuristiques de jugement et s'arrête à la première solution qui franchit son seuil d'acceptabilité (<em>satisficing</em>).<br><br><strong>📚 Théorie & Source académique :</strong> <em>Rationalité limitée (Bounded Rationality - Herbert Simon, 1955 ; Chen, 2024, §2, p. 2-4)</em> et <em>Double processus Système 1 heuristique / Système 2 délibératif (Kahneman, 2011)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Ne jamais confondre la rationalité limitée avec de la paresse, de la stupidité ou un déficit intellectuel : il s'agit d'un mécanisme d'adaptation écologique optimal face aux contraintes neurobiologiques de l'environnement.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Structurer l'information en paliers progressifs (<em>progressive disclosure</em>), limiter les options à 3-5 choix pertinents et afficher des critères de tri clairs plutôt que d'imposer des matrices comparatives exhaustives."
   },
   {
     "id": 2,
     "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Aversion aux pertes (Loss Aversion)",
-    "front": "Pourquoi un consommateur ressent-il une détresse psychologique bien plus vive lorsqu'on lui retire une remise de 10 $ que le plaisir qu'il éprouve lorsqu'on lui accorde un rabais de 10 $ ?",
-    "backTitle": "Asymétrie de la fonction de valeur (Kahneman & Tversky)",
-    "back": "<strong>Diagnostic clinique :</strong> Selon la Théorie des perspectives, les pertes sont ressenties environ 2 fois plus intensément que des gains équivalents (« <em>losses loom larger than gains</em> »). La fonction de valeur est plus abrupte sous le point de référence.<br><br><strong>Concept clé :</strong> <em>Aversion aux pertes (Loss aversion - Kahneman & Tversky 1979)</em>.<br><br><strong>Application terrain :</strong> Cadrer un choix sous l'angle de ce que l'usager risque de perdre (ex. 'Ne perdez pas vos avantages acquis') est plus incitatif que de promettre un gain futur identique."
+    "tag": "Chen (2024) • Théorie des perspectives",
+    "title": "Aversion aux pertes & Asymétrie de la fonction de valeur",
+    "front": "Pourquoi un consommateur ressent-il une détresse psychologique vive lorsqu'on lui retire une remise de 10 $, alors qu'il éprouve une satisfaction modérée lorsqu'on lui accorde un rabais équivalent de 10 $ sur le même panier d'achat ?",
+    "backTitle": "Courbe en S & Pente abrupte sous le point de référence",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> Selon la Théorie des perspectives (Kahneman & Tversky, 1979), la fonction de valeur est calibrée par rapport à un point de référence neutre et présente une courbure asymétrique en S : elle est convexe et deux fois plus abrupte dans le domaine des pertes que dans celui des gains (« <em>losses loom larger than gains</em> », ratio empirique d'environ 2:1 à 2.5:1).<br><br><strong>📚 Théorie & Source académique :</strong> <em>Prospect Theory (Kahneman & Tversky, 1979 ; Chen, 2024, §3.1, p. 5-7)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Ne pas confondre <em>aversion aux pertes</em> (sensibilité disproportionnée au signe négatif d'une variation par rapport au point de référence) et <em>aversion au risque</em> (préférence pour un gain certain plutôt qu'un pari à espérance équivalente).<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Cadrer les interventions préventives sous l'angle de la préservation des acquis existants (ex. 'Conservez vos crédits accumulés avant minuit') plutôt que sous l'angle d'une prime hypothétique future, tout en respectant l'éthique pour éviter les tactiques d'anxiété artificielle (<em>dark patterns</em>)."
   },
   {
     "id": 3,
     "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Biais du présent & Procrastination",
-    "front": "Pourquoi la majorité des individus reconnaissent-ils l'importance cruciale d'épargner pour la retraite ou d'adopter une alimentation saine, tout en reportant continuellement l'action au lendemain ?",
-    "backTitle": "Actualisation hyperbolique & Incohérence temporelle",
-    "back": "<strong>Diagnostic clinique :</strong> L'humain surpondère disproportionnellement les récompenses immédiates par rapport aux gratifications différées (<em>present bias</em>). Le coût de l'effort est immédiat (Système 1), alors que le bénéfice est lointain et abstrait.<br><br><strong>Concept clé :</strong> <em>Actualisation hyperbolique (Hyperbolic discounting)</em>.<br><br><strong>Application terrain :</strong> Utiliser des mécanismes de pré-engagement (ex. programme SMarT) ou lier la tâche ardue à une récompense immédiate pour neutraliser la myopie temporelle."
+    "tag": "Chen (2024) • Préférences temporelles",
+    "title": "Biais du présent & Incohérence temporelle",
+    "front": "Pourquoi une majorité d'individus planifient-ils sincèrement d'épargner davantage, de faire de l'exercice ou d'adopter des comportements écoresponsables 'à partir du mois prochain', tout en échouant systématiquement lorsque le moment d'agir se présente aujourd'hui ?",
+    "backTitle": "Actualisation hyperbolique (Modèle quasi-hyperbolique β-δ)",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> Le cerveau humain n'actualise pas le futur selon un taux d'escompte exponentiel constant. Le biais du présent (<em>present bias</em>) applique un rabais punitif massif (paramètre β < 1) dès qu'une récompense ou un coût est différé dans le temps : le coût de l'effort est vécu intégralement au présent (Système 1), alors que le bénéfice futur est abstrait et dévalué.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Hyperbolic Discounting & Quasi-hyperbolic Model (Laibson, 1997 ; O'Donoghue & Rabin, 1999 ; Chen, 2024, §4, p. 8-10)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Les économistes classiques supposent une cohérence temporelle intertemporelle parfaite. En psychologie cognitive, les préférences s'inversent au fil du temps (incohérence temporelle dynamique) selon la distance qui sépare l'agent du moment d'action.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Utiliser des mécanismes de pré-engagement contraignants comme le programme <em>Save More Tomorrow (SMarT)</em> de Thaler & Benartzi (2004), qui propose aux employés d'engager à l'avance une fraction de leurs augmentations de salaire futures vers l'épargne retraite."
   },
   {
     "id": 4,
     "category": "economie_comportementale",
-    "tag": "Module A • Économie comportementale & Biais",
-    "title": "Effet d'ancrage en contexte d'achat",
-    "front": "Lorsqu'un site marchand affiche un prix initial barré de 200 $ à côté d'un prix soldé de 80 $, pourquoi les acheteurs perçoivent-ils une affaire bien plus avantageuse que si le produit était simplement affiché à 80 $ dès le départ ?",
-    "backTitle": "Ajustement insuffisant à partir d'une ancre initiale",
-    "back": "<strong>Diagnostic clinique :</strong> Le chiffre 200 $ sert d'ancre cognitive initiale. Même si l'usager sait que ce prix est gonflé, son jugement d'évaluation reste polarisé vers cette valeur de départ et calibre son sentiment d'aubaine sur le rabais perçu plutôt que sur la valeur absolue de 80 $.<br><br><strong>Concept clé :</strong> <em>Heuristique d'ancrage et d'ajustement (Tversky & Kahneman 1974)</em>.<br><br><strong>Application terrain :</strong> Présenter des points de repère explicites pour guider l'évaluation de la valeur sans induire l'usager en erreur."
+    "tag": "Chen (2024) • Heuristiques de jugement",
+    "title": "Heuristique d'ancrage et d'ajustement",
+    "front": "Lorsqu'une boutique en ligne affiche un prix initial barré de 250 $ à côté d'un prix soldé de 95 $, pourquoi les acheteurs jugent-ils l'offre incomparablement plus attractive que si le produit était simplement affiché à 95 $ dès l'origine ?",
+    "backTitle": "Aimantation cognitive sur la valeur de départ & Ajustement insuffisant",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> L'esprit humain évalue rarement la valeur intrinsèque absolue d'un bien ; il procède par étalonnage relatif. Le premier chiffre rencontré (250 $) s'implante comme point d'ancrage en mémoire de travail. L'ajustement cognitif subséquent est incomplet et biaisé vers l'ancre, transformant la transaction en un gain perçu de 155 $ d'aubaine plutôt qu'une dépense nette de 95 $.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Anchoring-and-Adjustment Heuristic (Tversky & Kahneman, 1974 ; Chen, 2024, §3.2, p. 11-13)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> L'effet d'ancrage opère même lorsque l'ancre est manifestement arbitraire, absurde ou non informative (ex. les deux derniers chiffres du numéro d'assurance sociale ou le lancer d'une roue de loterie).<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Dans les interfaces de dons caritatifs ou d'abonnements, calibrer judicieusement les boutons de montants suggérés par défaut : ils servent d'ancres normatives qui élèvent la contribution médiane sans forcer l'usager."
   },
   {
     "id": 5,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "L'option par défaut (Default effect)",
-    "front": "Pourquoi les formulaires avec adhésion par défaut (opt-out) génèrent-ils des taux de participation de plus de 80 %, alors que les formulaires d'adhésion volontaire (opt-in) plafonnent souvent sous la barre des 25 % ?",
-    "backTitle": "Inertie, coût de friction et approbation implicite",
-    "back": "<strong>Diagnostic clinique :</strong> L'option par défaut capitalise sur trois forces cognitives : 1) l'inertie et le biais de statu quo ; 2) le coût de friction cognitif ou moteur nécessaire pour cocher la case inverse ; 3) l'inférence que l'option par défaut représente la recommandation légitime de l'institution.<br><br><strong>Concept clé :</strong> <em>Architecture du choix & Biais de statu quo (Thaler & Sunstein 2008)</em>.<br><br><strong>Application terrain :</strong> En UX éthique, placer en défaut l'option qui protège la vie privée ou la sécurité de l'usager (*privacy by default*)."
+    "category": "congiu_2022",
+    "tag": "Congiu & Moscati (2022) • Architecture du choix",
+    "title": "L'Option par défaut (Default Effect)",
+    "front": "Pourquoi les politiques de don d'organes avec consentement présumé (opt-out) atteignent-elles des taux de donneurs supérieurs à 90 %, alors que les politiques d'adhésion volontaire explicite (opt-in) plafonnent généralement sous la barre des 20 % ?",
+    "backTitle": "Inertie du statu quo, Coûts de friction et Recommandation implicite",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> L'option par défaut mobilise une convergence de trois forces cognitives majeures : 1) le biais de statu quo et l'inertie attentionnelle (rester passif est la trajectoire de moindre résistance) ; 2) le coût de friction cognitif et moteur nécessaire pour cocher la case d'exclusion ; 3) l'inférence heuristique que le défaut constitue la recommandation bienveillante et officielle de l'institution.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Defaults in Choice Architecture (Thaler & Sunstein, 2008 ; Johnson & Goldstein, 2003 ; Congiu & Moscati, 2022, §2.3, p. 192)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Ne jamais assimiler le don d'organes par défaut à une interdiction ou à une obligation légale : le citoyen conserve en tout temps la liberté pleine et entière de se désinscrire (préservation de la liberté de choix, pilier du paternalisme libertarien).<br><br><strong>🛠️ Règle ergonomique terrain :</strong> En conception logicielle et sécurité informatique, implémenter le principe de <em>Privacy by Default</em> (RGPD) : configurer d'emblée les paramètres les plus protecteurs des données personnelles sans exiger de paramétrage complexe de la part de l'usager."
   },
   {
     "id": 6,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Normes sociales descriptives vs injonctives",
-    "front": "Dans les hôtels, pourquoi le message « 75 % des clients de cette chambre réutilisent leurs serviettes pour protéger l'environnement » est-il plus efficace qu'un appel générique à la morale civique ?",
-    "backTitle": "Conformité aux pairs & Référence contextuelle",
-    "back": "<strong>Diagnostic clinique :</strong> La norme descriptive informe l'individu sur ce que font réellement ses pairs dans une situation identique. L'humain s'appuie sur le comportement du groupe pour déterminer l'attitude sociale appropriée (effet d'entraînement / preuve sociale).<br><br><strong>Concept clé :</strong> <em>Normes sociales descriptives (Robert Cialdini)</em>.<br><br><strong>Application terrain :</strong> Montrer des repères de pairs comparables (ex. O-Power) pour encourager la sobriété sans sentiment de contrainte autoritaire."
+    "category": "bva_nudge",
+    "tag": "BVA & Cialdini • Normes sociales",
+    "title": "Normes sociales descriptives vs injonctives & Effet Boomerang",
+    "front": "Dans l'expérience Opower sur les rapports d'énergie, pourquoi le fait d'informer les ménages sobres qu'ils consomment moins d'électricité que la moyenne de leur voisinage a-t-il initialement provoqué une augmentation indésirable de leur consommation, et comment a-t-on neutralisé ce problème ?",
+    "backTitle": "Effet Boomerang neutralisé par l'Émoticône Injonctif (Smiley)",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> La norme descriptive informe sur ce que font réellement les pairs (« la moyenne consomme X »). Chez les surconsommateurs, elle incite à réduire la consommation pour se conformer au groupe. Mais chez les consommateurs déjà très sobres, elle déclenche un <em>effet boomerang</em> : ils réalisent qu'ils ont de la marge et relâchent leur effort pour converger vers la moyenne.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Social Norms & The Constructive Boomerang Effect (Schultz, Nolan, Cialdini, Goldstein & Griskevicius, 2007 ; BVA Nudge Unit, 2018)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> La norme descriptive seule est à double tranchant. Pour bloquer l'effet boomerang, il est indispensable de coupler la norme descriptive à une <em>norme injonctive</em> exprimant l'approbation morale du groupe (ex. un simple smiley souriant ':)').<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Dans les tableaux de bord écologiques ou de santé, toujours adjoindre un feedback visuel d'approbation et de renforcement positif aux usagers vertueux pour sanctifier leur comportement exemplaire."
   },
   {
     "id": 7,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Nudges versus Boosts",
-    "front": "Quelle distinction clinique fondamentale sépare la décision de placer des fruits à hauteur des yeux dans une cantine scolaire (Nudge) de celle d'enseigner aux élèves à décrypter les étiquettes nutritionnelles (Boost) ?",
-    "backTitle": "Guidage comportemental passif vs Autonomisation cognitive",
-    "back": "<strong>Diagnostic clinique :</strong> Le Nudge modifie l'environnement physique immédiat pour orienter le choix sans effort conscient, mais sans développer les capacités intrinsèques de l'élève. Le Boost transmet une compétence cognitive pérenne et transférable (comprendre la valeur nutritive) qui le rend autonome dans n'importe quel magasin.<br><br><strong>Concept clé :</strong> <em>Boosts versus Nudges (Hertwig & Grüne-Yanoff 2016)</em>.<br><br><strong>Application terrain :</strong> Privilégier les boosts lorsque l'enjeu requiert un engagement réfléchi durable et une responsabilisation personnelle."
+    "category": "congiu_2022",
+    "tag": "Congiu & Moscati (2022) • Nudges vs Boosts",
+    "title": "Nudges versus Boosts : Béquille vs Compétence durable",
+    "front": "Quelle distinction clinique et épistémologique fondamentale sépare la décision de placer des salades à hauteur des yeux dans une cafétéria d'entreprise (Nudge) de celle d'entraîner les employés à lire et décoder les pictogrammes nutritionnels Nutri-Score (Boost) ?",
+    "backTitle": "Modification de l'architecture du choix vs Développement de capabilités",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> Le Nudge modifie l'environnement physique immédiat sans nécessiter d'effort cognitif conscient : si l'individu change de magasin où les salades sont cachées, le comportement sain disparaît aussitôt. Le Boost (Hertwig & Grüne-Yanoff) vise au contraire à accroître les compétences procédurales, la littératie statistique et l'autonomie cognitive de l'agent, lui conférant une capacité d'arbitrage transférable et durable.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Nudging vs Boosting (Hertwig & Grüne-Yanoff, 2017 ; Congiu & Moscati, 2022, §6.2, p. 199)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Un nudge n'éduque pas nécessairement et ne cherche pas à modifier les préférences profondes de l'individu ; il exploite les heuristiques existantes pour orienter le choix. Le boost présuppose et renforce l'agentivité de l'usager.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Déployer des nudges pour des gestes d'urgence ou d'ergonomie physique (ex. bouton de validation bien détaché), mais implémenter des boosts (infographies décisionnelles, arbres rapides) lorsque l'objectif est l'éducation financière, médicale ou la sécurité industrielle."
   },
   {
     "id": 8,
-    "category": "nudges_politiques",
-    "tag": "Module B • Architecture du choix & Nudges",
-    "title": "Effet d'éviction (Nudging-out)",
-    "front": "Pourquoi certains économistes de l'environnement s'inquiètent-ils lorsqu'une compagnie aérienne propose une micro-option de compensation carbone par défaut de 1,50 $ lors de l'achat d'un billet d'avion ?",
-    "backTitle": "Substitution de complaisance & Démobilisation citoyenne",
-    "back": "<strong>Diagnostic clinique :</strong> L'effet d'éviction (*nudging-out effect*, Hagmann et al. 2019) montre que l'adoption d'un micro-nudge peu coûteux apaise la mauvaise conscience des usagers et réduit significativement leur soutien envers des réformes fiscales structurelles plus contraignantes (comme une véritable taxe kérosène).<br><br><strong>Concept clé :</strong> <em>Effet d'éviction / Nudging-out effect</em>.<br><br><strong>Application terrain :</strong> Ne jamais présenter un nudge symbolique comme une solution complète à un problème systémique complexe."
+    "category": "congiu_2022",
+    "tag": "Congiu & Moscati (2022) • Effet d'éviction",
+    "title": "Effet d'éviction des politiques publiques (Nudging-Out)",
+    "front": "Pourquoi certains chercheurs en économie politique (Hagmann et al., 2019) critiquent-ils l'engouement disproportionné pour les micro-nudges volontaires de compensation carbone (ex. cocher une case de 2 $ lors de l'achat d'un vol) ?",
+    "backTitle": "Démobilisation civique & Substitution de complaisance (Nudging-Out Effect)",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> L'effet d'éviction (<em>nudging-out effect</em>) décrit le phénomène psychologique où l'introduction d'un micro-nudge peu coûteux procure un soulagement moral superficiel (<em>warm glow</em>) et induit chez les citoyens le sentiment trompeur que le problème écologique est pris en charge. En conséquence, leur volonté de soutenir des réformes structurelles indispensables et ambitieuses (taxe carbone, régulation contraignante des émissions) diminue de manière statistiquement significative.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Nudging out support for a carbon tax (Hagmann, Ho & Loewenstein, 2019 ; Congiu & Moscati, 2022, §6.4, p. 201)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> L'objection ne porte pas sur le fait que le nudge soit inefficace isolément, mais sur son coût d'opportunité systémique : il sert de paravent politique pour éviter les régulations économiques réelles.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> En tant que conseiller scientifique ou ergonome, refuser d'utiliser des micro-nudges cosmétiques pour masquer l'absence d'améliorations structurelles et matérielles des conditions de travail ou de sécurité."
   },
   {
     "id": 9,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "Le piège de la question inductive",
-    "front": "Lors d'un test utilisateur, un designer demande à l'usager : « Ne trouvez-vous pas que le menu déroulant est facile à trouver ? ». Pourquoi cette question est-elle méthodologiquement proscrite pour un UX Researcher ?",
-    "backTitle": "Biais d'acquiescement & Suggestion de réponse",
-    "back": "<strong>Diagnostic clinique :</strong> C'est une question inductive (*leading question*) qui oriente le participant et active le biais de désirabilité sociale (peur de blesser le concepteur). Elle détruit la validité scientifique du test.<br><br><strong>Concept clé :</strong> <em>Neutralité scientifique & Biais d'expérimentateur (Vidéo UX Researcher)</em>.<br><br><strong>Application terrain :</strong> Poser des questions strictement ouvertes et neutres : « Que remarquez-vous sur cet écran ? » ou « Où iriez-vous pour changer ce réglage ? » et observer l'action motrice."
+    "category": "ux_guide",
+    "tag": "Guide UX (Konrad) • Méthodes d'entrevue",
+    "title": "Le piège de la question inductive en UX Research",
+    "front": "Lors d'un test d'utilisabilité d'une application hospitalière, un concepteur demande à une infirmière : « Ne trouvez-vous pas que le bouton d'injection d'insuline est plus accessible sur ce nouvel écran ? ». Pourquoi cette formulation est-elle une faute méthodologique grave ?",
+    "backTitle": "Question inductive, Biais d'acquiescement & Effet Hawthorne",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> C'est une question inductive (<em>leading question</em>) qui injecte la réponse attendue dans l'énoncé. Elle active le biais de désirabilité sociale (peur de blesser le chercheur ou de paraître incompétente) et le biais d'acquiescement. Le participant approuve pour plaire, masquant les failles ergonomiques critiques de l'interface qui pourraient provoquer des erreurs médicamenteuses graves en situation de stress réel.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Méthodologie d'enquête et posture de neutralité (Guide UX Researcher Konrad, 2020 ; Chapanis, 1996 ; Cañas et al., 2011)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> En test utilisateur évaluatif, l'empathie ne doit jamais se traduire par du guidage verbal ou des questions d'approbation. Le chercheur doit observer en silence complet les hésitations motrices et cognitives.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Utiliser exclusivement des invites neutres et ouvertes : « Décrivez ce que vous voyez sur cet écran » ou « Montrez-moi comment vous procéderiez pour administrer cette dose », sans valider ni infirmer les manipulations avant la fin de la passation."
   },
   {
     "id": 10,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
+    "category": "ux_guide",
+    "tag": "Guide UX (Konrad) • Triangulation des données",
     "title": "Triangulation : Comportement vs Déclaratif",
-    "front": "Lors d'une entrevue, 85 % des répondants affirment accorder une importance capitale à la protection de leurs données personnelles. Pourtant, 92 % d'entre eux cliquent sur 'Tout accepter' en moins de 2 secondes lors de l'apparition d'une bannière de cookies. Pourquoi ?",
-    "backTitle": "Paradoxe de la vie privée & Coût attentionnel",
-    "back": "<strong>Diagnostic clinique :</strong> Ce décalage illustre le « Privacy Paradox ». Le déclaratif (ce que les gens pensent ou aimeraient faire) est biaisé par l'idéal normatif. L'action observée (ce qu'ils font réellement) est dominée par le désir immédiat d'accéder au contenu (Système 1 / friction minimale).<br><br><strong>Concept clé :</strong> <em>Dissociation Déclaratif vs Comportement observable (Cañas 2011 / UX Research)</em>.<br><br><strong>Application terrain :</strong> Fonder les décisions de conception sur l'observation des comportements effectifs en situation d'usage plutôt que sur de simples questionnaires d'opinion."
+    "front": "Dans un sondage préalable, 90 % des utilisateurs d'une banque en ligne déclarent vouloir lire scrupuleusement les conditions de sécurité avant chaque transfert. Pourtant, en laboratoire ergonomique avec eye-tracking, 98 % des usagers ignorent l'encart d'alerte et cliquent en 400 millisecondes sur 'Confirmer'. Comment expliquer et traiter cette divergence ?",
+    "backTitle": "Le Privacy Paradox & La primauté de l'activité réelle (Work-as-Done)",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> Cet écart illustre le classique « Say/Do gap » ou le paradoxe de la vie privée (<em>Privacy Paradox</em>). Les déclarations en entrevue ou sondage reflètent la rationalisation réflexive idéale du Système 2 (ce que l'usager pense qu'il devrait faire pour préserver son image sociale). En situation d'usage réel sous pression temporelle, le comportement est régi par le Système 1, guidé par la minimisation de l'effort attentionnel et l'accomplissement immédiat de la tâche principale.<br><br><strong>📚 Théorie & Source académique :</strong> <em>Triangulation empirique et primauté de l'observation (Guide UX Researcher Konrad ; Rasmussen SRK, 1983 ; Hollnagel ETTO Principle)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Ne jamais baser une décision d'architecture système ou de sécurité critique sur des données purement déclaratives (sondages d'opinion, focus groups). L'ergonome doit toujours prioriser le comportement objectif observable.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Trianguler systématiquement trois sources de données : 1) observation vidéo/oculométrie (eye-tracking) de l'activité réelle ; 2) métriques d'interaction (temps de complétion, taux d'erreurs, clics erratiques) ; 3) verbalisation rétrospective à chaud (<em>stimulated recall</em>) pour comprendre le modèle mental sans perturber le geste."
   },
   {
     "id": 11,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "L'utilité cognitive du User Persona",
-    "front": "Dans une équipe d'ingénieurs logiciel, chacun a tendance à concevoir l'interface en fonction de sa propre aisance technologique. Comment la création d'un User Persona permet-elle de corriger cette dérive ?",
-    "backTitle": "Ancrage de l'empathie & Désaxement de l'expert",
-    "back": "<strong>Diagnostic clinique :</strong> Le persona matérialise un profil type d'usager réel avec ses compétences limitées, ses habitudes et ses contraintes. Il force l'équipe à dépasser son biais égocentrique en posant la question : « Est-ce que ce vocabulaire technique a du sens pour notre persona Martin, 62 ans, commerçant débutant ? ».<br><br><strong>Concept clé :</strong> <em>User Persona (Guide Konrad / Vidéo UXr)</em>.<br><br><strong>Application terrain :</strong> Placer le persona au centre des revues de sprint pour arbitrer les choix ergonomiques sans conflit d'opinions personnelles."
+    "category": "ux_guide",
+    "tag": "Guide UX (Konrad) • Modélisation usager",
+    "title": "Le Persona cognitif vs le Stéréotype marketing",
+    "front": "Un chef de projet présente à l'équipe ergonomique un 'persona' décrivant : 'Julie, 34 ans, mariée, aime le yoga et roule en VUS hybride'. Pourquoi un UX Researcher formé aux facteurs humains doit-il rejeter cette fiche et comment doit-il la reformuler ?",
+    "backTitle": "Persona ergonomique fondé sur les modèles mentaux et les contraintes de tâche",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> La fiche du chef de projet est un stéréotype démographique de marketing publicitaire, totalement dépourvu de valeur pour l'ingénierie des interfaces. Un persona ergonomique ne s'intéresse pas aux loisirs personnels de l'usager, mais à ses objectifs de tâche, ses compétences techniques réelles, son niveau de stress, son contexte physique d'utilisation et son modèle mental (comment il conçoit le fonctionnement de la machine).<br><br><strong>📚 Théorie & Source académique :</strong> <em>User Personas in Interaction Design (Alan Cooper, 1999 ; Guide UX Researcher Konrad, 2020 ; Cañas et al., 2011, p. 321-323)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Un persona n'est ni un 'utilisateur moyen fictif' ni une compilation statistique superficielle ; c'est un archétype comportemental fondé sur des patterns qualitatifs récurrents découverts lors de la recherche exploratoire sur le terrain.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Rédiger les fiches de personas selon 4 dimensions cognitives : 1) Objectif fondamental de la tâche ; 2) Fréquence d'utilisation et niveau d'expertise (débutant, intermédiaire, expert) ; 3) Contraintes environnementales et charge mentale (bruit, interruptions) ; 4) Frustrations majeures et points de friction actuels."
   },
   {
     "id": 12,
-    "category": "ux_research",
-    "tag": "Module C • UX Research & Facteurs Humains",
-    "title": "Méta-analyses et taille d'effet terrain",
-    "front": "Pourquoi les méta-analyses récentes sur les Nudge Units (DellaVigna & Linos 2022) rapportent-elles des tailles d'effet de 1 à 3 % sur le terrain alors que les revues académiques rapportent souvent 8 à 10 % ?",
-    "backTitle": "Biais de publication & Bruit du milieu naturel",
-    "back": "<strong>Diagnostic clinique :</strong> Les revues universitaires souffrent d'un biais de publication (*file-drawer problem*) qui surreprésente les études de laboratoire spectaculaires à petits échantillons. Sur le terrain réel, le milieu naturel est bruité et saturé de distractions, mais un gain de 1,4 point sur des millions de citoyens génère un impact économique massif pour un coût presque nul.<br><br><strong>Concept clé :</strong> <em>Évaluation de l'efficacité réelle (Congiu & Moscati 2022 / DellaVigna & Linos)</em>.<br><br><strong>Application terrain :</strong> Toujours évaluer le succès d'une intervention par son ratio bénéfice/coût à grande échelle plutôt que par un pourcentage brut d'effet isolé."
+    "category": "congiu_2022",
+    "tag": "Congiu & Moscati (2022) • Validité écologique",
+    "title": "Taille d'effet terrain vs Laboratoire & Biais de publication",
+    "front": "Pourquoi les revues académiques de psychologie rapportent-elles des tailles d'effet moyennes de 8 % à 12 % pour les nudges comportementaux, alors que les méta-analyses indépendantes sur des Nudge Units gouvernementales à grande échelle (DellaVigna & Linos, 2022) mesurent un gain moyen sur le terrain d'environ 1,4 point de pourcentage ?",
+    "backTitle": "Biais du tiroir (File-Drawer Problem) & Validité écologique en milieu bruité",
+    "back": "<strong>🧠 Diagnostic cognitif :</strong> Deux facteurs méthodologiques majeurs expliquent cette divergence : 1) Le <em>biais de publication (file-drawer problem)</em> dans la littérature académique, qui privilégie les résultats statistiquement significatifs et spectaculaires obtenus en laboratoire sur de petits échantillons homogènes, reléguant les tests nuls aux oubliettes ; 2) Sur le terrain réel (validité écologique), les citoyens évoluent dans un environnement bruité, saturé de sollicitations concurrentes et de contraintes réelles. Néanmoins, un effet de 1,4 point appliqué à une cohorte de 5 millions de contribuables ou de patients représente des dizaines de milliers de comportements modifiés pour un coût unitaire dérisoire.<br><br><strong>📚 Théorie & Source académique :</strong> <em>RCTs to Scale vs Academic Publications (DellaVigna & Linos, 2022 ; Mertens et al., 2022 ; Congiu & Moscati, 2022, §5, p. 198)</em>.<br><br><strong>⚠️ Piège à l'examen :</strong> Une taille d'effet statistique modeste (faible d de Cohen) ne signifie absolument pas une futilité pratique. En santé publique et en politique publique de masse, de micro-variations agrégées génèrent des gains économiques et sanitaires majeurs.<br><br><strong>🛠️ Règle ergonomique terrain :</strong> Toujours évaluer la viabilité d'une solution ergonomique ou comportementale à l'aune de son ratio coût-efficacité global à grande échelle (<em>scalability</em>) et de sa robustesse en milieu naturel bruité plutôt que sur la base d'un score isolé en laboratoire stérile."
   }
 ];
+
+    const SEANCE6_FLASHCARDS = S6_MASTER_FLASHCARDS;
 
     let s6CurrentQIdx = 0;
     let s6UserAnswers = {};
@@ -17845,6 +17816,7 @@ let previousIsCompact = isCompactUI();
         if (quizView) quizView.style.display = 'block';
         renderS6Question(s6CurrentQIdx);
       }
+      updateFlashcardsBannerForCurrentModule();
     }
 
     function renderS6Flashcard(idx) {
@@ -17858,38 +17830,42 @@ let previousIsCompact = isCompactUI();
       const counterEl = document.getElementById('s6CardCounter');
       if (counterEl) counterEl.textContent = 'Fiche ' + (idx + 1) + ' / ' + S6_MASTER_FLASHCARDS.length;
 
+      const catEl = document.getElementById('s6CardCategory');
+      if (catEl) catEl.textContent = card.tag || card.category || 'Module A • Économie comportementale & Biais';
+
       const themeEl = document.getElementById('s6CardFrontTheme');
-      if (themeEl) themeEl.textContent = card.theme || 'Facteurs humains & Nudges';
+      if (themeEl) themeEl.textContent = card.tag || card.theme || 'Facteurs humains & Nudges';
 
       const titleEl = document.getElementById('s6CardFrontTitle');
       if (titleEl) titleEl.textContent = card.title || 'Cas clinique';
 
       const bodyEl = document.getElementById('s6CardFrontBody');
-      if (bodyEl) bodyEl.textContent = card.case || '';
+      if (bodyEl) bodyEl.innerHTML = card.front || card.case || '';
 
       const conceptEl = document.getElementById('s6CardBackConcept');
-      if (conceptEl) conceptEl.textContent = card.concept || 'Concept théorique';
-
-      const principleEl = document.getElementById('s6CardBackPrinciple');
-      if (principleEl) principleEl.textContent = card.principle || 'Analyse ergonomique';
+      if (conceptEl) conceptEl.textContent = card.backTitle || card.concept || 'Diagnostic clinique & Concepts clés';
 
       const analysisEl = document.getElementById('s6CardBackAnalysis');
-      if (analysisEl) analysisEl.textContent = card.analysis || '';
-
-      const citationEl = document.getElementById('s6CardBackCitation');
-      if (citationEl) citationEl.textContent = 'Source : ' + (card.citation || '');
+      if (analysisEl) analysisEl.innerHTML = card.back || card.analysis || '';
 
       // Réinitialiser la rotation
       s6CardFlipped = false;
+      const scene = document.getElementById('s6CardScene');
+      if (scene) scene.classList.remove('flipped');
       const inner = document.getElementById('s6CardInner');
-      if (inner) inner.style.transform = 'rotateY(0deg)';
+      if (inner) inner.style.transform = '';
     }
 
     function flipS6Card() {
       s6CardFlipped = !s6CardFlipped;
-      const inner = document.getElementById('s6CardInner');
-      if (inner) {
-        inner.style.transform = s6CardFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      const scene = document.getElementById('s6CardScene');
+      if (scene) {
+        scene.classList.toggle('flipped');
+      } else {
+        const inner = document.getElementById('s6CardInner');
+        if (inner) {
+          inner.style.transform = s6CardFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+        }
       }
     }
 
@@ -17917,6 +17893,38 @@ let previousIsCompact = isCompactUI();
         showToast("Lecture de la capsule audio à " + Math.floor(sec / 60) + "m " + (sec % 60) + "s.");
       }
     }
+
+
+    // --- INITIALISATION ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const intendedModule = currentHubModule;
+      initSplitDivider();
+      updateDynamicLayout();
+      initKeyboardShortcuts();
+      
+      // 1. Initialiser la langue par défaut (Anglais original)
+      updateLanguageUI();
+      if (intendedModule === 'bloc1') {
+        switchTab('doc_canas', false, false);
+      }
+      
+      // 2. Synchroniser le périmètre d'étude AVANT le premier rendu
+      setStudyScope(currentStudyScope);
+      setMode('study', false);
+      updateMasteryBadge();
+      updateFlashcardStatsUI();
+      initSavedPodcastUrl();
+      initTheme();
+      applyReaderFontScale();
+      if (isCompactUI()) {
+        document.body.classList.add('is-mobile-compact');
+        setMobileView('activity');
+      }
+
+      // 3. Initialiser la vue active du Hub
+      initB2Training();
+      switchHubModule(intendedModule);
+    });
 
 </script>
   <!-- MODAL OPTIONS ET PREFERENCES MOBILE / BUREAU -->
